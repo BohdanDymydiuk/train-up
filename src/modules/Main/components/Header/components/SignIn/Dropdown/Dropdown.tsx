@@ -6,7 +6,7 @@ import styles from './Dropdown.module.scss';
 
 enum SignIn {
   client = 'Увійти як клієнт',
-  trainer = 'Увійти як викладач',
+  trainer = 'Увійти як тренер',
   admin = 'Увійти як адміністратор залу',
 }
 
