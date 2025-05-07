@@ -1,0 +1,10 @@
+.lang {
+  @include inter-500-24;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+}

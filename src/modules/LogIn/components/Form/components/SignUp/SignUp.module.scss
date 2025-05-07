@@ -1,0 +1,9 @@
+.signup {
+  @include inter-400-16;
+
+  color: $primary-color;
+
+  strong {
+    cursor: pointer;
+  }
+}

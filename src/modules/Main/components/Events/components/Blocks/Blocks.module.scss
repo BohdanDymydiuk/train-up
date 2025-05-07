@@ -1,0 +1,27 @@
+.blocks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  height: 385px;
+  margin-top: 110px;
+  margin-bottom: 90px;
+
+  .block {
+    padding: 16px 23px 0;
+    border: 1px solid $block-border-color;
+    border-radius: 8px;
+
+    .img-wrapper {
+      height: 209px;
+      background-color: $regular-gray-color;
+
+      @include flex-center-center;
+    }
+
+    .descr {
+      margin-top: 36px;
+
+      @include inter-500-24;
+    }
+  }
+}

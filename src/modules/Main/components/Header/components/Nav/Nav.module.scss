@@ -1,0 +1,14 @@
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 32px;
+
+  .link {
+    @include inter-500-24;
+
+    text-decoration: none;
+    color: $primary-color;
+  }
+}

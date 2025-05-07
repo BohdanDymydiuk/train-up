@@ -1,0 +1,18 @@
+.blocks {
+  display: grid;
+  grid-template-rows: repeat(3, 114px);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px 35px;
+
+  .block {
+    @include flex-center-center;
+
+    text-align: center;
+    border: 1px solid $block-border-color;
+    border-radius: 8px;
+
+    @include inter-500-24;
+
+    padding-inline: 20px;
+  }
+}

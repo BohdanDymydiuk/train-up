@@ -1,0 +1,21 @@
+.form-wrapper {
+  box-sizing: border-box;
+  width: 50vw;
+  padding-top: 134px;
+  padding-bottom: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  .form {
+    width: 422px;
+
+    &-title {
+      text-align: center;
+      margin: 0;
+
+      @include inter-500-24;
+    }
+  }
+}

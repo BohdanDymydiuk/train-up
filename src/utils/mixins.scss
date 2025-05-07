@@ -1,0 +1,96 @@
+// #region inter
+
+@mixin inter {
+  font-family: Inter, sans-serif;
+  line-height: 120%;
+}
+
+// #region inter-400
+
+@mixin inter-400 {
+  @include inter;
+
+  font-weight: 400;
+}
+
+@mixin inter-400-16 {
+  @include inter-400;
+
+  font-size: 16px;
+}
+
+// #endregion
+// #region inter-500
+
+@mixin inter-500 {
+  @include inter;
+
+  font-weight: 500;
+}
+
+@mixin inter-500-16 {
+  @include inter-500;
+
+  font-size: 16px;
+}
+
+@mixin inter-500-24 {
+  @include inter-500;
+
+  font-size: 24px;
+}
+
+@mixin inter-500-40 {
+  @include inter-500;
+
+  font-size: 40px;
+}
+
+@mixin inter-500-48 {
+  @include inter-500;
+
+  font-size: 48px;
+}
+
+// #endregion
+// #region inter-600
+
+@mixin inter-600 {
+  @include inter;
+
+  font-weight: 600;
+}
+
+@mixin inter-600-20 {
+  @include inter-600;
+
+  font-size: 20px;
+}
+
+@mixin inter-600-40 {
+  @include inter-600;
+
+  font-size: 40px;
+}
+
+// #endregion
+// #endregion
+// #region elements
+
+@mixin input-styles {
+  cursor: pointer;
+  border-radius: 30px;
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+  height: 56px;
+  padding-inline: 16px;
+}
+
+// #endregion
+
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

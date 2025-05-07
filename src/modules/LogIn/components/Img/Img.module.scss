@@ -1,0 +1,8 @@
+.img-wrapper {
+  width: 50vw;
+  height: 100%;
+
+  @include flex-center-center;
+
+  background-color: $regular-gray-color;
+}

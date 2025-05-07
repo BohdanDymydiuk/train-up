@@ -1,0 +1,43 @@
+.finder {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-inline: 24px;
+  height: 109px;
+  border-radius: 16px;
+
+  .text,
+  .label,
+  .find {
+    @include inter-500-24;
+  }
+
+  .select,
+  .online {
+    display: flex;
+    align-items: center;
+  }
+
+  .select {
+    gap: 100px;
+  }
+
+  .online {
+    gap: 16px;
+
+    .input {
+      margin: 0;
+      height: 28px;
+      width: 28px;
+    }
+  }
+
+  .find {
+    padding: 16px 58px;
+    border: none;
+    border-radius: 8px;
+    background-color: $btn-bg-color;
+  }
+}
