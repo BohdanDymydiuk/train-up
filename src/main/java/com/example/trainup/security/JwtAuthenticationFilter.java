@@ -5,14 +5,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -21,7 +20,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     public static final String TOKEN_HEADER = "Bearer ";
-    private final ApplicationContext applicationContext;
+    private final UserDetailsService userDetailsService;
     private final JwtUtil jwtUtil;
 
     @Override
@@ -33,25 +32,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String token = getToken(request);
         if (token != null && jwtUtil.isValidToken(token)) {
             String username = jwtUtil.getUsername(token);
-            List<String> roles = jwtUtil.getRolesFromToken(token);
-            UserDetails userDetails = null;
-
-            if (roles.contains("ROLE_ADMIN")) {
-                AdminDetailsService adminDetailsService = applicationContext
-                        .getBean(AdminDetailsService.class);
-                userDetails = adminDetailsService.loadUserByUsername(username);
-            } else if (roles.contains("ROLE_ATHLETE")) {
-                AthleteDetailsService athleteDetailsService = applicationContext
-                        .getBean(AthleteDetailsService.class);
-                userDetails = athleteDetailsService.loadUserByUsername(username);
-            }
-
-            if (userDetails != null) {
-                Authentication authentication = new UsernamePasswordAuthenticationToken(
-                        userDetails, null, userDetails.getAuthorities());
-                SecurityContextHolder.getContext().setAuthentication(authentication);
-            }
-
+            UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+            Authentication authentication = new UsernamePasswordAuthenticationToken(
+                    userDetails, null, userDetails.getAuthorities());
+            SecurityContextHolder.getContext().setAuthentication(authentication);
         }
         filterChain.doFilter(request, response);
     }

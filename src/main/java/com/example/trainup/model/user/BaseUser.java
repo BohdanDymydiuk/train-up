@@ -1,12 +1,14 @@
 package com.example.trainup.model.user;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MappedSuperclass;
 import java.time.LocalDate;
+import jakarta.persistence.OneToOne;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,18 +20,10 @@ import org.hibernate.annotations.Where;
 @Setter
 @NoArgsConstructor
 @Where(clause = "is_deleted=false")
-public class BaseUser {
+public abstract class BaseUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(unique = true, nullable = false)
-    //    TODO: add validation
-    private String email;
-
-    @JsonIgnore
-    @Column(nullable = false)
-    private String password;
 
     @Column(nullable = false)
     private String firstName;
@@ -42,6 +36,10 @@ public class BaseUser {
     private LocalDate dateOfBirth;
 
     private String profileImageUrl;
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "user_credentials_id", nullable = false)
+    private UserCredentials userCredentials;
 
     @Column(nullable = false)
     @Setter(AccessLevel.PROTECTED)

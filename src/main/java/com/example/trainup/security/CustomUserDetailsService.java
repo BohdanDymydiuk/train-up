@@ -1,22 +1,20 @@
 package com.example.trainup.security;
 
-import com.example.trainup.repository.AthleteRepository;
-import jakarta.persistence.EntityNotFoundException;
+import com.example.trainup.repository.UserCredentialsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-@Service("athleteDetailsService")
+@Service
 @RequiredArgsConstructor
-public class AthleteDetailsService implements UserDetailsService {
-    private final AthleteRepository athleteRepository;
+public class CustomUserDetailsService implements UserDetailsService {
+    private final UserCredentialsRepository userCredentialsRepository;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        return athleteRepository.findByEmail(email)
-                .orElseThrow(() ->
-                        new EntityNotFoundException("Can not find athlete by email: " + email));
+        return userCredentialsRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("Customer with email: " + email + " doesn't exist"));
     }
 }

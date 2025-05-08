@@ -28,23 +28,13 @@ public class JwtUtil {
         secret = Keys.hmacShaKeyFor(secretString.getBytes(StandardCharsets.UTF_8));
     }
 
-    public String generateToken(UserDetails userDetails) {
-        Map<String, Object> claims = new HashMap<>();
-        claims.put("roles", userDetails.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.toList()));
-        return createToken(claims, userDetails.getUsername());
-    }
-
-    private String createToken(Map<String, Object> claims, String subject) {
+    public String generateToken(String username) {
         return Jwts.builder()
-                .claims(claims)
-                .subject(subject)
+                .subject(username)
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + expiration))
                 .signWith(secret)
                 .compact();
-
     }
 
     public boolean isValidToken(String token) {
@@ -61,10 +51,6 @@ public class JwtUtil {
 
     public String getUsername(String token) {
         return getClaimsFromToken(token, Claims::getSubject);
-    }
-
-    public List<String> getRolesFromToken(String token) {
-        return getClaimsFromToken(token, claims -> (List<String>) claims.get("roles"));
     }
 
     private <T> T getClaimsFromToken(String token, Function<Claims, T> claimsResolver) {

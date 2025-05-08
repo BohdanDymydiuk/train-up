@@ -4,6 +4,7 @@ import com.example.trainup.model.user.Admin;
 import com.example.trainup.model.user.Athlete;
 import com.example.trainup.model.user.GymOwner;
 import com.example.trainup.model.user.Trainer;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +16,7 @@ import java.util.HashSet;
 import java.util.Set;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -27,18 +29,6 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Role name can not be blank")
+    @Column(unique = true, nullable = false)
     private String name;
-
-    @ManyToMany(mappedBy = "roles")
-    private Set<Admin> admins = new HashSet<>();
-
-    @ManyToMany(mappedBy = "roles")
-    private Set<Athlete> athletes = new HashSet<>();
-
-    @ManyToMany(mappedBy = "roles")
-    private Set<GymOwner> gymOwners = new HashSet<>();
-
-    @ManyToMany(mappedBy = "roles")
-    private Set<Trainer> trainers = new HashSet<>();
 }
