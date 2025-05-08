@@ -1,4 +1,4 @@
 export enum NavLinks {
   signUp = '/signup',
-  login = '/login',
+  signIn = '/signin',
 }

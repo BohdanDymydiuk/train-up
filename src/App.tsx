@@ -3,10 +3,10 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router';
 
 import { NavLinks } from './enums/NavLinks';
-import { Login } from './modules/Login';
 import { MainContent } from './modules/MainContent';
 import { Home } from './modules/MainContent/components/Home';
 import { SignUp } from './modules/MainContent/components/SignUp';
+import { SignIn } from './modules/SignIn';
 
 import './App.scss';
 
@@ -25,7 +25,7 @@ export const App: React.FC = () => {
             <Route index element={<Home />} />
             <Route path={NavLinks.signUp} element={<SignUp />} />
           </Route>
-          <Route path={NavLinks.login} element={<Login />} />
+          <Route path={NavLinks.signIn} element={<SignIn />} />
         </Routes>
       </Router>
     </>

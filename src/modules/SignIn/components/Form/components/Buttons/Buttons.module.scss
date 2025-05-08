@@ -1,4 +1,4 @@
-.login,
+.signin,
 .button {
   @include input-styles;
 
@@ -7,7 +7,7 @@
   cursor: pointer;
 }
 
-.login {
+.signin {
   @include inter-600-20;
 
   background-color: $primary-color;

@@ -3,8 +3,8 @@ import React from 'react';
 import { Logo } from '../../../../reusables/Logo';
 
 import { Lang } from './components/Lang';
-import { Login } from './components/Login';
 import { Nav } from './components/Nav';
+import { SignIn } from './components/SignIn';
 
 import styles from './Header.module.scss';
 
@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
       </div>
       <div className={styles['second-part']}>
         <Lang />
-        <Login />
+        <SignIn />
       </div>
     </header>
   );

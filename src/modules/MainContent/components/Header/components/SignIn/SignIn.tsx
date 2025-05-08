@@ -4,16 +4,16 @@ import { ChevronDown } from '../../../../../../reusables/ChevronDown';
 
 import { Dropdown } from './Dropdown';
 
-import styles from './Login.module.scss';
+import styles from './SignIn.module.scss';
 
-export const Login: React.FC = () => {
+export const SignIn: React.FC = () => {
   const [isDPActive, setIsDPActive] = useState(false);
 
   const onClickHandler = () => setIsDPActive(value => !value);
 
   return (
     <div className={styles.wrapper}>
-      <button className={styles.login} onClick={onClickHandler}>
+      <button className={styles.signin} onClick={onClickHandler}>
         <div>Увійти</div>
         <ChevronDown />
       </button>

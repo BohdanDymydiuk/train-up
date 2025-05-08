@@ -2,10 +2,10 @@
   position: relative;
   height: min-content;
 
-  .login {
+  .signin {
     box-sizing: border-box;
-    width: $login-width;
-    height: $login-height;
+    width: $signin-width;
+    height: $signin-height;
     display: flex;
     align-items: center;
     gap: 10px;

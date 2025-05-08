@@ -6,7 +6,7 @@ import { NavLinks } from '../../../../../../../enums/NavLinks';
 
 import styles from './Dropdown.module.scss';
 
-enum Login {
+enum SignIn {
   client = 'Увійти як клієнт',
   trainer = 'Увійти як тренер',
   admin = 'Увійти як адміністратор залу',
@@ -15,17 +15,17 @@ enum Login {
 export const Dropdown: React.FC = () => {
   const navigate = useNavigate();
 
-  const loginHandler = () => navigate(NavLinks.login);
+  const signInHandler = () => navigate(NavLinks.signIn);
 
   return (
     <div className={styles.dropdown}>
       <ul className={styles.list}>
-        {Object.values(Login).map((item, index) => {
+        {Object.values(SignIn).map((item, index) => {
           return (
             <li
               className={styles.item}
               key={`singIn-${index}`}
-              onClick={loginHandler}
+              onClick={signInHandler}
             >
               <div className={styles['item-text']}>{item}</div>
             </li>

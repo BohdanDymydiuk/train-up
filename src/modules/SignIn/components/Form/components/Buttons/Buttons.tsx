@@ -8,7 +8,7 @@ import styles from './Buttons.module.scss';
 export const Buttons: React.FC = () => {
   return (
     <>
-      <button type='submit' className={styles.login}>
+      <button type='submit' className={styles.signin}>
         Log in
       </button>
       <div className={styles.or}>or</div>
