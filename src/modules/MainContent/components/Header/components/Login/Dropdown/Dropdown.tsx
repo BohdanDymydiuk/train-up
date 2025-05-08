@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useNavigate } from 'react-router';
 
+import { NavLinks } from '../../../../../../../enums/NavLinks';
+
 import styles from './Dropdown.module.scss';
 
 enum Login {
@@ -13,7 +15,7 @@ enum Login {
 export const Dropdown: React.FC = () => {
   const navigate = useNavigate();
 
-  const loginHandler = () => navigate('/login');
+  const loginHandler = () => navigate(NavLinks.login);
 
   return (
     <div className={styles.dropdown}>

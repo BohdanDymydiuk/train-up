@@ -2,13 +2,15 @@ import React from 'react';
 
 import { useNavigate } from 'react-router';
 
+import { NavLinks } from '../../../../../../enums/NavLinks';
+
 import styles from './SignUp.module.scss';
 
 export const SignUp: React.FC = () => {
   const navigate = useNavigate();
 
   const signupHandler = () => {
-    navigate('/');
+    navigate(NavLinks.signUp);
   };
 
   return (
