@@ -1,8 +1,8 @@
 .dropdown {
   box-sizing: border-box;
   position: absolute;
-  top: $signin-height + 16px;
-  left: ($dropdown-width - $signin-width) * -1;
+  top: $login-height + 16px;
+  left: ($dropdown-width - $login-width) * -1;
   width: $dropdown-width;
   display: flex;
   flex-direction: column;

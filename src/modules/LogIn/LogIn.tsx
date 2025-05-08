@@ -3,9 +3,9 @@ import React from 'react';
 import { Form } from './components/Form';
 import { Img } from './components/Img';
 
-import styles from './LogIn.module.scss';
+import styles from './Login.module.scss';
 
-export const LogIn: React.FC = () => {
+export const Login: React.FC = () => {
   return (
     <div className={styles.login}>
       <Img />

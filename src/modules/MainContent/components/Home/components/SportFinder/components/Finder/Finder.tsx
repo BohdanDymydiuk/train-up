@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChevronDown } from '../../../../../../reusables/ChevronDown';
+import { ChevronDown } from '../../../../../../../../reusables/ChevronDown';
 
 import styles from './Finder.module.scss';
 

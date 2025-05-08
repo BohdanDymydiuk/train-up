@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Title } from '../../../../reusables/Title';
-import { ViewAll } from '../../../../reusables/ViewAll';
+import { Title } from '../../../../../../reusables/Title';
+import { ViewAll } from '../../../../../../reusables/ViewAll';
 
 import { Blocks } from './components/Blocks';
 

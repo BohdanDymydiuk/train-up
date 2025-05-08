@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 
 import styles from './Dropdown.module.scss';
 
-enum SignIn {
+enum Login {
   client = 'Увійти як клієнт',
   trainer = 'Увійти як тренер',
   admin = 'Увійти як адміністратор залу',
@@ -18,7 +18,7 @@ export const Dropdown: React.FC = () => {
   return (
     <div className={styles.dropdown}>
       <ul className={styles.list}>
-        {Object.values(SignIn).map((item, index) => {
+        {Object.values(Login).map((item, index) => {
           return (
             <li
               className={styles.item}
