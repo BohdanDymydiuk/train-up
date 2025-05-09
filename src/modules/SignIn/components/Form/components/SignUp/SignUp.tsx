@@ -1,16 +1,14 @@
 import React from 'react';
 
-import { useNavigate } from 'react-router';
-
-import { NavLinks } from '../../../../../../enums/NavLinks';
-
 import styles from './SignUp.module.scss';
 
-export const SignUp: React.FC = () => {
-  const navigate = useNavigate();
+interface Props {
+  setIsModalShown: (value: boolean) => void;
+}
 
+export const SignUp: React.FC<Props> = ({ setIsModalShown }) => {
   const signupHandler = () => {
-    navigate(NavLinks.signUp);
+    setIsModalShown(true);
   };
 
   return (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router';
 
 import { InputChangeEvent } from '../../../../types/Events';
@@ -7,16 +8,29 @@ import { InputChangeEvent } from '../../../../types/Events';
 import { Buttons } from './components/Buttons';
 import { Inputs } from './components/Inputs';
 import { SignUp } from './components/SignUp';
+import { SignUpModal } from './components/SignUpModal';
 import { Title } from './components/Title';
 
 import styles from './Form.module.scss';
 
 export const Form: React.FC = () => {
+  const [isModalShown, setIsModalShown] = useState(false);
   const [emailName, setEmailName] = useState('');
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
 
+  // #region useEffects
+
+  // useEffect(() => {
+  //   if (isModalShown) {
+  //     document.body.style.overflow = 'hidden';
+  //   } else {
+  //     document.body.style.overflow = 'auto';
+  //   }
+  // }, [isModalShown]);
+
+  // #endregion
   // #region handlers
 
   const inputTextHandler = (event: InputChangeEvent) => {
@@ -34,6 +48,19 @@ export const Form: React.FC = () => {
   };
 
   // #endregion
+  // #region props
+
+  const inputsProps = {
+    emailName,
+    password,
+    inputTextHandler,
+    inputPasswordHandler,
+  };
+
+  const signUpProps = { setIsModalShown };
+  const modalProps = { setIsModalShown };
+
+  // #endregion
 
   return (
     <div className={styles['form-wrapper']}>
@@ -47,15 +74,12 @@ export const Form: React.FC = () => {
         <h3 className={styles['form-title']}>
           Welcome to your creative space!
         </h3>
-        <Inputs
-          emailName={emailName}
-          password={password}
-          inputTextHandler={inputTextHandler}
-          inputPasswordHandler={inputPasswordHandler}
-        />
+        <Inputs {...inputsProps} />
         <Buttons />
       </form>
-      <SignUp />
+      {isModalShown &&
+        createPortal(<SignUpModal {...modalProps} />, document.body)}
+      <SignUp {...signUpProps} />
     </div>
   );
 };

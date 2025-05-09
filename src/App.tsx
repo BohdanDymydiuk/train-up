@@ -5,7 +5,6 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router';
 import { NavLinks } from './enums/NavLinks';
 import { MainContent } from './modules/MainContent';
 import { Home } from './modules/MainContent/components/Home';
-import { SignUp } from './modules/MainContent/components/SignUp';
 import { SignIn } from './modules/SignIn';
 
 import './App.scss';
@@ -23,7 +22,6 @@ export const App: React.FC = () => {
         <Routes>
           <Route path='/' element={<MainContent />}>
             <Route index element={<Home />} />
-            <Route path={NavLinks.signUp} element={<SignUp />} />
           </Route>
           <Route path={NavLinks.signIn} element={<SignIn />} />
         </Routes>
