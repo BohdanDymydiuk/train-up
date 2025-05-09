@@ -1,7 +1,6 @@
 package com.example.trainup.dto.users;
 
 import java.time.LocalDate;
-import java.util.List;
 import java.util.Set;
 
 public record TrainerResponseDto(

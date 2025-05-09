@@ -49,11 +49,11 @@ public record AthleteRegistrationRequestDto(
         Set<Long> sportIds,
 
         @NotNull(message = "Would you like to receive email updates about upcoming events, "
-                            + "open workouts, competitions, and promotional offers?")
+                + "open workouts, competitions, and promotional offers?")
         boolean emailPermission,
 
         @NotNull(message = "Would you like to receive SMS updates about upcoming events, "
                 + "open workouts, competitions, and promotional offers?")
         boolean phonePermission
-        ) {
+) {
 }

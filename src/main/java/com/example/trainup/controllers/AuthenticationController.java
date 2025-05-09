@@ -35,19 +35,22 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register/athlete")
-    public AthleteResponseDto registerAthlete(@Valid @RequestBody AthleteRegistrationRequestDto requestDto) {
+    public AthleteResponseDto registerAthlete(
+            @Valid @RequestBody AthleteRegistrationRequestDto requestDto) {
         AthleteResponseDto registeredAthlete = athleteService.register(requestDto);
         return registeredAthlete;
     }
 
     @PostMapping("/register/trainer")
-    public TrainerResponseDto registerTrainer(@Valid @RequestBody TrainerRegistrationRequestDto requestDto) {
+    public TrainerResponseDto registerTrainer(
+            @Valid @RequestBody TrainerRegistrationRequestDto requestDto) {
         TrainerResponseDto registeredTrainer = trainerService.register(requestDto);
         return registeredTrainer;
     }
 
     @PostMapping("/register/athlete")
-    public GymOwnerResponseDto registerGymOwner(@Valid @RequestBody GymOwnerRegistrationRequestDto requestDto) {
+    public GymOwnerResponseDto registerGymOwner(
+            @Valid @RequestBody GymOwnerRegistrationRequestDto requestDto) {
         GymOwnerResponseDto registeredGymOwner = gymOwnerService.register(requestDto);
         return registeredGymOwner;
     }

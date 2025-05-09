@@ -42,8 +42,7 @@ public class Trainer extends BaseUser {
     @ManyToMany(mappedBy = "trainers")
     private Set<Gym> gyms = new HashSet<>();
 
-    private List<String> certificates;
-
+    private Set<String> certificates;
 
     private String description;
 

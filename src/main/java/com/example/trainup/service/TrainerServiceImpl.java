@@ -4,8 +4,11 @@ import com.example.trainup.dto.users.TrainerRegistrationRequestDto;
 import com.example.trainup.dto.users.TrainerResponseDto;
 import com.example.trainup.mapper.TrainerMapper;
 import com.example.trainup.model.user.Trainer;
+import com.example.trainup.repository.GymRepository;
+import com.example.trainup.repository.SportRepository;
 import com.example.trainup.repository.TrainerRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,12 +16,14 @@ import org.springframework.stereotype.Service;
 public class TrainerServiceImpl implements TrainerService {
     private final TrainerRepository trainerRepository;
     private final TrainerMapper trainerMapper;
+    private final PasswordEncoder encoder;
+    private final SportRepository sportRepository;
+    private final GymRepository gymRepository;
 
     @Override
     public TrainerResponseDto register(TrainerRegistrationRequestDto requestDto) {
-        Trainer trainer = trainerMapper.toModel(requestDto);
-        trainerRepository.save(trainer);
-        trainer.getUserCredentials().setUserId(trainer.getId());
+        Trainer trainer = trainerMapper
+                .toModel(requestDto, encoder, sportRepository, gymRepository);
         trainerRepository.save(trainer);
         return trainerMapper.toDto(trainer);
 

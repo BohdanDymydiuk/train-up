@@ -23,7 +23,7 @@ public interface GymOwnerMapper {
     GymOwnerResponseDto toDto(GymOwner gymOwner);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "ownedGyms", source = "ownedGymIds", qualifiedByName = "mapGymIdsToGyms")
+    // @Mapping(target = "ownedGyms", source = "ownedGymIds", qualifiedByName = "mapGymIdsToGyms")
     @Mapping(target = "userCredentials", source = ".", qualifiedByName = "mapToUserCredentials")
     GymOwner toModel(GymOwnerRegistrationRequestDto requestDto,
                      @Context PasswordEncoder passwordEncoder);
@@ -42,17 +42,17 @@ public interface GymOwnerMapper {
                 .collect(Collectors.toSet());
     }
 
-    @Named("mapGymIdsToGyms")
-    default Set<Gym> mapGymIdsToGyms(Set<Long> gymIds, @Context GymRepository gymRepository) {
-        if (gymIds == null || gymIds.isEmpty()) {
-            return Set.of();
-        }
-        return gymIds.stream()
-                .map(id -> gymRepository.findById(id)
-                        .orElseThrow(() -> new IllegalArgumentException("Gym with id "
-                                + id + " not found")))
-                .collect(Collectors.toSet());
-    }
+    //    @Named("mapGymIdsToGyms")
+    //    default Set<Gym> mapGymIdsToGyms(Set<Long> gymIds, @Context GymRepository gymRepository) {
+    //        if (gymIds == null || gymIds.isEmpty()) {
+    //            return Set.of();
+    //        }
+    //        return gymIds.stream()
+    //                .map(id -> gymRepository.findById(id)
+    //                        .orElseThrow(() -> new IllegalArgumentException("Gym with id "
+    //                                + id + " not found")))
+    //                .collect(Collectors.toSet());
+    //    }
 
     @Named("mapToUserCredentials")
     default UserCredentials mapToUserCredentials(GymOwnerRegistrationRequestDto requestDto,

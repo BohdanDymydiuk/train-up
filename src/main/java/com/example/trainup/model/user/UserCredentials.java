@@ -49,9 +49,6 @@ public class UserCredentials implements UserDetails {
     @Column(nullable = false)
     private UserType userType;
 
-    @Column(nullable = false)
-    private Long userId;
-
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "user_credentials_roles",

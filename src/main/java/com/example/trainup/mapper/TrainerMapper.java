@@ -9,14 +9,13 @@ import com.example.trainup.model.user.Trainer;
 import com.example.trainup.model.user.UserCredentials;
 import com.example.trainup.repository.GymRepository;
 import com.example.trainup.repository.SportRepository;
+import java.util.Set;
+import java.util.stream.Collectors;
 import org.mapstruct.Context;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Mapper(config = MapperConfig.class, uses = {SportRepository.class, GymRepository.class})
 public interface TrainerMapper {
@@ -31,7 +30,15 @@ public interface TrainerMapper {
     @Mapping(target = "gyms", source = "gymIds", qualifiedByName = "mapGymIdsToGyms")
     @Mapping(target = "userCredentials", source = ".", qualifiedByName = "mapToUserCredentials")
     @Mapping(target = "reviews", ignore = true)
-    Trainer toModel(TrainerRegistrationRequestDto requestDto);
+    @Mapping(target = "phoneNumbers", source = "phoneNumbers")
+    @Mapping(target = "certificates", source = "certificates")
+    @Mapping(target = "description", source = "description")
+    @Mapping(target = "socialMediaLinks", source = "socialMediaLinks")
+    @Mapping(target = "overallRating", ignore = true)
+    Trainer toModel(TrainerRegistrationRequestDto requestDto,
+                    @Context PasswordEncoder passwordEncoder,
+                    @Context SportRepository sportRepository,
+                    @Context GymRepository gymRepository);
 
     default String encodePassword(String rawPassword, PasswordEncoder encoder) {
         return encoder.encode(rawPassword);

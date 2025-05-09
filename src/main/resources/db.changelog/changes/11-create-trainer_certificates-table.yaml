@@ -1,0 +1,23 @@
+- changeSet:
+    id: 11-create-trainer_certificates-table
+    author: bohdan-s
+    changes:
+      - createTable:
+          tableName: trainer_certificates
+          columns:
+            - column:
+                name: trainer_id
+                type: BIGINT
+                constraints:
+                  nullable: false
+                  foreignKeyName: fk_trainer_certificates_trainer
+                  references: trainers(id)
+            - column:
+                name: certificates
+                type: VARCHAR(255)
+                constraints:
+                  nullable: false
+      - addUniqueConstraint:
+          tableName: trainer_certificates
+          columnNames: trainer_id, certificates
+          constraintName: uk_trainer_certificates

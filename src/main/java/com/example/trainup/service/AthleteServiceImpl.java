@@ -5,6 +5,7 @@ import com.example.trainup.dto.users.AthleteResponseDto;
 import com.example.trainup.mapper.AthleteMapper;
 import com.example.trainup.model.user.Athlete;
 import com.example.trainup.repository.AthleteRepository;
+import com.example.trainup.repository.SportRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,12 +18,11 @@ public class AthleteServiceImpl implements AthleteService {
     private final AthleteMapper athleteMapper;
     private final PasswordEncoder passwordEncoder;
     private final AthleteRepository athleteRepository;
+    private final SportRepository sportRepository;
 
     @Override
     public AthleteResponseDto register(AthleteRegistrationRequestDto requestDto) {
-        Athlete athlete = athleteMapper.toModel(requestDto, passwordEncoder);
-        athleteRepository.save(athlete);
-        athlete.getUserCredentials().setUserId(athlete.getId());
+        Athlete athlete = athleteMapper.toModel(requestDto, passwordEncoder, sportRepository);
         athleteRepository.save(athlete);
         return athleteMapper.toDto(athlete);
     }

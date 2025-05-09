@@ -1,0 +1,37 @@
+- changeSet:
+    id: 19-create-sports_trainers-table
+    author: bohdan-s
+    changes:
+      - createTable:
+          tableName: sports_trainers
+          columns:
+            - column:
+                name: sport_id
+                type: BIGINT
+                constraints:
+                  nullable: false
+                  foreignKeyName: fk_sports_trainers_sport
+                  references: sports(id)
+            - column:
+                name: trainer_id
+                type: BIGINT
+                constraints:
+                  nullable: false
+                  foreignKeyName: fk_sports_trainers_trainer
+                  references: trainers(id)
+      - addUniqueConstraint:
+          tableName: sports_trainers
+          columnNames: sport_id, trainer_id
+          constraintName: uk_sports_trainers
+      - createIndex:
+          tableName: sports_trainers
+          indexName: idx_sports_trainers_sport_id
+          columns:
+            - column:
+                name: sport_id
+      - createIndex:
+          tableName: sports_trainers
+          indexName: idx_sports_trainers_trainer_id
+          columns:
+            - column:
+                name: trainer_id

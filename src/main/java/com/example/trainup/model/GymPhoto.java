@@ -10,14 +10,19 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.util.Objects;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@SQLDelete(sql = "UPDATE gym_photos SET is_deleted=true WHERE id=?")
+@Where(clause = "is_deleted=false")
 @Table(name = "gym_photos")
 public class GymPhoto {
     @Id
@@ -30,6 +35,10 @@ public class GymPhoto {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "gym_id", nullable = false)
     private Gym gym;
+
+    @Column(nullable = false)
+    @Setter(AccessLevel.PROTECTED)
+    private boolean isDeleted = false;
 
     @Override
     public boolean equals(Object o) {
