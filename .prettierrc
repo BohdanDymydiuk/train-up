@@ -4,7 +4,8 @@
   "jsxSingleQuote": true,
   "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "importOrder": [
-    "^react$",
+    "^react",
+    "^(@.*)",
     "^[a-zA-Z]",
     "^\\../(?!(.*\\.(sass|scss|css))).*",
     "^\\./(?!(.*\\.(sass|scss|css))).*",

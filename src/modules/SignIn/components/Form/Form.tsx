@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router';
 
@@ -13,6 +12,9 @@ import { Title } from './components/Title';
 
 import styles from './Form.module.scss';
 
+const body = document.body;
+const root = document.querySelector('#root') as HTMLElement;
+
 export const Form: React.FC = () => {
   const [isModalShown, setIsModalShown] = useState(false);
   const [emailName, setEmailName] = useState('');
@@ -22,13 +24,15 @@ export const Form: React.FC = () => {
 
   // #region useEffects
 
-  // useEffect(() => {
-  //   if (isModalShown) {
-  //     document.body.style.overflow = 'hidden';
-  //   } else {
-  //     document.body.style.overflow = 'auto';
-  //   }
-  // }, [isModalShown]);
+  useEffect(() => {
+    if (isModalShown) {
+      body.style.overflow = 'hidden';
+      root.style.overflow = 'scroll';
+    } else {
+      body.style.overflow = 'auto';
+      root.style.overflow = 'auto';
+    }
+  }, [isModalShown]);
 
   // #endregion
   // #region handlers

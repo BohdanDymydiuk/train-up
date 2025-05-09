@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Route, BrowserRouter as Router, Routes } from 'react-router';
 
 import { NavLinks } from './enums/NavLinks';
