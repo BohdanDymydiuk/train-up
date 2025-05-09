@@ -27,10 +27,10 @@ export const Form: React.FC = () => {
   useEffect(() => {
     if (isModalShown) {
       body.style.overflow = 'hidden';
-      root.style.overflow = 'scroll';
+      root.style.overflowY = 'scroll';
     } else {
       body.style.overflow = 'auto';
-      root.style.overflow = 'auto';
+      root.style.overflowY = 'auto';
     }
   }, [isModalShown]);
 
