@@ -1,14 +1,19 @@
 package com.example.trainup.model.user;
 
+import com.example.trainup.model.Address;
 import com.example.trainup.model.Gym;
 import com.example.trainup.model.Review;
 import com.example.trainup.model.Sport;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
@@ -29,9 +34,6 @@ import org.hibernate.annotations.SQLDelete;
 public class Trainer extends BaseUser {
     @ElementCollection
     @CollectionTable(name = "trainer_phone_numbers", joinColumns = @JoinColumn(name = "trainer_id"))
-    //    TODO: move validation to DTO
-    @Pattern(regexp = "^\\+38 \\(\\d{3}\\) - \\d{3}-\\d{4}$",
-            message = "Contact phone number should be in the format +38 (XXX) - XXX-XXXX")
     @NotEmpty(message = "Contact phone number can not be empty.")
     private Set<String> phoneNumbers = new HashSet<>();
 
@@ -41,6 +43,12 @@ public class Trainer extends BaseUser {
 
     @ManyToMany(mappedBy = "trainers")
     private Set<Gym> gyms = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id")
+    private Address location;
+
+    private boolean onlineTraining = false;
 
     @ElementCollection
     @CollectionTable(name = "trainer_certificates", joinColumns = @JoinColumn(name = "trainer_id"))

@@ -12,7 +12,6 @@ public class RegexConstants {
                     + "e-\\x7f])+)\\])";
     public static final String PASSWORD_REGEX = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)"
             + "(?=.*[#$@!%&*?])[A-Za-z\\d#$@!%&*?]{8,}$";
-    public static final String PHONE_NUMBER_REGEX = "^\\+38 \\(\\d{3}\\) - \\d{3}-\\d{4}$";
 
     private RegexConstants() {
     }

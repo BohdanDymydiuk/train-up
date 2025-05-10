@@ -9,7 +9,6 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.Getter;
@@ -26,9 +25,6 @@ import org.hibernate.annotations.SQLDelete;
 public class Athlete extends BaseUser {
     @ElementCollection
     @CollectionTable(name = "athlete_phone_numbers", joinColumns = @JoinColumn(name = "athlete_id"))
-    //    TODO: move validation to DTO
-    @Pattern(regexp = "^\\+38 \\(\\d{3}\\) - \\d{3}-\\d{4}$",
-            message = "Contact phone number should be in the format +38 (XXX) - XXX-XXXX")
     @NotEmpty(message = "Contact phone number can not be empty.")
     private Set<String> phoneNumbers = new HashSet<>();
 

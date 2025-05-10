@@ -3,6 +3,7 @@ package com.example.trainup.dto.users;
 import com.example.trainup.validation.EmailUnique;
 import com.example.trainup.validation.FieldMatch;
 import com.example.trainup.validation.RegexConstants;
+import com.example.trainup.validation.ValidPhoneNumbers;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -43,7 +44,7 @@ public record AthleteRegistrationRequestDto(
         String repeatPassword,
 
         @NotEmpty(message = "Enter your phone number")
-        @Pattern(regexp = RegexConstants.PHONE_NUMBER_REGEX)
+        @ValidPhoneNumbers
         Set<String> phoneNumbers,
 
         Set<Long> sportIds,
