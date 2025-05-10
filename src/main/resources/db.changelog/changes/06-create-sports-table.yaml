@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 02-create-user_credentials-table
+      id: 06-create-sports-table
       author: bohdan-s
       changes:
         - createTable:
-            tableName: user_credentials
+            tableName: sports
             columns:
               - column:
                   name: id
@@ -14,20 +14,10 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: email
+                  name: sport_name
                   type: VARCHAR(255)
                   constraints:
                     unique: true
-                    nullable: false
-              - column:
-                  name: password
-                  type: VARCHAR(255)
-                  constraints:
-                    nullable: false
-              - column:
-                  name: user_type
-                  type: VARCHAR(255)
-                  constraints:
                     nullable: false
               - column:
                   name: is_deleted

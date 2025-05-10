@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 14-create-sports_gyms-table
+      author: bohdan-s
+      changes:
+        - createTable:
+            tableName: sports_gyms
+            columns:
+              - column:
+                  name: sport_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_sport_gym_sport
+                    references: sports(id)
+              - column:
+                  name: gym_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_sport_gym_gym
+                    references: gyms(id)
+        - addPrimaryKey:
+            tableName: sports_gyms
+            columnNames: sport_id, gym_id

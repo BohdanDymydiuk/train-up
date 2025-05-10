@@ -1,21 +1,20 @@
 databaseChangeLog:
   - changeSet:
-      id: 01-create-roles-table
+      id: 23-create-trainer_certificates-table
       author: bohdan-s
       changes:
         - createTable:
-            tableName: roles
+            tableName: trainer_certificates
             columns:
               - column:
-                  name: id
+                  name: trainer_id
                   type: BIGINT
-                  autoIncrement: true
                   constraints:
-                    primaryKey: true
                     nullable: false
+                    foreignKeyName: fk_trainer_certificate_trainer
+                    references: trainers(id)
               - column:
-                  name: name
+                  name: certificates
                   type: VARCHAR(255)
                   constraints:
-                    unique: true
                     nullable: false

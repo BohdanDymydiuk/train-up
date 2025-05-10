@@ -1,4 +1,4 @@
-package com.example.trainup.controllers;
+package com.example.trainup.controller;
 
 import com.example.trainup.dto.users.AthleteRegistrationRequestDto;
 import com.example.trainup.dto.users.AthleteResponseDto;
@@ -48,7 +48,7 @@ public class AuthenticationController {
         return registeredTrainer;
     }
 
-    @PostMapping("/register/athlete")
+    @PostMapping("/register/gym_owner")
     public GymOwnerResponseDto registerGymOwner(
             @Valid @RequestBody GymOwnerRegistrationRequestDto requestDto) {
         GymOwnerResponseDto registeredGymOwner = gymOwnerService.register(requestDto);

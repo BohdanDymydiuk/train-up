@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 02-create-user_credentials-table
+      id: 04-create-athletes-table
       author: bohdan-s
       changes:
         - createTable:
-            tableName: user_credentials
+            tableName: athletes
             columns:
               - column:
                   name: id
@@ -14,19 +14,39 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: email
-                  type: VARCHAR(255)
-                  constraints:
-                    unique: true
-                    nullable: false
-              - column:
-                  name: password
+                  name: first_name
                   type: VARCHAR(255)
                   constraints:
                     nullable: false
               - column:
-                  name: user_type
+                  name: last_name
                   type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: male_or_female
+                  type: CHAR(1)
+              - column:
+                  name: date_of_birth
+                  type: DATE
+              - column:
+                  name: profile_image_url
+                  type: VARCHAR(255)
+              - column:
+                  name: user_credentials_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_athlete_user_credentials
+                    references: user_credentials(id)
+              - column:
+                  name: email_permission
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_permission
+                  type: BOOLEAN
                   constraints:
                     nullable: false
               - column:

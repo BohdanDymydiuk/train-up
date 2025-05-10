@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 02-create-user_credentials-table
+      id: 10-create-addresses-table
       author: bohdan-s
       changes:
         - createTable:
-            tableName: user_credentials
+            tableName: addresses
             columns:
               - column:
                   name: id
@@ -14,18 +14,25 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: email
-                  type: VARCHAR(255)
-                  constraints:
-                    unique: true
-                    nullable: false
-              - column:
-                  name: password
+                  name: country
                   type: VARCHAR(255)
                   constraints:
                     nullable: false
               - column:
-                  name: user_type
+                  name: city
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city_district
+                  type: VARCHAR(255)
+              - column:
+                  name: street
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: house
                   type: VARCHAR(255)
                   constraints:
                     nullable: false

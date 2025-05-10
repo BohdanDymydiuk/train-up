@@ -42,6 +42,8 @@ public class Trainer extends BaseUser {
     @ManyToMany(mappedBy = "trainers")
     private Set<Gym> gyms = new HashSet<>();
 
+    @ElementCollection
+    @CollectionTable(name = "trainer_certificates", joinColumns = @JoinColumn(name = "trainer_id"))
     private Set<String> certificates;
 
     private String description;

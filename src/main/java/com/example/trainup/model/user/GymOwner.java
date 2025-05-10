@@ -33,5 +33,4 @@ public class GymOwner extends BaseUser {
     @OneToMany(mappedBy = "gymOwner")
     @NotEmpty(message = "Gyms can not be blank.")
     private Set<Gym> ownedGyms = new HashSet<>();
-
 }

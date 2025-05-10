@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 02-create-user_credentials-table
+      id: 20-create-reviews-table
       author: bohdan-s
       changes:
         - createTable:
-            tableName: user_credentials
+            tableName: reviews
             columns:
               - column:
                   name: id
@@ -14,24 +14,29 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: email
-                  type: VARCHAR(255)
-                  constraints:
-                    unique: true
-                    nullable: false
-              - column:
-                  name: password
-                  type: VARCHAR(255)
+                  name: rating
+                  type: INT
                   constraints:
                     nullable: false
               - column:
-                  name: user_type
+                  name: description
                   type: VARCHAR(255)
-                  constraints:
-                    nullable: false
               - column:
-                  name: is_deleted
-                  type: BOOLEAN
-                  defaultValueBoolean: false
+                  name: athlete_id
+                  type: BIGINT
                   constraints:
                     nullable: false
+                    foreignKeyName: fk_review_athlete
+                    references: athletes(id)
+              - column:
+                  name: gym_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_review_gym
+                    references: gyms(id)
+              - column:
+                  name: trainer_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_review_trainer
+                    references: trainers(id)

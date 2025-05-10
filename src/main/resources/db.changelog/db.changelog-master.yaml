@@ -1,47 +1,48 @@
 databaseChangeLog:
   - include:
-      file: classpath:/db.changelog/changes/01-create-roles-table.yaml
+      file: db.changelog/changes/01-create-roles-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/02-create-user_credentials-table.yaml
+      file: db.changelog/changes/02-create-user_credentials-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/03-create-user_credentials_roles-table.yaml
+      file: db.changelog/changes/03-create-admins-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/04-create-admins-table.yaml
+      file: db.changelog/changes/04-create-athletes-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/05-create-athletes-table.yaml
+      file: db.changelog/changes/05-create-athlete_phone_numbers-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/06-create-athlete_phone_numbers-table.yaml
+      file: db.changelog/changes/06-create-sports-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/07-create-gym_owners-table.yaml
+      file: db.changelog/changes/07-create-sports_athletes-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/08-create-gym_owner_phone_numbers-table.yaml
+      file: db.changelog/changes/08-create-gym_owners-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/09-create-trainers-table.yaml
+      file: db.changelog/changes/09-create-gym_owner_phone_numbers-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/10-create-trainer_phone_numbers-table.yaml
+      file: db.changelog/changes/10-create-addresses-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/11-create-trainer_certificates-table.yaml
+      file: db.changelog/changes/11-create-gyms-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/12-create-addresses-table.yaml
+      file: db.changelog/changes/12-create-gym_phone_numbers-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/13-create-gyms-table.yaml
+      file: db.changelog/changes/13-create-gym_workingHours-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/14-create-gym_phone_numbers-table.yaml
+      file: db.changelog/changes/14-create-sports_gyms-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/15-create-gym_working_hours-table.yaml
+      file: db.changelog/changes/15-create-gym_photos-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/16-create-gym_photos-table.yaml
+      file: db.changelog/changes/16-create-trainers-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/17-create-sports-table.yaml
+      file: db.changelog/changes/17-create-trainer_phone_numbers-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/18-create-sports_gyms-table.yaml
+      file: db.changelog/changes/18-create-sports_trainers-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/19-create-sports_trainers-table.yaml
+      file: db.changelog/changes/19-create-gyms_trainers-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/20-create-sports_athletes-table.yaml
+      file: db.changelog/changes/20-create-reviews-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/21-create-gyms_trainers-table.yaml
+      file: db.changelog/changes/21-create-events-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/22-create-reviews-table.yaml
+      file: db.changelog/changes/22-create-user_credentials_roles-table.yaml
   - include:
-      file: classpath:/db.changelog/changes/23-create-events-table.yaml
+      file: db.changelog/changes/23-create-trainer_certificates-table.yaml
+

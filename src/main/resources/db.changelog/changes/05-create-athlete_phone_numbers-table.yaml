@@ -1,21 +1,20 @@
 databaseChangeLog:
   - changeSet:
-      id: 01-create-roles-table
+      id: 05-create-athlete_phone_numbers-table
       author: bohdan-s
       changes:
         - createTable:
-            tableName: roles
+            tableName: athlete_phone_numbers
             columns:
               - column:
-                  name: id
+                  name: athlete_id
                   type: BIGINT
-                  autoIncrement: true
                   constraints:
-                    primaryKey: true
                     nullable: false
+                    foreignKeyName: fk_athlete_phone_athlete
+                    references: athletes(id)
               - column:
-                  name: name
+                  name: phone_numbers
                   type: VARCHAR(255)
                   constraints:
-                    unique: true
                     nullable: false
