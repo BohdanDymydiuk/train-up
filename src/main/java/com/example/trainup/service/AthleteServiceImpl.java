@@ -1,7 +1,7 @@
 package com.example.trainup.service;
 
-import com.example.trainup.dto.users.AthleteRegistrationRequestDto;
-import com.example.trainup.dto.users.AthleteResponseDto;
+import com.example.trainup.dto.users.athlete.AthleteRegistrationRequestDto;
+import com.example.trainup.dto.users.athlete.AthleteResponseDto;
 import com.example.trainup.mapper.AthleteMapper;
 import com.example.trainup.model.user.Athlete;
 import com.example.trainup.repository.AthleteRepository;

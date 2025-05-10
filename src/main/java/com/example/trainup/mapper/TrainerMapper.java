@@ -1,12 +1,15 @@
 package com.example.trainup.mapper;
 
 import com.example.trainup.config.MapperConfig;
-import com.example.trainup.dto.users.TrainerRegistrationRequestDto;
-import com.example.trainup.dto.users.TrainerResponseDto;
+import com.example.trainup.dto.users.trainer.TrainerAddressDto;
+import com.example.trainup.dto.users.trainer.TrainerRegistrationRequestDto;
+import com.example.trainup.dto.users.trainer.TrainerResponseDto;
+import com.example.trainup.model.Address;
 import com.example.trainup.model.Gym;
 import com.example.trainup.model.Sport;
 import com.example.trainup.model.user.Trainer;
 import com.example.trainup.model.user.UserCredentials;
+import com.example.trainup.repository.AddressRepository;
 import com.example.trainup.repository.GymRepository;
 import com.example.trainup.repository.SportRepository;
 import java.util.Set;
@@ -17,17 +20,23 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-@Mapper(config = MapperConfig.class, uses = {SportRepository.class, GymRepository.class})
+@Mapper(config = MapperConfig.class, uses = {
+        SportRepository.class,
+        GymRepository.class,
+        AddressRepository.class}
+)
 public interface TrainerMapper {
     @Mapping(source = "userCredentials.email", target = "email")
     @Mapping(source = "userCredentials.userType", target = "userType")
     @Mapping(source = "sports", target = "sportIds", qualifiedByName = "mapSportsToSportIds")
     @Mapping(source = "gyms", target = "gymIds", qualifiedByName = "mapGymsToGymIds")
+    @Mapping(source = "location", target = "location", qualifiedByName = "mapAddressToAddressDto")
     TrainerResponseDto toDto(Trainer trainer);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "sports", source = "sportIds", qualifiedByName = "mapSportIdsToSports")
     @Mapping(target = "gyms", source = "gymIds", qualifiedByName = "mapGymIdsToGyms")
+    @Mapping(target = "location", source = "location", qualifiedByName = "mapAddressDtoToAddress")
     @Mapping(target = "userCredentials", source = ".", qualifiedByName = "mapToUserCredentials")
     @Mapping(target = "reviews", ignore = true)
     @Mapping(target = "phoneNumbers", source = "phoneNumbers")
@@ -38,7 +47,8 @@ public interface TrainerMapper {
     Trainer toModel(TrainerRegistrationRequestDto requestDto,
                     @Context PasswordEncoder passwordEncoder,
                     @Context SportRepository sportRepository,
-                    @Context GymRepository gymRepository);
+                    @Context GymRepository gymRepository,
+                    @Context AddressRepository addressRepository);
 
     default String encodePassword(String rawPassword, PasswordEncoder encoder) {
         return encoder.encode(rawPassword);
@@ -97,5 +107,40 @@ public interface TrainerMapper {
         userCredentials.setPassword(encodePassword(requestDto.password(), passwordEncoder));
         userCredentials.setUserType(UserCredentials.UserType.TRAINER);
         return userCredentials;
+    }
+
+    @Named("mapAddressDtoToAddress")
+    default Address mapAddressDtoToAddress(TrainerAddressDto addressDto,
+                                           @Context AddressRepository addressRepository) {
+        if (addressDto == null) {
+            return null;
+        }
+
+        Address address = addressRepository.findByCountryAndCityAndStreetAndHouse(
+                addressDto.country(), addressDto.city(), addressDto.street(), addressDto.house()
+        ).orElseGet(() -> {
+            Address newAddress = new Address();
+            newAddress.setCountry(addressDto.country());
+            newAddress.setCity(addressDto.city());
+            newAddress.setCityDistrict(addressDto.cityDistrict());
+            newAddress.setStreet(addressDto.street());
+            newAddress.setHouse(addressDto.house());
+            return addressRepository.save(newAddress);
+        });
+        return address;
+    }
+
+    @Named("mapAddressToAddressDto")
+    default TrainerAddressDto mapAddressToAddressDto(Address address) {
+        if (address == null) {
+            return null;
+        }
+        return new TrainerAddressDto(
+                address.getCountry(),
+                address.getCity(),
+                address.getCityDistrict(),
+                address.getStreet(),
+                address.getHouse()
+        );
     }
 }

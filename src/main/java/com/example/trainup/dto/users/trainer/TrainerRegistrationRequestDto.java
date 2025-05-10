@@ -1,4 +1,4 @@
-package com.example.trainup.dto.users;
+package com.example.trainup.dto.users.trainer;
 
 import com.example.trainup.validation.EmailUnique;
 import com.example.trainup.validation.RegexConstants;
@@ -45,6 +45,10 @@ public record TrainerRegistrationRequestDto(
         Set<Long> sportIds,
 
         Set<Long> gymIds,
+
+        TrainerAddressDto location,
+
+        boolean onlineTraining,
 
         List<String> certificates,
 

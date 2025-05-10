@@ -40,8 +40,17 @@ databaseChangeLog:
                     foreignKeyName: fk_trainer_user_credentials
                     references: user_credentials(id)
               - column:
-                  name: certificates
-                  type: VARCHAR(255)
+                  name: address_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_trainer_address
+                    references: addresses(id)
+              - column:
+                  name: online_training
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
               - column:
                   name: description
                   type: VARCHAR(255)

@@ -1,9 +1,9 @@
-package com.example.trainup.dto.users;
+package com.example.trainup.dto.users.athlete;
 
 import java.time.LocalDate;
 import java.util.Set;
 
-public record TrainerResponseDto(
+public record AthleteResponseDto(
         Long id,
         String firstName,
         String lastName,
@@ -14,9 +14,7 @@ public record TrainerResponseDto(
         String userType,
         Set<String> phoneNumbers,
         Set<Long> sportIds,
-        Set<Long> gymIds,
-        String description,
-        String socialMediaLinks,
-        Float overallRating
+        boolean emailPermission,
+        boolean phonePermission
 ) {
 }

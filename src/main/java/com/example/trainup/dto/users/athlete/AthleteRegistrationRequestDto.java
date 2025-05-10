@@ -1,4 +1,4 @@
-package com.example.trainup.dto.users;
+package com.example.trainup.dto.users.athlete;
 
 import com.example.trainup.validation.EmailUnique;
 import com.example.trainup.validation.FieldMatch;

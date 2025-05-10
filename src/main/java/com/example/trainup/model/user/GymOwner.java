@@ -31,6 +31,5 @@ public class GymOwner extends BaseUser {
     private Set<String> phoneNumbers = new HashSet<>();
 
     @OneToMany(mappedBy = "gymOwner")
-    @NotEmpty(message = "Gyms can not be blank.")
     private Set<Gym> ownedGyms = new HashSet<>();
 }
