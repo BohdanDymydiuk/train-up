@@ -19,11 +19,13 @@ public class AthleteServiceImpl implements AthleteService {
     private final PasswordEncoder passwordEncoder;
     private final AthleteRepository athleteRepository;
     private final SportRepository sportRepository;
+    private final UserCredentialService userCredentialService;
 
     @Override
     public AthleteResponseDto register(AthleteRegistrationRequestDto requestDto) {
         Athlete athlete = athleteMapper.toModel(requestDto, passwordEncoder, sportRepository);
         athleteRepository.save(athlete);
+        userCredentialService.assignRoleBasedOnUserType(athlete.getUserCredentials());
         return athleteMapper.toDto(athlete);
     }
 }

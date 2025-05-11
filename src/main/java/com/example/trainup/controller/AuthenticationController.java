@@ -1,11 +1,11 @@
 package com.example.trainup.controller;
 
-import com.example.trainup.dto.users.GymOwnerRegistrationRequestDto;
-import com.example.trainup.dto.users.GymOwnerResponseDto;
 import com.example.trainup.dto.users.UserLoginRequestDto;
 import com.example.trainup.dto.users.UserLoginResponseDto;
 import com.example.trainup.dto.users.athlete.AthleteRegistrationRequestDto;
 import com.example.trainup.dto.users.athlete.AthleteResponseDto;
+import com.example.trainup.dto.users.gymowner.GymOwnerRegistrationRequestDto;
+import com.example.trainup.dto.users.gymowner.GymOwnerResponseDto;
 import com.example.trainup.dto.users.trainer.TrainerRegistrationRequestDto;
 import com.example.trainup.dto.users.trainer.TrainerResponseDto;
 import com.example.trainup.security.AuthenticationService;

@@ -21,13 +21,14 @@ public class TrainerServiceImpl implements TrainerService {
     private final SportRepository sportRepository;
     private final GymRepository gymRepository;
     private final AddressRepository addressRepository;
+    private final UserCredentialService userCredentialService;
 
     @Override
     public TrainerResponseDto register(TrainerRegistrationRequestDto requestDto) {
         Trainer trainer = trainerMapper
                 .toModel(requestDto, encoder, sportRepository, gymRepository, addressRepository);
         trainerRepository.save(trainer);
+        userCredentialService.assignRoleBasedOnUserType(trainer.getUserCredentials());
         return trainerMapper.toDto(trainer);
-
     }
 }

@@ -1,4 +1,4 @@
-package com.example.trainup.dto.users;
+package com.example.trainup.dto.users.gymowner;
 
 import java.time.LocalDate;
 import java.util.Set;

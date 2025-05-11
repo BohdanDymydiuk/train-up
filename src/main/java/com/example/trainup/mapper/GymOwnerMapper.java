@@ -1,8 +1,8 @@
 package com.example.trainup.mapper;
 
 import com.example.trainup.config.MapperConfig;
-import com.example.trainup.dto.users.GymOwnerRegistrationRequestDto;
-import com.example.trainup.dto.users.GymOwnerResponseDto;
+import com.example.trainup.dto.users.gymowner.GymOwnerRegistrationRequestDto;
+import com.example.trainup.dto.users.gymowner.GymOwnerResponseDto;
 import com.example.trainup.model.Gym;
 import com.example.trainup.model.user.GymOwner;
 import com.example.trainup.model.user.UserCredentials;
