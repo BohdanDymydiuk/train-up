@@ -18,6 +18,7 @@ export const SignUpModal: React.FC<Props> = ({ setIsModalShown }) => {
           className={styles.cross}
           onClick={onClickHandler}
         />
+        <h3 className={styles.title}>Зареєструйтеся</h3>
       </div>
     </div>
   );

@@ -9,6 +9,10 @@
   border-radius: 16px;
   border: 1px solid $border-bg-color;
   overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: opacity $trans-dur, transform $trans-dur;
 
   .list {
     padding: 0;

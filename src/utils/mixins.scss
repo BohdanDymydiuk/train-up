@@ -67,6 +67,12 @@
   font-size: 20px;
 }
 
+@mixin inter-600-30 {
+  @include inter-600;
+
+  font-size: 30px;
+}
+
 @mixin inter-600-40 {
   @include inter-600;
 

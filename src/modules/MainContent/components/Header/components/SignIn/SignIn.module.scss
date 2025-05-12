@@ -1,3 +1,5 @@
+$btn-active-color: green;
+
 .wrapper {
   position: relative;
   height: min-content;
@@ -9,16 +11,33 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 8px;
     padding: 8px 16px;
     background-color: $btn-bg-color;
     cursor: pointer;
+    transition: border-color $trans-dur;
 
     @include inter-500-24;
 
     &:hover {
       border-color: $primary-color;
     }
+
+    svg path {
+      transition: fill $trans-dur;
+    }
+
+    &:active {
+      border-color: $btn-active-color;
+
+      svg path {
+        fill: $btn-active-color;
+      }
+    }
   }
+}
+
+:export {
+  btnFocusColor: green;
 }
