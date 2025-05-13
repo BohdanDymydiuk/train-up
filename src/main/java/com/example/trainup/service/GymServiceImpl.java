@@ -12,6 +12,7 @@ import com.example.trainup.repository.SportRepository;
 import com.example.trainup.repository.TrainerRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @RequiredArgsConstructor
 @Transactional
+@Slf4j
 public class GymServiceImpl implements GymService {
     private final GymRepository gymRepository;
     private final GymMapper gymMapper;
@@ -43,6 +45,12 @@ public class GymServiceImpl implements GymService {
     @Override
     @Transactional(readOnly = true)
     public List<GymResponseDto> getAllGyms(GymFilterRequestDto filter, Pageable pageable) {
+        log.debug("Fetching gyms with filter: {}", filter);
+        log.debug("Name: {}, Country: {}, City: {}, District: {}, Street: {}, House: {}, "
+                        + "SportIds: {}, TrainerIds: {}, Rating: {}",
+                filter.name(), filter.locationCountry(), filter.locationCity(),
+                filter.locationCityDistrict(), filter.locationStreet(), filter.locationHouse(),
+                filter.sportIds(), filter.trainerIds(), filter.overallRating());
         Page<Gym> gymPage = gymRepository.findGymsByCriteria(
                 filter.name(),
                 filter.locationCountry(),
@@ -55,6 +63,8 @@ public class GymServiceImpl implements GymService {
                 filter.overallRating(),
                 pageable
         );
+
+        log.debug("Found {} gyms", gymPage.getTotalElements());
         return gymPage.stream()
                 .map(gymMapper::toDto)
                 .toList();
