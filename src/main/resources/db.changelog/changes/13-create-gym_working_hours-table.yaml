@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: 13-create-gym_workingHours-table
+      id: 13-create-gym_working_hours-table
       author: bohdan-s
       changes:
         - createTable:
-            tableName: gym_workingHours
+            tableName: gym_working_hours
             columns:
               - column:
                   name: gym_id

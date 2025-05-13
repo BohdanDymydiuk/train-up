@@ -35,20 +35,10 @@ public class Sport {
     @Column(unique = true, nullable = false)
     private String sportName;
 
-    @ManyToMany
-    @JoinTable(
-            name = "sports_gyms",
-            joinColumns = @JoinColumn(name = "sport_id"),
-            inverseJoinColumns = @JoinColumn(name = "gym_id")
-    )
+    @ManyToMany(mappedBy = "sports")
     private Set<Gym> gyms = new HashSet<>();
 
-    @ManyToMany
-    @JoinTable(
-            name = "sports_trainers",
-            joinColumns = @JoinColumn(name = "sport_id"),
-            inverseJoinColumns = @JoinColumn(name = "trainer_id")
-    )
+    @ManyToMany(mappedBy = "sports")
     private Set<Trainer> trainers = new HashSet<>();
 
     @ManyToMany

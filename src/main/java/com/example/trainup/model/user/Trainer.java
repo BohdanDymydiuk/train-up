@@ -10,6 +10,7 @@ import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
@@ -35,8 +36,12 @@ public class Trainer extends BaseUser {
     @NotEmpty(message = "Contact phone number can not be empty.")
     private Set<String> phoneNumbers = new HashSet<>();
 
-    @ManyToMany(mappedBy = "trainers")
-    @NotEmpty(message = "A trainer must be associated with at least one sport.")
+    @ManyToMany
+    @JoinTable(
+            name = "sports_trainers",
+            joinColumns = @JoinColumn(name = "trainer_id"),
+            inverseJoinColumns = @JoinColumn(name = "sport_id")
+    )
     private Set<Sport> sports = new HashSet<>();
 
     @ManyToMany(mappedBy = "trainers")
@@ -57,7 +62,9 @@ public class Trainer extends BaseUser {
 
     private String socialMediaLinks;
 
-    private Float overallRating;
+    private Float overallRating = 0.0f;
+
+    private Integer numberOfReviews = 0;
 
     @OneToMany(mappedBy = "trainer")
     private List<Review> reviews;

@@ -60,6 +60,11 @@ databaseChangeLog:
               - column:
                   name: overall_rating
                   type: FLOAT
+                  defaultValue: 0.0
+              - column:
+                  name: number_of_reviews
+                  type: INTEGER
+                  defaultValue: 0.0
               - column:
                   name: is_deleted
                   type: BOOLEAN

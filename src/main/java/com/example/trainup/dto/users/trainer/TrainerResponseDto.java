@@ -18,6 +18,7 @@ public record TrainerResponseDto(
         TrainerAddressDto location,
         String description,
         String socialMediaLinks,
-        Float overallRating
+        Float overallRating,
+        Integer numberOfReviews
 ) {
 }

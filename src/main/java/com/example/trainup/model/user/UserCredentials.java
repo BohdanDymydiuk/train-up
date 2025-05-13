@@ -49,7 +49,7 @@ public class UserCredentials implements UserDetails {
     @Column(nullable = false)
     private UserType userType;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_credentials_roles",
             joinColumns = @JoinColumn(name = "user_credentials_id"),

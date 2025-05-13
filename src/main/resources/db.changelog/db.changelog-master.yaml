@@ -24,7 +24,7 @@ databaseChangeLog:
   - include:
       file: db.changelog/changes/12-create-gym_phone_numbers-table.yaml
   - include:
-      file: db.changelog/changes/13-create-gym_workingHours-table.yaml
+      file: db.changelog/changes/13-create-gym_working_hours-table.yaml
   - include:
       file: db.changelog/changes/14-create-sports_gyms-table.yaml
   - include:
@@ -45,4 +45,6 @@ databaseChangeLog:
       file: db.changelog/changes/22-create-user_credentials_roles-table.yaml
   - include:
       file: db.changelog/changes/23-create-trainer_certificates-table.yaml
+  - include:
+        file: db.changelog/changes/24-insert-sports-data.yaml
 

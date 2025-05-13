@@ -20,7 +20,6 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.List;
@@ -51,7 +50,12 @@ public class Gym {
     @JoinColumn(name = "address_id", nullable = false, unique = true)
     private Address location;
 
-    @ManyToMany(mappedBy = "gyms")
+    @ManyToMany
+    @JoinTable(
+            name = "sports_gyms",
+            joinColumns = @JoinColumn(name = "gym_id"),
+            inverseJoinColumns = @JoinColumn(name = "sport_id")
+    )
     @NotEmpty(message = "A gym must be associated with at least one sport.")
     private Set<Sport> sports = new HashSet<>();
 
@@ -61,14 +65,12 @@ public class Gym {
 
     @ElementCollection
     @CollectionTable(name = "gym_phone_numbers", joinColumns = @JoinColumn(name = "gym_id"))
-    //    TODO: move validation to DTO
-    @Pattern(regexp = "^\\+38 \\(\\d{3}\\) - \\d{3}-\\d{4}$",
-            message = "Phone number should be in the format +38 (XXX) - XXX-XXXX")
+    @Column(name = "phone_numbers", columnDefinition = "VARCHAR(255)")
     @NotEmpty(message = "Phone number can not be empty.")
     private Set<String> phoneNumbers;
 
     @ElementCollection
-    @CollectionTable(name = "gym_workingHours", joinColumns = @JoinColumn(name = "gym_id"))
+    @CollectionTable(name = "gym_working_hours", joinColumns = @JoinColumn(name = "gym_id"))
     private Set<WorkingHoursEntry> workingHours = new HashSet<>();
 
     @ManyToMany
@@ -79,9 +81,11 @@ public class Gym {
     )
     private Set<Trainer> trainers = new HashSet<>();
 
-    private Float overallRating;
+    private Float overallRating = 0.0f;
 
-    @OneToMany(mappedBy = "gym")
+    private Integer numberOfReviews = 0;
+
+    @OneToMany(mappedBy = "gym", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> reviews;
 
     @ManyToOne(fetch = FetchType.LAZY)
