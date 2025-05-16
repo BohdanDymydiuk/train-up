@@ -1,6 +1,7 @@
 package com.example.trainup.repository;
 
 import com.example.trainup.model.Gym;
+import com.example.trainup.model.user.GymOwner;
 import java.util.Set;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -39,4 +40,8 @@ public interface GymRepository extends JpaRepository<Gym, Long> {
             @Param("overallRating") Float overallRating,
             Pageable pageable
     );
+
+    Page<Gym> getGymsByGymOwner(GymOwner gymOwner, Pageable pageable);
+
+    Gym getGymById(Long id);
 }

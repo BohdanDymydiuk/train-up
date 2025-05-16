@@ -71,7 +71,7 @@ public class Gym {
 
     @ElementCollection
     @CollectionTable(name = "gym_working_hours", joinColumns = @JoinColumn(name = "gym_id"))
-    private Set<WorkingHoursEntry> workingHours = new HashSet<>();
+        private Set<WorkingHoursEntry> workingHours = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
