@@ -13,6 +13,7 @@ import com.example.trainup.model.user.Trainer;
 import com.example.trainup.repository.AddressRepository;
 import com.example.trainup.repository.SportRepository;
 import com.example.trainup.repository.TrainerRepository;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.mapstruct.AfterMapping;
@@ -47,7 +48,9 @@ public interface GymMapper {
     @AfterMapping
     default void linkPhotosToGym(@MappingTarget Gym gym) {
         if (gym.getPhotos() != null && !gym.getPhotos().isEmpty()) {
-            gym.getPhotos().forEach(photo -> photo.setGym(gym));
+            Set<GymPhoto> photosCopy = new HashSet<>(gym.getPhotos());
+            gym.getPhotos().clear();
+            photosCopy.forEach(gym::addPhoto);
         }
     }
 

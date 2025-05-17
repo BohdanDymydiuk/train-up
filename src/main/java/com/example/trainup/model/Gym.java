@@ -100,4 +100,21 @@ public class Gym {
     @Column(nullable = false)
     @Setter(AccessLevel.PROTECTED)
     private boolean isDeleted = false;
+
+    public void addPhoto(GymPhoto photo) {
+        photos.add(photo);
+        photo.setGym(this);
+    }
+
+    public void removePhoto(GymPhoto photo) {
+        photos.remove(photo);
+        photo.setGym(null);
+    }
+
+    public void setPhotos(Set<GymPhoto> newPhotos) {
+        this.photos.clear();
+        if (newPhotos != null) {
+            newPhotos.forEach(this::addPhoto);
+        }
+    }
 }

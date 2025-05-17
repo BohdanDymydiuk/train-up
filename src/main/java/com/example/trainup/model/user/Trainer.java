@@ -52,7 +52,7 @@ public class Trainer extends BaseUser {
     private Address location;
 
     @Column(nullable = false)
-    private boolean onlineTraining = false;
+    private Boolean onlineTraining = false;
 
     @ElementCollection
     @CollectionTable(name = "trainer_certificates", joinColumns = @JoinColumn(name = "trainer_id"))

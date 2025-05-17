@@ -81,9 +81,11 @@ public class GymController {
 
     @GetMapping("/my")
     public Page<GymResponseDto> getGymsByGymsOwnerId(
-            @PageableDefault(size = 10) Pageable pageable) {
-        GymOwner gymOwner = currentUserService.getCurrentUserByType(GymOwner.class);
-        Page<GymResponseDto> gymOwnerGyms = gymService.getGymsByGymOwner(gymOwner, pageable);
+            @PageableDefault(size = 10) Pageable pageable,
+            Authentication authentication) {
+        log.debug("Fetching gyms for current gym owner with pageable: {}", pageable);
+
+        Page<GymResponseDto> gymOwnerGyms = gymService.getGymsByGymOwner(authentication, pageable);
         return gymOwnerGyms;
     }
 
@@ -106,7 +108,7 @@ public class GymController {
     @PatchMapping("/{id}")
     @PreAuthorize("@gymServiceImpl.canUserModifyGym(#authentication.name, #id)")
     public GymResponseDto updateGym(@PathVariable @Positive Long id,
-                                    @RequestBody @Valid GymUpdateRequestDto requestDto,
+                                    @RequestBody GymUpdateRequestDto requestDto,
                                     Authentication authentication) {
         GymResponseDto updatedGym = gymService.updateGym(id, requestDto);
         return updatedGym;

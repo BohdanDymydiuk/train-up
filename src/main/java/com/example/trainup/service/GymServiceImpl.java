@@ -29,6 +29,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -43,6 +44,7 @@ public class GymServiceImpl implements GymService {
     private final TrainerRepository trainerRepository;
     private final AddressRepository addressRepository;
     private final UserCredentialsRepository userCredentialsRepository;
+    private final CurrentUserService currentUserService;
 
     @Override
     public GymResponseDto save(GymOwner gymOwner, GymRegistrationRequestDto requestDto) {
@@ -87,7 +89,15 @@ public class GymServiceImpl implements GymService {
 
     @Override
     @Transactional(readOnly = true)
-    public Page<GymResponseDto> getGymsByGymOwner(GymOwner gymOwner, Pageable pageable) {
+    public Page<GymResponseDto> getGymsByGymOwner(Authentication authentication,
+                                                  Pageable pageable) {
+        if (authentication == null
+                || !(authentication.getPrincipal() instanceof UserCredentials)) {
+            throw new IllegalStateException("User is not authenticated "
+                    + "or principal is not UserCredentials");
+        }
+        GymOwner gymOwner = currentUserService.getCurrentUserByType(GymOwner.class);
+
         Page<Gym> gymsByGymOwner = gymRepository.getGymsByGymOwner(gymOwner, pageable);
 
         Page<GymResponseDto> gymsByGymOwnerDto = gymsByGymOwner.map(gymMapper::toDto);

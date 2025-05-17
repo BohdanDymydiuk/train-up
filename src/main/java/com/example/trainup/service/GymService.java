@@ -8,13 +8,14 @@ import com.example.trainup.model.user.GymOwner;
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.Authentication;
 
 public interface GymService {
     GymResponseDto save(GymOwner gymOwner, GymRegistrationRequestDto requestDto);
 
     List<GymResponseDto> getAllGyms(GymFilterRequestDto filter, Pageable pageable);
 
-    Page<GymResponseDto> getGymsByGymOwner(GymOwner gymOwner, Pageable pageable);
+    Page<GymResponseDto> getGymsByGymOwner(Authentication authentication, Pageable pageable);
 
     GymResponseDto getGymById(Long id);
 

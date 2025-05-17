@@ -48,7 +48,7 @@ public record TrainerRegistrationRequestDto(
 
         TrainerAddressDto location,
 
-        boolean onlineTraining,
+        Boolean onlineTraining,
 
         List<String> certificates,
 
