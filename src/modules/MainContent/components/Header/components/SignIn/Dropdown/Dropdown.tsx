@@ -6,7 +6,7 @@ import { NavLinks } from '../../../../../../../enums/NavLinks';
 import styles from './Dropdown.module.scss';
 
 interface Props {
-  isDPShown: boolean;
+  isDpShown: boolean;
 }
 
 enum SignIn {
@@ -15,20 +15,20 @@ enum SignIn {
   admin = 'Увійти як адміністратор залу',
 }
 
-export const Dropdown: React.FC<Props> = ({ isDPShown }) => {
+export const Dropdown: React.FC<Props> = ({ isDpShown }) => {
   const navigate = useNavigate();
 
-  const dropdownCSSProps: React.CSSProperties = {
+  const dpCSSProps: React.CSSProperties = {
     opacity: 1,
     transform: 'scaleY(1)',
   };
 
-  const dropdownStyles = isDPShown ? dropdownCSSProps : {};
+  const dpStyles = isDpShown ? dpCSSProps : {};
 
   const signInHandler = () => navigate(NavLinks.signIn);
 
   return (
-    <div className={styles.dropdown} style={dropdownStyles}>
+    <div className={styles.dropdown} style={dpStyles}>
       <ul className={styles.list}>
         {Object.values(SignIn).map((item, index) => {
           return (

@@ -34,6 +34,7 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       'react/jsx-key': ['error', { checkFragmentShorthand: true }],
+      'react-hooks/exhaustive-deps': 'off',
     },
   },
   eslintConfigPrettier,

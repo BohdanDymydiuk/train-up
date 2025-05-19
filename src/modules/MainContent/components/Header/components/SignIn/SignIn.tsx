@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { ChevronDown } from '../../../../../../reusables/ChevronDown';
 
@@ -7,22 +7,43 @@ import { Dropdown } from './Dropdown';
 import styles from './SignIn.module.scss';
 
 export const SignIn: React.FC = () => {
-  const [isDPActive, setIsDPActive] = useState(false);
-  const [isDPShown, setIsDPShown] = useState(false);
+  const [isDpActive, setIsDpActive] = useState(false);
+  const [isDpShown, setIsDpShown] = useState(false);
+
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   // #region handlers
 
+  const closeDpHandler = () => {
+    setIsDpShown(false);
+    setTimeout(() => setIsDpActive(false), 100);
+  };
+
   const onClickHandler = () => {
-    if (!isDPActive && !isDPShown) {
-      setIsDPActive(true);
-      setTimeout(() => setIsDPShown(true), 100);
+    if (!isDpActive && !isDpShown) {
+      setIsDpActive(true);
+      setTimeout(() => setIsDpShown(true), 100);
     } else {
-      setIsDPShown(false);
-      setTimeout(() => setIsDPActive(false), 100);
+      closeDpHandler();
     }
   };
 
-  const onBlurHandler = () => setTimeout(() => onClickHandler(), 100);
+  // #endregion
+  // #region useEffects
+
+  useEffect(() => {
+    const outsideClickHandler = (event: MouseEvent) => {
+      if (!(wrapperRef.current as Node).contains(event.target as HTMLElement)) {
+        closeDpHandler();
+      }
+    };
+
+    if (isDpActive) {
+      window.addEventListener('click', outsideClickHandler);
+    }
+
+    return () => window.removeEventListener('click', outsideClickHandler);
+  }, [isDpActive]);
 
   // #endregion
   // #region styles
@@ -35,26 +56,25 @@ export const SignIn: React.FC = () => {
     fill: `${styles.btnFocusColor}`,
   };
 
-  const buttonStyles = isDPActive ? buttonCSSProps : {};
-  const svgPathStyles = isDPActive ? svgPathCSSProps : {};
+  const buttonStyles = isDpActive ? buttonCSSProps : {};
+  const svgPathStyles = isDpActive ? svgPathCSSProps : {};
 
   // #endregion
 
-  const dropdownProps = { isDPShown };
+  const dropdownProps = { isDpShown };
   const svgProps = { svgPathStyles };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} ref={wrapperRef}>
       <button
         className={styles.signin}
         onClick={onClickHandler}
-        onBlur={onBlurHandler}
         style={buttonStyles}
       >
         <div>Увійти</div>
         <ChevronDown {...svgProps} />
       </button>
-      {isDPActive && <Dropdown {...dropdownProps} />}
+      {isDpActive && <Dropdown {...dropdownProps} />}
     </div>
   );
 };
