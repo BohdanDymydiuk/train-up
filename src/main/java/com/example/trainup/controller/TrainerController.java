@@ -3,13 +3,12 @@ package com.example.trainup.controller;
 import com.example.trainup.dto.users.trainer.TrainerFilterRequestDto;
 import com.example.trainup.dto.users.trainer.TrainerResponseDto;
 import com.example.trainup.dto.users.trainer.TrainerUpdateRequestDto;
-import com.example.trainup.service.CurrentUserService;
 import com.example.trainup.service.TrainerService;
 import jakarta.validation.constraints.Positive;
 import java.util.List;
 import java.util.Set;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
@@ -29,10 +28,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/trainer")
 @Validated
 @RequiredArgsConstructor
-@Slf4j
+@Log4j2
 public class TrainerController {
     private final TrainerService trainerService;
-    private final CurrentUserService currentUserService;
 
     @GetMapping
     public List<TrainerResponseDto> getAllTrainers(

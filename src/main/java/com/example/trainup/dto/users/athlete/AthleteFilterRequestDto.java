@@ -3,16 +3,11 @@ package com.example.trainup.dto.users.athlete;
 import java.time.LocalDate;
 import java.util.Set;
 
-public record AthleteResponseDto(
-        Long id,
+public record AthleteFilterRequestDto(
         String firstName,
         String lastName,
         Character maleOrFemale,
         LocalDate dateOfBirth,
-        String profileImageUrl,
-        String email,
-        String userType,
-        Set<String> phoneNumbers,
         Set<Long> sportIds,
         Boolean emailPermission,
         Boolean phonePermission

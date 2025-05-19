@@ -2,6 +2,7 @@ package com.example.trainup.model.user;
 
 import com.example.trainup.model.Address;
 import com.example.trainup.model.Gym;
+import com.example.trainup.model.Rateable;
 import com.example.trainup.model.Review;
 import com.example.trainup.model.Sport;
 import jakarta.persistence.CollectionTable;
@@ -30,7 +31,7 @@ import org.hibernate.annotations.SQLDelete;
 @NoArgsConstructor
 @SQLDelete(sql = "UPDATE trainers SET is_deleted=true WHERE id=?")
 @Table(name = "trainers")
-public class Trainer extends BaseUser {
+public class Trainer extends BaseUser implements Rateable {
     @ElementCollection
     @CollectionTable(name = "trainer_phone_numbers", joinColumns = @JoinColumn(name = "trainer_id"))
     @NotEmpty(message = "Contact phone number can not be empty.")

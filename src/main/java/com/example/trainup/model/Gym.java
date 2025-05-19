@@ -38,7 +38,7 @@ import org.hibernate.annotations.Where;
 @SQLDelete(sql = "UPDATE gyms SET is_deleted=true WHERE id=?")
 @Where(clause = "is_deleted=false")
 @Table(name = "gyms")
-public class Gym {
+public class Gym implements Rateable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

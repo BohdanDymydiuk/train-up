@@ -119,7 +119,7 @@ public class TrainerServiceImpl implements TrainerService {
         String email = auth.getName();
 
         Trainer trainer = trainerRepository.findById(trainerId)
-                .orElseThrow(() -> new EntityNotFoundException("Cannot find Trainer by id:"
+                .orElseThrow(() -> new EntityNotFoundException("Can not find Trainer by id:"
                         + trainerId));
 
         String trainerEmail = trainer.getUserCredentials().getEmail();

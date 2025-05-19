@@ -33,9 +33,9 @@ public class Athlete extends BaseUser {
 
     @NotNull(message = "Would you like to receive email updates about upcoming events, "
             + "open workouts, competitions, and promotional offers?")
-    private boolean emailPermission;
+    private Boolean emailPermission;
 
     @NotNull(message = "Would you like to receive SMS updates about upcoming events, "
             + "open workouts, competitions, and promotional offers?")
-    private boolean phonePermission;
+    private Boolean phonePermission;
 }

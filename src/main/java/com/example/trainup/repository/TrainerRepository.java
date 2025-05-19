@@ -56,6 +56,7 @@ public interface TrainerRepository extends JpaRepository<Trainer, Long> {
 
     List<Trainer> findTrainerById(Long id);
 
-    @Query("SELECT t FROM Trainer t JOIN t.userCredentials uc WHERE uc.email = :email")
+    @Query("SELECT t FROM Trainer t JOIN t.userCredentials uc WHERE uc.email = :email "
+            + "AND t.isDeleted = false")
     Optional<Trainer> findByEmail(@Param("email") String email);
 }
