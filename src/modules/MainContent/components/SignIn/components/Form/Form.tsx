@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router';
 
-import { InputChangeEvent } from '../../../../types/Events';
+import { InputChangeEvent } from '../../../../../../types/Events';
 
 import { Buttons } from './components/Buttons';
 import { Inputs } from './components/Inputs';

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { AppleSVG } from '../../../../../../reusables/AppleSVG';
-import { GoogleSVG } from '../../../../../../reusables/GoogleSVG';
+import { AppleSVG } from '../../../../../../../../reusables/svgs/AppleSVG';
+import { GoogleSVG } from '../../../../../../../../reusables/svgs/GoogleSVG';
 
 import styles from './Buttons.module.scss';
 

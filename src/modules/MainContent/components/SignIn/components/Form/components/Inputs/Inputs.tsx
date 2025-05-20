@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { InputChangeEvent } from '../../../../../../types/Events';
+import { InputChangeEvent } from '../../../../../../../../types/Events';
 
 import styles from './Inputs.module.scss';
 

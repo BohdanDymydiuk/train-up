@@ -48,16 +48,16 @@ export const SignIn: React.FC = () => {
   // #endregion
   // #region styles
 
-  const buttonCSSProps: React.CSSProperties = {
+  const buttonCssProps: React.CSSProperties = {
     borderColor: `${styles.btnFocusColor}`,
   };
 
-  const svgPathCSSProps: React.CSSProperties = {
+  const svgPathCssProps: React.CSSProperties = {
     fill: `${styles.btnFocusColor}`,
   };
 
-  const buttonStyles = isDpActive ? buttonCSSProps : {};
-  const svgPathStyles = isDpActive ? svgPathCSSProps : {};
+  const buttonStyles = isDpActive ? buttonCssProps : {};
+  const svgPathStyles = isDpActive ? svgPathCssProps : {};
 
   // #endregion
 

@@ -3,10 +3,10 @@
   margin: 0;
   list-style: none;
   display: flex;
-  gap: 32px;
+  gap: 16px;
 
   .link {
-    @include inter-500-24;
+    @include inter-500-16;
 
     text-decoration: none;
     color: $primary-color;

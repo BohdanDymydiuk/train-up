@@ -7,8 +7,8 @@ interface Props {
 export const ChevronDown: React.FC<Props> = ({ svgPathStyles }) => {
   return (
     <svg
-      width='20'
-      height='13'
+      width='15'
+      height='7'
       viewBox='0 0 20 13'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

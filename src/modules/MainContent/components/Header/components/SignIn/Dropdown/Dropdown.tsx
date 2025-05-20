@@ -18,12 +18,12 @@ enum SignIn {
 export const Dropdown: React.FC<Props> = ({ isDpShown }) => {
   const navigate = useNavigate();
 
-  const dpCSSProps: React.CSSProperties = {
+  const dpCssProps: React.CSSProperties = {
     opacity: 1,
     transform: 'scaleY(1)',
   };
 
-  const dpStyles = isDpShown ? dpCSSProps : {};
+  const dpStyles = isDpShown ? dpCssProps : {};
 
   const signInHandler = () => navigate(NavLinks.signIn);
 
