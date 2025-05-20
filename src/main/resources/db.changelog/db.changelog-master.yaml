@@ -47,4 +47,5 @@ databaseChangeLog:
       file: db.changelog/changes/23-create-trainer_certificates-table.yaml
   - include:
         file: db.changelog/changes/24-insert-sports-data.yaml
-
+  - include:
+        file: db.changelog/changes/25-insert-admin-to-admins.yaml

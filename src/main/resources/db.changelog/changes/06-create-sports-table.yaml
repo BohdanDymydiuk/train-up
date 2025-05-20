@@ -15,7 +15,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: sport_name
-                  type: VARCHAR(255)
+                  type: VARCHAR(50)
                   constraints:
                     unique: true
                     nullable: false
@@ -25,3 +25,9 @@ databaseChangeLog:
                   defaultValueBoolean: false
                   constraints:
                     nullable: false
+        - createIndex:
+            indexName: idx_sports_sport_name
+            tableName: sports
+            columns:
+              - column:
+                  name: sport_name

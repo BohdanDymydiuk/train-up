@@ -1,5 +1,6 @@
 package com.example.trainup.exception;
 
+import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -63,5 +64,10 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
         body.put("error", error);
         body.put("errors", errors);
         return new ResponseEntity<>(body, status);
+    }
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<String> handleEntityNotFound(EntityNotFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
 }
