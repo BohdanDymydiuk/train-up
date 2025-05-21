@@ -1,0 +1,17 @@
+.trainer {
+  padding: 16px;
+  width: 100%;
+  border: 1px solid $trainer-gray-color;
+  box-sizing: border-box;
+  height: 152px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+
+  .avatar {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background-color: $trainer-gray-color;
+  }
+}

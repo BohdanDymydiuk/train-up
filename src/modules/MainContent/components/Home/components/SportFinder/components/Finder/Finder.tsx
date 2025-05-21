@@ -12,9 +12,9 @@ enum Texts {
 export const Finder: React.FC = () => {
   return (
     <div className={styles.finder}>
-      {Object.values(Texts).map((item, index) => {
+      {Object.values(Texts).map(item => {
         return (
-          <div className={styles.select} key={`text-${index}`}>
+          <div className={styles.select} key={item}>
             <div className={styles.text}>{item}</div>
             <ChevronDown />
           </div>

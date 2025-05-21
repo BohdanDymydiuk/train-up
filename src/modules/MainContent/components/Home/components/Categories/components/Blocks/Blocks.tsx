@@ -23,9 +23,9 @@ export const Blocks: React.FC = () => {
 
   return (
     <div className={styles.blocks}>
-      {categories.map((item, index) => {
+      {categories.map(item => {
         return (
-          <div className={styles.block} key={`category-${index}`}>
+          <div className={styles.block} key={item}>
             {item}
           </div>
         );

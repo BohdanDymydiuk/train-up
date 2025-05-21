@@ -17,7 +17,7 @@ export const Blocks: React.FC = () => {
     <div className={styles.blocks}>
       {descriptions.map((descr, index) => {
         return (
-          <div className={styles.block} key={`descr-${index}`}>
+          <div className={styles.block} key={index}>
             <div className={styles['img-wrapper']}>
               <img src='/images/bi_image.svg' alt='' />
             </div>

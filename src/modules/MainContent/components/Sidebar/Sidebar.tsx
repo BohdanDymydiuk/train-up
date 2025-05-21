@@ -29,7 +29,7 @@ export const Sidebar: React.FC = () => {
       <ul className={styles.list}>
         {items.map((item, index) => {
           return (
-            <li key={`${item}-${index}`} className={styles.item}>
+            <li key={item} className={styles.item}>
               {icons[index]}
               <div className={styles.title}>{item}</div>
             </li>

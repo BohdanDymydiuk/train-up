@@ -28,10 +28,22 @@
   font-weight: 500;
 }
 
+@mixin inter-500-12 {
+  @include inter-500;
+
+  font-size: 12px;
+}
+
 @mixin inter-500-16 {
   @include inter-500;
 
   font-size: 16px;
+}
+
+@mixin inter-500-20 {
+  @include inter-500;
+
+  font-size: 20px;
 }
 
 @mixin inter-500-24 {
@@ -71,6 +83,12 @@
   @include inter-600;
 
   font-size: 20px;
+}
+
+@mixin inter-600-24 {
+  @include inter-600;
+
+  font-size: 24px;
 }
 
 @mixin inter-600-30 {

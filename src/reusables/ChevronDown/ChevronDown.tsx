@@ -1,10 +1,10 @@
 import React from 'react';
 
 interface Props {
-  svgPathStyles?: React.CSSProperties;
+  svgPathStyle?: React.CSSProperties;
 }
 
-export const ChevronDown: React.FC<Props> = ({ svgPathStyles }) => {
+export const ChevronDown: React.FC<Props> = ({ svgPathStyle }) => {
   return (
     <svg
       width='15'
@@ -15,7 +15,7 @@ export const ChevronDown: React.FC<Props> = ({ svgPathStyles }) => {
     >
       <g clipPath='url(#clip0_20_94)'>
         <path
-          style={svgPathStyles}
+          style={svgPathStyle}
           d='M16.6924 2.5L18 3.6898L10.8734 10.1704C10.7592 10.2748 10.6234 10.3577 10.4738 10.4143C10.3243 10.4709 10.1639 10.5 10.0019 10.5C9.83984 10.5 9.67944 10.4709 9.52986 10.4143C9.38029 10.3577 9.24449 10.2748 9.1303 10.1704L2 3.6898L3.30763 2.50112L10 8.58359L16.6924 2.5Z'
           fill='#141414'
         />

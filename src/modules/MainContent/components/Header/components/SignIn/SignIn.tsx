@@ -56,20 +56,20 @@ export const SignIn: React.FC = () => {
     fill: `${styles.btnFocusColor}`,
   };
 
-  const buttonStyles = isDpActive ? buttonCssProps : {};
-  const svgPathStyles = isDpActive ? svgPathCssProps : {};
+  const buttonStyle = isDpActive ? buttonCssProps : {};
+  const svgPathStyle = isDpActive ? svgPathCssProps : {};
 
   // #endregion
 
   const dropdownProps = { isDpShown };
-  const svgProps = { svgPathStyles };
+  const svgProps = { svgPathStyle };
 
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
       <button
         className={styles.signin}
         onClick={onClickHandler}
-        style={buttonStyles}
+        style={buttonStyle}
       >
         <div>Увійти</div>
         <ChevronDown {...svgProps} />

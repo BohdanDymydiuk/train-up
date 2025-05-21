@@ -23,20 +23,16 @@ export const Dropdown: React.FC<Props> = ({ isDpShown }) => {
     transform: 'scaleY(1)',
   };
 
-  const dpStyles = isDpShown ? dpCssProps : {};
+  const dpStyle = isDpShown ? dpCssProps : {};
 
   const signInHandler = () => navigate(NavLinks.signIn);
 
   return (
-    <div className={styles.dropdown} style={dpStyles}>
+    <div className={styles.dropdown} style={dpStyle}>
       <ul className={styles.list}>
-        {Object.values(SignIn).map((item, index) => {
+        {Object.values(SignIn).map(item => {
           return (
-            <li
-              className={styles.item}
-              key={`singIn-${index}`}
-              onClick={signInHandler}
-            >
+            <li className={styles.item} key={item} onClick={signInHandler}>
               <div className={styles['item-text']}>{item}</div>
             </li>
           );

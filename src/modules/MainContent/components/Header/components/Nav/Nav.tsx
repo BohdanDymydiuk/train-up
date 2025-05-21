@@ -12,9 +12,9 @@ export const Nav: React.FC = () => {
   return (
     <nav>
       <ul className={styles.list}>
-        {items.map((item, index) => {
+        {items.map(item => {
           return (
-            <li key={`nav-${index}`}>
+            <li key={item}>
               <a href='#' className={styles.link}>
                 {item}
               </a>
