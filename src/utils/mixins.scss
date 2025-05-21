@@ -40,6 +40,12 @@
   font-size: 12px;
 }
 
+@mixin inter-500-14 {
+  @include inter-500;
+
+  font-size: 14px;
+}
+
 @mixin inter-500-16 {
   @include inter-500;
 

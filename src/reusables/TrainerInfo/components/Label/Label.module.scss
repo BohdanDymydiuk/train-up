@@ -1,0 +1,19 @@
+.label {
+  position: absolute;
+  padding: 10px 8px;
+  display: flex;
+  gap: 8px;
+  background-color: white;
+  border: 1px solid $brown-color;
+  border-radius: 8px;
+  top: -25px;
+  left: 24px;
+
+  .celebration {
+    height: 17px;
+  }
+
+  .text {
+    @include inter-500-14;
+  }
+}
