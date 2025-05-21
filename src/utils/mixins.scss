@@ -61,6 +61,12 @@
   font-weight: 600;
 }
 
+@mixin inter-600-12 {
+  @include inter-600;
+
+  font-size: 12px;
+}
+
 @mixin inter-600-20 {
   @include inter-600;
 

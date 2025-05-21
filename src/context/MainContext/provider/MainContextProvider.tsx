@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 
-import { NavLinks } from '../../../../enums/NavLinks';
-import { MainContext } from '../../MainContext';
+import { NavLinks } from '../../../enums/NavLinks';
+import { MainContext } from '../MainContext';
 
 interface Props {
   children: React.ReactNode;

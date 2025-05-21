@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router';
 
-import { MainContext } from '../../../../context/MainContext/MainContext';
+import { MainContext } from '../../../../context/MainContext';
 import { NavLinks } from '../../../../enums/NavLinks';
 import { Logo } from '../../../../reusables/Logo';
 import { BellSVG } from '../../../../reusables/svgs/BellSVG';
