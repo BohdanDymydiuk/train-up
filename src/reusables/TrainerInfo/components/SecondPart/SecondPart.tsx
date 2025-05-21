@@ -35,6 +35,7 @@ export const SecondPart: React.FC<Props> = props => {
         })}
       </div>
       <div className={styles.bio}>{bio}</div>
+      <div className={styles.read}>Читати більше</div>
     </div>
   );
 };

@@ -24,6 +24,14 @@
       cursor: pointer;
     }
   }
+  
+  .bio {
+    @include inter-400-14;
+  }
+
+  .read {
+    @include inter-600-12;
+  }
 }
 
 :export {

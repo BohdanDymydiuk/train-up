@@ -13,6 +13,12 @@
   font-weight: 400;
 }
 
+@mixin inter-400-14 {
+  @include inter-400;
+
+  font-size: 14px;
+}
+
 @mixin inter-400-16 {
   @include inter-400;
 
