@@ -1,0 +1,12 @@
+.block {
+  padding: 16px;
+  border: 1px solid $regular-gray-color;
+  border-radius: 8px;
+
+  .img {
+    border-radius: 16px;
+    background-color: $regular-gray-color;
+    width: 400px;
+    height: 188px;
+  }
+}

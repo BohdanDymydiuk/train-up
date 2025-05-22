@@ -1,5 +1,4 @@
 .second-part {
-  margin-left: 24px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -14,15 +13,6 @@
   .types {
     display: flex;
     gap: 8px;
-
-    .type {
-      @include inter-500-12;
-
-      box-sizing: border-box;
-      padding: 5px 10px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
   }
   
   .bio {
@@ -32,9 +22,4 @@
   .read {
     @include inter-600-12;
   }
-}
-
-:export {
-  brownColor: $brown-color;
-  darkColor: #333333;
 }

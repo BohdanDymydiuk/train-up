@@ -15,18 +15,8 @@ export const Trainers: React.FC = () => {
     <section className={styles.trainers}>
       <ProfileTitle title={NavItems.trainers} />
       <div className={styles.wrapper}>
-        {trainers.map(trainer => {
-          const { id, name, categories, bio, reviews, isNew, trainingTypes } =
-            trainer;
-
-          const trainerInfoProps = {
-            name,
-            categories,
-            bio,
-            reviews,
-            isNew,
-            trainingTypes,
-          };
+        {trainers.slice(0, 3).map(trainer => {
+          const { id, ...trainerInfoProps } = trainer;
 
           return <TrainerInfo key={id} {...trainerInfoProps} />;
         })}

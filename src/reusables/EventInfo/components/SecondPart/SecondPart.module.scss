@@ -1,0 +1,28 @@
+.second-part {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+
+  .second-wrapper,
+  .participants,
+  .thunders {
+    display: flex;
+    align-items: center;
+  }
+
+  .second-wrapper {
+    gap: 16px;
+
+    .participants {
+      height: 100%;
+      gap: 8px;
+      padding-inline: 3px;
+
+      .number {
+        @include inter-400-14;
+
+        color: $text-color;
+      }
+    }
+  }
+}
