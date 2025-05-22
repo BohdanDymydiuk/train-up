@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 
-import { MainContext } from '../../../../../context/MainContext';
-import { NavItems } from '../../../../../enums/NavItems';
-import { LookMore } from '../../../../../reusables/LookMore';
-import { ProfileTitle } from '../../../../../reusables/ProfileTitle';
-import { TrainerInfo } from '../../../../../reusables/TrainerInfo';
+import { MainContext } from '../../../../../../context/MainContext';
+import { NavItems } from '../../../../../../enums/NavItems';
+import { LookMore } from '../../../../../../reusables/LookMore';
+import { ProfileTitle } from '../../../../../../reusables/ProfileTitle';
+import { TrainerInfo } from '../../../../../../reusables/TrainerInfo';
 
 import styles from './Trainers.module.scss';
 
