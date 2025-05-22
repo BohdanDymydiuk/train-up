@@ -33,7 +33,7 @@ public class Event {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "sport_id")
-    @NotBlank(message = "The sport can not be blank")
+    @NotNull(message = "The sport can not be null")
     private Sport sport;
 
     private String description;

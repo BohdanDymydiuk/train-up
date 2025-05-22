@@ -32,7 +32,7 @@ public class ReviewController {
     private final ReviewService reviewService;
 
     @GetMapping
-    List<ReviewResponseDto> getAllReview(
+    public List<ReviewResponseDto> getAllReview(
             @RequestParam(required = false) Long id,
             @RequestParam(required = false) Integer rating,
             @RequestParam(required = false) Long authorId,
@@ -53,14 +53,14 @@ public class ReviewController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    ResponseEntity<Void> deleteReviewById(@PathVariable @Positive Long id) {
+    public ResponseEntity<Void> deleteReviewById(@PathVariable @Positive Long id) {
         reviewService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 
     @PostMapping("/gym/{gymId}")
     @PreAuthorize("hasRole('ATHLETE')")
-    ReviewResponseDto createGymReview(
+    public ReviewResponseDto createGymReview(
             @PathVariable @Positive Long gymId,
             @RequestBody ReviewRegistrationRequestDto requestDto,
             Authentication authentication
@@ -72,7 +72,7 @@ public class ReviewController {
 
     @PostMapping("/trainer/{trainerId}")
     @PreAuthorize("hasRole('ATHLETE')")
-    ReviewResponseDto createTrainerReview(
+    public ReviewResponseDto createTrainerReview(
             @PathVariable @Positive Long trainerId,
             @RequestBody ReviewRegistrationRequestDto requestDto,
             Authentication authentication

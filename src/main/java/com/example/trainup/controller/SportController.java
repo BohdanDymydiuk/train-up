@@ -33,7 +33,7 @@ public class SportController {
 
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
-    List<SportDto> getAllSports(
+    public List<SportDto> getAllSports(
             @RequestParam(required = false) Long id,
             @RequestParam(required = false) String name,
             @PageableDefault(size = 10) Pageable pageable
@@ -45,14 +45,14 @@ public class SportController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN')")
-    SportDto createSport(@RequestBody @Valid SportRequestDto requestDto) {
+    public SportDto createSport(@RequestBody @Valid SportRequestDto requestDto) {
         SportDto sportDto = sportService.createSport(requestDto);
         return sportDto;
     }
 
     @PatchMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    SportDto updateSport(@PathVariable @Positive Long id,
+    public SportDto updateSport(@PathVariable @Positive Long id,
                          @RequestBody SportRequestDto requestDto) {
         SportDto sportDto = sportService.updateSport(id, requestDto);
         return sportDto;
@@ -60,7 +60,7 @@ public class SportController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    ResponseEntity<Void> deleteSport(@PathVariable @Positive Long id) {
+    public ResponseEntity<Void> deleteSport(@PathVariable @Positive Long id) {
         sportService.deleteSport(id);
         return ResponseEntity.noContent().build();
     }

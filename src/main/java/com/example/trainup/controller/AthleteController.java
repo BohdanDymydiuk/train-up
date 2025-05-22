@@ -36,7 +36,7 @@ public class AthleteController {
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') "
             + "or @athleteServiceImpl.canUserModifyAthlete(#authentication, #id)")
-    AthleteResponseDto getAthleteById(@PathVariable @Positive Long id,
+    public AthleteResponseDto getAthleteById(@PathVariable @Positive Long id,
                                       Authentication authentication) {
         AthleteResponseDto responseDto = athleteService.getAthleteById(id);
         return responseDto;
@@ -44,7 +44,7 @@ public class AthleteController {
 
     @GetMapping
     @PreAuthorize("hasRole('ADMIN')")
-    List<AthleteResponseDto> getAllAthlete(
+    public List<AthleteResponseDto> getAllAthlete(
             @RequestParam(required = false) String firstName,
             @RequestParam(required = false) String lastName,
             @RequestParam(required = false) Character maleOrFemale,
@@ -63,7 +63,7 @@ public class AthleteController {
 
     @PatchMapping("/{id}")
     @PreAuthorize("@athleteServiceImpl.canUserModifyAthlete(#authentication, #id)")
-    AthleteResponseDto updateAthleteById(@RequestBody AthleteUpdateRequestDto requestDto,
+    public AthleteResponseDto updateAthleteById(@RequestBody AthleteUpdateRequestDto requestDto,
                                          Authentication authentication,
                                          @PathVariable @Positive Long id) {
         AthleteResponseDto athleteResponseDto = athleteService
@@ -74,7 +74,7 @@ public class AthleteController {
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') "
             + "or @athleteServiceImpl.canUserModifyAthlete(#authentication, #id)")
-    ResponseEntity<Void> deleteAthleteById(@PathVariable @Positive Long id,
+    public ResponseEntity<Void> deleteAthleteById(@PathVariable @Positive Long id,
                                            Authentication authentication) {
         athleteService.deleteAthleteById(id);
         return ResponseEntity.noContent().build();
