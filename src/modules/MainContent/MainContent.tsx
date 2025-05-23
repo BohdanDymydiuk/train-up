@@ -23,7 +23,7 @@ export const MainContent: React.FC = () => {
       <Header />
       <div style={wrapperCssProps}>
         {isTempProfile && <Sidebar />}
-        <main style={{ width: '892px' }}>
+        <main>
           <Outlet />
         </main>
       </div>
