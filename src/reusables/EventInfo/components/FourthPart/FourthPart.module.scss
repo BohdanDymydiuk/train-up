@@ -1,0 +1,17 @@
+.trainer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: $regular-gray-color;
+  }
+
+  .text {
+    @include inter-500-14;
+  }
+}

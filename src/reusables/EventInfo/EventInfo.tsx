@@ -2,7 +2,9 @@ import React from 'react';
 
 import { EventInfoType } from '../../types/EventInfoType';
 
+import { FourthPart } from './components/FourthPart';
 import { SecondPart } from './components/SecondPart';
+import { ThirdPart } from './components/ThirdPart';
 
 import styles from './EventInfo.module.scss';
 
@@ -13,11 +15,15 @@ export const EventInfo: React.FC<Props> = React.memo(props => {
     props;
 
   const secondPartProps = { trainingTypes, intensity, participants };
+  const thirdPartProps = { name, description };
+  const fourthPart = { trainer };
 
   return (
     <div className={styles.block}>
       <div className={styles.img} />
       <SecondPart {...secondPartProps} />
+      <ThirdPart {...thirdPartProps} />
+      <FourthPart {...fourthPart} />
     </div>
   );
 });

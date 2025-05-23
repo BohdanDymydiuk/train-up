@@ -1,0 +1,16 @@
+.third-part {
+  margin-top: 38px;
+
+  .title {
+    @include inter-600-20;
+
+    margin: 0;
+  }
+
+  .descr {
+    @include inter-400-14;
+
+    width: 400px;
+    margin-top: 8px;
+  }
+}
