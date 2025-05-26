@@ -9,24 +9,23 @@ export const ProfileMain: React.FC = () => {
   const [location, setLocation] = useState('');
 
   useEffect(() => {
-    function showCity(position: GeolocationPosition) {
+    function showLocation(position: GeolocationPosition) {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
 
-      const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
+      const url = `https://us1.locationiq.com/v1/reverse?key=pk.7457ca726ad3e6d451be7db68b10d1c2&lat=${latitude}&lon=${longitude}&format=json&accept-language=ua`;
 
       fetch(url)
         .then(response => response.json())
         .then(data => {
-          const city = data.address.city;
-          const village: string = data.address.village;
+          const state: string = data.address.state;
 
-          setLocation(city || village);
+          setLocation(state);
         })
         .catch(error => console.log(error));
     }
 
-    navigator.geolocation.getCurrentPosition(showCity);
+    navigator.geolocation.getCurrentPosition(showLocation);
   }, []);
 
   return (
