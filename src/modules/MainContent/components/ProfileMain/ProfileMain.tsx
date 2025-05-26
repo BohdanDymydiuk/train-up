@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 import { Events } from './components/Events';
 import { Trainers } from './components/Trainers';
+import { regionalCenters } from './constants/regionalCenters';
 
 import styles from './ProfileMain.module.scss';
 
 export const ProfileMain: React.FC = () => {
-  const [location, setLocation] = useState('');
+  const [city, setCity] = useState('');
 
   useEffect(() => {
     function showLocation(position: GeolocationPosition) {
@@ -19,8 +20,9 @@ export const ProfileMain: React.FC = () => {
         .then(response => response.json())
         .then(data => {
           const state: string = data.address.state;
+          const city: string = regionalCenters[state];
 
-          setLocation(state);
+          setCity(city);
         })
         .catch(error => console.log(error));
     }
@@ -37,7 +39,7 @@ export const ProfileMain: React.FC = () => {
           backgroundColor: 'black',
         }}
       >
-        You're located in {location}
+        You're located in {city}
       </div>
       <Trainers />
       <Events />
