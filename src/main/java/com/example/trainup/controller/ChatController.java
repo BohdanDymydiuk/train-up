@@ -3,8 +3,11 @@ package com.example.trainup.controller;
 import com.example.trainup.dto.chat.ChatMessageDto;
 import com.example.trainup.dto.chat.ChatRequestDto;
 import com.example.trainup.model.ChatSession;
-import com.example.trainup.service.ChatGptService;
-import com.plexpt.chatgpt.entity.chat.Message;
+import com.example.trainup.service.GeminiChatService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -19,47 +22,85 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/chat")
 @RequiredArgsConstructor
 @Log4j2
+@Tag(
+        name = "AI Chat Functions",
+        description = "Endpoints for interacting with the AI chat model and managing chat history."
+)
 public class ChatController {
-    private final ChatGptService chatGptService;
+    private final GeminiChatService geminiChatService;
     private final ChatSession chatSession;
 
     @PostMapping("/ask")
-    public ResponseEntity<String> askChatGpt(@RequestBody ChatRequestDto request) {
-        try {
-            List<Message> updatedHistory;
+    @Operation(
+            summary = "Ask AI a question",
+            description = "Sends a question to the AI model. Supports starting new conversations "
+                    + "or continuing existing ones."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Successfully received AI response and chat history."
+            ),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "Bad Request: Invalid input or prompt file issues."
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "Internal Server Error: An error occurred while communicating "
+                            + "with the AI model or processing the request."
+            )
+    })
+    public ResponseEntity<List<ChatMessageDto>> askAi(@RequestBody ChatRequestDto requestDto) {
+        log.info("Received AI chat request: {}", requestDto);
 
-            if (chatSession.getMessageHistory().isEmpty() || request.newConversation()) {
-                log.info("Starting a new conversation with a question: {}", request.question());
-                updatedHistory = chatGptService
-                        .startNewConversation(request.question(), request.customPrompt());
-            } else {
-                log.info("Continuing the conversation with a question: {}", request.question());
-                updatedHistory = chatGptService.continueConversation(
-                        chatSession.getMessageHistory(), request.question());
-            }
-
-            chatSession.setMessageHistory(updatedHistory);
-            String aiResponse = updatedHistory.get(updatedHistory.size() - 1).getContent();
-            return ResponseEntity.ok(aiResponse);
-        } catch (Exception e) {
-            log.error("ChatGPT request processing error: {}", e.getMessage(), e);
-            return ResponseEntity.status(500).body("Error: " + e.getMessage());
+        List<ChatMessageDto> responseHistory;
+        if (requestDto.newConversation()) {
+            // Починаємо нову розмову, історія буде очищена в ChatSession
+            log.info("Starting a new conversation. Chat history will be cleared.");
+            responseHistory = geminiChatService
+                    .startNewConversation(requestDto.question(), requestDto.customPrompt());
+        } else {
+            // Продовжуємо існуючу розмову
+            log.info("Continuing existing conversation.");
+            responseHistory = geminiChatService
+                    .continueConversation(requestDto.question()); // Тепер без передачі історії
         }
+
+        // ChatSession вже керує історією
+        log.info("AI response processed. Current chat history size: {}", responseHistory.size());
+        return ResponseEntity.ok(responseHistory);
     }
 
-    @GetMapping("/history")
+    @GetMapping("/history") // Без PathVariable, бо історія прив'язана до поточної сесії
+    @Operation(
+            summary = "Get Chat AI history",
+            description = "Retrieves the full chat history for the current session."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved chat history.")
+    })
     public ResponseEntity<List<ChatMessageDto>> getChatHistory() {
-        List<ChatMessageDto> history = chatSession.getMessageHistory().stream()
-                .filter(m -> !"system".equals(m.getRole()))
-                .map(m -> new ChatMessageDto(m.getRole(), m.getContent()))
-                .toList();
+        log.info("Attempting to retrieve chat history for current session.");
+        List<ChatMessageDto> history = chatSession.getMessageHistory();
+
+        log.info("Successfully retrieved chat history. Number of messages: {}", history.size());
         return ResponseEntity.ok(history);
     }
 
     @PostMapping("/clear-history")
-    public ResponseEntity<Void> clearChatHistory() {
-        chatSession.clearHistory();
-        log.info("Chat history cleared for the session.");
-        return ResponseEntity.noContent().build();
+    @Operation(
+            summary = "Clear Chat AI history",
+            description = "Clears all messages from the current chat session's history."
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Chat history successfully cleared.")
+    })
+    public ResponseEntity<String> clearChatHistory() {
+        log.info("Attempting to clear chat history for current session.");
+        chatSession.clearHistory(); // Викликаємо метод на ChatSession
+
+        log.info("Chat history for current session cleared successfully.");
+        return ResponseEntity.ok("Chat history cleared successfully.");
     }
 }

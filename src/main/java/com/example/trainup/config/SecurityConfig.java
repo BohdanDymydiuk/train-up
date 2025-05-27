@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler;
 import org.springframework.security.access.expression.method.MethodSecurityExpressionHandler;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -52,8 +51,7 @@ public class SecurityConfig {
                                         "/v3/api-docs/**",
                                         "/actuator/health")
                                 .permitAll()
-                                .requestMatchers(HttpMethod.GET, "/accommodations").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/accommodations/{id}").permitAll()
+                                .requestMatchers("/sport").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
