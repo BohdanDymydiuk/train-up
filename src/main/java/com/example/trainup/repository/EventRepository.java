@@ -18,14 +18,17 @@ public interface EventRepository extends JpaRepository<Event, Long> {
             + "AND (:name IS NULL OR (CAST(e.name AS string) "
             + "LIKE CONCAT('%', CAST(:name AS string), '%'))) "
             + "AND (:sportId IS NULL OR s.id = :sportId) "
-            + "AND (COALESCE(:dateTime, e.dateTime) = e.dateTime) "
+            + "AND ((CAST(:startOfDay AS timestamp) IS NULL "
+            + "AND CAST(:endOfDay AS timestamp) IS NULL) "
+            + "OR (e.dateTime >= :startOfDay AND e.dateTime < :endOfDay)) "
             + "AND (:gymId IS NULL OR g.id = :gymId) "
             + "AND (:trainerId IS NULL OR t.id = :trainerId)")
     Page<Event> findEventsByCriteria(
             @Param("id") Long id,
             @Param("name") String name,
             @Param("sportId") Long sportId,
-            @Param("dateTime") LocalDateTime dateTime,
+            @Param("startOfDay") LocalDateTime startOfDay,
+            @Param("endOfDay") LocalDateTime endOfDay,
             @Param("gymId") Long gymId,
             @Param("trainerId") Long trainerId,
             Pageable pageable

@@ -8,7 +8,7 @@ import com.example.trainup.service.EventService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.Positive;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -98,13 +98,13 @@ public class EventController {
             @RequestParam(required = false) @Positive Long id,
             @RequestParam(required = false) String name,
             @RequestParam(required = false) @Positive Long sportId,
-            @RequestParam(required = false) LocalDateTime dateTime,
+            @RequestParam(required = false) LocalDate date,
             @RequestParam(required = false) @Positive Long gymId,
             @RequestParam(required = false) @Positive Long trainerId,
             @PageableDefault(size = 10) Pageable pageable
     ) {
         EventFilterRequestDto filterRequestDto = new EventFilterRequestDto(
-                id, name, sportId, dateTime, gymId, trainerId);
+                id, name, sportId, date, gymId, trainerId);
         log.info("Attempting to fetch events with filter: {} and pageable: {}",
                 filterRequestDto, pageable);
 

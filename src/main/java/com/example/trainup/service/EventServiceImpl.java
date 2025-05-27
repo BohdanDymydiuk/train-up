@@ -16,6 +16,7 @@ import com.example.trainup.repository.SportRepository;
 import com.example.trainup.repository.TrainerRepository;
 import com.example.trainup.repository.UserCredentialsRepository;
 import jakarta.persistence.EntityNotFoundException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -84,11 +85,16 @@ public class EventServiceImpl implements EventService {
     @Override
     @Transactional(readOnly = true)
     public List<EventResponseDto> getAllEvents(EventFilterRequestDto filter, Pageable pageable) {
+        LocalDateTime startOfDay = filter.date() != null ? filter.date().atStartOfDay() : null;
+        LocalDateTime endOfDay = filter.date() != null
+                ? filter.date().plusDays(1).atStartOfDay() : null;
+
         Page<Event> eventPage = eventRepository.findEventsByCriteria(
                 filter.id(),
                 filter.name(),
                 filter.sportId(),
-                filter.dateTime(),
+                startOfDay,
+                endOfDay,
                 filter.gymId(),
                 filter.trainerId(),
                 pageable
