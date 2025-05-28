@@ -1,5 +1,6 @@
 package com.example.trainup.repository;
 
+import com.example.trainup.model.enums.Gender;
 import com.example.trainup.model.user.Trainer;
 import com.example.trainup.model.user.UserCredentials;
 import java.util.List;
@@ -23,7 +24,7 @@ public interface TrainerRepository extends JpaRepository<Trainer, Long> {
             + "LIKE CONCAT('%', CAST(:firstName AS string), '%'))) "
             + "AND (:lastName IS NULL OR (CAST(t.lastName AS string) "
             + "LIKE CONCAT('%', CAST(:lastName AS string), '%'))) "
-            + "AND (:maleOrFemale IS NULL OR t.maleOrFemale = :maleOrFemale) "
+            + "AND (:gender IS NULL OR t.gender = :gender) "
             + "AND (:sportIds IS NULL OR s.id IN :sportIds) "
             + "AND (:gymIds IS NULL OR g.id IN :gymIds) "
             + "AND (:locationCountry IS NULL OR (a.country "
@@ -40,7 +41,7 @@ public interface TrainerRepository extends JpaRepository<Trainer, Long> {
     Page<Trainer> findTrainersByCriteria(
             @Param("firstName") String firstName,
             @Param("lastName") String lastName,
-            @Param("maleOrFemale") Character maleOrFemale,
+            @Param("gender") Gender gender,
             @Param("sportIds") Set<Long> sportIds,
             @Param("gymIds") Set<Long> gymIds,
             @Param("locationCountry") String locationCountry,

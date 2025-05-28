@@ -1,5 +1,6 @@
 package com.example.trainup.repository;
 
+import com.example.trainup.model.enums.Gender;
 import com.example.trainup.model.user.Athlete;
 import com.example.trainup.model.user.UserCredentials;
 import java.time.LocalDate;
@@ -21,7 +22,7 @@ public interface AthleteRepository extends JpaRepository<Athlete, Long> {
             + "LIKE CONCAT('%', CAST(:firstName AS string), '%'))) "
             + "AND (:lastName IS NULL OR (CAST(a.lastName AS string) "
             + "LIKE CONCAT('%', CAST(:lastName AS string), '%'))) "
-            + "AND (:maleOrFemale IS NULL OR a.maleOrFemale = :maleOrFemale) "
+            + "AND (:gender IS NULL OR a.gender = :gender) "
             + "AND (:dateOfBirth IS NULL OR a.dateOfBirth = :dateOfBirth) "
             + "AND (:sportIds IS NULL OR s.id IN :sportIds) "
             + "AND (:emailPermission IS NULL OR a.emailPermission = :emailPermission) "
@@ -29,7 +30,7 @@ public interface AthleteRepository extends JpaRepository<Athlete, Long> {
     Page<Athlete> findAthleteByCriteria(
             @Param("firstName") String firstName,
             @Param("lastName") String lastName,
-            @Param("maleOrFemale") Character maleOrFemale,
+            @Param("gender") Gender gender,
             @Param("dateOfBirth") LocalDate dateOfBirth,
             @Param("sportIds") Set<Long> sportIds,
             @Param("emailPermission") Boolean emailPermission,

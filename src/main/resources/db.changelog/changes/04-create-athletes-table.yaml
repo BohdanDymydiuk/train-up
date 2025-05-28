@@ -24,8 +24,8 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: male_or_female
-                  type: CHAR(1)
+                  name: gender
+                  type: CHAR(10)
               - column:
                   name: date_of_birth
                   type: DATE

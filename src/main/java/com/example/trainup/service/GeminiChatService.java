@@ -54,7 +54,6 @@ public class GeminiChatService {
         String promptToUse = customPrompt != null && !customPrompt.isBlank()
                 ? customPrompt : systemPrompt;
 
-        // chatSession.getMessageHistory().add(new ChatMessageDto("system", promptToUse));
         chatSession.getMessageHistory().add(new ChatMessageDto("user", userQuestion));
 
         return sendToGemini(chatSession.getMessageHistory());
@@ -64,7 +63,7 @@ public class GeminiChatService {
             String newUserMessage
     ) {
         if (chatSession.getMessageHistory().isEmpty()) {
-            // Автоматически добавляем systemPrompt, если истории нет
+            // Автоматично добаємо systemPrompt, якщо нема історії
             chatSession.getMessageHistory().add(new ChatMessageDto("system", systemPrompt));
         }
 

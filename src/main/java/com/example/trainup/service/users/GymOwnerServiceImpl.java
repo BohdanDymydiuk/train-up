@@ -1,10 +1,11 @@
-package com.example.trainup.service;
+package com.example.trainup.service.users;
 
 import com.example.trainup.dto.users.gymowner.GymOwnerRegistrationRequestDto;
 import com.example.trainup.dto.users.gymowner.GymOwnerResponseDto;
 import com.example.trainup.mapper.GymOwnerMapper;
 import com.example.trainup.model.user.GymOwner;
 import com.example.trainup.repository.GymOwnerRepository;
+import com.example.trainup.service.UserCredentialService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

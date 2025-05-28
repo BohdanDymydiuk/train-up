@@ -3,7 +3,8 @@ package com.example.trainup.controller;
 import com.example.trainup.dto.users.athlete.AthleteFilterRequestDto;
 import com.example.trainup.dto.users.athlete.AthleteResponseDto;
 import com.example.trainup.dto.users.athlete.AthleteUpdateRequestDto;
-import com.example.trainup.service.AthleteService;
+import com.example.trainup.model.enums.Gender;
+import com.example.trainup.service.users.AthleteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.Positive;
@@ -67,7 +68,7 @@ public class AthleteController {
     public List<AthleteResponseDto> getAllAthlete(
             @RequestParam(required = false) String firstName,
             @RequestParam(required = false) String lastName,
-            @RequestParam(required = false) Character maleOrFemale,
+            @RequestParam(required = false) Gender gender,
             @RequestParam(required = false) LocalDate dateOfBirth,
             @RequestParam(required = false) Set<Long> sportIds,
             @RequestParam(required = false) Boolean emailPermission,
@@ -75,12 +76,12 @@ public class AthleteController {
             @PageableDefault(size = 10) Pageable pageable
     ) {
         log.info("Attempting to retrieve all athletes with filter: "
-                        + "firstName={}, lastName={}, maleOrFemale={}, dateOfBirth={}, sportIds={},"
+                        + "firstName={}, lastName={}, gender={}, dateOfBirth={}, sportIds={},"
                         + " emailPermission={}, phonePermission={}",
-                firstName, lastName, maleOrFemale, dateOfBirth, sportIds,
+                firstName, lastName, gender, dateOfBirth, sportIds,
                 emailPermission, phonePermission);
         AthleteFilterRequestDto filter = new AthleteFilterRequestDto(firstName, lastName,
-                maleOrFemale, dateOfBirth, sportIds, emailPermission, phonePermission);
+                gender, dateOfBirth, sportIds, emailPermission, phonePermission);
         List<AthleteResponseDto> athleteResponseDtos = athleteService
                 .getAllAthlete(filter, pageable);
 

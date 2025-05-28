@@ -1,4 +1,4 @@
-package com.example.trainup.service;
+package com.example.trainup.service.users;
 
 import com.example.trainup.dto.users.athlete.AthleteFilterRequestDto;
 import com.example.trainup.dto.users.athlete.AthleteRegistrationRequestDto;
@@ -8,6 +8,7 @@ import com.example.trainup.mapper.AthleteMapper;
 import com.example.trainup.model.user.Athlete;
 import com.example.trainup.repository.AthleteRepository;
 import com.example.trainup.repository.SportRepository;
+import com.example.trainup.service.UserCredentialService;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
@@ -76,7 +77,7 @@ public class AthleteServiceImpl implements AthleteService {
         Page<Athlete> athletePage = athleteRepository.findAthleteByCriteria(
                 filter.firstName(),
                 filter.lastName(),
-                filter.maleOrFemale(),
+                filter.gender(),
                 filter.dateOfBirth(),
                 filter.sportIds(),
                 filter.emailPermission(),
@@ -117,8 +118,8 @@ public class AthleteServiceImpl implements AthleteService {
                 .ifPresent(existingAthlete::setFirstName);
         Optional.ofNullable(requestDto.lastName())
                 .ifPresent(existingAthlete::setLastName);
-        Optional.ofNullable(requestDto.maleOrFemale())
-                .ifPresent(existingAthlete::setMaleOrFemale);
+        Optional.ofNullable(requestDto.gender())
+                .ifPresent(existingAthlete::setGender);
         Optional.ofNullable(requestDto.dateOfBirth())
                 .ifPresent(existingAthlete::setDateOfBirth);
         Optional.ofNullable(requestDto.profileImageUrl())

@@ -1,5 +1,6 @@
 package com.example.trainup.dto.users.gymowner;
 
+import com.example.trainup.model.enums.Gender;
 import com.example.trainup.validation.EmailUnique;
 import com.example.trainup.validation.RegexConstants;
 import com.example.trainup.validation.ValidPhoneNumbers;
@@ -17,7 +18,7 @@ public record GymOwnerRegistrationRequestDto(
         @NotBlank(message = "Last name cannot be blank")
         String lastName,
 
-        Character maleOrFemale,
+        Gender gender,
 
         LocalDate dateOfBirth,
 

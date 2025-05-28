@@ -3,7 +3,8 @@ package com.example.trainup.controller;
 import com.example.trainup.dto.users.trainer.TrainerFilterRequestDto;
 import com.example.trainup.dto.users.trainer.TrainerResponseDto;
 import com.example.trainup.dto.users.trainer.TrainerUpdateRequestDto;
-import com.example.trainup.service.TrainerService;
+import com.example.trainup.model.enums.Gender;
+import com.example.trainup.service.users.TrainerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.Positive;
@@ -47,7 +48,7 @@ public class TrainerController {
     public List<TrainerResponseDto> getAllTrainers(
             @RequestParam(required = false) String firstName,
             @RequestParam(required = false) String lastName,
-            @RequestParam(required = false) Character maleOrFemale,
+            @RequestParam(required = false) Gender gender,
             @RequestParam(required = false) Set<Long> sportIds,
             @RequestParam(required = false) Set<Long> gymIds,
             @RequestParam(required = false) String locationCountry,
@@ -59,7 +60,7 @@ public class TrainerController {
             @PageableDefault(size = 10) Pageable pageable
     ) {
         TrainerFilterRequestDto filter = new TrainerFilterRequestDto(firstName, lastName,
-                maleOrFemale, sportIds, gymIds, locationCountry, locationCity,
+                gender, sportIds, gymIds, locationCountry, locationCity,
                 locationCityDistrict, locationStreet, locationHouse, onlineTraining);
         log.info("Attempting to fetch trainers with filter: {} and pageable: {}",
                 filter, pageable);

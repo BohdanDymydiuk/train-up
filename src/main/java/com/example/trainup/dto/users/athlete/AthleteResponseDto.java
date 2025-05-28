@@ -1,5 +1,6 @@
 package com.example.trainup.dto.users.athlete;
 
+import com.example.trainup.model.enums.Gender;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -7,7 +8,7 @@ public record AthleteResponseDto(
         Long id,
         String firstName,
         String lastName,
-        Character maleOrFemale,
+        Gender gender,
         LocalDate dateOfBirth,
         String profileImageUrl,
         String email,

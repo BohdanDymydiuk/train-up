@@ -1,4 +1,4 @@
-package com.example.trainup.service;
+package com.example.trainup.service.users;
 
 import com.example.trainup.dto.users.athlete.AthleteFilterRequestDto;
 import com.example.trainup.dto.users.athlete.AthleteRegistrationRequestDto;

@@ -1,7 +1,10 @@
 package com.example.trainup.model.user;
 
+import com.example.trainup.model.enums.Gender;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -31,7 +34,8 @@ public abstract class BaseUser {
     @Column(nullable = false)
     private String lastName;
 
-    private Character maleOrFemale;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
     private LocalDate dateOfBirth;
 

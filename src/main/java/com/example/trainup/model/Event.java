@@ -39,7 +39,6 @@ public class Event {
     private String description;
 
     @NotNull(message = "The date and time can not be blank")
-    //    TODO: add validation. can not be in the past
     private LocalDateTime dateTime;
 
     @ManyToOne

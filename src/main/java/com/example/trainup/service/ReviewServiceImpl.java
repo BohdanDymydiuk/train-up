@@ -13,6 +13,7 @@ import com.example.trainup.repository.AthleteRepository;
 import com.example.trainup.repository.GymRepository;
 import com.example.trainup.repository.ReviewRepository;
 import com.example.trainup.repository.TrainerRepository;
+import com.example.trainup.service.users.AthleteService;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;

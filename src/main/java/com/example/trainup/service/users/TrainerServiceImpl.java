@@ -1,4 +1,4 @@
-package com.example.trainup.service;
+package com.example.trainup.service.users;
 
 import com.example.trainup.dto.users.trainer.TrainerAddressDto;
 import com.example.trainup.dto.users.trainer.TrainerFilterRequestDto;
@@ -14,6 +14,8 @@ import com.example.trainup.repository.GymRepository;
 import com.example.trainup.repository.SportRepository;
 import com.example.trainup.repository.TrainerRepository;
 import com.example.trainup.repository.UserCredentialsRepository;
+import com.example.trainup.service.CurrentUserService;
+import com.example.trainup.service.UserCredentialService;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
@@ -59,10 +61,10 @@ public class TrainerServiceImpl implements TrainerService {
     public List<TrainerResponseDto> getAllTrainers(TrainerFilterRequestDto filter,
                                                    Pageable pageable) {
         log.debug("Fetching trainers with filter: {}", filter);
-        log.debug("FirstName: {}, LastName: {}, MaleOrFemale: {}, SportIds: {}, GymIds: {}, "
+        log.debug("FirstName: {}, LastName: {}, Gender: {}, SportIds: {}, GymIds: {}, "
                         + "LocationCountry: {}, LocationCity: {}, LocationCityDistrict: {}, "
                         + "LocationStreet: {}, LocationHouse: {}, OnlineTraining: {}",
-                filter.firstName(), filter.lastName(), filter.maleOrFemale(), filter.sportIds(),
+                filter.firstName(), filter.lastName(), filter.gender(), filter.sportIds(),
                 filter.gymIds(), filter.locationCountry(), filter.locationCity(),
                 filter.locationCityDistrict(), filter.locationStreet(), filter.locationHouse(),
                 filter.onlineTraining());
@@ -70,7 +72,7 @@ public class TrainerServiceImpl implements TrainerService {
         Page<Trainer> trainerPage = trainerRepository.findTrainersByCriteria(
                 filter.firstName(),
                 filter.lastName(),
-                filter.maleOrFemale(),
+                filter.gender(),
                 filter.sportIds(),
                 filter.gymIds(),
                 filter.locationCountry(),
@@ -154,7 +156,7 @@ public class TrainerServiceImpl implements TrainerService {
 
         Optional.ofNullable(requestDto.firstName()).ifPresent(existingTrainer::setFirstName);
         Optional.ofNullable(requestDto.lastName()).ifPresent(existingTrainer::setLastName);
-        Optional.ofNullable(requestDto.maleOrFemale()).ifPresent(existingTrainer::setMaleOrFemale);
+        Optional.ofNullable(requestDto.gender()).ifPresent(existingTrainer::setGender);
         Optional.ofNullable(requestDto.dateOfBirth()).ifPresent(existingTrainer::setDateOfBirth);
         Optional.ofNullable(requestDto.profileImageUrl())
                 .ifPresent(existingTrainer::setProfileImageUrl);
