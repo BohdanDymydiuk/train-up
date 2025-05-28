@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "65b7f641-fb94-4aa7-a754-26d222056ff3",
+		"name": "Event Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34047080",
+		"_collection_link": "https://winter-water-840520.postman.co/workspace/trainUp~2c26e93b-5160-4285-bcdb-f0ae866ea32f/collection/34047080-65b7f641-fb94-4aa7-a754-26d222056ff3?action=share&source=collection_link&creator=34047080"
+	},
+	"item": [
+		{
+			"name": "Create Event by trainer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0cmFpbmVyMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzkyMzc4MiwiZXhwIjoxNzQ3OTI2NzgyfQ.NFn8P3osF3CbQolR3KmKOyCQvLyFQLrd0ZGNtjo9QYo_E-cNR-lhAFGid0C_mp6e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Crossfit open training\",\r\n    \"sportId\" : 3,\r\n    \"description\" : \"Open space training on the stadium for beginers\",\r\n    \"dateTime\" : \"2025-06-22T14:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/event/trainer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"event",
+						"trainer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Event by gym owner",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJnbzFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDc5MjM5NDUsImV4cCI6MTc0NzkyNjk0NX0.Xhb6EtoX086wyY90WgyIqk1cjL3qISi1Q-QT7Um95SAeEfxqBIY2Q78CEXfj7uZ9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Crossfit open training\",\r\n    \"sportId\" : 3,\r\n    \"description\" : \"Open space training on the stadium for beginers\",\r\n    \"dateTime\" : \"2025-06-22T14:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/event/gym/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"event",
+						"gym",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJnbzFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDc5MjM5NDUsImV4cCI6MTc0NzkyNjk0NX0.Xhb6EtoX086wyY90WgyIqk1cjL3qISi1Q-QT7Um95SAeEfxqBIY2Q78CEXfj7uZ9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\" : \"UPDATED Open space training on the stadium for beginers\",\r\n    \"dateTime\" : \"2025-06-28T14:00:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/event/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"event",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Event by Criteria",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0cmFpbmVyMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODM1NTkzOCwiZXhwIjoxNzQ4MzU4OTM4fQ.orZ4Ep9o97LEvGbqNiHCo1seXaCscomclhh2TUjQT4n2gDcy2OSKujPM1UKsJart",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"event"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sportId",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "date",
+							"value": "2025-05-27",
+							"disabled": true
+						},
+						{
+							"key": "gymId",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "trainerId",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Event by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJnbzFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDc5MjM5NDUsImV4cCI6MTc0NzkyNjk0NX0.Xhb6EtoX086wyY90WgyIqk1cjL3qISi1Q-QT7Um95SAeEfxqBIY2Q78CEXfj7uZ9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/event/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"event",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

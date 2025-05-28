@@ -1,8 +1,10 @@
 package com.example.trainup.dto.chat;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public record ChatRequestDto(
         String question,
-        Boolean newConversation,
+        @JsonProperty(defaultValue = "false") Boolean newConversation,
         String customPrompt
 ) {
 }

@@ -1,0 +1,465 @@
+{
+	"info": {
+		"_postman_id": "f30837ab-a344-4a9a-b440-a6f6d32f566d",
+		"name": "Gym Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34047080",
+		"_collection_link": "https://winter-water-840520.postman.co/workspace/trainUp~2c26e93b-5160-4285-bcdb-f0ae866ea32f/collection/34047080-f30837ab-a344-4a9a-b440-a6f6d32f566d?action=share&source=collection_link&creator=34047080"
+	},
+	"item": [
+		{
+			"name": "Create new Gym",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJneW1vd25lcjFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDcwNTQ2NDAsImV4cCI6MTc0NzA1NzY0MH0.Bo4nHgmFw7j5nDKQA_QBggcBljUdvu1nJs-8g5ZCEoQLV1M-QnCvB6alc-FwBvWe",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Fitness Center\",\r\n  \"location\": {\r\n    \"country\": \"Ukraine\",\r\n    \"city\": \"Kyiv\",\r\n    \"cityDistrict\": \"Shevchenkivskyi\",\r\n    \"street\": \"Khreshchatyk\",\r\n    \"house\": \"1\"\r\n  },\r\n  \"sportIds\": [1],\r\n  \"description\": \"Great gym\",\r\n  \"website\": \"http://fitness.com\",\r\n  \"phoneNumbers\": [\"+38(067)-123-4567\", \"+38(067)-123-9876\"],\r\n  \"workingHours\": [\r\n    {\r\n      \"dayOfWeek\": \"MONDAY\",\r\n      \"startTime\": \"08:00\",\r\n      \"endTime\": \"20:00\"\r\n    }\r\n  ],\r\n  \"trainerIds\": [1],\r\n  \"photoUrls\": [\"http://example.com/photo1.jpg\", \"http://example.com/photo2.jpg\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gym",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gym"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Gyms by criteria",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJneW1vd25lcjFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDcxNTA0NTgsImV4cCI6MTc0NzE1MzQ1OH0.7HMDT__GWR0BQccYlmSmJaXh0_yu7seTGUGgARK41iX8-PbdaaJb4M589BOiQ1ga",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "name",
+						"value": "Fitness",
+						"type": "text"
+					},
+					{
+						"key": "locationCountry",
+						"value": "Ukraine",
+						"type": "text"
+					},
+					{
+						"key": "locationCity",
+						"value": "Kyiv",
+						"type": "text"
+					},
+					{
+						"key": "locationCityDistrict",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationStreet",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationHouse",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "sportIds",
+						"value": "[1]",
+						"type": "text"
+					},
+					{
+						"key": "trainerIds",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "overallRating",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gym",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gym"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Gyms by current GymOwner",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJneW1vd25lcjFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDcyOTM2NzcsImV4cCI6MTc0NzI5NjY3N30.fDvlwM5t4uyvhNFg3JwjKle5jQ3a8cWlWgUT5m_PYH1xTRKT1ziQQWUuRBF_zSOd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "name",
+						"value": "Fitness",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationCountry",
+						"value": "Ukraine",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationCity",
+						"value": "Kyiv",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationCityDistrict",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationStreet",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationHouse",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "sportIds",
+						"value": "[1]",
+						"type": "text"
+					},
+					{
+						"key": "trainerIds",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "overallRating",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gym/my",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gym",
+						"my"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Gym by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJneW1vd25lcjFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDcyOTM2NzcsImV4cCI6MTc0NzI5NjY3N30.fDvlwM5t4uyvhNFg3JwjKle5jQ3a8cWlWgUT5m_PYH1xTRKT1ziQQWUuRBF_zSOd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "name",
+						"value": "Fitness",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationCountry",
+						"value": "Ukraine",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationCity",
+						"value": "Kyiv",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationCityDistrict",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationStreet",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationHouse",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "sportIds",
+						"value": "[1]",
+						"type": "text"
+					},
+					{
+						"key": "trainerIds",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "overallRating",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gym/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gym",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Gym by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJneW1vd25lcjFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDcyOTM2NzcsImV4cCI6MTc0NzI5NjY3N30.fDvlwM5t4uyvhNFg3JwjKle5jQ3a8cWlWgUT5m_PYH1xTRKT1ziQQWUuRBF_zSOd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "name",
+						"value": "Fitness",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationCountry",
+						"value": "Ukraine",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationCity",
+						"value": "Kyiv",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationCityDistrict",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationStreet",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "locationHouse",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "sportIds",
+						"value": "[1]",
+						"type": "text"
+					},
+					{
+						"key": "trainerIds",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "overallRating",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gym/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gym",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Gym",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJneW1vd25lcjFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDczODA0MzIsImV4cCI6MTc0NzM4MzQzMn0.8Lid4AneKGdWWWKwNGTu-PXskGPv4zgjl1oUXoWL4mhOTpxF6EXXgGhAsh9tphc1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Fitness Center\",\r\n  \"location\": {\r\n    \"country\": \"Ukraine\",\r\n    \"city\": \"Odessa\",\r\n    \"street\": \"Dobrovolskogo\",\r\n    \"house\": \"12a\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/gym/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gym",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

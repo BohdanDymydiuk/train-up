@@ -34,6 +34,9 @@ public class GeminiChatService {
     @Value("${app.system-prompt-file}")
     private String systemPromptFile;
 
+    @Value("${gemini.model.name}")
+    private String geminiModelName;
+
     @PostConstruct
     public void loadSystemPrompt() {
         try {
@@ -90,7 +93,8 @@ public class GeminiChatService {
         log.info("Sending request to Gemini API: {}", request);
 
         GeminiResponse response = geminiWebClient.post()
-                .uri("/v1/models/gemini-pro:generateContent") // Шлях до ендпоінту Gemini API
+                .uri("https://generativelanguage.googleapis.com/v1beta/models"
+                        + "/gemini-pro:generateContent")
                 .header("x-goog-api-key", geminiApiKey) // <-- ДОДАЄМО ВАШ API-КЛЮЧ ТУТ!
                 .bodyValue(request) // Тіло запиту - це наш GeminiRequest
                 .retrieve()

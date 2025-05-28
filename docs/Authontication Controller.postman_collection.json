@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "751dfa3e-5ff4-408c-b1b6-6f3b66ee1f3c",
+		"name": "Authontication Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34047080",
+		"_collection_link": "https://winter-water-840520.postman.co/workspace/trainUp~2c26e93b-5160-4285-bcdb-f0ae866ea32f/collection/34047080-751dfa3e-5ff4-408c-b1b6-6f3b66ee1f3c?action=share&source=collection_link&creator=34047080"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"trainer1@example.com\",\r\n    \"password\" : \"Password#1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Athlete",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Arnold\",\r\n    \"lastName\" : \"Schwarzenegger\",\r\n    \"gender\" : \"MALE\",\r\n    \"dateOfBirth\" : \"1980-03-25\",\r\n    \"profileImageUrl\" : \"someURL\",\r\n    \"email\" : \"test2@example.com\",\r\n    \"password\" : \"Password#1\",\r\n    \"repeatPassword\" : \"Password#1\",\r\n    \"phoneNumbers\" : [\"+38(067)-123-4567\", \"+38(067)-123-9876\"],\r\n    \"emailPermission\" : true,\r\n    \"phonePermission\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register/athlete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register",
+						"athlete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Trainer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Joe\",\r\n    \"lastName\" : \"Weider\",\r\n    \"gender\" : \"MALE\",\r\n    \"dateOfBirth\" : \"1980-03-25\",\r\n    \"profileImageUrl\" : \"someURL\",\r\n    \"email\" : \"test3@example.com\",\r\n    \"password\" : \"Password#1\",\r\n    \"repeatPassword\" : \"Password#1\",\r\n    \"phoneNumbers\" : [\"+38(067)-123-4567\", \"+38(067)-123-9876\"],\r\n    \"sportIds\": [1],\r\n    \"location\": {\r\n        \"country\": \"Ukraine\",\r\n        \"city\": \"Kyiv\",\r\n        \"street\": \"Main St\",\r\n        \"house\": \"123\"\r\n    },\r\n    \"onlineTraining\": true,\r\n    \"certificates\": [\"Cert1\", \"Cert2\"],\r\n    \"description\": \"Experienced trainer\",\r\n    \"socialMediaLinks\": \"linkedin.com/johndoe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register/trainer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register",
+						"trainer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Gym_Owner",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Big\",\r\n    \"lastName\" : \"Boss\",\r\n    \"gender\" : \"MALE\",\r\n    \"dateOfBirth\" : \"1980-03-25\",\r\n    \"profileImageUrl\" : \"someURL\",\r\n    \"email\" : \"test4@example.com\",\r\n    \"password\" : \"Password#1\",\r\n    \"repeatPassword\" : \"Password#1\",\r\n    \"phoneNumbers\" : [\"+38(067)-123-4567\", \"+38(067)-123-9876\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/register/gym_owner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"register",
+						"gym_owner"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
