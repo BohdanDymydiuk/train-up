@@ -3,10 +3,10 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router';
 
 import { MainContextProvider } from './context/MainContext/provider/MainContextProvider';
 import { NavLinks } from './enums/NavLinks';
-import { MainContent } from './modules/MainContent';
-import { Home } from './modules/MainContent/components/Home';
-import { ProfileMain } from './modules/MainContent/components/ProfileMain';
-import { SignIn } from './modules/MainContent/components/SignIn';
+import { ProfileContent } from './modules/ProfileContent';
+import { Home } from './modules/ProfileContent/components/Home';
+import { ProfileMain } from './modules/ProfileContent/components/ProfileMain';
+import { SignIn } from './modules/ProfileContent/components/SignIn';
 
 import './App.scss';
 
@@ -22,7 +22,7 @@ export const App: React.FC = () => {
       <Router>
         <MainContextProvider>
           <Routes>
-            <Route path='/' element={<MainContent />}>
+            <Route path='/' element={<ProfileContent />}>
               <Route index element={<Home />} />
               <Route path={NavLinks.signIn} element={<SignIn />} />
               <Route path={NavLinks.tempProfile} element={<ProfileMain />} />

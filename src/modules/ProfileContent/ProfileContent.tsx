@@ -7,7 +7,7 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 
-export const MainContent: React.FC = () => {
+export const ProfileContent: React.FC = () => {
   const { isTempProfile } = useContext(MainContext);
 
   useEffect(() => {
