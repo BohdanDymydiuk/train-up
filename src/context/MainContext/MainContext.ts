@@ -6,4 +6,5 @@ export const MainContext = createContext<MainContextType>({
   isTempProfile: false,
   trainers: [],
   events: [],
+  location: '',
 });

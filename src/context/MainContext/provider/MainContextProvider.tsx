@@ -6,6 +6,7 @@ import { getTrainers } from '../../../api/trainers';
 import { NavLinks } from '../../../enums/NavLinks';
 import { EventInfoType } from '../../../types/EventInfoType';
 import { TrainerInfoType } from '../../../types/TrainerInfoType';
+import { regionalCenters } from '../constants/regionalCenters';
 import { MainContext } from '../MainContext';
 
 interface Props {
@@ -14,9 +15,14 @@ interface Props {
 
 export const MainContextProvider: React.FC<Props> = ({ children }) => {
   const { pathname } = useLocation();
+
+  // #region states
+
   const [trainers, setTrainers] = useState<TrainerInfoType[]>([]);
   const [events, setEvents] = useState<EventInfoType[]>([]);
+  const [location, setLocation] = useState('');
 
+  // #endregion
   // #region useEffects
 
   useEffect(() => {
@@ -38,11 +44,34 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
     });
   }, []);
 
+  useEffect(() => {
+    function showLocation(position: GeolocationPosition) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      const url = `https://us1.locationiq.com/v1/reverse?key=pk.7457ca726ad3e6d451be7db68b10d1c2&lat=${latitude}&lon=${longitude}&format=json&accept-language=ua`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const state: string = data.address.state;
+          const city: string = regionalCenters[state];
+
+          setLocation(city);
+        })
+        .catch(() => {
+          throw new Error("Sorry, we can't find you. Check your permissions");
+        });
+    }
+
+    navigator.geolocation.getCurrentPosition(showLocation);
+  }, []);
+
   // #endregion
 
   const isTempProfile = pathname.startsWith(NavLinks.tempProfile);
 
-  const providerValue = { isTempProfile, trainers, events };
+  const providerValue = { isTempProfile, trainers, events, location };
 
   return (
     <MainContext.Provider value={providerValue}>

@@ -5,4 +5,5 @@ export interface MainContextType {
   isTempProfile: boolean;
   trainers: TrainerInfoType[];
   events: EventInfoType[];
+  location: string;
 }

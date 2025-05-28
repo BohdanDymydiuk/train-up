@@ -15,7 +15,12 @@ export const MainContent: React.FC = () => {
   }, []);
 
   const wrapperCssProps: React.CSSProperties = isTempProfile
-    ? { display: 'flex', gap: '14px' }
+    ? {
+        display: 'flex',
+        gap: '14px',
+        position: 'relative',
+        width: 'fit-content',
+      }
     : { display: 'contents' };
 
   return (
