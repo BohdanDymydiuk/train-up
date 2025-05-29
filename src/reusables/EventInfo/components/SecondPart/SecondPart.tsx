@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { EventInfoType } from '../../../../types/EventInfoType';
-import { ParticipantsSVG } from '../../../svgs/ParticipantsSVG';
-import { ThunderSVG } from '../../../svgs/ThunderSVG';
+import { ParticipantsSVG } from '../../../svgs/sectionSvgs/events/ParticipantsSVG';
+import { ThunderSVG } from '../../../svgs/sectionSvgs/events/ThunderSVG';
 import { TrainingType } from '../../../TrainingType';
 
 import styles from './SecondPart.module.scss';

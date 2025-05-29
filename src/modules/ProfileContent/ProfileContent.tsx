@@ -5,6 +5,7 @@ import { MainContext } from '../../context/MainContext';
 
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
+import { MiniCalendar } from './components/MiniCalendar';
 import { Sidebar } from './components/Sidebar';
 
 export const ProfileContent: React.FC = () => {
@@ -30,6 +31,11 @@ export const ProfileContent: React.FC = () => {
         {isTempProfile && <Sidebar />}
         <main>
           <Outlet />
+          {isTempProfile && (
+            <>
+              <MiniCalendar />
+            </>
+          )}
         </main>
       </div>
       <Footer />

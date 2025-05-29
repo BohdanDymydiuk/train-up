@@ -4,8 +4,8 @@ import { Link } from 'react-router';
 import { MainContext } from '../../../../context/MainContext';
 import { NavLinks } from '../../../../enums/NavLinks';
 import { Logo } from '../../../../reusables/Logo';
-import { BellSVG } from '../../../../reusables/svgs/BellSVG';
-import { SearchSVG } from '../../../../reusables/svgs/SearchSVG';
+import { BellSVG } from '../../../../reusables/svgs/headerSvgs/BellSVG';
+import { SearchSVG } from '../../../../reusables/svgs/headerSvgs/SearchSVG';
 
 import { Lang } from './components/Lang';
 import { Nav } from './components/Nav';

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { TrainerInfoType } from '../../../../types/TrainerInfoType';
-import { StarSVG } from '../../../svgs/StarSVG';
+import { StarSVG } from '../../../svgs/sectionSvgs/trainers/StarSVG';
 
 import styles from './FourthPart.module.scss';
 

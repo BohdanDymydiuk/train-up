@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { NavItems } from '../../../../enums/NavItems';
-import { CalendarSVG } from '../../../../reusables/svgs/CalendarSVG';
-import { EventsSVG } from '../../../../reusables/svgs/EventsSVG';
-import { GymsSVG } from '../../../../reusables/svgs/GymsSVG';
-import { MainSVG } from '../../../../reusables/svgs/MainSVG';
-import { TrainersSVG } from '../../../../reusables/svgs/TrainersSVG';
+import { CalendarSVG } from '../../../../reusables/svgs/sectionSvgs/calendar/CalendarSVG';
+import { EventsSVG } from '../../../../reusables/svgs/sectionSvgs/events/EventsSVG';
+import { GymsSVG } from '../../../../reusables/svgs/sectionSvgs/GymsSVG';
+import { MainSVG } from '../../../../reusables/svgs/sectionSvgs/MainSVG';
+import { TrainersSVG } from '../../../../reusables/svgs/sectionSvgs/trainers/TrainersSVG';
 
 import styles from './Sidebar.module.scss';
 
