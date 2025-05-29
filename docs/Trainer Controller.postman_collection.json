@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "7aee19cd-ba47-4237-ac37-c437fb587ff9",
+		"name": "Trainer Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34047080",
+		"_collection_link": "https://winter-water-840520.postman.co/workspace/trainUp~2c26e93b-5160-4285-bcdb-f0ae866ea32f/collection/34047080-7aee19cd-ba47-4237-ac37-c437fb587ff9?action=share&source=collection_link&creator=34047080"
+	},
+	"item": [
+		{
+			"name": "Get Trainers by criteria",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJneW1vd25lcjFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDczOTk2NDgsImV4cCI6MTc0NzQwMjY0OH0.gN-bylz66BSqWvlho_vXmI7ubAm9Zha59_BEqQTj3v1retIOAjFXieir7lShe-Iz",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/trainer?locationCountry=Ukraine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trainer"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Joe",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sportIds",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "gymIds",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "locationCountry",
+							"value": "Ukraine"
+						},
+						{
+							"key": "locationCity",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "locationCityDistrict",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "locationStreet",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "locationHouse",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "onlineTraining",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Trainer by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJneW1vd25lcjFAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDczOTk2NDgsImV4cCI6MTc0NzQwMjY0OH0.gN-bylz66BSqWvlho_vXmI7ubAm9Zha59_BEqQTj3v1retIOAjFXieir7lShe-Iz",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/trainer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trainer",
+						"1"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Joe",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "maleOrFemale",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "sportIds",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "gymIds",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "locationCity",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "locationCityDistrict",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "locationStreet",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "locationHouse",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "onlineTraining",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get current trainer info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0cmFpbmVyMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzM5OTgzNywiZXhwIjoxNzQ3NDAyODM3fQ.eTFd7QtNB6LdLfM-o25vSGeVN3tUMNgPZD6emwBxllIVmsOHp6VmLPh1oQWXaXe1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/trainer/my",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trainer",
+						"my"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Joe",
+							"disabled": true
+						},
+						{
+							"key": "lastName",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "maleOrFemale",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "sportIds",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "gymIds",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "locationCity",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "locationCityDistrict",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "locationStreet",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "locationHouse",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "onlineTraining",
+							"value": "true",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update current trainer info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0cmFpbmVyMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzQ3ODE5OCwiZXhwIjoxNzQ3NDgxMTk4fQ.K6puni8FsGNOiJaAiKbnUVhtxiOI9-diCpCe4KpUBw_75uq9rQ9JDvEFHk_1KqiV",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"description\": \"Etremal Experienced trainer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/trainer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trainer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Trainer by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0cmFpbmVyMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzQ3OTIyNSwiZXhwIjoxNzQ3NDgyMjI1fQ.G6ryGvphndz1QVxaqDsekX3iUZ3B895KGuM-ZzsjxdLCtG5YTh7Cdw0xqhiOgRV5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/trainer/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"trainer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

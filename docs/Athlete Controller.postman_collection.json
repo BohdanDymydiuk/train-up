@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "a90d100f-bbc2-4d2d-98f2-e87e1de4954a",
+		"name": "Athlete Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34047080",
+		"_collection_link": "https://winter-water-840520.postman.co/workspace/trainUp~2c26e93b-5160-4285-bcdb-f0ae866ea32f/collection/34047080-a90d100f-bbc2-4d2d-98f2-e87e1de4954a?action=share&source=collection_link&creator=34047080"
+	},
+	"item": [
+		{
+			"name": "Get Athlete by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhsZXRlMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzQ4NjEwMSwiZXhwIjoxNzQ3NDg5MTAxfQ.NvA_6oK8I35qqNHutu39UJiOIJbC-fphkzsQPqcxLaszlAFf4hUhHuZg216FWiKi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/athlete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"athlete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Athlete by criteria",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhsZXRlMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzQ4NjEwMSwiZXhwIjoxNzQ3NDg5MTAxfQ.NvA_6oK8I35qqNHutu39UJiOIJbC-fphkzsQPqcxLaszlAFf4hUhHuZg216FWiKi",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/athlete?firstName=Arnold",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"athlete"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "Arnold"
+						},
+						{
+							"key": "lastName",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "dateOfBirth",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sportIds",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "emailPermission",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "phonePermission",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upate current Athlete info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhsZXRlMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzQ4NjQ3NSwiZXhwIjoxNzQ3NDg5NDc1fQ.uKJ0vsonXHDvh-IfyctBCq9n7vq5PnFe5vqjg6khZWQL0KV3vhXasQPMpYEZVNiX",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Arni\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/athlete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"athlete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upate current Athlete info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhdGhsZXRlMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NzYzODAxMywiZXhwIjoxNzQ3NjQxMDEzfQ.lityqN4GxP6FaQyh2_gv54duWWBC_o60XouSwlLWqDxSwN3l-vjaSFoKsYsWUb3u",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/athlete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"athlete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

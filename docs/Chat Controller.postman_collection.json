@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "a1b1e00d-b93f-468c-bc46-49327be34058",
+		"name": "Chat Controller",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34047080",
+		"_collection_link": "https://winter-water-840520.postman.co/workspace/trainUp~2c26e93b-5160-4285-bcdb-f0ae866ea32f/collection/34047080-a1b1e00d-b93f-468c-bc46-49327be34058?action=share&source=collection_link&creator=34047080"
+	},
+	"item": [
+		{
+			"name": "Send request to chatGpt",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0M0BleGFtcGxlLmNvbSIsImlhdCI6MTc0ODUzMDQ4NSwiZXhwIjoxNzQ4NTMzNDg1fQ.lxjJoJBHROaz2QZDUMWGyRsb3wfGBG8jh47tPf6X6MDhS9ITUnBH9kTt8kZkh16H",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\" : \"Хочу збросити вагу. Обмежень по здоров'ю нема. Хочу ходити в зал 3 рази на тиждень. Пропиши программу та дієту\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/chat/ask",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chat",
+						"ask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve chatGpt history ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0cmFpbmVyMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODAwMzU5MiwiZXhwIjoxNzQ4MDA2NTkyfQ.kFXZ3ge3o7nnAwSTPC5DCHMDofAXtBLxJuQOHldtos0BZB07mvy9naGMU4n0CNH3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/chat/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chat",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Clear chatGpt history ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0cmFpbmVyMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODAwMzU5MiwiZXhwIjoxNzQ4MDA2NTkyfQ.kFXZ3ge3o7nnAwSTPC5DCHMDofAXtBLxJuQOHldtos0BZB07mvy9naGMU4n0CNH3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/chat/clear-history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chat",
+						"clear-history"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

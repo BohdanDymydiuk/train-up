@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 23-create-trainer_certificates-table
+      author: bohdan-s
+      changes:
+        - createTable:
+            tableName: trainer_certificates
+            columns:
+              - column:
+                  name: trainer_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_trainer_certificate_trainer
+                    references: trainers(id)
+              - column:
+                  name: certificates
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
