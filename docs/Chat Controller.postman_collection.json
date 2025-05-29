@@ -15,7 +15,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0cmFpbmVyMUBleGFtcGxlLmNvbSIsImlhdCI6MTc0ODAwMzU5MiwiZXhwIjoxNzQ4MDA2NTkyfQ.kFXZ3ge3o7nnAwSTPC5DCHMDofAXtBLxJuQOHldtos0BZB07mvy9naGMU4n0CNH3",
+							"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0M0BleGFtcGxlLmNvbSIsImlhdCI6MTc0ODUzMDQ4NSwiZXhwIjoxNzQ4NTMzNDg1fQ.lxjJoJBHROaz2QZDUMWGyRsb3wfGBG8jh47tPf6X6MDhS9ITUnBH9kTt8kZkh16H",
 							"type": "string"
 						}
 					]
@@ -24,7 +24,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"question\" : \"Привіт. Хто ти і що ти вмієш\"\r\n}",
+					"raw": "{\r\n    \"question\" : \"Хочу збросити вагу. Обмежень по здоров'ю нема. Хочу ходити в зал 3 рази на тиждень. Пропиши программу та дієту\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

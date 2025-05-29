@@ -55,24 +55,22 @@ public class ChatController {
         log.info("Received AI chat request: {}", requestDto);
 
         List<ChatMessageDto> responseHistory;
-        if (requestDto.newConversation()) {
-            // Починаємо нову розмову, історія буде очищена в ChatSession
+        boolean isNewConversation = requestDto.newConversation().orElse(false);
+        if (isNewConversation) {
             log.info("Starting a new conversation. Chat history will be cleared.");
             responseHistory = geminiChatService
                     .startNewConversation(requestDto.question(), requestDto.customPrompt());
         } else {
-            // Продовжуємо існуючу розмову
             log.info("Continuing existing conversation.");
             responseHistory = geminiChatService
-                    .continueConversation(requestDto.question()); // Тепер без передачі історії
+                    .continueConversation(requestDto.question());
         }
 
-        // ChatSession вже керує історією
         log.info("AI response processed. Current chat history size: {}", responseHistory.size());
         return ResponseEntity.ok(responseHistory);
     }
 
-    @GetMapping("/history") // Без PathVariable, бо історія прив'язана до поточної сесії
+    @GetMapping("/history")
     @Operation(
             summary = "Get Chat AI history",
             description = "Retrieves the full chat history for the current session."
@@ -98,7 +96,7 @@ public class ChatController {
     })
     public ResponseEntity<String> clearChatHistory() {
         log.info("Attempting to clear chat history for current session.");
-        chatSession.clearHistory(); // Викликаємо метод на ChatSession
+        chatSession.clearHistory();
 
         log.info("Chat history for current session cleared successfully.");
         return ResponseEntity.ok("Chat history cleared successfully.");

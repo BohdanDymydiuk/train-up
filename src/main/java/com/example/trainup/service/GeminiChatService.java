@@ -1,11 +1,9 @@
 package com.example.trainup.service;
 
 import com.example.trainup.dto.chat.ChatMessageDto;
-import com.example.trainup.dto.gemini.GeminiContent;
-import com.example.trainup.dto.gemini.GeminiPart;
-import com.example.trainup.dto.gemini.GeminiRequest;
-import com.example.trainup.dto.gemini.GeminiResponse;
 import com.example.trainup.model.ChatSession;
+import com.google.genai.Client;
+import com.google.genai.types.GenerateContentResponse;
 import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -17,24 +15,20 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
 @RequiredArgsConstructor
 @Log4j2
 public class GeminiChatService {
-    private final WebClient geminiWebClient;
     private final ResourceLoader resourceLoader;
     private final ChatSession chatSession;
+    private final Client geminiClient;
     private String systemPrompt;
-
-    @Value("${gemini.api.key}")
-    private String geminiApiKey;
 
     @Value("${app.system-prompt-file}")
     private String systemPromptFile;
 
-    @Value("${gemini.model.name}")
+    @Value("${gemini.model.name:gemini-2.0-flash}")
     private String geminiModelName;
 
     @PostConstruct
@@ -57,75 +51,48 @@ public class GeminiChatService {
         String promptToUse = customPrompt != null && !customPrompt.isBlank()
                 ? customPrompt : systemPrompt;
 
+        chatSession.getMessageHistory().add(new ChatMessageDto("system", promptToUse));
         chatSession.getMessageHistory().add(new ChatMessageDto("user", userQuestion));
 
         return sendToGemini(chatSession.getMessageHistory());
     }
 
-    public List<ChatMessageDto> continueConversation(
-            String newUserMessage
-    ) {
+    public List<ChatMessageDto> continueConversation(String newUserMessage) {
         if (chatSession.getMessageHistory().isEmpty()) {
-            // Автоматично добаємо systemPrompt, якщо нема історії
             chatSession.getMessageHistory().add(new ChatMessageDto("system", systemPrompt));
         }
 
-        // Просто додаємо нове повідомлення до історії сесії
         chatSession.getMessageHistory().add(new ChatMessageDto("user", newUserMessage));
         return sendToGemini(chatSession.getMessageHistory());
     }
 
     private List<ChatMessageDto> sendToGemini(List<ChatMessageDto> chatHistory) {
-        // 1. Конвертуємо наш внутрішній ChatMessageDto у GeminiContent, який потрібен API Gemini
-        List<GeminiContent> geminiContents = chatHistory.stream()
-                .map(msg -> new GeminiContent(
-                        mapRoleToGemini(msg.role()), // Метод для мапінгу ролей
-                        List.of(new GeminiPart(msg.content()))
-                // Кожен TextPart має бути в List.of()
-                ))
-                .toList();
+        try {
+            List<String> messages = chatHistory.stream()
+                    .map(msg -> msg.role() + ": " + msg.content())
+                    .toList();
 
-        // 2. Створюємо GeminiRequest (це тіло запиту до Gemini API)
-        GeminiRequest request = new GeminiRequest(geminiContents);
+            GenerateContentResponse response = geminiClient.models.generateContent(
+                    geminiModelName,
+                    String.join("\n", messages),
+                    null
+            );
 
-        // 3. Відправляємо запит через WebClient
-        // GeminiResponse - це те, що ми очікуємо назад від Gemini API
-        log.info("Sending request to Gemini API: {}", request);
+            List<ChatMessageDto> currentChatHistory = new ArrayList<>(chatHistory);
+            if (response != null && response.text() != null) {
+                ChatMessageDto aiResponse = new ChatMessageDto("assistant", response.text());
+                currentChatHistory.add(aiResponse);
+                chatSession.getMessageHistory().add(aiResponse);
+                log.info("Received response from Gemini API: {}", response.text());
+            } else {
+                log.warn("Empty or invalid response from Gemini API.");
+                throw new RuntimeException("Failed to get response from Gemini.");
+            }
 
-        GeminiResponse response = geminiWebClient.post()
-                .uri("https://generativelanguage.googleapis.com/v1beta/models"
-                        + "/gemini-pro:generateContent")
-                .header("x-goog-api-key", geminiApiKey) // <-- ДОДАЄМО ВАШ API-КЛЮЧ ТУТ!
-                .bodyValue(request) // Тіло запиту - це наш GeminiRequest
-                .retrieve()
-                .bodyToMono(GeminiResponse.class) // Очікуємо відповідь типу GeminiResponse
-                    .block(); // Блокуємо виконання для отримання
-        // відповіді (для асинхронних WebClient)
-
-        // 4. Обробка відповіді та конвертація назад у ваш ChatMessageDto
-        List<ChatMessageDto> currentChatHistory = new ArrayList<>(chatHistory);
-        // Створюємо змінювану копію історії
-
-        if (response != null) {
-            List<ChatMessageDto> aiResponses = response.toChatMessageDtos();
-            // Використовуємо метод з GeminiResponse
-            currentChatHistory.addAll(aiResponses); // Додаємо відповіді AI до історії
-            chatSession.getMessageHistory().addAll(aiResponses);
-        } else {
-            log.warn("Відповідь від Gemini API була порожньою або недійсною.");
-            throw new RuntimeException("Не вдалося отримати відповідь від Gemini.");
+            return currentChatHistory;
+        } catch (Exception e) {
+            log.error("Error communicating with Gemini API", e);
+            throw new RuntimeException("Failed to process Gemini request", e);
         }
-        return currentChatHistory; // Повертаємо оновлену історію
-    }
-
-    // Допоміжний метод для мапінгу ролей від вашого внутрішнього DTO до ролей Gemini API
-    private String mapRoleToGemini(String role) {
-        return switch (role) {
-            case "user" -> "user";
-            case "assistant" -> "model"; // Gemini використовує "model" для відповідей AI
-            case "system" -> "user"; // Системні підказки відправляються
-            // як повідомлення "user" до моделі
-            default -> "user";
-        };
     }
 }
