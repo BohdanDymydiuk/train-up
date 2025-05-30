@@ -8,7 +8,7 @@ import { Header } from './components/Header';
 import { MiniCalendar } from './components/MiniCalendar';
 import { Sidebar } from './components/Sidebar';
 
-export const ProfileContent: React.FC = () => {
+export const MainContent: React.FC = () => {
   const { isTempProfile } = useContext(MainContext);
 
   useEffect(() => {
