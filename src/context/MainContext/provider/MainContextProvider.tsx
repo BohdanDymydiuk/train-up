@@ -32,6 +32,10 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
     getters.forEach((get, index) => {
       type ElementsType = TrainerInfoType[] | EventInfoType[];
 
+      if (index === 1) {
+        return;
+      }
+
       const set = setters[index] as React.Dispatch<
         React.SetStateAction<ElementsType>
       >;
@@ -66,6 +70,14 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
 
     navigator.geolocation.getCurrentPosition(showLocation);
   }, []);
+
+  useEffect(() => {
+    const currentDay = new Date().getDay();
+
+    console.log(currentDay);
+  }, []);
+
+  console.log(trainers);
 
   // #endregion
 

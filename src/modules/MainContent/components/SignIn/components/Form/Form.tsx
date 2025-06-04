@@ -16,9 +16,13 @@ const body = document.body;
 const root = document.querySelector('#root') as HTMLElement;
 
 export const Form: React.FC = () => {
+  // #region states
+
   const [isModalShown, setIsModalShown] = useState(false);
   const [emailName, setEmailName] = useState('');
   const [password, setPassword] = useState('');
+
+  // #endregion
 
   const navigate = useNavigate();
 
@@ -45,9 +49,7 @@ export const Form: React.FC = () => {
     setPassword(event.target.value);
   };
 
-  const onSubmitHandler = (event: React.FormEvent) => {
-    event.preventDefault();
-
+  const onSubmitHandler = () => {
     navigate('/');
   };
 
