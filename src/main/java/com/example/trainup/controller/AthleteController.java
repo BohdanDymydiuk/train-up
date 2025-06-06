@@ -91,7 +91,7 @@ public class AthleteController {
     }
 
     @PatchMapping("/{id}")
-    @PreAuthorize("@athleteServiceImpl.canUserModifyAthlete(#authentication, #id)")
+    @PreAuthorize("@athleteService.canUserModifyAthlete(#authentication, #id)")
     @Operation(
             summary = "Update Athlete Profile",
             description = "Allows an athlete to update their own profile information. "
