@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const BASE_URL = 'https://a984-109-200-252-189.ngrok-free.app';
+const BASE_URL = 'http://localhost:8080';
 
 // a promise resolved after a given delay
 function wait(delay: number) {
@@ -19,8 +19,9 @@ function request<T>(
   const options: RequestInit = { method };
   options.headers = {
     'Content-Type': 'application/json; charset=UTF-8',
+    Accept: 'application/json',
     Authorization:
-      'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsb3JlbTJAZ21haWwuY29tIiwiaWF0IjoxNzQ5MDQwMzUwLCJleHAiOjE3NDkwNDMzNTB9.xE21AJ3N_UAiDk7SKogSA92sCoEvD0yx-pwVabQS0Lg24jv1KVwHWPfSdad-08eO',
+      'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsb3JlbTJAZ21haWwuY29tIiwiaWF0IjoxNzQ5MzAxOTM2LCJleHAiOjE3NDkzMDQ5MzZ9.tj4PYDYMvmq0eI2hG-Kae-3qjbnolDyrUz4PgJdF-1pfNtQG4Bevn5ASGTGS7Akf',
   };
 
   if (data) {

@@ -1,0 +1,73 @@
+databaseChangeLog:
+  - changeSet:
+        id: 24-insert-sports-data
+        author: bohdan-s
+        changes:
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Тренажерний зал' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Плавання' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Кроссфіт' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Сквош' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Бокс' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Стретчинг' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Йога' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Сайклінг' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Дитячий фітнес' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Дитяче плавання' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Плавання для немовлят' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Аква аеробіка' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Пілатес' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Степ аеробіка' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Настільний теніс' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'TRX' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Жіночий бокс' }

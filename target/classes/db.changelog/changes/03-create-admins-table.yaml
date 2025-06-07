@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: 03-create-admins-table
+      author: bohdan-s
+      changes:
+        - createTable:
+            tableName: admins
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: gender
+                  type: CHAR(10)
+              - column:
+                  name: date_of_birth
+                  type: DATE
+              - column:
+                  name: profile_image_url
+                  type: VARCHAR(255)
+              - column:
+                  name: user_credentials_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_admin_user_credentials
+                    references: user_credentials(id)
+              - column:
+                  name: is_deleted
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
