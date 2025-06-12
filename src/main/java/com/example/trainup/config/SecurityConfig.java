@@ -78,7 +78,7 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         List<String> allowedOrigins = new ArrayList<>(List.of(
                 "http://localhost:5173",
-                "https://quiet-badgers-change.loca.lt"
+                "https://c3e3-109-200-252-189.ngrok-free.app/"
         ));
         //TODO: allowedOrigins.add("null"); only for testing
         allowedOrigins.add("null");
