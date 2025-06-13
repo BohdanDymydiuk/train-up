@@ -48,4 +48,10 @@ databaseChangeLog:
   - include:
         file: db.changelog/changes/24-insert-sports-data.yaml
   - include:
-        file: db.changelog/changes/25-insert-admin-to-admins.yaml
+        file: db.changelog/changes/25-insert-roles-to-roles.yaml
+  - include:
+        file: db.changelog/changes/26-insert-admin-to-admins.yaml
+  - include:
+        file: db.changelog/changes/27-insert-trainers-for-testing.yaml
+#  - include:
+#        file: db.changelog/changes/27-insert-gyms-for-testing.yaml

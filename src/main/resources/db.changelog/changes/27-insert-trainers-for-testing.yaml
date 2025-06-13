@@ -1,0 +1,77 @@
+databaseChangeLog:
+  - changeSet:
+      id: 27-insert-trainers-for-testing
+      author: bohdan-s
+      preconditions:
+        - onFail: MARK_RAN
+        - sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM user_credentials WHERE email = 'ivan.petrenko@example.com'
+        - sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM addresses WHERE country = 'Україна' AND city = 'Київ' AND street = 'Хрещатик' AND house = '10'
+      changes:
+        # Insert into user_credentials
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'ivan.petrenko@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+              - column: { name: is_deleted, value: false }
+        # Insert into user_credentials_roles (role_id 3 for TRAINER)
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'ivan.petrenko@example.com')" }
+              - column: { name: role_id, value: 3 }
+        # Insert into addresses
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Київ' }
+              - column: { name: street, value: 'Хрещатик' }
+              - column: { name: house, value: '10' }
+              - column: { name: is_deleted, value: false }
+        # Insert into trainers
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Іван' }
+              - column: { name: last_name, value: 'Петренко_TEST' }
+              - column: { name: gender, value: 'MALE' }
+              - column: { name: date_of_birth, value: '1985-05-15' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'ivan.petrenko@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Київ' AND street = 'Хрещатик' AND house = '10')" }
+              - column: { name: online_training, value: true }
+              - column: { name: description, value: 'Досвідчений тренер з фітнесу та кросфіту.' }
+              - column: { name: social_media_links, value: 'https://fb.com/ivan.trainer' }
+              - column: { name: overall_rating, value: 4.90 }
+              - column: { name: number_of_reviews, value: 120 }
+              - column: { name: is_deleted, value: false }
+        # Insert into trainer_phone_numbers
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Іван' AND last_name = 'Петренко_TEST')" }
+              - column: { name: phone_numbers, value: '+38(050)-111-2233' }
+        # Insert into trainer_certificates
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Іван' AND last_name = 'Петренко_TEST')" }
+              - column: { name: certificates, value: 'Сертифікат АФК' }
+        # Insert into sports_trainers for Кросфіт (sport_id 3)
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Іван' AND last_name = 'Петренко_TEST')" }
+              - column: { name: sport_id, value: 3 }
+        # Insert into sports_trainers for Тренажерний зал (sport_id 1)
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Іван' AND last_name = 'Петренко_TEST')" }
+              - column: { name: sport_id, value: 1 }
