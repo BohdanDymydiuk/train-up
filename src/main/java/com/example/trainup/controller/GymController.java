@@ -137,7 +137,7 @@ public class GymController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') or @gymServiceImpl.canUserModifyGym(#authentication.name, #id)")
+    @PreAuthorize("hasRole('ADMIN') or @gymService.canUserModifyGym(#authentication.name, #id)")
     @Operation(
             summary = "Delete Gym by ID",
             description = "Allows an ADMIN or the Gym Owner to delete a specific gym. "
@@ -154,7 +154,7 @@ public class GymController {
     }
 
     @PatchMapping("/{id}")
-    @PreAuthorize("@gymServiceImpl.canUserModifyGym(#authentication.name, #id)")
+    @PreAuthorize("@gymService.canUserModifyGym(#authentication.name, #id)")
     @Operation(
             summary = "Update Gym Information",
             description = "Allows the Gym Owner to update specific details of a gym they own."

@@ -120,7 +120,7 @@ public class TrainerController {
     }
 
     @PatchMapping("/{id}")
-    @PreAuthorize("@trainerServiceImpl.canUserModifyTrainer(#authentication, #id)")
+    @PreAuthorize("@trainerService.canUserModifyTrainer(#authentication, #id)")
     @Operation(
             summary = "Update Trainer Profile",
             description = "Allows the Trainer themselves to update their own profile information. "

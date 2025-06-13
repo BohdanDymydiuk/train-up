@@ -114,7 +114,7 @@ public class EventController {
     }
 
     @PatchMapping("/{id}")
-    @PreAuthorize("@eventServiceImpl.canUserModifyEvent(#authentication.name, #id)")
+    @PreAuthorize("@eventService.canUserModifyEvent(#authentication.name, #id)")
     @Operation(
             summary = "Update Event Details",
             description = "Allows the associated Trainer or Gym Owner to update specific details "
@@ -134,7 +134,7 @@ public class EventController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("@eventServiceImpl.canUserModifyEvent(#authentication.name, #id)")
+    @PreAuthorize("@eventService.canUserModifyEvent(#authentication.name, #id)")
     @Operation(
             summary = "Delete Event",
             description = "Allows the associated Trainer or Gym Owner to delete an event."

@@ -42,7 +42,7 @@ public class AthleteController {
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') "
-            + "or @athleteServiceImpl.canUserModifyAthlete(#authentication, #id)")
+            + "or @athleteService.canUserModifyAthlete(#authentication, #id)")
     @Operation(
             summary = "Retrieve Athlete Profile by ID",
             description = "Allows an ADMIN or the athlete themselves to retrieve detailed profile "
@@ -91,7 +91,7 @@ public class AthleteController {
     }
 
     @PatchMapping("/{id}")
-    @PreAuthorize("@athleteServiceImpl.canUserModifyAthlete(#authentication, #id)")
+    @PreAuthorize("@athleteService.canUserModifyAthlete(#authentication, #id)")
     @Operation(
             summary = "Update Athlete Profile",
             description = "Allows an athlete to update their own profile information. "
@@ -111,7 +111,7 @@ public class AthleteController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') "
-            + "or @athleteServiceImpl.canUserModifyAthlete(#authentication, #id)")
+            + "or @athleteService.canUserModifyAthlete(#authentication, #id)")
     @Operation(
             summary = "Delete Athlete User",
             description = "Allows an ADMIN or the athlete themselves to delete "
