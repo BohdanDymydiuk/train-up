@@ -53,5 +53,5 @@ databaseChangeLog:
         file: db.changelog/changes/26-insert-admin-to-admins.yaml
   - include:
         file: db.changelog/changes/27-insert-trainers-for-testing.yaml
-#  - include:
-#        file: db.changelog/changes/27-insert-gyms-for-testing.yaml
+  - include:
+        file: db.changelog/changes/28-insert-gym-owner-and-gyms.yaml
