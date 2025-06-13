@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { useLocation } from 'react-router';
 
 import { getEvents } from '../../../api/events';
@@ -21,6 +22,11 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
   const [trainers, setTrainers] = useState<TrainerInfoType[]>([]);
   const [events, setEvents] = useState<EventInfoType[]>([]);
   const [location, setLocation] = useState('');
+
+  // #endregion
+  // #region media queries
+
+  const onTablet = useMediaQuery({ query: '(min-width: 768px)' });
 
   // #endregion
   // #region useEffects
@@ -77,13 +83,11 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
     console.log(currentDay);
   }, []);
 
-  console.log(trainers);
-
   // #endregion
 
   const isTempProfile = pathname.startsWith(NavLinks.tempProfile);
 
-  const providerValue = { isTempProfile, trainers, events, location };
+  const providerValue = { isTempProfile, trainers, events, location, onTablet };
 
   return (
     <MainContext.Provider value={providerValue}>

@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router';
 
 import { MainContext } from '../../../../context/MainContext';
-import { NavLinks } from '../../../../enums/NavLinks';
-import { Logo } from '../../../../reusables/Logo';
 import { BellSVG } from '../../../../reusables/svgs/headerSvgs/BellSVG';
 import { SearchSVG } from '../../../../reusables/svgs/headerSvgs/SearchSVG';
+import { LogoSVG } from '../../../../reusables/svgs/LogoSVG';
 
+import { Burger } from './components/Burger';
 import { Lang } from './components/Lang';
 import { Nav } from './components/Nav';
 import { ProfileIMG } from './components/ProfileIMG';
@@ -16,7 +15,7 @@ import { Title } from './components/Title';
 import styles from './Header.module.scss';
 
 export const Header: React.FC = () => {
-  const { isTempProfile } = useContext(MainContext);
+  const { isTempProfile, onTablet } = useContext(MainContext);
 
   // #regions css props
 
@@ -26,16 +25,17 @@ export const Header: React.FC = () => {
 
   const secondPartCssProps: React.CSSProperties = isTempProfile
     ? { gap: '32px' }
-    : { gap: '8px' };
+    : { gap: '16px' };
 
   // #endregion
   // #regions jsx
 
   const defaultSp = (
     <>
-      <Lang />
+      {onTablet && <Lang />}
       <SignIn />
-      <Link to={NavLinks.tempProfile}>TempProfile</Link>
+      {!onTablet && <Burger />}
+      {/* <Link to={NavLinks.tempProfile}>TempProfile</Link> */}
     </>
   );
 
@@ -52,8 +52,8 @@ export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles['first-part']} style={firstPartCssProps}>
-        <Logo />
-        {isTempProfile ? <Title /> : <Nav />}
+        <LogoSVG />
+        {onTablet && (isTempProfile ? <Title /> : <Nav />)}
       </div>
       <div className={styles['second-part']} style={secondPartCssProps}>
         {isTempProfile ? tempSp : defaultSp}

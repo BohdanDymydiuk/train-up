@@ -7,4 +7,5 @@ export const MainContext = createContext<MainContextType>({
   trainers: [],
   events: [],
   location: '',
+  onTablet: false,
 });

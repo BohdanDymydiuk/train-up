@@ -1,44 +1,25 @@
-$btn-active-color: green;
-
 .wrapper {
   position: relative;
   height: min-content;
 
   .signin {
-    box-sizing: border-box;
     width: $signin-width;
     height: $signin-height;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    padding: 4px 8px;
+    border: none;
+    border-radius: 8px;
     background-color: $btn-bg-color;
     cursor: pointer;
     transition: border-color $trans-dur;
+    color: #fff;
 
-    @include inter-500-16;
+    @include inter-500-15;
 
-    &:hover {
-      border-color: $primary-color;
-    }
-
-    svg path {
-      transition: fill $trans-dur;
-    }
-
-    &:active {
-      border-color: $btn-active-color;
-
-      svg path {
-        fill: $btn-active-color;
-      }
+    &:focus {
+      background-color: $btn-bg-color-effect;
     }
   }
 }
 
 :export {
-  btnFocusColor: green;
+  btnFocusColor: $btn-bg-color-effect;
 }

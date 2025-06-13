@@ -17,11 +17,13 @@ function request<T>(
   data: any = null, // we can send any data to the server
 ): Promise<T> {
   const options: RequestInit = { method };
+  const jwtTokem =
+    'eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsb3JlbTJAZ21haWwuY29tIiwiaWF0IjoxNzQ5ODMxOTM5LCJleHAiOjE3NDk4MzQ5Mzl9.y6s8SsBD4tqsClrzZP8BPIxy-jAhlkPeRiMaIHRfN_ctJiArWyh3M3FSyzqo0INt';
+
   options.headers = {
     'Content-Type': 'application/json; charset=UTF-8',
     Accept: 'application/json',
-    Authorization:
-      'Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsb3JlbTJAZ21haWwuY29tIiwiaWF0IjoxNzQ5MzAxOTM2LCJleHAiOjE3NDkzMDQ5MzZ9.tj4PYDYMvmq0eI2hG-Kae-3qjbnolDyrUz4PgJdF-1pfNtQG4Bevn5ASGTGS7Akf',
+    Authorization: `Bearer ${jwtTokem}`,
   };
 
   if (data) {

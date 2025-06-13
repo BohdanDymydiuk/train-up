@@ -6,4 +6,5 @@ export interface MainContextType {
   trainers: TrainerInfoType[];
   events: EventInfoType[];
   location: string;
+  onTablet: boolean;
 }

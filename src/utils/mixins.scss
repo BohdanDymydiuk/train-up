@@ -1,8 +1,17 @@
+// #region media queries
+
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// #endregion
 // #region inter
 
 @mixin inter {
   font-family: Inter, sans-serif;
-  line-height: 120%;
+  line-height: 100%;
 }
 
 // #region inter-400
@@ -44,6 +53,12 @@
   @include inter-500;
 
   font-size: 14px;
+}
+
+@mixin inter-500-15 {
+  @include inter-500;
+
+  font-size: 15px;
 }
 
 @mixin inter-500-16 {
