@@ -69,12 +69,17 @@ public class TrainerServiceImpl implements TrainerService {
                 filter.locationCityDistrict(), filter.locationStreet(), filter.locationHouse(),
                 filter.onlineTraining());
 
+        Set<Long> sportIds = (filter.sportIds() == null || filter.sportIds().isEmpty())
+                ? null : filter.sportIds();
+        Set<Long> gymIds = (filter.gymIds() == null || filter.gymIds().isEmpty())
+                ? null : filter.gymIds();
+
         Page<Trainer> trainerPage = trainerRepository.findTrainersByCriteria(
                 filter.firstName(),
                 filter.lastName(),
                 filter.gender(),
-                filter.sportIds(),
-                filter.gymIds(),
+                sportIds,
+                gymIds,
                 filter.locationCountry(),
                 filter.locationCity(),
                 filter.locationCityDistrict(),
