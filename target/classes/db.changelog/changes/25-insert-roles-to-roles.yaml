@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: 25-insert-roles-to-roles
+      author: bohdan-s
+      preconditions:
+        - onFail: MARK_RAN
+        - sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM roles WHERE name = 'ROLE_ADMIN'
+        - sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM roles WHERE name = 'ROLE_ATHLETE'
+        - sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM roles WHERE name = 'ROLE_TRAINER'
+        - sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM roles WHERE name = 'ROLE_GYM_OWNER'
+      changes:
+        # Insert ROLE_ADMIN (id=1)
+        - insert:
+            tableName: roles
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: name, value: 'ROLE_ADMIN' }
+        # Insert ROLE_ATHLETE (id=2)
+        - insert:
+            tableName: roles
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: name, value: 'ROLE_ATHLETE' }
+        # Insert ROLE_TRAINER (id=3)
+        - insert:
+            tableName: roles
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: name, value: 'ROLE_TRAINER' }
+        # Insert ROLE_GYM_OWNER (id=4)
+        - insert:
+            tableName: roles
+            columns:
+              - column: { name: id, value: 4 }
+              - column: { name: name, value: 'ROLE_GYM_OWNER' }

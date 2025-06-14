@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.trainup.controller.AthleteControllerTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 39.43 s -- in com.example.trainup.controller.AthleteControllerTest

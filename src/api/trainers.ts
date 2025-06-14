@@ -4,7 +4,7 @@ import { TrainerInfoType } from '../types/TrainerInfoType';
 import { client } from './utils/fetchClient';
 
 export const getTrainers = () => {
-  return client.get<TrainerInfoType[]>(`/trainer`);
+  return client.get<TrainerInfoType[]>(`/trainer?sportIds=1`);
 };
 
 export const postTrainer = (data: any) => {

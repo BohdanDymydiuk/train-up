@@ -83,6 +83,8 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
     console.log(currentDay);
   }, []);
 
+  console.log(trainers);
+
   // #endregion
 
   const isTempProfile = pathname.startsWith(NavLinks.tempProfile);

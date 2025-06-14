@@ -7,29 +7,17 @@ interface Props {
 export const ChevronDown: React.FC<Props> = ({ svgPathStyle }) => {
   return (
     <svg
-      width='15'
-      height='7'
-      viewBox='0 0 20 13'
+      width='16'
+      height='8'
+      viewBox='0 0 16 8'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g clipPath='url(#clip0_20_94)'>
-        <path
-          style={svgPathStyle}
-          d='M16.6924 2.5L18 3.6898L10.8734 10.1704C10.7592 10.2748 10.6234 10.3577 10.4738 10.4143C10.3243 10.4709 10.1639 10.5 10.0019 10.5C9.83984 10.5 9.67944 10.4709 9.52986 10.4143C9.38029 10.3577 9.24449 10.2748 9.1303 10.1704L2 3.6898L3.30763 2.50112L10 8.58359L16.6924 2.5Z'
-          fill='#141414'
-        />
-      </g>
-      <defs>
-        <clipPath id='clip0_20_94'>
-          <rect
-            width='12'
-            height='20'
-            fill='white'
-            transform='matrix(0 1 -1 0 20 0.5)'
-          />
-        </clipPath>
-      </defs>
+      <path
+        style={svgPathStyle}
+        d='M14.6924 0L16 1.1898L8.8734 7.67036C8.75921 7.77483 8.62342 7.85773 8.47384 7.9143C8.32426 7.97088 8.16386 8 8.00185 8C7.83984 8 7.67944 7.97088 7.52986 7.9143C7.38029 7.85773 7.24449 7.77483 7.1303 7.67036L0 1.1898L1.30763 0.00112152L8 6.08359L14.6924 0Z'
+        fill='#A9A9B0'
+      />
     </svg>
   );
 };
