@@ -68,6 +68,11 @@ public class GymServiceImpl implements GymService {
                 filter.name(), filter.locationCountry(), filter.locationCity(),
                 filter.locationCityDistrict(), filter.locationStreet(), filter.locationHouse(),
                 filter.sportIds(), filter.trainerIds(), filter.overallRating());
+        Set<Long> sportIds = (filter.sportIds() == null || filter.sportIds().isEmpty())
+                ? null : filter.sportIds();
+        Set<Long> trainerIds = (filter.trainerIds() == null || filter.trainerIds().isEmpty())
+                ? null : filter.trainerIds();
+
         Page<Gym> gymPage = gymRepository.findGymsByCriteria(
                 filter.name(),
                 filter.locationCountry(),
@@ -75,8 +80,8 @@ public class GymServiceImpl implements GymService {
                 filter.locationCityDistrict(),
                 filter.locationStreet(),
                 filter.locationHouse(),
-                filter.sportIds(),
-                filter.trainerIds(),
+                sportIds,
+                trainerIds,
                 filter.overallRating(),
                 pageable
         );
