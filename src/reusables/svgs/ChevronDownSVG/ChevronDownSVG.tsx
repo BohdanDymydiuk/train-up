@@ -4,7 +4,7 @@ interface Props {
   svgPathStyle?: React.CSSProperties;
 }
 
-export const ChevronDown: React.FC<Props> = ({ svgPathStyle }) => {
+export const ChevronDownSVG: React.FC<Props> = ({ svgPathStyle }) => {
   return (
     <svg
       width='16'

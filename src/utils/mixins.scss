@@ -68,6 +68,13 @@
   font-size: 16px;
 }
 
+@mixin inter-500-18 {
+  @include inter-500;
+
+  font-size: 18px;
+  line-height: 135%;
+}
+
 @mixin inter-500-20 {
   @include inter-500;
 

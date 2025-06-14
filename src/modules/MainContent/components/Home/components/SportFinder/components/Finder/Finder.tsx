@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChevronDown } from '../../../../../../../../reusables/ChevronDown';
+import { ChevronDownSVG } from '../../../../../../../../reusables/svgs/ChevronDownSVG';
 
 import styles from './Finder.module.scss';
 
@@ -16,7 +16,7 @@ export const Finder: React.FC = () => {
         return (
           <div className={styles.select} key={item}>
             <div className={styles.text}>{item}</div>
-            <ChevronDown />
+            <ChevronDownSVG />
           </div>
         );
       })}
