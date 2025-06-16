@@ -2,6 +2,7 @@ package com.example.trainup.dto.users.trainer;
 
 import com.example.trainup.model.enums.Gender;
 import com.example.trainup.validation.EmailUnique;
+import com.example.trainup.validation.FieldMatch;
 import com.example.trainup.validation.RegexConstants;
 import com.example.trainup.validation.ValidPhoneNumbers;
 import jakarta.validation.constraints.Email;
@@ -12,6 +13,11 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
+@FieldMatch(
+        firstString = "password",
+        secondString = "repeatPassword",
+        message = "The password fields must match"
+)
 public record TrainerRegistrationRequestDto(
         @NotBlank(message = "First name cannot be blank")
         String firstName,
