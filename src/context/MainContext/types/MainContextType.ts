@@ -7,4 +7,5 @@ export interface MainContextType {
   events: EventInfoType[];
   location: string;
   onTablet: boolean;
+  onDesktop: boolean;
 }

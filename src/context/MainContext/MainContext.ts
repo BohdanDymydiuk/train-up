@@ -8,4 +8,5 @@ export const MainContext = createContext<MainContextType>({
   events: [],
   location: '',
   onTablet: false,
+  onDesktop: false,
 });

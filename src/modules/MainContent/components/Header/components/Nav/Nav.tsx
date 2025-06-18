@@ -1,27 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { NavItems } from '../../../../../../enums/NavItems';
+import { MainContext } from '../../../../../../context/MainContext';
 
-import styles from './Nav.module.scss';
+import { NavElems } from './components/NavElems';
 
 export const Nav: React.FC = () => {
-  const items = Object.values(NavItems).filter(
-    value => value !== NavItems.calendar,
-  );
+  const { onTablet, onDesktop } = useContext(MainContext);
 
-  return (
-    <nav>
-      <ul className={styles.list}>
-        {items.map(item => {
-          return (
-            <li key={item}>
-              <a href='#' className={styles.link}>
-                {item}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
+  return <nav>{onTablet && !onDesktop ? <></> : <NavElems />}</nav>;
 };

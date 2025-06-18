@@ -10,7 +10,6 @@ import { Lang } from './components/Lang';
 import { Nav } from './components/Nav';
 import { ProfileIMG } from './components/ProfileIMG';
 import { SignIn } from './components/SignIn';
-import { Title } from './components/Title';
 
 import styles from './Header.module.scss';
 
@@ -53,7 +52,7 @@ export const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles['first-part']} style={firstPartCssProps}>
         <LogoSVG />
-        {onTablet && (isTempProfile ? <Title /> : <Nav />)}
+        {onTablet && <Nav />}
       </div>
       <div className={styles['second-part']} style={secondPartCssProps}>
         {isTempProfile ? tempSp : defaultSp}

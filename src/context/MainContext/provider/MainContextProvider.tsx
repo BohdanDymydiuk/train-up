@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useLocation } from 'react-router';
 
 import { getEvents } from '../../../api/events';
 import { getTrainers } from '../../../api/trainers';
+import { NavItems } from '../../../enums/NavItems';
 import { NavLinks } from '../../../enums/NavLinks';
 import { EventInfoType } from '../../../types/EventInfoType';
 import { TrainerInfoType } from '../../../types/TrainerInfoType';
@@ -22,11 +23,13 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
   const [trainers, setTrainers] = useState<TrainerInfoType[]>([]);
   const [events, setEvents] = useState<EventInfoType[]>([]);
   const [location, setLocation] = useState('');
+  const [currentSection, setCurrentSection] = useState(NavItems.main);
 
   // #endregion
   // #region media queries
 
   const onTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  const onDesktop = useMediaQuery({ query: '(min-width: 1200px)' });
 
   // #endregion
   // #region useEffects
@@ -89,7 +92,31 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
 
   const isTempProfile = pathname.startsWith(NavLinks.tempProfile);
 
-  const providerValue = { isTempProfile, trainers, events, location, onTablet };
+  // #region value
+
+  const providerValue = useMemo(
+    () => ({
+      isTempProfile,
+      trainers,
+      events,
+      location,
+      onTablet,
+      onDesktop,
+      currentSection,
+      setCurrentSection,
+    }),
+    [
+      isTempProfile,
+      trainers,
+      events,
+      location,
+      onTablet,
+      onDesktop,
+      currentSection,
+    ],
+  );
+
+  // #endregion
 
   return (
     <MainContext.Provider value={providerValue}>
