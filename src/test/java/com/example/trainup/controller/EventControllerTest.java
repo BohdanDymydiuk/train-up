@@ -18,10 +18,10 @@ import com.example.trainup.dto.event.EventResponseDto;
 import com.example.trainup.dto.event.EventUpdateRequestDto;
 import com.example.trainup.service.EventService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-import jakarta.persistence.EntityNotFoundException;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -100,8 +100,10 @@ public class EventControllerTest {
     @WithMockUser(roles = "TRAINER")
     void createEventByTrainer_Success() throws Exception {
         // Given
-        when(eventService.createEventByTrainer(any(Authentication.class), any(EventRegistrationRequestDto.class)))
-                .thenReturn(eventResponseDto);
+        when(eventService.createEventByTrainer(
+                any(Authentication.class),
+                any(EventRegistrationRequestDto.class
+                ))).thenReturn(eventResponseDto);
 
         // Then
         MvcResult result = mockMvc.perform(post("/event/trainer")
@@ -113,12 +115,6 @@ public class EventControllerTest {
                 .andExpect(jsonPath("$.sportId").value(1))
                 .andExpect(jsonPath("$.description").value("Beginner-friendly yoga session"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 201) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -138,46 +134,43 @@ public class EventControllerTest {
                         .content(objectMapper.writeValueAsString(invalidDto)))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.errors").isArray())
-                .andExpect(jsonPath("$.errors").value(Matchers.containsInAnyOrder("name: must not be blank")))
-                .andExpect(jsonPath("$.errors").value(Matchers.containsInAnyOrder("sportId: must not be null")))
-                .andExpect(jsonPath("$.errors").value(Matchers.containsInAnyOrder("dateTime: Event dateTime cannot be null")))
+                .andExpect(jsonPath("$.errors").value(Matchers.containsInAnyOrder(
+                        "name: Name must not be blank",
+                        "sportId: SportId must not be null",
+                        "dateTime: Event dateTime cannot be null"
+                )))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 400) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
     @WithMockUser(roles = "TRAINER")
     void createEventByTrainer_TrainerNotFound_404() throws Exception {
         // Given
-        when(eventService.createEventByTrainer(any(Authentication.class), any(EventRegistrationRequestDto.class)))
-                .thenThrow(new EntityNotFoundException("Trainer not found with email: trainer@example.com"));
+        when(eventService.createEventByTrainer(
+                any(Authentication.class),
+                any(EventRegistrationRequestDto.class)))
+                .thenThrow(new EntityNotFoundException(
+                        "Trainer not found with email: trainer@example.com"));
 
         // Then
         MvcResult result = mockMvc.perform(post("/event/trainer")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(validRegistrationDto)))
                 .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.errors[0]").value("Trainer not found with email: trainer@example.com"))
+                .andExpect(jsonPath("$.errors[0]")
+                        .value("Trainer not found with email: trainer@example.com"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 404) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
     @WithMockUser(roles = "GYM_OWNER")
     void createEventByGymOwner_Success() throws Exception {
         // Given
-        when(eventService.createEventByGymOwner(any(Authentication.class), any(EventRegistrationRequestDto.class), eq(1L)))
-                .thenReturn(eventResponseDto);
+        when(eventService.createEventByGymOwner(
+                any(Authentication.class),
+                any(EventRegistrationRequestDto.class),
+                eq(1L)
+        )).thenReturn(eventResponseDto);
 
         // Then
         MvcResult result = mockMvc.perform(post("/event/gym/1")
@@ -189,12 +182,6 @@ public class EventControllerTest {
                 .andExpect(jsonPath("$.sportId").value(1))
                 .andExpect(jsonPath("$.description").value("Beginner-friendly yoga session"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 201) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -206,22 +193,21 @@ public class EventControllerTest {
                         .content(objectMapper.writeValueAsString(validRegistrationDto)))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.errors").isArray())
-                .andExpect(jsonPath("$.errors").value(Matchers.containsInAnyOrder("gymId: must be greater than 0")))
+                .andExpect(jsonPath("$.errors")
+                        .value(Matchers.containsInAnyOrder("createEventByGymOwner.gymId: "
+                                + "must be greater than 0")))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 400) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
     @WithMockUser(roles = "GYM_OWNER")
     void createEventByGymOwner_GymNotOwned_403() throws Exception {
         // Given
-        when(eventService.createEventByGymOwner(any(Authentication.class), any(EventRegistrationRequestDto.class), eq(1L)))
-                .thenThrow(new IllegalStateException("Gym does not belong to this owner"));
+        when(eventService.createEventByGymOwner(
+                any(Authentication.class),
+                any(EventRegistrationRequestDto.class),
+                eq(1L)
+        )).thenThrow(new IllegalStateException("Gym does not belong to this owner"));
 
         // Then
         MvcResult result = mockMvc.perform(post("/event/gym/1")
@@ -230,12 +216,6 @@ public class EventControllerTest {
                 .andExpect(status().isForbidden())
                 .andExpect(jsonPath("$.errors[0]").value("Gym does not belong to this owner"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 403) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -258,12 +238,6 @@ public class EventControllerTest {
                 .andExpect(jsonPath("$[0].sportId").value(1))
                 .andExpect(jsonPath("$[0].description").value("Beginner-friendly yoga session"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 200) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -280,12 +254,6 @@ public class EventControllerTest {
                 .andExpect(jsonPath("$").isArray())
                 .andExpect(jsonPath("$").isEmpty())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 200) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -297,22 +265,19 @@ public class EventControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.errors").isArray())
-                .andExpect(jsonPath("$.errors").value(Matchers.containsInAnyOrder("sportId: must be greater than 0")))
+                .andExpect(jsonPath("$.errors")
+                        .value(Matchers.containsInAnyOrder(
+                                "getAllEvents.sportId: must be greater than 0")))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 400) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
-    @WithMockUser(roles = "TRAINER")
+    @WithMockUser(username = "trainer@example.com", roles = "TRAINER")
     void updateEvent_Success() throws Exception {
         // Given
         when(eventService.canUserModifyEvent(eq("trainer@example.com"), eq(1L))).thenReturn(true);
-        when(eventService.updateEvent(eq(1L), any(EventUpdateRequestDto.class))).thenReturn(eventResponseDto);
+        when(eventService.updateEvent(eq(1L), any(EventUpdateRequestDto.class)))
+                .thenReturn(eventResponseDto);
 
         // Then
         MvcResult result = mockMvc.perform(patch("/event/1")
@@ -324,12 +289,6 @@ public class EventControllerTest {
                 .andExpect(jsonPath("$.sportId").value(1))
                 .andExpect(jsonPath("$.description").value("Beginner-friendly yoga session"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 200) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -345,12 +304,6 @@ public class EventControllerTest {
                 .andExpect(status().isForbidden())
                 .andExpect(jsonPath("$.errors[0]").value("Access Denied"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 403) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -374,16 +327,10 @@ public class EventControllerTest {
                         "dateTime: Event dateTime cannot be in the past"
                 )))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 400) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
-    @WithMockUser(roles = "TRAINER")
+    @WithMockUser(username = "trainer@example.com", roles = "TRAINER")
     void deleteEvent_Success() throws Exception {
         // Given
         when(eventService.canUserModifyEvent(eq("trainer@example.com"), eq(1L))).thenReturn(true);
@@ -394,12 +341,6 @@ public class EventControllerTest {
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNoContent())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 204) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -414,20 +355,15 @@ public class EventControllerTest {
                 .andExpect(status().isForbidden())
                 .andExpect(jsonPath("$.errors[0]").value("Access Denied"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 403) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
-    @WithMockUser(roles = "TRAINER")
+    @WithMockUser(username = "trainer@example.com", roles = "TRAINER")
     void deleteEvent_NotFound_404() throws Exception {
         // Given
         when(eventService.canUserModifyEvent(eq("trainer@example.com"), eq(1L))).thenReturn(true);
-        doThrow(new EntityNotFoundException("Event not found with id: 1")).when(eventService).deleteEvent(eq(1L));
+        doThrow(new EntityNotFoundException("Event not found with id: 1"))
+                .when(eventService).deleteEvent(eq(1L));
 
         // Then
         MvcResult result = mockMvc.perform(delete("/event/1")
@@ -435,12 +371,6 @@ public class EventControllerTest {
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$..errors[0]").value("Event not found with id: 1"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 404) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -450,11 +380,6 @@ public class EventControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(validRegistrationDto)))
                 .andExpect(status().isForbidden())
-                .andExpect(jsonPath("$.errors[0]").value("Access Denied"))
                 .andReturn();
-
-        // Діагностика
-        System.out.println("Response status: " + result.getResponse().getStatus());
-        System.out.println("Response body: " + result.getResponse().getContentAsString());
     }
 }

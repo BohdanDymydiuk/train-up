@@ -4,15 +4,15 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.anonymous;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.example.trainup.dto.gym.GymAddressDto;
 import com.example.trainup.dto.gym.GymFilterRequestDto;
@@ -22,7 +22,6 @@ import com.example.trainup.dto.gym.GymUpdateRequestDto;
 import com.example.trainup.model.Address;
 import com.example.trainup.model.Gym;
 import com.example.trainup.model.GymPhoto;
-import com.example.trainup.model.Role;
 import com.example.trainup.model.Sport;
 import com.example.trainup.model.WorkingHoursEntry;
 import com.example.trainup.model.WorkingHoursEntry.DayOfTheWeek;
@@ -32,26 +31,19 @@ import com.example.trainup.model.user.UserCredentials;
 import com.example.trainup.model.user.UserCredentials.UserType;
 import com.example.trainup.service.CurrentUserService;
 import com.example.trainup.service.GymService;
-import com.example.trainup.service.GymServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityNotFoundException;
-
-import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
-
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.SpyBean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -62,10 +54,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -93,19 +83,16 @@ class GymControllerTest {
 
     @BeforeEach
     void setUp() {
-        // Mock UserCredentials for GymOwner
         gymOwnerCredentials = new UserCredentials();
         gymOwnerCredentials.setId(10L);
         gymOwnerCredentials.setEmail("gymowner@example.com");
         gymOwnerCredentials.setUserType(UserType.GYM_OWNER);
 
-        // Mock GymOwner
         gymOwner = new GymOwner();
         gymOwner.setId(1L);
         gymOwner.setUserCredentials(gymOwnerCredentials);
-        gymOwner.setPhoneNumbers(Collections.singleton("+38(050)-111-2233")); // Example phone number
+        gymOwner.setPhoneNumbers(Collections.singleton("+38(050)-111-2233"));
 
-        // Mock Address
         gymAddress = new Address();
         gymAddress.setId(1L);
         gymAddress.setCountry("Ukraine");
@@ -113,25 +100,21 @@ class GymControllerTest {
         gymAddress.setStreet("Khreshchatyk");
         gymAddress.setHouse("1");
 
-        // Mock Sport
         sport = new Sport();
         sport.setId(1L);
         sport.setSportName("Fitness");
 
-        // Mock Trainer
         trainer = new Trainer();
         trainer.setId(1L);
         trainer.setFirstName("John");
         trainer.setLastName("Doe");
         trainer.setSports(new HashSet<>(Collections.singletonList(sport)));
         trainer.setPhoneNumbers(Collections.singleton("+38(099)-123-4567"));
-        trainer.setUserCredentials(new UserCredentials()); // Mock a UserCredentials for trainer
+        trainer.setUserCredentials(new UserCredentials());
         trainer.getUserCredentials().setId(11L);
         trainer.getUserCredentials().setEmail("trainer@example.com");
         trainer.getUserCredentials().setUserType(UserType.TRAINER);
 
-
-        // Mock Gym
         gym = new Gym();
         gym.setId(1L);
         gym.setName("Test Gym");
@@ -139,7 +122,11 @@ class GymControllerTest {
         gym.setWebsite("http://testgym.com");
         gym.setPhoneNumbers(new HashSet<>(Collections.singletonList("+38(099)-123-4567")));
         gym.setWorkingHours(new HashSet<>(Collections.singletonList(
-                new WorkingHoursEntry(DayOfTheWeek.MONDAY, LocalTime.of(9, 0), LocalTime.of(21, 0))
+                new WorkingHoursEntry(
+                        DayOfTheWeek.MONDAY,
+                        LocalTime.of(9, 0),
+                        LocalTime.of(21, 0)
+                )
         )));
         gym.setLocation(gymAddress);
         gym.setOverallRating(4.5f);
@@ -155,7 +142,6 @@ class GymControllerTest {
         gym.setPhotos(new HashSet<>(Collections.singletonList(gymPhoto)));
     }
 
-    //region Helper Methods
     private GymResponseDto createGymResponseDto(Gym gym) {
         return new GymResponseDto(
                 gym.getId(),
@@ -185,43 +171,48 @@ class GymControllerTest {
                 gym.getPhotos().stream().map(GymPhoto::getImageUrl).collect(Collectors.toSet())
         );
     }
-    //endregion
 
     @Test
     void createGym_Success() throws Exception {
         // Given
-        GymRegistrationRequestDto requestDto = new GymRegistrationRequestDto(
-                "New Gym",
-                new GymAddressDto("Ukraine", "Lviv", null, "Freedom Ave", "10"),
-                Collections.singleton(1L), // Sport ID
-                "Description of new gym.",
-                "http://newgym.com",
-                Collections.singleton("+38(050)-987-6543"),
-                Collections.singleton(new WorkingHoursEntry(DayOfTheWeek.MONDAY, LocalTime.of(8, 0), LocalTime.of(20, 0))),
-                Collections.singleton(1L),  // Trainer ID
-                Collections.singleton("http://newgym.com/photo.jpg")
-        );
-
-        GymResponseDto expectedResponse = createGymResponseDto(gym);
-
-        // Налаштування кастомного Authentication
         UserCredentials userCredentials = new UserCredentials();
         userCredentials.setId(10L);
         userCredentials.setEmail("gymowner@example.com");
         userCredentials.setUserType(UserType.GYM_OWNER);
 
-        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                userCredentials, // principal
-                null, // credentials
-                AuthorityUtils.createAuthorityList("ROLE_GYM_OWNER") // authorities
+        UsernamePasswordAuthenticationToken authentication =
+                new UsernamePasswordAuthenticationToken(
+                        userCredentials,
+                        null,
+                        AuthorityUtils.createAuthorityList("ROLE_GYM_OWNER")
+                );
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+
+        GymRegistrationRequestDto requestDto = new GymRegistrationRequestDto(
+                "New Gym",
+                new GymAddressDto("Ukraine", "Lviv", null, "Freedom Ave", "10"),
+                Collections.singleton(1L),
+                "Description of new gym.",
+                "http://newgym.com",
+                Collections.singleton("+38(050)-987-6543"),
+                Collections.singleton(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(8, 0),
+                                LocalTime.of(20, 0)
+                        )
+                ),
+                Collections.singleton(1L),
+                Collections.singleton("http://newgym.com/photo.jpg")
         );
 
-        // Встановлення Authentication у SecurityContext
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+        GymResponseDto expectedResponse = createGymResponseDto(gym);
 
         // When
         when(currentUserService.getCurrentUserByType(GymOwner.class)).thenReturn(gymOwner);
-        when(gymService.save(eq(gymOwner), any(GymRegistrationRequestDto.class))).thenReturn(expectedResponse);
+        when(gymService.save(eq(gymOwner), any(GymRegistrationRequestDto.class)))
+                .thenReturn(expectedResponse);
 
         // Then
         mockMvc.perform(post("/gym")
@@ -230,9 +221,10 @@ class GymControllerTest {
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.id").value(expectedResponse.id()))
                 .andExpect(jsonPath("$.name").value(expectedResponse.name()))
-                .andExpect(jsonPath("$.location.country").value(expectedResponse.location().country()))
-                .andExpect(jsonPath("$.sportIds[0]").value(expectedResponse.sportIds().iterator().next()))
-                .andDo(print()); // Для дебагінгу
+                .andExpect(jsonPath("$.location.country")
+                        .value(expectedResponse.location().country()))
+                .andExpect(jsonPath("$.sportIds[0]")
+                        .value(expectedResponse.sportIds().iterator().next()));
 
         verify(currentUserService).getCurrentUserByType(GymOwner.class);
         verify(gymService).save(eq(gymOwner), any(GymRegistrationRequestDto.class));
@@ -265,9 +257,9 @@ class GymControllerTest {
     @Test
     @WithMockUser(username = "gymowner@example.com", roles = "GYM_OWNER")
     void createGym_ValidationFail_400() throws Exception {
-        // Given - DTO with missing required fields (e.g., blank name)
+        // Given
         GymRegistrationRequestDto invalidRequestDto = new GymRegistrationRequestDto(
-                "", // Blank name
+                "",
                 new GymAddressDto("UA", "City", null, "Street", "1"),
                 Collections.singleton(1L),
                 "Desc",
@@ -336,8 +328,7 @@ class GymControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.content[0].id").value(gym.getId()))
                 .andExpect(jsonPath("$.content[0].name").value(gym.getName()))
-                .andExpect(jsonPath("$.totalElements").value(1))
-                .andDo(print()); // Для дебагінгу
+                .andExpect(jsonPath("$.totalElements").value(1));
 
         verify(gymService).getGymsByGymOwner(any(Authentication.class), any(Pageable.class));
     }
@@ -346,8 +337,6 @@ class GymControllerTest {
     @WithMockUser(username = "athlete@example.com", roles = "ATHLETE")
     void getGymsByGymOwnerId_NonGymOwner_403() throws Exception {
         // When & Then
-        // currentUserService.getCurrentUserByType(GymOwner.class) поверне IllegalStateException,
-        // оскільки ATHLETE не є GYM_OWNER.
         when(currentUserService.getCurrentUserByType(GymOwner.class))
                 .thenThrow(new IllegalStateException("User is not a Gym Owner"));
 
@@ -355,8 +344,8 @@ class GymControllerTest {
                         .param("page", "0")
                         .param("size", "10")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isInternalServerError()) // Очікуємо 500, якщо IllegalStateException не обробляється специфічно
-                .andExpect(jsonPath("$.error").value("Internal server error")); // Перевіряємо загальне повідомлення про помилку
+                .andExpect(status().isInternalServerError())
+                .andExpect(jsonPath("$.error").value("Internal server error"));
     }
 
     @Test
@@ -382,7 +371,8 @@ class GymControllerTest {
     @WithMockUser(username = "user@example.com", roles = "USER")
     void getGymById_NotFound_404() throws Exception {
         // When
-        when(gymService.getGymById(eq(999L))).thenThrow(new EntityNotFoundException("Cannot find Gym by id:999"));
+        when(gymService.getGymById(eq(999L)))
+                .thenThrow(new EntityNotFoundException("Cannot find Gym by id:999"));
 
         // Then
         mockMvc.perform(get("/gym/{id}", 999L)
@@ -411,8 +401,8 @@ class GymControllerTest {
     @WithMockUser(username = "gymowner@example.com", roles = "GYM_OWNER")
     void deleteGymById_Owner_Success() throws Exception {
         // Given
-        // Імітуємо, що canUserModifyGym повертає true для власника
-        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId()))).thenReturn(true);
+        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId())))
+                .thenReturn(true);
         doNothing().when(gymService).deleteGymById(eq(gym.getId()));
 
         // Then
@@ -425,11 +415,11 @@ class GymControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "other.user@example.com", roles = "ATHLETE") // Користувач не адмін і не власник
+    @WithMockUser(username = "other.user@example.com", roles = "ATHLETE")
     void deleteGymById_Unauthorized_403() throws Exception {
         // Given
-        // Імітуємо, що canUserModifyGym повертає false для цього користувача
-        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId()))).thenReturn(false);
+        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId())))
+                .thenReturn(false);
 
         // Then
         mockMvc.perform(delete("/gym/{id}", gym.getId())
@@ -438,7 +428,6 @@ class GymControllerTest {
                 .andExpect(jsonPath("$.errors[0]").value("Access Denied"));
 
         verify(gymService).canUserModifyGym(any(Authentication.class), eq(gym.getId()));
-        // Перевіряємо, що deleteGymById не викликався
         verify(gymService, never()).deleteGymById(anyLong());
     }
 
@@ -446,8 +435,8 @@ class GymControllerTest {
     @WithMockUser(username = "gymowner@example.com", roles = "GYM_OWNER")
     void deleteGymById_OwnerButNotHisGym_403() throws Exception {
         // Given
-        // Імітуємо, що canUserModifyGym повертає false, бо це не його спортзал
-        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId()))).thenReturn(false);
+        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId())))
+                .thenReturn(false);
 
         // Then
         mockMvc.perform(delete("/gym/{id}", gym.getId())
@@ -465,13 +454,19 @@ class GymControllerTest {
         // Given
         GymUpdateRequestDto requestDto = new GymUpdateRequestDto(
                 "Updated Gym Name",
-                new GymAddressDto("Ukraine", "Kyiv", null, "New Street", "5"), // Update location
-                new HashSet<>(Collections.singletonList(2L)), // New sport ID
+                new GymAddressDto("Ukraine", "Kyiv", null, "New Street", "5"),
+                new HashSet<>(Collections.singletonList(2L)),
                 "Updated Description",
                 "http://updatedgym.com",
                 new HashSet<>(Collections.singletonList("+38(099)-888-7766")),
-                new HashSet<>(Collections.singletonList(new WorkingHoursEntry(DayOfTheWeek.TUESDAY, LocalTime.of(10, 0), LocalTime.of(22, 0)))),
-                new HashSet<>(Collections.singletonList(2L)), // New trainer ID
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.TUESDAY,
+                                LocalTime.of(10, 0),
+                                LocalTime.of(22, 0)
+                        ))
+                ),
+                new HashSet<>(Collections.singletonList(2L)),
                 new HashSet<>(Collections.singletonList("http://updatedgym.com/photo2.jpg"))
         );
 
@@ -485,15 +480,17 @@ class GymControllerTest {
                 requestDto.phoneNumbers(),
                 requestDto.workingHours(),
                 requestDto.trainerIds(),
-                gym.getOverallRating(), // Assuming these don't change via update DTO
+                gym.getOverallRating(),
                 gym.getNumberOfReviews(),
                 gym.getGymOwner().getId(),
                 requestDto.photoUrls()
         );
 
         // When
-        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId()))).thenReturn(true);
-        when(gymService.updateGym(eq(gym.getId()), any(GymUpdateRequestDto.class))).thenReturn(expectedResponse);
+        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId())))
+                .thenReturn(true);
+        when(gymService.updateGym(eq(gym.getId()), any(GymUpdateRequestDto.class)))
+                .thenReturn(expectedResponse);
 
         // Then
         mockMvc.perform(patch("/gym/{id}", gym.getId())
@@ -529,7 +526,8 @@ class GymControllerTest {
         );
 
         // When
-        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId()))).thenReturn(false);
+        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId())))
+                .thenReturn(false);
 
         // Then
         mockMvc.perform(patch("/gym/{id}", gym.getId())
@@ -559,11 +557,8 @@ class GymControllerTest {
         );
 
         // Then
-        // Для адміна `@PreAuthorize("@gymService.canUserModifyGym(#authentication, #id)")` НЕ дозволить
-        // оновити спортзал, оскільки адмін не є його власником.
-        // Цей тест перевіряє, що адмін не може оновлювати чужі спортзали.
-        // Зауважте, що тут немає "hasRole('ADMIN')" в @PreAuthorize для PATCH.
-        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId()))).thenReturn(false);
+        when(gymService.canUserModifyGym(any(Authentication.class), eq(gym.getId())))
+                .thenReturn(false);
 
         mockMvc.perform(patch("/gym/{id}", gym.getId())
                         .contentType(MediaType.APPLICATION_JSON)

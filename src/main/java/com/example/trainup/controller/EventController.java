@@ -7,6 +7,7 @@ import com.example.trainup.dto.event.EventUpdateRequestDto;
 import com.example.trainup.service.EventService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import java.time.LocalDate;
 import java.util.List;
@@ -52,7 +53,7 @@ public class EventController {
                     + "associated with the event."
     )
     public EventResponseDto createEventByTrainer(
-            @RequestBody EventRegistrationRequestDto requestDto,
+            @RequestBody @Valid EventRegistrationRequestDto requestDto,
             Authentication authentication
     ) {
         log.info("Attempting to create event by trainer '{}' with request: {}",
@@ -75,7 +76,7 @@ public class EventController {
     )
     public EventResponseDto createEventByGymOwner(
             @PathVariable @Positive Long gymId,
-            @RequestBody EventRegistrationRequestDto requestDto,
+            @RequestBody @Valid EventRegistrationRequestDto requestDto,
             Authentication authentication
     ) {
         log.info("Attempting to create event by gym owner '{}' for gymId: {}, with request: {}",
@@ -114,7 +115,7 @@ public class EventController {
     }
 
     @PatchMapping("/{id}")
-    @PreAuthorize("@eventService.canUserModifyEvent(#authentication.name, #id)")
+    @PreAuthorize("@eventServiceImpl.canUserModifyEvent(#authentication.name, #id)")
     @Operation(
             summary = "Update Event Details",
             description = "Allows the associated Trainer or Gym Owner to update specific details "
@@ -122,7 +123,7 @@ public class EventController {
     )
     public EventResponseDto updateEvent(
             @PathVariable @Positive Long id,
-            @RequestBody EventUpdateRequestDto requestDto,
+            @RequestBody @Valid EventUpdateRequestDto requestDto,
             Authentication authentication
     ) {
         log.info("Attempting to update event with ID: {} by user '{}' with request: {}",
@@ -134,7 +135,7 @@ public class EventController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("@eventService.canUserModifyEvent(#authentication.name, #id)")
+    @PreAuthorize("@eventServiceImpl.canUserModifyEvent(#authentication.name, #id)")
     @Operation(
             summary = "Delete Event",
             description = "Allows the associated Trainer or Gym Owner to delete an event."

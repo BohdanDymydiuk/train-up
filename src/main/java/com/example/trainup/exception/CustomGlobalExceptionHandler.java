@@ -41,10 +41,18 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<Object> handleConstraintViolationException(ConstraintViolationException ex) {
+    public ResponseEntity<Object> handleConstraintViolationException(
+            ConstraintViolationException ex
+    ) {
         log.debug("Handling ConstraintViolationException: {}", ex.getMessage());
         List<String> errors = ex.getConstraintViolations().stream()
-                .map(violation -> String.format("%s: %s", violation.getPropertyPath(), violation.getMessage()))
+                .map(violation ->
+                        String.format(
+                                "%s: %s",
+                                violation.getPropertyPath(),
+                                violation.getMessage()
+                        )
+                )
                 .collect(Collectors.toList());
         return buildResponseEntity(HttpStatus.BAD_REQUEST, "Validation error", errors);
     }
@@ -52,19 +60,31 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Object> handleIllegalArgumentException(IllegalArgumentException ex) {
         log.debug("Handling IllegalArgumentException: {}", ex.getMessage());
-        return buildResponseEntity(HttpStatus.BAD_REQUEST, "Invalid argument", List.of(ex.getMessage()));
+        return buildResponseEntity(
+                HttpStatus.BAD_REQUEST,
+                "Invalid argument",
+                List.of(ex.getMessage())
+        );
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<Object> handleEntityNotFound(EntityNotFoundException ex) {
         log.debug("Handling EntityNotFoundException: {}", ex.getMessage());
-        return buildResponseEntity(HttpStatus.NOT_FOUND, "Entity not found", List.of(ex.getMessage()));
+        return buildResponseEntity(
+                HttpStatus.NOT_FOUND,
+                "Entity not found",
+                List.of(ex.getMessage())
+        );
     }
 
     @ExceptionHandler(IllegalStateException.class)
     public ResponseEntity<Object> handleIllegalStateException(IllegalStateException ex) {
         log.debug("Handling IllegalStateException: {}", ex.getMessage());
-        return buildResponseEntity(HttpStatus.FORBIDDEN, "Illegal state", List.of(ex.getMessage()));
+        return buildResponseEntity(
+                HttpStatus.FORBIDDEN,
+                "Illegal state",
+                List.of(ex.getMessage())
+        );
     }
 
     @ExceptionHandler(AccessDeniedException.class)
@@ -83,13 +103,21 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
     @ExceptionHandler(AuthorizationDeniedException.class)
     public ResponseEntity<Object> handleAuthorizationDenied(AuthorizationDeniedException ex) {
         log.debug("Handling AuthorizationDeniedException: {}", ex.getMessage());
-        return buildResponseEntity(HttpStatus.FORBIDDEN, "Authorization denied", List.of("Access Denied"));
+        return buildResponseEntity(
+                HttpStatus.FORBIDDEN,
+                "Authorization denied",
+                List.of("Access Denied")
+        );
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleGenericException(Exception ex) {
         log.error("Handling unexpected exception: {}", ex.getMessage(), ex);
-        return buildResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR, "Internal server error", List.of("An unexpected error occurred"));
+        return buildResponseEntity(
+                HttpStatus.INTERNAL_SERVER_ERROR,
+                "Internal server error",
+                List.of("An unexpected error occurred")
+        );
     }
 
     private String getErrorMessage(ObjectError e) {
@@ -101,7 +129,11 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
         return e.getDefaultMessage();
     }
 
-    private ResponseEntity<Object> buildResponseEntity(HttpStatus status, String error, List<String> errors) {
+    private ResponseEntity<Object> buildResponseEntity(
+            HttpStatus status,
+            String error,
+            List<String> errors
+    ) {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());
         body.put("error", error);

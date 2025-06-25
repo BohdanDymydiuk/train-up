@@ -132,12 +132,6 @@ public class ChatControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.errors[0]").value("question: must not be blank"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 400) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -154,12 +148,6 @@ public class ChatControllerTest {
                 .andExpect(status().isInternalServerError())
                 .andExpect(jsonPath("$.errors[0]").value("An unexpected error occurred"))
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 500) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
