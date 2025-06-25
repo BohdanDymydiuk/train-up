@@ -17,6 +17,8 @@ import jakarta.persistence.Table;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -88,7 +90,7 @@ public class UserCredentials implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles.stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override

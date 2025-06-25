@@ -128,12 +128,14 @@ public class GymServiceImpl implements GymService {
 
     @Override
     @Transactional(readOnly = true)
-    public boolean canUserModifyGym(String email, Long gymId) {
-        log.debug("Received email: {}, gymId: {}", email, gymId);
-        if (email == null) {
-            log.debug("Email is null, access denied");
+    public boolean canUserModifyGym(Authentication authentication, Long gymId) {
+        if (authentication == null || authentication.getName() == null || gymId == null) {
+            log.debug("Received authentication: {}, gymId: {}", authentication, gymId);
+            log.debug("Authentication is null or email is null or gymId is null, access denied.");
             return false;
         }
+        String email = authentication.getName(); // Тепер витягуємо ім'я з Authentication
+        log.debug("Received email: {}, gymId: {}", email, gymId);
 
         Optional<UserCredentials> userOptional = userCredentialsRepository
                 .findByEmail(email);

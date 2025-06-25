@@ -21,7 +21,7 @@ public interface GymService {
 
     void deleteGymById(Long id);
 
-    boolean canUserModifyGym(String email, Long gymId);
+    boolean canUserModifyGym(Authentication authentication, Long gymId);
 
     GymResponseDto updateGym(Long id, GymUpdateRequestDto requestDto);
 }

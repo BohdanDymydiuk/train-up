@@ -24,6 +24,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -137,7 +138,7 @@ public class GymController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') or @gymService.canUserModifyGym(#authentication.name, #id)")
+    @PreAuthorize("hasRole('ADMIN') or @gymServiceImpl.canUserModifyGym(#authentication, #id)")
     @Operation(
             summary = "Delete Gym by ID",
             description = "Allows an ADMIN or the Gym Owner to delete a specific gym. "
@@ -154,7 +155,7 @@ public class GymController {
     }
 
     @PatchMapping("/{id}")
-    @PreAuthorize("@gymService.canUserModifyGym(#authentication.name, #id)")
+    @PreAuthorize("@gymServiceImpl.canUserModifyGym(#authentication, #id)")
     @Operation(
             summary = "Update Gym Information",
             description = "Allows the Gym Owner to update specific details of a gym they own."
