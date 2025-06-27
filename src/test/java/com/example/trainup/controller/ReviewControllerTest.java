@@ -102,12 +102,6 @@ class ReviewControllerTest {
                 .andExpect(status().isBadRequest())
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 400) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -122,12 +116,6 @@ class ReviewControllerTest {
                 .andExpect(status().isNoContent())
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 204) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -144,12 +132,6 @@ class ReviewControllerTest {
                 .andExpect(jsonPath("$..errors[0]").value("Can not find Review by id: 1"))
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 404) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -160,10 +142,6 @@ class ReviewControllerTest {
                 .andExpect(status().isForbidden())
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        System.out.println("Response status: " + result.getResponse().getStatus());
-        System.out.println("Response body: " + result.getResponse().getContentAsString());
     }
 
     @Test
@@ -186,12 +164,6 @@ class ReviewControllerTest {
                 .andExpect(jsonPath("$.authorId").value(1L))
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 201) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -206,12 +178,6 @@ class ReviewControllerTest {
                         "createGymReview.gymId: must be greater than 0")))
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 400) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -235,12 +201,6 @@ class ReviewControllerTest {
                 )))
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 400) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -252,10 +212,6 @@ class ReviewControllerTest {
                 .andExpect(status().isForbidden())
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        System.out.println("Response status: " + result.getResponse().getStatus());
-        System.out.println("Response body: " + result.getResponse().getContentAsString());
     }
 
     @Test
@@ -273,12 +229,6 @@ class ReviewControllerTest {
                 .andExpect(jsonPath("$..errors[0]").value("Gym not found with id: 1"))
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 404) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -312,12 +262,6 @@ class ReviewControllerTest {
                 .andExpect(jsonPath("$.authorId").value(1L))
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 201) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -332,12 +276,6 @@ class ReviewControllerTest {
                         "createTrainerReview.trainerId: must be greater than 0")))
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 400) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -360,12 +298,6 @@ class ReviewControllerTest {
                 )))
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 400) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 
     @Test
@@ -377,10 +309,6 @@ class ReviewControllerTest {
                 .andExpect(status().isForbidden())
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        System.out.println("Response status: " + result.getResponse().getStatus());
-        System.out.println("Response body: " + result.getResponse().getContentAsString());
     }
 
     @Test
@@ -401,11 +329,5 @@ class ReviewControllerTest {
                 .andExpect(jsonPath("$..errors[0]").value("Trainer not found with id: 1"))
                 .andDo(print())
                 .andReturn();
-
-        // Діагностика
-        if (result.getResponse().getStatus() != 404) {
-            System.out.println("Response status: " + result.getResponse().getStatus());
-            System.out.println("Response body: " + result.getResponse().getContentAsString());
-        }
     }
 }
