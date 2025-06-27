@@ -88,7 +88,7 @@ public class GymController {
             @RequestParam(required = false) String locationHouse,
             @RequestParam(required = false) Set<Long> sportIds,
             @RequestParam(required = false) Set<Long> trainerIds,
-            @RequestParam(required = false) Float overallRating,
+            @RequestParam(required = false) @Positive Float overallRating,
             @PageableDefault(size = 10) Pageable pageable
     ) {
         GymFilterRequestDto filter = new GymFilterRequestDto(
