@@ -171,11 +171,11 @@ public class TrainerServiceImpl implements TrainerService {
         Optional.ofNullable(requestDto.socialMediaLinks())
                 .ifPresent(existingTrainer::setSocialMediaLinks);
 
-        updateLocation(existingTrainer, requestDto.location());
         updateEntities(existingTrainer::setSports, requestDto.sportIds(),
                 sportRepository::findById, "Sport with id ");
         updateEntities(existingTrainer::setGyms, requestDto.gymIds(),
                 gymRepository::findById, "Gym with id ");
+        updateLocation(existingTrainer, requestDto.location());
 
         Trainer updatedTrainer = trainerRepository.save(existingTrainer);
         TrainerResponseDto dto = trainerMapper.toDto(updatedTrainer);
@@ -184,16 +184,28 @@ public class TrainerServiceImpl implements TrainerService {
 
     private void updateLocation(Trainer trainer, TrainerAddressDto locationDto) {
         if (locationDto != null) {
-            Address address = trainer.getLocation();
-            if (address == null) {
-                address = new Address();
-                trainer.setLocation(address);
-            }
-            Optional.ofNullable(locationDto.country()).ifPresent(address::setCountry);
-            Optional.ofNullable(locationDto.city()).ifPresent(address::setCity);
+            Address existingAddress = trainer.getLocation();
+            String street = locationDto.street() != null ? locationDto.street() : "";
+            String house = locationDto.house() != null ? locationDto.house() : "";
+            Optional<Address> foundAddress = addressRepository
+                    .findByCountryAndCityAndStreetAndHouse(
+                            locationDto.country(),
+                            locationDto.city(),
+                            street, house
+                    );
+
+            Address address = foundAddress.orElseGet(() -> {
+                Address newAddress = (existingAddress != null) ? existingAddress : new Address();
+                newAddress.setCountry(locationDto.country());
+                newAddress.setCity(locationDto.city());
+                newAddress.setCityDistrict(locationDto.cityDistrict());
+                newAddress.setStreet(street);
+                newAddress.setHouse(house);
+                return newAddress;
+            });
+
             Optional.ofNullable(locationDto.cityDistrict()).ifPresent(address::setCityDistrict);
-            Optional.ofNullable(locationDto.street()).ifPresent(address::setStreet);
-            Optional.ofNullable(locationDto.house()).ifPresent(address::setHouse);
+            trainer.setLocation(address);
             addressRepository.save(address);
         }
     }
