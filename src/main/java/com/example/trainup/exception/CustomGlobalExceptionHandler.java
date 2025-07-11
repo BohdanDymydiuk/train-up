@@ -110,6 +110,18 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
         );
     }
 
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Object> handleRuntimeException(RuntimeException ex) {
+        log.error("Handling runtime exception: {}", ex.getMessage(), ex);
+        String errorMessage = ex.getMessage() != null
+                ? ex.getMessage() : "An unexpected error occurred";
+        return buildResponseEntity(
+                HttpStatus.INTERNAL_SERVER_ERROR,
+                "Internal server error",
+                List.of(errorMessage)
+        );
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleGenericException(Exception ex) {
         log.error("Handling unexpected exception: {}", ex.getMessage(), ex);

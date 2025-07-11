@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/gym")
@@ -168,5 +169,25 @@ public class GymController {
 
         log.info("Gym with ID: {} successfully updated.", id);
         return updatedGym;
+    }
+
+    @PostMapping("/{id}/photos")
+    @PreAuthorize("@gymServiceImpl.canUserModifyGym(#authentication, #id)")
+    @Operation(
+            summary = "UploadGymPhoto",
+            description = "Allows the Gym Owner to upload a photo for a specific gym. "
+                    + "Maximum 5 photos upload."
+    )
+    public ResponseEntity<String> uploadGymPhoto(
+            @PathVariable @Positive Long id,
+            @RequestParam("file") MultipartFile file,
+            Authentication authentication
+    ) {
+        log.info("Attempting to upload photo for gym with ID: {} by user: {}",
+                id, authentication.getName());
+        String imageUrl = gymService.uploadGymPhoto(id, file, authentication);
+
+        log.info("Photo successfully uploaded for gym with ID: {}, URL: {}", id, imageUrl);
+        return ResponseEntity.ok(imageUrl);
     }
 }

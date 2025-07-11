@@ -1,5 +1,7 @@
 package com.example.trainup.service;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import com.example.trainup.dto.gym.GymAddressDto;
 import com.example.trainup.dto.gym.GymFilterRequestDto;
 import com.example.trainup.dto.gym.GymRegistrationRequestDto;
@@ -18,8 +20,10 @@ import com.example.trainup.repository.TrainerRepository;
 import com.example.trainup.repository.UserCredentialsRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ConstraintViolationException;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
@@ -27,11 +31,14 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @RequiredArgsConstructor
@@ -45,6 +52,9 @@ public class GymServiceImpl implements GymService {
     private final AddressRepository addressRepository;
     private final UserCredentialsRepository userCredentialsRepository;
     private final CurrentUserService currentUserService;
+
+    @Autowired(required = false) // Опціональна ін’єкція для тестів
+    private Cloudinary cloudinary;
 
     @Override
     public GymResponseDto save(GymOwner gymOwner, GymRegistrationRequestDto requestDto) {
@@ -248,5 +258,40 @@ public class GymServiceImpl implements GymService {
 
             gym.setPhotos(currentPhotos);
         });
+    }
+
+    @Override
+    public String uploadGymPhoto(Long id, MultipartFile file, Authentication authentication) {
+        Gym gym = gymRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Cannot find Gym by id: " + id));
+
+        if (!canUserModifyGym(authentication, id)) {
+            throw new AccessDeniedException("You do not have permission to modify this gym.");
+        }
+
+        if (gym.getPhotos().size() >= 5) {
+            throw new ConstraintViolationException("Maximum number of photos (5) exceeded", null);
+        }
+
+        if (file == null || file.isEmpty()) {
+            throw new IllegalArgumentException("Uploaded file is empty or missing");
+        }
+
+        try {
+            Map<String, Object> uploadResult = cloudinary
+                    .uploader()
+                    .upload(file.getBytes(), ObjectUtils.emptyMap());
+            String imageUrl = (String) uploadResult.get("url");
+
+            GymPhoto gymPhoto = new GymPhoto();
+            gymPhoto.setImageUrl(imageUrl);
+            gym.addPhoto(gymPhoto);
+            gymRepository.save(gym);
+
+            return imageUrl;
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to upload photo to Cloudinary: "
+                    + e.getMessage(), e);
+        }
     }
 }

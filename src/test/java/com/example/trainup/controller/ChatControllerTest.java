@@ -146,7 +146,7 @@ public class ChatControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(validChatRequestDto)))
                 .andExpect(status().isInternalServerError())
-                .andExpect(jsonPath("$.errors[0]").value("An unexpected error occurred"))
+                .andExpect(jsonPath("$.errors[0]").value("Failed to process Gemini request"))
                 .andReturn();
     }
 

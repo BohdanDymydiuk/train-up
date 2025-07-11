@@ -114,25 +114,6 @@ class TrainerMapperTest {
     @Test
     void toModel_Success() {
         // Given
-        TrainerRegistrationRequestDto requestDto = new TrainerRegistrationRequestDto(
-                "John",
-                "Doe",
-                Gender.MALE,
-                LocalDate.of(1990, 1, 1),
-                "http://image.jpg",
-                "john.doe@example.com",
-                "password123",
-                "password123",
-                Set.of("+380501234567"),
-                Set.of(1L),
-                Set.of(2L),
-                new TrainerAddressDto("Ukraine", "Kyiv", "Shevchenkivskyi", "Shevchenka", "10"),
-                true,
-                List.of("Cert1", "Cert2"),
-                "Experienced trainer",
-                "https://social.com"
-        );
-
         Sport sport = new Sport();
         sport.setId(1L);
         when(sportRepository.findById(1L)).thenReturn(Optional.of(sport));
@@ -152,6 +133,25 @@ class TrainerMapperTest {
                 "Shevchenka",
                 "10")
         ).thenReturn(Optional.of(address));
+
+        TrainerRegistrationRequestDto requestDto = new TrainerRegistrationRequestDto(
+                "John",
+                "Doe",
+                Gender.MALE,
+                LocalDate.of(1990, 1, 1),
+                "http://image.jpg",
+                "john.doe@example.com",
+                "password123",
+                "password123",
+                Set.of("+380501234567"),
+                Set.of(1L),
+                Set.of(2L),
+                new TrainerAddressDto("Ukraine", "Kyiv", "Shevchenkivskyi", "Shevchenka", "10"),
+                true,
+                List.of("Cert1", "Cert2"),
+                "Experienced trainer",
+                "https://social.com"
+        );
 
         when(passwordEncoder.encode(any(String.class))).thenReturn("encodedPassword");
 
@@ -191,25 +191,6 @@ class TrainerMapperTest {
     @Test
     void toModel_WithNewAddress_Success() {
         // Given
-        TrainerRegistrationRequestDto requestDto = new TrainerRegistrationRequestDto(
-                "Jane",
-                "Smith",
-                Gender.FEMALE,
-                LocalDate.of(1995, 5, 15),
-                null,
-                "jane.smith@example.com",
-                "pass456",
-                "pass456",
-                Set.of("+380509876543"),
-                Set.of(3L),
-                Set.of(4L),
-                new TrainerAddressDto("Poland", "Warsaw", null, "Marszalkowska", "1"),
-                false,
-                null,
-                null,
-                null
-        );
-
         Sport sport = new Sport();
         sport.setId(3L);
         when(sportRepository.findById(3L)).thenReturn(Optional.of(sport));
@@ -232,6 +213,25 @@ class TrainerMapperTest {
         when(addressRepository.save(any(Address.class))).thenReturn(newAddress);
 
         when(passwordEncoder.encode(any(String.class))).thenReturn("encodedPassword");
+
+        TrainerRegistrationRequestDto requestDto = new TrainerRegistrationRequestDto(
+                "Jane",
+                "Smith",
+                Gender.FEMALE,
+                LocalDate.of(1995, 5, 15),
+                null,
+                "jane.smith@example.com",
+                "pass456",
+                "pass456",
+                Set.of("+380509876543"),
+                Set.of(3L),
+                Set.of(4L),
+                new TrainerAddressDto("Poland", "Warsaw", null, "Marszalkowska", "1"),
+                false,
+                null,
+                null,
+                null
+        );
 
         // When
         Trainer trainer = trainerMapper.toModel(
