@@ -44,7 +44,7 @@ public class SportController {
             description = "Allows ADMIN users to retrieve a paginated list of all sports, "
                     + "optionally filtered by ID or name.")
     public List<SportDto> getAllSports(
-            @RequestParam(required = false) Long id,
+            @RequestParam(required = false) @Positive Long id,
             @RequestParam(required = false) String name,
             @PageableDefault(size = 10) Pageable pageable
     ) {
