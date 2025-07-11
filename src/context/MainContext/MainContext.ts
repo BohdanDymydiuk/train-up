@@ -4,9 +4,6 @@ import { MainContextType } from './types/MainContextType';
 
 export const MainContext = createContext<MainContextType>({
   isTempProfile: false,
-  trainers: [],
-  events: [],
-  location: '',
   onTablet: false,
   onDesktop: false,
 });

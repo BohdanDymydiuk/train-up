@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { MainContext } from '../../../../../../context/MainContext';
 import { NavItems } from '../../../../../../enums/NavItems';
+import { useAppSelector } from '../../../../../../redux/store';
 import { LookMore } from '../../../../../../reusables/LookMore';
 import { ProfileTitle } from '../../../../../../reusables/ProfileTitle';
 import { TrainerInfo } from '../../../../../../reusables/TrainerInfo';
@@ -9,7 +9,7 @@ import { TrainerInfo } from '../../../../../../reusables/TrainerInfo';
 import styles from './Trainers.module.scss';
 
 export const Trainers: React.FC = () => {
-  const { trainers } = useContext(MainContext);
+  const trainers = useAppSelector(state => state.trainers);
 
   return (
     <section className={styles.trainers}>

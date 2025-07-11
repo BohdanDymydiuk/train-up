@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { MainContext } from '../../../../../../context/MainContext';
+import { useAppSelector } from '../../../../../../redux/store';
 import { LocationSVG } from '../../../../../../reusables/svgs/LocationSVG';
 
 import styles from './Location.module.scss';
 
 export const Location: React.FC = () => {
-  const { location } = useContext(MainContext);
+  const location = useAppSelector(state => state.location);
 
   return (
     <div className={styles.location}>

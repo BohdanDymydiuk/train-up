@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { MainContext } from '../../../../../../context/MainContext';
 import { NavItems } from '../../../../../../enums/NavItems';
+import { useAppSelector } from '../../../../../../redux/store';
 import { EventInfo } from '../../../../../../reusables/EventInfo';
 import { LookMore } from '../../../../../../reusables/LookMore';
 import { ProfileTitle } from '../../../../../../reusables/ProfileTitle';
@@ -9,7 +9,7 @@ import { ProfileTitle } from '../../../../../../reusables/ProfileTitle';
 import styles from './Events.module.scss';
 
 export const Events: React.FC = () => {
-  const { events } = useContext(MainContext);
+  const events = useAppSelector(state => state.events);
 
   return (
     <section className={styles.events}>

@@ -12,7 +12,16 @@ import styles from './TrainerInfo.module.scss';
 type Props = Omit<TrainerInfoType, 'id'>;
 
 export const TrainerInfo: React.FC<Props> = React.memo(props => {
-  const { name, categories, bio, reviews, isNew, trainingTypes } = props;
+  const {
+    name,
+    categories = [],
+    bio,
+    reviews,
+    isNew,
+    trainingTypes = [],
+  } = props;
+
+  console.log(props);
 
   const trainerCssProps: React.CSSProperties = isNew
     ? { marginTop: '7px' }
