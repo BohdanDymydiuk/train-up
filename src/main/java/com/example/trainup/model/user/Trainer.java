@@ -57,7 +57,7 @@ public class Trainer extends BaseUser implements Rateable {
 
     @ElementCollection
     @CollectionTable(name = "trainer_certificates", joinColumns = @JoinColumn(name = "trainer_id"))
-    private Set<String> certificates;
+    private Set<String> certificates = new HashSet<>();
 
     private String description;
 

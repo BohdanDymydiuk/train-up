@@ -14,13 +14,13 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
             + "LEFT JOIN r.gym g "
             + "LEFT JOIN r.trainer t "
             + "WHERE (:id IS NULL OR r.id = :id) "
-            + "AND (:rating = 0 OR r.rating = :rating) "
+            + "AND (:rating IS NULL OR r.rating = :rating) "
             + "AND (:authorId IS NULL OR a.id = :authorId) "
             + "AND (:gymId IS NULL OR g.id = :gymId) "
             + "AND (:trainerId IS NULL OR t.id = :trainerId)")
     Page<Review> findReviewsByCriteria(
             @Param("id") Long id,
-            @Param("rating") int rating,
+            @Param("rating") Integer rating,
             @Param("authorId") Long authorId,
             @Param("gymId") Long gymId,
             @Param("trainerId") Long trainerId,

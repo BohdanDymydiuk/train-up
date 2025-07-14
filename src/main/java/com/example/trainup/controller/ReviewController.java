@@ -6,6 +6,7 @@ import com.example.trainup.dto.review.ReviewResponseDto;
 import com.example.trainup.service.ReviewService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -46,11 +47,11 @@ public class ReviewController {
                     + "as ID, rating, author, gym, or trainer."
     )
     public List<ReviewResponseDto> getAllReview(
-            @RequestParam(required = false) Long id,
-            @RequestParam(required = false) Integer rating,
-            @RequestParam(required = false) Long authorId,
-            @RequestParam(required = false) Long gymId,
-            @RequestParam(required = false) Long trainerId,
+            @RequestParam(required = false) @Positive Long id,
+            @RequestParam(required = false) @Positive Integer rating,
+            @RequestParam(required = false) @Positive Long authorId,
+            @RequestParam(required = false) @Positive Long gymId,
+            @RequestParam(required = false) @Positive Long trainerId,
             @PageableDefault(size = 10) Pageable pageable
     ) {
         ReviewFilterRequestDto filter = new ReviewFilterRequestDto(
@@ -90,7 +91,7 @@ public class ReviewController {
     )
     public ReviewResponseDto createGymReview(
             @PathVariable @Positive Long gymId,
-            @RequestBody ReviewRegistrationRequestDto requestDto,
+            @RequestBody @Valid ReviewRegistrationRequestDto requestDto,
             Authentication authentication
     ) {
         log.info("Attempting to create gym review for gym ID: {} by athlete '{}' with request: {}",
@@ -112,7 +113,7 @@ public class ReviewController {
     )
     public ReviewResponseDto createTrainerReview(
             @PathVariable @Positive Long trainerId,
-            @RequestBody ReviewRegistrationRequestDto requestDto,
+            @RequestBody @Valid ReviewRegistrationRequestDto requestDto,
             Authentication authentication
     ) {
         log.info("Attempting to create trainer review for trainer ID: {} by athlete '{}' "
