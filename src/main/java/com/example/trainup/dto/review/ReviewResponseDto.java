@@ -2,7 +2,7 @@ package com.example.trainup.dto.review;
 
 public record ReviewResponseDto(
         Long id,
-        int rating,
+        Integer rating,
         String description,
         Long gymId,
         Long trainerId,
