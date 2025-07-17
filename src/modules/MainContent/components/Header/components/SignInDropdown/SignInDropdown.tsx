@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-import { NavLinks } from '../../../../../../../enums/NavLinks';
+import { NavLinks } from '../../../../../../enums/NavLinks';
 
-import styles from './Dropdown.module.scss';
+import styles from './SignInDropdown.module.scss';
 
 interface Props {
   isDpShown: boolean;
@@ -15,7 +15,7 @@ enum SignIn {
   admin = 'Увійти як адміністратор залу',
 }
 
-export const Dropdown: React.FC<Props> = ({ isDpShown }) => {
+export const SignInDropdown: React.FC<Props> = ({ isDpShown }) => {
   const navigate = useNavigate();
 
   const dpCssProps: React.CSSProperties = {

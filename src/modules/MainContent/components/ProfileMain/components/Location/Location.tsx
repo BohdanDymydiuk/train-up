@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useAppSelector } from '../../../../../../redux/store';
 import { LocationSVG } from '../../../../../../reusables/svgs/LocationSVG';
+import { useAppSelector } from '../../../../../../store/store';
 
 import styles from './Location.module.scss';
 

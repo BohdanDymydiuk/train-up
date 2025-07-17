@@ -17,17 +17,14 @@ const root = document.querySelector('#root') as HTMLElement;
 
 export const Form: React.FC = () => {
   // #region states
-
   const [isModalShown, setIsModalShown] = useState(false);
   const [emailName, setEmailName] = useState('');
   const [password, setPassword] = useState('');
-
   // #endregion
 
   const navigate = useNavigate();
 
   // #region useEffects
-
   useEffect(() => {
     if (isModalShown) {
       body.style.overflow = 'hidden';
@@ -37,10 +34,9 @@ export const Form: React.FC = () => {
       root.style.overflowY = 'auto';
     }
   }, [isModalShown]);
-
   // #endregion
-  // #region handlers
 
+  // #region handlers
   const inputTextHandler = (event: InputChangeEvent) => {
     setEmailName(event.target.value);
   };
@@ -52,10 +48,9 @@ export const Form: React.FC = () => {
   const onSubmitHandler = () => {
     navigate('/');
   };
-
   // #endregion
-  // #region props
 
+  // #region props
   const inputsProps = {
     emailName,
     password,
@@ -65,7 +60,6 @@ export const Form: React.FC = () => {
 
   const signUpProps = { setIsModalShown };
   const modalProps = { setIsModalShown };
-
   // #endregion
 
   return (

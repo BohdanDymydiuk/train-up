@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { NavItems } from '../../../../../../enums/NavItems';
-import { useAppSelector } from '../../../../../../redux/store';
 import { LookMore } from '../../../../../../reusables/LookMore';
 import { ProfileTitle } from '../../../../../../reusables/ProfileTitle';
 import { TrainerInfo } from '../../../../../../reusables/TrainerInfo';
+import { useAppSelector } from '../../../../../../store/store';
 
 import styles from './Trainers.module.scss';
 

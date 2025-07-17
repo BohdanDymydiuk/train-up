@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-06-14T10:07:40+0000",
+    date = "2025-07-17T07:08:06+0000",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.15 (Ubuntu)"
 )
 @Component
@@ -60,7 +60,7 @@ public class ReviewMapperImpl implements ReviewMapper {
         }
 
         Long id = null;
-        int rating = 0;
+        Integer rating = null;
         String description = null;
 
         id = review.getId();

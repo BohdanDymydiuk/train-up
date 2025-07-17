@@ -64,6 +64,7 @@ com/example/trainup/service/SportService.class
 com/example/trainup/validation/RegexConstants.class
 com/example/trainup/mapper/AthleteMapperImpl.class
 com/example/trainup/dto/gemini/GeminiContent.class
+com/example/trainup/controller/BaseUserController.class
 com/example/trainup/dto/gym/GymResponseDto.class
 com/example/trainup/mapper/AthleteMapper.class
 com/example/trainup/model/user/Athlete.class
@@ -75,6 +76,7 @@ com/example/trainup/exception/CustomGlobalExceptionHandler.class
 com/example/trainup/repository/AthleteRepository.class
 com/example/trainup/service/users/AthleteService.class
 com/example/trainup/dto/sport/SportRequestDto.class
+com/example/trainup/repository/BaseUserRepository.class
 com/example/trainup/security/CustomUserDetailsService.class
 com/example/trainup/dto/review/ReviewFilterRequestDto.class
 com/example/trainup/repository/SportRepository.class
@@ -91,12 +93,14 @@ com/example/trainup/controller/SportController.class
 com/example/trainup/model/Rateable.class
 com/example/trainup/service/EventServiceImpl.class
 com/example/trainup/validation/EmailUnique.class
+com/example/trainup/config/CloudinaryConfig.class
 com/example/trainup/validation/EventTarget.class
 com/example/trainup/dto/gym/GymRegistrationRequestDto.class
 com/example/trainup/dto/chat/ChatRequestDto.class
 com/example/trainup/dto/chat/ChatMessageDto.class
 com/example/trainup/dto/review/ReviewResponseDto.class
 com/example/trainup/dto/sport/SportDto.class
+com/example/trainup/service/UserPhotoService.class
 com/example/trainup/dto/event/EventRegistrationRequestDto.class
 com/example/trainup/service/users/TrainerServiceImpl.class
 com/example/trainup/model/Review.class

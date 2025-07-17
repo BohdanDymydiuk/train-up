@@ -10,10 +10,10 @@ import { MainContent } from './modules/MainContent';
 import { Home } from './modules/MainContent/components/Home';
 import { ProfileMain } from './modules/MainContent/components/ProfileMain';
 import { SignIn } from './modules/MainContent/components/SignIn';
-import { actions as eventsActions } from './redux/features/events';
-import { actions as locationActions } from './redux/features/location';
-import { actions as trainersActions } from './redux/features/trainers';
-import { useAppDispatch } from './redux/store';
+import { actions as eventsActions } from './store/features/events';
+import { actions as locationActions } from './store/features/location';
+import { actions as trainersActions } from './store/features/trainers';
+import { useAppDispatch } from './store/store';
 import { EventInfoType } from './types/EventInfoType';
 import { TrainerInfoType } from './types/TrainerInfoType';
 
@@ -23,7 +23,6 @@ export const App: React.FC = () => {
   const dispatch = useAppDispatch();
 
   // #region setValue
-
   const setTrainers = (trainers: TrainerInfoType[]) => {
     dispatch(trainersActions.setTrainers(trainers));
   };
@@ -35,10 +34,9 @@ export const App: React.FC = () => {
   const setLocation = (location: string) => {
     dispatch(locationActions.setLocation(location));
   };
-
   // #endregion
-  // #region useEffects
 
+  // #region useEffects
   useEffect(() => {
     const getters = [getTrainers, getEvents];
     const setters = [setTrainers, setEvents];
@@ -82,7 +80,6 @@ export const App: React.FC = () => {
 
     navigator.geolocation.getCurrentPosition(showLocation);
   }, []);
-
   // #endregion
 
   const titleCssProps: React.CSSProperties = {

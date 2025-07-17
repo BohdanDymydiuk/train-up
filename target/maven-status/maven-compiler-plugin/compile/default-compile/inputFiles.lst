@@ -22,6 +22,7 @@
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/mapper/EventMapper.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/mapper/GymOwnerMapper.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/service/CurrentUserService.java
+/mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/config/CloudinaryConfig.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/dto/users/trainer/TrainerUpdateRequestDto.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/mapper/ReviewMapper.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/dto/users/trainer/TrainerResponseDto.java
@@ -33,6 +34,7 @@
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/dto/users/UserLoginRequestDto.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/controller/TrainerController.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/dto/users/gymowner/GymOwnerRegistrationRequestDto.java
+/mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/repository/BaseUserRepository.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/validation/FieldMatch.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/security/JwtUtil.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/dto/users/athlete/AthleteFilterRequestDto.java
@@ -83,6 +85,7 @@
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/controller/GymController.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/model/Role.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/service/UserCredentialService.java
+/mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/controller/BaseUserController.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/service/EventService.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/model/enums/Gender.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/repository/EventRepository.java
@@ -95,6 +98,7 @@
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/validation/EmailUniqueValidator.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/validation/FieldMatchValidator.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/controller/ReviewController.java
+/mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/service/UserPhotoService.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/dto/users/athlete/AthleteRegistrationRequestDto.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/mapper/SportMapper.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/my-projects/train-up/src/main/java/com/example/trainup/model/user/BaseUser.java

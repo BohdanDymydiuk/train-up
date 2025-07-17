@@ -1,0 +1,16 @@
+.signin {
+  width: $signin-width;
+  height: $signin-height;
+  border: none;
+  border-radius: 8px;
+  background-color: $btn-bg-color;
+  cursor: pointer;
+  transition: border-color $trans-dur;
+  color: #fff;
+
+  @include inter-500-15;
+
+  &:focus {
+    background-color: $btn-bg-color-effect;
+  }
+}
