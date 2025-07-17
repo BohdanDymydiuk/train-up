@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface GymService {
     GymResponseDto save(GymOwner gymOwner, GymRegistrationRequestDto requestDto);
@@ -21,7 +22,9 @@ public interface GymService {
 
     void deleteGymById(Long id);
 
-    boolean canUserModifyGym(String email, Long gymId);
+    boolean canUserModifyGym(Authentication authentication, Long gymId);
 
     GymResponseDto updateGym(Long id, GymUpdateRequestDto requestDto);
+
+    String uploadGymPhoto(Long id, MultipartFile file, Authentication authentication);
 }

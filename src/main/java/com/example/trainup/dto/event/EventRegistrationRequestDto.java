@@ -6,10 +6,10 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public record EventRegistrationRequestDto(
-        @NotBlank
+        @NotBlank(message = "Name must not be blank")
         String name,
 
-        @NotNull
+        @NotNull(message = "SportId must not be null")
         Long sportId,
 
         String description,

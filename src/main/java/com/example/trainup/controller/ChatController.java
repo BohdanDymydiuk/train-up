@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -51,7 +52,9 @@ public class ChatController {
                             + "with the AI model or processing the request."
             )
     })
-    public ResponseEntity<List<ChatMessageDto>> askAi(@RequestBody ChatRequestDto requestDto) {
+    public ResponseEntity<List<ChatMessageDto>> askAi(
+            @Valid @RequestBody ChatRequestDto requestDto
+    ) {
         log.info("Received AI chat request: {}", requestDto);
 
         List<ChatMessageDto> responseHistory;

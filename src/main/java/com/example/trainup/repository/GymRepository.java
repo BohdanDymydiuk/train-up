@@ -25,8 +25,9 @@ public interface GymRepository extends JpaRepository<Gym, Long> {
             + "LIKE (CONCAT('%', CAST(:locationStreet AS string), '%'))) "
             + "AND (:locationHouse IS NULL OR (a.house) "
             + "LIKE (CONCAT('%', CAST(:locationHouse AS string), '%'))) "
-            + "AND (:sportIds IS NULL OR s.id IN :sportIds) "
-            + "AND (:trainerIds IS NULL OR t.id IN :trainerIds) "
+            + "AND (:#{#sportIds == null || #sportIds.isEmpty()} = true OR s.id IN :sportIds) "
+            + "AND (:#{#trainerIds == null || #trainerIds.isEmpty()} = true "
+            + "OR t.id IN :trainerIds) "
             + "AND (:overallRating IS NULL OR g.overallRating >= :overallRating)")
     Page<Gym> findGymsByCriteria(
             @Param("name") String name,
