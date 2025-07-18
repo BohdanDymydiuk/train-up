@@ -49,8 +49,7 @@ public class AthleteServiceImpl implements AthleteService {
         Athlete athlete = athleteRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Can not find Athlete by id: "
                         + id));
-        AthleteResponseDto dto = athleteMapper.toDto(athlete);
-        return dto;
+        return athleteMapper.toDto(athlete);
     }
 
     @Override
@@ -92,7 +91,7 @@ public class AthleteServiceImpl implements AthleteService {
 
     @Override
     public void deleteAthleteById(Long id) {
-        Athlete athlete = athleteRepository.findById(id)
+        athleteRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Can not find Athlete by id:"
                         + id));
         athleteRepository.deleteById(id);
@@ -135,8 +134,7 @@ public class AthleteServiceImpl implements AthleteService {
                 sportRepository::findById, "Sport with id ");
 
         Athlete updatedAthlete = athleteRepository.save(existingAthlete);
-        AthleteResponseDto dto = athleteMapper.toDto(updatedAthlete);
-        return dto;
+        return athleteMapper.toDto(updatedAthlete);
     }
 
     private <T> void updateEntities(Consumer<Set<T>> setter, Set<Long> ids,

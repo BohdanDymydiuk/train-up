@@ -15,12 +15,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @SQLDelete(sql = "UPDATE athletes SET is_deleted=true WHERE id=?")
+@SQLRestriction(value = "is_deleted = false")
 @Table(name = "athletes")
 public class Athlete extends BaseUser {
     @ElementCollection

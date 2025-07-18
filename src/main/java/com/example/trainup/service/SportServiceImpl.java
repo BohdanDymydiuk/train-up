@@ -60,7 +60,7 @@ public class SportServiceImpl implements SportService {
 
     @Override
     public void deleteSport(Long id) {
-        Sport sport = sportRepository.findById(id)
+        sportRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Can not find Sport by id: " + id));
         sportRepository.deleteById(id);
     }

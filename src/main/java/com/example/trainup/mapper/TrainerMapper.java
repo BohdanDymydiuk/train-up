@@ -116,7 +116,7 @@ public interface TrainerMapper {
             return null;
         }
 
-        Address address = addressRepository.findByCountryAndCityAndStreetAndHouse(
+        return addressRepository.findByCountryAndCityAndStreetAndHouse(
                 addressDto.country(), addressDto.city(), addressDto.street(), addressDto.house()
         ).orElseGet(() -> {
             Address newAddress = new Address();
@@ -127,7 +127,6 @@ public interface TrainerMapper {
             newAddress.setHouse(addressDto.house());
             return addressRepository.save(newAddress);
         });
-        return address;
     }
 
     @Named("mapAddressToAddressDto")

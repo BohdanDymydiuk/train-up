@@ -32,6 +32,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Log4j2
 public class EventServiceImpl implements EventService {
+    private static final String SPORT_NOT_FOUND_MSG = "Sport not found with id: ";
+
     private final EventMapper eventMapper;
     private final EventRepository eventRepository;
     private final UserCredentialsRepository userCredentialsRepository;
@@ -47,7 +49,7 @@ public class EventServiceImpl implements EventService {
                 new EntityNotFoundException("Trainer not found with email: " + email));
 
         Sport sport = sportRepository.findById(requestDto.sportId()).orElseThrow(() ->
-                new EntityNotFoundException("Sport not found with id: " + requestDto.sportId()));
+                new EntityNotFoundException(SPORT_NOT_FOUND_MSG + requestDto.sportId()));
         Event event = eventMapper.toModel(requestDto, sport);
         event.setTrainer(trainer);
         Event savedEvent = eventRepository.save(event);
@@ -72,7 +74,7 @@ public class EventServiceImpl implements EventService {
         }
 
         Sport sport = sportRepository.findById(requestDto.sportId()).orElseThrow(() ->
-                new EntityNotFoundException("Sport not found with id: " + requestDto.sportId()));
+                new EntityNotFoundException(SPORT_NOT_FOUND_MSG + requestDto.sportId()));
         Event event = eventMapper.toModel(requestDto, sport);
         event.setGym(gym);
         Event savedEvent = eventRepository.save(event);
@@ -114,7 +116,7 @@ public class EventServiceImpl implements EventService {
         Optional.ofNullable(requestDto.name()).ifPresent(existingEvent::setName);
         Optional.ofNullable(requestDto.sportId()).ifPresent(sportId -> {
             Sport sport = sportRepository.findById(sportId)
-                    .orElseThrow(() -> new EntityNotFoundException("Sport not found with id: "
+                    .orElseThrow(() -> new EntityNotFoundException(SPORT_NOT_FOUND_MSG
                             + sportId));
             existingEvent.setSport(sport);
         });

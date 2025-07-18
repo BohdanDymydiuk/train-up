@@ -80,7 +80,6 @@ public class SecurityConfig {
                 "http://localhost:5173",
                 "https://c3e3-109-200-252-189.ngrok-free.app/"
         ));
-        //TODO: allowedOrigins.add("null"); only for testing
         allowedOrigins.add("null");
         configuration.setAllowedOrigins(allowedOrigins);
 

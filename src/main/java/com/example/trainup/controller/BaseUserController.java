@@ -3,9 +3,8 @@ package com.example.trainup.controller;
 import com.example.trainup.repository.BaseUserRepository;
 import com.example.trainup.service.UserPhotoService;
 import jakarta.persistence.EntityNotFoundException;
-import java.io.IOException;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -17,12 +16,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
 @Log4j2
 public class BaseUserController {
-    @Autowired
-    private UserPhotoService userPhotoService;
-    @Autowired
-    private BaseUserRepository baseUserRepository;
+    private final UserPhotoService userPhotoService;
+    private final BaseUserRepository baseUserRepository;
 
     @PostMapping("/photo")
     public ResponseEntity<String> uploadPhoto(
@@ -32,10 +30,6 @@ public class BaseUserController {
         try {
             String imageUrl = userPhotoService.uploadPhotoWithAuth(authentication, file);
             return ResponseEntity.ok(imageUrl);
-        } catch (IOException e) {
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Failed to upload photo");
         } catch (EntityNotFoundException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         } catch (SecurityException e) {

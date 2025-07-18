@@ -104,8 +104,7 @@ public class TrainerServiceImpl implements TrainerService {
                     + "or principal is not UserCredentials");
         }
         Trainer trainer = currentUserService.getCurrentUserByType(Trainer.class);
-        TrainerResponseDto dto = trainerMapper.toDto(trainer);
-        return dto;
+        return trainerMapper.toDto(trainer);
     }
 
     @Override
@@ -114,8 +113,7 @@ public class TrainerServiceImpl implements TrainerService {
         Trainer trainer = trainerRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Cannot find Trainer by id:" + id));
 
-        TrainerResponseDto dto = trainerMapper.toDto(trainer);
-        return dto;
+        return trainerMapper.toDto(trainer);
     }
 
     @Override
@@ -139,7 +137,7 @@ public class TrainerServiceImpl implements TrainerService {
 
     @Override
     public void deleteTrainerById(Long id) {
-        Trainer trainer = trainerRepository.findById(id)
+        trainerRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Cannot find Trainer by id:" + id));
         trainerRepository.deleteById(id);
         log.debug("Trainer was deleted with ID: {}", id);
@@ -178,8 +176,7 @@ public class TrainerServiceImpl implements TrainerService {
         updateLocation(existingTrainer, requestDto.location());
 
         Trainer updatedTrainer = trainerRepository.save(existingTrainer);
-        TrainerResponseDto dto = trainerMapper.toDto(updatedTrainer);
-        return dto;
+        return trainerMapper.toDto(updatedTrainer);
     }
 
     private void updateLocation(Trainer trainer, TrainerAddressDto locationDto) {
