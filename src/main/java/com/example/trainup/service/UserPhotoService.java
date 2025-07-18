@@ -92,7 +92,7 @@ public class UserPhotoService {
         log.debug("Received file: name={}, size={}, isEmpty={}",
                 file.getOriginalFilename(), file.getSize(), file.isEmpty());
 
-        if (file == null || file.isEmpty()) {
+        if (file.isEmpty()) {
             throw new IllegalArgumentException("Uploaded file is empty or missing");
         }
 

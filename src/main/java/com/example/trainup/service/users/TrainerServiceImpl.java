@@ -13,7 +13,6 @@ import com.example.trainup.repository.AddressRepository;
 import com.example.trainup.repository.GymRepository;
 import com.example.trainup.repository.SportRepository;
 import com.example.trainup.repository.TrainerRepository;
-import com.example.trainup.repository.UserCredentialsRepository;
 import com.example.trainup.service.CurrentUserService;
 import com.example.trainup.service.UserCredentialService;
 import jakarta.persistence.EntityNotFoundException;
@@ -45,7 +44,6 @@ public class TrainerServiceImpl implements TrainerService {
     private final AddressRepository addressRepository;
     private final UserCredentialService userCredentialService;
     private final CurrentUserService currentUserService;
-    private final UserCredentialsRepository userCredentialsRepository;
 
     @Override
     public TrainerResponseDto register(TrainerRegistrationRequestDto requestDto) {

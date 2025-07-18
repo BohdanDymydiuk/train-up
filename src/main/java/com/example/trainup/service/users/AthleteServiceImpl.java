@@ -125,9 +125,9 @@ public class AthleteServiceImpl implements AthleteService {
                 .ifPresent(existingAthlete::setProfileImageUrl);
         Optional.ofNullable(requestDto.phoneNumbers())
                 .ifPresent(existingAthlete::setPhoneNumbers);
-        Optional.ofNullable(requestDto.emailPermission())
+        Optional.of(requestDto.emailPermission())
                 .ifPresent(existingAthlete::setEmailPermission);
-        Optional.ofNullable(requestDto.phonePermission())
+        Optional.of(requestDto.phonePermission())
                 .ifPresent(existingAthlete::setPhonePermission);
 
         updateEntities(existingAthlete::setSports, requestDto.sportIds(),

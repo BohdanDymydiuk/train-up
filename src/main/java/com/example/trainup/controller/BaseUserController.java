@@ -1,6 +1,5 @@
 package com.example.trainup.controller;
 
-import com.example.trainup.repository.BaseUserRepository;
 import com.example.trainup.service.UserPhotoService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Log4j2
 public class BaseUserController {
     private final UserPhotoService userPhotoService;
-    private final BaseUserRepository baseUserRepository;
 
     @PostMapping("/photo")
     public ResponseEntity<String> uploadPhoto(

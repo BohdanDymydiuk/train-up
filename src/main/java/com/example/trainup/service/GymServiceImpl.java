@@ -238,7 +238,6 @@ public class GymServiceImpl implements GymService {
             }
             setter.accept(entities);
         }
-
     }
 
     private void updatePhotos(Gym gym, Set<String> photoUrls) {
