@@ -3,19 +3,18 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './DropdownHoc.module.scss';
 
 export interface ButtonProps {
-  buttonStyle: React.CSSProperties;
   onClickHandler: () => void;
+}
+
+export interface DropdownProps {
+  isDpShown?: boolean;
 }
 
 export const DropdownHoc = (
   ButtonComponent: React.FC<ButtonProps>,
-  DropdownComponent: React.FC<{ isDpShown: boolean }>,
+  DropdownComponent: React.FC<DropdownProps>,
 ) => {
-  interface Props {
-    buttonCssProps: React.CSSProperties;
-  }
-
-  const ResultedComponent: React.FC<Props> = ({ buttonCssProps }) => {
+  const ResultedComponent: React.FC = () => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     const [isDpActive, setIsDpActive] = useState(false);
@@ -55,13 +54,9 @@ export const DropdownHoc = (
     }, [isDpActive]);
     // #endregion
 
-    const buttonStyle = isDpActive ? buttonCssProps : {};
-
-    const buttonProps = { buttonStyle, onClickHandler };
-
     return (
       <div className={styles.wrapper} ref={wrapperRef}>
-        <ButtonComponent {...buttonProps} />
+        <ButtonComponent onClickHandler={onClickHandler} />
         {isDpActive && <DropdownComponent isDpShown={isDpShown} />}
       </div>
     );

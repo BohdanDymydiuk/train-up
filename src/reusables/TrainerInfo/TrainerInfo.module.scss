@@ -6,9 +6,8 @@
   box-sizing: border-box;
   height: 152px;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+  @include flex-between-center;
 
   .avatar {
     width: 82px;

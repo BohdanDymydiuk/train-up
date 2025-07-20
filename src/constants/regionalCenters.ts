@@ -1,4 +1,4 @@
-export const regionalCenters: Readonly<{ [key: string]: string }> = {
+export const REGIONAL_CENTERS: Readonly<{ [key: string]: string }> = {
   'Київська область': 'Київ',
   'Львівська область': 'Львів',
   'Дніпропетровська область': 'Дніпро',

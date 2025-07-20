@@ -3,9 +3,9 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router';
 
 import { getEvents } from './api/events';
 import { getTrainers } from './api/trainers';
-import { regionalCenters } from './constants/regionalCenters';
+import { REGIONAL_CENTERS } from './constants/regionalCenters';
 import { MainContextProvider } from './context/MainContext/provider/MainContextProvider';
-import { NavLinks } from './enums/NavLinks';
+import { Links } from './enums/Links';
 import { MainContent } from './modules/MainContent';
 import { Home } from './modules/MainContent/components/Home';
 import { ProfileMain } from './modules/MainContent/components/ProfileMain';
@@ -69,7 +69,7 @@ export const App: React.FC = () => {
         .then(response => response.json())
         .then(data => {
           const state: string = data.address.state;
-          const city: string = regionalCenters[state];
+          const city: string = REGIONAL_CENTERS[state];
 
           setLocation(city);
         })
@@ -95,8 +95,8 @@ export const App: React.FC = () => {
           <Routes>
             <Route path='/' element={<MainContent />}>
               <Route index element={<Home />} />
-              <Route path={NavLinks.signIn} element={<SignIn />} />
-              <Route path={NavLinks.tempProfile} element={<ProfileMain />} />
+              <Route path={Links.signIn} element={<SignIn />} />
+              <Route path={Links.tempProfile} element={<ProfileMain />} />
             </Route>
           </Routes>
         </MainContextProvider>

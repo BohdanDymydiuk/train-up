@@ -1,13 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-import { NavLinks } from '../../../../../../enums/NavLinks';
+import { APPEARING_DP_CSS_PROPS } from '../../../../../../constants/common';
+import { Links } from '../../../../../../enums/Links';
+import { DropdownProps } from '../../../../../../reusables/DropdownHoc';
 
 import styles from './SignInDropdown.module.scss';
-
-interface Props {
-  isDpShown: boolean;
-}
 
 enum SignIn {
   client = 'Увійти як клієнт',
@@ -15,25 +13,24 @@ enum SignIn {
   admin = 'Увійти як адміністратор залу',
 }
 
-export const SignInDropdown: React.FC<Props> = ({ isDpShown }) => {
+export const SignInDropdown: React.FC<DropdownProps> = ({ isDpShown }) => {
   const navigate = useNavigate();
 
-  const dpCssProps: React.CSSProperties = {
-    opacity: 1,
-    transform: 'scaleY(1)',
-  };
+  const dpStyle = isDpShown ? APPEARING_DP_CSS_PROPS : {};
 
-  const dpStyle = isDpShown ? dpCssProps : {};
-
-  const signInHandler = () => navigate(NavLinks.signIn);
+  const signInHandler = () => navigate(Links.signIn);
 
   return (
     <div className={styles.dropdown} style={dpStyle}>
-      <ul className={styles.list}>
+      <ul className={styles['dp-list']}>
         {Object.values(SignIn).map(item => {
           return (
-            <li className={styles.item} key={item} onClick={signInHandler}>
-              <div className={styles['item-text']}>{item}</div>
+            <li
+              className={styles['dp-item']}
+              key={item}
+              onClick={signInHandler}
+            >
+              <a className={styles['dp-item-link']}>{item}</a>
             </li>
           );
         })}

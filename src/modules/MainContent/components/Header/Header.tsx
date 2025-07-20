@@ -28,19 +28,16 @@ export const Header: React.FC = () => {
   const secondPartCssProps: React.CSSProperties = isTempProfile
     ? { gap: '32px' }
     : { gap: '16px' };
-
-  const signInButtonCssProps: React.CSSProperties = {
-    backgroundColor: `${styles.btnFocusColor}`,
-  };
   // #endregion
 
   // #regions jsx
+  // sp is "secondPart"
   const defaultSp = (
     <>
       {onTablet && <Lang />}
-      <SignIn buttonCssProps={signInButtonCssProps} />
+      <SignIn />
       {!onTablet && <Burger />}
-      {/* <Link to={NavLinks.tempProfile}>TempProfile</Link> */}
+      {/* <Link to={Links.tempProfile}>TempProfile</Link> */}
     </>
   );
 

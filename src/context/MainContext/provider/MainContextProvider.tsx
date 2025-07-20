@@ -2,8 +2,8 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { useLocation } from 'react-router';
 
+import { Links } from '../../../enums/Links';
 import { NavItems } from '../../../enums/NavItems';
-import { NavLinks } from '../../../enums/NavLinks';
 import { MainContext } from '../MainContext';
 
 interface Props {
@@ -24,7 +24,7 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
     console.log(currentDay);
   }, []);
 
-  const isTempProfile = pathname.startsWith(NavLinks.tempProfile);
+  const isTempProfile = pathname.startsWith(Links.tempProfile);
 
   const providerValue = useMemo(
     () => ({

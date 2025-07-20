@@ -1,11 +1,16 @@
 import React, { useContext } from 'react';
 
 import { MainContext } from '../../../../../../context/MainContext';
+import { DropdownHoc } from '../../../../../../reusables/DropdownHoc';
 
+import { NavButton } from './components/NavDpButton';
+import { NavDropdown } from './components/NavDropdown';
 import { NavElems } from './components/NavElems';
 
 export const Nav: React.FC = () => {
   const { onTablet, onDesktop } = useContext(MainContext);
 
-  return <nav>{onTablet && !onDesktop ? <></> : <NavElems />}</nav>;
+  const NavWithDp = DropdownHoc(NavButton, NavDropdown);
+
+  return <nav>{onTablet && !onDesktop ? <NavWithDp /> : <NavElems />}</nav>;
 };

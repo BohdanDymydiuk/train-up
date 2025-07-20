@@ -1,3 +1,11 @@
+:root {
+  --dropdown-width: 232px;
+  
+  @include on-tablet {
+    --dropdown-width: 265px;
+  }
+}
+
 body {
   margin: 0;
 }

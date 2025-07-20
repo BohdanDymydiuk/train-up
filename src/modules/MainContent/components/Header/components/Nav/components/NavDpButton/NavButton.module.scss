@@ -1,0 +1,9 @@
+.button {
+  @include inter-400-16;
+  @include flex-between-center;
+
+  background-color: transparent;
+  border: none;
+  width: $nav-button-width;
+  height: $nav-button-height;
+}

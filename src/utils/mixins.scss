@@ -1,3 +1,5 @@
+@use "./vars.scss" as *; // yes, I have it in vite.config.ts. But that doesn't work for this place
+
 // #region media queries
 @mixin on-tablet {
   @media (min-width: 768px) {
@@ -145,10 +147,63 @@
   height: 56px;
   padding-inline: 16px;
 }
+
+@mixin dropdown {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid $border-bg-color;
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: opacity $trans-dur, transform $trans-dur;
+
+  .dp-list {
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+
+    .dp-item {
+      cursor: pointer;
+      box-sizing: border-box;
+      list-style: none;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      padding-inline: 15px;
+
+      &:hover {
+        background-color: $dropdown-hover-color;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $border-bg-color;
+      }
+
+      &-link {
+        text-align: right;
+        color: $primary-color;
+
+        @include inter-500-14;
+      }
+    }
+  }
+}
 // #endregion
 
+// #region flex
 @mixin flex-center-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+@mixin flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+// #endregion

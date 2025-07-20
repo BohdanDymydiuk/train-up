@@ -3,9 +3,9 @@
   width: 50vw;
   padding-top: 134px;
   padding-bottom: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+
+  @include flex-between-center;
+
   flex-direction: column;
 
   .form {

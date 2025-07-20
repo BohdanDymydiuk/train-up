@@ -1,47 +1,7 @@
 .dropdown {
-  box-sizing: border-box;
-  position: absolute;
+  @include dropdown;
+
   top: $signin-height + 16px;
-  left: ($dropdown-width - $signin-width) * -1;
-  width: $dropdown-width;
-  display: flex;
-  flex-direction: column;
-  border-radius: 16px;
-  border: 1px solid $border-bg-color;
-  overflow: hidden;
-  opacity: 0;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: opacity $trans-dur, transform $trans-dur;
-
-  .list {
-    padding: 0;
-    margin: 0;
-    background-color: #fff;
-
-    .item {
-      cursor: pointer;
-      box-sizing: border-box;
-      list-style: none;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      padding-inline: 15px;
-
-      &:hover {
-        background-color: $dropdown-hover-color;
-      }
-
-      &:not(:last-child) {
-        border-bottom: 1px solid $border-bg-color;
-      }
-
-      &-text {
-        text-align: right;
-        color: $primary-color;
-
-        @include inter-500-14;
-      }
-    }
-  }
+  left: calc((var(--dropdown-width) - $signin-width) * -1);
+  width: var(--dropdown-width);
 }
