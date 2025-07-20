@@ -8,6 +8,7 @@ export interface ButtonProps {
 
 export interface DropdownProps {
   isDpShown?: boolean;
+  closeDpHandler?: () => void;
 }
 
 export const DropdownHoc = (
@@ -54,10 +55,12 @@ export const DropdownHoc = (
     }, [isDpActive]);
     // #endregion
 
+    const dpProps = { isDpShown, closeDpHandler };
+
     return (
       <div className={styles.wrapper} ref={wrapperRef}>
         <ButtonComponent onClickHandler={onClickHandler} />
-        {isDpActive && <DropdownComponent isDpShown={isDpShown} />}
+        {isDpActive && <DropdownComponent {...dpProps} />}
       </div>
     );
   };

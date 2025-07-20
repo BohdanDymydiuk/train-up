@@ -13,12 +13,21 @@ enum SignIn {
   admin = 'Увійти як адміністратор залу',
 }
 
-export const SignInDropdown: React.FC<DropdownProps> = ({ isDpShown }) => {
+export const SignInDropdown: React.FC<DropdownProps> = ({
+  isDpShown,
+  closeDpHandler,
+}) => {
   const navigate = useNavigate();
 
   const dpStyle = isDpShown ? APPEARING_DP_CSS_PROPS : {};
 
-  const signInHandler = () => navigate(Links.signIn);
+  const signInHandler = () => {
+    navigate(Links.signIn);
+
+    if (closeDpHandler) {
+      closeDpHandler();
+    }
+  };
 
   return (
     <div className={styles.dropdown} style={dpStyle}>

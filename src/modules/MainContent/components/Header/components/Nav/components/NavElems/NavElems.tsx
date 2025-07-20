@@ -12,7 +12,10 @@ import { DropdownProps } from '../../../../../../../../reusables/DropdownHoc';
 import dpStyles from '../NavDropdown/NavDropdown.module.scss';
 import styles from './NavElems.module.scss';
 
-export const NavElems: React.FC<DropdownProps> = ({ isDpShown }) => {
+export const NavElems: React.FC<DropdownProps> = ({
+  isDpShown,
+  closeDpHandler,
+}) => {
   const { pathname } = useLocation();
 
   const isUndefined = (value: unknown) => value === undefined;
@@ -39,7 +42,7 @@ export const NavElems: React.FC<DropdownProps> = ({ isDpShown }) => {
         }
 
         return (
-          <li key={item} className={liClass}>
+          <li key={item} className={liClass} onClick={closeDpHandler}>
             <a className={aClass}>{item}</a>
           </li>
         );
