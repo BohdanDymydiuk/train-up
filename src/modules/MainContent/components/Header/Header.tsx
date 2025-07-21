@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
   // #regions css props
   const firstPartCssProps: React.CSSProperties = isTempProfile
     ? { gap: '15px' }
-    : { gap: '20px' };
+    : { gap: '48px' };
 
   const secondPartCssProps: React.CSSProperties = isTempProfile
     ? { gap: '32px' }
