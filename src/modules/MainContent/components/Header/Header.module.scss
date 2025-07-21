@@ -8,6 +8,7 @@
 .header {
   height: 80px;
   padding-inline: 16px;
+  background-color: $main-white-color;
 
   @include on-tablet {
     padding-inline: 24px;

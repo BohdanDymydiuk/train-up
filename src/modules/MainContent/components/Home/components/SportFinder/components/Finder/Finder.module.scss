@@ -1,7 +1,7 @@
 .finder {
   @include flex-between-center;
 
-  background-color: #fff;
+  background-color: $main-white-color;
   width: 100%;
   padding-inline: 24px;
   height: 109px;

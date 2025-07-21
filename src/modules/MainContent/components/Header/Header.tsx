@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
+import { useLocation } from 'react-router';
 
 import { MainContext } from '../../../../context/MainContext';
+import { Links } from '../../../../enums/Links';
 import { DropdownHoc } from '../../../../reusables/DropdownHoc';
 import { BellSVG } from '../../../../reusables/svgs/headerSvgs/BellSVG';
 import { SearchSVG } from '../../../../reusables/svgs/headerSvgs/SearchSVG';
@@ -17,6 +19,8 @@ import styles from './Header.module.scss';
 
 export const Header: React.FC = () => {
   const { isTempProfile, onTablet } = useContext(MainContext);
+
+  const { pathname } = useLocation();
 
   const SignIn = DropdownHoc(SignInButton, SignInDropdown);
 
@@ -35,7 +39,7 @@ export const Header: React.FC = () => {
   const defaultSp = (
     <>
       {onTablet && <Lang />}
-      <SignIn />
+      {pathname !== Links.signIn && <SignIn />}
       {!onTablet && <Burger />}
       {/* <Link to={Links.tempProfile}>TempProfile</Link> */}
     </>

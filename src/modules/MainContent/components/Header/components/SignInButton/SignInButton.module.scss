@@ -6,7 +6,7 @@
   background-color: $btn-bg-color;
   cursor: pointer;
   transition: border-color $trans-dur;
-  color: #fff;
+  color: $main-white-color;
 
   @include inter-500-15;
 
