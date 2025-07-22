@@ -1,19 +1,16 @@
 services:
-  postgres:
+  mysql:
     env_file: ./.env
-    image: postgres:15
-    container_name: postgres_for_train_up
+    image: mysql:8.0
+    container_name: mysql_for_train_up
     environment:
-      POSTGRES_DB: ${DB_NAME}
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: $MYSQLDB_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQLDB_DATABASE
     ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
-      interval: 10s
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 20s
       timeout: 5s
       retries: 5
 
@@ -24,18 +21,19 @@ services:
       dockerfile: Dockerfile
     container_name: train_up
     environment:
-      DB_HOST: postgres
-      DB_PORT: 5432
+      DB_HOST: mysql
+      DB_PORT: 3306
       DB_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}
       DB_PASSWORD: ${DB_PASSWORD}
 
     ports:
-      - "8080:8080"
+      - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
+      - $DEBUG_PORT:$DEBUG_PORT
     depends_on:
-      postgres:
+      mysql:
         condition: service_healthy
     restart: always
 
 volumes:
-  postgres_data:
+  mysql_data:
