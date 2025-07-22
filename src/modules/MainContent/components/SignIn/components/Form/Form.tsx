@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router';
 
@@ -44,8 +44,9 @@ export const Form: React.FC = () => {
     setPassword(event.target.value);
   };
 
-  const onSubmitHandler = () => {
-    navigate('/');
+  const onSubmitHandler = (event: FormEvent) => {
+    event.preventDefault();
+    navigate('/tp');
   };
   // #endregion
 
