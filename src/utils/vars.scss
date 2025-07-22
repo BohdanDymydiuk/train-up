@@ -1,25 +1,38 @@
+// don't forget about cleaning code from unnecessary vars
+
 // #region colors
+// dark
 $primary-color: #0f0f0f;
-$main-white-color: #fff;
-$btn-bg-color: #ff5c17;
-$btn-bg-color-effect: #dc4200;
-$border-bg-color: #e1e1e1;
-$body-bg-color: #F5F6FA;
-$regular-gray-color: #d9d9d9;
 $block-border-color: #717171;
-$trainer-gray-color: #dedede;
-$placeholder-color: #eaecef;
 $placeholder-text-color: #495057;
-$text-color: #828282;
 $hover-text-color: #4f4f4f;
 $gray: gray;
-$brown-color: #935f5f;
+$text-color: #828282;
 $button-gray-color: #949090;
+
+// light
+$main-white-color: #fff;
+$body-bg-color: #f5f6fa;
+$border-bg-color: #e1e1e1;
+$placeholder-color: #eaecef;
+$regular-gray-color: #d9d9d9;
+$trainer-gray-color: #dedede;
 $dropdown-hover-color: #f3f3f3;
+$input-border-color: #c8c9cd;
+$input-ph-color: #a9a9b0;
+
+//regular
+$btn-bg-color: #ff5c17;
+$btn-bg-focus-color: #dc4200;
+$brown-color: #935f5f;
 // #endregion
 
 $signin-height: 48px;
 $signin-width: 128px;
+
 $nav-button-height: 24px;
 $nav-button-width: 100px;
+
 $trans-dur: 200ms;
+
+$radius: 24px;

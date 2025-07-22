@@ -2,8 +2,12 @@
   @include inter-400-16;
 
   color: $primary-color;
+  margin-top: 32px;
+  text-align: center;
 
-  strong {
+  .strong {
+    @include inter-500-16;
+
     cursor: pointer;
   }
 }

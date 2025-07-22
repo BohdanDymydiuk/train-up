@@ -1,0 +1,15 @@
+.signin {
+  @include input-styles;
+  @include inter-500-15;
+
+  width: 100%;
+  transition: background-color $trans-dur;
+  background-color: $btn-bg-color;
+  color: $main-white-color;
+  margin-top: 32px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: $btn-bg-focus-color;
+  }
+}

@@ -1,4 +1,16 @@
 .signin {
-  height: 1024px;
-  display: flex;
+  margin-top: 118px;
+  max-width: 704px;
+  box-sizing: border-box;
+  margin-inline: auto;
+  padding: 50px 16px;
+  border-radius: $radius;
+  background-color: $main-white-color;
+
+  @include on-tablet {
+    display: flex;
+    justify-content: center;
+    padding-block: 76px;
+    max-width: 882px;
+  }
 }

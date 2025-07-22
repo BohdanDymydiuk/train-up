@@ -138,13 +138,28 @@
 // #endregion
 // #endregion
 
+// #region ermilov
+@mixin ermilov {
+  font-family: Ermilov;
+  line-height: 120%;
+}
+
+// #region ermilov-40
+@mixin ermilov-40 {
+  @include ermilov;
+
+  font-size: 40px;
+}
+// #endregion
+// #endregion
+
 // #region elements
 @mixin input-styles {
-  border-radius: 30px;
+  border-radius: 8px;
   box-sizing: border-box;
   border: none;
   padding: 0;
-  height: 56px;
+  height: 48px;
   padding-inline: 16px;
 }
 

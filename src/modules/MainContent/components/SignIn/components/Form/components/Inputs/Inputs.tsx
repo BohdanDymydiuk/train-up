@@ -23,7 +23,7 @@ export const Inputs: React.FC<Props> = props => {
         value={emailName}
         className={styles.input}
         onChange={inputTextHandler}
-        placeholder='Email or username'
+        placeholder='Введіть e-mail'
         required
       />
       <input
@@ -33,7 +33,7 @@ export const Inputs: React.FC<Props> = props => {
         value={password}
         className={styles.input}
         onChange={inputPasswordHandler}
-        placeholder='Password'
+        placeholder='Пароль'
         required
       />
     </>

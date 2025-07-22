@@ -1,21 +1,14 @@
 .form-wrapper {
-  box-sizing: border-box;
-  width: 50vw;
-  padding-top: 134px;
-  padding-bottom: 56px;
-
-  @include flex-between-center;
-
-  flex-direction: column;
-
   .form {
-    width: 422px;
-
     &-title {
-      text-align: center;
-      margin: 0;
+      @include ermilov-40;
 
-      @include inter-500-24;
+      margin: 0;
+      text-align: center;
     }
+  }
+
+  @include on-tablet {
+    width: 653px;
   }
 }

@@ -4,11 +4,10 @@ import { useNavigate } from 'react-router';
 
 import { InputChangeEvent } from '../../../../../../types/Events';
 
-import { Buttons } from './components/Buttons';
+import { Button } from './components/Button';
 import { Inputs } from './components/Inputs';
 import { SignUp } from './components/SignUp';
 import { SignUpModal } from './components/SignUpModal';
-import { Title } from './components/Title';
 
 import styles from './Form.module.scss';
 
@@ -64,18 +63,15 @@ export const Form: React.FC = () => {
 
   return (
     <div className={styles['form-wrapper']}>
-      <Title />
       <form
         action='#'
         method='post'
         className={styles.form}
         onSubmit={onSubmitHandler}
       >
-        <h3 className={styles['form-title']}>
-          Welcome to your creative space!
-        </h3>
+        <h3 className={styles['form-title']}>Вітаємо у TrainUp</h3>
         <Inputs {...inputsProps} />
-        <Buttons />
+        <Button />
       </form>
       {isModalShown &&
         createPortal(<SignUpModal {...modalProps} />, document.body)}

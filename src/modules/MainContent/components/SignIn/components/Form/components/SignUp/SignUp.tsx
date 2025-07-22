@@ -13,7 +13,10 @@ export const SignUp: React.FC<Props> = ({ setIsModalShown }) => {
 
   return (
     <div className={styles.signup}>
-      Don’t have an account? <strong onClick={signupHandler}>Sign up</strong>
+      Досі немає акаунта?{' '}
+      <span className={styles.strong} onClick={signupHandler}>
+        Зареєструватись
+      </span>
     </div>
   );
 };

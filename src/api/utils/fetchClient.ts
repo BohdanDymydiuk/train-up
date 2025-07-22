@@ -18,7 +18,7 @@ function request<T>(
 ): Promise<T> {
   const options: RequestInit = { method };
   const jwtTokem =
-    'eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsb3JlbTJAZ21haWwuY29tIiwiaWF0IjoxNzUyOTk4NjM2LCJleHAiOjE3NTMwODUwMzZ9.FTn43sXlOou_SjuPe4m5aRFisbO5r9f2Qks7UA7NOctNsVdABi6Z8i_hYcjJziK2';
+    'eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsb3JlbTJAZ21haWwuY29tIiwiaWF0IjoxNzUzMTc4NzI0LCJleHAiOjE3NTMyNjUxMjR9.AxBUtU4YSisutolEblvZIZIE2SH2DzIougMdqZ23dwhwSVNurcXX4IGDrPix2B91';
 
   options.headers = {
     'Content-Type': 'application/json; charset=UTF-8',
