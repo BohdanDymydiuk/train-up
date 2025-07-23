@@ -7,6 +7,7 @@ import { DropdownHoc } from '../../../../reusables/DropdownHoc';
 import { BellSVG } from '../../../../reusables/svgs/headerSvgs/BellSVG';
 import { SearchSVG } from '../../../../reusables/svgs/headerSvgs/SearchSVG';
 import { LogoSVG } from '../../../../reusables/svgs/LogoSVG';
+import { useAppSelector } from '../../../../store/store';
 
 import { Burger } from './components/Burger';
 import { Lang } from './components/Lang';
@@ -18,18 +19,17 @@ import { SignInDropdown } from './components/SignInDropdown';
 import styles from './Header.module.scss';
 
 export const Header: React.FC = () => {
-  const { isTempProfile, onTablet } = useContext(MainContext);
+  const jwtToken = useAppSelector(state => state.jwtToken);
 
+  const { onTablet } = useContext(MainContext);
   const { pathname } = useLocation();
 
   const SignIn = DropdownHoc(SignInButton, SignInDropdown);
 
   // #regions css props
-  const firstPartCssProps: React.CSSProperties = isTempProfile
-    ? { gap: '15px' }
-    : { gap: '48px' };
+  const firstPartCssProps: React.CSSProperties = { gap: '48px' };
 
-  const secondPartCssProps: React.CSSProperties = isTempProfile
+  const secondPartCssProps: React.CSSProperties = jwtToken
     ? { gap: '32px' }
     : { gap: '16px' };
   // #endregion
@@ -41,11 +41,10 @@ export const Header: React.FC = () => {
       {onTablet && <Lang />}
       {pathname !== Links.signIn && <SignIn />}
       {!onTablet && <Burger />}
-      {/* <Link to={Links.tempProfile}>TempProfile</Link> */}
     </>
   );
 
-  const tempSp = (
+  const loggedSp = (
     <>
       <SearchSVG />
       <BellSVG />
@@ -61,7 +60,7 @@ export const Header: React.FC = () => {
         {onTablet && <Nav />}
       </div>
       <div className={styles['second-part']} style={secondPartCssProps}>
-        {isTempProfile ? tempSp : defaultSp}
+        {jwtToken ? loggedSp : defaultSp}
       </div>
     </header>
   );

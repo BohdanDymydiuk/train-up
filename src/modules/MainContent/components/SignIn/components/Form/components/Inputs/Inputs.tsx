@@ -5,14 +5,14 @@ import { InputChangeEvent } from '../../../../../../../../types/Events';
 import styles from './Inputs.module.scss';
 
 interface Props {
-  emailName: string;
+  email: string;
   password: string;
   inputTextHandler: (event: InputChangeEvent) => void;
   inputPasswordHandler: (event: InputChangeEvent) => void;
 }
 
 export const Inputs: React.FC<Props> = props => {
-  const { emailName, password, inputTextHandler, inputPasswordHandler } = props;
+  const { email, password, inputTextHandler, inputPasswordHandler } = props;
 
   return (
     <>
@@ -20,7 +20,7 @@ export const Inputs: React.FC<Props> = props => {
         type='text'
         name='email-name'
         id='email-name'
-        value={emailName}
+        value={email}
         className={styles.input}
         onChange={inputTextHandler}
         placeholder='Введіть e-mail'

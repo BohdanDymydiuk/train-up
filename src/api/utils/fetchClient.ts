@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { store } from '../../store/store';
+
 const BASE_URL = 'http://localhost:8080';
 
 // a promise resolved after a given delay
@@ -17,14 +19,19 @@ function request<T>(
   data: any = null, // we can send any data to the server
 ): Promise<T> {
   const options: RequestInit = { method };
-  const jwtTokem =
-    'eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJsb3JlbTJAZ21haWwuY29tIiwiaWF0IjoxNzUzMTc4NzI0LCJleHAiOjE3NTMyNjUxMjR9.AxBUtU4YSisutolEblvZIZIE2SH2DzIougMdqZ23dwhwSVNurcXX4IGDrPix2B91';
+
+  const state = store.getState();
+  const jwtToken = state.jwtToken;
 
   options.headers = {
     'Content-Type': 'application/json; charset=UTF-8',
     Accept: 'application/json',
-    Authorization: `Bearer ${jwtTokem}`,
   };
+
+  if (jwtToken) {
+    // if the user has successfully signed in
+    options.headers.Authorization = `Bearer ${jwtToken}`;
+  }
 
   if (data) {
     // We add body and Content-Type only for the requests with data

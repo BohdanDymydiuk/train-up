@@ -13,7 +13,7 @@ import { SignIn } from './modules/MainContent/components/SignIn';
 import { actions as eventsActions } from './store/features/events';
 import { actions as locationActions } from './store/features/location';
 import { actions as trainersActions } from './store/features/trainers';
-import { useAppDispatch } from './store/store';
+import { useAppDispatch, useAppSelector } from './store/store';
 import { EventInfoType } from './types/EventInfoType';
 import { TrainerInfoType } from './types/TrainerInfoType';
 
@@ -21,6 +21,7 @@ import './App.scss';
 
 export const App: React.FC = () => {
   const dispatch = useAppDispatch();
+  const jwtToken = useAppSelector(state => state.jwtToken);
 
   // #region setValue
   const setTrainers = (trainers: TrainerInfoType[]) => {
@@ -38,25 +39,27 @@ export const App: React.FC = () => {
 
   // #region useEffects
   useEffect(() => {
-    const getters = [getTrainers, getEvents];
-    const setters = [setTrainers, setEvents];
+    if (jwtToken) {
+      const getters = [getTrainers, getEvents];
+      const setters = [setTrainers, setEvents];
 
-    getters.forEach((get, index) => {
-      type ElementsType = TrainerInfoType[] | EventInfoType[];
+      getters.forEach((get, index) => {
+        type ElementsType = TrainerInfoType[] | EventInfoType[];
 
-      if (index === 1) {
-        return;
-      }
+        if (index === 1) {
+          return;
+        }
 
-      const set = setters[index] as (value: ElementsType) => void;
+        const set = setters[index] as (value: ElementsType) => void;
 
-      get()
-        .then(response => set(response))
-        .catch(() => {
-          throw new Error("We can't get data from the server");
-        });
-    });
-  }, []);
+        get()
+          .then(response => set(response))
+          .catch(() => {
+            throw new Error("We can't get data from the server");
+          });
+      });
+    }
+  }, [jwtToken]);
 
   useEffect(() => {
     function showLocation(position: GeolocationPosition) {
@@ -94,9 +97,8 @@ export const App: React.FC = () => {
         <MainContextProvider>
           <Routes>
             <Route path='/' element={<MainContent />}>
-              <Route index element={<Home />} />
+              <Route index element={jwtToken ? <ProfileMain /> : <Home />} />
               <Route path={Links.signIn} element={<SignIn />} />
-              <Route path={Links.tempProfile} element={<ProfileMain />} />
             </Route>
           </Routes>
         </MainContextProvider>

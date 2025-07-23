@@ -3,10 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { combineSlices, configureStore } from '@reduxjs/toolkit';
 
 import { eventsSlice } from './features/events';
+import { jwtTokenSlice } from './features/jwtToken';
 import { locationSlice } from './features/location';
 import { trainersSlice } from './features/trainers';
 
-const rootReducer = combineSlices(trainersSlice, eventsSlice, locationSlice);
+const rootReducer = combineSlices(
+  trainersSlice,
+  eventsSlice,
+  locationSlice,
+  jwtTokenSlice,
+);
 
 export const store = configureStore({
   reducer: rootReducer,

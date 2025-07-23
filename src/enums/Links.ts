@@ -9,5 +9,4 @@ export enum Links {
 
   // rest
   signIn = '/signin',
-  tempProfile = '/tp',
 }

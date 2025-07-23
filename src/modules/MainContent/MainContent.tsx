@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Outlet } from 'react-router';
 
-import { MainContext } from '../../context/MainContext';
+import { useAppSelector } from '../../store/store';
 
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
@@ -9,13 +9,13 @@ import { MiniCalendar } from './components/MiniCalendar';
 import { Sidebar } from './components/Sidebar';
 
 export const MainContent: React.FC = () => {
-  const { isTempProfile } = useContext(MainContext);
+  const jwtToken = useAppSelector(state => state.jwtToken);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
-  const wrapperCssProps: React.CSSProperties = isTempProfile
+  const wrapperCssProps: React.CSSProperties = jwtToken
     ? {
         display: 'flex',
         gap: '14px',
@@ -28,10 +28,10 @@ export const MainContent: React.FC = () => {
     <>
       <Header />
       <div style={wrapperCssProps}>
-        {isTempProfile && <Sidebar />}
+        {jwtToken && <Sidebar />}
         <main>
           <Outlet />
-          {isTempProfile && (
+          {jwtToken && (
             <>
               <MiniCalendar />
             </>

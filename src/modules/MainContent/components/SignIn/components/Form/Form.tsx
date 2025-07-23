@@ -2,7 +2,11 @@ import React, { FormEvent, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router';
 
+import { login } from '../../../../../../api/auth';
+import { actions as jwtTokenActions } from '../../../../../../store/features/jwtToken';
+import { useAppDispatch } from '../../../../../../store/store';
 import { InputChangeEvent } from '../../../../../../types/Events';
+import { Token } from '../../../../../../types/Token';
 
 import { Button } from './components/Button';
 import { Inputs } from './components/Inputs';
@@ -15,13 +19,12 @@ const body = document.body;
 const root = document.querySelector('#root') as HTMLElement;
 
 export const Form: React.FC = () => {
-  // #region states
-  const [isModalShown, setIsModalShown] = useState(false);
-  const [emailName, setEmailName] = useState('');
-  const [password, setPassword] = useState('');
-  // #endregion
-
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
+
+  const [isModalShown, setIsModalShown] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   // #region useEffects
   useEffect(() => {
@@ -37,22 +40,26 @@ export const Form: React.FC = () => {
 
   // #region handlers
   const inputTextHandler = (event: InputChangeEvent) => {
-    setEmailName(event.target.value);
+    setEmail(event.target.value);
   };
 
   const inputPasswordHandler = (event: InputChangeEvent) => {
     setPassword(event.target.value);
   };
 
-  const onSubmitHandler = (event: FormEvent) => {
+  const onSubmitHandler = async (event: FormEvent) => {
     event.preventDefault();
-    navigate('/tp');
+    navigate('/');
+
+    const { token }: Token = await login({ email, password });
+
+    dispatch(jwtTokenActions.setToken(token));
   };
   // #endregion
 
   // #region props
   const inputsProps = {
-    emailName,
+    email,
     password,
     inputTextHandler,
     inputPasswordHandler,
