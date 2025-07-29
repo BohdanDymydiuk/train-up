@@ -12,6 +12,7 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
   const [currentSection, setCurrentSection] = useState(NavItems.main);
 
   const onTablet = useMediaQuery({ query: '(min-width: 768px)' });
+  const onSmallDesktop = useMediaQuery({ query: '(min-width: 1024px)' });
   const onDesktop = useMediaQuery({ query: '(min-width: 1200px)' });
 
   useEffect(() => {
@@ -23,11 +24,12 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
   const providerValue = useMemo(
     () => ({
       onTablet,
+      onSmallDesktop,
       onDesktop,
       currentSection,
       setCurrentSection,
     }),
-    [onTablet, onDesktop, currentSection],
+    [onTablet, onSmallDesktop, onDesktop, currentSection],
   );
 
   return (

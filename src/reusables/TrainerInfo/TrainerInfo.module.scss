@@ -2,8 +2,7 @@
   position: relative;
   padding: 16px;
   width: 100%;
-  border: 1px solid $trainer-gray-color;
-  box-sizing: border-box;
+  border: 1px solid $light-gray_4;
   height: 152px;
   border-radius: 8px;
 
@@ -13,6 +12,6 @@
     width: 82px;
     height: 82px;
     border-radius: 50%;
-    background-color: $trainer-gray-color;
+    background-color: $light-gray_4;
   }
 }

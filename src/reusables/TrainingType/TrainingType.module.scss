@@ -1,13 +1,12 @@
 .type {
   @include inter-500-12;
 
-  box-sizing: border-box;
   padding: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
 }
 
 :export {
-  brownColor: $brown-color;
-  darkColor: #333333;
+  brownColor: $brown_1;
+  darkColor: $gray_9;
 }

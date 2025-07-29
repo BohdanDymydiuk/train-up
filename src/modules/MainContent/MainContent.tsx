@@ -8,6 +8,8 @@ import { Header } from './components/Header';
 import { MiniCalendar } from './components/MiniCalendar';
 import { Sidebar } from './components/Sidebar';
 
+import styles from './MainContent.module.scss';
+
 export const MainContent: React.FC = () => {
   const jwtToken = useAppSelector(state => state.jwtToken);
 
@@ -29,7 +31,7 @@ export const MainContent: React.FC = () => {
       <Header />
       <div style={wrapperCssProps}>
         {jwtToken && <Sidebar />}
-        <main>
+        <main className={styles.main}>
           <Outlet />
           {jwtToken && (
             <>

@@ -17,10 +17,9 @@
     @include flex-center-center;
     @include inter-500-16;
 
-    padding: 0;
     border-style: none;
-    background-color: $button-gray-color;
-    color: $main-white-color;
+    background-color: $gray_6;
+    color: $white_1;
     width: 178px;
     height: 48px;
     border-radius: 8px;

@@ -4,12 +4,12 @@
 
   width: 100%;
   transition: background-color $trans-dur;
-  background-color: $btn-bg-color;
-  color: $main-white-color;
+  background-color: $orange_1;
+  color: $white_1;
   margin-top: 32px;
   cursor: pointer;
-  
+
   &:hover {
-    background-color: $btn-bg-focus-color;
+    background-color: $red_1;
   }
 }

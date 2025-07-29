@@ -1,10 +1,8 @@
 .sidebar {
   min-width: 127px;
-  
+
   .list {
     position: sticky;
-    margin: 0;
-    padding-left: 0;
     padding-top: 24px;
     inset: 0;
     list-style: none;
@@ -18,7 +16,7 @@
 
       flex-direction: column;
       gap: 8px;
-      color: $text-color;
+      color: $gray_5;
       cursor: pointer;
 
       svg path {
@@ -31,11 +29,11 @@
 
       &:hover {
         svg path {
-          fill: $hover-text-color;
+          fill: $gray_3;
         }
 
         .title {
-          color: $hover-text-color;
+          color: $gray_3;
         }
       }
     }

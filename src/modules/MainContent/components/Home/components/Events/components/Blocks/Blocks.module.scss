@@ -8,12 +8,12 @@
 
   .block {
     padding: 16px 23px 0;
-    border: 1px solid $block-border-color;
+    border: 1px solid $gray_1;
     border-radius: 8px;
 
     .img-wrapper {
       height: 209px;
-      background-color: $regular-gray-color;
+      background-color: $light-gray_3;
 
       @include flex-center-center;
     }

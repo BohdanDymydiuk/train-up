@@ -1,11 +1,10 @@
 .signin {
   margin-top: 118px;
   max-width: 704px;
-  box-sizing: border-box;
   margin-inline: auto;
   padding: 50px 16px;
-  border-radius: $radius;
-  background-color: $main-white-color;
+  border-radius: 24px;
+  background-color: $white_1;
 
   @include on-tablet {
     display: flex;

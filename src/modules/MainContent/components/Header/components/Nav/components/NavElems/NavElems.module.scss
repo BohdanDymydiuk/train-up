@@ -1,6 +1,4 @@
 .list {
-  padding: 0;
-  margin: 0;
   list-style: none;
   display: flex;
   gap: 42px;
@@ -9,6 +7,6 @@
     @include inter-400-16;
 
     text-decoration: none;
-    color: $primary-color;
+    color: $black_1;
   }
 }
