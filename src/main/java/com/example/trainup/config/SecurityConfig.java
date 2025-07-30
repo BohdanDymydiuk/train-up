@@ -60,6 +60,7 @@ public class SecurityConfig {
                                         "/v3/api-docs/**",
                                         "/actuator/health")
                                 .permitAll()
+                                .requestMatchers("/", "/index.html", "/static/**").permitAll()
                                 .requestMatchers("/sport").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
@@ -78,7 +79,8 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         List<String> allowedOrigins = new ArrayList<>(List.of(
                 "http://localhost:5173",
-                "https://c3e3-109-200-252-189.ngrok-free.app/"
+                "https://c3e3-109-200-252-189.ngrok-free.app/",
+                "https://train-up-web-service.onrender.com"
         ));
         //TODO: allowedOrigins.add("null"); only for testing
         allowedOrigins.add("null");
