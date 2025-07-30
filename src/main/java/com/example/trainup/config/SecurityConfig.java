@@ -64,6 +64,7 @@ public class SecurityConfig {
                                 .requestMatchers("/sport").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
+                .anonymous()
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthenticationFilter,
