@@ -78,7 +78,8 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         List<String> allowedOrigins = new ArrayList<>(List.of(
                 "http://localhost:5173",
-                "https://c3e3-109-200-252-189.ngrok-free.app/"
+                "https://c3e3-109-200-252-189.ngrok-free.app/",
+                "https://train-up-website.onrender.com/"
         ));
         //TODO: allowedOrigins.add("null"); only for testing
         allowedOrigins.add("null");
