@@ -60,15 +60,13 @@ public class SecurityConfig {
                                         "/v3/api-docs/**",
                                         "/actuator/health")
                                 .permitAll()
-                                .requestMatchers("/", "/index.html", "/static/**").permitAll()
                                 .requestMatchers("/sport").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
-                .anonymous()
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                // .addFilterBefore(jwtAuthenticationFilter,
-                //         UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(jwtAuthenticationFilter,
+                        UsernamePasswordAuthenticationFilter.class)
                 .userDetailsService(userDetailsService)
                 .formLogin(AbstractHttpConfigurer::disable)
                 .httpBasic(AbstractHttpConfigurer::disable)
@@ -79,7 +77,8 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         List<String> allowedOrigins = new ArrayList<>(List.of(
-                "https://train-up-web-service.onrender.com"
+                "http://localhost:5173",
+                "https://c3e3-109-200-252-189.ngrok-free.app/"
         ));
         //TODO: allowedOrigins.add("null"); only for testing
         allowedOrigins.add("null");
