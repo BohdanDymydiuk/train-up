@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.trainup.controller.EventControllerTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.084 s -- in com.example.trainup.controller.EventControllerTest
