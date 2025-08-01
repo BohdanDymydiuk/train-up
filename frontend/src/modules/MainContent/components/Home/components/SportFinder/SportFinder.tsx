@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 
 import { MainContext } from '../../../../../../context/MainContext';
+import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
 import { ChevronDownSVG } from '../../../../../../reusables/svgs/ChevronDownSVG';
 
 import styles from './SportFinder.module.scss';
@@ -18,12 +19,19 @@ export const SportFinder: React.FC = () => {
     pathStyle: { fill: `${styles.gray}` },
   };
 
-  return (
-    <div className={styles.wrapper}>
-      <h2 className={styles.title}>
+  const ermilovTitleProps = {
+    title: (
+      <>
         Твій спорт — твій вибір. {onTablet && <br />} Ми поруч на кожному етапі
         шляху
-      </h2>
+      </>
+    ),
+    CssProps: { textAlign: 'center' } as React.CSSProperties,
+  };
+
+  return (
+    <div className={styles.wrapper}>
+      <ErmilovTitle {...ermilovTitleProps} />
       <div className={styles.finder}>
         <div
           className={styles['inputs-wrapper']}

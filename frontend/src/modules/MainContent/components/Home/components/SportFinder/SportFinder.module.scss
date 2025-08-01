@@ -20,20 +20,6 @@
     align-items: center;
   }
 
-  .title {
-    @include ermilov-24;
-
-    text-align: center;
-
-    @include on-tablet {
-      @include ermilov-40;
-    }
-
-    @include on-desktop {
-      @include ermilov-56;
-    }
-  }
-
   .finder {
     display: flex;
     flex-direction: column;
