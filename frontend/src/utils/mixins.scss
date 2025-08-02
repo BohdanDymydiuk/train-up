@@ -1,6 +1,12 @@
 @use './vars.scss' as *; // yes, I have it in vite.config.ts. But that doesn't work for this place
 
 // #region media queries
+@mixin on-small-tablet {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
 @mixin on-tablet {
   @media (min-width: 768px) {
     @content;
@@ -60,7 +66,6 @@
   @include inter-400;
 
   font-size: 16px;
-  line-height: 150%;
 }
 // #endregion
 
@@ -81,14 +86,12 @@
   @include inter-500;
 
   font-size: 14px;
-  line-height: 135%;
 }
 
 @mixin inter-500-15 {
   @include inter-500;
 
   font-size: 15px;
-  line-height: 100%;
 }
 
 @mixin inter-500-16 {
@@ -101,7 +104,6 @@
   @include inter-500;
 
   font-size: 18px;
-  line-height: 135%;
 }
 
 @mixin inter-500-20 {
@@ -171,13 +173,18 @@
 // #region ermilov
 @mixin ermilov {
   font-family: Ermilov;
-  line-height: 120%;
 }
 
 @mixin ermilov-24 {
   @include ermilov;
   
   font-size: 24px;
+}
+
+@mixin ermilov-32 {
+  @include ermilov;
+  
+  font-size: 32px;
 }
 
 @mixin ermilov-40 {

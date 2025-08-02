@@ -28,6 +28,7 @@
     border-radius: 8px;
     margin-top: 24px;
     padding: 24px;
+    line-height: 135%;
 
     --first-column: 350px;
     --times: 2;
@@ -39,8 +40,7 @@
       grid-template-rows: repeat(var(--times), 48px);
       grid-template-columns: var(--first-column) 1fr;
       gap: 20px 40px;
-
-      @include inter-500-18;
+      font-size: 18px;
     }
 
     @include on-large-tablet {

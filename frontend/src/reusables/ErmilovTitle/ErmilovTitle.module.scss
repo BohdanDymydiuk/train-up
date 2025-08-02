@@ -2,10 +2,10 @@
   @include ermilov-24;
 
   @include on-tablet {
-    @include ermilov-40;
+    font-size: 40px;
   }
 
   @include on-desktop {
-    @include ermilov-56;
+    font-size: 56px;
   }
 }
