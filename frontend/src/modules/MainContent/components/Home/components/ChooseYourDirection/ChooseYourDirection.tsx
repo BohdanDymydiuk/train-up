@@ -3,22 +3,22 @@ import React, { useContext } from 'react';
 import { MainContext } from '../../../../../../context/MainContext';
 import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
 
-import { Blocks } from './components/Blocks';
+import styles from './ChooseYourDirection.module.scss';
 
-import styles from './WhatIsTrainUp.module.scss';
-
-export const WhatIsTrainUp: React.FC = () => {
+export const ChooseYourDirection: React.FC = () => {
   const { onDesktop } = useContext(MainContext);
 
   const ermilovTitleProps = {
-    title: 'TrainUp — це',
-    CssProps: { fontSize: onDesktop && '40px' } as React.CSSProperties,
+    title: 'Оберіть свій напрям',
+    CssProps: {
+      textAlign: 'center',
+      fontSize: onDesktop && '40px',
+    } as React.CSSProperties,
   };
 
   return (
-    <section className={styles['train-up']}>
+    <section className={styles.section}>
       <ErmilovTitle {...ermilovTitleProps} />
-      <Blocks />
     </section>
   );
 };
