@@ -142,7 +142,7 @@ public class ReviewServiceImpl implements ReviewService {
         }
         entity.getReviews().remove(review);
 
-        int newReviewCount = entity.getNumberOfReviews() - 1;
+        int newReviewCount = Math.max(0, entity.getNumberOfReviews() - 1);
         float currentTotalRating = entity.getOverallRating() * entity.getNumberOfReviews();
         float newTotalRating = currentTotalRating - review.getRating();
         float updatedRating = newReviewCount > 0 ? newTotalRating / newReviewCount : 0.0f;

@@ -1,0 +1,868 @@
+﻿databaseChangeLog:
+  - changeSet:
+      id: 28-insert-gym-owner-and-gyms
+      author: bohdan-s
+      preconditions:
+        - onFail: MARK_RAN
+        - sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM user_credentials WHERE email = 'oleksii.hryshchenko@example.com'
+      changes:
+        # Insert Gym Owner: Oleksii Hryshchenko
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'oleksii.hryshchenko@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'GYM_OWNER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'oleksii.hryshchenko@example.com')" }
+              - column: { name: role_id, value: 4 }
+        - insert:
+            tableName: gym_owners
+            columns:
+              - column: { name: first_name, value: 'Олексій' }
+              - column: { name: last_name, value: 'Грищенко_TEST' }
+              - column: { name: gender, value: 'MALE' }
+              - column: { name: date_of_birth, value: '1980-01-01' }  # Example date
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'oleksii.hryshchenko@example.com')" }
+        - insert:
+            tableName: gym_owner_phone_numbers
+            columns:
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+              - column: { name: phone_numbers, value: '+38(044)-111-2233' }
+
+        # Insert Gym: StrongBody_TEST
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Київ' }
+              - column: { name: street, value: 'вул. Антоновича' }
+              - column: { name: house, value: '50' }
+        - insert:
+            tableName: gyms
+            columns:
+              - column: { name: name, value: 'StrongBody_TEST' }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Київ' AND street = 'вул. Антоновича' AND house = '50')" }
+              - column: { name: description, value: 'Сучасний тренажерний зал з великим вибором обладнання.' }
+              - column: { name: website, value: 'http://strongbody.ua' }
+              - column: { name: overall_rating, value: 4.90 }
+              - column: { name: number_of_reviews, value: 150 }
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+        - insert:
+            tableName: gym_phone_numbers
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'StrongBody_TEST')" }
+              - column: { name: phone_numbers, value: '+38(044)-111-2233' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'StrongBody_TEST')" }
+              - column: { name: day_of_week, value: 'MONDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'StrongBody_TEST')" }
+              - column: { name: day_of_week, value: 'TUESDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'StrongBody_TEST')" }
+              - column: { name: day_of_week, value: 'WEDNESDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'StrongBody_TEST')" }
+              - column: { name: day_of_week, value: 'THURSDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'StrongBody_TEST')" }
+              - column: { name: day_of_week, value: 'FRIDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'StrongBody_TEST')" }
+              - column: { name: day_of_week, value: 'SATURDAY' }
+              - column: { name: start_time, value: '09:00:00' }
+              - column: { name: end_time, value: '18:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'StrongBody_TEST')" }
+              - column: { name: day_of_week, value: 'SUNDAY' }
+              - column: { name: start_time, value: '09:00:00' }
+              - column: { name: end_time, value: '16:00:00' }
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'StrongBody_TEST')" }
+              - column: { name: sport_id, value: 3 }  # Кроссфіт
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'StrongBody_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Gym: FitZone_TEST
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Львів' }
+              - column: { name: street, value: 'вул. Городоцька' }
+              - column: { name: house, value: '17' }
+        - insert:
+            tableName: gyms
+            columns:
+              - column: { name: name, value: 'FitZone_TEST' }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Львів' AND street = 'вул. Городоцька' AND house = '17')" }
+              - column: { name: description, value: 'Просторий фітнес-центр з зонами для групових тренувань.' }
+              - column: { name: website, value: 'http://fitzone.lviv.ua' }
+              - column: { name: overall_rating, value: 4.80 }
+              - column: { name: number_of_reviews, value: 90 }
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+        - insert:
+            tableName: gym_phone_numbers
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'FitZone_TEST')" }
+              - column: { name: phone_numbers, value: '+38(032)-222-3344' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'FitZone_TEST')" }
+              - column: { name: day_of_week, value: 'MONDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '21:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'FitZone_TEST')" }
+              - column: { name: day_of_week, value: 'TUESDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '21:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'FitZone_TEST')" }
+              - column: { name: day_of_week, value: 'WEDNESDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '21:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'FitZone_TEST')" }
+              - column: { name: day_of_week, value: 'THURSDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '21:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'FitZone_TEST')" }
+              - column: { name: day_of_week, value: 'FRIDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '21:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'FitZone_TEST')" }
+              - column: { name: day_of_week, value: 'SATURDAY' }
+              - column: { name: start_time, value: '10:00:00' }
+              - column: { name: end_time, value: '17:00:00' }
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'FitZone_TEST')" }
+              - column: { name: sport_id, value: 7 }  # Йога
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'FitZone_TEST')" }
+              - column: { name: sport_id, value: 13 } # Пілатес
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'FitZone_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Gym: Dynamo_TEST
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Одеса' }
+              - column: { name: street, value: 'вул. Катерининська' }
+              - column: { name: house, value: '20' }
+        - insert:
+            tableName: gyms
+            columns:
+              - column: { name: name, value: 'Dynamo_TEST' }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Одеса' AND street = 'вул. Катерининська' AND house = '20')" }
+              - column: { name: description, value: 'Класичний спортивний клуб з басейном та сауною.' }
+              - column: { name: website, value: 'http://dynamo.od.ua' }
+              - column: { name: overall_rating, value: 4.75 }
+              - column: { name: number_of_reviews, value: 110 }
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+        - insert:
+            tableName: gym_phone_numbers
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: phone_numbers, value: '+38(048)-333-4455' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: day_of_week, value: 'MONDAY' }
+              - column: { name: start_time, value: '06:00:00' }
+              - column: { name: end_time, value: '23:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: day_of_week, value: 'TUESDAY' }
+              - column: { name: start_time, value: '06:00:00' }
+              - column: { name: end_time, value: '23:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: day_of_week, value: 'WEDNESDAY' }
+              - column: { name: start_time, value: '06:00:00' }
+              - column: { name: end_time, value: '23:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: day_of_week, value: 'THURSDAY' }
+              - column: { name: start_time, value: '06:00:00' }
+              - column: { name: end_time, value: '23:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: day_of_week, value: 'FRIDAY' }
+              - column: { name: start_time, value: '06:00:00' }
+              - column: { name: end_time, value: '23:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: day_of_week, value: 'SATURDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '20:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: day_of_week, value: 'SUNDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '18:00:00' }
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: sport_id, value: 2 }  # Плавання
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: sport_id, value: 12 } # Аква аеробіка
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Dynamo_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Gym: SportLife_TEST
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Харків' }
+              - column: { name: street, value: 'просп. Науки' }
+              - column: { name: house, value: '9' }
+        - insert:
+            tableName: gyms
+            columns:
+              - column: { name: name, value: 'SportLife_TEST' }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Харків' AND street = 'просп. Науки' AND house = '9')" }
+              - column: { name: description, value: 'Велика мережа фітнес-клубів з басейном та спа.' }
+              - column: { name: website, value: 'http://sportlife.ua' }
+              - column: { name: overall_rating, value: 4.85 }
+              - column: { name: number_of_reviews, value: 200 }
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+        - insert:
+            tableName: gym_phone_numbers
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: phone_numbers, value: '+38(057)-444-5566' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: day_of_week, value: 'MONDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: day_of_week, value: 'TUESDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: day_of_week, value: 'WEDNESDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: day_of_week, value: 'THURSDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: day_of_week, value: 'FRIDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: day_of_week, value: 'SATURDAY' }
+              - column: { name: start_time, value: '09:00:00' }
+              - column: { name: end_time, value: '18:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: day_of_week, value: 'SUNDAY' }
+              - column: { name: start_time, value: '09:00:00' }
+              - column: { name: end_time, value: '16:00:00' }
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: sport_id, value: 6 }  # Стретчинг
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: sport_id, value: 16 } # TRX
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'SportLife_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Gym: Атлант_TEST
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Дніпро' }
+              - column: { name: street, value: 'просп. Дмитра Яворницького' }
+              - column: { name: house, value: '8' }
+        - insert:
+            tableName: gyms
+            columns:
+              - column: { name: name, value: 'Атлант_TEST' }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Дніпро' AND street = 'просп. Дмитра Яворницького' AND house = '8')" }
+              - column: { name: description, value: 'Тренажерний зал для силових видів спорту.' }
+              - column: { name: website, value: 'http://atlant.dp.ua' }
+              - column: { name: overall_rating, value: 4.60 }
+              - column: { name: number_of_reviews, value: 130 }
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+        - insert:
+            tableName: gym_phone_numbers
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Атлант_TEST')" }
+              - column: { name: phone_numbers, value: '+38(056)-555-6677' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Атлант_TEST')" }
+              - column: { name: day_of_week, value: 'MONDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '20:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Атлант_TEST')" }
+              - column: { name: day_of_week, value: 'TUESDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '20:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Атлант_TEST')" }
+              - column: { name: day_of_week, value: 'WEDNESDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '20:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Атлант_TEST')" }
+              - column: { name: day_of_week, value: 'THURSDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '20:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Атлант_TEST')" }
+              - column: { name: day_of_week, value: 'FRIDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '20:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Атлант_TEST')" }
+              - column: { name: day_of_week, value: 'SATURDAY' }
+              - column: { name: start_time, value: '09:00:00' }
+              - column: { name: end_time, value: '15:00:00' }
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Атлант_TEST')" }
+              - column: { name: sport_id, value: 5 }  # Бокс
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Атлант_TEST')" }
+              - column: { name: sport_id, value: 17 } # Жіночий бокс
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Атлант_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Gym: Maximus_TEST
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Запоріжжя' }
+              - column: { name: street, value: 'вул. Незалежної України' }
+              - column: { name: house, value: '72' }
+        - insert:
+            tableName: gyms
+            columns:
+              - column: { name: name, value: 'Maximus_TEST' }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Запоріжжя' AND street = 'вул. Незалежної України' AND house = '72')" }
+              - column: { name: description, value: 'Фітнес-клуб з великим вибором групових програм.' }
+              - column: { name: website, value: 'http://maximus.zp.ua' }
+              - column: { name: overall_rating, value: 4.65 }
+              - column: { name: number_of_reviews, value: 85 }
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+        - insert:
+            tableName: gym_phone_numbers
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Maximus_TEST')" }
+              - column: { name: phone_numbers, value: '+38(061)-666-7788' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Maximus_TEST')" }
+              - column: { name: day_of_week, value: 'MONDAY' }
+              - column: { name: start_time, value: '07:30:00' }
+              - column: { name: end_time, value: '21:30:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Maximus_TEST')" }
+              - column: { name: day_of_week, value: 'TUESDAY' }
+              - column: { name: start_time, value: '07:30:00' }
+              - column: { name: end_time, value: '21:30:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Maximus_TEST')" }
+              - column: { name: day_of_week, value: 'WEDNESDAY' }
+              - column: { name: start_time, value: '07:30:00' }
+              - column: { name: end_time, value: '21:30:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Maximus_TEST')" }
+              - column: { name: day_of_week, value: 'THURSDAY' }
+              - column: { name: start_time, value: '07:30:00' }
+              - column: { name: end_time, value: '21:30:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Maximus_TEST')" }
+              - column: { name: day_of_week, value: 'FRIDAY' }
+              - column: { name: start_time, value: '07:30:00' }
+              - column: { name: end_time, value: '21:30:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Maximus_TEST')" }
+              - column: { name: day_of_week, value: 'SUNDAY' }
+              - column: { name: start_time, value: '10:00:00' }
+              - column: { name: end_time, value: '15:00:00' }
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Maximus_TEST')" }
+              - column: { name: sport_id, value: 14 } # Степ аеробіка
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Maximus_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Gym: GrandFitness_TEST
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Вінниця' }
+              - column: { name: street, value: 'вул. Пирогова' }
+              - column: { name: house, value: '30' }
+        - insert:
+            tableName: gyms
+            columns:
+              - column: { name: name, value: 'GrandFitness_TEST' }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Вінниця' AND street = 'вул. Пирогова' AND house = '30')" }
+              - column: { name: description, value: 'Елітний фітнес-центр з преміум обладнанням.' }
+              - column: { name: website, value: 'http://grandfitness.vn.ua' }
+              - column: { name: overall_rating, value: 4.76 }
+              - column: { name: number_of_reviews, value: 180 }
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+        - insert:
+            tableName: gym_phone_numbers
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'GrandFitness_TEST')" }
+              - column: { name: phone_numbers, value: '+38(043)-777-8899' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'GrandFitness_TEST')" }
+              - column: { name: day_of_week, value: 'MONDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'GrandFitness_TEST')" }
+              - column: { name: day_of_week, value: 'TUESDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'GrandFitness_TEST')" }
+              - column: { name: day_of_week, value: 'WEDNESDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'GrandFitness_TEST')" }
+              - column: { name: day_of_week, value: 'THURSDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'GrandFitness_TEST')" }
+              - column: { name: day_of_week, value: 'FRIDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'GrandFitness_TEST')" }
+              - column: { name: day_of_week, value: 'SATURDAY' }
+              - column: { name: start_time, value: '09:00:00' }
+              - column: { name: end_time, value: '19:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'GrandFitness_TEST')" }
+              - column: { name: day_of_week, value: 'SUNDAY' }
+              - column: { name: start_time, value: '10:00:00' }
+              - column: { name: end_time, value: '17:00:00' }
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'GrandFitness_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Gym: EuroSport_TEST
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Чернігів' }
+              - column: { name: street, value: 'вул. Київська' }
+              - column: { name: house, value: '11' }
+        - insert:
+            tableName: gyms
+            columns:
+              - column: { name: name, value: 'EuroSport_TEST' }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Чернігів' AND street = 'вул. Київська' AND house = '11')" }
+              - column: { name: description, value: 'Доступний спортивний клуб для всієї родини.' }
+              - column: { name: website, value: 'http://eurosport.cn.ua' }
+              - column: { name: overall_rating, value: 4.65 }
+              - column: { name: number_of_reviews, value: 70 }
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+        - insert:
+            tableName: gym_phone_numbers
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'EuroSport_TEST')" }
+              - column: { name: phone_numbers, value: '+38(046)-888-9900' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'EuroSport_TEST')" }
+              - column: { name: day_of_week, value: 'MONDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'EuroSport_TEST')" }
+              - column: { name: day_of_week, value: 'TUESDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'EuroSport_TEST')" }
+              - column: { name: day_of_week, value: 'WEDNESDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'EuroSport_TEST')" }
+              - column: { name: day_of_week, value: 'THURSDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'EuroSport_TEST')" }
+              - column: { name: day_of_week, value: 'FRIDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'EuroSport_TEST')" }
+              - column: { name: day_of_week, value: 'SATURDAY' }
+              - column: { name: start_time, value: '09:00:00' }
+              - column: { name: end_time, value: '17:00:00' }
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'EuroSport_TEST')" }
+              - column: { name: sport_id, value: 6 }  # Стретчинг
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'EuroSport_TEST')" }
+              - column: { name: sport_id, value: 7 }  # Йога
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'EuroSport_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Gym: Олімп_TEST
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Полтава' }
+              - column: { name: street, value: 'вул. Соборності' }
+              - column: { name: house, value: '33' }
+        - insert:
+            tableName: gyms
+            columns:
+              - column: { name: name, value: 'Олімп_TEST' }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Полтава' AND street = 'вул. Соборності' AND house = '33')" }
+              - column: { name: description, value: 'Спортивний комплекс з великим басейном та сучасними тренажерами.' }
+              - column: { name: website, value: 'http://olimp.pl.ua' }
+              - column: { name: overall_rating, value: 4.56 }
+              - column: { name: number_of_reviews, value: 105 }
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+        - insert:
+            tableName: gym_phone_numbers
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: phone_numbers, value: '+38(053)-999-0011' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: day_of_week, value: 'MONDAY' }
+              - column: { name: start_time, value: '06:30:00' }
+              - column: { name: end_time, value: '22:30:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: day_of_week, value: 'TUESDAY' }
+              - column: { name: start_time, value: '06:30:00' }
+              - column: { name: end_time, value: '22:30:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: day_of_week, value: 'WEDNESDAY' }
+              - column: { name: start_time, value: '06:30:00' }
+              - column: { name: end_time, value: '22:30:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: day_of_week, value: 'THURSDAY' }
+              - column: { name: start_time, value: '06:30:00' }
+              - column: { name: end_time, value: '22:30:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: day_of_week, value: 'FRIDAY' }
+              - column: { name: start_time, value: '06:30:00' }
+              - column: { name: end_time, value: '22:30:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: day_of_week, value: 'SATURDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '19:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: day_of_week, value: 'SUNDAY' }
+              - column: { name: start_time, value: '08:00:00' }
+              - column: { name: end_time, value: '17:00:00' }
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: sport_id, value: 2 }  # Плавання
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: sport_id, value: 12 } # Аква аеробіка
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Олімп_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Gym: Формула_TEST
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Черкаси' }
+              - column: { name: street, value: 'бульв. Шевченка' }
+              - column: { name: house, value: '130' }
+        - insert:
+            tableName: gyms
+            columns:
+              - column: { name: name, value: 'Формула_TEST' }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Черкаси' AND street = 'бульв. Шевченка' AND house = '130')" }
+              - column: { name: description, value: 'Великий вибір кардіо- та силових тренажерів.' }
+              - column: { name: website, value: 'http://formula.ck.ua' }
+              - column: { name: overall_rating, value: 4.70 }
+              - column: { name: number_of_reviews, value: 95 }
+              - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
+        - insert:
+            tableName: gym_phone_numbers
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: phone_numbers, value: '+38(047)-123-4567' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: day_of_week, value: 'MONDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: day_of_week, value: 'TUESDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: day_of_week, value: 'WEDNESDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: day_of_week, value: 'THURSDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: day_of_week, value: 'FRIDAY' }
+              - column: { name: start_time, value: '07:00:00' }
+              - column: { name: end_time, value: '22:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: day_of_week, value: 'SATURDAY' }
+              - column: { name: start_time, value: '09:00:00' }
+              - column: { name: end_time, value: '18:00:00' }
+        - insert:
+            tableName: gym_working_hours
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: day_of_week, value: 'SUNDAY' }
+              - column: { name: start_time, value: '09:00:00' }
+              - column: { name: end_time, value: '16:00:00' }
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: sport_id, value: 7 }  # Йога
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: sport_id, value: 13 } # Пілатес
+        - insert:
+            tableName: sports_gyms
+            columns:
+              - column: { name: gym_id, valueComputed: "(SELECT id FROM gyms WHERE name = 'Формула_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал

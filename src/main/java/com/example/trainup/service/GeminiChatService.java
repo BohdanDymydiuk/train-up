@@ -1,14 +1,16 @@
 package com.example.trainup.service;
 
 import com.example.trainup.dto.chat.ChatMessageDto;
+import com.example.trainup.exception.GeminiApiException;
+import com.example.trainup.exception.GeminiResponseException;
 import com.example.trainup.model.ChatSession;
 import com.google.genai.Client;
 import com.google.genai.types.GenerateContentResponse;
 import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
@@ -58,41 +60,31 @@ public class GeminiChatService {
     }
 
     public List<ChatMessageDto> continueConversation(String newUserMessage) {
-        if (chatSession.getMessageHistory().isEmpty()) {
-            chatSession.getMessageHistory().add(new ChatMessageDto("system", systemPrompt));
+        List<ChatMessageDto> currentChatHistory = chatSession.getMessageHistory();
+        if (currentChatHistory.isEmpty()) {
+            currentChatHistory.add(new ChatMessageDto("system", this.systemPrompt));
         }
-
-        chatSession.getMessageHistory().add(new ChatMessageDto("user", newUserMessage));
-        return sendToGemini(chatSession.getMessageHistory());
+        currentChatHistory.add(new ChatMessageDto("user", newUserMessage));
+        return sendToGemini(currentChatHistory);
     }
 
     private List<ChatMessageDto> sendToGemini(List<ChatMessageDto> chatHistory) {
+        String prompt = chatHistory.stream()
+                .map(msg -> msg.role() + ": " + msg.content())
+                .collect(Collectors.joining("\n"));
         try {
-            List<String> messages = chatHistory.stream()
-                    .map(msg -> msg.role() + ": " + msg.content())
-                    .toList();
-
-            GenerateContentResponse response = geminiClient.models.generateContent(
-                    geminiModelName,
-                    String.join("\n", messages),
-                    null
-            );
-
-            List<ChatMessageDto> currentChatHistory = new ArrayList<>(chatHistory);
-            if (response != null && response.text() != null) {
-                ChatMessageDto aiResponse = new ChatMessageDto("assistant", response.text());
-                currentChatHistory.add(aiResponse);
-                chatSession.getMessageHistory().add(aiResponse);
-                log.info("Received response from Gemini API: {}", response.text());
-            } else {
-                log.warn("Empty or invalid response from Gemini API.");
-                throw new RuntimeException("Failed to get response from Gemini.");
+            GenerateContentResponse response = geminiClient.models
+                    .generateContent(geminiModelName, prompt, null);
+            if (response.text() == null) {
+                throw new GeminiResponseException("Failed to get text response from Gemini. "
+                        + "Response was null.");
             }
-
-            return currentChatHistory;
+            chatHistory.add(new ChatMessageDto("assistant", response.text()));
+            return chatHistory;
+        } catch (GeminiApiException e) {
+            throw e;
         } catch (Exception e) {
-            log.error("Error communicating with Gemini API", e);
-            throw new RuntimeException("Failed to process Gemini request", e);
+            throw new GeminiApiException("Failed to process Gemini request", e);
         }
     }
 }

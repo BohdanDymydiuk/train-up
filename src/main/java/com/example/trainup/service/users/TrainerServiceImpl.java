@@ -13,7 +13,6 @@ import com.example.trainup.repository.AddressRepository;
 import com.example.trainup.repository.GymRepository;
 import com.example.trainup.repository.SportRepository;
 import com.example.trainup.repository.TrainerRepository;
-import com.example.trainup.repository.UserCredentialsRepository;
 import com.example.trainup.service.CurrentUserService;
 import com.example.trainup.service.UserCredentialService;
 import jakarta.persistence.EntityNotFoundException;
@@ -45,7 +44,6 @@ public class TrainerServiceImpl implements TrainerService {
     private final AddressRepository addressRepository;
     private final UserCredentialService userCredentialService;
     private final CurrentUserService currentUserService;
-    private final UserCredentialsRepository userCredentialsRepository;
 
     @Override
     public TrainerResponseDto register(TrainerRegistrationRequestDto requestDto) {
@@ -69,12 +67,17 @@ public class TrainerServiceImpl implements TrainerService {
                 filter.locationCityDistrict(), filter.locationStreet(), filter.locationHouse(),
                 filter.onlineTraining());
 
+        Set<Long> sportIds = (filter.sportIds() == null || filter.sportIds().isEmpty())
+                ? null : filter.sportIds();
+        Set<Long> gymIds = (filter.gymIds() == null || filter.gymIds().isEmpty())
+                ? null : filter.gymIds();
+
         Page<Trainer> trainerPage = trainerRepository.findTrainersByCriteria(
                 filter.firstName(),
                 filter.lastName(),
                 filter.gender(),
-                filter.sportIds(),
-                filter.gymIds(),
+                sportIds,
+                gymIds,
                 filter.locationCountry(),
                 filter.locationCity(),
                 filter.locationCityDistrict(),
@@ -99,8 +102,7 @@ public class TrainerServiceImpl implements TrainerService {
                     + "or principal is not UserCredentials");
         }
         Trainer trainer = currentUserService.getCurrentUserByType(Trainer.class);
-        TrainerResponseDto dto = trainerMapper.toDto(trainer);
-        return dto;
+        return trainerMapper.toDto(trainer);
     }
 
     @Override
@@ -109,8 +111,7 @@ public class TrainerServiceImpl implements TrainerService {
         Trainer trainer = trainerRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Cannot find Trainer by id:" + id));
 
-        TrainerResponseDto dto = trainerMapper.toDto(trainer);
-        return dto;
+        return trainerMapper.toDto(trainer);
     }
 
     @Override
@@ -134,7 +135,7 @@ public class TrainerServiceImpl implements TrainerService {
 
     @Override
     public void deleteTrainerById(Long id) {
-        Trainer trainer = trainerRepository.findById(id)
+        trainerRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Cannot find Trainer by id:" + id));
         trainerRepository.deleteById(id);
         log.debug("Trainer was deleted with ID: {}", id);
@@ -166,29 +167,40 @@ public class TrainerServiceImpl implements TrainerService {
         Optional.ofNullable(requestDto.socialMediaLinks())
                 .ifPresent(existingTrainer::setSocialMediaLinks);
 
-        updateLocation(existingTrainer, requestDto.location());
         updateEntities(existingTrainer::setSports, requestDto.sportIds(),
                 sportRepository::findById, "Sport with id ");
         updateEntities(existingTrainer::setGyms, requestDto.gymIds(),
                 gymRepository::findById, "Gym with id ");
+        updateLocation(existingTrainer, requestDto.location());
 
         Trainer updatedTrainer = trainerRepository.save(existingTrainer);
-        TrainerResponseDto dto = trainerMapper.toDto(updatedTrainer);
-        return dto;
+        return trainerMapper.toDto(updatedTrainer);
     }
 
     private void updateLocation(Trainer trainer, TrainerAddressDto locationDto) {
         if (locationDto != null) {
-            Address address = trainer.getLocation();
-            if (address == null) {
-                address = new Address();
-                trainer.setLocation(address);
-            }
-            Optional.ofNullable(locationDto.country()).ifPresent(address::setCountry);
-            Optional.ofNullable(locationDto.city()).ifPresent(address::setCity);
+            Address existingAddress = trainer.getLocation();
+            String street = locationDto.street() != null ? locationDto.street() : "";
+            String house = locationDto.house() != null ? locationDto.house() : "";
+            Optional<Address> foundAddress = addressRepository
+                    .findByCountryAndCityAndStreetAndHouse(
+                            locationDto.country(),
+                            locationDto.city(),
+                            street, house
+                    );
+
+            Address address = foundAddress.orElseGet(() -> {
+                Address newAddress = (existingAddress != null) ? existingAddress : new Address();
+                newAddress.setCountry(locationDto.country());
+                newAddress.setCity(locationDto.city());
+                newAddress.setCityDistrict(locationDto.cityDistrict());
+                newAddress.setStreet(street);
+                newAddress.setHouse(house);
+                return newAddress;
+            });
+
             Optional.ofNullable(locationDto.cityDistrict()).ifPresent(address::setCityDistrict);
-            Optional.ofNullable(locationDto.street()).ifPresent(address::setStreet);
-            Optional.ofNullable(locationDto.house()).ifPresent(address::setHouse);
+            trainer.setLocation(address);
             addressRepository.save(address);
         }
     }

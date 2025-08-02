@@ -14,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,7 +45,7 @@ public class SportController {
             description = "Allows ADMIN users to retrieve a paginated list of all sports, "
                     + "optionally filtered by ID or name.")
     public List<SportDto> getAllSports(
-            @RequestParam(required = false) Long id,
+            @RequestParam(required = false) @Positive Long id,
             @RequestParam(required = false) String name,
             @PageableDefault(size = 10) Pageable pageable
     ) {
@@ -59,6 +60,7 @@ public class SportController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(
             summary = "Create New Sport",
@@ -74,6 +76,7 @@ public class SportController {
     }
 
     @PatchMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     @Operation(
             summary = "Update Sport by ID",
             description = "Allows an ADMIN user to update an existing sport category by its ID."
@@ -88,6 +91,7 @@ public class SportController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     @Operation(
             summary = "Delete Sport by ID",
             description = "Allows an ADMIN user to delete a sport category by its ID."

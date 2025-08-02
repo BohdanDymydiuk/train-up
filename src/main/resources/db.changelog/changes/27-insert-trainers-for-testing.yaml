@@ -1,0 +1,558 @@
+databaseChangeLog:
+  - changeSet:
+      id: 27-insert-trainers-for-testing
+      author: bohdan-s
+      preconditions:
+        - onFail: MARK_RAN
+        - sqlCheck:
+            expectedResult: 0
+            sql: |
+              SELECT COUNT(*) 
+              FROM user_credentials 
+              WHERE email IN (
+                'ivan.petrenko@example.com',
+                'olena.kovalchuk@example.com',
+                'mykhailo.sydorenko@example.com',
+                'nataliia.melnyk@example.com',
+                'andrii.shevchenko@example.com',
+                'yuliia.tkachenko@example.com',
+                'volodymyr.bondarenko@example.com',
+                'iryna.kravchenko@example.com',
+                'serhii.marchenko@example.com',
+                'halyna.oliynyk@example.com'
+              )
+      changes:
+        # Insert Ivan Petrenko
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'ivan.petrenko@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'ivan.petrenko@example.com')" }
+              - column: { name: role_id, value: 3 }
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Київ' }
+              - column: { name: street, value: 'Хрещатик' }
+              - column: { name: house, value: '10' }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Іван' }
+              - column: { name: last_name, value: 'Петренко_TEST' }
+              - column: { name: gender, value: 'MALE' }
+              - column: { name: date_of_birth, value: '1985-05-15' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'ivan.petrenko@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Київ' AND street = 'Хрещатик' AND house = '10')" }
+              - column: { name: online_training, value: 1 }
+              - column: { name: description, value: 'Досвідчений тренер з фітнесу та кросфіту.' }
+              - column: { name: social_media_links, value: 'https://fb.com/ivan.trainer' }
+              - column: { name: overall_rating, value: 4.90 }
+              - column: { name: number_of_reviews, value: 120 }
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Іван' AND last_name = 'Петренко_TEST')" }
+              - column: { name: phone_numbers, value: '+38(050)-111-2233' }
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Іван' AND last_name = 'Петренко_TEST')" }
+              - column: { name: certificates, value: 'Сертифікат АФК' }
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Іван' AND last_name = 'Петренко_TEST')" }
+              - column: { name: sport_id, value: 3 }  # Кроссфіт
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Іван' AND last_name = 'Петренко_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Olena Kovalchuk
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'olena.kovalchuk@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'olena.kovalchuk@example.com')" }
+              - column: { name: role_id, value: 3 }
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Львів' }
+              - column: { name: street, value: 'Просп. Свободи' }
+              - column: { name: house, value: '25' }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Олена' }
+              - column: { name: last_name, value: 'Ковальчук_TEST' }
+              - column: { name: gender, value: 'FEMALE' }
+              - column: { name: date_of_birth, value: '1990-11-20' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'olena.kovalchuk@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Львів' AND street = 'Просп. Свободи' AND house = '25')" }
+              - column: { name: online_training, value: 0 }
+              - column: { name: description, value: 'Спеціаліст з йоги та пілатесу.' }
+              - column: { name: social_media_links, value: 'https://inst.com/olena.yoga' }
+              - column: { name: overall_rating, value: 4.80 }
+              - column: { name: number_of_reviews, value: 90 }
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Олена' AND last_name = 'Ковальчук_TEST')" }
+              - column: { name: phone_numbers, value: '+38(067)-222-3344' }
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Олена' AND last_name = 'Ковальчук_TEST')" }
+              - column: { name: certificates, value: 'Сертифікат Йога Альянс' }
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Олена' AND last_name = 'Ковальчук_TEST')" }
+              - column: { name: sport_id, value: 7 }  # Йога
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Олена' AND last_name = 'Ковальчук_TEST')" }
+              - column: { name: sport_id, value: 13 } # Пілатес
+
+        # Insert Mykhailo Sydorenko
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'mykhailo.sydorenko@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'mykhailo.sydorenko@example.com')" }
+              - column: { name: role_id, value: 3 }
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Одеса' }
+              - column: { name: street, value: 'Дерибасівська' }
+              - column: { name: house, value: '5' }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Михайло' }
+              - column: { name: last_name, value: 'Сидоренко_TEST' }
+              - column: { name: gender, value: 'MALE' }
+              - column: { name: date_of_birth, value: '1988-03-01' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'mykhailo.sydorenko@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Одеса' AND street = 'Дерибасівська' AND house = '5')" }
+              - column: { name: online_training, value: 1 }
+              - column: { name: description, value: 'Тренер з боксу та єдиноборств.' }
+              - column: { name: social_media_links, value: 'https://tw.com/mykhailo_box' }
+              - column: { name: overall_rating, value: 4.75 }
+              - column: { name: number_of_reviews, value: 80 }
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Михайло' AND last_name = 'Сидоренко_TEST')" }
+              - column: { name: phone_numbers, value: '+38(095)-333-4455' }
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Михайло' AND last_name = 'Сидоренко_TEST')" }
+              - column: { name: certificates, value: 'Сертифікат Федерації Боксу' }
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Михайло' AND last_name = 'Сидоренко_TEST')" }
+              - column: { name: sport_id, value: 5 }  # Бокс
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Михайло' AND last_name = 'Сидоренко_TEST')" }
+              - column: { name: sport_id, value: 17 } # Жіночий бокс
+
+        # Insert Nataliia Melnyk
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'nataliia.melnyk@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'nataliia.melnyk@example.com')" }
+              - column: { name: role_id, value: 3 }
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Харків' }
+              - column: { name: street, value: 'Пл. Свободи' }
+              - column: { name: house, value: '1' }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Наталія' }
+              - column: { name: last_name, value: 'Мельник_TEST' }
+              - column: { name: gender, value: 'FEMALE' }
+              - column: { name: date_of_birth, value: '1992-07-25' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'nataliia.melnyk@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Харків' AND street = 'Пл. Свободи' AND house = '1')" }
+              - column: { name: online_training, value: 0 }
+              - column: { name: description, value: 'Персональний тренер з функціонального тренінгу.' }
+              - column: { name: social_media_links, value: 'https://link.com/nataliia_fit' }
+              - column: { name: overall_rating, value: 4.85 }
+              - column: { name: number_of_reviews, value: 100 }
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Наталія' AND last_name = 'Мельник_TEST')" }
+              - column: { name: phone_numbers, value: '+38(096)-444-5566' }
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Наталія' AND last_name = 'Мельник_TEST')" }
+              - column: { name: certificates, value: 'ACE Certified Personal Trainer' }
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Наталія' AND last_name = 'Мельник_TEST')" }
+              - column: { name: sport_id, value: 6 }  # Стретчинг
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Наталія' AND last_name = 'Мельник_TEST')" }
+              - column: { name: sport_id, value: 16 } # TRX
+
+        # Insert Andrii Shevchenko
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'andrii.shevchenko@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'andrii.shevchenko@example.com')" }
+              - column: { name: role_id, value: 3 }
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Дніпро' }
+              - column: { name: street, value: 'Січеславська Набережна' }
+              - column: { name: house, value: '35' }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Андрій' }
+              - column: { name: last_name, value: 'Шевченко_TEST' }
+              - column: { name: gender, value: 'MALE' }
+              - column: { name: date_of_birth, value: '1980-01-01' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'andrii.shevchenko@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Дніпро' AND street = 'Січеславська Набережна' AND house = '35')" }
+              - column: { name: online_training, value: 1 }
+              - column: { name: description, value: 'Професійний тренер з кросфіту.' }
+              - column: { name: social_media_links, value: 'https://fb.com/andrii.coach' }
+              - column: { name: overall_rating, value: 4.60 }
+              - column: { name: number_of_reviews, value: 200 }
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Андрій' AND last_name = 'Шевченко_TEST')" }
+              - column: { name: phone_numbers, value: '+38(050)-555-6677' }
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Андрій' AND last_name = 'Шевченко_TEST')" }
+              - column: { name: certificates, value: 'Сертифікат CrossFit Level 1' }
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Андрій' AND last_name = 'Шевченко_TEST')" }
+              - column: { name: sport_id, value: 3 }  # Кроссфіт
+
+        # Insert Yuliia Tkachenko
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'yuliia.tkachenko@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'yuliia.tkachenko@example.com')" }
+              - column: { name: role_id, value: 3 }
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Запоріжжя' }
+              - column: { name: street, value: 'Просп. Соборний' }
+              - column: { name: house, value: '150' }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Юлія' }
+              - column: { name: last_name, value: 'Ткаченко_TEST' }
+              - column: { name: gender, value: 'FEMALE' }
+              - column: { name: date_of_birth, value: '1991-09-05' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'yuliia.tkachenko@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Запоріжжя' AND street = 'Просп. Соборний' AND house = '150')" }
+              - column: { name: online_training, value: 0 }
+              - column: { name: description, value: 'Інструктор з аеробіки та танців.' }
+              - column: { name: social_media_links, value: 'https://tt.com/yuliia_dance' }
+              - column: { name: overall_rating, value: 4.65 }
+              - column: { name: number_of_reviews, value: 75 }
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Юлія' AND last_name = 'Ткаченко_TEST')" }
+              - column: { name: phone_numbers, value: '+38(097)-666-7788' }
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Юлія' AND last_name = 'Ткаченко_TEST')" }
+              - column: { name: certificates, value: 'Сертифікат Zumba Instructor' }
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Юлія' AND last_name = 'Ткаченко_TEST')" }
+              - column: { name: sport_id, value: 14 } # Степ аеробіка
+
+        # Insert Volodymyr Bondarenko
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'volodymyr.bondarenko@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'volodymyr.bondarenko@example.com')" }
+              - column: { name: role_id, value: 3 }
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Вінниця' }
+              - column: { name: street, value: 'Соборна' }
+              - column: { name: house, value: '80' }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Володимир' }
+              - column: { name: last_name, value: 'Бондаренко_TEST' }
+              - column: { name: gender, value: 'MALE' }
+              - column: { name: date_of_birth, value: '1983-02-10' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'volodymyr.bondarenko@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Вінниця' AND street = 'Соборна' AND house = '80')" }
+              - column: { name: online_training, value: 1 }
+              - column: { name: description, value: 'Спеціаліст з силового тренінгу.' }
+              - column: { name: social_media_links, value: 'https://in.com/vladimir_power' }
+              - column: { name: overall_rating, value: 4.76 }
+              - column: { name: number_of_reviews, value: 150 }
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Володимир' AND last_name = 'Бондаренко_TEST')" }
+              - column: { name: phone_numbers, value: '+38(063)-777-8899' }
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Володимир' AND last_name = 'Бондаренко_TEST')" }
+              - column: { name: certificates, value: 'IPF Powerlifting Coach' }
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Володимир' AND last_name = 'Бондаренко_TEST')" }
+              - column: { name: sport_id, value: 1 }  # Тренажерний зал
+
+        # Insert Iryna Kravchenko
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'iryna.kravchenko@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'iryna.kravchenko@example.com')" }
+              - column: { name: role_id, value: 3 }
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Чернігів' }
+              - column: { name: street, value: 'Просп. Миру' }
+              - column: { name: house, value: '49' }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Ірина' }
+              - column: { name: last_name, value: 'Кравченко_TEST' }
+              - column: { name: gender, value: 'FEMALE' }
+              - column: { name: date_of_birth, value: '1993-04-12' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'iryna.kravchenko@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Чернігів' AND street = 'Просп. Миру' AND house = '49')" }
+              - column: { name: online_training, value: 0 }
+              - column: { name: description, value: 'Тренер з групових програм та стретчингу.' }
+              - column: { name: social_media_links, value: 'https://inst.com/iryna_stretch' }
+              - column: { name: overall_rating, value: 4.65 }
+              - column: { name: number_of_reviews, value: 60 }
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Ірина' AND last_name = 'Кравченко_TEST')" }
+              - column: { name: phone_numbers, value: '+38(098)-888-9900' }
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Ірина' AND last_name = 'Кравченко_TEST')" }
+              - column: { name: certificates, value: 'AFAA Group Fitness Instructor' }
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Ірина' AND last_name = 'Кравченко_TEST')" }
+              - column: { name: sport_id, value: 6 }  # Стретчинг
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Ірина' AND last_name = 'Кравченко_TEST')" }
+              - column: { name: sport_id, value: 7 }  # Йога
+
+        # Insert Serhii Marchenko
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'serhii.marchenko@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'serhii.marchenko@example.com')" }
+              - column: { name: role_id, value: 3 }
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Полтава' }
+              - column: { name: street, value: 'Європейська' }
+              - column: { name: house, value: '10' }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Сергій' }
+              - column: { name: last_name, value: 'Марченко_TEST' }
+              - column: { name: gender, value: 'MALE' }
+              - column: { name: date_of_birth, value: '1987-08-28' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'serhii.marchenko@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Полтава' AND street = 'Європейська' AND house = '10')" }
+              - column: { name: online_training, value: 1 }
+              - column: { name: description, value: 'Спеціаліст з плавання та водних видів спорту.' }
+              - column: { name: social_media_links, value: 'https://fb.com/serhii.swim' }
+              - column: { name: overall_rating, value: 4.56 }
+              - column: { name: number_of_reviews, value: 110 }
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Сергій' AND last_name = 'Марченко_TEST')" }
+              - column: { name: phone_numbers, value: '+38(050)-999-0011' }
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Сергій' AND last_name = 'Марченко_TEST')" }
+              - column: { name: certificates, value: 'Сертифікат FINA' }
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Сергій' AND last_name = 'Марченко_TEST')" }
+              - column: { name: sport_id, value: 2 }  # Плавання
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Сергій' AND last_name = 'Марченко_TEST')" }
+              - column: { name: sport_id, value: 12 } # Аква аеробіка
+
+        # Insert Halyna Oliynyk
+        - insert:
+            tableName: user_credentials
+            columns:
+              - column: { name: email, value: 'halyna.oliynyk@example.com' }
+              - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
+              - column: { name: user_type, value: 'TRAINER' }
+        - insert:
+            tableName: user_credentials_roles
+            columns:
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'halyna.oliynyk@example.com')" }
+              - column: { name: role_id, value: 3 }
+        - insert:
+            tableName: addresses
+            columns:
+              - column: { name: country, value: 'Україна' }
+              - column: { name: city, value: 'Черкаси' }
+              - column: { name: street, value: 'Хрещатик' }
+              - column: { name: house, value: '200' }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: first_name, value: 'Галина' }
+              - column: { name: last_name, value: 'Олійник_TEST' }
+              - column: { name: gender, value: 'FEMALE' }
+              - column: { name: date_of_birth, value: '1994-10-18' }
+              - column: { name: profile_image_url, value: '' }
+              - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'halyna.oliynyk@example.com')" }
+              - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Черкаси' AND street = 'Хрещатик' AND house = '200')" }
+              - column: { name: online_training, value: 0 }
+              - column: { name: description, value: 'Фахівець з відновлювального тренінгу.' }
+              - column: { name: social_media_links, value: 'https://fb.com/halyna.rehab' }
+              - column: { name: overall_rating, value: 4.70 }
+              - column: { name: number_of_reviews, value: 65 }
+        - insert:
+            tableName: trainer_phone_numbers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Галина' AND last_name = 'Олійник_TEST')" }
+              - column: { name: phone_numbers, value: '+38(067)-123-4567' }
+        - insert:
+            tableName: trainer_certificates
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Галина' AND last_name = 'Олійник_TEST')" }
+              - column: { name: certificates, value: 'Certified Rehabilitation Specialist' }
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Галина' AND last_name = 'Олійник_TEST')" }
+              - column: { name: sport_id, value: 4 }  # Сквош
+        - insert:
+            tableName: sports_trainers
+            columns:
+              - column: { name: trainer_id, valueComputed: "(SELECT id FROM trainers WHERE first_name = 'Галина' AND last_name = 'Олійник_TEST')" }
+              - column: { name: sport_id, value: 15 } # Настільний теніс

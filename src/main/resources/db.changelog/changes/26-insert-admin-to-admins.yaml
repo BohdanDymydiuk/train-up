@@ -1,14 +1,8 @@
 databaseChangeLog:
   - changeSet:
-      id: 25-insert-admin-to-admins
+      id: 26-insert-admin-to-admins
       author: bohdan-s
       changes:
-        - sql:
-            sql: |
-              INSERT INTO roles (name)
-              SELECT 'ROLE_ADMIN'
-              WHERE NOT EXISTS (SELECT 1 FROM roles WHERE name = 'ROLE_ADMIN');
-
         - sql:
             sql: |
               INSERT INTO user_credentials (email, password, user_type)
