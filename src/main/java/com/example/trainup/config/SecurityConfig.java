@@ -1,7 +1,6 @@
 package com.example.trainup.config;
 
 import com.example.trainup.security.JwtAuthenticationFilter;
-import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
