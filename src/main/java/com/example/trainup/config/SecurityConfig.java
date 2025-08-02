@@ -58,9 +58,9 @@ public class SecurityConfig {
                                         "/error",
                                         "/swagger-ui/**",
                                         "/v3/api-docs/**",
-                                        "/actuator/health")
+                                        "/actuator/health",
+                                        "/sport")
                                 .permitAll()
-                                .requestMatchers("/sport").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
@@ -76,15 +76,9 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        List<String> allowedOrigins = new ArrayList<>(List.of(
-                "http://localhost:5173",
-                "https://c3e3-109-200-252-189.ngrok-free.app/"
-        ));
-        allowedOrigins.add("null");
-        configuration.setAllowedOrigins(allowedOrigins);
-
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("*"));
+        configuration.setAllowedOriginPatterns(List.of("*"));
+        configuration.setAllowedMethods(List.of("*"));
+        configuration.setAllowedOrigins(List.of("https://train-up-website.onrender.com"));
         configuration.setAllowCredentials(true);
         configuration.setMaxAge(3600L);
 
