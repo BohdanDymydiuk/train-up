@@ -7,6 +7,7 @@ import com.example.trainup.dto.gym.GymFilterRequestDto;
 import com.example.trainup.dto.gym.GymRegistrationRequestDto;
 import com.example.trainup.dto.gym.GymResponseDto;
 import com.example.trainup.dto.gym.GymUpdateRequestDto;
+import com.example.trainup.exception.PhotoUploadException;
 import com.example.trainup.mapper.GymMapper;
 import com.example.trainup.model.Address;
 import com.example.trainup.model.Gym;
@@ -32,6 +33,7 @@ import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.AccessDeniedException;
@@ -45,6 +47,8 @@ import org.springframework.web.multipart.MultipartFile;
 @Transactional
 @Slf4j
 public class GymServiceImpl implements GymService {
+    private static final String CANNOT_FIND_GYM_MSG = "Cannot find Gym by id: ";
+
     private final GymRepository gymRepository;
     private final GymMapper gymMapper;
     private final SportRepository sportRepository;
@@ -52,9 +56,14 @@ public class GymServiceImpl implements GymService {
     private final AddressRepository addressRepository;
     private final UserCredentialsRepository userCredentialsRepository;
     private final CurrentUserService currentUserService;
+    private final Optional<Cloudinary> cloudinary;
 
-    @Autowired(required = false) // Опціональна ін’єкція для тестів
-    private Cloudinary cloudinary;
+    private GymService self;
+
+    @Autowired
+    public void setSelf(@Lazy GymService self) {
+        this.self = self;
+    }
 
     @Override
     public GymResponseDto save(GymOwner gymOwner, GymRegistrationRequestDto requestDto) {
@@ -115,8 +124,7 @@ public class GymServiceImpl implements GymService {
 
         Page<Gym> gymsByGymOwner = gymRepository.getGymsByGymOwner(gymOwner, pageable);
 
-        Page<GymResponseDto> gymsByGymOwnerDto = gymsByGymOwner.map(gymMapper::toDto);
-        return gymsByGymOwnerDto;
+        return gymsByGymOwner.map(gymMapper::toDto);
     }
 
     @Override
@@ -124,14 +132,13 @@ public class GymServiceImpl implements GymService {
     public GymResponseDto getGymById(Long id) {
         Gym gym = gymRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Cannot find Gym by id:" + id));
-        GymResponseDto dto = gymMapper.toDto(gym);
-        return dto;
+        return gymMapper.toDto(gym);
     }
 
     @Override
     public void deleteGymById(Long id) {
-        Gym gym = gymRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Cannot find Gym by id: " + id));
+        gymRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException(CANNOT_FIND_GYM_MSG + id));
         gymRepository.deleteById(id);
         log.debug("Deleted gym with ID: {}", id);
     }
@@ -180,7 +187,7 @@ public class GymServiceImpl implements GymService {
     @Override
     public GymResponseDto updateGym(Long id, GymUpdateRequestDto requestDto) {
         Gym existingGym = gymRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Cannot find Gym by id: " + id));
+                .orElseThrow(() -> new EntityNotFoundException(CANNOT_FIND_GYM_MSG + id));
 
         Optional.ofNullable(requestDto.name()).ifPresent(existingGym::setName);
         Optional.ofNullable(requestDto.description()).ifPresent(existingGym::setDescription);
@@ -231,7 +238,6 @@ public class GymServiceImpl implements GymService {
             }
             setter.accept(entities);
         }
-
     }
 
     private void updatePhotos(Gym gym, Set<String> photoUrls) {
@@ -263,9 +269,9 @@ public class GymServiceImpl implements GymService {
     @Override
     public String uploadGymPhoto(Long id, MultipartFile file, Authentication authentication) {
         Gym gym = gymRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Cannot find Gym by id: " + id));
+                .orElseThrow(() -> new EntityNotFoundException(CANNOT_FIND_GYM_MSG + id));
 
-        if (!canUserModifyGym(authentication, id)) {
+        if (!self.canUserModifyGym(authentication, id)) {
             throw new AccessDeniedException("You do not have permission to modify this gym.");
         }
 
@@ -277,8 +283,14 @@ public class GymServiceImpl implements GymService {
             throw new IllegalArgumentException("Uploaded file is empty or missing");
         }
 
+        if (cloudinary.isEmpty()) {
+            throw new IllegalStateException("Cloudinary service is not configured or available.");
+        }
+
+        Cloudinary actualCloudinary = cloudinary.get();
+
         try {
-            Map<String, Object> uploadResult = cloudinary
+            Map<String, Object> uploadResult = actualCloudinary
                     .uploader()
                     .upload(file.getBytes(), ObjectUtils.emptyMap());
             String imageUrl = (String) uploadResult.get("url");
@@ -290,7 +302,7 @@ public class GymServiceImpl implements GymService {
 
             return imageUrl;
         } catch (IOException e) {
-            throw new RuntimeException("Failed to upload photo to Cloudinary: "
+            throw new PhotoUploadException("Failed to upload photo to Cloudinary: "
                     + e.getMessage(), e);
         }
     }

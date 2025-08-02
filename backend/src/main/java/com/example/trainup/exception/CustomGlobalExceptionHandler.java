@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -36,7 +35,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
         log.debug("Handling MethodArgumentNotValidException: {}", ex.getMessage());
         List<String> errors = ex.getBindingResult().getAllErrors().stream()
                 .map(this::getErrorMessage)
-                .collect(Collectors.toList());
+                .toList();
         return buildResponseEntity(HttpStatus.BAD_REQUEST, "Validation error", errors);
     }
 
@@ -53,7 +52,7 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
                                 violation.getMessage()
                         )
                 )
-                .collect(Collectors.toList());
+                .toList();
         return buildResponseEntity(HttpStatus.BAD_REQUEST, "Validation error", errors);
     }
 
@@ -133,9 +132,9 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
     }
 
     private String getErrorMessage(ObjectError e) {
-        if (e instanceof FieldError) {
-            String field = ((FieldError) e).getField();
-            String message = e.getDefaultMessage();
+        if (e instanceof FieldError fieldError) {
+            String field = fieldError.getField();
+            String message = fieldError.getDefaultMessage();
             return field + ": " + message;
         }
         return e.getDefaultMessage();

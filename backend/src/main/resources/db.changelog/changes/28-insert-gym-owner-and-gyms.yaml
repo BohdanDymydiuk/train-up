@@ -15,7 +15,6 @@
               - column: { name: email, value: 'oleksii.hryshchenko@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'GYM_OWNER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -30,7 +29,6 @@
               - column: { name: date_of_birth, value: '1980-01-01' }  # Example date
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'oleksii.hryshchenko@example.com')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_owner_phone_numbers
             columns:
@@ -45,7 +43,6 @@
               - column: { name: city, value: 'Київ' }
               - column: { name: street, value: 'вул. Антоновича' }
               - column: { name: house, value: '50' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gyms
             columns:
@@ -56,7 +53,6 @@
               - column: { name: overall_rating, value: 4.90 }
               - column: { name: number_of_reviews, value: 150 }
               - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_phone_numbers
             columns:
@@ -130,7 +126,6 @@
               - column: { name: city, value: 'Львів' }
               - column: { name: street, value: 'вул. Городоцька' }
               - column: { name: house, value: '17' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gyms
             columns:
@@ -141,7 +136,6 @@
               - column: { name: overall_rating, value: 4.80 }
               - column: { name: number_of_reviews, value: 90 }
               - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_phone_numbers
             columns:
@@ -213,7 +207,6 @@
               - column: { name: city, value: 'Одеса' }
               - column: { name: street, value: 'вул. Катерининська' }
               - column: { name: house, value: '20' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gyms
             columns:
@@ -224,7 +217,6 @@
               - column: { name: overall_rating, value: 4.75 }
               - column: { name: number_of_reviews, value: 110 }
               - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_phone_numbers
             columns:
@@ -303,7 +295,6 @@
               - column: { name: city, value: 'Харків' }
               - column: { name: street, value: 'просп. Науки' }
               - column: { name: house, value: '9' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gyms
             columns:
@@ -314,7 +305,6 @@
               - column: { name: overall_rating, value: 4.85 }
               - column: { name: number_of_reviews, value: 200 }
               - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_phone_numbers
             columns:
@@ -393,7 +383,6 @@
               - column: { name: city, value: 'Дніпро' }
               - column: { name: street, value: 'просп. Дмитра Яворницького' }
               - column: { name: house, value: '8' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gyms
             columns:
@@ -404,7 +393,6 @@
               - column: { name: overall_rating, value: 4.60 }
               - column: { name: number_of_reviews, value: 130 }
               - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_phone_numbers
             columns:
@@ -476,7 +464,6 @@
               - column: { name: city, value: 'Запоріжжя' }
               - column: { name: street, value: 'вул. Незалежної України' }
               - column: { name: house, value: '72' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gyms
             columns:
@@ -487,7 +474,6 @@
               - column: { name: overall_rating, value: 4.65 }
               - column: { name: number_of_reviews, value: 85 }
               - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_phone_numbers
             columns:
@@ -554,7 +540,6 @@
               - column: { name: city, value: 'Вінниця' }
               - column: { name: street, value: 'вул. Пирогова' }
               - column: { name: house, value: '30' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gyms
             columns:
@@ -565,7 +550,6 @@
               - column: { name: overall_rating, value: 4.76 }
               - column: { name: number_of_reviews, value: 180 }
               - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_phone_numbers
             columns:
@@ -634,7 +618,6 @@
               - column: { name: city, value: 'Чернігів' }
               - column: { name: street, value: 'вул. Київська' }
               - column: { name: house, value: '11' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gyms
             columns:
@@ -645,7 +628,6 @@
               - column: { name: overall_rating, value: 4.65 }
               - column: { name: number_of_reviews, value: 70 }
               - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_phone_numbers
             columns:
@@ -717,7 +699,6 @@
               - column: { name: city, value: 'Полтава' }
               - column: { name: street, value: 'вул. Соборності' }
               - column: { name: house, value: '33' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gyms
             columns:
@@ -728,7 +709,6 @@
               - column: { name: overall_rating, value: 4.56 }
               - column: { name: number_of_reviews, value: 105 }
               - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_phone_numbers
             columns:
@@ -807,7 +787,6 @@
               - column: { name: city, value: 'Черкаси' }
               - column: { name: street, value: 'бульв. Шевченка' }
               - column: { name: house, value: '130' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gyms
             columns:
@@ -818,7 +797,6 @@
               - column: { name: overall_rating, value: 4.70 }
               - column: { name: number_of_reviews, value: 95 }
               - column: { name: gym_owner_id, valueComputed: "(SELECT id FROM gym_owners WHERE first_name = 'Олексій' AND last_name = 'Грищенко_TEST')" }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: gym_phone_numbers
             columns:

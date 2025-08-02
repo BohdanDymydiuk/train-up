@@ -12,6 +12,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -230,12 +231,13 @@ class SportControllerTest {
     }
 
     @Test
-    void getAllSports_Unauthorized_403() throws Exception {
+    void getAllSports_PublicAccess_200() throws Exception {
         // Then
-        MvcResult result = mockMvc.perform(get("/sport")
+        mockMvc.perform(get("/sport")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isForbidden())
-                .andDo(print())
-                .andReturn();
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$").isArray())
+                .andDo(print());
     }
 }

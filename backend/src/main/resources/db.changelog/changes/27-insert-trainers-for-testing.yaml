@@ -29,7 +29,6 @@ databaseChangeLog:
               - column: { name: email, value: 'ivan.petrenko@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'TRAINER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -42,7 +41,6 @@ databaseChangeLog:
               - column: { name: city, value: 'Київ' }
               - column: { name: street, value: 'Хрещатик' }
               - column: { name: house, value: '10' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainers
             columns:
@@ -53,12 +51,11 @@ databaseChangeLog:
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'ivan.petrenko@example.com')" }
               - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Київ' AND street = 'Хрещатик' AND house = '10')" }
-              - column: { name: online_training, value: true }
+              - column: { name: online_training, value: 1 }
               - column: { name: description, value: 'Досвідчений тренер з фітнесу та кросфіту.' }
               - column: { name: social_media_links, value: 'https://fb.com/ivan.trainer' }
               - column: { name: overall_rating, value: 4.90 }
               - column: { name: number_of_reviews, value: 120 }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -87,7 +84,6 @@ databaseChangeLog:
               - column: { name: email, value: 'olena.kovalchuk@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'TRAINER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -100,7 +96,6 @@ databaseChangeLog:
               - column: { name: city, value: 'Львів' }
               - column: { name: street, value: 'Просп. Свободи' }
               - column: { name: house, value: '25' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainers
             columns:
@@ -111,12 +106,11 @@ databaseChangeLog:
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'olena.kovalchuk@example.com')" }
               - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Львів' AND street = 'Просп. Свободи' AND house = '25')" }
-              - column: { name: online_training, value: false }
+              - column: { name: online_training, value: 0 }
               - column: { name: description, value: 'Спеціаліст з йоги та пілатесу.' }
               - column: { name: social_media_links, value: 'https://inst.com/olena.yoga' }
               - column: { name: overall_rating, value: 4.80 }
               - column: { name: number_of_reviews, value: 90 }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -145,7 +139,6 @@ databaseChangeLog:
               - column: { name: email, value: 'mykhailo.sydorenko@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'TRAINER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -158,7 +151,6 @@ databaseChangeLog:
               - column: { name: city, value: 'Одеса' }
               - column: { name: street, value: 'Дерибасівська' }
               - column: { name: house, value: '5' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainers
             columns:
@@ -169,12 +161,11 @@ databaseChangeLog:
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'mykhailo.sydorenko@example.com')" }
               - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Одеса' AND street = 'Дерибасівська' AND house = '5')" }
-              - column: { name: online_training, value: true }
+              - column: { name: online_training, value: 1 }
               - column: { name: description, value: 'Тренер з боксу та єдиноборств.' }
               - column: { name: social_media_links, value: 'https://tw.com/mykhailo_box' }
               - column: { name: overall_rating, value: 4.75 }
               - column: { name: number_of_reviews, value: 80 }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -203,7 +194,6 @@ databaseChangeLog:
               - column: { name: email, value: 'nataliia.melnyk@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'TRAINER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -216,7 +206,6 @@ databaseChangeLog:
               - column: { name: city, value: 'Харків' }
               - column: { name: street, value: 'Пл. Свободи' }
               - column: { name: house, value: '1' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainers
             columns:
@@ -227,12 +216,11 @@ databaseChangeLog:
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'nataliia.melnyk@example.com')" }
               - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Харків' AND street = 'Пл. Свободи' AND house = '1')" }
-              - column: { name: online_training, value: false }
+              - column: { name: online_training, value: 0 }
               - column: { name: description, value: 'Персональний тренер з функціонального тренінгу.' }
               - column: { name: social_media_links, value: 'https://link.com/nataliia_fit' }
               - column: { name: overall_rating, value: 4.85 }
               - column: { name: number_of_reviews, value: 100 }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -261,7 +249,6 @@ databaseChangeLog:
               - column: { name: email, value: 'andrii.shevchenko@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'TRAINER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -274,7 +261,6 @@ databaseChangeLog:
               - column: { name: city, value: 'Дніпро' }
               - column: { name: street, value: 'Січеславська Набережна' }
               - column: { name: house, value: '35' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainers
             columns:
@@ -285,12 +271,11 @@ databaseChangeLog:
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'andrii.shevchenko@example.com')" }
               - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Дніпро' AND street = 'Січеславська Набережна' AND house = '35')" }
-              - column: { name: online_training, value: true }
+              - column: { name: online_training, value: 1 }
               - column: { name: description, value: 'Професійний тренер з кросфіту.' }
               - column: { name: social_media_links, value: 'https://fb.com/andrii.coach' }
               - column: { name: overall_rating, value: 4.60 }
               - column: { name: number_of_reviews, value: 200 }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -314,7 +299,6 @@ databaseChangeLog:
               - column: { name: email, value: 'yuliia.tkachenko@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'TRAINER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -327,7 +311,6 @@ databaseChangeLog:
               - column: { name: city, value: 'Запоріжжя' }
               - column: { name: street, value: 'Просп. Соборний' }
               - column: { name: house, value: '150' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainers
             columns:
@@ -338,12 +321,11 @@ databaseChangeLog:
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'yuliia.tkachenko@example.com')" }
               - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Запоріжжя' AND street = 'Просп. Соборний' AND house = '150')" }
-              - column: { name: online_training, value: false }
+              - column: { name: online_training, value: 0 }
               - column: { name: description, value: 'Інструктор з аеробіки та танців.' }
               - column: { name: social_media_links, value: 'https://tt.com/yuliia_dance' }
               - column: { name: overall_rating, value: 4.65 }
               - column: { name: number_of_reviews, value: 75 }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -367,7 +349,6 @@ databaseChangeLog:
               - column: { name: email, value: 'volodymyr.bondarenko@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'TRAINER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -380,7 +361,6 @@ databaseChangeLog:
               - column: { name: city, value: 'Вінниця' }
               - column: { name: street, value: 'Соборна' }
               - column: { name: house, value: '80' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainers
             columns:
@@ -391,12 +371,11 @@ databaseChangeLog:
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'volodymyr.bondarenko@example.com')" }
               - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Вінниця' AND street = 'Соборна' AND house = '80')" }
-              - column: { name: online_training, value: true }
+              - column: { name: online_training, value: 1 }
               - column: { name: description, value: 'Спеціаліст з силового тренінгу.' }
               - column: { name: social_media_links, value: 'https://in.com/vladimir_power' }
               - column: { name: overall_rating, value: 4.76 }
               - column: { name: number_of_reviews, value: 150 }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -420,7 +399,6 @@ databaseChangeLog:
               - column: { name: email, value: 'iryna.kravchenko@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'TRAINER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -433,7 +411,6 @@ databaseChangeLog:
               - column: { name: city, value: 'Чернігів' }
               - column: { name: street, value: 'Просп. Миру' }
               - column: { name: house, value: '49' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainers
             columns:
@@ -444,12 +421,11 @@ databaseChangeLog:
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'iryna.kravchenko@example.com')" }
               - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Чернігів' AND street = 'Просп. Миру' AND house = '49')" }
-              - column: { name: online_training, value: false }
+              - column: { name: online_training, value: 0 }
               - column: { name: description, value: 'Тренер з групових програм та стретчингу.' }
               - column: { name: social_media_links, value: 'https://inst.com/iryna_stretch' }
               - column: { name: overall_rating, value: 4.65 }
               - column: { name: number_of_reviews, value: 60 }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -478,7 +454,6 @@ databaseChangeLog:
               - column: { name: email, value: 'serhii.marchenko@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'TRAINER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -491,7 +466,6 @@ databaseChangeLog:
               - column: { name: city, value: 'Полтава' }
               - column: { name: street, value: 'Європейська' }
               - column: { name: house, value: '10' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainers
             columns:
@@ -502,12 +476,11 @@ databaseChangeLog:
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'serhii.marchenko@example.com')" }
               - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Полтава' AND street = 'Європейська' AND house = '10')" }
-              - column: { name: online_training, value: true }
+              - column: { name: online_training, value: 1 }
               - column: { name: description, value: 'Спеціаліст з плавання та водних видів спорту.' }
               - column: { name: social_media_links, value: 'https://fb.com/serhii.swim' }
               - column: { name: overall_rating, value: 4.56 }
               - column: { name: number_of_reviews, value: 110 }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -536,7 +509,6 @@ databaseChangeLog:
               - column: { name: email, value: 'halyna.oliynyk@example.com' }
               - column: { name: password, value: '$2a$10$2y03kivOdVnunKG2k53YeO8VO6Ks1UFPsWixKvl9PKtQsyXAFncmi' }
               - column: { name: user_type, value: 'TRAINER' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: user_credentials_roles
             columns:
@@ -549,7 +521,6 @@ databaseChangeLog:
               - column: { name: city, value: 'Черкаси' }
               - column: { name: street, value: 'Хрещатик' }
               - column: { name: house, value: '200' }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainers
             columns:
@@ -560,12 +531,11 @@ databaseChangeLog:
               - column: { name: profile_image_url, value: '' }
               - column: { name: user_credentials_id, valueComputed: "(SELECT id FROM user_credentials WHERE email = 'halyna.oliynyk@example.com')" }
               - column: { name: address_id, valueComputed: "(SELECT id FROM addresses WHERE country = 'Україна' AND city = 'Черкаси' AND street = 'Хрещатик' AND house = '200')" }
-              - column: { name: online_training, value: false }
+              - column: { name: online_training, value: 0 }
               - column: { name: description, value: 'Фахівець з відновлювального тренінгу.' }
               - column: { name: social_media_links, value: 'https://fb.com/halyna.rehab' }
               - column: { name: overall_rating, value: 4.70 }
               - column: { name: number_of_reviews, value: 65 }
-              - column: { name: is_deleted, value: false }
         - insert:
             tableName: trainer_phone_numbers
             columns:

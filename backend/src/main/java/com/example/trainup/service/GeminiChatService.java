@@ -1,6 +1,8 @@
 package com.example.trainup.service;
 
 import com.example.trainup.dto.chat.ChatMessageDto;
+import com.example.trainup.exception.GeminiApiException;
+import com.example.trainup.exception.GeminiResponseException;
 import com.example.trainup.model.ChatSession;
 import com.google.genai.Client;
 import com.google.genai.types.GenerateContentResponse;
@@ -60,7 +62,7 @@ public class GeminiChatService {
     public List<ChatMessageDto> continueConversation(String newUserMessage) {
         List<ChatMessageDto> currentChatHistory = chatSession.getMessageHistory();
         if (currentChatHistory.isEmpty()) {
-            currentChatHistory.add(new ChatMessageDto("system", getSystemPrompt()));
+            currentChatHistory.add(new ChatMessageDto("system", this.systemPrompt));
         }
         currentChatHistory.add(new ChatMessageDto("user", newUserMessage));
         return sendToGemini(currentChatHistory);
@@ -74,26 +76,15 @@ public class GeminiChatService {
             GenerateContentResponse response = geminiClient.models
                     .generateContent(geminiModelName, prompt, null);
             if (response.text() == null) {
-                throw new RuntimeException("Failed to get response from Gemini.");
+                throw new GeminiResponseException("Failed to get text response from Gemini. "
+                        + "Response was null.");
             }
             chatHistory.add(new ChatMessageDto("assistant", response.text()));
             return chatHistory;
+        } catch (GeminiApiException e) {
+            throw e;
         } catch (Exception e) {
-            throw new RuntimeException("Failed to process Gemini request", e);
-        }
-    }
-
-    private String getSystemPrompt() {
-        return (String) getPrivateField(this, "systemPrompt");
-    }
-
-    private Object getPrivateField(Object target, String fieldName) {
-        try {
-            var field = GeminiChatService.class.getDeclaredField(fieldName);
-            field.setAccessible(true);
-            return field.get(target);
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            throw new RuntimeException("Failed to get private field: " + fieldName, e);
+            throw new GeminiApiException("Failed to process Gemini request", e);
         }
     }
 }

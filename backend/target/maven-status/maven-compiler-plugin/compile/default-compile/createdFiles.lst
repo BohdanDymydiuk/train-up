@@ -66,6 +66,7 @@ com/example/trainup/mapper/AthleteMapperImpl.class
 com/example/trainup/dto/gemini/GeminiContent.class
 com/example/trainup/controller/BaseUserController.class
 com/example/trainup/dto/gym/GymResponseDto.class
+com/example/trainup/exception/PhotoUploadException.class
 com/example/trainup/mapper/AthleteMapper.class
 com/example/trainup/model/user/Athlete.class
 com/example/trainup/dto/users/UserLoginRequestDto.class
@@ -85,6 +86,7 @@ com/example/trainup/dto/gym/GymAddressDto.class
 com/example/trainup/validation/FieldMatchValidator.class
 com/example/trainup/config/GeminiClientConfig.class
 com/example/trainup/config/MapperConfig.class
+com/example/trainup/exception/GeminiResponseException.class
 com/example/trainup/model/user/UserCredentials$UserType.class
 com/example/trainup/model/Event.class
 com/example/trainup/controller/ChatController.class
@@ -96,6 +98,7 @@ com/example/trainup/validation/EmailUnique.class
 com/example/trainup/config/CloudinaryConfig.class
 com/example/trainup/validation/EventTarget.class
 com/example/trainup/dto/gym/GymRegistrationRequestDto.class
+com/example/trainup/exception/GeminiApiException.class
 com/example/trainup/dto/chat/ChatRequestDto.class
 com/example/trainup/dto/chat/ChatMessageDto.class
 com/example/trainup/dto/review/ReviewResponseDto.class

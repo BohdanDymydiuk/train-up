@@ -23,6 +23,7 @@
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/validation/ValidPhoneNumbers.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/mapper/GymMapper.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/config/SecurityConfig.java
+/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/exception/GeminiResponseException.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/repository/ReviewRepository.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/model/Address.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/dto/users/UserLoginResponseDto.java
@@ -32,6 +33,7 @@
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/dto/chat/ChatRequestDto.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/service/users/GymOwnerServiceImpl.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/dto/users/trainer/TrainerFilterRequestDto.java
+/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/exception/PhotoUploadException.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/controller/AthleteController.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/validation/RegexConstants.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/dto/gemini/GeminiContent.java
@@ -52,6 +54,7 @@
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/repository/UserCredentialsRepository.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/model/ChatSession.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/controller/TrainerController.java
+/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/exception/GeminiApiException.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/service/SportService.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/model/Role.java
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/dto/gym/GymResponseDto.java

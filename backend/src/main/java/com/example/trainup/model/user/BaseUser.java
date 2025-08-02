@@ -16,13 +16,11 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Where;
 
 @MappedSuperclass
 @Getter
 @Setter
 @NoArgsConstructor
-@Where(clause = "is_deleted=false")
 public abstract class BaseUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

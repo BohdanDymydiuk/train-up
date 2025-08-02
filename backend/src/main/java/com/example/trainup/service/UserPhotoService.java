@@ -2,6 +2,7 @@ package com.example.trainup.service;
 
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
+import com.example.trainup.exception.PhotoUploadException;
 import com.example.trainup.model.user.Athlete;
 import com.example.trainup.model.user.BaseUser;
 import com.example.trainup.model.user.GymOwner;
@@ -15,8 +16,8 @@ import jakarta.persistence.EntityNotFoundException;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Optional;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -25,67 +26,53 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 @Log4j2
 public class UserPhotoService {
     private final AthleteRepository athleteRepository;
     private final TrainerRepository trainerRepository;
     private final GymOwnerRepository gymOwnerRepository;
     private final UserCredentialsRepository userCredentialsRepository;
+    private final Optional<Cloudinary> cloudinary;
 
-    @Autowired(required = false)
-    private Cloudinary cloudinary;
+    public String uploadPhoto(MultipartFile file, Long userId) {
+        Cloudinary actualCloudinary = cloudinary.orElseThrow(
+                () -> new IllegalStateException("Cloudinary service is not configured or available "
+                        + "for upload."));
 
-    @Autowired
-    public UserPhotoService(AthleteRepository athleteRepository,
-                            TrainerRepository trainerRepository,
-                            GymOwnerRepository gymOwnerRepository,
-                            UserCredentialsRepository userCredentialsRepository) {
-        this.athleteRepository = athleteRepository;
-        this.trainerRepository = trainerRepository;
-        this.gymOwnerRepository = gymOwnerRepository;
-        this.userCredentialsRepository = userCredentialsRepository;
-    }
+        try {
+            Map<String, Object> uploadResult = actualCloudinary
+                    .uploader()
+                    .upload(file.getBytes(), ObjectUtils.emptyMap());
+            String imageUrl = (String) uploadResult.get("url");
 
-    public String uploadPhoto(MultipartFile file, Long userId) throws IOException {
-        if (cloudinary == null) {
-            throw new IllegalStateException("Cloudinary is not configured for upload");
+            BaseUser user = findUserById(userId);
+            user.setProfileImageUrl(imageUrl);
+            saveUser(user);
+
+            return imageUrl;
+        } catch (IOException e) {
+            throw new PhotoUploadException("Failed to upload photo to Cloudinary: "
+                    + e.getMessage(), e);
         }
-
-        Map uploadResult = cloudinary.uploader().upload(file.getBytes(), ObjectUtils.emptyMap());
-        String imageUrl = (String) uploadResult.get("url");
-
-        BaseUser user = findUserById(userId);
-        user.setProfileImageUrl(imageUrl);
-        saveUser(user);
-
-        return imageUrl;
     }
 
     private BaseUser findUserById(Long userId) {
-        Optional<Athlete> athlete = athleteRepository.findById(userId);
-        if (athlete.isPresent()) {
-            return athlete.get();
-        }
-
-        Optional<Trainer> trainer = trainerRepository.findById(userId);
-        if (trainer.isPresent()) {
-            return trainer.get();
-        }
-
-        Optional<GymOwner> gymOwner = gymOwnerRepository.findById(userId);
-        if (gymOwner.isPresent()) {
-            return gymOwner.get();
-        }
-        throw new EntityNotFoundException("User not found with id: " + userId);
+        return athleteRepository.findById(userId)
+                .map(BaseUser.class::cast)
+                .or(() -> trainerRepository.findById(userId).map(BaseUser.class::cast))
+                .or(() -> gymOwnerRepository.findById(userId).map(BaseUser.class::cast))
+                .orElseThrow(() -> new EntityNotFoundException("User not found with id: "
+                        + userId));
     }
 
     private void saveUser(BaseUser user) {
-        if (user instanceof Athlete) {
-            athleteRepository.save((Athlete) user);
-        } else if (user instanceof Trainer) {
-            trainerRepository.save((Trainer) user);
-        } else if (user instanceof GymOwner) {
-            gymOwnerRepository.save((GymOwner) user);
+        if (user instanceof Athlete athlete) {
+            athleteRepository.save(athlete);
+        } else if (user instanceof Trainer trainer) {
+            trainerRepository.save(trainer);
+        } else if (user instanceof GymOwner gymOwner) {
+            gymOwnerRepository.save(gymOwner);
         } else {
             throw new IllegalArgumentException("Unknown user type: " + user.getClass().getName());
         }
@@ -94,7 +81,7 @@ public class UserPhotoService {
     public String uploadPhotoWithAuth(
             Authentication authentication,
             MultipartFile file
-    ) throws IOException {
+    ) {
         UserCredentials userCredentials = extractUserCredentials(authentication);
         BaseUser user = findUserByCredentials(userCredentials);
         if (user == null) {
@@ -105,12 +92,16 @@ public class UserPhotoService {
         log.debug("Received file: name={}, size={}, isEmpty={}",
                 file.getOriginalFilename(), file.getSize(), file.isEmpty());
 
-        if (file == null || file.isEmpty()) {
+        if (file.isEmpty()) {
             throw new IllegalArgumentException("Uploaded file is empty or missing");
         }
 
+        Cloudinary actualCloudinary = cloudinary.orElseThrow(
+                () -> new IllegalStateException("Cloudinary service is not configured or available "
+                        + "for upload."));
+
         try {
-            Map<String, Object> uploadResult = cloudinary
+            Map<String, Object> uploadResult = actualCloudinary
                     .uploader()
                     .upload(file.getBytes(), ObjectUtils.emptyMap());
             String imageUrl = (String) uploadResult.get("url");
@@ -120,7 +111,8 @@ public class UserPhotoService {
 
             return imageUrl;
         } catch (IOException e) {
-            throw new RuntimeException("Failed to upload file to Cloudinary: " + e.getMessage(), e);
+            throw new PhotoUploadException("Failed to upload file to Cloudinary: "
+                    + e.getMessage(), e);
         }
     }
 
@@ -129,8 +121,8 @@ public class UserPhotoService {
             throw new SecurityException("User is not authenticated");
         }
         Object principal = authentication.getPrincipal();
-        if (principal instanceof UserDetails) {
-            String email = ((UserDetails) principal).getUsername();
+        if (principal instanceof UserDetails userDetails) {
+            String email = userDetails.getUsername();
             return userCredentialsRepository.findByEmail(email)
                     .orElseThrow(() -> new EntityNotFoundException(
                             "User credentials not found for email: " + email));
@@ -140,21 +132,12 @@ public class UserPhotoService {
     }
 
     private BaseUser findUserByCredentials(UserCredentials userCredentials) {
-        Optional<Athlete> athlete = athleteRepository.findByUserCredentials(userCredentials);
-        if (athlete.isPresent()) {
-            return athlete.get();
-        }
-
-        Optional<Trainer> trainer = trainerRepository.findByUserCredentials(userCredentials);
-        if (trainer.isPresent()) {
-            return trainer.get();
-        }
-
-        Optional<GymOwner> gymOwner = gymOwnerRepository.findByUserCredentials(userCredentials);
-        if (gymOwner.isPresent()) {
-            return gymOwner.get();
-        }
-
-        return null;
+        return athleteRepository.findByUserCredentials(userCredentials)
+                .map(BaseUser.class::cast)
+                .or(() -> trainerRepository.findByUserCredentials(userCredentials)
+                        .map(BaseUser.class::cast))
+                .or(() -> gymOwnerRepository.findByUserCredentials(userCredentials)
+                        .map(BaseUser.class::cast))
+                .orElse(null);
     }
 }
