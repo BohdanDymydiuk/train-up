@@ -1,4 +1,4 @@
-#Sat Aug 02 19:42:10 UTC 2025
+#Sun Aug 03 17:47:58 UTC 2025
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/test/resources/application-test.properties=1754151711349
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/model/Role.java=1754151711337
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/service/SportService.java=1754151700265
@@ -104,7 +104,7 @@
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/TrainUpApplication.java=1754151700224
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/dto/review/ReviewResponseDto.java=1754151700240
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/service/users/GymOwnerService.java=1754151700268
-/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/resources/application.properties=1754163056465
+/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/resources/application.properties=1754213214233
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/dto/gym/GymRegistrationRequestDto.java=1754151700237
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/security/CustomUserDetailsService.java=1754151700261
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/config/SecurityConfig.java=1754151711331
