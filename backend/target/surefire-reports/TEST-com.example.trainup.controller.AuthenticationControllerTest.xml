@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.trainup.controller.AuthenticationControllerTest" time="9.712" tests="12" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.trainup.controller.AuthenticationControllerTest" time="8.432" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="APPLICATION_NAME" value="train-up"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire/surefirebooter-20250803174803712_3.jar /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire 2025-08-03T17-48-03_504-jvmRun1 surefire-20250803174803712_1tmp surefire_0-20250803174803712_2tmp"/>
+    <property name="sun.java.command" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire/surefirebooter-20250805161254609_3.jar /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire 2025-08-05T16-12-54_383-jvmRun1 surefire-20250805161254609_1tmp surefire_0-20250805161254609_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/test-classes:/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/classes:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-data-jdbc/3.4.3/spring-boot-starter-data-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.3/spring-boot-starter-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-jdbc/6.2.3/spring-jdbc-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-jdbc/3.4.3/spring-data-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-relational/3.4.3/spring-data-relational-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-commons/3.4.3/spring-data-commons-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-tx/6.2.3/spring-tx-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-context/6.2.3/spring-context-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-beans/6.2.3/spring-beans-6.2.3.jar:/home/sadsadsa/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.3/spring-boot-starter-data-jpa-3.4.3.jar:/home/sadsadsa/.m2/repository/org/hibernate/orm/hibernate-core/6.6.8.Final/hibernate-core-6.6.8.Final.jar:/home/sadsadsa/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/sadsadsa/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/sadsadsa/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/sadsadsa/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/sadsadsa/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/sadsadsa/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/home/sadsadsa/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/sadsadsa/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/sadsadsa/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-jpa/3.4.3/spring-data-jpa-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-orm/6.2.3/spring-orm-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-aspects/6.2.3/spring-aspects-6.2.3.jar:/home/sadsadsa/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.4.3/spring-boot-starter-security-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-aop/6.2.3/spring-aop-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-config/6.4.3/spring-security-config-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-web/6.4.3/spring-security-web-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-expression/6.2.3/spring-expression-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.3/spring-boot-starter-web-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.3/spring-boot-starter-json-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.3/spring-boot-starter-tomcat-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.36/tomcat-embed-core-10.1.36.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.36/tomcat-embed-websocket-10.1.36.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-web/6.2.3/spring-web-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-webmvc/6.2.3/spring-webmvc-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-web-services/3.4.3/spring-boot-starter-web-services-3.4.3.jar:/home/sadsadsa/.m2/repository/com/sun/xml/messaging/saaj/saaj-impl/3.0.4/saaj-impl-3.0.4.jar:/home/sadsadsa/.m2/repository/jakarta/xml/soap/jakarta.xml.soap-api/3.0.2/jakarta.xml.soap-api-3.0.2.jar:/home/sadsadsa/.m2/repository/org/jvnet/staxex/stax-ex/2.1.0/stax-ex-2.1.0.jar:/home/sadsadsa/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/sadsadsa/.m2/repository/jakarta/xml/ws/jakarta.xml.ws-api/4.0.2/jakarta.xml.ws-api-4.0.2.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-oxm/6.2.3/spring-oxm-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/ws/spring-ws-core/4.0.11/spring-ws-core-4.0.11.jar:/home/sadsadsa/.m2/repository/org/springframework/ws/spring-xml/4.0.11/spring-xml-4.0.11.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-devtools/3.4.3/spring-boot-devtools-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot/3.4.3/spring-boot-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.3/spring-boot-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-docker-compose/3.4.3/spring-boot-docker-compose-3.4.3.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.2/jackson-module-parameter-names-2.18.2.jar:/home/sadsadsa/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/home/sadsadsa/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.3/spring-boot-starter-3.4.3.jar:/home/sadsadsa/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-core/6.2.3/spring-core-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-jcl/6.2.3/spring-jcl-6.2.3.jar:/home/sadsadsa/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-test/6.4.3/spring-security-test-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-core/6.4.3/spring-security-core-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-crypto/6.4.3/spring-security-crypto-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-test/6.2.3/spring-test-6.2.3.jar:/home/sadsadsa/.m2/repository/org/liquibase/liquibase-core/4.29.2/liquibase-core-4.29.2.jar:/home/sadsadsa/.m2/repository/com/opencsv/opencsv/5.9/opencsv-5.9.jar:/home/sadsadsa/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/sadsadsa/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-text/1.12.0/commons-text-1.12.0.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/sadsadsa/.m2/repository/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-api/0.12.6/jjwt-api-0.12.6.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-impl/0.12.6/jjwt-impl-0.12.6.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.4.3/spring-boot-starter-validation-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.36/tomcat-embed-el-10.1.36.jar:/home/sadsadsa/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar:/home/sadsadsa/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.8.6/springdoc-openapi-starter-webmvc-ui-2.8.6.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.8.6/springdoc-openapi-starter-webmvc-api-2.8.6.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.6/springdoc-openapi-starter-common-2.8.6.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.29/swagger-core-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.29/swagger-annotations-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.29/swagger-models-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.2/jackson-dataformat-yaml-2.18.2.jar:/home/sadsadsa/.m2/repository/org/webjars/swagger-ui/5.20.1/swagger-ui-5.20.1.jar:/home/sadsadsa/.m2/repository/org/webjars/webjars-locator-lite/1.0.1/webjars-locator-lite-1.0.1.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/sadsadsa/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/home/sadsadsa/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/sadsadsa/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.4.3/spring-boot-starter-actuator-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.4.3/spring-boot-actuator-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-actuator/3.4.3/spring-boot-actuator-3.4.3.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-observation/1.14.4/micrometer-observation-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-commons/1.14.4/micrometer-commons-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-jakarta9/1.14.4/micrometer-jakarta9-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-core/1.14.4/micrometer-core-1.14.4.jar:/home/sadsadsa/.m2/repository/org/hdrhistogram/HdrHistogram/2.2.2/HdrHistogram-2.2.2.jar:/home/sadsadsa/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-log4j2/3.4.3/spring-boot-starter-log4j2-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-slf4j2-impl/2.24.3/log4j-slf4j2-impl-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-core/2.24.3/log4j-core-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-jul/2.24.3/log4j-jul-2.24.3.jar:/home/sadsadsa/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.12.6/jjwt-jackson-0.12.6.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-webflux/3.4.3/spring-boot-starter-webflux-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-reactor-netty/3.4.3/spring-boot-starter-reactor-netty-3.4.3.jar:/home/sadsadsa/.m2/repository/io/projectreactor/netty/reactor-netty-http/1.2.3/reactor-netty-http-1.2.3.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-http/4.1.118.Final/netty-codec-http-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-common/4.1.118.Final/netty-common-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-buffer/4.1.118.Final/netty-buffer-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport/4.1.118.Final/netty-transport-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec/4.1.118.Final/netty-codec-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-handler/4.1.118.Final/netty-handler-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-http2/4.1.118.Final/netty-codec-http2-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns/4.1.118.Final/netty-resolver-dns-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver/4.1.118.Final/netty-resolver-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-dns/4.1.118.Final/netty-codec-dns-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.118.Final/netty-resolver-dns-native-macos-4.1.118.Final-osx-x86_64.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.1.118.Final/netty-resolver-dns-classes-macos-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-native-epoll/4.1.118.Final/netty-transport-native-epoll-4.1.118.Final-linux-x86_64.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.118.Final/netty-transport-native-unix-common-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.118.Final/netty-transport-classes-epoll-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/projectreactor/netty/reactor-netty-core/1.2.3/reactor-netty-core-1.2.3.jar:/home/sadsadsa/.m2/repository/io/netty/netty-handler-proxy/4.1.118.Final/netty-handler-proxy-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-socks/4.1.118.Final/netty-codec-socks-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-webflux/6.2.3/spring-webflux-6.2.3.jar:/home/sadsadsa/.m2/repository/io/projectreactor/reactor-core/3.7.3/reactor-core-3.7.3.jar:/home/sadsadsa/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/sadsadsa/.m2/repository/com/google/genai/google-genai/1.0.0/google-genai-1.0.0.jar:/home/sadsadsa/.m2/repository/com/google/auth/google-auth-library-oauth2-http/1.30.1/google-auth-library-oauth2-http-1.30.1.jar:/home/sadsadsa/.m2/repository/com/google/auto/value/auto-value-annotations/1.11.0/auto-value-annotations-1.11.0.jar:/home/sadsadsa/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/sadsadsa/.m2/repository/com/google/auth/google-auth-library-credentials/1.30.1/google-auth-library-credentials-1.30.1.jar:/home/sadsadsa/.m2/repository/com/google/http-client/google-http-client/1.45.2/google-http-client-1.45.2.jar:/home/sadsadsa/.m2/repository/io/grpc/grpc-context/1.68.2/grpc-context-1.68.2.jar:/home/sadsadsa/.m2/repository/io/grpc/grpc-api/1.68.2/grpc-api-1.68.2.jar:/home/sadsadsa/.m2/repository/io/opencensus/opencensus-api/0.31.1/opencensus-api-0.31.1.jar:/home/sadsadsa/.m2/repository/io/opencensus/opencensus-contrib-http-util/0.31.1/opencensus-contrib-http-util-0.31.1.jar:/home/sadsadsa/.m2/repository/com/google/http-client/google-http-client-gson/1.45.2/google-http-client-gson-1.45.2.jar:/home/sadsadsa/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/sadsadsa/.m2/repository/com/google/guava/guava/33.3.1-android/guava-33.3.1-android.jar:/home/sadsadsa/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/sadsadsa/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/sadsadsa/.m2/repository/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar:/home/sadsadsa/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/home/sadsadsa/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/sadsadsa/.m2/repository/commons-codec/commons-codec/1.17.2/commons-codec-1.17.2.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/sadsadsa/.m2/repository/com/google/auto/value/auto-value/1.11.0/auto-value-1.11.0.jar:/home/sadsadsa/.m2/repository/com/google/api/api-common/2.42.1/api-common-2.42.1.jar:/home/sadsadsa/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/home/sadsadsa/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.2/jackson-datatype-jdk8-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar:/home/sadsadsa/.m2/repository/org/java-websocket/Java-WebSocket/1.6.0/Java-WebSocket-1.6.0.jar:/home/sadsadsa/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/sadsadsa/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/home/sadsadsa/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/home/sadsadsa/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/home/sadsadsa/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/sadsadsa/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar:/home/sadsadsa/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/sadsadsa/.m2/repository/com/cloudinary/cloudinary-http44/1.33.0/cloudinary-http44-1.33.0.jar:/home/sadsadsa/.m2/repository/com/cloudinary/cloudinary-core/1.33.0/cloudinary-core-1.33.0.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpmime/4.4/httpmime-4.4.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.3/spring-boot-starter-test-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-test/3.4.3/spring-boot-test-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.3/spring-boot-test-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/sadsadsa/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/sadsadsa/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/sadsadsa/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/sadsadsa/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/sadsadsa/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/sadsadsa/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/sadsadsa/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/sadsadsa/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/sadsadsa/.m2/repository/org/xmlunit/xmlunit-core/2.10.0/xmlunit-core-2.10.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="FILE_LOG_CHARSET" value="UTF-8"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire/surefirebooter-20250803174803712_3.jar"/>
+    <property name="surefire.real.class.path" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire/surefirebooter-20250805161254609_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.15+6-Ubuntu-0ubuntu124.04"/>
     <property name="user.name" value="sadsadsa"/>
@@ -47,7 +47,7 @@
     <property name="user.dir" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="5758"/>
+    <property name="PID" value="1349"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
@@ -59,7 +59,7 @@
     <property name="java.class.version" value="61.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[train-up] "/>
   </properties>
-  <testcase name="registerAthlete_InvalidEmail_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.502">
+  <testcase name="registerAthlete_InvalidEmail_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.485">
     <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -70,29 +70,29 @@
 
  :: Spring Boot ::                (v3.4.3)
 
-2025-08-03 17:48:43.416 [main] INFO  com.example.trainup.controller.AuthenticationControllerTest - Starting AuthenticationControllerTest using Java 17.0.15 with PID 5758 (started by sadsadsa in /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend)
-2025-08-03 17:48:43.418 [main] DEBUG com.example.trainup.controller.AuthenticationControllerTest - Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-08-03 17:48:43.419 [main] INFO  com.example.trainup.controller.AuthenticationControllerTest - The following 1 profile is active: "test"
-2025-08-03 17:48:47.183 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
-2025-08-03 17:48:47.185 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
-2025-08-03 17:48:47.185 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
-2025-08-03 17:48:47.188 [main] INFO  liquibase.database - Set default schema name to PUBLIC
-2025-08-03 17:48:47.889 [main] INFO  liquibase.changelog - Reading from PUBLIC.DATABASECHANGELOG
-2025-08-03 17:48:47.944 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
-2025-08-03 17:48:47.946 [main] INFO  liquibase.changelog - Reading from PUBLIC.DATABASECHANGELOG
-2025-08-03 17:48:47.952 [main] INFO  liquibase.util - UPDATE SUMMARY
-2025-08-03 17:48:47.952 [main] INFO  liquibase.util - Run:                          0
-2025-08-03 17:48:47.953 [main] INFO  liquibase.util - Previously run:              28
-2025-08-03 17:48:47.953 [main] INFO  liquibase.util - Filtered out:                 0
-2025-08-03 17:48:47.953 [main] INFO  liquibase.util - -------------------------------
-2025-08-03 17:48:47.953 [main] INFO  liquibase.util - Total change sets:           28
-2025-08-03 17:48:47.954 [main] INFO  liquibase.util - Update summary generated
-2025-08-03 17:48:47.954 [main] INFO  liquibase.command - Command execution complete
-2025-08-03 17:48:48.255 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-08-03 17:48:48.295 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-08-03 17:48:48.449 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.3.232 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
-2025-08-03 17:48:48.449 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-08-03 17:48:48.450 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2025-08-05 16:13:34.065 [main] INFO  com.example.trainup.controller.AuthenticationControllerTest - Starting AuthenticationControllerTest using Java 17.0.15 with PID 1349 (started by sadsadsa in /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend)
+2025-08-05 16:13:34.067 [main] DEBUG com.example.trainup.controller.AuthenticationControllerTest - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-08-05 16:13:34.067 [main] INFO  com.example.trainup.controller.AuthenticationControllerTest - The following 1 profile is active: "test"
+2025-08-05 16:13:37.949 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2025-08-05 16:13:37.951 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=SA
+2025-08-05 16:13:37.952 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2025-08-05 16:13:37.955 [main] INFO  liquibase.database - Set default schema name to PUBLIC
+2025-08-05 16:13:38.681 [main] INFO  liquibase.changelog - Reading from PUBLIC.DATABASECHANGELOG
+2025-08-05 16:13:38.741 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-05 16:13:38.743 [main] INFO  liquibase.changelog - Reading from PUBLIC.DATABASECHANGELOG
+2025-08-05 16:13:38.748 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-05 16:13:38.749 [main] INFO  liquibase.util - Run:                          0
+2025-08-05 16:13:38.749 [main] INFO  liquibase.util - Previously run:              28
+2025-08-05 16:13:38.749 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-05 16:13:38.750 [main] INFO  liquibase.util - -------------------------------
+2025-08-05 16:13:38.750 [main] INFO  liquibase.util - Total change sets:           28
+2025-08-05 16:13:38.750 [main] INFO  liquibase.util - Update summary generated
+2025-08-05 16:13:38.750 [main] INFO  liquibase.command - Command execution complete
+2025-08-05 16:13:39.054 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05 16:13:39.100 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-05 16:13:39.253 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.3.232 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-08-05 16:13:39.254 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05 16:13:39.255 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -100,7 +100,7 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-08-03 17:48:49.335 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05 16:13:40.238 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: 
     alter table admins 
        drop 
@@ -223,7 +223,7 @@ Hibernate:
        foreign key FK7bu4o4g0mqpf6ajcyaj9rkw6j
 Hibernate: 
     drop table if exists addresses
-2025-08-03 17:48:49.343 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:13:40.246 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     drop table if exists addresses" via JDBC [Cannot drop "ADDRESSES" because "FK_GYM_ADDRESS" depends on it;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
     drop table if exists addresses" via JDBC [Cannot drop "ADDRESSES" because "FK_GYM_ADDRESS" depends on it;]
@@ -376,7 +376,7 @@ Hibernate:
     drop table if exists gym_owner_phone_numbers
 Hibernate: 
     drop table if exists gym_owners
-2025-08-03 17:48:49.348 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:13:40.252 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     drop table if exists gym_owners" via JDBC [Cannot drop "GYM_OWNERS" because "FK_GYM_GYM_OWNER" depends on it;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
     drop table if exists gym_owners" via JDBC [Cannot drop "GYM_OWNERS" because "FK_GYM_GYM_OWNER" depends on it;]
@@ -547,7 +547,7 @@ Hibernate:
     drop table if exists trainers
 Hibernate: 
     drop table if exists user_credentials
-2025-08-03 17:48:49.354 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:13:40.259 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     drop table if exists user_credentials" via JDBC [Cannot drop "USER_CREDENTIALS" because "FK_GYM_OWNER_USER_CREDENTIALS" depends on it;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
     drop table if exists user_credentials" via JDBC [Cannot drop "USER_CREDENTIALS" because "FK_GYM_OWNER_USER_CREDENTIALS" depends on it;]
@@ -701,7 +701,7 @@ Hibernate:
         street varchar(255) not null,
         primary key (id)
     ) engine=InnoDB
-2025-08-03 17:48:49.357 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:13:40.266 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     create table addresses (
         is_deleted bit not null,
         id bigint not null auto_increment,
@@ -928,7 +928,7 @@ Hibernate:
         gender enum ('FEMALE','MALE'),
         primary key (id)
     ) engine=InnoDB
-2025-08-03 17:48:49.364 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:13:40.273 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     create table gym_owners (
         date_of_birth date,
         is_deleted bit not null,
@@ -1216,7 +1216,7 @@ Hibernate:
         user_type enum ('ADMIN','ATHLETE','GYM_OWNER','TRAINER') not null,
         primary key (id)
     ) engine=InnoDB
-2025-08-03 17:48:49.377 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:13:40.284 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     create table user_credentials (
         is_deleted bit not null,
         id bigint not null auto_increment,
@@ -1393,7 +1393,7 @@ Hibernate:
 Hibernate: 
     alter table gym_owners 
        add constraint UKsvn82mcjgaqxpljam1y92liut unique (user_credentials_id)
-2025-08-03 17:48:49.382 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:13:40.291 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table gym_owners 
        add constraint UKsvn82mcjgaqxpljam1y92liut unique (user_credentials_id)" via JDBC [Constraint "UKSVN82MCJGAQXPLJAM1Y92LIUT" already exists;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
@@ -1554,7 +1554,7 @@ Hibernate:
 Hibernate: 
     alter table user_credentials 
        add constraint UKlrgbb675rfl59o7jp5rhetl2r unique (email)
-2025-08-03 17:48:49.386 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:13:40.296 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table user_credentials 
        add constraint UKlrgbb675rfl59o7jp5rhetl2r unique (email)" via JDBC [Constraint "UKLRGBB675RFL59O7JP5RHETL2R" already exists;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
@@ -1850,9 +1850,9 @@ Hibernate:
        add constraint FK7bu4o4g0mqpf6ajcyaj9rkw6j 
        foreign key (user_credentials_id) 
        references user_credentials (id)
-2025-08-03 17:48:49.871 [main] INFO  com.example.trainup.service.GeminiChatService - System prompt loaded.
-2025-08-03 17:48:52.132 [main] DEBUG com.example.trainup.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
-2025-08-03 17:48:52.199 [main] INFO  com.example.trainup.controller.AuthenticationControllerTest - Started AuthenticationControllerTest in 8.9 seconds (process running for 49.166)
+2025-08-05 16:13:40.822 [main] INFO  com.example.trainup.service.GeminiChatService - System prompt loaded.
+2025-08-05 16:13:43.614 [main] DEBUG com.example.trainup.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-08-05 16:13:43.672 [main] INFO  com.example.trainup.controller.AuthenticationControllerTest - Started AuthenticationControllerTest in 8.326 seconds (process running for 53.185)
 Hibernate: 
     select
         count(uc1_0.id)>0 
@@ -1864,11 +1864,11 @@ Hibernate:
         ) 
         and uc1_0.email=? 
         and uc1_0.is_deleted=0
-2025-08-03 17:48:52.696 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.athlete.AthleteResponseDto com.example.trainup.controller.AuthenticationController.registerAthlete(com.example.trainup.dto.users.athlete.AthleteRegistrationRequestDto): [Field error in object 'athleteRegistrationRequestDto' on field 'email': rejected value [invalid-email]; codes [Email.athleteRegistrationRequestDto.email,Email.email,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [athleteRegistrationRequestDto.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@6f3f7d65,(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])]; default message [Email is not valid]] 
-2025-08-03 17:48:52.697 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[email: Email is not valid]
+2025-08-05 16:13:44.154 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.athlete.AthleteResponseDto com.example.trainup.controller.AuthenticationController.registerAthlete(com.example.trainup.dto.users.athlete.AthleteRegistrationRequestDto): [Field error in object 'athleteRegistrationRequestDto' on field 'email': rejected value [invalid-email]; codes [Email.athleteRegistrationRequestDto.email,Email.email,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [athleteRegistrationRequestDto.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@721096fc,(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])]; default message [Email is not valid]] 
+2025-08-05 16:13:44.155 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[email: Email is not valid]
 ]]></system-out>
   </testcase>
-  <testcase name="registerAthlete_Success" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.032">
+  <testcase name="registerAthlete_Success" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.046">
     <system-out><![CDATA[Hibernate: 
     select
         count(uc1_0.id)>0 
@@ -1880,11 +1880,11 @@ Hibernate:
         ) 
         and uc1_0.email=? 
         and uc1_0.is_deleted=0
-2025-08-03 17:48:52.727 [main] INFO  com.example.trainup.controller.AuthenticationController - Attempting athlete registration with email: test@example.com
-2025-08-03 17:48:52.728 [main] INFO  com.example.trainup.controller.AuthenticationController - Athlete with email: test@example.com successfully registered. ID: 1
+2025-08-05 16:13:44.197 [main] INFO  com.example.trainup.controller.AuthenticationController - Attempting athlete registration with email: test@example.com
+2025-08-05 16:13:44.198 [main] INFO  com.example.trainup.controller.AuthenticationController - Athlete with email: test@example.com successfully registered. ID: 1
 ]]></system-out>
   </testcase>
-  <testcase name="registerGymOwner_EmptyPhoneNumbers_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.025">
+  <testcase name="registerGymOwner_EmptyPhoneNumbers_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.031">
     <system-out><![CDATA[Hibernate: 
     select
         count(uc1_0.id)>0 
@@ -1896,11 +1896,11 @@ Hibernate:
         ) 
         and uc1_0.email=? 
         and uc1_0.is_deleted=0
-2025-08-03 17:48:52.759 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.gymowner.GymOwnerResponseDto com.example.trainup.controller.AuthenticationController.registerGymOwner(com.example.trainup.dto.users.gymowner.GymOwnerRegistrationRequestDto): [Field error in object 'gymOwnerRegistrationRequestDto' on field 'phoneNumbers': rejected value [[]]; codes [NotEmpty.gymOwnerRegistrationRequestDto.phoneNumbers,NotEmpty.phoneNumbers,NotEmpty.java.util.Set,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [gymOwnerRegistrationRequestDto.phoneNumbers,phoneNumbers]; arguments []; default message [phoneNumbers]]; default message [Enter your phone number]] 
-2025-08-03 17:48:52.760 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[phoneNumbers: Enter your phone number]
+2025-08-05 16:13:44.238 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.gymowner.GymOwnerResponseDto com.example.trainup.controller.AuthenticationController.registerGymOwner(com.example.trainup.dto.users.gymowner.GymOwnerRegistrationRequestDto): [Field error in object 'gymOwnerRegistrationRequestDto' on field 'phoneNumbers': rejected value [[]]; codes [NotEmpty.gymOwnerRegistrationRequestDto.phoneNumbers,NotEmpty.phoneNumbers,NotEmpty.java.util.Set,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [gymOwnerRegistrationRequestDto.phoneNumbers,phoneNumbers]; arguments []; default message [phoneNumbers]]; default message [Enter your phone number]] 
+2025-08-05 16:13:44.238 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[phoneNumbers: Enter your phone number]
 ]]></system-out>
   </testcase>
-  <testcase name="registerGymOwner_Success" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.019">
+  <testcase name="registerGymOwner_Success" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.023">
     <system-out><![CDATA[Hibernate: 
     select
         count(uc1_0.id)>0 
@@ -1912,11 +1912,11 @@ Hibernate:
         ) 
         and uc1_0.email=? 
         and uc1_0.is_deleted=0
-2025-08-03 17:48:52.773 [main] INFO  com.example.trainup.controller.AuthenticationController - Attempting gym owner registration with email: owner@example.com
-2025-08-03 17:48:52.774 [main] INFO  com.example.trainup.controller.AuthenticationController - Gym owner with email: owner@example.com successfully registered. ID: 1
+2025-08-05 16:13:44.256 [main] INFO  com.example.trainup.controller.AuthenticationController - Attempting gym owner registration with email: owner@example.com
+2025-08-05 16:13:44.257 [main] INFO  com.example.trainup.controller.AuthenticationController - Gym owner with email: owner@example.com successfully registered. ID: 1
 ]]></system-out>
   </testcase>
-  <testcase name="registerAthlete_PasswordMismatch_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.014">
+  <testcase name="registerAthlete_PasswordMismatch_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.017">
     <system-out><![CDATA[Hibernate: 
     select
         count(uc1_0.id)>0 
@@ -1928,16 +1928,16 @@ Hibernate:
         ) 
         and uc1_0.email=? 
         and uc1_0.is_deleted=0
-2025-08-03 17:48:52.794 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.athlete.AthleteResponseDto com.example.trainup.controller.AuthenticationController.registerAthlete(com.example.trainup.dto.users.athlete.AthleteRegistrationRequestDto): [Error in object 'athleteRegistrationRequestDto': codes [FieldMatch.athleteRegistrationRequestDto,FieldMatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [athleteRegistrationRequestDto]; arguments []; default message [],password,repeatPassword]; default message [The password fields must match]] 
-2025-08-03 17:48:52.794 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[The password fields must match]
+2025-08-05 16:13:44.279 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.athlete.AthleteResponseDto com.example.trainup.controller.AuthenticationController.registerAthlete(com.example.trainup.dto.users.athlete.AthleteRegistrationRequestDto): [Error in object 'athleteRegistrationRequestDto': codes [FieldMatch.athleteRegistrationRequestDto,FieldMatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [athleteRegistrationRequestDto]; arguments []; default message [],password,repeatPassword]; default message [The password fields must match]] 
+2025-08-05 16:13:44.280 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[The password fields must match]
 ]]></system-out>
   </testcase>
-  <testcase name="login_InvalidPassword_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.06">
-    <system-out><![CDATA[2025-08-03 17:48:52.856 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.UserLoginResponseDto com.example.trainup.controller.AuthenticationController.loginAthlete(com.example.trainup.dto.users.UserLoginRequestDto): [Field error in object 'userLoginRequestDto' on field 'password': rejected value [password]; codes [Pattern.userLoginRequestDto.password,Pattern.password,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userLoginRequestDto.password,password]; arguments []; default message [password],[Ljakarta.validation.constraints.Pattern$Flag;@6984e58a,^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,}$]; default message [must match "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,}$"]] 
-2025-08-03 17:48:52.856 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[password: must match "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,}$"]
+  <testcase name="login_InvalidPassword_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.059">
+    <system-out><![CDATA[2025-08-05 16:13:44.341 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.UserLoginResponseDto com.example.trainup.controller.AuthenticationController.loginAthlete(com.example.trainup.dto.users.UserLoginRequestDto): [Field error in object 'userLoginRequestDto' on field 'password': rejected value [password]; codes [Pattern.userLoginRequestDto.password,Pattern.password,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userLoginRequestDto.password,password]; arguments []; default message [password],[Ljakarta.validation.constraints.Pattern$Flag;@733e3234,^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,}$]; default message [must match "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,}$"]] 
+2025-08-05 16:13:44.341 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[password: must match "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,}$"]
 ]]></system-out>
   </testcase>
-  <testcase name="registerTrainer_PasswordMismatch_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.026">
+  <testcase name="registerTrainer_PasswordMismatch_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.033">
     <system-out><![CDATA[Hibernate: 
     select
         count(uc1_0.id)>0 
@@ -1949,21 +1949,21 @@ Hibernate:
         ) 
         and uc1_0.email=? 
         and uc1_0.is_deleted=0
-2025-08-03 17:48:52.883 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.trainer.TrainerResponseDto com.example.trainup.controller.AuthenticationController.registerTrainer(com.example.trainup.dto.users.trainer.TrainerRegistrationRequestDto): [Error in object 'trainerRegistrationRequestDto': codes [FieldMatch.trainerRegistrationRequestDto,FieldMatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [trainerRegistrationRequestDto]; arguments []; default message [],password,repeatPassword]; default message [The password fields must match]] 
-2025-08-03 17:48:52.884 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[The password fields must match]
+2025-08-05 16:13:44.375 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.trainer.TrainerResponseDto com.example.trainup.controller.AuthenticationController.registerTrainer(com.example.trainup.dto.users.trainer.TrainerRegistrationRequestDto): [Error in object 'trainerRegistrationRequestDto': codes [FieldMatch.trainerRegistrationRequestDto,FieldMatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [trainerRegistrationRequestDto]; arguments []; default message [],password,repeatPassword]; default message [The password fields must match]] 
+2025-08-05 16:13:44.376 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[The password fields must match]
 ]]></system-out>
   </testcase>
-  <testcase name="login_Success" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.018">
-    <system-out><![CDATA[2025-08-03 17:48:52.899 [main] INFO  com.example.trainup.controller.AuthenticationController - Attempting user login for username login: test@example.com
-2025-08-03 17:48:52.899 [main] INFO  com.example.trainup.controller.AuthenticationController - User test@example.com successfully logged in.
+  <testcase name="login_Success" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.03">
+    <system-out><![CDATA[2025-08-05 16:13:44.405 [main] INFO  com.example.trainup.controller.AuthenticationController - Attempting user login for username login: test@example.com
+2025-08-05 16:13:44.406 [main] INFO  com.example.trainup.controller.AuthenticationController - User test@example.com successfully logged in.
 ]]></system-out>
   </testcase>
-  <testcase name="login_InvalidEmail_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.01">
-    <system-out><![CDATA[2025-08-03 17:48:52.912 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.UserLoginResponseDto com.example.trainup.controller.AuthenticationController.loginAthlete(com.example.trainup.dto.users.UserLoginRequestDto): [Field error in object 'userLoginRequestDto' on field 'email': rejected value [invalid-email]; codes [Email.userLoginRequestDto.email,Email.email,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userLoginRequestDto.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@6f3f7d65,(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])]; default message [Email is not valid]] 
-2025-08-03 17:48:52.913 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[email: Email is not valid]
+  <testcase name="login_InvalidEmail_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.012">
+    <system-out><![CDATA[2025-08-05 16:13:44.420 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.UserLoginResponseDto com.example.trainup.controller.AuthenticationController.loginAthlete(com.example.trainup.dto.users.UserLoginRequestDto): [Field error in object 'userLoginRequestDto' on field 'email': rejected value [invalid-email]; codes [Email.userLoginRequestDto.email,Email.email,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [userLoginRequestDto.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@721096fc,(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])]; default message [Email is not valid]] 
+2025-08-05 16:13:44.420 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[email: Email is not valid]
 ]]></system-out>
   </testcase>
-  <testcase name="registerGymOwner_PasswordMismatch_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.013">
+  <testcase name="registerGymOwner_PasswordMismatch_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.015">
     <system-out><![CDATA[Hibernate: 
     select
         count(uc1_0.id)>0 
@@ -1975,11 +1975,11 @@ Hibernate:
         ) 
         and uc1_0.email=? 
         and uc1_0.is_deleted=0
-2025-08-03 17:48:52.927 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.gymowner.GymOwnerResponseDto com.example.trainup.controller.AuthenticationController.registerGymOwner(com.example.trainup.dto.users.gymowner.GymOwnerRegistrationRequestDto): [Error in object 'gymOwnerRegistrationRequestDto': codes [FieldMatch.gymOwnerRegistrationRequestDto,FieldMatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [gymOwnerRegistrationRequestDto]; arguments []; default message [],password,repeatPassword]; default message [The password fields must match]] 
-2025-08-03 17:48:52.928 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[The password fields must match]
+2025-08-05 16:13:44.437 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.gymowner.GymOwnerResponseDto com.example.trainup.controller.AuthenticationController.registerGymOwner(com.example.trainup.dto.users.gymowner.GymOwnerRegistrationRequestDto): [Error in object 'gymOwnerRegistrationRequestDto': codes [FieldMatch.gymOwnerRegistrationRequestDto,FieldMatch]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [gymOwnerRegistrationRequestDto]; arguments []; default message [],password,repeatPassword]; default message [The password fields must match]] 
+2025-08-05 16:13:44.437 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[The password fields must match]
 ]]></system-out>
   </testcase>
-  <testcase name="registerTrainer_EmptySportIds_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.015">
+  <testcase name="registerTrainer_EmptySportIds_400" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.024">
     <system-out><![CDATA[Hibernate: 
     select
         count(uc1_0.id)>0 
@@ -1991,11 +1991,11 @@ Hibernate:
         ) 
         and uc1_0.email=? 
         and uc1_0.is_deleted=0
-2025-08-03 17:48:52.944 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.trainer.TrainerResponseDto com.example.trainup.controller.AuthenticationController.registerTrainer(com.example.trainup.dto.users.trainer.TrainerRegistrationRequestDto): [Field error in object 'trainerRegistrationRequestDto' on field 'sportIds': rejected value [[]]; codes [NotEmpty.trainerRegistrationRequestDto.sportIds,NotEmpty.sportIds,NotEmpty.java.util.Set,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [trainerRegistrationRequestDto.sportIds,sportIds]; arguments []; default message [sportIds]]; default message [Sport Ids cannot be empty]] 
-2025-08-03 17:48:52.944 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[sportIds: Sport Ids cannot be empty]
+2025-08-05 16:13:44.461 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.users.trainer.TrainerResponseDto com.example.trainup.controller.AuthenticationController.registerTrainer(com.example.trainup.dto.users.trainer.TrainerRegistrationRequestDto): [Field error in object 'trainerRegistrationRequestDto' on field 'sportIds': rejected value [[]]; codes [NotEmpty.trainerRegistrationRequestDto.sportIds,NotEmpty.sportIds,NotEmpty.java.util.Set,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [trainerRegistrationRequestDto.sportIds,sportIds]; arguments []; default message [sportIds]]; default message [Sport Ids cannot be empty]] 
+2025-08-05 16:13:44.462 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[sportIds: Sport Ids cannot be empty]
 ]]></system-out>
   </testcase>
-  <testcase name="registerTrainer_Success" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.024">
+  <testcase name="registerTrainer_Success" classname="com.example.trainup.controller.AuthenticationControllerTest" time="0.025">
     <system-out><![CDATA[Hibernate: 
     select
         count(uc1_0.id)>0 
@@ -2007,8 +2007,8 @@ Hibernate:
         ) 
         and uc1_0.email=? 
         and uc1_0.is_deleted=0
-2025-08-03 17:48:52.958 [main] INFO  com.example.trainup.controller.AuthenticationController - Attempting trainer registration with email: trainer@example.com
-2025-08-03 17:48:52.958 [main] INFO  com.example.trainup.controller.AuthenticationController - Trainer with email: trainer@example.com successfully registered. ID: 1
+2025-08-05 16:13:44.477 [main] INFO  com.example.trainup.controller.AuthenticationController - Attempting trainer registration with email: trainer@example.com
+2025-08-05 16:13:44.478 [main] INFO  com.example.trainup.controller.AuthenticationController - Trainer with email: trainer@example.com successfully registered. ID: 1
 ]]></system-out>
   </testcase>
 </testsuite>

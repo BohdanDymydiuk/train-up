@@ -77,7 +77,7 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOriginPatterns(List.of("*"));
         configuration.setAllowedMethods(List.of("*"));
-        configuration.setAllowedOrigins(List.of("https://train-up-website.onrender.com"));
+        configuration.setAllowedOrigins(List.of("http://localhost:5173", "https://train-up-website.onrender.com"));
         configuration.setAllowCredentials(true);
         configuration.setMaxAge(3600L);
 
