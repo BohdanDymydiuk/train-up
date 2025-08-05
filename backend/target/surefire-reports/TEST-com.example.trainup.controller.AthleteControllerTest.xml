@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.trainup.controller.AthleteControllerTest" time="39.923" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.trainup.controller.AthleteControllerTest" time="51.543" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="APPLICATION_NAME" value="train-up"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire/surefirebooter-20250805161254609_3.jar /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire 2025-08-05T16-12-54_383-jvmRun1 surefire-20250805161254609_1tmp surefire_0-20250805161254609_2tmp"/>
+    <property name="sun.java.command" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire/surefirebooter-20250805162719620_3.jar /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire 2025-08-05T16-27-19_346-jvmRun1 surefire-20250805162719620_1tmp surefire_0-20250805162719620_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/test-classes:/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/classes:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-data-jdbc/3.4.3/spring-boot-starter-data-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.3/spring-boot-starter-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-jdbc/6.2.3/spring-jdbc-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-jdbc/3.4.3/spring-data-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-relational/3.4.3/spring-data-relational-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-commons/3.4.3/spring-data-commons-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-tx/6.2.3/spring-tx-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-context/6.2.3/spring-context-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-beans/6.2.3/spring-beans-6.2.3.jar:/home/sadsadsa/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.3/spring-boot-starter-data-jpa-3.4.3.jar:/home/sadsadsa/.m2/repository/org/hibernate/orm/hibernate-core/6.6.8.Final/hibernate-core-6.6.8.Final.jar:/home/sadsadsa/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/sadsadsa/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/sadsadsa/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/sadsadsa/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/sadsadsa/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/sadsadsa/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/home/sadsadsa/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/sadsadsa/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/sadsadsa/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-jpa/3.4.3/spring-data-jpa-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-orm/6.2.3/spring-orm-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-aspects/6.2.3/spring-aspects-6.2.3.jar:/home/sadsadsa/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.4.3/spring-boot-starter-security-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-aop/6.2.3/spring-aop-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-config/6.4.3/spring-security-config-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-web/6.4.3/spring-security-web-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-expression/6.2.3/spring-expression-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.3/spring-boot-starter-web-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.3/spring-boot-starter-json-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.3/spring-boot-starter-tomcat-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.36/tomcat-embed-core-10.1.36.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.36/tomcat-embed-websocket-10.1.36.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-web/6.2.3/spring-web-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-webmvc/6.2.3/spring-webmvc-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-web-services/3.4.3/spring-boot-starter-web-services-3.4.3.jar:/home/sadsadsa/.m2/repository/com/sun/xml/messaging/saaj/saaj-impl/3.0.4/saaj-impl-3.0.4.jar:/home/sadsadsa/.m2/repository/jakarta/xml/soap/jakarta.xml.soap-api/3.0.2/jakarta.xml.soap-api-3.0.2.jar:/home/sadsadsa/.m2/repository/org/jvnet/staxex/stax-ex/2.1.0/stax-ex-2.1.0.jar:/home/sadsadsa/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/sadsadsa/.m2/repository/jakarta/xml/ws/jakarta.xml.ws-api/4.0.2/jakarta.xml.ws-api-4.0.2.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-oxm/6.2.3/spring-oxm-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/ws/spring-ws-core/4.0.11/spring-ws-core-4.0.11.jar:/home/sadsadsa/.m2/repository/org/springframework/ws/spring-xml/4.0.11/spring-xml-4.0.11.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-devtools/3.4.3/spring-boot-devtools-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot/3.4.3/spring-boot-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.3/spring-boot-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-docker-compose/3.4.3/spring-boot-docker-compose-3.4.3.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.2/jackson-module-parameter-names-2.18.2.jar:/home/sadsadsa/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/home/sadsadsa/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.3/spring-boot-starter-3.4.3.jar:/home/sadsadsa/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-core/6.2.3/spring-core-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-jcl/6.2.3/spring-jcl-6.2.3.jar:/home/sadsadsa/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-test/6.4.3/spring-security-test-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-core/6.4.3/spring-security-core-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-crypto/6.4.3/spring-security-crypto-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-test/6.2.3/spring-test-6.2.3.jar:/home/sadsadsa/.m2/repository/org/liquibase/liquibase-core/4.29.2/liquibase-core-4.29.2.jar:/home/sadsadsa/.m2/repository/com/opencsv/opencsv/5.9/opencsv-5.9.jar:/home/sadsadsa/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/sadsadsa/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-text/1.12.0/commons-text-1.12.0.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/sadsadsa/.m2/repository/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-api/0.12.6/jjwt-api-0.12.6.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-impl/0.12.6/jjwt-impl-0.12.6.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.4.3/spring-boot-starter-validation-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.36/tomcat-embed-el-10.1.36.jar:/home/sadsadsa/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar:/home/sadsadsa/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.8.6/springdoc-openapi-starter-webmvc-ui-2.8.6.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.8.6/springdoc-openapi-starter-webmvc-api-2.8.6.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.6/springdoc-openapi-starter-common-2.8.6.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.29/swagger-core-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.29/swagger-annotations-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.29/swagger-models-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.2/jackson-dataformat-yaml-2.18.2.jar:/home/sadsadsa/.m2/repository/org/webjars/swagger-ui/5.20.1/swagger-ui-5.20.1.jar:/home/sadsadsa/.m2/repository/org/webjars/webjars-locator-lite/1.0.1/webjars-locator-lite-1.0.1.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/sadsadsa/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/home/sadsadsa/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/sadsadsa/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.4.3/spring-boot-starter-actuator-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.4.3/spring-boot-actuator-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-actuator/3.4.3/spring-boot-actuator-3.4.3.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-observation/1.14.4/micrometer-observation-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-commons/1.14.4/micrometer-commons-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-jakarta9/1.14.4/micrometer-jakarta9-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-core/1.14.4/micrometer-core-1.14.4.jar:/home/sadsadsa/.m2/repository/org/hdrhistogram/HdrHistogram/2.2.2/HdrHistogram-2.2.2.jar:/home/sadsadsa/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-log4j2/3.4.3/spring-boot-starter-log4j2-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-slf4j2-impl/2.24.3/log4j-slf4j2-impl-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-core/2.24.3/log4j-core-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-jul/2.24.3/log4j-jul-2.24.3.jar:/home/sadsadsa/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.12.6/jjwt-jackson-0.12.6.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-webflux/3.4.3/spring-boot-starter-webflux-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-reactor-netty/3.4.3/spring-boot-starter-reactor-netty-3.4.3.jar:/home/sadsadsa/.m2/repository/io/projectreactor/netty/reactor-netty-http/1.2.3/reactor-netty-http-1.2.3.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-http/4.1.118.Final/netty-codec-http-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-common/4.1.118.Final/netty-common-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-buffer/4.1.118.Final/netty-buffer-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport/4.1.118.Final/netty-transport-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec/4.1.118.Final/netty-codec-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-handler/4.1.118.Final/netty-handler-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-http2/4.1.118.Final/netty-codec-http2-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns/4.1.118.Final/netty-resolver-dns-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver/4.1.118.Final/netty-resolver-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-dns/4.1.118.Final/netty-codec-dns-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.118.Final/netty-resolver-dns-native-macos-4.1.118.Final-osx-x86_64.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.1.118.Final/netty-resolver-dns-classes-macos-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-native-epoll/4.1.118.Final/netty-transport-native-epoll-4.1.118.Final-linux-x86_64.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.118.Final/netty-transport-native-unix-common-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.118.Final/netty-transport-classes-epoll-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/projectreactor/netty/reactor-netty-core/1.2.3/reactor-netty-core-1.2.3.jar:/home/sadsadsa/.m2/repository/io/netty/netty-handler-proxy/4.1.118.Final/netty-handler-proxy-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-socks/4.1.118.Final/netty-codec-socks-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-webflux/6.2.3/spring-webflux-6.2.3.jar:/home/sadsadsa/.m2/repository/io/projectreactor/reactor-core/3.7.3/reactor-core-3.7.3.jar:/home/sadsadsa/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/sadsadsa/.m2/repository/com/google/genai/google-genai/1.0.0/google-genai-1.0.0.jar:/home/sadsadsa/.m2/repository/com/google/auth/google-auth-library-oauth2-http/1.30.1/google-auth-library-oauth2-http-1.30.1.jar:/home/sadsadsa/.m2/repository/com/google/auto/value/auto-value-annotations/1.11.0/auto-value-annotations-1.11.0.jar:/home/sadsadsa/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/sadsadsa/.m2/repository/com/google/auth/google-auth-library-credentials/1.30.1/google-auth-library-credentials-1.30.1.jar:/home/sadsadsa/.m2/repository/com/google/http-client/google-http-client/1.45.2/google-http-client-1.45.2.jar:/home/sadsadsa/.m2/repository/io/grpc/grpc-context/1.68.2/grpc-context-1.68.2.jar:/home/sadsadsa/.m2/repository/io/grpc/grpc-api/1.68.2/grpc-api-1.68.2.jar:/home/sadsadsa/.m2/repository/io/opencensus/opencensus-api/0.31.1/opencensus-api-0.31.1.jar:/home/sadsadsa/.m2/repository/io/opencensus/opencensus-contrib-http-util/0.31.1/opencensus-contrib-http-util-0.31.1.jar:/home/sadsadsa/.m2/repository/com/google/http-client/google-http-client-gson/1.45.2/google-http-client-gson-1.45.2.jar:/home/sadsadsa/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/sadsadsa/.m2/repository/com/google/guava/guava/33.3.1-android/guava-33.3.1-android.jar:/home/sadsadsa/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/sadsadsa/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/sadsadsa/.m2/repository/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar:/home/sadsadsa/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/home/sadsadsa/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/sadsadsa/.m2/repository/commons-codec/commons-codec/1.17.2/commons-codec-1.17.2.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/sadsadsa/.m2/repository/com/google/auto/value/auto-value/1.11.0/auto-value-1.11.0.jar:/home/sadsadsa/.m2/repository/com/google/api/api-common/2.42.1/api-common-2.42.1.jar:/home/sadsadsa/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/home/sadsadsa/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.2/jackson-datatype-jdk8-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar:/home/sadsadsa/.m2/repository/org/java-websocket/Java-WebSocket/1.6.0/Java-WebSocket-1.6.0.jar:/home/sadsadsa/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/sadsadsa/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/home/sadsadsa/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/home/sadsadsa/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/home/sadsadsa/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/sadsadsa/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar:/home/sadsadsa/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/sadsadsa/.m2/repository/com/cloudinary/cloudinary-http44/1.33.0/cloudinary-http44-1.33.0.jar:/home/sadsadsa/.m2/repository/com/cloudinary/cloudinary-core/1.33.0/cloudinary-core-1.33.0.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpmime/4.4/httpmime-4.4.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.3/spring-boot-starter-test-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-test/3.4.3/spring-boot-test-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.3/spring-boot-test-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/sadsadsa/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/sadsadsa/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/sadsadsa/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/sadsadsa/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/sadsadsa/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/sadsadsa/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/sadsadsa/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/sadsadsa/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/sadsadsa/.m2/repository/org/xmlunit/xmlunit-core/2.10.0/xmlunit-core-2.10.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="FILE_LOG_CHARSET" value="UTF-8"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire/surefirebooter-20250805161254609_3.jar"/>
+    <property name="surefire.real.class.path" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire/surefirebooter-20250805162719620_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.15+6-Ubuntu-0ubuntu124.04"/>
     <property name="user.name" value="sadsadsa"/>
@@ -47,7 +47,7 @@
     <property name="user.dir" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="1349"/>
+    <property name="PID" value="3304"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
@@ -59,7 +59,7 @@
     <property name="java.class.version" value="61.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[train-up] "/>
   </properties>
-  <testcase name="updateAthleteById_Self_Success" classname="com.example.trainup.controller.AthleteControllerTest" time="1.105">
+  <testcase name="updateAthleteById_Self_Success" classname="com.example.trainup.controller.AthleteControllerTest" time="1.464">
     <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -70,348 +70,348 @@
 
  :: Spring Boot ::                (v3.4.3)
 
-2025-08-05 16:12:59.853 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
-2025-08-05 16:12:59.990 [main] INFO  com.example.trainup.controller.AthleteControllerTest - Starting AthleteControllerTest using Java 17.0.15 with PID 1349 (started by sadsadsa in /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend)
-2025-08-05 16:12:59.998 [main] DEBUG com.example.trainup.controller.AthleteControllerTest - Running with Spring Boot v3.4.3, Spring v6.2.3
-2025-08-05 16:13:00.001 [main] INFO  com.example.trainup.controller.AthleteControllerTest - The following 1 profile is active: "test"
-2025-08-05 16:13:09.425 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2025-08-05 16:13:10.062 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2025-08-05 16:13:10.071 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2025-08-05 16:13:10.264 [main] INFO  liquibase.database - Set default schema name to PUBLIC
-2025-08-05 16:13:12.306 [main] INFO  liquibase.changelog - Creating database history table with name: PUBLIC.DATABASECHANGELOG
-2025-08-05 16:13:13.807 [main] INFO  liquibase.changelog - Reading from PUBLIC.DATABASECHANGELOG
-2025-08-05 16:13:14.043 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
-2025-08-05 16:13:14.045 [main] INFO  liquibase.command - Using deploymentId: 4410394044
-2025-08-05 16:13:14.050 [main] INFO  liquibase.changelog - Reading from PUBLIC.DATABASECHANGELOG
-2025-08-05 16:13:14.223 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/01-create-roles-table.yaml::01-create-roles-table::bohdan-s
-2025-08-05 16:13:14.247 [main] INFO  liquibase.changelog - Table roles created
-2025-08-05 16:13:14.249 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/01-create-roles-table.yaml::01-create-roles-table::bohdan-s ran successfully in 22ms
-2025-08-05 16:13:14.269 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/02-create-user_credentials-table.yaml::02-create-user_credentials-table::bohdan-s
-2025-08-05 16:13:14.276 [main] INFO  liquibase.changelog - Table user_credentials created
-2025-08-05 16:13:14.277 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/02-create-user_credentials-table.yaml::02-create-user_credentials-table::bohdan-s ran successfully in 7ms
-2025-08-05 16:13:14.282 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/03-create-admins-table.yaml::03-create-admins-table::bohdan-s
-2025-08-05 16:13:14.305 [main] INFO  liquibase.changelog - Table admins created
-2025-08-05 16:13:14.307 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/03-create-admins-table.yaml::03-create-admins-table::bohdan-s ran successfully in 23ms
-2025-08-05 16:13:14.310 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/04-create-athletes-table.yaml::04-create-athletes-table::bohdan-s
-2025-08-05 16:13:14.316 [main] INFO  liquibase.changelog - Table athletes created
-2025-08-05 16:13:14.317 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/04-create-athletes-table.yaml::04-create-athletes-table::bohdan-s ran successfully in 6ms
-2025-08-05 16:13:14.319 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/05-create-athlete_phone_numbers-table.yaml::05-create-athlete_phone_numbers-table::bohdan-s
-2025-08-05 16:13:14.324 [main] INFO  liquibase.changelog - Table athlete_phone_numbers created
-2025-08-05 16:13:14.325 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/05-create-athlete_phone_numbers-table.yaml::05-create-athlete_phone_numbers-table::bohdan-s ran successfully in 4ms
-2025-08-05 16:13:14.329 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/06-create-sports-table.yaml::06-create-sports-table::bohdan-s
-2025-08-05 16:13:14.332 [main] INFO  liquibase.changelog - Table sports created
-2025-08-05 16:13:14.335 [main] INFO  liquibase.changelog - Index idx_sports_sport_name created
-2025-08-05 16:13:14.336 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/06-create-sports-table.yaml::06-create-sports-table::bohdan-s ran successfully in 6ms
-2025-08-05 16:13:14.340 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/07-create-sports_athletes-table.yaml::07-create-sports_athletes-table::bohdan-s
-2025-08-05 16:13:14.348 [main] INFO  liquibase.changelog - Table sports_athletes created
-2025-08-05 16:13:14.351 [main] INFO  liquibase.changelog - Primary key added to sports_athletes (sport_id,athlete_id)
-2025-08-05 16:13:14.352 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/07-create-sports_athletes-table.yaml::07-create-sports_athletes-table::bohdan-s ran successfully in 10ms
-2025-08-05 16:13:14.354 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/08-create-gym_owners-table.yaml::08-create-gym_owners-table::bohdan-s
-2025-08-05 16:13:14.361 [main] INFO  liquibase.changelog - Table gym_owners created
-2025-08-05 16:13:14.362 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/08-create-gym_owners-table.yaml::08-create-gym_owners-table::bohdan-s ran successfully in 7ms
-2025-08-05 16:13:14.365 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/09-create-gym_owner_phone_numbers-table.yaml::09-create-gym_owner_phone_numbers-table::bohdan-s
-2025-08-05 16:13:14.369 [main] INFO  liquibase.changelog - Table gym_owner_phone_numbers created
-2025-08-05 16:13:14.370 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/09-create-gym_owner_phone_numbers-table.yaml::09-create-gym_owner_phone_numbers-table::bohdan-s ran successfully in 4ms
-2025-08-05 16:13:14.374 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/10-create-addresses-table.yaml::10-create-addresses-table::bohdan-s
-2025-08-05 16:13:14.378 [main] INFO  liquibase.changelog - Table addresses created
-2025-08-05 16:13:14.380 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/10-create-addresses-table.yaml::10-create-addresses-table::bohdan-s ran successfully in 4ms
-2025-08-05 16:13:14.386 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/11-create-gyms-table.yaml::11-create-gyms-table::bohdan-s
-2025-08-05 16:13:14.394 [main] INFO  liquibase.changelog - Table gyms created
-2025-08-05 16:13:14.396 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/11-create-gyms-table.yaml::11-create-gyms-table::bohdan-s ran successfully in 8ms
-2025-08-05 16:13:14.399 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/12-create-gym_phone_numbers-table.yaml::12-create-gym_phone_numbers-table::bohdan-s
-2025-08-05 16:13:14.404 [main] INFO  liquibase.changelog - Table gym_phone_numbers created
-2025-08-05 16:13:14.405 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/12-create-gym_phone_numbers-table.yaml::12-create-gym_phone_numbers-table::bohdan-s ran successfully in 5ms
-2025-08-05 16:13:14.408 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/13-create-gym_working_hours-table.yaml::13-create-gym_working_hours-table::bohdan-s
-2025-08-05 16:13:14.412 [main] INFO  liquibase.changelog - Table gym_working_hours created
-2025-08-05 16:13:14.412 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/13-create-gym_working_hours-table.yaml::13-create-gym_working_hours-table::bohdan-s ran successfully in 3ms
-2025-08-05 16:13:14.415 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/14-create-sports_gyms-table.yaml::14-create-sports_gyms-table::bohdan-s
-2025-08-05 16:13:14.421 [main] INFO  liquibase.changelog - Table sports_gyms created
-2025-08-05 16:13:14.424 [main] INFO  liquibase.changelog - Primary key added to sports_gyms (sport_id, gym_id)
-2025-08-05 16:13:14.425 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/14-create-sports_gyms-table.yaml::14-create-sports_gyms-table::bohdan-s ran successfully in 10ms
-2025-08-05 16:13:14.430 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/15-create-gym_photos-table.yaml::15-create-gym_photos-table::bohdan-s
-2025-08-05 16:13:14.437 [main] INFO  liquibase.changelog - Table gym_photos created
-2025-08-05 16:13:14.438 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/15-create-gym_photos-table.yaml::15-create-gym_photos-table::bohdan-s ran successfully in 7ms
-2025-08-05 16:13:14.444 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/16-create-trainers-table.yaml::16-create-trainers-table::bohdan-s
-2025-08-05 16:13:14.452 [main] INFO  liquibase.changelog - Table trainers created
-2025-08-05 16:13:14.453 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/16-create-trainers-table.yaml::16-create-trainers-table::bohdan-s ran successfully in 8ms
-2025-08-05 16:13:14.458 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/17-create-trainer_phone_numbers-table.yaml::17-create-trainer_phone_numbers-table::bohdan-s
-2025-08-05 16:13:14.464 [main] INFO  liquibase.changelog - Table trainer_phone_numbers created
-2025-08-05 16:13:14.465 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/17-create-trainer_phone_numbers-table.yaml::17-create-trainer_phone_numbers-table::bohdan-s ran successfully in 6ms
-2025-08-05 16:13:14.468 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/18-create-sports_trainers-table.yaml::18-create-sports_trainers-table::bohdan-s
-2025-08-05 16:13:14.475 [main] INFO  liquibase.changelog - Table sports_trainers created
-2025-08-05 16:13:14.478 [main] INFO  liquibase.changelog - Primary key added to sports_trainers (sport_id, trainer_id)
-2025-08-05 16:13:14.480 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/18-create-sports_trainers-table.yaml::18-create-sports_trainers-table::bohdan-s ran successfully in 9ms
-2025-08-05 16:13:14.483 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/19-create-gyms_trainers-table.yaml::19-create-gyms_trainers-table::bohdan-s
-2025-08-05 16:13:14.489 [main] INFO  liquibase.changelog - Table gyms_trainers created
-2025-08-05 16:13:14.494 [main] INFO  liquibase.changelog - Primary key added to gyms_trainers (gym_id, trainer_id)
-2025-08-05 16:13:14.495 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/19-create-gyms_trainers-table.yaml::19-create-gyms_trainers-table::bohdan-s ran successfully in 11ms
-2025-08-05 16:13:14.501 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/20-create-reviews-table.yaml::20-create-reviews-table::bohdan-s
-2025-08-05 16:13:14.509 [main] INFO  liquibase.changelog - Table reviews created
-2025-08-05 16:13:14.510 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/20-create-reviews-table.yaml::20-create-reviews-table::bohdan-s ran successfully in 7ms
-2025-08-05 16:13:14.514 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/21-create-events-table.yaml::21-create-events-table::bohdan-s
-2025-08-05 16:13:14.524 [main] INFO  liquibase.changelog - Table events created
-2025-08-05 16:13:14.525 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/21-create-events-table.yaml::21-create-events-table::bohdan-s ran successfully in 10ms
-2025-08-05 16:13:14.535 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/22-create-user_credentials_roles-table.yaml::22-create-user_credentials_roles-table::bohdan-s
-2025-08-05 16:13:14.543 [main] INFO  liquibase.changelog - Table user_credentials_roles created
-2025-08-05 16:13:14.547 [main] INFO  liquibase.changelog - Primary key added to user_credentials_roles (user_credentials_id, role_id)
-2025-08-05 16:13:14.548 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/22-create-user_credentials_roles-table.yaml::22-create-user_credentials_roles-table::bohdan-s ran successfully in 12ms
-2025-08-05 16:13:14.553 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/23-create-trainer_certificates-table.yaml::23-create-trainer_certificates-table::bohdan-s
-2025-08-05 16:13:14.559 [main] INFO  liquibase.changelog - Table trainer_certificates created
-2025-08-05 16:13:14.560 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/23-create-trainer_certificates-table.yaml::23-create-trainer_certificates-table::bohdan-s ran successfully in 6ms
-2025-08-05 16:13:14.565 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/24-insert-sports-data.yaml::24-insert-sports-data::bohdan-s
-2025-08-05 16:13:14.569 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.573 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.575 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.577 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.578 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.579 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.582 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.584 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.585 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.587 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.590 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.592 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.595 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.598 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.600 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.601 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.605 [main] INFO  liquibase.changelog - New row inserted into sports
-2025-08-05 16:13:14.606 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/24-insert-sports-data.yaml::24-insert-sports-data::bohdan-s ran successfully in 40ms
-2025-08-05 16:13:14.608 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/25-insert-roles-to-roles.yaml::25-insert-roles-to-roles::bohdan-s
-2025-08-05 16:13:14.616 [main] INFO  liquibase.changelog - New row inserted into roles
-2025-08-05 16:13:14.619 [main] INFO  liquibase.changelog - New row inserted into roles
-2025-08-05 16:13:14.620 [main] INFO  liquibase.changelog - New row inserted into roles
-2025-08-05 16:13:14.622 [main] INFO  liquibase.changelog - New row inserted into roles
-2025-08-05 16:13:14.622 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/25-insert-roles-to-roles.yaml::25-insert-roles-to-roles::bohdan-s ran successfully in 13ms
-2025-08-05 16:13:14.625 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/26-insert-admin-to-admins.yaml::26-insert-admin-to-admins::bohdan-s
-2025-08-05 16:13:14.652 [main] INFO  liquibase.changelog - Custom SQL executed
-2025-08-05 16:13:14.655 [main] INFO  liquibase.changelog - New row inserted into admins
-2025-08-05 16:13:14.657 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.658 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/26-insert-admin-to-admins.yaml::26-insert-admin-to-admins::bohdan-s ran successfully in 33ms
-2025-08-05 16:13:14.677 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/27-insert-trainers-for-testing.yaml::27-insert-trainers-for-testing::bohdan-s
-2025-08-05 16:13:14.693 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.696 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.699 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.707 [main] INFO  liquibase.changelog - New row inserted into trainers
-2025-08-05 16:13:14.709 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
-2025-08-05 16:13:14.710 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
-2025-08-05 16:13:14.713 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.714 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.716 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.718 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.719 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.721 [main] INFO  liquibase.changelog - New row inserted into trainers
-2025-08-05 16:13:14.722 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
-2025-08-05 16:13:14.724 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
-2025-08-05 16:13:14.725 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.726 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.727 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.729 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.730 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.732 [main] INFO  liquibase.changelog - New row inserted into trainers
-2025-08-05 16:13:14.733 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
-2025-08-05 16:13:14.735 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
-2025-08-05 16:13:14.736 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.738 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.739 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.740 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.741 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.743 [main] INFO  liquibase.changelog - New row inserted into trainers
-2025-08-05 16:13:14.745 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
-2025-08-05 16:13:14.746 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
-2025-08-05 16:13:14.748 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.749 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.751 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.753 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.754 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.756 [main] INFO  liquibase.changelog - New row inserted into trainers
-2025-08-05 16:13:14.758 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
-2025-08-05 16:13:14.759 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
-2025-08-05 16:13:14.761 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.762 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.763 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.764 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.766 [main] INFO  liquibase.changelog - New row inserted into trainers
-2025-08-05 16:13:14.768 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
-2025-08-05 16:13:14.770 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
-2025-08-05 16:13:14.771 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.773 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.774 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.775 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.778 [main] INFO  liquibase.changelog - New row inserted into trainers
-2025-08-05 16:13:14.780 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
-2025-08-05 16:13:14.782 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
-2025-08-05 16:13:14.785 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.787 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.790 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.792 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.794 [main] INFO  liquibase.changelog - New row inserted into trainers
-2025-08-05 16:13:14.798 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
-2025-08-05 16:13:14.800 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
-2025-08-05 16:13:14.802 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.804 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.806 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.807 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.808 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.811 [main] INFO  liquibase.changelog - New row inserted into trainers
-2025-08-05 16:13:14.812 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
-2025-08-05 16:13:14.814 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
-2025-08-05 16:13:14.815 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.816 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.819 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.821 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.823 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.826 [main] INFO  liquibase.changelog - New row inserted into trainers
-2025-08-05 16:13:14.828 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
-2025-08-05 16:13:14.830 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
-2025-08-05 16:13:14.832 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.834 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
-2025-08-05 16:13:14.835 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/27-insert-trainers-for-testing.yaml::27-insert-trainers-for-testing::bohdan-s ran successfully in 157ms
-2025-08-05 16:13:14.850 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/28-insert-gym-owner-and-gyms.yaml::28-insert-gym-owner-and-gyms::bohdan-s
-2025-08-05 16:13:14.853 [main] INFO  liquibase.changelog - New row inserted into user_credentials
-2025-08-05 16:13:14.856 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
-2025-08-05 16:13:14.858 [main] INFO  liquibase.changelog - New row inserted into gym_owners
-2025-08-05 16:13:14.860 [main] INFO  liquibase.changelog - New row inserted into gym_owner_phone_numbers
-2025-08-05 16:13:14.861 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.864 [main] INFO  liquibase.changelog - New row inserted into gyms
-2025-08-05 16:13:14.866 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
-2025-08-05 16:13:14.868 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.870 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.872 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.874 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.875 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.877 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.878 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.880 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.882 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.884 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.887 [main] INFO  liquibase.changelog - New row inserted into gyms
-2025-08-05 16:13:14.889 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
-2025-08-05 16:13:14.891 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.893 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.897 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.900 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.902 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.904 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.906 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.908 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.910 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.912 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.914 [main] INFO  liquibase.changelog - New row inserted into gyms
-2025-08-05 16:13:14.917 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
-2025-08-05 16:13:14.919 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.920 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.922 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.923 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.924 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.926 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.927 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.928 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.930 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.933 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.939 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.942 [main] INFO  liquibase.changelog - New row inserted into gyms
-2025-08-05 16:13:14.944 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
-2025-08-05 16:13:14.947 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.959 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.965 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.969 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.971 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.974 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.976 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:14.978 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.980 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.994 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:14.996 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:14.999 [main] INFO  liquibase.changelog - New row inserted into gyms
-2025-08-05 16:13:15.001 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
-2025-08-05 16:13:15.004 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.006 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.008 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.010 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.012 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.014 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.015 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.017 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.018 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.020 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:15.022 [main] INFO  liquibase.changelog - New row inserted into gyms
-2025-08-05 16:13:15.023 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
-2025-08-05 16:13:15.024 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.025 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.027 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.028 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.029 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.030 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.031 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.033 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.034 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:15.036 [main] INFO  liquibase.changelog - New row inserted into gyms
-2025-08-05 16:13:15.038 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
-2025-08-05 16:13:15.039 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.040 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.042 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.044 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.046 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.049 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.051 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.052 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.053 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:15.055 [main] INFO  liquibase.changelog - New row inserted into gyms
-2025-08-05 16:13:15.057 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
-2025-08-05 16:13:15.059 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.060 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.061 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.063 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.066 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.069 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.071 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.074 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.076 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.078 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:15.081 [main] INFO  liquibase.changelog - New row inserted into gyms
-2025-08-05 16:13:15.084 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
-2025-08-05 16:13:15.086 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.089 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.091 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.093 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.096 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.099 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.102 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.104 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.105 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.107 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.109 [main] INFO  liquibase.changelog - New row inserted into addresses
-2025-08-05 16:13:15.111 [main] INFO  liquibase.changelog - New row inserted into gyms
-2025-08-05 16:13:15.112 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
-2025-08-05 16:13:15.114 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.117 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.119 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.121 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.123 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.125 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.127 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
-2025-08-05 16:13:15.128 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.130 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.132 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
-2025-08-05 16:13:15.136 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/28-insert-gym-owner-and-gyms.yaml::28-insert-gym-owner-and-gyms::bohdan-s ran successfully in 284ms
-2025-08-05 16:13:15.161 [main] INFO  liquibase.util - UPDATE SUMMARY
-2025-08-05 16:13:15.161 [main] INFO  liquibase.util - Run:                         28
-2025-08-05 16:13:15.162 [main] INFO  liquibase.util - Previously run:               0
-2025-08-05 16:13:15.162 [main] INFO  liquibase.util - Filtered out:                 0
-2025-08-05 16:13:15.163 [main] INFO  liquibase.util - -------------------------------
-2025-08-05 16:13:15.163 [main] INFO  liquibase.util - Total change sets:           28
-2025-08-05 16:13:15.169 [main] INFO  liquibase.util - Update summary generated
-2025-08-05 16:13:15.179 [main] INFO  liquibase.command - Update command completed successfully.
-2025-08-05 16:13:15.179 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 255
-2025-08-05 16:13:15.182 [main] INFO  liquibase.lockservice - Successfully released change log lock
-2025-08-05 16:13:15.185 [main] INFO  liquibase.command - Command execution complete
-2025-08-05 16:13:15.848 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-08-05 16:13:16.236 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
-2025-08-05 16:13:16.404 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-2025-08-05 16:13:17.635 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.3.232 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
-2025-08-05 16:13:17.652 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-08-05 16:13:17.757 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2025-08-05 16:27:27.118 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-08-05 16:27:27.263 [main] INFO  com.example.trainup.controller.AthleteControllerTest - Starting AthleteControllerTest using Java 17.0.15 with PID 3304 (started by sadsadsa in /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend)
+2025-08-05 16:27:27.271 [main] DEBUG com.example.trainup.controller.AthleteControllerTest - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-08-05 16:27:27.273 [main] INFO  com.example.trainup.controller.AthleteControllerTest - The following 1 profile is active: "test"
+2025-08-05 16:27:39.783 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-05 16:27:41.004 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-08-05 16:27:41.021 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-05 16:27:41.404 [main] INFO  liquibase.database - Set default schema name to PUBLIC
+2025-08-05 16:27:43.906 [main] INFO  liquibase.changelog - Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2025-08-05 16:27:45.651 [main] INFO  liquibase.changelog - Reading from PUBLIC.DATABASECHANGELOG
+2025-08-05 16:27:45.976 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+2025-08-05 16:27:45.978 [main] INFO  liquibase.command - Using deploymentId: 4411265978
+2025-08-05 16:27:45.984 [main] INFO  liquibase.changelog - Reading from PUBLIC.DATABASECHANGELOG
+2025-08-05 16:27:46.142 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/01-create-roles-table.yaml::01-create-roles-table::bohdan-s
+2025-08-05 16:27:46.162 [main] INFO  liquibase.changelog - Table roles created
+2025-08-05 16:27:46.164 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/01-create-roles-table.yaml::01-create-roles-table::bohdan-s ran successfully in 18ms
+2025-08-05 16:27:46.174 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/02-create-user_credentials-table.yaml::02-create-user_credentials-table::bohdan-s
+2025-08-05 16:27:46.179 [main] INFO  liquibase.changelog - Table user_credentials created
+2025-08-05 16:27:46.180 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/02-create-user_credentials-table.yaml::02-create-user_credentials-table::bohdan-s ran successfully in 4ms
+2025-08-05 16:27:46.183 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/03-create-admins-table.yaml::03-create-admins-table::bohdan-s
+2025-08-05 16:27:46.199 [main] INFO  liquibase.changelog - Table admins created
+2025-08-05 16:27:46.200 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/03-create-admins-table.yaml::03-create-admins-table::bohdan-s ran successfully in 17ms
+2025-08-05 16:27:46.203 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/04-create-athletes-table.yaml::04-create-athletes-table::bohdan-s
+2025-08-05 16:27:46.208 [main] INFO  liquibase.changelog - Table athletes created
+2025-08-05 16:27:46.209 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/04-create-athletes-table.yaml::04-create-athletes-table::bohdan-s ran successfully in 5ms
+2025-08-05 16:27:46.211 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/05-create-athlete_phone_numbers-table.yaml::05-create-athlete_phone_numbers-table::bohdan-s
+2025-08-05 16:27:46.216 [main] INFO  liquibase.changelog - Table athlete_phone_numbers created
+2025-08-05 16:27:46.217 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/05-create-athlete_phone_numbers-table.yaml::05-create-athlete_phone_numbers-table::bohdan-s ran successfully in 5ms
+2025-08-05 16:27:46.220 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/06-create-sports-table.yaml::06-create-sports-table::bohdan-s
+2025-08-05 16:27:46.223 [main] INFO  liquibase.changelog - Table sports created
+2025-08-05 16:27:46.226 [main] INFO  liquibase.changelog - Index idx_sports_sport_name created
+2025-08-05 16:27:46.227 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/06-create-sports-table.yaml::06-create-sports-table::bohdan-s ran successfully in 5ms
+2025-08-05 16:27:46.230 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/07-create-sports_athletes-table.yaml::07-create-sports_athletes-table::bohdan-s
+2025-08-05 16:27:46.240 [main] INFO  liquibase.changelog - Table sports_athletes created
+2025-08-05 16:27:46.243 [main] INFO  liquibase.changelog - Primary key added to sports_athletes (sport_id,athlete_id)
+2025-08-05 16:27:46.244 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/07-create-sports_athletes-table.yaml::07-create-sports_athletes-table::bohdan-s ran successfully in 13ms
+2025-08-05 16:27:46.248 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/08-create-gym_owners-table.yaml::08-create-gym_owners-table::bohdan-s
+2025-08-05 16:27:46.253 [main] INFO  liquibase.changelog - Table gym_owners created
+2025-08-05 16:27:46.259 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/08-create-gym_owners-table.yaml::08-create-gym_owners-table::bohdan-s ran successfully in 10ms
+2025-08-05 16:27:46.262 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/09-create-gym_owner_phone_numbers-table.yaml::09-create-gym_owner_phone_numbers-table::bohdan-s
+2025-08-05 16:27:46.265 [main] INFO  liquibase.changelog - Table gym_owner_phone_numbers created
+2025-08-05 16:27:46.267 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/09-create-gym_owner_phone_numbers-table.yaml::09-create-gym_owner_phone_numbers-table::bohdan-s ran successfully in 4ms
+2025-08-05 16:27:46.270 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/10-create-addresses-table.yaml::10-create-addresses-table::bohdan-s
+2025-08-05 16:27:46.273 [main] INFO  liquibase.changelog - Table addresses created
+2025-08-05 16:27:46.274 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/10-create-addresses-table.yaml::10-create-addresses-table::bohdan-s ran successfully in 4ms
+2025-08-05 16:27:46.277 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/11-create-gyms-table.yaml::11-create-gyms-table::bohdan-s
+2025-08-05 16:27:46.285 [main] INFO  liquibase.changelog - Table gyms created
+2025-08-05 16:27:46.286 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/11-create-gyms-table.yaml::11-create-gyms-table::bohdan-s ran successfully in 8ms
+2025-08-05 16:27:46.289 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/12-create-gym_phone_numbers-table.yaml::12-create-gym_phone_numbers-table::bohdan-s
+2025-08-05 16:27:46.292 [main] INFO  liquibase.changelog - Table gym_phone_numbers created
+2025-08-05 16:27:46.292 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/12-create-gym_phone_numbers-table.yaml::12-create-gym_phone_numbers-table::bohdan-s ran successfully in 3ms
+2025-08-05 16:27:46.295 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/13-create-gym_working_hours-table.yaml::13-create-gym_working_hours-table::bohdan-s
+2025-08-05 16:27:46.303 [main] INFO  liquibase.changelog - Table gym_working_hours created
+2025-08-05 16:27:46.304 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/13-create-gym_working_hours-table.yaml::13-create-gym_working_hours-table::bohdan-s ran successfully in 8ms
+2025-08-05 16:27:46.306 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/14-create-sports_gyms-table.yaml::14-create-sports_gyms-table::bohdan-s
+2025-08-05 16:27:46.310 [main] INFO  liquibase.changelog - Table sports_gyms created
+2025-08-05 16:27:46.313 [main] INFO  liquibase.changelog - Primary key added to sports_gyms (sport_id, gym_id)
+2025-08-05 16:27:46.313 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/14-create-sports_gyms-table.yaml::14-create-sports_gyms-table::bohdan-s ran successfully in 6ms
+2025-08-05 16:27:46.317 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/15-create-gym_photos-table.yaml::15-create-gym_photos-table::bohdan-s
+2025-08-05 16:27:46.321 [main] INFO  liquibase.changelog - Table gym_photos created
+2025-08-05 16:27:46.322 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/15-create-gym_photos-table.yaml::15-create-gym_photos-table::bohdan-s ran successfully in 4ms
+2025-08-05 16:27:46.325 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/16-create-trainers-table.yaml::16-create-trainers-table::bohdan-s
+2025-08-05 16:27:46.330 [main] INFO  liquibase.changelog - Table trainers created
+2025-08-05 16:27:46.331 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/16-create-trainers-table.yaml::16-create-trainers-table::bohdan-s ran successfully in 6ms
+2025-08-05 16:27:46.335 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/17-create-trainer_phone_numbers-table.yaml::17-create-trainer_phone_numbers-table::bohdan-s
+2025-08-05 16:27:46.339 [main] INFO  liquibase.changelog - Table trainer_phone_numbers created
+2025-08-05 16:27:46.340 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/17-create-trainer_phone_numbers-table.yaml::17-create-trainer_phone_numbers-table::bohdan-s ran successfully in 4ms
+2025-08-05 16:27:46.343 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/18-create-sports_trainers-table.yaml::18-create-sports_trainers-table::bohdan-s
+2025-08-05 16:27:46.347 [main] INFO  liquibase.changelog - Table sports_trainers created
+2025-08-05 16:27:46.350 [main] INFO  liquibase.changelog - Primary key added to sports_trainers (sport_id, trainer_id)
+2025-08-05 16:27:46.351 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/18-create-sports_trainers-table.yaml::18-create-sports_trainers-table::bohdan-s ran successfully in 7ms
+2025-08-05 16:27:46.353 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/19-create-gyms_trainers-table.yaml::19-create-gyms_trainers-table::bohdan-s
+2025-08-05 16:27:46.358 [main] INFO  liquibase.changelog - Table gyms_trainers created
+2025-08-05 16:27:46.360 [main] INFO  liquibase.changelog - Primary key added to gyms_trainers (gym_id, trainer_id)
+2025-08-05 16:27:46.361 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/19-create-gyms_trainers-table.yaml::19-create-gyms_trainers-table::bohdan-s ran successfully in 6ms
+2025-08-05 16:27:46.363 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/20-create-reviews-table.yaml::20-create-reviews-table::bohdan-s
+2025-08-05 16:27:46.370 [main] INFO  liquibase.changelog - Table reviews created
+2025-08-05 16:27:46.371 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/20-create-reviews-table.yaml::20-create-reviews-table::bohdan-s ran successfully in 6ms
+2025-08-05 16:27:46.374 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/21-create-events-table.yaml::21-create-events-table::bohdan-s
+2025-08-05 16:27:46.380 [main] INFO  liquibase.changelog - Table events created
+2025-08-05 16:27:46.381 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/21-create-events-table.yaml::21-create-events-table::bohdan-s ran successfully in 7ms
+2025-08-05 16:27:46.385 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/22-create-user_credentials_roles-table.yaml::22-create-user_credentials_roles-table::bohdan-s
+2025-08-05 16:27:46.389 [main] INFO  liquibase.changelog - Table user_credentials_roles created
+2025-08-05 16:27:46.391 [main] INFO  liquibase.changelog - Primary key added to user_credentials_roles (user_credentials_id, role_id)
+2025-08-05 16:27:46.392 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/22-create-user_credentials_roles-table.yaml::22-create-user_credentials_roles-table::bohdan-s ran successfully in 7ms
+2025-08-05 16:27:46.394 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/23-create-trainer_certificates-table.yaml::23-create-trainer_certificates-table::bohdan-s
+2025-08-05 16:27:46.399 [main] INFO  liquibase.changelog - Table trainer_certificates created
+2025-08-05 16:27:46.400 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/23-create-trainer_certificates-table.yaml::23-create-trainer_certificates-table::bohdan-s ran successfully in 4ms
+2025-08-05 16:27:46.404 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/24-insert-sports-data.yaml::24-insert-sports-data::bohdan-s
+2025-08-05 16:27:46.407 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.409 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.410 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.412 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.413 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.414 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.416 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.418 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.420 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.421 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.423 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.425 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.426 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.427 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.428 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.429 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.430 [main] INFO  liquibase.changelog - New row inserted into sports
+2025-08-05 16:27:46.431 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/24-insert-sports-data.yaml::24-insert-sports-data::bohdan-s ran successfully in 27ms
+2025-08-05 16:27:46.434 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/25-insert-roles-to-roles.yaml::25-insert-roles-to-roles::bohdan-s
+2025-08-05 16:27:46.439 [main] INFO  liquibase.changelog - New row inserted into roles
+2025-08-05 16:27:46.441 [main] INFO  liquibase.changelog - New row inserted into roles
+2025-08-05 16:27:46.442 [main] INFO  liquibase.changelog - New row inserted into roles
+2025-08-05 16:27:46.443 [main] INFO  liquibase.changelog - New row inserted into roles
+2025-08-05 16:27:46.444 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/25-insert-roles-to-roles.yaml::25-insert-roles-to-roles::bohdan-s ran successfully in 10ms
+2025-08-05 16:27:46.446 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/26-insert-admin-to-admins.yaml::26-insert-admin-to-admins::bohdan-s
+2025-08-05 16:27:46.476 [main] INFO  liquibase.changelog - Custom SQL executed
+2025-08-05 16:27:46.478 [main] INFO  liquibase.changelog - New row inserted into admins
+2025-08-05 16:27:46.480 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.481 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/26-insert-admin-to-admins.yaml::26-insert-admin-to-admins::bohdan-s ran successfully in 34ms
+2025-08-05 16:27:46.498 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/27-insert-trainers-for-testing.yaml::27-insert-trainers-for-testing::bohdan-s
+2025-08-05 16:27:46.504 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.505 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.507 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.512 [main] INFO  liquibase.changelog - New row inserted into trainers
+2025-08-05 16:27:46.514 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
+2025-08-05 16:27:46.516 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
+2025-08-05 16:27:46.518 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.521 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.522 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.525 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.526 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.529 [main] INFO  liquibase.changelog - New row inserted into trainers
+2025-08-05 16:27:46.530 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
+2025-08-05 16:27:46.532 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
+2025-08-05 16:27:46.533 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.535 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.537 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.538 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.539 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.541 [main] INFO  liquibase.changelog - New row inserted into trainers
+2025-08-05 16:27:46.544 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
+2025-08-05 16:27:46.546 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
+2025-08-05 16:27:46.547 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.549 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.550 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.553 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.554 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.558 [main] INFO  liquibase.changelog - New row inserted into trainers
+2025-08-05 16:27:46.560 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
+2025-08-05 16:27:46.562 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
+2025-08-05 16:27:46.564 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.566 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.567 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.569 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.570 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.572 [main] INFO  liquibase.changelog - New row inserted into trainers
+2025-08-05 16:27:46.574 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
+2025-08-05 16:27:46.576 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
+2025-08-05 16:27:46.577 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.578 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.580 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.581 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.583 [main] INFO  liquibase.changelog - New row inserted into trainers
+2025-08-05 16:27:46.584 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
+2025-08-05 16:27:46.586 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
+2025-08-05 16:27:46.588 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.589 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.590 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.591 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.593 [main] INFO  liquibase.changelog - New row inserted into trainers
+2025-08-05 16:27:46.594 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
+2025-08-05 16:27:46.596 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
+2025-08-05 16:27:46.597 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.599 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.601 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.603 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.605 [main] INFO  liquibase.changelog - New row inserted into trainers
+2025-08-05 16:27:46.607 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
+2025-08-05 16:27:46.609 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
+2025-08-05 16:27:46.610 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.611 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.613 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.614 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.615 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.618 [main] INFO  liquibase.changelog - New row inserted into trainers
+2025-08-05 16:27:46.620 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
+2025-08-05 16:27:46.621 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
+2025-08-05 16:27:46.623 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.624 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.625 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.627 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.628 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.630 [main] INFO  liquibase.changelog - New row inserted into trainers
+2025-08-05 16:27:46.631 [main] INFO  liquibase.changelog - New row inserted into trainer_phone_numbers
+2025-08-05 16:27:46.633 [main] INFO  liquibase.changelog - New row inserted into trainer_certificates
+2025-08-05 16:27:46.634 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.635 [main] INFO  liquibase.changelog - New row inserted into sports_trainers
+2025-08-05 16:27:46.637 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/27-insert-trainers-for-testing.yaml::27-insert-trainers-for-testing::bohdan-s ran successfully in 138ms
+2025-08-05 16:27:46.675 [main] INFO  liquibase.ui - Running Changeset: db.changelog/changes/28-insert-gym-owner-and-gyms.yaml::28-insert-gym-owner-and-gyms::bohdan-s
+2025-08-05 16:27:46.678 [main] INFO  liquibase.changelog - New row inserted into user_credentials
+2025-08-05 16:27:46.680 [main] INFO  liquibase.changelog - New row inserted into user_credentials_roles
+2025-08-05 16:27:46.682 [main] INFO  liquibase.changelog - New row inserted into gym_owners
+2025-08-05 16:27:46.683 [main] INFO  liquibase.changelog - New row inserted into gym_owner_phone_numbers
+2025-08-05 16:27:46.684 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.686 [main] INFO  liquibase.changelog - New row inserted into gyms
+2025-08-05 16:27:46.687 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
+2025-08-05 16:27:46.689 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.690 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.692 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.693 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.694 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.695 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.697 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.698 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.699 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.700 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.702 [main] INFO  liquibase.changelog - New row inserted into gyms
+2025-08-05 16:27:46.703 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
+2025-08-05 16:27:46.705 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.706 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.708 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.709 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.710 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.711 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.712 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.713 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.715 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.716 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.717 [main] INFO  liquibase.changelog - New row inserted into gyms
+2025-08-05 16:27:46.718 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
+2025-08-05 16:27:46.719 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.720 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.721 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.722 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.723 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.724 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.725 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.726 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.727 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.728 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.728 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.730 [main] INFO  liquibase.changelog - New row inserted into gyms
+2025-08-05 16:27:46.730 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
+2025-08-05 16:27:46.732 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.733 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.734 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.735 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.736 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.737 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.738 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.739 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.740 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.741 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.743 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.744 [main] INFO  liquibase.changelog - New row inserted into gyms
+2025-08-05 16:27:46.745 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
+2025-08-05 16:27:46.747 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.749 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.751 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.752 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.755 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.757 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.759 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.761 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.763 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.765 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.767 [main] INFO  liquibase.changelog - New row inserted into gyms
+2025-08-05 16:27:46.768 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
+2025-08-05 16:27:46.770 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.771 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.773 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.775 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.776 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.778 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.779 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.781 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.782 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.783 [main] INFO  liquibase.changelog - New row inserted into gyms
+2025-08-05 16:27:46.784 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
+2025-08-05 16:27:46.785 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.786 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.787 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.789 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.791 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.793 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.795 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.796 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.798 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.800 [main] INFO  liquibase.changelog - New row inserted into gyms
+2025-08-05 16:27:46.802 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
+2025-08-05 16:27:46.804 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.805 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.807 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.809 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.811 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.813 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.815 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.817 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.819 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.821 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.826 [main] INFO  liquibase.changelog - New row inserted into gyms
+2025-08-05 16:27:46.828 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
+2025-08-05 16:27:46.830 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.832 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.834 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.836 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.838 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.840 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.843 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.844 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.846 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.848 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.850 [main] INFO  liquibase.changelog - New row inserted into addresses
+2025-08-05 16:27:46.853 [main] INFO  liquibase.changelog - New row inserted into gyms
+2025-08-05 16:27:46.855 [main] INFO  liquibase.changelog - New row inserted into gym_phone_numbers
+2025-08-05 16:27:46.858 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.861 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.863 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.866 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.868 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.869 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.872 [main] INFO  liquibase.changelog - New row inserted into gym_working_hours
+2025-08-05 16:27:46.873 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.875 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.877 [main] INFO  liquibase.changelog - New row inserted into sports_gyms
+2025-08-05 16:27:46.880 [main] INFO  liquibase.changelog - ChangeSet db.changelog/changes/28-insert-gym-owner-and-gyms.yaml::28-insert-gym-owner-and-gyms::bohdan-s ran successfully in 204ms
+2025-08-05 16:27:46.902 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-05 16:27:46.903 [main] INFO  liquibase.util - Run:                         28
+2025-08-05 16:27:46.903 [main] INFO  liquibase.util - Previously run:               0
+2025-08-05 16:27:46.903 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-05 16:27:46.904 [main] INFO  liquibase.util - -------------------------------
+2025-08-05 16:27:46.904 [main] INFO  liquibase.util - Total change sets:           28
+2025-08-05 16:27:46.908 [main] INFO  liquibase.util - Update summary generated
+2025-08-05 16:27:46.917 [main] INFO  liquibase.command - Update command completed successfully.
+2025-08-05 16:27:46.918 [main] INFO  liquibase.ui - Liquibase: Update has been successful. Rows affected: 255
+2025-08-05 16:27:46.920 [main] INFO  liquibase.lockservice - Successfully released change log lock
+2025-08-05 16:27:46.926 [main] INFO  liquibase.command - Command execution complete
+2025-08-05 16:27:47.696 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-05 16:27:48.037 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-08-05 16:27:48.186 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-05 16:27:49.054 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.3.232 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-08-05 16:27:49.072 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-05 16:27:49.153 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -419,12 +419,12 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-08-05 16:13:21.799 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-05 16:27:53.652 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: 
     alter table admins 
        drop 
        foreign key FK600ih02qklqf2htcba7s8kh2x
-2025-08-05 16:13:21.871 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.749 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table admins 
        drop 
        foreign key FK600ih02qklqf2htcba7s8kh2x" via JDBC [Constraint "FK600IH02QKLQF2HTCBA7S8KH2X" not found;]
@@ -576,7 +576,7 @@ Hibernate:
     alter table athlete_phone_numbers 
        drop 
        foreign key FKsq6lhkmkpo055uq5v7xvkhawr
-2025-08-05 16:13:21.890 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.776 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table athlete_phone_numbers 
        drop 
        foreign key FKsq6lhkmkpo055uq5v7xvkhawr" via JDBC [Constraint "FKSQ6LHKMKPO055UQ5V7XVKHAWR" not found;]
@@ -728,7 +728,7 @@ Hibernate:
     alter table athletes 
        drop 
        foreign key FK3sh1urbr1pvx7bp4gnq9fow1r
-2025-08-05 16:13:21.893 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.780 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table athletes 
        drop 
        foreign key FK3sh1urbr1pvx7bp4gnq9fow1r" via JDBC [Constraint "FK3SH1URBR1PVX7BP4GNQ9FOW1R" not found;]
@@ -880,7 +880,7 @@ Hibernate:
     alter table events 
        drop 
        foreign key FK8rwl332ud4cbj46x57xgiybyj
-2025-08-05 16:13:21.896 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.784 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table events 
        drop 
        foreign key FK8rwl332ud4cbj46x57xgiybyj" via JDBC [Constraint "FK8RWL332UD4CBJ46X57XGIYBYJ" not found;]
@@ -1032,7 +1032,7 @@ Hibernate:
     alter table events 
        drop 
        foreign key FKlj14dyfl179s92hatm374588t
-2025-08-05 16:13:21.900 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.789 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table events 
        drop 
        foreign key FKlj14dyfl179s92hatm374588t" via JDBC [Constraint "FKLJ14DYFL179S92HATM374588T" not found;]
@@ -1184,7 +1184,7 @@ Hibernate:
     alter table events 
        drop 
        foreign key FK72xc2u4739yo6n4t36pqrtd08
-2025-08-05 16:13:21.904 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.793 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table events 
        drop 
        foreign key FK72xc2u4739yo6n4t36pqrtd08" via JDBC [Constraint "FK72XC2U4739YO6N4T36PQRTD08" not found;]
@@ -1336,7 +1336,7 @@ Hibernate:
     alter table gym_owner_phone_numbers 
        drop 
        foreign key FK5ko2l4t5yffic7lyimoljo3m6
-2025-08-05 16:13:21.910 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.799 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table gym_owner_phone_numbers 
        drop 
        foreign key FK5ko2l4t5yffic7lyimoljo3m6" via JDBC [Constraint "FK5KO2L4T5YFFIC7LYIMOLJO3M6" not found;]
@@ -1488,7 +1488,7 @@ Hibernate:
     alter table gym_owners 
        drop 
        foreign key FKqhsinx39y7gk4bb82elf24kv9
-2025-08-05 16:13:21.914 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.805 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table gym_owners 
        drop 
        foreign key FKqhsinx39y7gk4bb82elf24kv9" via JDBC [Constraint "FKQHSINX39Y7GK4BB82ELF24KV9" not found;]
@@ -1640,7 +1640,7 @@ Hibernate:
     alter table gym_phone_numbers 
        drop 
        foreign key FKfwr3m96iv0a2gm3t3egg2slaf
-2025-08-05 16:13:21.919 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.810 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table gym_phone_numbers 
        drop 
        foreign key FKfwr3m96iv0a2gm3t3egg2slaf" via JDBC [Constraint "FKFWR3M96IV0A2GM3T3EGG2SLAF" not found;]
@@ -1792,7 +1792,7 @@ Hibernate:
     alter table gym_photos 
        drop 
        foreign key FKctdwvrpmdcyvor36yjmbmen16
-2025-08-05 16:13:21.922 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.813 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table gym_photos 
        drop 
        foreign key FKctdwvrpmdcyvor36yjmbmen16" via JDBC [Constraint "FKCTDWVRPMDCYVOR36YJMBMEN16" not found;]
@@ -1944,7 +1944,7 @@ Hibernate:
     alter table gym_working_hours 
        drop 
        foreign key FKib8y7pyi58d33ip78ih5pvwcf
-2025-08-05 16:13:21.925 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.816 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table gym_working_hours 
        drop 
        foreign key FKib8y7pyi58d33ip78ih5pvwcf" via JDBC [Constraint "FKIB8Y7PYI58D33IP78IH5PVWCF" not found;]
@@ -2096,7 +2096,7 @@ Hibernate:
     alter table gyms 
        drop 
        foreign key FKc1litp8g4l35f9oykhmkq77nf
-2025-08-05 16:13:21.928 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.820 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table gyms 
        drop 
        foreign key FKc1litp8g4l35f9oykhmkq77nf" via JDBC [Constraint "FKC1LITP8G4L35F9OYKHMKQ77NF" not found;]
@@ -2248,7 +2248,7 @@ Hibernate:
     alter table gyms 
        drop 
        foreign key FKk5nlix7uld6h247s40o39uagc
-2025-08-05 16:13:21.933 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.823 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table gyms 
        drop 
        foreign key FKk5nlix7uld6h247s40o39uagc" via JDBC [Constraint "FKK5NLIX7ULD6H247S40O39UAGC" not found;]
@@ -2400,7 +2400,7 @@ Hibernate:
     alter table gyms_trainers 
        drop 
        foreign key FKejqehnsyhyqdp5htcwgg735b0
-2025-08-05 16:13:21.936 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.826 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table gyms_trainers 
        drop 
        foreign key FKejqehnsyhyqdp5htcwgg735b0" via JDBC [Constraint "FKEJQEHNSYHYQDP5HTCWGG735B0" not found;]
@@ -2552,7 +2552,7 @@ Hibernate:
     alter table gyms_trainers 
        drop 
        foreign key FK3tnw2jc4io90phnywpofojwxl
-2025-08-05 16:13:21.939 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.833 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table gyms_trainers 
        drop 
        foreign key FK3tnw2jc4io90phnywpofojwxl" via JDBC [Constraint "FK3TNW2JC4IO90PHNYWPOFOJWXL" not found;]
@@ -2704,7 +2704,7 @@ Hibernate:
     alter table reviews 
        drop 
        foreign key FK19vxxg7nchfe2tpifhnjco0pl
-2025-08-05 16:13:21.943 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.838 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table reviews 
        drop 
        foreign key FK19vxxg7nchfe2tpifhnjco0pl" via JDBC [Constraint "FK19VXXG7NCHFE2TPIFHNJCO0PL" not found;]
@@ -2856,7 +2856,7 @@ Hibernate:
     alter table reviews 
        drop 
        foreign key FKl6ehbeii3m5st1u9cu9j7ynds
-2025-08-05 16:13:21.947 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.844 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table reviews 
        drop 
        foreign key FKl6ehbeii3m5st1u9cu9j7ynds" via JDBC [Constraint "FKL6EHBEII3M5ST1U9CU9J7YNDS" not found;]
@@ -3008,7 +3008,7 @@ Hibernate:
     alter table reviews 
        drop 
        foreign key FKksna0ysspv7vdf2wujgsle79g
-2025-08-05 16:13:21.950 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.848 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table reviews 
        drop 
        foreign key FKksna0ysspv7vdf2wujgsle79g" via JDBC [Constraint "FKKSNA0YSSPV7VDF2WUJGSLE79G" not found;]
@@ -3160,7 +3160,7 @@ Hibernate:
     alter table sports_athletes 
        drop 
        foreign key FKhmkebmrp4uwbhe7b9yvwaxhkp
-2025-08-05 16:13:21.953 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.853 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table sports_athletes 
        drop 
        foreign key FKhmkebmrp4uwbhe7b9yvwaxhkp" via JDBC [Constraint "FKHMKEBMRP4UWBHE7B9YVWAXHKP" not found;]
@@ -3312,7 +3312,7 @@ Hibernate:
     alter table sports_athletes 
        drop 
        foreign key FK3ayv9cx986992gx2h7l2hak5w
-2025-08-05 16:13:21.956 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.857 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table sports_athletes 
        drop 
        foreign key FK3ayv9cx986992gx2h7l2hak5w" via JDBC [Constraint "FK3AYV9CX986992GX2H7L2HAK5W" not found;]
@@ -3464,7 +3464,7 @@ Hibernate:
     alter table sports_gyms 
        drop 
        foreign key FK3q55fm5vgi5ptbod94dhow8na
-2025-08-05 16:13:21.959 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.862 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table sports_gyms 
        drop 
        foreign key FK3q55fm5vgi5ptbod94dhow8na" via JDBC [Constraint "FK3Q55FM5VGI5PTBOD94DHOW8NA" not found;]
@@ -3616,7 +3616,7 @@ Hibernate:
     alter table sports_gyms 
        drop 
        foreign key FKjq7fyrst4nw8e1e8tp49viuxh
-2025-08-05 16:13:21.962 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.865 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table sports_gyms 
        drop 
        foreign key FKjq7fyrst4nw8e1e8tp49viuxh" via JDBC [Constraint "FKJQ7FYRST4NW8E1E8TP49VIUXH" not found;]
@@ -3768,7 +3768,7 @@ Hibernate:
     alter table sports_trainers 
        drop 
        foreign key FK2ft20ii6imkr4bp7smdbcgs7y
-2025-08-05 16:13:21.965 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.869 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table sports_trainers 
        drop 
        foreign key FK2ft20ii6imkr4bp7smdbcgs7y" via JDBC [Constraint "FK2FT20II6IMKR4BP7SMDBCGS7Y" not found;]
@@ -3920,7 +3920,7 @@ Hibernate:
     alter table sports_trainers 
        drop 
        foreign key FKegkuarguvcl7hcno6mj5eke5v
-2025-08-05 16:13:21.967 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.873 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table sports_trainers 
        drop 
        foreign key FKegkuarguvcl7hcno6mj5eke5v" via JDBC [Constraint "FKEGKUARGUVCL7HCNO6MJ5EKE5V" not found;]
@@ -4072,7 +4072,7 @@ Hibernate:
     alter table trainer_certificates 
        drop 
        foreign key FKm41kd81xmctumo707xmkep26i
-2025-08-05 16:13:21.969 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.877 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table trainer_certificates 
        drop 
        foreign key FKm41kd81xmctumo707xmkep26i" via JDBC [Constraint "FKM41KD81XMCTUMO707XMKEP26I" not found;]
@@ -4224,7 +4224,7 @@ Hibernate:
     alter table trainer_phone_numbers 
        drop 
        foreign key FKoxkmxdq0g7ha2a80enyhv4yy1
-2025-08-05 16:13:21.972 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.880 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table trainer_phone_numbers 
        drop 
        foreign key FKoxkmxdq0g7ha2a80enyhv4yy1" via JDBC [Constraint "FKOXKMXDQ0G7HA2A80ENYHV4YY1" not found;]
@@ -4376,7 +4376,7 @@ Hibernate:
     alter table trainers 
        drop 
        foreign key FKcnbrnosgtv3xo33vet1d0s387
-2025-08-05 16:13:21.975 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.884 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table trainers 
        drop 
        foreign key FKcnbrnosgtv3xo33vet1d0s387" via JDBC [Constraint "FKCNBRNOSGTV3XO33VET1D0S387" not found;]
@@ -4528,7 +4528,7 @@ Hibernate:
     alter table trainers 
        drop 
        foreign key FKg82u7ghpjoqnhhkcvx0dn3kn3
-2025-08-05 16:13:21.980 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.890 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table trainers 
        drop 
        foreign key FKg82u7ghpjoqnhhkcvx0dn3kn3" via JDBC [Constraint "FKG82U7GHPJOQNHHKCVX0DN3KN3" not found;]
@@ -4680,7 +4680,7 @@ Hibernate:
     alter table user_credentials_roles 
        drop 
        foreign key FK3lhrdwn3da5fkkmykcgp2ui6e
-2025-08-05 16:13:21.984 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.894 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table user_credentials_roles 
        drop 
        foreign key FK3lhrdwn3da5fkkmykcgp2ui6e" via JDBC [Constraint "FK3LHRDWN3DA5FKKMYKCGP2UI6E" not found;]
@@ -4832,7 +4832,7 @@ Hibernate:
     alter table user_credentials_roles 
        drop 
        foreign key FK7bu4o4g0mqpf6ajcyaj9rkw6j
-2025-08-05 16:13:21.987 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.898 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     alter table user_credentials_roles 
        drop 
        foreign key FK7bu4o4g0mqpf6ajcyaj9rkw6j" via JDBC [Constraint "FK7BU4O4G0MQPF6AJCYAJ9RKW6J" not found;]
@@ -4982,7 +4982,7 @@ Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Constraint "FK7BU4O4G0MQPF6A
 	... 119 more
 Hibernate: 
     drop table if exists addresses
-2025-08-05 16:13:21.994 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.904 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     drop table if exists addresses" via JDBC [Cannot drop "ADDRESSES" because "FK_GYM_ADDRESS, FK_TRAINER_ADDRESS" depends on it;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
     drop table if exists addresses" via JDBC [Cannot drop "ADDRESSES" because "FK_GYM_ADDRESS, FK_TRAINER_ADDRESS" depends on it;]
@@ -5129,7 +5129,7 @@ Hibernate:
     drop table if exists athlete_phone_numbers
 Hibernate: 
     drop table if exists athletes
-2025-08-05 16:13:22.002 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.921 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     drop table if exists athletes" via JDBC [Cannot drop "ATHLETES" because "FK_REVIEW_ATHLETE, FK_SPORT_ATHLETE_ATHLETE" depends on it;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
     drop table if exists athletes" via JDBC [Cannot drop "ATHLETES" because "FK_REVIEW_ATHLETE, FK_SPORT_ATHLETE_ATHLETE" depends on it;]
@@ -5276,7 +5276,7 @@ Hibernate:
     drop table if exists gym_owner_phone_numbers
 Hibernate: 
     drop table if exists gym_owners
-2025-08-05 16:13:22.013 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.929 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     drop table if exists gym_owners" via JDBC [Cannot drop "GYM_OWNERS" because "FK_GYM_GYM_OWNER" depends on it;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
     drop table if exists gym_owners" via JDBC [Cannot drop "GYM_OWNERS" because "FK_GYM_GYM_OWNER" depends on it;]
@@ -5425,7 +5425,7 @@ Hibernate:
     drop table if exists gym_working_hours
 Hibernate: 
     drop table if exists gyms
-2025-08-05 16:13:22.019 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.938 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     drop table if exists gyms" via JDBC [Cannot drop "GYMS" because "FK_SPORT_GYM_GYM, FK_REVIEW_GYM, FK_GYM_TRAINER_GYM" depends on it;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
     drop table if exists gyms" via JDBC [Cannot drop "GYMS" because "FK_SPORT_GYM_GYM, FK_REVIEW_GYM, FK_GYM_TRAINER_GYM" depends on it;]
@@ -5572,7 +5572,7 @@ Hibernate:
     drop table if exists reviews
 Hibernate: 
     drop table if exists roles
-2025-08-05 16:13:22.025 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.945 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     drop table if exists roles" via JDBC [Cannot drop "ROLES" because "FK_USER_CREDENTIALS_ROLE_ROLE" depends on it;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
     drop table if exists roles" via JDBC [Cannot drop "ROLES" because "FK_USER_CREDENTIALS_ROLE_ROLE" depends on it;]
@@ -5715,7 +5715,7 @@ Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "ROLES" because 
 	... 119 more
 Hibernate: 
     drop table if exists sports
-2025-08-05 16:13:22.028 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.948 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     drop table if exists sports" via JDBC [Cannot drop "SPORTS" because "FK_SPORT_ATHLETE_SPORT, FK_SPORT_GYM_SPORT, FK_SPORT_TRAINER_SPORT" depends on it;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
     drop table if exists sports" via JDBC [Cannot drop "SPORTS" because "FK_SPORT_ATHLETE_SPORT, FK_SPORT_GYM_SPORT, FK_SPORT_TRAINER_SPORT" depends on it;]
@@ -5870,7 +5870,7 @@ Hibernate:
     drop table if exists trainers
 Hibernate: 
     drop table if exists user_credentials
-2025-08-05 16:13:22.035 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:53.956 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     drop table if exists user_credentials" via JDBC [Cannot drop "USER_CREDENTIALS" because "FK_ATHLETE_USER_CREDENTIALS, FK_GYM_OWNER_USER_CREDENTIALS, FK_USER_CREDENTIALS_ROLE_USER" depends on it;]
 org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
     drop table if exists user_credentials" via JDBC [Cannot drop "USER_CREDENTIALS" because "FK_ATHLETE_USER_CREDENTIALS, FK_GYM_OWNER_USER_CREDENTIALS, FK_USER_CREDENTIALS_ROLE_USER" depends on it;]
@@ -6024,7 +6024,7 @@ Hibernate:
         street varchar(255) not null,
         primary key (id)
     ) engine=InnoDB
-2025-08-05 16:13:22.068 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:54.021 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     create table addresses (
         is_deleted bit not null,
         id bigint not null auto_increment,
@@ -6223,7 +6223,7 @@ Hibernate:
         gender enum ('FEMALE','MALE'),
         primary key (id)
     ) engine=InnoDB
-2025-08-05 16:13:22.083 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:54.037 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     create table athletes (
         date_of_birth date,
         email_permission bit not null,
@@ -6428,7 +6428,7 @@ Hibernate:
         gender enum ('FEMALE','MALE'),
         primary key (id)
     ) engine=InnoDB
-2025-08-05 16:13:22.088 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:54.053 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     create table gym_owners (
         date_of_birth date,
         is_deleted bit not null,
@@ -6632,7 +6632,7 @@ Hibernate:
         website varchar(255),
         primary key (id)
     ) engine=InnoDB
-2025-08-05 16:13:22.093 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:54.063 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     create table gyms (
         is_deleted bit not null,
         number_of_reviews integer,
@@ -6828,7 +6828,7 @@ Hibernate:
         name varchar(255) not null,
         primary key (id)
     ) engine=InnoDB
-2025-08-05 16:13:22.098 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:54.071 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     create table roles (
         id bigint not null auto_increment,
         name varchar(255) not null,
@@ -6988,7 +6988,7 @@ Hibernate:
         sport_name varchar(255) not null,
         primary key (id)
     ) engine=InnoDB
-2025-08-05 16:13:22.101 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:54.075 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     create table sports (
         is_deleted bit not null,
         id bigint not null auto_increment,
@@ -7199,7 +7199,7 @@ Hibernate:
         user_type enum ('ADMIN','ATHLETE','GYM_OWNER','TRAINER') not null,
         primary key (id)
     ) engine=InnoDB
-2025-08-05 16:13:22.111 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
+2025-08-05 16:27:54.086 [main] WARN  org.hibernate.tool.schema.internal.ExceptionHandlerLoggedImpl - GenerationTarget encountered exception accepting command : Error executing DDL "
     create table user_credentials (
         is_deleted bit not null,
         id bigint not null auto_increment,
@@ -7541,51 +7541,51 @@ Hibernate:
        add constraint FK7bu4o4g0mqpf6ajcyaj9rkw6j 
        foreign key (user_credentials_id) 
        references user_credentials (id)
-2025-08-05 16:13:27.892 [main] INFO  com.example.trainup.service.GeminiChatService - System prompt loaded.
-2025-08-05 16:13:34.094 [main] DEBUG com.example.trainup.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
-2025-08-05 16:13:34.633 [main] INFO  com.example.trainup.controller.AthleteControllerTest - Started AthleteControllerTest in 35.507 seconds (process running for 41.98)
-2025-08-05 16:13:35.526 [main] INFO  com.example.trainup.controller.AthleteController - Attempting to update athlete with ID: 1 by user: john.doe@example.com
-2025-08-05 16:13:35.527 [main] INFO  com.example.trainup.controller.AthleteController - Successfully updated athlete with ID: 1
+2025-08-05 16:28:03.955 [main] INFO  com.example.trainup.service.GeminiChatService - System prompt loaded.
+2025-08-05 16:28:10.786 [main] DEBUG com.example.trainup.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-08-05 16:28:11.547 [main] INFO  com.example.trainup.controller.AthleteControllerTest - Started AthleteControllerTest in 45.264 seconds (process running for 56.065)
+2025-08-05 16:28:12.821 [main] INFO  com.example.trainup.controller.AthleteController - Attempting to update athlete with ID: 1 by user: john.doe@example.com
+2025-08-05 16:28:12.822 [main] INFO  com.example.trainup.controller.AthleteController - Successfully updated athlete with ID: 1
 ]]></system-out>
   </testcase>
-  <testcase name="getAllAthlete_NonAdmin_403" classname="com.example.trainup.controller.AthleteControllerTest" time="0.051">
-    <system-out><![CDATA[2025-08-05 16:13:35.871 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling AuthorizationDeniedException: Access Denied
-2025-08-05 16:13:35.872 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Authorization denied, errors=[Access Denied]
+  <testcase name="getAllAthlete_NonAdmin_403" classname="com.example.trainup.controller.AthleteControllerTest" time="0.07">
+    <system-out><![CDATA[2025-08-05 16:28:13.198 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling AuthorizationDeniedException: Access Denied
+2025-08-05 16:28:13.198 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Authorization denied, errors=[Access Denied]
 ]]></system-out>
   </testcase>
-  <testcase name="deleteAthleteById_Admin_Success" classname="com.example.trainup.controller.AthleteControllerTest" time="0.027">
-    <system-out><![CDATA[2025-08-05 16:13:35.912 [main] INFO  com.example.trainup.controller.AthleteController - Attempting to delete athlete with ID: 1 by user: admin@example.com
-2025-08-05 16:13:35.919 [main] INFO  com.example.trainup.controller.AthleteController - Successfully deleted athlete with ID: 1
+  <testcase name="deleteAthleteById_Admin_Success" classname="com.example.trainup.controller.AthleteControllerTest" time="0.028">
+    <system-out><![CDATA[2025-08-05 16:28:13.256 [main] INFO  com.example.trainup.controller.AthleteController - Attempting to delete athlete with ID: 1 by user: admin@example.com
+2025-08-05 16:28:13.257 [main] INFO  com.example.trainup.controller.AthleteController - Successfully deleted athlete with ID: 1
 ]]></system-out>
   </testcase>
-  <testcase name="getAthleteById_Unauthorized_403" classname="com.example.trainup.controller.AthleteControllerTest" time="0.018">
-    <system-out><![CDATA[2025-08-05 16:13:35.938 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling AuthorizationDeniedException: Access Denied
-2025-08-05 16:13:35.939 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Authorization denied, errors=[Access Denied]
+  <testcase name="getAthleteById_Unauthorized_403" classname="com.example.trainup.controller.AthleteControllerTest" time="0.022">
+    <system-out><![CDATA[2025-08-05 16:28:13.278 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling AuthorizationDeniedException: Access Denied
+2025-08-05 16:28:13.279 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Authorization denied, errors=[Access Denied]
 ]]></system-out>
   </testcase>
-  <testcase name="getAllAthlete_Admin_Success" classname="com.example.trainup.controller.AthleteControllerTest" time="0.038">
-    <system-out><![CDATA[2025-08-05 16:13:35.976 [main] INFO  com.example.trainup.controller.AthleteController - Attempting to retrieve all athletes with filter: firstName=John, lastName=null, gender=MALE, dateOfBirth=null, sportIds=[1], emailPermission=true, phonePermission=null
-2025-08-05 16:13:35.976 [main] INFO  com.example.trainup.controller.AthleteController - Successfully retrieved 1 athletes with specified criteria.
+  <testcase name="getAllAthlete_Admin_Success" classname="com.example.trainup.controller.AthleteControllerTest" time="0.039">
+    <system-out><![CDATA[2025-08-05 16:28:13.317 [main] INFO  com.example.trainup.controller.AthleteController - Attempting to retrieve all athletes with filter: firstName=John, lastName=null, gender=MALE, dateOfBirth=null, sportIds=[1], emailPermission=true, phonePermission=null
+2025-08-05 16:28:13.318 [main] INFO  com.example.trainup.controller.AthleteController - Successfully retrieved 1 athletes with specified criteria.
 ]]></system-out>
   </testcase>
-  <testcase name="getAthleteById_Self_Success" classname="com.example.trainup.controller.AthleteControllerTest" time="0.019">
-    <system-out><![CDATA[2025-08-05 16:13:35.996 [main] INFO  com.example.trainup.controller.AthleteController - Attempting to retrieve athlete with ID: 1 by user: john.doe@example.com
-2025-08-05 16:13:35.997 [main] INFO  com.example.trainup.controller.AthleteController - Successfully retrieved athlete with ID: 1
+  <testcase name="getAthleteById_Self_Success" classname="com.example.trainup.controller.AthleteControllerTest" time="0.018">
+    <system-out><![CDATA[2025-08-05 16:28:13.339 [main] INFO  com.example.trainup.controller.AthleteController - Attempting to retrieve athlete with ID: 1 by user: john.doe@example.com
+2025-08-05 16:28:13.340 [main] INFO  com.example.trainup.controller.AthleteController - Successfully retrieved athlete with ID: 1
 ]]></system-out>
   </testcase>
-  <testcase name="updateAthleteById_Unauthorized_403" classname="com.example.trainup.controller.AthleteControllerTest" time="0.016">
-    <system-out><![CDATA[2025-08-05 16:13:36.017 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling AuthorizationDeniedException: Access Denied
-2025-08-05 16:13:36.017 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Authorization denied, errors=[Access Denied]
+  <testcase name="updateAthleteById_Unauthorized_403" classname="com.example.trainup.controller.AthleteControllerTest" time="0.018">
+    <system-out><![CDATA[2025-08-05 16:28:13.359 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling AuthorizationDeniedException: Access Denied
+2025-08-05 16:28:13.360 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Authorization denied, errors=[Access Denied]
 ]]></system-out>
   </testcase>
-  <testcase name="deleteAthleteById_Self_Success" classname="com.example.trainup.controller.AthleteControllerTest" time="0.016">
-    <system-out><![CDATA[2025-08-05 16:13:36.033 [main] INFO  com.example.trainup.controller.AthleteController - Attempting to delete athlete with ID: 1 by user: john.doe@example.com
-2025-08-05 16:13:36.033 [main] INFO  com.example.trainup.controller.AthleteController - Successfully deleted athlete with ID: 1
+  <testcase name="deleteAthleteById_Self_Success" classname="com.example.trainup.controller.AthleteControllerTest" time="0.015">
+    <system-out><![CDATA[2025-08-05 16:28:13.378 [main] INFO  com.example.trainup.controller.AthleteController - Attempting to delete athlete with ID: 1 by user: john.doe@example.com
+2025-08-05 16:28:13.378 [main] INFO  com.example.trainup.controller.AthleteController - Successfully deleted athlete with ID: 1
 ]]></system-out>
   </testcase>
-  <testcase name="deleteAthleteById_Unauthorized_403" classname="com.example.trainup.controller.AthleteControllerTest" time="0.014">
-    <system-out><![CDATA[2025-08-05 16:13:36.049 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling AuthorizationDeniedException: Access Denied
-2025-08-05 16:13:36.049 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Authorization denied, errors=[Access Denied]
+  <testcase name="deleteAthleteById_Unauthorized_403" classname="com.example.trainup.controller.AthleteControllerTest" time="0.016">
+    <system-out><![CDATA[2025-08-05 16:28:13.393 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling AuthorizationDeniedException: Access Denied
+2025-08-05 16:28:13.394 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Authorization denied, errors=[Access Denied]
 ]]></system-out>
   </testcase>
 </testsuite>
