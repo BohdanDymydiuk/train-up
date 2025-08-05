@@ -1,4 +1,4 @@
-#Tue Aug 05 16:27:13 UTC 2025
+#Tue Aug 05 16:40:41 UTC 2025
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/test/resources/application-test.properties=1754151711349
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/model/Role.java=1754151711337
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/service/SportService.java=1754151700265
@@ -62,6 +62,7 @@
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/repository/GymOwnerRepository.java=1754151700258
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/validation/EmailUniqueValidator.java=1754151700270
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/security/JwtAuthenticationFilter.java=1754409422360
+/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/resources/application-prod.properties=1754411980717
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/controller/AuthenticationController.java=1754151700228
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/model/enums/Gender.java=1754151700253
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/validation/ReviewTarget.java=1754151700272
