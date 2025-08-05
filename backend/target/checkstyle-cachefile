@@ -1,4 +1,4 @@
-#Tue Aug 05 16:40:41 UTC 2025
+#Tue Aug 05 18:26:07 UTC 2025
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/test/resources/application-test.properties=1754151711349
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/model/Role.java=1754151711337
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/service/SportService.java=1754151700265
@@ -108,7 +108,7 @@
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/resources/application.properties=1754409422361
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/dto/gym/GymRegistrationRequestDto.java=1754151700237
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/security/CustomUserDetailsService.java=1754151700261
-/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/config/SecurityConfig.java=1754409482056
+/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/config/SecurityConfig.java=1754418297858
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/mapper/GymMapper.java=1754151700248
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/validation/ValidPhoneNumbers.java=1754151700273
 /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/src/main/java/com/example/trainup/model/Address.java=1754151711336
