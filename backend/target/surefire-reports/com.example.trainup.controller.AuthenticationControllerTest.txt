@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.trainup.controller.AuthenticationControllerTest
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.02 s -- in com.example.trainup.controller.AuthenticationControllerTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.874 s -- in com.example.trainup.controller.AuthenticationControllerTest
