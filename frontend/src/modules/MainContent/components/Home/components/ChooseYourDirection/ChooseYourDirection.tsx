@@ -3,6 +3,8 @@ import React, { useContext } from 'react';
 import { MainContext } from '../../../../../../context/MainContext';
 import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
 
+import { Directions } from './components/Directions';
+
 import styles from './ChooseYourDirection.module.scss';
 
 export const ChooseYourDirection: React.FC = () => {
@@ -19,6 +21,7 @@ export const ChooseYourDirection: React.FC = () => {
   return (
     <section className={styles.section}>
       <ErmilovTitle {...ermilovTitleProps} />
+      <Directions />
     </section>
   );
 };

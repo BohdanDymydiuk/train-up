@@ -5,6 +5,7 @@ import { combineSlices, configureStore } from '@reduxjs/toolkit';
 import { eventsSlice } from './features/events';
 import { jwtTokenSlice } from './features/jwtToken';
 import { locationSlice } from './features/location';
+import { sportsSlice } from './features/sports';
 import { trainersSlice } from './features/trainers';
 
 const rootReducer = combineSlices(
@@ -12,6 +13,7 @@ const rootReducer = combineSlices(
   eventsSlice,
   locationSlice,
   jwtTokenSlice,
+  sportsSlice,
 );
 
 export const store = configureStore({
