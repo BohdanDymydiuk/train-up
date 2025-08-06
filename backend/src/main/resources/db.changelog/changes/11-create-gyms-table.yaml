@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: 11-create-gyms-table
+      author: bohdan-s
+      changes:
+        - createTable:
+            tableName: gyms
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    unique: true
+                    foreignKeyName: fk_gym_address
+                    references: addresses(id)
+              - column:
+                  name: description
+                  type: VARCHAR(255)
+              - column:
+                  name: website
+                  type: VARCHAR(255)
+              - column:
+                  name: overall_rating
+                  type: FLOAT
+                  defaultValue: 0.0
+              - column:
+                  name: number_of_reviews
+                  type: INTEGER
+                  defaultValue: 0.0
+              - column:
+                  name: gym_owner_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_gym_gym_owner
+                    references: gym_owners(id)
+              - column:
+                  name: is_deleted
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false

@@ -1,0 +1,15 @@
+.signin {
+  margin-top: 118px;
+  max-width: 704px;
+  margin-inline: auto;
+  padding: 50px 16px;
+  border-radius: 24px;
+  background-color: $white_1;
+
+  @include on-tablet {
+    display: flex;
+    justify-content: center;
+    padding-block: 76px;
+    max-width: 882px;
+  }
+}

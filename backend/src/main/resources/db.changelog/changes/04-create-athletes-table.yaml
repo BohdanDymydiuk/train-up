@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: 04-create-athletes-table
+      author: bohdan-s
+      changes:
+        - createTable:
+            tableName: athletes
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: gender
+                  type: CHAR(10)
+              - column:
+                  name: date_of_birth
+                  type: DATE
+              - column:
+                  name: profile_image_url
+                  type: VARCHAR(255)
+              - column:
+                  name: user_credentials_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_athlete_user_credentials
+                    references: user_credentials(id)
+              - column:
+                  name: email_permission
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
+              - column:
+                  name: phone_permission
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_deleted
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false

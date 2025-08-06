@@ -1,0 +1,27 @@
+.fourth-part {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 16px;
+
+  .reviews {
+    display: flex;
+    gap: 8px;
+
+    .number {
+      @include inter-400-14;
+    }
+  }
+
+  .signup {
+    @include flex-center-center;
+    @include inter-500-16;
+
+    border-style: none;
+    background-color: $gray_6;
+    color: $white_1;
+    width: 178px;
+    height: 48px;
+    border-radius: 8px;
+  }
+}

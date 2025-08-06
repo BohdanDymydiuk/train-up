@@ -1,0 +1,38 @@
+.modal-wrapper {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+
+  @include flex-center-center;
+
+  .modal {
+    position: relative;
+    background-color: $white_1;
+    width: min(100%, 480px);
+    padding: 30px;
+    border-radius: 20px;
+
+    .cross {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      top: 30px;
+      right: 30px;
+      transition: transform $trans-dur;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      &:active {
+        transform: scale(1.3);
+      }
+    }
+
+    .title {
+      @include inter-600-30;
+
+      text-align: center;
+    }
+  }
+}

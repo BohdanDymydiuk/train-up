@@ -1,0 +1,41 @@
+.sidebar {
+  min-width: 127px;
+
+  .list {
+    position: sticky;
+    padding-top: 24px;
+    inset: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .item {
+      @include flex-center-center;
+      @include inter-600-12;
+
+      flex-direction: column;
+      gap: 8px;
+      color: $gray_5;
+      cursor: pointer;
+
+      svg path {
+        transition: fill $trans-dur;
+      }
+
+      .title {
+        transition: color $trans-dur;
+      }
+
+      &:hover {
+        svg path {
+          fill: $gray_3;
+        }
+
+        .title {
+          color: $gray_3;
+        }
+      }
+    }
+  }
+}

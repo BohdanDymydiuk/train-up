@@ -1,0 +1,67 @@
+import React, { useContext } from 'react';
+import { useLocation } from 'react-router';
+
+import { MainContext } from '../../../../context/MainContext';
+import { Links } from '../../../../enums/Links';
+import { DropdownHoc } from '../../../../reusables/DropdownHoc';
+import { BellSVG } from '../../../../reusables/svgs/headerSvgs/BellSVG';
+import { SearchSVG } from '../../../../reusables/svgs/headerSvgs/SearchSVG';
+import { LogoSVG } from '../../../../reusables/svgs/LogoSVG';
+import { useAppSelector } from '../../../../store/store';
+
+import { Burger } from './components/Burger';
+import { Lang } from './components/Lang';
+import { Nav } from './components/Nav';
+import { ProfileIMG } from './components/ProfileIMG';
+import { SignInButton } from './components/SignInButton';
+import { SignInDropdown } from './components/SignInDropdown';
+
+import styles from './Header.module.scss';
+
+export const Header: React.FC = () => {
+  const jwtToken = useAppSelector(state => state.jwtToken);
+
+  const { onTablet } = useContext(MainContext);
+  const { pathname } = useLocation();
+
+  const SignIn = DropdownHoc(SignInButton, SignInDropdown);
+
+  // #regions css props
+  const firstPartCssProps: React.CSSProperties = { gap: '48px' };
+
+  const secondPartCssProps: React.CSSProperties = jwtToken
+    ? { gap: '32px' }
+    : { gap: '16px' };
+  // #endregion
+
+  // #regions jsx
+  // sp is "secondPart"
+  const defaultSp = (
+    <>
+      {onTablet && <Lang />}
+      {pathname !== Links.signIn && <SignIn />}
+      {!onTablet && <Burger />}
+    </>
+  );
+
+  const loggedSp = (
+    <>
+      <SearchSVG />
+      <BellSVG />
+      <ProfileIMG />
+    </>
+  );
+  // #endregion
+
+  return (
+    <header className={styles.header}>
+      <div className={styles['first-part']} style={firstPartCssProps}>
+        <LogoSVG />
+        {onTablet && <Nav />}
+      </div>
+      <div className={styles['second-part']} style={secondPartCssProps}>
+        {jwtToken ? loggedSp : defaultSp}
+      </div>
+    </header>
+  );
+};

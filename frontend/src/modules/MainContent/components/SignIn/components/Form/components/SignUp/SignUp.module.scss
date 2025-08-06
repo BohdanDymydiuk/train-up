@@ -1,0 +1,13 @@
+.signup {
+  @include inter-400-16;
+
+  color: $black_1;
+  margin-top: 32px;
+  text-align: center;
+
+  .strong {
+    @include inter-500-16;
+
+    cursor: pointer;
+  }
+}

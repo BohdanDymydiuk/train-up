@@ -1,0 +1,18 @@
+.header,
+.first-part,
+.second-part {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  height: 80px;
+  padding-inline: 16px;
+  background-color: $white_1;
+
+  @include on-tablet {
+    padding-inline: 24px;
+  }
+
+  justify-content: space-between;
+}

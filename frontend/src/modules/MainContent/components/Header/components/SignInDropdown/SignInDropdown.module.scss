@@ -1,0 +1,7 @@
+.dropdown {
+  @include dropdown;
+
+  top: $signin-height + 16px;
+  left: calc((var(--dropdown-width) - $signin-width) * -1);
+  width: var(--dropdown-width);
+}

@@ -1,0 +1,11 @@
+.main {
+  padding-inline: 16px;
+
+  @include on-tablet {
+    padding-inline: 32px;
+  }
+
+  @include on-desktop {
+    padding-inline: 48px;
+  }
+}

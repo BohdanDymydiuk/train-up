@@ -1,0 +1,282 @@
+@use './vars.scss' as *; // yes, I have it in vite.config.ts. But that doesn't work for this place
+
+// #region media queries
+@mixin on-small-tablet {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-large-tablet {
+  @media (min-width: 864px) {
+    @content;
+  }
+}
+
+@mixin on-extra-large-tablet {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin on-small-desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin on-large-desktop {
+  @media (min-width: 1367px) {
+    @content;
+  }
+}
+// #endregion
+
+// #region inter
+@mixin inter {
+  font-family: Inter, sans-serif;
+}
+
+// #region inter-400
+@mixin inter-400 {
+  @include inter;
+
+  font-weight: 400;
+}
+
+@mixin inter-400-14 {
+  @include inter-400;
+
+  font-size: 14px;
+}
+
+@mixin inter-400-16 {
+  @include inter-400;
+
+  font-size: 16px;
+}
+// #endregion
+
+// #region inter-500
+@mixin inter-500 {
+  @include inter;
+
+  font-weight: 500;
+}
+
+@mixin inter-500-12 {
+  @include inter-500;
+
+  font-size: 12px;
+}
+
+@mixin inter-500-14 {
+  @include inter-500;
+
+  font-size: 14px;
+}
+
+@mixin inter-500-15 {
+  @include inter-500;
+
+  font-size: 15px;
+}
+
+@mixin inter-500-16 {
+  @include inter-500;
+
+  font-size: 16px;
+}
+
+@mixin inter-500-18 {
+  @include inter-500;
+
+  font-size: 18px;
+}
+
+@mixin inter-500-20 {
+  @include inter-500;
+
+  font-size: 20px;
+}
+
+@mixin inter-500-24 {
+  @include inter-500;
+
+  font-size: 24px;
+}
+
+@mixin inter-500-40 {
+  @include inter-500;
+
+  font-size: 40px;
+}
+
+@mixin inter-500-48 {
+  @include inter-500;
+
+  font-size: 48px;
+}
+// #endregion
+
+// #region inter-600
+@mixin inter-600 {
+  @include inter;
+
+  font-weight: 600;
+}
+
+@mixin inter-600-12 {
+  @include inter-600;
+
+  font-size: 12px;
+}
+
+@mixin inter-600-20 {
+  @include inter-600;
+
+  font-size: 20px;
+}
+
+@mixin inter-600-24 {
+  @include inter-600;
+
+  font-size: 24px;
+}
+
+@mixin inter-600-30 {
+  @include inter-600;
+
+  font-size: 30px;
+}
+
+@mixin inter-600-40 {
+  @include inter-600;
+
+  font-size: 40px;
+}
+// #endregion
+// #endregion
+
+// #region ermilov
+@mixin ermilov {
+  font-family: Ermilov;
+}
+
+@mixin ermilov-24 {
+  @include ermilov;
+  
+  font-size: 24px;
+}
+
+@mixin ermilov-32 {
+  @include ermilov;
+  
+  font-size: 32px;
+}
+
+@mixin ermilov-40 {
+  @include ermilov;
+
+  font-size: 40px;
+}
+
+@mixin ermilov-56 {
+  @include ermilov;
+
+  font-size: 56px;
+}
+// #endregion
+
+// #region elements
+@mixin input-styles {
+  border-radius: 8px;
+  border: none;
+  padding: 0;
+  height: 48px;
+  padding-inline: 16px;
+}
+
+@mixin dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid $light-gray_1;
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition:
+    opacity $trans-dur,
+    transform $trans-dur;
+
+  .dp-list {
+    padding: 0;
+    background-color: $white_1;
+
+    .dp-item {
+      cursor: pointer;
+      list-style: none;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      padding-inline: 15px;
+
+      &:hover {
+        background-color: $white_3;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $light-gray_1;
+      }
+
+      &-link {
+        text-align: right;
+        color: $black_1;
+
+        @include inter-500-14;
+      }
+    }
+  }
+}
+
+@mixin button {
+  border: none;
+  border-radius: 8px;
+  background-color: $orange_1;
+  cursor: pointer;
+  transition: background-color $trans-dur;
+  color: $white_1;
+
+  &:focus {
+    background-color: $red_1;
+  }
+}
+// #endregion
+
+// #region flex
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+// #endregion

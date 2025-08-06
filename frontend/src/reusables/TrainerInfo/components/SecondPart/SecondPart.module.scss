@@ -1,0 +1,23 @@
+.second-part {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 318px;
+
+  .name {
+    @include inter-500-20;
+  }
+
+  .types {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .bio {
+    @include inter-400-14;
+  }
+
+  .read {
+    @include inter-600-12;
+  }
+}

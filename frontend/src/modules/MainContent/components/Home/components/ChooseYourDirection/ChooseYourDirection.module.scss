@@ -1,0 +1,14 @@
+.section {
+  margin-top: 32px;
+  background-color: $white_1;
+  border-radius: 16px;
+  padding: 16px;
+
+  @include on-tablet {
+    margin-top: 64px;
+  }
+
+  @include on-desktop {
+    margin-top: 104px;
+  }
+}

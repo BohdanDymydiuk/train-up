@@ -1,0 +1,27 @@
+.t-sign-up {
+  margin-inline: 64px;
+  margin-top: 130px;
+  height: 511px;
+  background-color: $light-gray_3;
+  display: flex;
+  align-items: center;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+
+    .title {
+      @include inter-600-40;
+    }
+
+    .button {
+      border: none;
+      height: 80px;
+      width: 293px;
+      border-radius: 8px;
+
+      @include inter-500-24;
+    }
+  }
+}

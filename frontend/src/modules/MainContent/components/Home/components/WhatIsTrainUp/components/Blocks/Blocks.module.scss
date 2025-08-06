@@ -1,0 +1,61 @@
+.blocks {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  gap: 40px;
+
+  @include on-small-tablet {
+    justify-content: center;
+  }
+
+  @include on-tablet {
+    justify-content: normal;
+    flex-wrap: nowrap;
+  }
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background-color: $white_1;
+    border: 1px solid $gray_10;
+    border-radius: 16px;
+
+    @include on-small-tablet {
+      width: 208px;
+    }
+
+    @include on-tablet {
+      width: 100%;
+    }
+
+    .img {
+      height: 94px;
+      width: min-content;
+      align-self: end;
+    }
+
+    .title {
+      @include ermilov-24;
+
+      @include on-tablet {
+        margin-top: 16px;
+      }
+
+      @include on-extra-large-tablet {
+        font-size: 32px;
+      }
+    }
+
+    .description {
+      margin-top: 16px;
+      line-height: 150%;
+
+      @include inter-400-14;
+
+      @include on-tablet {
+        font-size: 16px;
+      }
+    }
+  }
+}

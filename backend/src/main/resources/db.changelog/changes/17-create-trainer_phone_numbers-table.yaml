@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 17-create-trainer_phone_numbers-table
+      author: bohdan-s
+      changes:
+        - createTable:
+            tableName: trainer_phone_numbers
+            columns:
+              - column:
+                  name: trainer_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_trainer_phone_trainer
+                    references: trainers(id)
+              - column:
+                  name: phone_numbers
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false

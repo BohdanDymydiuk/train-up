@@ -1,0 +1,19 @@
+.input {
+  @include input-styles;
+  @include inter-500-15;
+
+  width: 100%;
+  border: 1px solid $gray_7;
+
+  &::placeholder {
+    color: $gray_8;
+  }
+
+  &:first-of-type {
+    margin-top: 80px;
+  }
+
+  &:nth-of-type(2) {
+    margin-top: 16px;
+  }
+}

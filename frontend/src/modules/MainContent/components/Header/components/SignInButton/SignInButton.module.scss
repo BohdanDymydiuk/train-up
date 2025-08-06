@@ -1,0 +1,7 @@
+.signin {
+  width: $signin-width;
+  height: $signin-height;
+  
+  @include button;
+  @include inter-500-15;
+}

@@ -1,0 +1,19 @@
+.location {
+  @include flex-center-center;
+
+  position: absolute;
+  width: fit-content;
+  padding-inline: 14px;
+  height: 40px;
+  gap: 8px;
+  background-color: $black_1;
+  border-radius: 8px;
+  top: 0;
+  right: 0;
+
+  .text {
+    @include inter-500-14;
+
+    color: $white_1;
+  }
+}

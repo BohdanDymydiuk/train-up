@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.example.trainup.controller.EventControllerTest" time="7.291" tests="16" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/test-classes:/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/classes:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-data-jdbc/3.4.3/spring-boot-starter-data-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.3/spring-boot-starter-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-jdbc/6.2.3/spring-jdbc-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-jdbc/3.4.3/spring-data-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-relational/3.4.3/spring-data-relational-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-commons/3.4.3/spring-data-commons-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-tx/6.2.3/spring-tx-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-context/6.2.3/spring-context-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-beans/6.2.3/spring-beans-6.2.3.jar:/home/sadsadsa/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.3/spring-boot-starter-data-jpa-3.4.3.jar:/home/sadsadsa/.m2/repository/org/hibernate/orm/hibernate-core/6.6.8.Final/hibernate-core-6.6.8.Final.jar:/home/sadsadsa/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/sadsadsa/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/sadsadsa/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/sadsadsa/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/sadsadsa/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/sadsadsa/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/home/sadsadsa/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/sadsadsa/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/sadsadsa/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-jpa/3.4.3/spring-data-jpa-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-orm/6.2.3/spring-orm-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-aspects/6.2.3/spring-aspects-6.2.3.jar:/home/sadsadsa/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.4.3/spring-boot-starter-security-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-aop/6.2.3/spring-aop-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-config/6.4.3/spring-security-config-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-web/6.4.3/spring-security-web-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-expression/6.2.3/spring-expression-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.3/spring-boot-starter-web-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.3/spring-boot-starter-json-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.3/spring-boot-starter-tomcat-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.36/tomcat-embed-core-10.1.36.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.36/tomcat-embed-websocket-10.1.36.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-web/6.2.3/spring-web-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-webmvc/6.2.3/spring-webmvc-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-web-services/3.4.3/spring-boot-starter-web-services-3.4.3.jar:/home/sadsadsa/.m2/repository/com/sun/xml/messaging/saaj/saaj-impl/3.0.4/saaj-impl-3.0.4.jar:/home/sadsadsa/.m2/repository/jakarta/xml/soap/jakarta.xml.soap-api/3.0.2/jakarta.xml.soap-api-3.0.2.jar:/home/sadsadsa/.m2/repository/org/jvnet/staxex/stax-ex/2.1.0/stax-ex-2.1.0.jar:/home/sadsadsa/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/sadsadsa/.m2/repository/jakarta/xml/ws/jakarta.xml.ws-api/4.0.2/jakarta.xml.ws-api-4.0.2.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-oxm/6.2.3/spring-oxm-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/ws/spring-ws-core/4.0.11/spring-ws-core-4.0.11.jar:/home/sadsadsa/.m2/repository/org/springframework/ws/spring-xml/4.0.11/spring-xml-4.0.11.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-devtools/3.4.3/spring-boot-devtools-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot/3.4.3/spring-boot-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.3/spring-boot-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-docker-compose/3.4.3/spring-boot-docker-compose-3.4.3.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.2/jackson-module-parameter-names-2.18.2.jar:/home/sadsadsa/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/home/sadsadsa/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.3/spring-boot-starter-3.4.3.jar:/home/sadsadsa/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-core/6.2.3/spring-core-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-jcl/6.2.3/spring-jcl-6.2.3.jar:/home/sadsadsa/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-test/6.4.3/spring-security-test-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-core/6.4.3/spring-security-core-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-crypto/6.4.3/spring-security-crypto-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-test/6.2.3/spring-test-6.2.3.jar:/home/sadsadsa/.m2/repository/org/liquibase/liquibase-core/4.29.2/liquibase-core-4.29.2.jar:/home/sadsadsa/.m2/repository/com/opencsv/opencsv/5.9/opencsv-5.9.jar:/home/sadsadsa/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/sadsadsa/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-text/1.12.0/commons-text-1.12.0.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/sadsadsa/.m2/repository/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-api/0.12.6/jjwt-api-0.12.6.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-impl/0.12.6/jjwt-impl-0.12.6.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.4.3/spring-boot-starter-validation-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.36/tomcat-embed-el-10.1.36.jar:/home/sadsadsa/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar:/home/sadsadsa/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.8.6/springdoc-openapi-starter-webmvc-ui-2.8.6.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.8.6/springdoc-openapi-starter-webmvc-api-2.8.6.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.6/springdoc-openapi-starter-common-2.8.6.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.29/swagger-core-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.29/swagger-annotations-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.29/swagger-models-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.2/jackson-dataformat-yaml-2.18.2.jar:/home/sadsadsa/.m2/repository/org/webjars/swagger-ui/5.20.1/swagger-ui-5.20.1.jar:/home/sadsadsa/.m2/repository/org/webjars/webjars-locator-lite/1.0.1/webjars-locator-lite-1.0.1.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/sadsadsa/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/home/sadsadsa/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/sadsadsa/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.4.3/spring-boot-starter-actuator-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.4.3/spring-boot-actuator-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-actuator/3.4.3/spring-boot-actuator-3.4.3.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-observation/1.14.4/micrometer-observation-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-commons/1.14.4/micrometer-commons-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-jakarta9/1.14.4/micrometer-jakarta9-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-core/1.14.4/micrometer-core-1.14.4.jar:/home/sadsadsa/.m2/repository/org/hdrhistogram/HdrHistogram/2.2.2/HdrHistogram-2.2.2.jar:/home/sadsadsa/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-log4j2/3.4.3/spring-boot-starter-log4j2-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-slf4j2-impl/2.24.3/log4j-slf4j2-impl-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-core/2.24.3/log4j-core-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-jul/2.24.3/log4j-jul-2.24.3.jar:/home/sadsadsa/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.12.6/jjwt-jackson-0.12.6.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-webflux/3.4.3/spring-boot-starter-webflux-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-reactor-netty/3.4.3/spring-boot-starter-reactor-netty-3.4.3.jar:/home/sadsadsa/.m2/repository/io/projectreactor/netty/reactor-netty-http/1.2.3/reactor-netty-http-1.2.3.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-http/4.1.118.Final/netty-codec-http-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-common/4.1.118.Final/netty-common-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-buffer/4.1.118.Final/netty-buffer-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport/4.1.118.Final/netty-transport-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec/4.1.118.Final/netty-codec-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-handler/4.1.118.Final/netty-handler-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-http2/4.1.118.Final/netty-codec-http2-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns/4.1.118.Final/netty-resolver-dns-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver/4.1.118.Final/netty-resolver-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-dns/4.1.118.Final/netty-codec-dns-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.118.Final/netty-resolver-dns-native-macos-4.1.118.Final-osx-x86_64.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.1.118.Final/netty-resolver-dns-classes-macos-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-native-epoll/4.1.118.Final/netty-transport-native-epoll-4.1.118.Final-linux-x86_64.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.118.Final/netty-transport-native-unix-common-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.118.Final/netty-transport-classes-epoll-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/projectreactor/netty/reactor-netty-core/1.2.3/reactor-netty-core-1.2.3.jar:/home/sadsadsa/.m2/repository/io/netty/netty-handler-proxy/4.1.118.Final/netty-handler-proxy-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-socks/4.1.118.Final/netty-codec-socks-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-webflux/6.2.3/spring-webflux-6.2.3.jar:/home/sadsadsa/.m2/repository/io/projectreactor/reactor-core/3.7.3/reactor-core-3.7.3.jar:/home/sadsadsa/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/sadsadsa/.m2/repository/com/google/genai/google-genai/1.0.0/google-genai-1.0.0.jar:/home/sadsadsa/.m2/repository/com/google/auth/google-auth-library-oauth2-http/1.30.1/google-auth-library-oauth2-http-1.30.1.jar:/home/sadsadsa/.m2/repository/com/google/auto/value/auto-value-annotations/1.11.0/auto-value-annotations-1.11.0.jar:/home/sadsadsa/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/sadsadsa/.m2/repository/com/google/auth/google-auth-library-credentials/1.30.1/google-auth-library-credentials-1.30.1.jar:/home/sadsadsa/.m2/repository/com/google/http-client/google-http-client/1.45.2/google-http-client-1.45.2.jar:/home/sadsadsa/.m2/repository/io/grpc/grpc-context/1.68.2/grpc-context-1.68.2.jar:/home/sadsadsa/.m2/repository/io/grpc/grpc-api/1.68.2/grpc-api-1.68.2.jar:/home/sadsadsa/.m2/repository/io/opencensus/opencensus-api/0.31.1/opencensus-api-0.31.1.jar:/home/sadsadsa/.m2/repository/io/opencensus/opencensus-contrib-http-util/0.31.1/opencensus-contrib-http-util-0.31.1.jar:/home/sadsadsa/.m2/repository/com/google/http-client/google-http-client-gson/1.45.2/google-http-client-gson-1.45.2.jar:/home/sadsadsa/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/sadsadsa/.m2/repository/com/google/guava/guava/33.3.1-android/guava-33.3.1-android.jar:/home/sadsadsa/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/sadsadsa/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/sadsadsa/.m2/repository/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar:/home/sadsadsa/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/home/sadsadsa/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/sadsadsa/.m2/repository/commons-codec/commons-codec/1.17.2/commons-codec-1.17.2.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/sadsadsa/.m2/repository/com/google/auto/value/auto-value/1.11.0/auto-value-1.11.0.jar:/home/sadsadsa/.m2/repository/com/google/api/api-common/2.42.1/api-common-2.42.1.jar:/home/sadsadsa/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/home/sadsadsa/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.2/jackson-datatype-jdk8-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar:/home/sadsadsa/.m2/repository/org/java-websocket/Java-WebSocket/1.6.0/Java-WebSocket-1.6.0.jar:/home/sadsadsa/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/sadsadsa/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/home/sadsadsa/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/home/sadsadsa/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/home/sadsadsa/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/sadsadsa/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar:/home/sadsadsa/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/sadsadsa/.m2/repository/com/cloudinary/cloudinary-http44/1.33.0/cloudinary-http44-1.33.0.jar:/home/sadsadsa/.m2/repository/com/cloudinary/cloudinary-core/1.33.0/cloudinary-core-1.33.0.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpmime/4.4/httpmime-4.4.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.3/spring-boot-starter-test-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-test/3.4.3/spring-boot-test-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.3/spring-boot-test-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/sadsadsa/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/sadsadsa/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/sadsadsa/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/sadsadsa/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/sadsadsa/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/sadsadsa/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/sadsadsa/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/sadsadsa/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/sadsadsa/.m2/repository/org/xmlunit/xmlunit-core/2.10.0/xmlunit-core-2.10.0.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="APPLICATION_NAME" value="train-up"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire/surefirebooter-20250806141842382_3.jar /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire 2025-08-06T14-18-42_199-jvmRun1 surefire-20250806141842382_1tmp surefire_0-20250806141842382_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/test-classes:/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/classes:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-data-jdbc/3.4.3/spring-boot-starter-data-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.3/spring-boot-starter-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-jdbc/6.2.3/spring-jdbc-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-jdbc/3.4.3/spring-data-jdbc-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-relational/3.4.3/spring-data-relational-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-commons/3.4.3/spring-data-commons-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-tx/6.2.3/spring-tx-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-context/6.2.3/spring-context-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-beans/6.2.3/spring-beans-6.2.3.jar:/home/sadsadsa/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.3/spring-boot-starter-data-jpa-3.4.3.jar:/home/sadsadsa/.m2/repository/org/hibernate/orm/hibernate-core/6.6.8.Final/hibernate-core-6.6.8.Final.jar:/home/sadsadsa/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/sadsadsa/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/sadsadsa/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/sadsadsa/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/sadsadsa/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/sadsadsa/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/sadsadsa/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/home/sadsadsa/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/sadsadsa/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/sadsadsa/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/sadsadsa/.m2/repository/org/springframework/data/spring-data-jpa/3.4.3/spring-data-jpa-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-orm/6.2.3/spring-orm-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-aspects/6.2.3/spring-aspects-6.2.3.jar:/home/sadsadsa/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.4.3/spring-boot-starter-security-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-aop/6.2.3/spring-aop-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-config/6.4.3/spring-security-config-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-web/6.4.3/spring-security-web-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-expression/6.2.3/spring-expression-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.3/spring-boot-starter-web-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.3/spring-boot-starter-json-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.3/spring-boot-starter-tomcat-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.36/tomcat-embed-core-10.1.36.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.36/tomcat-embed-websocket-10.1.36.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-web/6.2.3/spring-web-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-webmvc/6.2.3/spring-webmvc-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-web-services/3.4.3/spring-boot-starter-web-services-3.4.3.jar:/home/sadsadsa/.m2/repository/com/sun/xml/messaging/saaj/saaj-impl/3.0.4/saaj-impl-3.0.4.jar:/home/sadsadsa/.m2/repository/jakarta/xml/soap/jakarta.xml.soap-api/3.0.2/jakarta.xml.soap-api-3.0.2.jar:/home/sadsadsa/.m2/repository/org/jvnet/staxex/stax-ex/2.1.0/stax-ex-2.1.0.jar:/home/sadsadsa/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/sadsadsa/.m2/repository/jakarta/xml/ws/jakarta.xml.ws-api/4.0.2/jakarta.xml.ws-api-4.0.2.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-oxm/6.2.3/spring-oxm-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/ws/spring-ws-core/4.0.11/spring-ws-core-4.0.11.jar:/home/sadsadsa/.m2/repository/org/springframework/ws/spring-xml/4.0.11/spring-xml-4.0.11.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-devtools/3.4.3/spring-boot-devtools-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot/3.4.3/spring-boot-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.3/spring-boot-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-docker-compose/3.4.3/spring-boot-docker-compose-3.4.3.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.2/jackson-module-parameter-names-2.18.2.jar:/home/sadsadsa/.m2/repository/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar:/home/sadsadsa/.m2/repository/org/projectlombok/lombok/1.18.34/lombok-1.18.34.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.3/spring-boot-starter-3.4.3.jar:/home/sadsadsa/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-core/6.2.3/spring-core-6.2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-jcl/6.2.3/spring-jcl-6.2.3.jar:/home/sadsadsa/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-test/6.4.3/spring-security-test-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-core/6.4.3/spring-security-core-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/security/spring-security-crypto/6.4.3/spring-security-crypto-6.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-test/6.2.3/spring-test-6.2.3.jar:/home/sadsadsa/.m2/repository/org/liquibase/liquibase-core/4.29.2/liquibase-core-4.29.2.jar:/home/sadsadsa/.m2/repository/com/opencsv/opencsv/5.9/opencsv-5.9.jar:/home/sadsadsa/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/home/sadsadsa/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-text/1.12.0/commons-text-1.12.0.jar:/home/sadsadsa/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/sadsadsa/.m2/repository/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-api/0.12.6/jjwt-api-0.12.6.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-impl/0.12.6/jjwt-impl-0.12.6.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.4.3/spring-boot-starter-validation-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.36/tomcat-embed-el-10.1.36.jar:/home/sadsadsa/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.2.Final/hibernate-validator-8.0.2.Final.jar:/home/sadsadsa/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.8.6/springdoc-openapi-starter-webmvc-ui-2.8.6.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.8.6/springdoc-openapi-starter-webmvc-api-2.8.6.jar:/home/sadsadsa/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.8.6/springdoc-openapi-starter-common-2.8.6.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.29/swagger-core-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.29/swagger-annotations-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.29/swagger-models-jakarta-2.2.29.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.2/jackson-dataformat-yaml-2.18.2.jar:/home/sadsadsa/.m2/repository/org/webjars/swagger-ui/5.20.1/swagger-ui-5.20.1.jar:/home/sadsadsa/.m2/repository/org/webjars/webjars-locator-lite/1.0.1/webjars-locator-lite-1.0.1.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/sadsadsa/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-launcher/1.11.4/junit-platform-launcher-1.11.4.jar:/home/sadsadsa/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/home/sadsadsa/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/sadsadsa/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/3.4.3/spring-boot-starter-actuator-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-actuator-autoconfigure/3.4.3/spring-boot-actuator-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-actuator/3.4.3/spring-boot-actuator-3.4.3.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-observation/1.14.4/micrometer-observation-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-commons/1.14.4/micrometer-commons-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-jakarta9/1.14.4/micrometer-jakarta9-1.14.4.jar:/home/sadsadsa/.m2/repository/io/micrometer/micrometer-core/1.14.4/micrometer-core-1.14.4.jar:/home/sadsadsa/.m2/repository/org/hdrhistogram/HdrHistogram/2.2.2/HdrHistogram-2.2.2.jar:/home/sadsadsa/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-log4j2/3.4.3/spring-boot-starter-log4j2-3.4.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-slf4j2-impl/2.24.3/log4j-slf4j2-impl-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-core/2.24.3/log4j-core-2.24.3.jar:/home/sadsadsa/.m2/repository/org/apache/logging/log4j/log4j-jul/2.24.3/log4j-jul-2.24.3.jar:/home/sadsadsa/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/home/sadsadsa/.m2/repository/io/jsonwebtoken/jjwt-jackson/0.12.6/jjwt-jackson-0.12.6.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-webflux/3.4.3/spring-boot-starter-webflux-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-reactor-netty/3.4.3/spring-boot-starter-reactor-netty-3.4.3.jar:/home/sadsadsa/.m2/repository/io/projectreactor/netty/reactor-netty-http/1.2.3/reactor-netty-http-1.2.3.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-http/4.1.118.Final/netty-codec-http-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-common/4.1.118.Final/netty-common-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-buffer/4.1.118.Final/netty-buffer-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport/4.1.118.Final/netty-transport-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec/4.1.118.Final/netty-codec-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-handler/4.1.118.Final/netty-handler-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-http2/4.1.118.Final/netty-codec-http2-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns/4.1.118.Final/netty-resolver-dns-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver/4.1.118.Final/netty-resolver-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-dns/4.1.118.Final/netty-codec-dns-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.118.Final/netty-resolver-dns-native-macos-4.1.118.Final-osx-x86_64.jar:/home/sadsadsa/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.1.118.Final/netty-resolver-dns-classes-macos-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-native-epoll/4.1.118.Final/netty-transport-native-epoll-4.1.118.Final-linux-x86_64.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.118.Final/netty-transport-native-unix-common-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.118.Final/netty-transport-classes-epoll-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/projectreactor/netty/reactor-netty-core/1.2.3/reactor-netty-core-1.2.3.jar:/home/sadsadsa/.m2/repository/io/netty/netty-handler-proxy/4.1.118.Final/netty-handler-proxy-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/io/netty/netty-codec-socks/4.1.118.Final/netty-codec-socks-4.1.118.Final.jar:/home/sadsadsa/.m2/repository/org/springframework/spring-webflux/6.2.3/spring-webflux-6.2.3.jar:/home/sadsadsa/.m2/repository/io/projectreactor/reactor-core/3.7.3/reactor-core-3.7.3.jar:/home/sadsadsa/.m2/repository/org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar:/home/sadsadsa/.m2/repository/com/google/genai/google-genai/1.0.0/google-genai-1.0.0.jar:/home/sadsadsa/.m2/repository/com/google/auth/google-auth-library-oauth2-http/1.30.1/google-auth-library-oauth2-http-1.30.1.jar:/home/sadsadsa/.m2/repository/com/google/auto/value/auto-value-annotations/1.11.0/auto-value-annotations-1.11.0.jar:/home/sadsadsa/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/sadsadsa/.m2/repository/com/google/auth/google-auth-library-credentials/1.30.1/google-auth-library-credentials-1.30.1.jar:/home/sadsadsa/.m2/repository/com/google/http-client/google-http-client/1.45.2/google-http-client-1.45.2.jar:/home/sadsadsa/.m2/repository/io/grpc/grpc-context/1.68.2/grpc-context-1.68.2.jar:/home/sadsadsa/.m2/repository/io/grpc/grpc-api/1.68.2/grpc-api-1.68.2.jar:/home/sadsadsa/.m2/repository/io/opencensus/opencensus-api/0.31.1/opencensus-api-0.31.1.jar:/home/sadsadsa/.m2/repository/io/opencensus/opencensus-contrib-http-util/0.31.1/opencensus-contrib-http-util-0.31.1.jar:/home/sadsadsa/.m2/repository/com/google/http-client/google-http-client-gson/1.45.2/google-http-client-gson-1.45.2.jar:/home/sadsadsa/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/sadsadsa/.m2/repository/com/google/guava/guava/33.3.1-android/guava-33.3.1-android.jar:/home/sadsadsa/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/sadsadsa/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/sadsadsa/.m2/repository/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar:/home/sadsadsa/.m2/repository/com/google/errorprone/error_prone_annotations/2.36.0/error_prone_annotations-2.36.0.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/home/sadsadsa/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/sadsadsa/.m2/repository/commons-codec/commons-codec/1.17.2/commons-codec-1.17.2.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/sadsadsa/.m2/repository/com/google/auto/value/auto-value/1.11.0/auto-value-1.11.0.jar:/home/sadsadsa/.m2/repository/com/google/api/api-common/2.42.1/api-common-2.42.1.jar:/home/sadsadsa/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar:/home/sadsadsa/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.2/jackson-datatype-jdk8-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar:/home/sadsadsa/.m2/repository/org/java-websocket/Java-WebSocket/1.6.0/Java-WebSocket-1.6.0.jar:/home/sadsadsa/.m2/repository/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/home/sadsadsa/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/home/sadsadsa/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/home/sadsadsa/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/home/sadsadsa/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/sadsadsa/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar:/home/sadsadsa/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar:/home/sadsadsa/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/sadsadsa/.m2/repository/com/cloudinary/cloudinary-http44/1.33.0/cloudinary-http44-1.33.0.jar:/home/sadsadsa/.m2/repository/com/cloudinary/cloudinary-core/1.33.0/cloudinary-core-1.33.0.jar:/home/sadsadsa/.m2/repository/org/apache/httpcomponents/httpmime/4.4/httpmime-4.4.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.3/spring-boot-starter-test-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-test/3.4.3/spring-boot-test-3.4.3.jar:/home/sadsadsa/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.3/spring-boot-test-autoconfigure-3.4.3.jar:/home/sadsadsa/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/sadsadsa/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/sadsadsa/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/sadsadsa/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/sadsadsa/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/sadsadsa/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/sadsadsa/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/sadsadsa/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/sadsadsa/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/sadsadsa/.m2/repository/org/xmlunit/xmlunit-core/2.10.0/xmlunit-core-2.10.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/sadsadsa"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-04-15"/>
+    <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend/target/surefire/surefirebooter-20250806141842382_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.15+6-Ubuntu-0ubuntu124.04"/>
+    <property name="user.name" value="sadsadsa"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.6.87.1-microsoft-standard-WSL2"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/sadsadsa/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-17"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="com.zaxxer.hikari.pool_number" value="4"/>
+    <property name="java.version" value="17.0.15"/>
+    <property name="user.dir" value="/mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="1820"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="17.0.15+6-Ubuntu-0ubuntu124.04"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[train-up] "/>
+  </properties>
+  <testcase name="createEventByTrainer_InvalidDto_400" classname="com.example.trainup.controller.EventControllerTest" time="0.112">
+    <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.3)
+
+2025-08-06 14:19:39.858 [main] INFO  com.example.trainup.controller.EventControllerTest - Starting EventControllerTest using Java 17.0.15 with PID 1820 (started by sadsadsa in /mnt/c/Users/Bohdan-Dymydiuk/projects/com-projects/train-up/backend)
+2025-08-06 14:19:39.861 [main] DEBUG com.example.trainup.controller.EventControllerTest - Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-08-06 14:19:39.861 [main] INFO  com.example.trainup.controller.EventControllerTest - The following 1 profile is active: "test"
+2025-08-06 14:19:43.097 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2025-08-06 14:19:43.099 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection conn30: url=jdbc:h2:mem:testdb user=SA
+2025-08-06 14:19:43.099 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2025-08-06 14:19:43.100 [main] INFO  liquibase.database - Set default schema name to PUBLIC
+2025-08-06 14:19:43.564 [main] INFO  liquibase.changelog - Reading from PUBLIC.DATABASECHANGELOG
+2025-08-06 14:19:43.603 [main] INFO  liquibase.ui - Database is up to date, no changesets to execute
+2025-08-06 14:19:43.605 [main] INFO  liquibase.util - UPDATE SUMMARY
+2025-08-06 14:19:43.605 [main] INFO  liquibase.util - Run:                          0
+2025-08-06 14:19:43.606 [main] INFO  liquibase.util - Previously run:              28
+2025-08-06 14:19:43.606 [main] INFO  liquibase.util - Filtered out:                 0
+2025-08-06 14:19:43.606 [main] INFO  liquibase.util - -------------------------------
+2025-08-06 14:19:43.606 [main] INFO  liquibase.util - Total change sets:           28
+2025-08-06 14:19:43.607 [main] INFO  liquibase.util - Update summary generated
+2025-08-06 14:19:43.607 [main] INFO  liquibase.command - Command execution complete
+2025-08-06 14:19:43.813 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-08-06 14:19:43.842 [main] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-06 14:19:43.945 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.3.232 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2025-08-06 14:19:43.945 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-08-06 14:19:43.945 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-06 14:19:44.709 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    alter table admins 
+       drop 
+       foreign key FK600ih02qklqf2htcba7s8kh2x
+Hibernate: 
+    alter table athlete_phone_numbers 
+       drop 
+       foreign key FKsq6lhkmkpo055uq5v7xvkhawr
+Hibernate: 
+    alter table athletes 
+       drop 
+       foreign key FK3sh1urbr1pvx7bp4gnq9fow1r
+Hibernate: 
+    alter table events 
+       drop 
+       foreign key FK8rwl332ud4cbj46x57xgiybyj
+Hibernate: 
+    alter table events 
+       drop 
+       foreign key FKlj14dyfl179s92hatm374588t
+Hibernate: 
+    alter table events 
+       drop 
+       foreign key FK72xc2u4739yo6n4t36pqrtd08
+Hibernate: 
+    alter table gym_owner_phone_numbers 
+       drop 
+       foreign key FK5ko2l4t5yffic7lyimoljo3m6
+Hibernate: 
+    alter table gym_owners 
+       drop 
+       foreign key FKqhsinx39y7gk4bb82elf24kv9
+Hibernate: 
+    alter table gym_phone_numbers 
+       drop 
+       foreign key FKfwr3m96iv0a2gm3t3egg2slaf
+Hibernate: 
+    alter table gym_photos 
+       drop 
+       foreign key FKctdwvrpmdcyvor36yjmbmen16
+Hibernate: 
+    alter table gym_working_hours 
+       drop 
+       foreign key FKib8y7pyi58d33ip78ih5pvwcf
+Hibernate: 
+    alter table gyms 
+       drop 
+       foreign key FKc1litp8g4l35f9oykhmkq77nf
+Hibernate: 
+    alter table gyms 
+       drop 
+       foreign key FKk5nlix7uld6h247s40o39uagc
+Hibernate: 
+    alter table gyms_trainers 
+       drop 
+       foreign key FKejqehnsyhyqdp5htcwgg735b0
+Hibernate: 
+    alter table gyms_trainers 
+       drop 
+       foreign key FK3tnw2jc4io90phnywpofojwxl
+Hibernate: 
+    alter table reviews 
+       drop 
+       foreign key FK19vxxg7nchfe2tpifhnjco0pl
+Hibernate: 
+    alter table reviews 
+       drop 
+       foreign key FKl6ehbeii3m5st1u9cu9j7ynds
+Hibernate: 
+    alter table reviews 
+       drop 
+       foreign key FKksna0ysspv7vdf2wujgsle79g
+Hibernate: 
+    alter table sports_athletes 
+       drop 
+       foreign key FKhmkebmrp4uwbhe7b9yvwaxhkp
+Hibernate: 
+    alter table sports_athletes 
+       drop 
+       foreign key FK3ayv9cx986992gx2h7l2hak5w
+Hibernate: 
+    alter table sports_gyms 
+       drop 
+       foreign key FK3q55fm5vgi5ptbod94dhow8na
+Hibernate: 
+    alter table sports_gyms 
+       drop 
+       foreign key FKjq7fyrst4nw8e1e8tp49viuxh
+Hibernate: 
+    alter table sports_trainers 
+       drop 
+       foreign key FK2ft20ii6imkr4bp7smdbcgs7y
+Hibernate: 
+    alter table sports_trainers 
+       drop 
+       foreign key FKegkuarguvcl7hcno6mj5eke5v
+Hibernate: 
+    alter table trainer_certificates 
+       drop 
+       foreign key FKm41kd81xmctumo707xmkep26i
+Hibernate: 
+    alter table trainer_phone_numbers 
+       drop 
+       foreign key FKoxkmxdq0g7ha2a80enyhv4yy1
+Hibernate: 
+    alter table trainers 
+       drop 
+       foreign key FKcnbrnosgtv3xo33vet1d0s387
+Hibernate: 
+    alter table trainers 
+       drop 
+       foreign key FKg82u7ghpjoqnhhkcvx0dn3kn3
+Hibernate: 
+    alter table user_credentials_roles 
+       drop 
+       foreign key FK3lhrdwn3da5fkkmykcgp2ui6e
+Hibernate: 
+    alter table user_credentials_roles 
+       drop 
+       foreign key FK7bu4o4g0mqpf6ajcyaj9rkw6j
+Hibernate: 
+    drop table if exists addresses
+Hibernate: 
+    drop table if exists admins
+Hibernate: 
+    drop table if exists athlete_phone_numbers
+Hibernate: 
+    drop table if exists athletes
+Hibernate: 
+    drop table if exists events
+Hibernate: 
+    drop table if exists gym_owner_phone_numbers
+Hibernate: 
+    drop table if exists gym_owners
+Hibernate: 
+    drop table if exists gym_phone_numbers
+Hibernate: 
+    drop table if exists gym_photos
+Hibernate: 
+    drop table if exists gym_working_hours
+Hibernate: 
+    drop table if exists gyms
+Hibernate: 
+    drop table if exists gyms_trainers
+Hibernate: 
+    drop table if exists reviews
+Hibernate: 
+    drop table if exists roles
+Hibernate: 
+    drop table if exists sports
+Hibernate: 
+    drop table if exists sports_athletes
+Hibernate: 
+    drop table if exists sports_gyms
+Hibernate: 
+    drop table if exists sports_trainers
+Hibernate: 
+    drop table if exists trainer_certificates
+Hibernate: 
+    drop table if exists trainer_phone_numbers
+Hibernate: 
+    drop table if exists trainers
+Hibernate: 
+    drop table if exists user_credentials
+Hibernate: 
+    drop table if exists user_credentials_roles
+Hibernate: 
+    create table addresses (
+        is_deleted bit not null,
+        id bigint not null auto_increment,
+        city varchar(255) not null,
+        city_district varchar(255),
+        country varchar(255) not null,
+        house varchar(255) not null,
+        street varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table admins (
+        date_of_birth date,
+        is_deleted bit not null,
+        id bigint not null auto_increment,
+        user_credentials_id bigint not null,
+        first_name varchar(255) not null,
+        last_name varchar(255) not null,
+        profile_image_url varchar(255),
+        gender enum ('FEMALE','MALE'),
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table athlete_phone_numbers (
+        athlete_id bigint not null,
+        phone_numbers varchar(255)
+    ) engine=InnoDB
+Hibernate: 
+    create table athletes (
+        date_of_birth date,
+        email_permission bit not null,
+        is_deleted bit not null,
+        phone_permission bit not null,
+        id bigint not null auto_increment,
+        user_credentials_id bigint not null,
+        first_name varchar(255) not null,
+        last_name varchar(255) not null,
+        profile_image_url varchar(255),
+        gender enum ('FEMALE','MALE'),
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table events (
+        date_time datetime(6) not null,
+        gym_id bigint,
+        id bigint not null auto_increment,
+        sport_id bigint not null,
+        trainer_id bigint,
+        description varchar(255),
+        name varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table gym_owner_phone_numbers (
+        gym_owner_id bigint not null,
+        phone_numbers varchar(255)
+    ) engine=InnoDB
+Hibernate: 
+    create table gym_owners (
+        date_of_birth date,
+        is_deleted bit not null,
+        id bigint not null auto_increment,
+        user_credentials_id bigint not null,
+        first_name varchar(255) not null,
+        last_name varchar(255) not null,
+        profile_image_url varchar(255),
+        gender enum ('FEMALE','MALE'),
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table gym_phone_numbers (
+        gym_id bigint not null,
+        phone_numbers VARCHAR(255)
+    ) engine=InnoDB
+Hibernate: 
+    create table gym_photos (
+        is_deleted bit not null,
+        gym_id bigint not null,
+        id bigint not null auto_increment,
+        image_url varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table gym_working_hours (
+        end_time time(6),
+        start_time time(6),
+        gym_id bigint not null,
+        day_of_week enum ('FRIDAY','MONDAY','SATURDAY','SUNDAY','THURSDAY','TUESDAY','WEDNESDAY')
+    ) engine=InnoDB
+Hibernate: 
+    create table gyms (
+        is_deleted bit not null,
+        number_of_reviews integer,
+        overall_rating float(23),
+        address_id bigint not null,
+        gym_owner_id bigint not null,
+        id bigint not null auto_increment,
+        description varchar(255),
+        name varchar(255) not null,
+        website varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table gyms_trainers (
+        gym_id bigint not null,
+        trainer_id bigint not null,
+        primary key (gym_id, trainer_id)
+    ) engine=InnoDB
+Hibernate: 
+    create table reviews (
+        rating integer not null,
+        athlete_id bigint not null,
+        gym_id bigint,
+        id bigint not null auto_increment,
+        trainer_id bigint,
+        description varchar(255),
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table roles (
+        id bigint not null auto_increment,
+        name varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table sports (
+        is_deleted bit not null,
+        id bigint not null auto_increment,
+        sport_name varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table sports_athletes (
+        athlete_id bigint not null,
+        sport_id bigint not null,
+        primary key (athlete_id, sport_id)
+    ) engine=InnoDB
+Hibernate: 
+    create table sports_gyms (
+        gym_id bigint not null,
+        sport_id bigint not null,
+        primary key (gym_id, sport_id)
+    ) engine=InnoDB
+Hibernate: 
+    create table sports_trainers (
+        sport_id bigint not null,
+        trainer_id bigint not null,
+        primary key (sport_id, trainer_id)
+    ) engine=InnoDB
+Hibernate: 
+    create table trainer_certificates (
+        trainer_id bigint not null,
+        certificates varchar(255)
+    ) engine=InnoDB
+Hibernate: 
+    create table trainer_phone_numbers (
+        trainer_id bigint not null,
+        phone_numbers varchar(255)
+    ) engine=InnoDB
+Hibernate: 
+    create table trainers (
+        date_of_birth date,
+        is_deleted bit not null,
+        number_of_reviews integer,
+        online_training bit not null,
+        overall_rating float(23),
+        address_id bigint,
+        id bigint not null auto_increment,
+        user_credentials_id bigint not null,
+        description varchar(255),
+        first_name varchar(255) not null,
+        last_name varchar(255) not null,
+        profile_image_url varchar(255),
+        social_media_links varchar(255),
+        gender enum ('FEMALE','MALE'),
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table user_credentials (
+        is_deleted bit not null,
+        id bigint not null auto_increment,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        user_type enum ('ADMIN','ATHLETE','GYM_OWNER','TRAINER') not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    create table user_credentials_roles (
+        role_id bigint not null,
+        user_credentials_id bigint not null,
+        primary key (role_id, user_credentials_id)
+    ) engine=InnoDB
+Hibernate: 
+    alter table admins 
+       add constraint UKstlvw73rb30blh8f5rlc61607 unique (user_credentials_id)
+Hibernate: 
+    alter table athletes 
+       add constraint UKij7mu3v5n4jb7qusp729ivdyq unique (user_credentials_id)
+Hibernate: 
+    alter table gym_owners 
+       add constraint UKsvn82mcjgaqxpljam1y92liut unique (user_credentials_id)
+Hibernate: 
+    alter table gyms 
+       add constraint UKe73qauhjutr62uua42vsa48xl unique (address_id)
+Hibernate: 
+    alter table roles 
+       add constraint UKofx66keruapi6vyqpv6f2or37 unique (name)
+Hibernate: 
+    alter table sports 
+       add constraint UKcs1vpkeju799gcxbq5gc0lac1 unique (sport_name)
+Hibernate: 
+    alter table trainers 
+       add constraint UKk4x2ma29c24jem3i32xx7x0cq unique (user_credentials_id)
+Hibernate: 
+    alter table user_credentials 
+       add constraint UKlrgbb675rfl59o7jp5rhetl2r unique (email)
+Hibernate: 
+    alter table admins 
+       add constraint FK600ih02qklqf2htcba7s8kh2x 
+       foreign key (user_credentials_id) 
+       references user_credentials (id)
+Hibernate: 
+    alter table athlete_phone_numbers 
+       add constraint FKsq6lhkmkpo055uq5v7xvkhawr 
+       foreign key (athlete_id) 
+       references athletes (id)
+Hibernate: 
+    alter table athletes 
+       add constraint FK3sh1urbr1pvx7bp4gnq9fow1r 
+       foreign key (user_credentials_id) 
+       references user_credentials (id)
+Hibernate: 
+    alter table events 
+       add constraint FK8rwl332ud4cbj46x57xgiybyj 
+       foreign key (gym_id) 
+       references gyms (id)
+Hibernate: 
+    alter table events 
+       add constraint FKlj14dyfl179s92hatm374588t 
+       foreign key (sport_id) 
+       references sports (id)
+Hibernate: 
+    alter table events 
+       add constraint FK72xc2u4739yo6n4t36pqrtd08 
+       foreign key (trainer_id) 
+       references trainers (id)
+Hibernate: 
+    alter table gym_owner_phone_numbers 
+       add constraint FK5ko2l4t5yffic7lyimoljo3m6 
+       foreign key (gym_owner_id) 
+       references gym_owners (id)
+Hibernate: 
+    alter table gym_owners 
+       add constraint FKqhsinx39y7gk4bb82elf24kv9 
+       foreign key (user_credentials_id) 
+       references user_credentials (id)
+Hibernate: 
+    alter table gym_phone_numbers 
+       add constraint FKfwr3m96iv0a2gm3t3egg2slaf 
+       foreign key (gym_id) 
+       references gyms (id)
+Hibernate: 
+    alter table gym_photos 
+       add constraint FKctdwvrpmdcyvor36yjmbmen16 
+       foreign key (gym_id) 
+       references gyms (id)
+Hibernate: 
+    alter table gym_working_hours 
+       add constraint FKib8y7pyi58d33ip78ih5pvwcf 
+       foreign key (gym_id) 
+       references gyms (id)
+Hibernate: 
+    alter table gyms 
+       add constraint FKc1litp8g4l35f9oykhmkq77nf 
+       foreign key (gym_owner_id) 
+       references gym_owners (id)
+Hibernate: 
+    alter table gyms 
+       add constraint FKk5nlix7uld6h247s40o39uagc 
+       foreign key (address_id) 
+       references addresses (id)
+Hibernate: 
+    alter table gyms_trainers 
+       add constraint FKejqehnsyhyqdp5htcwgg735b0 
+       foreign key (trainer_id) 
+       references trainers (id)
+Hibernate: 
+    alter table gyms_trainers 
+       add constraint FK3tnw2jc4io90phnywpofojwxl 
+       foreign key (gym_id) 
+       references gyms (id)
+Hibernate: 
+    alter table reviews 
+       add constraint FK19vxxg7nchfe2tpifhnjco0pl 
+       foreign key (athlete_id) 
+       references athletes (id)
+Hibernate: 
+    alter table reviews 
+       add constraint FKl6ehbeii3m5st1u9cu9j7ynds 
+       foreign key (gym_id) 
+       references gyms (id)
+Hibernate: 
+    alter table reviews 
+       add constraint FKksna0ysspv7vdf2wujgsle79g 
+       foreign key (trainer_id) 
+       references trainers (id)
+Hibernate: 
+    alter table sports_athletes 
+       add constraint FKhmkebmrp4uwbhe7b9yvwaxhkp 
+       foreign key (athlete_id) 
+       references athletes (id)
+Hibernate: 
+    alter table sports_athletes 
+       add constraint FK3ayv9cx986992gx2h7l2hak5w 
+       foreign key (sport_id) 
+       references sports (id)
+Hibernate: 
+    alter table sports_gyms 
+       add constraint FK3q55fm5vgi5ptbod94dhow8na 
+       foreign key (sport_id) 
+       references sports (id)
+Hibernate: 
+    alter table sports_gyms 
+       add constraint FKjq7fyrst4nw8e1e8tp49viuxh 
+       foreign key (gym_id) 
+       references gyms (id)
+Hibernate: 
+    alter table sports_trainers 
+       add constraint FK2ft20ii6imkr4bp7smdbcgs7y 
+       foreign key (sport_id) 
+       references sports (id)
+Hibernate: 
+    alter table sports_trainers 
+       add constraint FKegkuarguvcl7hcno6mj5eke5v 
+       foreign key (trainer_id) 
+       references trainers (id)
+Hibernate: 
+    alter table trainer_certificates 
+       add constraint FKm41kd81xmctumo707xmkep26i 
+       foreign key (trainer_id) 
+       references trainers (id)
+Hibernate: 
+    alter table trainer_phone_numbers 
+       add constraint FKoxkmxdq0g7ha2a80enyhv4yy1 
+       foreign key (trainer_id) 
+       references trainers (id)
+Hibernate: 
+    alter table trainers 
+       add constraint FKcnbrnosgtv3xo33vet1d0s387 
+       foreign key (user_credentials_id) 
+       references user_credentials (id)
+Hibernate: 
+    alter table trainers 
+       add constraint FKg82u7ghpjoqnhhkcvx0dn3kn3 
+       foreign key (address_id) 
+       references addresses (id)
+Hibernate: 
+    alter table user_credentials_roles 
+       add constraint FK3lhrdwn3da5fkkmykcgp2ui6e 
+       foreign key (role_id) 
+       references roles (id)
+Hibernate: 
+    alter table user_credentials_roles 
+       add constraint FK7bu4o4g0mqpf6ajcyaj9rkw6j 
+       foreign key (user_credentials_id) 
+       references user_credentials (id)
+2025-08-06 14:19:45.261 [main] INFO  com.example.trainup.service.GeminiChatService - System prompt loaded.
+2025-08-06 14:19:46.634 [main] DEBUG com.example.trainup.security.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+2025-08-06 14:19:46.672 [main] INFO  com.example.trainup.controller.EventControllerTest - Started EventControllerTest in 6.906 seconds (process running for 63.833)
+2025-08-06 14:19:46.773 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [0] in public com.example.trainup.dto.event.EventResponseDto com.example.trainup.controller.EventController.createEventByTrainer(com.example.trainup.dto.event.EventRegistrationRequestDto,org.springframework.security.core.Authentication) with 3 errors: [Field error in object 'eventRegistrationRequestDto' on field 'sportId': rejected value [null]; codes [NotNull.eventRegistrationRequestDto.sportId,NotNull.sportId,NotNull.java.lang.Long,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [eventRegistrationRequestDto.sportId,sportId]; arguments []; default message [sportId]]; default message [SportId must not be null]] [Field error in object 'eventRegistrationRequestDto' on field 'dateTime': rejected value [null]; codes [NotNull.eventRegistrationRequestDto.dateTime,NotNull.dateTime,NotNull.java.time.LocalDateTime,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [eventRegistrationRequestDto.dateTime,dateTime]; arguments []; default message [dateTime]]; default message [Event dateTime cannot be null]] [Field error in object 'eventRegistrationRequestDto' on field 'name': rejected value []; codes [NotBlank.eventRegistrationRequestDto.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [eventRegistrationRequestDto.name,name]; arguments []; default message [name]]; default message [Name must not be blank]] 
+2025-08-06 14:19:46.774 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[sportId: SportId must not be null, dateTime: Event dateTime cannot be null, name: Name must not be blank]
+]]></system-out>
+  </testcase>
+  <testcase name="getAllEvents_Success" classname="com.example.trainup.controller.EventControllerTest" time="0.026">
+    <system-out><![CDATA[2025-08-06 14:19:46.803 [main] INFO  com.example.trainup.controller.EventController - Attempting to fetch events with filter: EventFilterRequestDto[id=null, name=Yoga, sportId=1, date=2025-08-06, gymId=null, trainerId=null] and pageable: Page request [number: 0, size 10, sort: UNSORTED]
+2025-08-06 14:19:46.807 [main] INFO  com.example.trainup.controller.EventController - Successfully retrieved 1 events with specified criteria.
+]]></system-out>
+  </testcase>
+  <testcase name="createEventByGymOwner_Success" classname="com.example.trainup.controller.EventControllerTest" time="0.018">
+    <system-out><![CDATA[2025-08-06 14:19:46.824 [main] INFO  com.example.trainup.controller.EventController - Attempting to create event by gym owner 'user' for gymId: 1, with request: EventRegistrationRequestDto[name=Yoga Workshop, sportId=1, description=Beginner-friendly yoga session, dateTime=2025-08-07T14:19:46.817347390]
+2025-08-06 14:19:46.826 [main] INFO  com.example.trainup.controller.EventController - Event successfully created by gym owner 'user' for gymId: 1. Event ID: 1
+]]></system-out>
+  </testcase>
+  <testcase name="getAllEvents_EmptyList_Success" classname="com.example.trainup.controller.EventControllerTest" time="0.012">
+    <system-out><![CDATA[2025-08-06 14:19:46.839 [main] INFO  com.example.trainup.controller.EventController - Attempting to fetch events with filter: EventFilterRequestDto[id=null, name=null, sportId=null, date=null, gymId=null, trainerId=null] and pageable: Page request [number: 0, size 10, sort: UNSORTED]
+2025-08-06 14:19:46.840 [main] INFO  com.example.trainup.controller.EventController - Successfully retrieved 0 events with specified criteria.
+]]></system-out>
+  </testcase>
+  <testcase name="createEventByTrainer_Success" classname="com.example.trainup.controller.EventControllerTest" time="0.013">
+    <system-out><![CDATA[2025-08-06 14:19:46.854 [main] INFO  com.example.trainup.controller.EventController - Attempting to create event by trainer 'user' with request: EventRegistrationRequestDto[name=Yoga Workshop, sportId=1, description=Beginner-friendly yoga session, dateTime=2025-08-07T14:19:46.849214733]
+2025-08-06 14:19:46.854 [main] INFO  com.example.trainup.controller.EventController - Event successfully created by trainer 'user'. Event ID: 1
+]]></system-out>
+  </testcase>
+  <testcase name="updateEvent_Unauthorized_403" classname="com.example.trainup.controller.EventControllerTest" time="0.027">
+    <system-out><![CDATA[2025-08-06 14:19:46.883 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling AuthorizationDeniedException: Access Denied
+2025-08-06 14:19:46.884 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Authorization denied, errors=[Access Denied]
+]]></system-out>
+  </testcase>
+  <testcase name="deleteEvent_Success" classname="com.example.trainup.controller.EventControllerTest" time="0.013">
+    <system-out><![CDATA[2025-08-06 14:19:46.896 [main] INFO  com.example.trainup.controller.EventController - Attempting to delete event with ID: 1 by user: trainer@example.com
+2025-08-06 14:19:46.897 [main] INFO  com.example.trainup.controller.EventController - Event with ID: 1 successfully deleted.
+]]></system-out>
+  </testcase>
+  <testcase name="createEventByGymOwner_InvalidGymId_400" classname="com.example.trainup.controller.EventControllerTest" time="0.015">
+    <system-out><![CDATA[2025-08-06 14:19:46.912 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling ConstraintViolationException: createEventByGymOwner.gymId: must be greater than 0
+2025-08-06 14:19:46.912 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[createEventByGymOwner.gymId: must be greater than 0]
+]]></system-out>
+  </testcase>
+  <testcase name="createEventByTrainer_TrainerNotFound_404" classname="com.example.trainup.controller.EventControllerTest" time="0.013">
+    <system-out><![CDATA[2025-08-06 14:19:46.926 [main] INFO  com.example.trainup.controller.EventController - Attempting to create event by trainer 'user' with request: EventRegistrationRequestDto[name=Yoga Workshop, sportId=1, description=Beginner-friendly yoga session, dateTime=2025-08-07T14:19:46.922323246]
+2025-08-06 14:19:46.927 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling EntityNotFoundException: Trainer not found with email: trainer@example.com
+2025-08-06 14:19:46.927 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=404 NOT_FOUND, error=Entity not found, errors=[Trainer not found with email: trainer@example.com]
+]]></system-out>
+  </testcase>
+  <testcase name="updateEvent_Success" classname="com.example.trainup.controller.EventControllerTest" time="0.013">
+    <system-out><![CDATA[2025-08-06 14:19:46.940 [main] INFO  com.example.trainup.controller.EventController - Attempting to update event with ID: 1 by user 'trainer@example.com' with request: EventUpdateRequestDto[name=Advanced Yoga Workshop, sportId=2, description=Intermediate yoga session, dateTime=2025-08-08T14:19:46.935932223]
+2025-08-06 14:19:46.941 [main] INFO  com.example.trainup.controller.EventController - Event with ID: 1 successfully updated.
+]]></system-out>
+  </testcase>
+  <testcase name="updateEvent_InvalidDateTime_400" classname="com.example.trainup.controller.EventControllerTest" time="0.017">
+    <system-out><![CDATA[2025-08-06 14:19:46.953 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling MethodArgumentNotValidException: Validation failed for argument [1] in public com.example.trainup.dto.event.EventResponseDto com.example.trainup.controller.EventController.updateEvent(java.lang.Long,com.example.trainup.dto.event.EventUpdateRequestDto,org.springframework.security.core.Authentication): [Field error in object 'eventUpdateRequestDto' on field 'dateTime': rejected value [2025-08-05T14:19:46.949955744]; codes [FutureOrPresent.eventUpdateRequestDto.dateTime,FutureOrPresent.dateTime,FutureOrPresent.java.time.LocalDateTime,FutureOrPresent]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [eventUpdateRequestDto.dateTime,dateTime]; arguments []; default message [dateTime]]; default message [Event dateTime cannot be in the past]] 
+2025-08-06 14:19:46.954 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[dateTime: Event dateTime cannot be in the past]
+]]></system-out>
+  </testcase>
+  <testcase name="createEventByGymOwner_GymNotOwned_403" classname="com.example.trainup.controller.EventControllerTest" time="0.014">
+    <system-out><![CDATA[2025-08-06 14:19:46.972 [main] INFO  com.example.trainup.controller.EventController - Attempting to create event by gym owner 'user' for gymId: 1, with request: EventRegistrationRequestDto[name=Yoga Workshop, sportId=1, description=Beginner-friendly yoga session, dateTime=2025-08-07T14:19:46.967542754]
+2025-08-06 14:19:46.973 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling IllegalStateException: Gym does not belong to this owner
+2025-08-06 14:19:46.973 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Illegal state, errors=[Gym does not belong to this owner]
+]]></system-out>
+  </testcase>
+  <testcase name="createEventByTrainer_Unauthenticated_403" classname="com.example.trainup.controller.EventControllerTest" time="0.01"/>
+  <testcase name="deleteEvent_NotFound_404" classname="com.example.trainup.controller.EventControllerTest" time="0.012">
+    <system-out><![CDATA[2025-08-06 14:19:46.997 [main] INFO  com.example.trainup.controller.EventController - Attempting to delete event with ID: 1 by user: trainer@example.com
+2025-08-06 14:19:46.998 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling EntityNotFoundException: Event not found with id: 1
+2025-08-06 14:19:46.998 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=404 NOT_FOUND, error=Entity not found, errors=[Event not found with id: 1]
+]]></system-out>
+  </testcase>
+  <testcase name="deleteEvent_Unauthorized_403" classname="com.example.trainup.controller.EventControllerTest" time="0.012">
+    <system-out><![CDATA[2025-08-06 14:19:47.010 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling AuthorizationDeniedException: Access Denied
+2025-08-06 14:19:47.010 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=403 FORBIDDEN, error=Authorization denied, errors=[Access Denied]
+]]></system-out>
+  </testcase>
+  <testcase name="getAllEvents_InvalidSportId_400" classname="com.example.trainup.controller.EventControllerTest" time="0.014">
+    <system-out><![CDATA[2025-08-06 14:19:47.024 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Handling ConstraintViolationException: getAllEvents.sportId: must be greater than 0
+2025-08-06 14:19:47.024 [main] DEBUG com.example.trainup.exception.CustomGlobalExceptionHandler - Building response: status=400 BAD_REQUEST, error=Validation error, errors=[getAllEvents.sportId: must be greater than 0]
+]]></system-out>
+  </testcase>
+</testsuite>

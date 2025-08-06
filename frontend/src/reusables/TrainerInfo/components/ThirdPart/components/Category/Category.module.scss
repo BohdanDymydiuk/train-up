@@ -1,0 +1,9 @@
+.category {
+  width: 90px;
+  height: 39px;
+  border: 1px solid $brown_1;
+  border-radius: 8px;
+
+  @include inter-500-16;
+  @include flex-center-center;
+}

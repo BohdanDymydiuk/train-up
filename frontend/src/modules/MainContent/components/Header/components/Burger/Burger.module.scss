@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  background-color: transparent;
+  border: none;
+
+  &:focus {
+    svg path {
+      fill: red;
+    }
+  }
+}

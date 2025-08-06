@@ -1,0 +1,13 @@
+.form-wrapper {
+  .form {
+    &-title {
+      @include ermilov-40;
+
+      text-align: center;
+    }
+  }
+
+  @include on-tablet {
+    width: 653px;
+  }
+}

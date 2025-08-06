@@ -1,0 +1,12 @@
+.type {
+  @include inter-500-12;
+
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+:export {
+  brownColor: $brown_1;
+  darkColor: $gray_9;
+}
