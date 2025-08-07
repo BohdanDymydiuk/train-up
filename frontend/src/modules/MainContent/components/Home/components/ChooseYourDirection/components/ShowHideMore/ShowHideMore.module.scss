@@ -1,0 +1,14 @@
+.button {
+  @include inter-500-18;
+
+  margin-top: 42px;
+  margin-inline: auto;
+  display: block;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @include on-tablet {
+    margin-top: 66px;
+  }
+}
