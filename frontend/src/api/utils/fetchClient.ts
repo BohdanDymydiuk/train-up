@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { store } from '../../store/store';
 
-const BASE_URL = 'http://localhost:8080'; // local: "http://localhost:8080", prod: "https://train-up.onrender.com"
+const BASE_URL = 'https://train-up.onrender.com'; // local: "http://localhost:8080", prod: "https://train-up.onrender.com"
 
 // a promise resolved after a given delay
 function wait(delay: number) {
