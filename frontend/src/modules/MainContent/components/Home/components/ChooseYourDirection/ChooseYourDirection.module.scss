@@ -4,11 +4,16 @@
   border-radius: 16px;
   padding: 16px;
 
+  @include on-small-tablet {
+    padding: 64px;
+  }
+
   @include on-tablet {
     margin-top: 64px;
   }
 
   @include on-desktop {
+    padding: 64px 75px;
     margin-top: 104px;
   }
 }
