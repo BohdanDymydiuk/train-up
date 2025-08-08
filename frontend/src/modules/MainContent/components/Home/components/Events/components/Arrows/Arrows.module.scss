@@ -1,0 +1,21 @@
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 74px;
+
+  .button {
+    background-color: transparent;
+    border: none;
+
+    path {
+      transition: fill $trans-dur;
+    }
+
+    &:hover, &:focus {
+      path {
+        fill: $orange_1;
+      }
+    }
+  }
+}

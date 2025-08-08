@@ -10,7 +10,7 @@
   transition: height 500ms;
   overflow: hidden;
   gap: var(--gap);
-  position: sticky;
+  position: sticky; // fixes scroll bug
   align-content: start;
   justify-content: center;
 

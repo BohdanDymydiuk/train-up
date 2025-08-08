@@ -1,0 +1,17 @@
+.section {
+  margin-top: 32px;
+
+  @include on-tablet {
+    margin-top: 64px;
+  }
+
+  @include on-desktop {
+    margin-top: 72px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
