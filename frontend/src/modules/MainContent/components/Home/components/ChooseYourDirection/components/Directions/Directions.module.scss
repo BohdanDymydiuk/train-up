@@ -10,7 +10,9 @@
   transition: height 500ms;
   overflow: hidden;
   gap: var(--gap);
+  position: sticky;
   align-content: start;
+  justify-content: center;
 
   &,
   .first-part,
@@ -30,7 +32,7 @@
   }
 
   .block {
-    height: var(--block-height);
+    min-height: var(--block-height);
     padding: 24px;
     border-radius: 16px;
     background-color: $gray_11;

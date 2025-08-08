@@ -14,19 +14,17 @@ export const Directions: React.FC<Props> = ({ areAllShown }) => {
 
   const sports = useAppSelector(state => state.sports);
 
-  const sportsShown = useMemo(() => {
-    return [...sports].slice(0, areAllShown ? sports.length : 6);
+  const sportsShownNumber = useMemo(() => {
+    return [...sports].slice(0, areAllShown ? sports.length : 6).length;
   }, [areAllShown, sports]);
 
-  const rows = onDesktop
-    ? Math.ceil(sportsShown.length / 2)
-    : sportsShown.length;
+  const rows = onDesktop ? Math.ceil(sportsShownNumber / 2) : sportsShownNumber;
 
   const heigthValue = `calc((var(--block-height) * ${rows}) + (var(--gap) * ${rows - 1}))`;
 
   return (
     <div className={styles.wrapper} style={{ height: heigthValue }}>
-      {sportsShown.map(sport => {
+      {sports.map(sport => {
         const { id, sportName } = sport;
 
         return (
