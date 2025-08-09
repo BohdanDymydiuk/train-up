@@ -26,7 +26,7 @@ export const SportFinder: React.FC = () => {
         шляху
       </>
     ),
-    CssProps: { textAlign: 'center' } as React.CSSProperties,
+    cssProps: { textAlign: 'center' } as React.CSSProperties,
   };
 
   return (

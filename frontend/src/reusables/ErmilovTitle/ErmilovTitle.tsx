@@ -4,12 +4,12 @@ import styles from './ErmilovTitle.module.scss';
 
 interface Props {
   title: JSX.Element | string;
-  CssProps?: React.CSSProperties;
+  cssProps?: React.CSSProperties;
 }
 
-export const ErmilovTitle: React.FC<Props> = ({ title, CssProps }) => {
+export const ErmilovTitle: React.FC<Props> = ({ title, cssProps }) => {
   return (
-    <h2 className={styles.title} style={CssProps}>
+    <h2 className={styles.title} style={cssProps}>
       {title}
     </h2>
   );

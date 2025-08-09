@@ -12,7 +12,7 @@ export const Events: React.FC = () => {
 
   const ermilovTitleProps = {
     title: 'Найближчі події',
-    CssProps: {
+    cssProps: {
       fontSize: onDesktop && '40px',
       whiteSpace: 'nowrap',
     } as React.CSSProperties,

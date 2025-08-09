@@ -12,7 +12,7 @@ export const WhatIsTrainUp: React.FC = () => {
 
   const ermilovTitleProps = {
     title: 'TrainUp — це',
-    CssProps: { fontSize: onDesktop && '40px' } as React.CSSProperties,
+    cssProps: { fontSize: onDesktop && '40px' } as React.CSSProperties,
   };
 
   return (

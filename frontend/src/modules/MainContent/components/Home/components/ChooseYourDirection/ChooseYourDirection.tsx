@@ -15,7 +15,7 @@ export const ChooseYourDirection: React.FC = () => {
 
   const ermilovTitleProps = {
     title: 'Оберіть свій напрям',
-    CssProps: {
+    cssProps: {
       textAlign: 'center',
       fontSize: onDesktop && '40px',
     } as React.CSSProperties,
