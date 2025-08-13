@@ -9,6 +9,9 @@ public record EventUpdateRequestDto(
         String description,
 
         @FutureOrPresent(message = "Event dateTime cannot be in the past")
-        LocalDateTime dateTime
+        LocalDateTime dateTime,
+
+        Boolean onlineTraining,
+        Integer intensity
 ) {
 }

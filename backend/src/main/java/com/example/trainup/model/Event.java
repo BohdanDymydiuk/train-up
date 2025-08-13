@@ -2,6 +2,7 @@ package com.example.trainup.model;
 
 import com.example.trainup.model.user.Trainer;
 import com.example.trainup.validation.EventTarget;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -48,4 +49,10 @@ public class Event {
     @ManyToOne
     @JoinColumn(name = "trainer_id")
     private Trainer trainer;
+
+    @Column(nullable = false)
+    private Boolean onlineTraining;
+
+    @Column(nullable = false)
+    private Integer intensity;
 }

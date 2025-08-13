@@ -13,6 +13,7 @@ import java.time.LocalDate;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.hibernate.validator.constraints.Range;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
@@ -102,10 +103,12 @@ public class EventController {
             @RequestParam(required = false) LocalDate date,
             @RequestParam(required = false) @Positive Long gymId,
             @RequestParam(required = false) @Positive Long trainerId,
+            @RequestParam(required = false) Boolean onlineTraining,
+            @RequestParam(required = false) @Range(min = 1, max = 3) Integer intensity,
             @PageableDefault(size = 10) Pageable pageable
     ) {
         EventFilterRequestDto filterRequestDto = new EventFilterRequestDto(
-                id, name, sportId, date, gymId, trainerId);
+                id, name, sportId, date, gymId, trainerId, onlineTraining, intensity);
         log.info("Attempting to fetch events with filter: {} and pageable: {}",
                 filterRequestDto, pageable);
 
