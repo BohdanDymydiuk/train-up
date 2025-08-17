@@ -12,7 +12,7 @@ import { DropdownProps } from '../../../../../../../../reusables/DropdownHoc';
 import dpStyles from '../NavDropdown/NavDropdown.module.scss';
 import styles from './NavElems.module.scss';
 
-export const NavElems: React.FC<DropdownProps> = ({
+export const NavElems: React.FC<Partial<DropdownProps>> = ({
   isDpShown,
   closeDpHandler,
 }) => {
