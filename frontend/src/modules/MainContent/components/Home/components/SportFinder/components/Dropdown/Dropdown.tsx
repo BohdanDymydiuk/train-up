@@ -1,4 +1,5 @@
 import React, { useContext, useMemo, useState } from 'react';
+import Highlighter from 'react-highlight-words';
 
 import { APPEARING_DP_CSS_PROPS } from '../../../../../../../../constants/common';
 import { MainContext } from '../../../../../../../../context/MainContext';
@@ -79,7 +80,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
                 className={styles['dp-item']}
                 onClick={() => onClickHandler(item)}
               >
-                {item}
+                <Highlighter searchWords={[query]} textToHighlight={item} />
               </li>
             );
           })}
