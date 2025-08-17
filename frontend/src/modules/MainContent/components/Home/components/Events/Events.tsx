@@ -4,6 +4,7 @@ import { MainContext } from '../../../../../../context/MainContext';
 import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
 
 import { Arrows } from './components/Arrows';
+import { EventsItems } from './components/Events';
 
 import styles from './Events.module.scss';
 
@@ -23,6 +24,7 @@ export const Events: React.FC = () => {
       <header className={styles.header}>
         <ErmilovTitle {...ermilovTitleProps} />
         <Arrows />
+        <EventsItems />
       </header>
     </section>
   );

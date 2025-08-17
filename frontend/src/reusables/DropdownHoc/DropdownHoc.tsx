@@ -2,20 +2,26 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './DropdownHoc.module.scss';
 
-export interface ButtonProps {
+export interface DpHocProps {
+  text?: string;
+  items?: string[];
+  select?: (value: string) => void;
+}
+
+export interface ButtonProps extends DpHocProps {
   onClickHandler: () => void;
 }
 
-export interface DropdownProps {
-  isDpShown?: boolean;
-  closeDpHandler?: () => void;
+export interface DropdownProps extends DpHocProps {
+  isDpShown: boolean;
+  closeDpHandler: () => void;
 }
 
 export const DropdownHoc = (
   ButtonComponent: React.FC<ButtonProps>,
   DropdownComponent: React.FC<DropdownProps>,
 ) => {
-  const ResultedComponent: React.FC = () => {
+  const ResultedComponent: React.FC<DpHocProps> = ({ text, select, items }) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     const [isDpActive, setIsDpActive] = useState(false);
@@ -55,12 +61,21 @@ export const DropdownHoc = (
     }, [isDpActive]);
     // #endregion
 
-    const dpProps = { isDpShown, closeDpHandler };
+    const dropdownProps: DropdownProps = { isDpShown, closeDpHandler };
+    const buttonProps: ButtonProps = { onClickHandler };
+
+    if (text) {
+      dropdownProps.text = text;
+      buttonProps.text = text;
+    }
+
+    if (items) dropdownProps.items = items;
+    if (select) dropdownProps.select = select;
 
     return (
       <div className={styles.wrapper} ref={wrapperRef}>
-        <ButtonComponent onClickHandler={onClickHandler} />
-        {isDpActive && <DropdownComponent {...dpProps} />}
+        <ButtonComponent {...buttonProps} />
+        {isDpActive && <DropdownComponent {...dropdownProps} />}
       </div>
     );
   };

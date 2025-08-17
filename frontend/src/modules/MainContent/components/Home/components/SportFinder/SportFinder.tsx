@@ -1,24 +1,28 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
+import { REGIONAL_CENTERS } from '../../../../../../constants/regionalCenters';
 import { MainContext } from '../../../../../../context/MainContext';
+import { FinderTexts } from '../../../../../../enums/FinderTexts';
+import { DropdownHoc } from '../../../../../../reusables/DropdownHoc';
 import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
-import { ChevronDownSVG } from '../../../../../../reusables/svgs/ChevronDownSVG';
+import { useAppSelector } from '../../../../../../store/store';
+
+import { Button } from './components/Button';
+import { Dropdown } from './components/Dropdown';
 
 import styles from './SportFinder.module.scss';
-
-enum Texts {
-  sport = 'Яким видом спорту займаєтесь?',
-  city = 'Оберіть місто',
-}
 
 export const SportFinder: React.FC = () => {
   const { onTablet, onSmallDesktop } = useContext(MainContext);
 
-  const chevronDownSvgCssProps = {
-    svgStyle: { minWidth: '16px' },
-    pathStyle: { fill: `${styles.gray}` },
-  };
+  const sports = useAppSelector(state => state.sports);
 
+  const sportsNames = sports.map(sport => sport.sportName);
+
+  const [selectedSport, setSelectedSport] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
+
+  // #region props
   const ermilovTitleProps = {
     title: (
       <>
@@ -28,6 +32,24 @@ export const SportFinder: React.FC = () => {
     ),
     cssProps: { textAlign: 'center' } as React.CSSProperties,
   };
+  // #endregion
+
+  const ChooseSport = DropdownHoc(Button, Dropdown);
+  const ChooseCity = DropdownHoc(Button, Dropdown);
+
+  // #region props
+  const chooseSportProps = {
+    text: selectedSport || FinderTexts.sport,
+    select: setSelectedSport,
+    items: sportsNames,
+  };
+
+  const chooseCityProps = {
+    text: selectedCity || FinderTexts.city,
+    select: setSelectedCity,
+    items: Object.values(REGIONAL_CENTERS),
+  };
+  // #endregion
 
   return (
     <div className={styles.wrapper}>
@@ -37,14 +59,9 @@ export const SportFinder: React.FC = () => {
           className={styles['inputs-wrapper']}
           style={{ display: !onSmallDesktop ? 'contents' : 'flex' }}
         >
-          {Object.values(Texts).map(item => {
-            return (
-              <div className={styles.select} key={item}>
-                <div className={styles.text}>{item}</div>
-                <ChevronDownSVG {...chevronDownSvgCssProps} />
-              </div>
-            );
-          })}
+          <ChooseSport {...chooseSportProps} />
+          <ChooseCity {...chooseCityProps} />
+
           <div className={styles.online}>
             <input
               className={styles.checkbox}

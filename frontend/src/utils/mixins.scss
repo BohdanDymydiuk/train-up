@@ -209,27 +209,32 @@
   padding-inline: 16px;
 }
 
-@mixin dropdown {
+@mixin mainDpProps {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  border-radius: 16px;
-  border: 1px solid $light-gray_1;
-  overflow: hidden;
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;
   transition:
     opacity $trans-dur,
     transform $trans-dur;
+}
+
+@mixin dropdown {
+  @include mainDpProps;
+
+  border-radius: 16px;
+  border: 1px solid $light-gray_1;
+  overflow: hidden;
 
   .dp-list {
     padding: 0;
     background-color: $white_1;
+    list-style: none;
+
+    @include inter-500-14;
 
     .dp-item {
       cursor: pointer;
-      list-style: none;
       height: 48px;
       display: flex;
       align-items: center;
@@ -246,8 +251,6 @@
       &-link {
         text-align: right;
         color: $black_1;
-
-        @include inter-500-14;
       }
     }
   }

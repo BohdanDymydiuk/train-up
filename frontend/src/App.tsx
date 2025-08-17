@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router';
 
 import { getEvents } from './api/events';
+import { getEvents as getEvents2 } from './api/events2';
 import { getSports } from './api/sports';
 import { getTrainers } from './api/trainers';
 import { GET_DATA_ERROR } from './constants/errors';
@@ -13,10 +14,12 @@ import { Home } from './modules/MainContent/components/Home';
 import { ProfileMain } from './modules/MainContent/components/ProfileMain';
 import { SignIn } from './modules/MainContent/components/SignIn';
 import { actions as eventsActions } from './store/features/events';
+import { actions as eventsActions2 } from './store/features/events2';
 import { actions as locationActions } from './store/features/location';
 import { actions as sportsActions } from './store/features/sports';
 import { actions as trainersActions } from './store/features/trainers';
 import { useAppDispatch, useAppSelector } from './store/store';
+import { Event } from './types/Event';
 import { EventInfoType } from './types/EventInfoType';
 import { Sport } from './types/Sport';
 import { TrainerInfoType } from './types/TrainerInfoType';
@@ -32,8 +35,12 @@ export const App: React.FC = () => {
     dispatch(trainersActions.setTrainers(trainers));
   };
 
-  const setEvents = (events: EventInfoType[]) => {
+  const setEvents = (events: Event[]) => {
     dispatch(eventsActions.setEvents(events));
+  };
+
+  const setEvents2 = (events: EventInfoType[]) => {
+    dispatch(eventsActions2.setEvents(events));
   };
 
   const setLocation = (location: string) => {
@@ -47,17 +54,26 @@ export const App: React.FC = () => {
 
   // #region useEffects
   useEffect(() => {
-    getSports()
-      .then(response => setSports(response))
-      .catch(() => {
-        throw new Error(GET_DATA_ERROR);
-      });
+    const getters = [getSports, getEvents];
+    const setters = [setSports, setEvents];
+
+    getters.forEach((get, index) => {
+      type ElementsType = Sport[] | Event[];
+
+      const set = setters[index] as (value: ElementsType) => void;
+
+      get()
+        .then(response => set(response))
+        .catch(() => {
+          throw new Error(GET_DATA_ERROR);
+        });
+    });
   }, []);
 
   useEffect(() => {
     if (jwtToken) {
-      const getters = [getTrainers, getEvents];
-      const setters = [setTrainers, setEvents];
+      const getters = [getTrainers, getEvents2];
+      const setters = [setTrainers, setEvents2];
 
       getters.forEach((get, index) => {
         type ElementsType = TrainerInfoType[] | EventInfoType[];

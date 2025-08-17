@@ -9,7 +9,7 @@ import { useAppSelector } from '../../../../../../store/store';
 import styles from './Events.module.scss';
 
 export const Events: React.FC = () => {
-  const events = useAppSelector(state => state.events);
+  const events = useAppSelector(state => state.events2);
 
   return (
     <section className={styles.events}>

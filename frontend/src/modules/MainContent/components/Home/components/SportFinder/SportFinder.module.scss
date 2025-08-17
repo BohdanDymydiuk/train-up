@@ -33,14 +33,12 @@
     --first-column: 350px;
     --times: 2;
 
-    @include inter-500-14;
 
     @include on-tablet {
       display: grid;
-      grid-template-rows: repeat(var(--times), 48px);
+      grid-template-rows: repeat(var(--times), $finder-row-height);
       grid-template-columns: var(--first-column) 1fr;
       gap: 20px 40px;
-      font-size: 18px;
     }
 
     @include on-large-tablet {
@@ -63,6 +61,16 @@
     @include on-desktop {
       --first-column: 808px;
       margin-top: 72px;
+
+      .inputs-wrapper {
+        > :nth-child(1) {
+          width: 420px;
+        }
+  
+        > :nth-child(2) {
+          width: 190px;
+        }
+      }
     }
 
     @include on-large-desktop {
@@ -72,32 +80,37 @@
     .select,
     .online,
     .find {
-      height: 48px;
+      height: $finder-row-height;
+      
+      @include inter-500-14;
+
 
       @include on-tablet {
         height: auto;
+        font-size: 18px;
       }
     }
 
     .select {
       @include flex-between-center;
 
+      background-color: transparent;
+      border: none;
       border-bottom: 1px solid $gray_10;
+      cursor: pointer;
+      text-align: start;
+      width: 100%;
 
+      @include on-tablet {
+        height: 100%;
+      }
+      
       @include on-small-desktop {
         column-gap: 20px;
       }
-
+      
       @include on-desktop {
         column-gap: normal;
-
-        &:nth-child(1) {
-          width: 420px;
-        }
-
-        &:nth-child(2) {
-          width: 190px;
-        }
       }
     }
 

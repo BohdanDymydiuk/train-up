@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { EventInfoType } from '../../types/EventInfoType';
+import { Event } from '../../types/Event';
 
 export const eventsSlice = createSlice({
   name: 'events',
-  initialState: [] as EventInfoType[],
+  initialState: [] as Event[],
   reducers: {
-    setEvents: (_, action: PayloadAction<EventInfoType[]>) => action.payload,
+    setEvents: (_, action: PayloadAction<Event[]>) => action.payload,
   },
 });
 
