@@ -3,6 +3,10 @@
   display: flex;
   gap: 42px;
 
+  .item {
+    cursor: pointer;
+  }
+
   .link {
     @include inter-400-16;
 

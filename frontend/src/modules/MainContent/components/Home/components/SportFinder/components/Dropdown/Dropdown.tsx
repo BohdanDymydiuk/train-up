@@ -30,20 +30,15 @@ export const Dropdown: React.FC<DropdownProps> = ({
   }, [query]);
 
   const dpCssProps: React.CSSProperties = useMemo(() => {
+    const cityCondition = text === FinderTexts.city;
+    const x2Condition = !onTablet || (onTablet && cityCondition);
+
     const result: React.CSSProperties = {
-      width: `calc(100% + ${styles.finderPadding}${!onTablet && '* 2'})`,
+      width: `calc(100% + ${styles.finderPadding}${x2Condition ? ' * 2' : ''})`,
       left: `calc(${styles.finderPadding} * -1)`,
     };
 
-    if (onTablet) {
-      result.width = `calc(100% + ${styles.finderPadding})`;
-
-      if (text === FinderTexts.city) {
-        result.left = '0';
-
-        if (onDesktop) result.width = '125%';
-      }
-    }
+    if (onDesktop && cityCondition) result.width = '125%';
 
     return result;
   }, [onTablet, onDesktop]);
@@ -53,8 +48,8 @@ export const Dropdown: React.FC<DropdownProps> = ({
     : dpCssProps;
 
   const onClickHandler = (name: string) => {
-    if (select) select(name);
     if (closeDpHandler) closeDpHandler();
+    if (select) setTimeout(() => select(name), 100);
   };
 
   return (

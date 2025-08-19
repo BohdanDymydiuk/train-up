@@ -31,7 +31,10 @@ export const NavElems: React.FC<Partial<DropdownProps>> = ({
     [dpStyles['dp-item-link']]: !isUndefined(isDpShown),
   });
 
-  const liClass = clsx({ [dpStyles['dp-item']]: !isUndefined(isDpShown) });
+  const liClass = clsx(
+    { [dpStyles['dp-item']]: !isUndefined(isDpShown) },
+    styles.item,
+  );
   // #endregion
 
   return (

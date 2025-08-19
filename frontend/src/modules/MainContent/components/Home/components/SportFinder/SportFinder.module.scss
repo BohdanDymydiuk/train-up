@@ -33,7 +33,6 @@
     --first-column: 350px;
     --times: 2;
 
-
     @include on-tablet {
       display: grid;
       grid-template-rows: repeat(var(--times), $finder-row-height);
@@ -55,6 +54,14 @@
 
       .inputs-wrapper {
         justify-content: space-between;
+
+        > :nth-child(1) {
+          width: 329px;
+        }
+
+        > :nth-child(2) {
+          width: 160px;
+        }
       }
     }
 
@@ -66,7 +73,7 @@
         > :nth-child(1) {
           width: 420px;
         }
-  
+
         > :nth-child(2) {
           width: 190px;
         }
@@ -81,9 +88,8 @@
     .online,
     .find {
       height: $finder-row-height;
-      
-      @include inter-500-14;
 
+      @include inter-500-14;
 
       @include on-tablet {
         height: auto;
@@ -100,18 +106,23 @@
       cursor: pointer;
       text-align: start;
       width: 100%;
+      transition: border-color $trans-dur;
 
       @include on-tablet {
         height: 100%;
       }
-      
+
       @include on-small-desktop {
         column-gap: 20px;
       }
-      
+
       @include on-desktop {
         column-gap: normal;
       }
+    }
+
+    .text {
+      transition: color $trans-dur;
     }
 
     .online {
@@ -153,4 +164,6 @@
 
 :export {
   gray: $gray_9;
+  orange: $orange_1;
+  red: $red_1;
 }

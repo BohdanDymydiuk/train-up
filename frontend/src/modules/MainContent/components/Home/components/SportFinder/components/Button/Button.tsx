@@ -5,16 +5,36 @@ import { ChevronDownSVG } from '../../../../../../../../reusables/svgs/ChevronDo
 
 import styles from '../../SportFinder.module.scss';
 
-export const Button: React.FC<ButtonProps> = ({ onClickHandler, text }) => {
-  const chevronDownSvgCssProps = {
+export const Button: React.FC<ButtonProps> = ({
+  onClickHandler,
+  text,
+  isDpShown,
+}) => {
+  // #region props
+  const chevronDownSvgProps = {
     svgStyle: { minWidth: '16px' },
-    pathStyle: { fill: `${styles.gray}` },
+    fill: isDpShown ? styles.orange : styles.gray,
   };
 
+  const buttonCssProps: React.CSSProperties = isDpShown
+    ? { borderColor: styles.orange }
+    : {};
+
+  const textCssProps: React.CSSProperties = isDpShown
+    ? { color: styles.orange }
+    : {};
+  // #endregion
+
   return (
-    <button className={styles.select} onClick={onClickHandler}>
-      <div className={styles.text}>{text}</div>
-      <ChevronDownSVG {...chevronDownSvgCssProps} />
+    <button
+      className={styles.select}
+      style={buttonCssProps}
+      onClick={onClickHandler}
+    >
+      <div className={styles.text} style={textCssProps}>
+        {text}
+      </div>
+      <ChevronDownSVG {...chevronDownSvgProps} />
     </button>
   );
 };

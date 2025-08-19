@@ -12,7 +12,8 @@
       transition: fill $trans-dur;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       path {
         fill: $orange_1;
       }

@@ -9,6 +9,7 @@ export interface DpHocProps {
 }
 
 export interface ButtonProps extends DpHocProps {
+  isDpShown?: boolean;
   onClickHandler: () => void;
 }
 
@@ -69,6 +70,7 @@ export const DropdownHoc = (
       buttonProps.text = text;
     }
 
+    if (isDpShown) buttonProps.isDpShown = isDpShown;
     if (items) dropdownProps.items = items;
     if (select) dropdownProps.select = select;
 

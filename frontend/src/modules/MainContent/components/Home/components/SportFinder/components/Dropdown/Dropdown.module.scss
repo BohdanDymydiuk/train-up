@@ -12,7 +12,7 @@
   @include on-desktop {
     top: $finder-row-height + 32px;
   }
-  
+
   .search,
   .dp-list {
     @include inter-500-15;
@@ -31,7 +31,7 @@
       width: 19px;
       height: 19px;
     }
-    
+
     .search {
       border: none;
       width: 100%;

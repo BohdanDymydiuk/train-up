@@ -9,7 +9,8 @@
   margin-top: 32px;
   cursor: pointer;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: $red_1;
   }
 }

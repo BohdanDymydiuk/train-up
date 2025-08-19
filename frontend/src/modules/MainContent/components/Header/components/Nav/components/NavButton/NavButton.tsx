@@ -5,11 +5,16 @@ import { ChevronDownSVG } from '../../../../../../../../reusables/svgs/ChevronDo
 
 import styles from './NavButton.module.scss';
 
-export const NavButton: React.FC<ButtonProps> = ({ onClickHandler }) => {
+export const NavButton: React.FC<ButtonProps> = ({
+  onClickHandler,
+  isDpShown,
+}) => {
+  const chevronDownSvgProps = isDpShown ? { fill: styles.orange } : {};
+
   return (
     <button className={styles.button} onClick={onClickHandler}>
       <div>Головна</div>
-      <ChevronDownSVG />
+      <ChevronDownSVG {...chevronDownSvgProps} />
     </button>
   );
 };
