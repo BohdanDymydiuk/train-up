@@ -12,6 +12,9 @@ import { Dropdown } from './components/Dropdown';
 
 import styles from './SportFinder.module.scss';
 
+const ChooseSport = DropdownHoc(Button, Dropdown);
+const ChooseCity = DropdownHoc(Button, Dropdown);
+
 export const SportFinder: React.FC = () => {
   const { onTablet, onSmallDesktop } = useContext(MainContext);
 
@@ -19,6 +22,7 @@ export const SportFinder: React.FC = () => {
 
   const sportsNames = sports.map(sport => sport.sportName);
 
+  const [isOnline, setIsOnline] = useState(false);
   const [selectedSport, setSelectedSport] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
 
@@ -32,12 +36,7 @@ export const SportFinder: React.FC = () => {
     ),
     cssProps: { textAlign: 'center' } as React.CSSProperties,
   };
-  // #endregion
 
-  const ChooseSport = DropdownHoc(Button, Dropdown);
-  const ChooseCity = DropdownHoc(Button, Dropdown);
-
-  // #region props
   const chooseSportProps = {
     text: selectedSport || FinderTexts.sport,
     select: setSelectedSport,
@@ -48,6 +47,7 @@ export const SportFinder: React.FC = () => {
     text: selectedCity || FinderTexts.city,
     select: setSelectedCity,
     items: Object.values(REGIONAL_CENTERS),
+    isOnline,
   };
   // #endregion
 
@@ -68,6 +68,8 @@ export const SportFinder: React.FC = () => {
               type='checkbox'
               name='online'
               id='online'
+              checked={isOnline}
+              onChange={event => setIsOnline(event.target.checked)}
             />
             <label className={styles.label} htmlFor='online'>
               Онлайн

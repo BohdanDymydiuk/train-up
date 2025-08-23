@@ -106,7 +106,7 @@
       cursor: pointer;
       text-align: start;
       width: 100%;
-      transition: border-color $trans-dur;
+      transition: border-color $trans-dur, color $trans-dur;
 
       @include on-tablet {
         height: 100%;
@@ -119,10 +119,6 @@
       @include on-desktop {
         column-gap: normal;
       }
-    }
-
-    .text {
-      transition: color $trans-dur;
     }
 
     .online {
@@ -164,6 +160,7 @@
 
 :export {
   gray: $gray_9;
+  gray2: $gray_8;
   orange: $orange_1;
   red: $red_1;
 }

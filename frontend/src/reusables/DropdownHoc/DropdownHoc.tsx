@@ -5,6 +5,7 @@ import styles from './DropdownHoc.module.scss';
 export interface DpHocProps {
   text?: string;
   items?: string[];
+  isOnline?: boolean;
   select?: (value: string) => void;
 }
 
@@ -22,7 +23,12 @@ export const DropdownHoc = (
   ButtonComponent: React.FC<ButtonProps>,
   DropdownComponent: React.FC<DropdownProps>,
 ) => {
-  const ResultedComponent: React.FC<DpHocProps> = ({ text, select, items }) => {
+  const ResultedComponent: React.FC<DpHocProps> = ({
+    text,
+    items,
+    isOnline,
+    select,
+  }) => {
     const wrapperRef = useRef<HTMLDivElement | null>(null);
 
     const [isDpActive, setIsDpActive] = useState(false);
@@ -72,6 +78,7 @@ export const DropdownHoc = (
 
     if (isDpShown) buttonProps.isDpShown = isDpShown;
     if (items) dropdownProps.items = items;
+    if (isOnline) buttonProps.isOnline = isOnline;
     if (select) dropdownProps.select = select;
 
     return (

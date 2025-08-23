@@ -9,31 +9,33 @@ export const Button: React.FC<ButtonProps> = ({
   onClickHandler,
   text,
   isDpShown,
+  isOnline,
 }) => {
   // #region props
   const chevronDownSvgProps = {
     svgStyle: { minWidth: '16px' },
-    fill: isDpShown ? styles.orange : styles.gray,
+    fill:
+      (isOnline && styles.gray2) || (isDpShown && styles.orange) || styles.gray,
   };
 
-  const buttonCssProps: React.CSSProperties = isDpShown
-    ? { borderColor: styles.orange }
+  const buttonOfflineCssProps: React.CSSProperties = isDpShown
+    ? { borderColor: styles.orange, color: styles.orange }
     : {};
 
-  const textCssProps: React.CSSProperties = isDpShown
-    ? { color: styles.orange }
+  const buttonOnlineCssProps: React.CSSProperties = isOnline
+    ? { color: styles.gray2, cursor: 'not-allowed' }
     : {};
+
+  const buttonCssProps = { ...buttonOfflineCssProps, ...buttonOnlineCssProps };
   // #endregion
 
   return (
     <button
       className={styles.select}
       style={buttonCssProps}
-      onClick={onClickHandler}
+      onClick={isOnline ? () => {} : onClickHandler}
     >
-      <div className={styles.text} style={textCssProps}>
-        {text}
-      </div>
+      <div>{text}</div>
       <ChevronDownSVG {...chevronDownSvgProps} />
     </button>
   );
