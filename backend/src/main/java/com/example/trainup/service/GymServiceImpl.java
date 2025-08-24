@@ -1,17 +1,14 @@
 package com.example.trainup.service;
 
 import com.cloudinary.Cloudinary;
-import com.cloudinary.utils.ObjectUtils;
 import com.example.trainup.dto.gym.GymAddressDto;
 import com.example.trainup.dto.gym.GymFilterRequestDto;
 import com.example.trainup.dto.gym.GymRegistrationRequestDto;
 import com.example.trainup.dto.gym.GymResponseDto;
 import com.example.trainup.dto.gym.GymUpdateRequestDto;
-import com.example.trainup.exception.PhotoUploadException;
 import com.example.trainup.mapper.GymMapper;
 import com.example.trainup.model.Address;
 import com.example.trainup.model.Gym;
-import com.example.trainup.model.GymPhoto;
 import com.example.trainup.model.user.GymOwner;
 import com.example.trainup.model.user.UserCredentials;
 import com.example.trainup.repository.AddressRepository;
@@ -20,11 +17,8 @@ import com.example.trainup.repository.SportRepository;
 import com.example.trainup.repository.TrainerRepository;
 import com.example.trainup.repository.UserCredentialsRepository;
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.validation.ConstraintViolationException;
-import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
@@ -36,11 +30,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @RequiredArgsConstructor
@@ -151,7 +143,7 @@ public class GymServiceImpl implements GymService {
             log.debug("Authentication is null or email is null or gymId is null, access denied.");
             return false;
         }
-        String email = authentication.getName(); // Тепер витягуємо ім'я з Authentication
+        String email = authentication.getName();
         log.debug("Received email: {}, gymId: {}", email, gymId);
 
         Optional<UserCredentials> userOptional = userCredentialsRepository
@@ -202,7 +194,6 @@ public class GymServiceImpl implements GymService {
                 "Sport with id ");
         updateEntities(existingGym::setTrainers, requestDto.trainerIds(),
                 trainerRepository::findById,"Trainer with id ");
-        updatePhotos(existingGym, requestDto.photoUrls());
 
         Gym updatedGym = gymRepository.save(existingGym);
         return gymMapper.toDto(updatedGym);
@@ -237,73 +228,6 @@ public class GymServiceImpl implements GymService {
                         .replace(" with id ", "") + " must be associated.");
             }
             setter.accept(entities);
-        }
-    }
-
-    private void updatePhotos(Gym gym, Set<String> photoUrls) {
-        Optional.ofNullable(photoUrls).ifPresent(urls -> {
-            Set<String> newPhotoUrls = new HashSet<>(urls);
-            Set<GymPhoto> currentPhotos = new HashSet<>(gym.getPhotos());
-
-            currentPhotos.removeIf(photo -> !newPhotoUrls.contains(photo.getImageUrl()));
-            newPhotoUrls.stream()
-                    .filter(url -> currentPhotos.stream()
-                            .noneMatch(photo -> photo.getImageUrl().equals(url)))
-                    .map(url -> {
-                        GymPhoto newPhoto = new GymPhoto();
-                        newPhoto.setImageUrl(url);
-                        newPhoto.setGym(gym);
-                        return newPhoto;
-                    })
-                    .forEach(currentPhotos::add);
-
-            if (currentPhotos.size() > 5) {
-                throw new ConstraintViolationException("Maximum number of photos (5) exceeded.",
-                        null);
-            }
-
-            gym.setPhotos(currentPhotos);
-        });
-    }
-
-    @Override
-    public String uploadGymPhoto(Long id, MultipartFile file, Authentication authentication) {
-        Gym gym = gymRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException(CANNOT_FIND_GYM_MSG + id));
-
-        if (!self.canUserModifyGym(authentication, id)) {
-            throw new AccessDeniedException("You do not have permission to modify this gym.");
-        }
-
-        if (gym.getPhotos().size() >= 5) {
-            throw new ConstraintViolationException("Maximum number of photos (5) exceeded", null);
-        }
-
-        if (file == null || file.isEmpty()) {
-            throw new IllegalArgumentException("Uploaded file is empty or missing");
-        }
-
-        if (cloudinary.isEmpty()) {
-            throw new IllegalStateException("Cloudinary service is not configured or available.");
-        }
-
-        Cloudinary actualCloudinary = cloudinary.get();
-
-        try {
-            Map<String, Object> uploadResult = actualCloudinary
-                    .uploader()
-                    .upload(file.getBytes(), ObjectUtils.emptyMap());
-            String imageUrl = (String) uploadResult.get("url");
-
-            GymPhoto gymPhoto = new GymPhoto();
-            gymPhoto.setImageUrl(imageUrl);
-            gym.addPhoto(gymPhoto);
-            gymRepository.save(gym);
-
-            return imageUrl;
-        } catch (IOException e) {
-            throw new PhotoUploadException("Failed to upload photo to Cloudinary: "
-                    + e.getMessage(), e);
         }
     }
 }

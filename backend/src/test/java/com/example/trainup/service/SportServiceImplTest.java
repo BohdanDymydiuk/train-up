@@ -49,7 +49,7 @@ class SportServiceImplTest {
         sport.setId(1L);
         sport.setSportName("Football");
 
-        sportDto = new SportDto(1L, "Football");
+        sportDto = new SportDto(1L, "Football", null);
 
         sportRequestDto = new SportRequestDto("Football");
     }
@@ -105,7 +105,7 @@ class SportServiceImplTest {
         when(sportRepository.findById(1L)).thenReturn(Optional.of(sport));
         when(sportRepository.findBySportName("UpdatedSport")).thenReturn(Optional.empty());
         when(sportRepository.save(sport)).thenReturn(sport);
-        when(sportMapper.toDto(sport)).thenReturn(new SportDto(1L, "UpdatedSport"));
+        when(sportMapper.toDto(sport)).thenReturn(new SportDto(1L, "UpdatedSport", null));
 
         SportRequestDto updatedRequestDto = new SportRequestDto("UpdatedSport");
 

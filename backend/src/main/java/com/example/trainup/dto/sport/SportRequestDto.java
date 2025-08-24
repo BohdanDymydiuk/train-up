@@ -4,5 +4,6 @@ import jakarta.validation.constraints.NotEmpty;
 
 public record SportRequestDto(
         @NotEmpty
-        String sportName) {
+        String sportName
+) {
 }

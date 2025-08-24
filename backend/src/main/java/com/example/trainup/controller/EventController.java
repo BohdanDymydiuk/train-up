@@ -5,8 +5,13 @@ import com.example.trainup.dto.event.EventRegistrationRequestDto;
 import com.example.trainup.dto.event.EventResponseDto;
 import com.example.trainup.dto.event.EventUpdateRequestDto;
 import com.example.trainup.service.EventService;
+import com.example.trainup.service.PhotoService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import java.time.LocalDate;
@@ -17,6 +22,7 @@ import org.hibernate.validator.constraints.Range;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -31,6 +37,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/event")
@@ -44,6 +51,7 @@ import org.springframework.web.bind.annotation.RestController;
 )
 public class EventController {
     private final EventService eventService;
+    private final PhotoService photoService;
 
     @PreAuthorize("hasRole('TRAINER')")
     @PostMapping("/trainer")
@@ -151,5 +159,40 @@ public class EventController {
 
         log.info("Event with ID: {} successfully deleted.", id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping(value = "/photo/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PreAuthorize("@eventServiceImpl.canUserModifyEvent(#authentication.name, #id)")
+    @Operation(
+            summary = "Upload event photo",
+            description = "Allows event owner to upload event photo. Maximum 3 photos upload."
+    )
+    public ResponseEntity<String> uploadPhoto(
+            @PathVariable @Positive Long id,
+            @RequestParam("file")
+            @Parameter(
+                    description = "Image file to upload (JPEG, PNG, SVG)",
+                    required = true,
+                    content = @Content(mediaType = MediaType.MULTIPART_FORM_DATA_VALUE,
+                            schema = @Schema(type = "string", format = "binary"))
+            ) MultipartFile file
+    ) {
+
+        if (file.isEmpty()) {
+            log.warn("Upload attempt with empty file for event ID: {}", id);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("File is empty");
+        }
+
+        try {
+            String imageUrl = photoService.uploadEventPhoto(id, file);
+            return ResponseEntity.ok(imageUrl);
+        } catch (IllegalArgumentException | IllegalStateException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        } catch (Exception e) {
+            return ResponseEntity.internalServerError()
+                    .body("An error occurred: " + e.getMessage());
+        }
     }
 }

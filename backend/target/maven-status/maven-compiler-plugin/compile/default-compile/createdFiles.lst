@@ -4,6 +4,7 @@ com\example\trainup\mapper\EventMapper.class
 com\example\trainup\model\user\Admin.class
 com\example\trainup\validation\ReviewTargetValidator.class
 com\example\trainup\repository\SportRepository.class
+com\example\trainup\service\PhotoService.class
 com\example\trainup\dto\sport\SportDto.class
 com\example\trainup\security\AuthenticationService.class
 com\example\trainup\validation\FieldMatch.class
@@ -57,6 +58,7 @@ com\example\trainup\model\user\UserCredentials$UserType.class
 com\example\trainup\controller\AthleteController.class
 com\example\trainup\dto\gemini\GeminiPart.class
 com\example\trainup\controller\BaseUserController.class
+com\example\trainup\service\CloudinaryService.class
 com\example\trainup\validation\RegexConstants.class
 com\example\trainup\dto\gemini\GeminiCandidate.class
 com\example\trainup\validation\EmailUnique.class
@@ -111,7 +113,6 @@ com\example\trainup\service\CurrentUserService.class
 com\example\trainup\model\Address.class
 com\example\trainup\model\Review.class
 com\example\trainup\model\WorkingHoursEntry$DayOfTheWeek.class
-com\example\trainup\service\UserPhotoService.class
 com\example\trainup\dto\gemini\GeminiRequest.class
 com\example\trainup\config\GeminiClientConfig.class
 com\example\trainup\validation\FieldMatchValidator.class
@@ -121,6 +122,7 @@ com\example\trainup\controller\TrainerController.class
 com\example\trainup\exception\GeminiResponseException.class
 com\example\trainup\mapper\SportMapper.class
 com\example\trainup\repository\AdminRepository.class
+com\example\trainup\model\EventPhoto.class
 com\example\trainup\dto\users\trainer\TrainerRegistrationRequestDto.class
 com\example\trainup\model\user\BaseUser.class
 com\example\trainup\mapper\GymMapper.class
