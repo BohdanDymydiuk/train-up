@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-08-09T16:34:34+0200",
+    date = "2025-08-25T11:31:03+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
@@ -102,7 +102,6 @@ public class TrainerMapperImpl implements TrainerMapper {
         trainer.setLastName( requestDto.lastName() );
         trainer.setGender( requestDto.gender() );
         trainer.setDateOfBirth( requestDto.dateOfBirth() );
-        trainer.setProfileImageUrl( requestDto.profileImageUrl() );
         trainer.setOnlineTraining( requestDto.onlineTraining() );
 
         return trainer;

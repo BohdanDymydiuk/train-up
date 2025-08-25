@@ -57,7 +57,7 @@ class SportControllerTest {
     @WithMockUser(roles = "ADMIN")
     void getAllSports_Success() throws Exception {
         // Given
-        SportDto sportDto = new SportDto(1L, "Yoga");
+        SportDto sportDto = new SportDto(1L, "Yoga", null);
         Pageable pageable = PageRequest.of(0, 10);
         Page<SportDto> sportPage = new PageImpl<>(List.of(sportDto), pageable, 1);
         when(sportService.getAllSports(any(SportDto.class), eq(pageable)))
@@ -81,7 +81,7 @@ class SportControllerTest {
     void createSport_Success() throws Exception {
         // Given
         SportRequestDto requestDto = new SportRequestDto("Yoga");
-        SportDto responseDto = new SportDto(1L, "Yoga");
+        SportDto responseDto = new SportDto(1L, "Yoga", null);
         when(sportService.createSport(any(SportRequestDto.class))).thenReturn(responseDto);
 
         // Then
@@ -120,7 +120,7 @@ class SportControllerTest {
     void updateSport_Success() throws Exception {
         // Given
         SportRequestDto requestDto = new SportRequestDto("Updated Yoga");
-        SportDto responseDto = new SportDto(1L, "Updated Yoga");
+        SportDto responseDto = new SportDto(1L, "Updated Yoga", null);
         when(sportService.updateSport(eq(1L), any(SportRequestDto.class))).thenReturn(responseDto);
 
         // Then

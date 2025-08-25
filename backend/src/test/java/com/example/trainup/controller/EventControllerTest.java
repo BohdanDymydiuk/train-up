@@ -63,7 +63,9 @@ public class EventControllerTest {
                 "Yoga Workshop",
                 1L,
                 "Beginner-friendly yoga session",
-                LocalDateTime.now().plusDays(1)
+                LocalDateTime.now().plusDays(1),
+                false,
+                1
         );
 
         eventResponseDto = new EventResponseDto(
@@ -73,14 +75,18 @@ public class EventControllerTest {
                 "Beginner-friendly yoga session",
                 LocalDateTime.now().plusDays(1),
                 null,
-                1L
+                1L,
+                false,
+                1
         );
 
         validUpdateDto = new EventUpdateRequestDto(
                 "Advanced Yoga Workshop",
                 2L,
                 "Intermediate yoga session",
-                LocalDateTime.now().plusDays(2)
+                LocalDateTime.now().plusDays(2),
+                false,
+                1
         );
 
         filterDto = new EventFilterRequestDto(
@@ -88,6 +94,8 @@ public class EventControllerTest {
                 "Yoga",
                 1L,
                 LocalDate.now(),
+                null,
+                null,
                 null,
                 null
         );
@@ -125,6 +133,8 @@ public class EventControllerTest {
                 "",
                 null,
                 "Description",
+                null,
+                null,
                 null
         );
 
@@ -137,7 +147,8 @@ public class EventControllerTest {
                 .andExpect(jsonPath("$.errors").value(Matchers.containsInAnyOrder(
                         "name: Name must not be blank",
                         "sportId: SportId must not be null",
-                        "dateTime: Event dateTime cannot be null"
+                        "dateTime: Event dateTime cannot be null",
+                        "intensity: Intensity must not be null"
                 )))
                 .andReturn();
     }
@@ -314,7 +325,9 @@ public class EventControllerTest {
                 "Advanced Yoga",
                 2L,
                 "Intermediate session",
-                LocalDateTime.now().minusDays(1)
+                LocalDateTime.now().minusDays(1),
+                false,
+                1
         );
         when(eventService.canUserModifyEvent(eq("trainer@example.com"), eq(1L))).thenReturn(true);
 

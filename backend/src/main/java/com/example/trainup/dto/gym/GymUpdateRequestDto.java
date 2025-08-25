@@ -11,7 +11,6 @@ public record GymUpdateRequestDto(
         String website,
         Set<String> phoneNumbers,
         Set<WorkingHoursEntry> workingHours,
-        Set<Long> trainerIds,
-        Set<String> photoUrls
+        Set<Long> trainerIds
 ) {
 }

@@ -1,4 +1,5 @@
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\repository\GymOwnerRepository.java
+C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\model\EventPhoto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\users\GymOwnerService.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\mapper\TrainerMapper.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\gemini\GeminiCandidate.java
@@ -10,6 +11,7 @@ C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\train
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\review\ReviewResponseDto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\users\TrainerService.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\mapper\ReviewMapper.java
+C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\CloudinaryService.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\SportService.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\security\JwtAuthenticationFilter.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\config\OpenApiConfig.java
@@ -25,6 +27,7 @@ C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\train
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\users\TrainerServiceImpl.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\repository\RoleRepository.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\users\athlete\AthleteResponseDto.java
+C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\PhotoService.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\controller\GymController.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\model\user\Athlete.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\exception\PhotoUploadException.java
@@ -46,7 +49,6 @@ C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\train
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\repository\AdminRepository.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\validation\FieldMatchValidator.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\model\user\Admin.java
-C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\UserPhotoService.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\controller\AuthenticationController.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\model\Role.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\model\Event.java

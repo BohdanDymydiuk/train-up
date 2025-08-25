@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-08-09T16:34:34+0200",
+    date = "2025-08-25T11:31:04+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
@@ -30,6 +30,8 @@ public class EventMapperImpl implements EventMapper {
             event.setName( requestDto.name() );
             event.setDescription( requestDto.description() );
             event.setDateTime( requestDto.dateTime() );
+            event.setOnlineTraining( requestDto.onlineTraining() );
+            event.setIntensity( requestDto.intensity() );
         }
         event.setSport( sport );
 
@@ -49,6 +51,8 @@ public class EventMapperImpl implements EventMapper {
         String name = null;
         String description = null;
         LocalDateTime dateTime = null;
+        Boolean onlineTraining = null;
+        Integer intensity = null;
 
         sportId = eventSportId( event );
         gymId = eventGymId( event );
@@ -57,8 +61,10 @@ public class EventMapperImpl implements EventMapper {
         name = event.getName();
         description = event.getDescription();
         dateTime = event.getDateTime();
+        onlineTraining = event.getOnlineTraining();
+        intensity = event.getIntensity();
 
-        EventResponseDto eventResponseDto = new EventResponseDto( id, name, sportId, description, dateTime, gymId, trainerId );
+        EventResponseDto eventResponseDto = new EventResponseDto( id, name, sportId, description, dateTime, gymId, trainerId, onlineTraining, intensity );
 
         return eventResponseDto;
     }

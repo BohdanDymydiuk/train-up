@@ -88,7 +88,9 @@ class EventServiceImplTest {
                 "Test Event",
                 1L,
                 "Event description",
-                LocalDateTime.of(2025, 7, 1, 10, 0)
+                LocalDateTime.of(2025, 7, 1, 10, 0),
+                false,
+                1
         );
 
         eventResponseDto = new EventResponseDto(
@@ -98,14 +100,18 @@ class EventServiceImplTest {
                 "Event description",
                 LocalDateTime.of(2025, 7, 1, 10, 0),
                 1L,
-                1L
+                1L,
+                false,
+                1
         );
 
         updateRequestDto = new EventUpdateRequestDto(
                 "Updated Event",
                 2L,
                 "Updated description",
-                LocalDateTime.of(2025, 7, 2, 12, 0)
+                LocalDateTime.of(2025, 7, 2, 12, 0),
+                false,
+                1
         );
 
         filterRequestDto = new EventFilterRequestDto(
@@ -114,7 +120,9 @@ class EventServiceImplTest {
                 1L,
                 LocalDate.of(2025, 7, 1),
                 1L,
-                1L
+                1L,
+                false,
+                1
         );
 
         event = new Event();
@@ -353,6 +361,8 @@ class EventServiceImplTest {
                 eq(endOfDay),
                 eq(1L),
                 eq(1L),
+                eq(false),
+                eq(1),
                 eq(pageable))
         ).thenReturn(eventPage);
         when(eventMapper.toDto(event)).thenReturn(eventResponseDto);
@@ -372,6 +382,8 @@ class EventServiceImplTest {
                 eq(endOfDay),
                 eq(1L),
                 eq(1L),
+                eq(false),
+                eq(1),
                 eq(pageable)
         );
         verify(eventMapper).toDto(event);

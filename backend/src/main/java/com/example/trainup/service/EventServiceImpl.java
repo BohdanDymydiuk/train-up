@@ -99,6 +99,8 @@ public class EventServiceImpl implements EventService {
                 endOfDay,
                 filter.gymId(),
                 filter.trainerId(),
+                filter.onlineTraining(),
+                filter.intensity(),
                 pageable
         );
 

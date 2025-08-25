@@ -139,7 +139,6 @@ class TrainerMapperTest {
                 "Doe",
                 Gender.MALE,
                 LocalDate.of(1990, 1, 1),
-                "http://image.jpg",
                 "john.doe@example.com",
                 "password123",
                 "password123",
@@ -171,7 +170,6 @@ class TrainerMapperTest {
         assertEquals("Doe", trainer.getLastName());
         assertEquals(Gender.MALE, trainer.getGender());
         assertEquals(LocalDate.of(1990, 1, 1), trainer.getDateOfBirth());
-        assertEquals("http://image.jpg", trainer.getProfileImageUrl());
         assertEquals(Set.of("+380501234567"), trainer.getPhoneNumbers());
         assertEquals(1, trainer.getSports().size());
         assertTrue(trainer.getSports().contains(sport));
@@ -219,7 +217,6 @@ class TrainerMapperTest {
                 "Smith",
                 Gender.FEMALE,
                 LocalDate.of(1995, 5, 15),
-                null,
                 "jane.smith@example.com",
                 "pass456",
                 "pass456",
@@ -273,7 +270,6 @@ class TrainerMapperTest {
                 "Doe",
                 Gender.MALE,
                 LocalDate.of(1990, 1, 1),
-                null,
                 "john.doe@example.com",
                 "password123",
                 "password123",

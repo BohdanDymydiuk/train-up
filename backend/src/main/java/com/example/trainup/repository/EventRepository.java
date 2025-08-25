@@ -22,7 +22,11 @@ public interface EventRepository extends JpaRepository<Event, Long> {
             + "AND CAST(:endOfDay AS timestamp) IS NULL) "
             + "OR (e.dateTime >= :startOfDay AND e.dateTime < :endOfDay)) "
             + "AND (:gymId IS NULL OR g.id = :gymId) "
-            + "AND (:trainerId IS NULL OR t.id = :trainerId)")
+            + "AND (:trainerId IS NULL OR t.id = :trainerId) "
+            + "AND (:onlineTraining IS NULL OR e.onlineTraining = :onlineTraininig) "
+            + "AND (:intensity IS NULL OR e.intensity = :intensity)"
+
+    )
     Page<Event> findEventsByCriteria(
             @Param("id") Long id,
             @Param("name") String name,
@@ -31,6 +35,8 @@ public interface EventRepository extends JpaRepository<Event, Long> {
             @Param("endOfDay") LocalDateTime endOfDay,
             @Param("gymId") Long gymId,
             @Param("trainerId") Long trainerId,
+            @Param("onlineTraining") Boolean onlineTraining,
+            @Param("intensity") Integer intensity,
             Pageable pageable
     );
 

@@ -9,7 +9,6 @@ public record AthleteUpdateRequestDto(
         String lastName,
         Gender gender,
         LocalDate dateOfBirth,
-        String profileImageUrl,
         Set<String> phoneNumbers,
         Set<Long> sportIds,
         boolean emailPermission,

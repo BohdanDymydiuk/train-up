@@ -54,7 +54,6 @@ class GymOwnerServiceImplTest {
                 "Doe",
                 Gender.MALE,
                 LocalDate.of(1985, 5, 15),
-                "http://example.com/image.jpg",
                 "john.doe@example.com",
                 "Password123!",
                 "Password123!",

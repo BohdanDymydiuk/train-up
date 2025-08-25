@@ -52,4 +52,6 @@ public class Sport {
     @Column(nullable = false)
     @Setter(AccessLevel.PROTECTED)
     private boolean isDeleted = false;
+
+    private String sportIconUrl;
 }

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-08-09T16:34:34+0200",
+    date = "2025-08-25T11:31:04+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
@@ -34,17 +34,16 @@ public class GymMapperImpl implements GymMapper {
             gym.setSports( mapSportIdsToSport( requestDto.sportIds(), sportRepository ) );
             gym.setTrainers( mapTrainerIdsToTrainers( requestDto.trainerIds(), trainerRepository ) );
             gym.setLocation( mapAddressDtoToAddress( requestDto.location(), addressRepository ) );
-            gym.setPhotos( mapPhotoUrlsToPhotos( requestDto.photoUrls() ) );
-            Set<String> set3 = requestDto.phoneNumbers();
-            if ( set3 != null ) {
-                gym.setPhoneNumbers( new LinkedHashSet<String>( set3 ) );
+            Set<String> set2 = requestDto.phoneNumbers();
+            if ( set2 != null ) {
+                gym.setPhoneNumbers( new LinkedHashSet<String>( set2 ) );
             }
             gym.setName( requestDto.name() );
             gym.setDescription( requestDto.description() );
             gym.setWebsite( requestDto.website() );
-            Set<WorkingHoursEntry> set4 = requestDto.workingHours();
-            if ( set4 != null ) {
-                gym.setWorkingHours( new LinkedHashSet<WorkingHoursEntry>( set4 ) );
+            Set<WorkingHoursEntry> set3 = requestDto.workingHours();
+            if ( set3 != null ) {
+                gym.setWorkingHours( new LinkedHashSet<WorkingHoursEntry>( set3 ) );
             }
         }
         gym.setGymOwner( gymOwner );

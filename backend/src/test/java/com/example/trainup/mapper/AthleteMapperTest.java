@@ -99,7 +99,6 @@ class AthleteMapperTest {
                 "Doe",
                 Gender.MALE,
                 LocalDate.of(1990, 1, 1),
-                "http://image.jpg",
                 "john.doe@example.com",
                 "password123",
                 "password123",
@@ -122,7 +121,6 @@ class AthleteMapperTest {
         assertEquals("Doe", athlete.getLastName());
         assertEquals(Gender.MALE, athlete.getGender());
         assertEquals(LocalDate.of(1990, 1, 1), athlete.getDateOfBirth());
-        assertEquals("http://image.jpg", athlete.getProfileImageUrl());
         assertEquals(Set.of("+380501234567"), athlete.getPhoneNumbers());
         assertEquals(Set.of(sport), athlete.getSports());
         assertTrue(athlete.getEmailPermission());
@@ -141,7 +139,6 @@ class AthleteMapperTest {
                 "Doe",
                 Gender.MALE,
                 LocalDate.of(1990, 1, 1),
-                "http://image.jpg",
                 "john.doe@example.com",
                 "password123",
                 "password123",
@@ -168,7 +165,6 @@ class AthleteMapperTest {
                 "Doe",
                 Gender.MALE,
                 LocalDate.of(1990, 1, 1),
-                "http://image.jpg",
                 "john.doe@example.com",
                 "password123",
                 "password123",
