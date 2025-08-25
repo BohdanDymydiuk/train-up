@@ -28,8 +28,6 @@ public record GymOwnerRegistrationRequestDto(
 
         LocalDate dateOfBirth,
 
-        String profileImageUrl,
-
         @NotBlank(message = "Email cannot be blank")
         @Email(message = "Email is not valid",
                 regexp = RegexConstants.EMAIL_REGEX)

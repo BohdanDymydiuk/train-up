@@ -99,8 +99,7 @@ class GymServiceImplTest {
                 "http://testgym.com",
                 new HashSet<>(List.of("+380501234567")),
                 new HashSet<>(),
-                new HashSet<>(List.of(1L)),
-                new HashSet<>(List.of("http://photo1.jpg"))
+                new HashSet<>(List.of(1L))
         );
 
         gym = new Gym();

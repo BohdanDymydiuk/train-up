@@ -121,8 +121,6 @@ public class AthleteServiceImpl implements AthleteService {
                 .ifPresent(existingAthlete::setGender);
         Optional.ofNullable(requestDto.dateOfBirth())
                 .ifPresent(existingAthlete::setDateOfBirth);
-        Optional.ofNullable(requestDto.profileImageUrl())
-                .ifPresent(existingAthlete::setProfileImageUrl);
         Optional.ofNullable(requestDto.phoneNumbers())
                 .ifPresent(existingAthlete::setPhoneNumbers);
         Optional.of(requestDto.emailPermission())

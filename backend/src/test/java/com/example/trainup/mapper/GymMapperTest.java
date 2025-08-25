@@ -90,8 +90,7 @@ class GymMapperTest {
                 "https://fitness.com",
                 Set.of("+380501234567", "+380509876543"),
                 Set.of(new WorkingHoursEntry(MONDAY, LocalTime.of(8, 0), LocalTime.of(20, 0))),
-                Set.of(3L, 4L),
-                Set.of("http://photo1.jpg", "http://photo2.jpg")
+                Set.of(3L, 4L)
         );
 
         // When
@@ -118,7 +117,6 @@ class GymMapperTest {
         assertEquals(2, gym.getTrainers().size());
         assertTrue(gym.getTrainers().contains(trainer1));
         assertTrue(gym.getTrainers().contains(trainer2));
-        assertEquals(2, gym.getPhotos().size());
         assertEquals(gymOwner, gym.getGymOwner());
         assertEquals(0.0f, gym.getOverallRating());
         assertEquals(0, gym.getNumberOfReviews());
@@ -160,8 +158,7 @@ class GymMapperTest {
                 null,
                 Set.of("+380501234567"),
                 null,
-                Set.of(3L),
-                Set.of("http://photo1.jpg")
+                Set.of(3L)
         );
 
         // When
@@ -183,7 +180,6 @@ class GymMapperTest {
         assertEquals(Set.of("+380501234567"), gym.getPhoneNumbers());
         assertEquals(1, gym.getTrainers().size());
         assertTrue(gym.getTrainers().contains(trainer));
-        assertEquals(1, gym.getPhotos().size());
         assertEquals(gymOwner, gym.getGymOwner());
     }
 

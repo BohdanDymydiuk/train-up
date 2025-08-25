@@ -203,8 +203,7 @@ class GymControllerTest {
                                 LocalTime.of(20, 0)
                         )
                 ),
-                Collections.singleton(1L),
-                Collections.singleton("http://newgym.com/photo.jpg")
+                Collections.singleton(1L)
         );
 
         GymResponseDto expectedResponse = createGymResponseDto(gym);
@@ -242,7 +241,6 @@ class GymControllerTest {
                 "http://newgym.com",
                 Collections.singleton("+38(050)-987-6543"),
                 Collections.emptySet(),
-                Collections.emptySet(),
                 Collections.emptySet()
         );
 
@@ -265,7 +263,6 @@ class GymControllerTest {
                 "Desc",
                 "http://newgym.com",
                 Collections.singleton("+38(050)-987-6543"),
-                Collections.emptySet(),
                 Collections.emptySet(),
                 Collections.emptySet()
         );
