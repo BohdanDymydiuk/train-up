@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TrainerInfoType } from '../../types/TrainerInfoType';
+import { Trainer } from '../../types/Trainer';
 
 import { FourthPart } from './components/FourthPart';
 import { Label } from './components/Label';
@@ -9,7 +9,7 @@ import { ThirdPart } from './components/ThirdPart';
 
 import styles from './TrainerInfo.module.scss';
 
-type Props = Omit<TrainerInfoType, 'id'>;
+type Props = Omit<Trainer, 'id'>;
 
 export const TrainerInfo: React.FC<Props> = React.memo(props => {
   const {

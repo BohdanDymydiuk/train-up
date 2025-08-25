@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { TrainerInfoType } from '../types/TrainerInfoType';
+import { Trainer } from '../types/Trainer';
 
 import { client } from './utils/fetchClient';
 
 export const getTrainers = () => {
-  return client.get<TrainerInfoType[]>(`/trainer`);
+  return client.get<Trainer[]>(`/trainer`);
 };
 
 export const postTrainer = (data: any) => {
-  return client.post<TrainerInfoType>(`/trainers`, data);
+  return client.post<Trainer>(`/trainers`, data);
 };
 
 export const deleteTrainer = (id: number) => {
@@ -16,5 +16,5 @@ export const deleteTrainer = (id: number) => {
 };
 
 export const patchTrainer = (id: number, data: any) => {
-  return client.patch<TrainerInfoType>(`/trainers/${id}`, data);
+  return client.patch<Trainer>(`/trainers/${id}`, data);
 };

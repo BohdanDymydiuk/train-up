@@ -22,7 +22,7 @@ import { useAppDispatch, useAppSelector } from './store/store';
 import { Event } from './types/Event';
 import { EventInfoType } from './types/EventInfoType';
 import { Sport } from './types/Sport';
-import { TrainerInfoType } from './types/TrainerInfoType';
+import { Trainer } from './types/Trainer';
 
 import './App.scss';
 
@@ -31,7 +31,7 @@ export const App: React.FC = () => {
   const jwtToken = useAppSelector(state => state.jwtToken);
 
   // #region setValue
-  const setTrainers = (trainers: TrainerInfoType[]) => {
+  const setTrainers = (trainers: Trainer[]) => {
     dispatch(trainersActions.setTrainers(trainers));
   };
 
@@ -53,43 +53,34 @@ export const App: React.FC = () => {
   // #endregion
 
   // #region useEffects
-  useEffect(() => {
-    const getters = [getSports, getEvents];
-    const setters = [setSports, setEvents];
+  const setDataHandler = (
+    getDataFns: (() => Promise<unknown[]>)[],
+    setDataFns: unknown[],
+  ) => {
+    getDataFns.forEach((getData, index) => {
+      const setData = setDataFns[index] as (value: unknown[]) => void;
 
-    getters.forEach((get, index) => {
-      type ElementsType = Sport[] | Event[];
-
-      const set = setters[index] as (value: ElementsType) => void;
-
-      get()
-        .then(response => set(response))
+      getData()
+        .then(response => setData(response))
         .catch(() => {
           throw new Error(GET_DATA_ERROR);
         });
     });
+  };
+
+  useEffect(() => {
+    const getDataFns = [getSports, getEvents, getTrainers];
+    const setDataFns = [setSports, setEvents, setTrainers];
+
+    setDataHandler(getDataFns, setDataFns);
   }, []);
 
   useEffect(() => {
     if (jwtToken) {
-      const getters = [getTrainers, getEvents2];
-      const setters = [setTrainers, setEvents2];
+      const getDataFns = [getEvents2];
+      const setDataFns = [setEvents2];
 
-      getters.forEach((get, index) => {
-        type ElementsType = TrainerInfoType[] | EventInfoType[];
-
-        if (index === 1) {
-          return;
-        }
-
-        const set = setters[index] as (value: ElementsType) => void;
-
-        get()
-          .then(response => set(response))
-          .catch(() => {
-            throw new Error(GET_DATA_ERROR);
-          });
-      });
+      setDataHandler(getDataFns, setDataFns);
     }
   }, [jwtToken]);
 

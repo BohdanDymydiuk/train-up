@@ -39,12 +39,22 @@
     justify-content: space-between;
 
     .first-part {
+      .formats {
+        display: flex;
+        gap: 15px;
+      }
+
       .img-wrapper {
+        margin-top: 16px;
         width: 102px;
         height: 102px;
         background-color: $white_1;
         border-radius: 16px;
         border: 1px solid $light-blue_1;
+
+        @include on-tablet {
+          margin-top: auto;
+        }
       }
 
       @include on-tablet {

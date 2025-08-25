@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { TrainerInfoType } from '../../../../types/TrainerInfoType';
+import { Trainer } from '../../../../types/Trainer';
 
 import { Category } from './components/Category';
 
 import styles from './ThirdPart.module.scss';
 
-type Props = Pick<TrainerInfoType, 'categories'>;
+type Props = Pick<Trainer, 'categories'>;
 
 export const ThirdPart: React.FC<Props> = ({ categories }) => {
   return (

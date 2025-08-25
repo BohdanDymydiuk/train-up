@@ -1,4 +1,4 @@
-export interface TrainerInfoType {
+export interface Trainer {
   id: number;
   name: string;
   categories: string[];
@@ -6,4 +6,5 @@ export interface TrainerInfoType {
   reviews: number;
   isNew: boolean;
   trainingTypes: string[];
+  sportIds: number[];
 }

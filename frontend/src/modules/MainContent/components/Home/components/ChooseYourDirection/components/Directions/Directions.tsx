@@ -1,6 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 
 import { MainContext } from '../../../../../../../../context/MainContext';
+import { Format } from '../../../../../../../../reusables/Format';
 import { useAppSelector } from '../../../../../../../../store/store';
 
 import styles from './Directions.module.scss';
@@ -12,6 +13,7 @@ interface Props {
 export const Directions: React.FC<Props> = ({ areAllShown }) => {
   const { onDesktop } = useContext(MainContext);
 
+  // const trainers = useAppSelector(state => state.trainers);
   const sports = useAppSelector(state => state.sports);
 
   const sportsShownNumber = useMemo(() => {
@@ -27,9 +29,14 @@ export const Directions: React.FC<Props> = ({ areAllShown }) => {
       {sports.map(sport => {
         const { id, sportName } = sport;
 
+        // const offlineCondition = trainers.some(trainer => trainer.sportIds.includes);
+
         return (
           <div className={styles.block} key={id}>
             <div className={styles['first-part']}>
+              <div className={styles.formats}>
+                <Format isOnline={false} />
+              </div>
               <div className={styles['img-wrapper']}></div>
             </div>
 

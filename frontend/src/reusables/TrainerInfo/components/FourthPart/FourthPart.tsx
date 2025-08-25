@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { TrainerInfoType } from '../../../../types/TrainerInfoType';
+import { Trainer } from '../../../../types/Trainer';
 import { StarSVG } from '../../../svgs/sectionSvgs/trainers/StarSVG';
 
 import styles from './FourthPart.module.scss';
 
-type Props = Pick<TrainerInfoType, 'reviews'>;
+type Props = Pick<Trainer, 'reviews'>;
 
 export const FourthPart: React.FC<Props> = ({ reviews }) => {
   return (

@@ -1,13 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { TrainerInfoType } from '../../types/TrainerInfoType';
+import { Trainer } from '../../types/Trainer';
 
 export const trainersSlice = createSlice({
   name: 'trainers',
-  initialState: [] as TrainerInfoType[],
+  initialState: [] as Trainer[],
   reducers: {
-    setTrainers: (_, action: PayloadAction<TrainerInfoType[]>) =>
-      action.payload,
+    setTrainers: (_, action: PayloadAction<Trainer[]>) => action.payload,
   },
 });
 

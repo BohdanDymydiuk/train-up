@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { TrainerInfoType } from '../../../../types/TrainerInfoType';
+import { Trainer } from '../../../../types/Trainer';
 import { TrainingType } from '../../../TrainingType';
 
 import styles from './SecondPart.module.scss';
 
-type Props = Pick<TrainerInfoType, 'name' | 'trainingTypes' | 'bio'>;
+type Props = Pick<Trainer, 'name' | 'trainingTypes' | 'bio'>;
 
 export const SecondPart: React.FC<Props> = props => {
   const { name, bio, trainingTypes } = props;
