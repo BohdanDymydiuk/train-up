@@ -121,6 +121,11 @@
       }
     }
 
+    .label,
+    .checkbox {
+      cursor: pointer;
+    }
+
     .online {
       gap: 12px;
       display: flex;
