@@ -9,4 +9,5 @@ export enum Links {
 
   // rest
   signIn = '/signin',
+  signUp = '/signup',
 }

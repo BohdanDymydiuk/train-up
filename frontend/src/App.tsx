@@ -12,7 +12,7 @@ import { Links } from './enums/Links';
 import { MainContent } from './modules/MainContent';
 import { Home } from './modules/MainContent/components/Home';
 import { ProfileMain } from './modules/MainContent/components/ProfileMain';
-import { SignIn } from './modules/MainContent/components/SignIn';
+import { SignInSignUp } from './modules/MainContent/components/SignInSignUp';
 import { actions as eventsActions } from './store/features/events';
 import { actions as eventsActions2 } from './store/features/events2';
 import { actions as locationActions } from './store/features/location';
@@ -121,7 +121,7 @@ export const App: React.FC = () => {
           <Routes>
             <Route path='/' element={<MainContent />}>
               <Route index element={jwtToken ? <ProfileMain /> : <Home />} />
-              <Route path={Links.signIn} element={<SignIn />} />
+              <Route path={Links.signIn} element={<SignInSignUp />} />
             </Route>
           </Routes>
         </MainContextProvider>

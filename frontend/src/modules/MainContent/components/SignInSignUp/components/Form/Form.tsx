@@ -1,5 +1,4 @@
-import React, { FormEvent, useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
+import React, { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router';
 
 import { login } from '../../../../../../api/auth';
@@ -11,32 +10,15 @@ import { Token } from '../../../../../../types/Token';
 import { Button } from './components/Button';
 import { Inputs } from './components/Inputs';
 import { SignUp } from './components/SignUp';
-import { SignUpModal } from './components/SignUpModal';
 
 import styles from './Form.module.scss';
-
-const body = document.body;
-const root = document.querySelector('#root') as HTMLElement;
 
 export const Form: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const [isModalShown, setIsModalShown] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  // #region useEffects
-  useEffect(() => {
-    if (isModalShown) {
-      body.style.overflow = 'hidden';
-      root.style.overflowY = 'scroll';
-    } else {
-      body.style.overflow = 'auto';
-      root.style.overflowY = 'auto';
-    }
-  }, [isModalShown]);
-  // #endregion
 
   // #region handlers
   const inputTextHandler = (event: InputChangeEvent) => {
@@ -64,9 +46,6 @@ export const Form: React.FC = () => {
     inputTextHandler,
     inputPasswordHandler,
   };
-
-  const signUpProps = { setIsModalShown };
-  const modalProps = { setIsModalShown };
   // #endregion
 
   return (
@@ -81,9 +60,7 @@ export const Form: React.FC = () => {
         <Inputs {...inputsProps} />
         <Button />
       </form>
-      {isModalShown &&
-        createPortal(<SignUpModal {...modalProps} />, document.body)}
-      <SignUp {...signUpProps} />
+      <SignUp />
     </div>
   );
 };
