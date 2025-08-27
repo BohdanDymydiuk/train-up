@@ -18,6 +18,7 @@ import com.example.trainup.repository.SportRepository;
 import com.example.trainup.repository.TrainerRepository;
 import com.example.trainup.repository.UserCredentialsRepository;
 import jakarta.persistence.EntityNotFoundException;
+import java.io.InputStream;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.security.core.Authentication;
@@ -60,6 +61,18 @@ public class PhotoService {
                         + sportId));
 
         String imageUrl = cloudinaryService.uploadImage(file);
+        sport.setSportIconUrl(imageUrl);
+        sportRepository.save(sport);
+        log.info("Sport icon uploaded: {}", imageUrl);
+        return imageUrl;
+    }
+
+    public String uploadSportIcon(Long sportId, InputStream inputStream, String fileName) {
+        Sport sport = sportRepository.findById(sportId).orElseThrow(
+                () -> new EntityNotFoundException("Sport not found with id: " + sportId)
+        );
+
+        String imageUrl = cloudinaryService.uploadImage(inputStream, fileName);
         sport.setSportIconUrl(imageUrl);
         sportRepository.save(sport);
         log.info("Sport icon uploaded: {}", imageUrl);

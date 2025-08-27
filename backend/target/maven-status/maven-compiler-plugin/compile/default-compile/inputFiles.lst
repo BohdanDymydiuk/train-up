@@ -25,6 +25,7 @@ C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\train
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\users\gymowner\GymOwnerRegistrationRequestDto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\security\CustomUserDetailsService.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\users\TrainerServiceImpl.java
+C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\model\InitializationLog.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\repository\RoleRepository.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\users\athlete\AthleteResponseDto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\PhotoService.java
@@ -40,6 +41,7 @@ C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\train
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\model\WorkingHoursEntry.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\controller\EventController.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\model\user\Trainer.java
+C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\repository\InitializationLogRepository.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\EventService.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\validation\FieldMatch.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\security\AuthenticationService.java
@@ -108,6 +110,7 @@ C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\train
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\controller\TrainerController.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\event\EventRegistrationRequestDto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\users\athlete\AthleteRegistrationRequestDto.java
+C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\config\SportIconInitializer.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\event\EventFilterRequestDto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\validation\RegexConstants.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\UserCredentialService.java

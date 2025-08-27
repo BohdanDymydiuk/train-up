@@ -57,3 +57,5 @@ databaseChangeLog:
         file: db.changelog/changes/28-insert-gym-owner-and-gyms.yaml
   - include:
         file: db.changelog/changes/29-add-online-training-and-intensity-to-events.yaml
+  - include:
+        file: db.changelog/changes/30-create-initialization-log-table.yaml
