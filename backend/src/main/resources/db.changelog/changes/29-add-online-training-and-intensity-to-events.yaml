@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: 29-add-online-training-and-intensity-to-events
+      author: bohdan-s
+      changes:
+        - addColumn:
+            tableName: events
+            columns:
+              - column:
+                  name: online_training
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
+              - column:
+                  name: intensity
+                  type: INTEGER
+                  constraints:
+                    nullable: false

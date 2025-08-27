@@ -71,3 +71,7 @@ databaseChangeLog:
               tableName: sports
               columns:
                 - column: { name: sport_name, value: 'Жіночий бокс' }
+          - insert:
+              tableName: sports
+              columns:
+                - column: { name: sport_name, value: 'Біг' }

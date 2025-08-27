@@ -5,7 +5,6 @@ import com.example.trainup.validation.ValidPhoneNumbers;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
 import java.util.Set;
 
 public record GymRegistrationRequestDto(
@@ -28,9 +27,6 @@ public record GymRegistrationRequestDto(
 
         Set<WorkingHoursEntry> workingHours,
 
-        Set<Long> trainerIds,
-
-        @Size(max = 5, message = "The maximum number of gym photos is 5.")
-        Set<String> photoUrls
+        Set<Long> trainerIds
 ) {
 }

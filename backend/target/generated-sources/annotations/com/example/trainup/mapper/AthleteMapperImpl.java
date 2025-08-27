@@ -15,8 +15,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-08-10T16:26:23+0000",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.15 (Ubuntu)"
+    date = "2025-08-27T12:31:37+0200",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
 public class AthleteMapperImpl implements AthleteMapper {
@@ -78,7 +78,6 @@ public class AthleteMapperImpl implements AthleteMapper {
         athlete.setLastName( requestDto.lastName() );
         athlete.setGender( requestDto.gender() );
         athlete.setDateOfBirth( requestDto.dateOfBirth() );
-        athlete.setProfileImageUrl( requestDto.profileImageUrl() );
         Set<String> set1 = requestDto.phoneNumbers();
         if ( set1 != null ) {
             athlete.setPhoneNumbers( new LinkedHashSet<String>( set1 ) );

@@ -1,5 +1,6 @@
 package com.example.trainup.service;
 
+import com.cloudinary.Cloudinary;
 import com.example.trainup.dto.sport.SportDto;
 import com.example.trainup.dto.sport.SportRequestDto;
 import com.example.trainup.mapper.SportMapper;
@@ -7,6 +8,7 @@ import com.example.trainup.model.Sport;
 import com.example.trainup.repository.SportRepository;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.data.domain.Page;
@@ -21,6 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class SportServiceImpl implements SportService {
     private final SportRepository sportRepository;
     private final SportMapper sportMapper;
+    private final Optional<Cloudinary> cloudinary;
 
     @Override
     @Transactional(readOnly = true)

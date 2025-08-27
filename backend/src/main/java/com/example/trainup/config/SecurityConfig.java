@@ -59,7 +59,8 @@ public class SecurityConfig {
                                         "/v3/api-docs/**",
                                         "/actuator/health",
                                         "/sport",
-                                        "/event")
+                                        "/event",
+                                        "/trainer")
                                 .permitAll()
                                 .anyRequest().authenticated()
                 )

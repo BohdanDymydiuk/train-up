@@ -9,6 +9,8 @@ public record EventResponseDto(
         String description,
         LocalDateTime dateTime,
         Long gymId,
-        Long trainerId
+        Long trainerId,
+        Boolean onlineTraining,
+        Integer intensity
 ) {
 }

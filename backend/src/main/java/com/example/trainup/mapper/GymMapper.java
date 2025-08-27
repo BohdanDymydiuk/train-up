@@ -32,8 +32,6 @@ public interface GymMapper {
             qualifiedByName = "mapTrainerIdsToTrainers")
     @Mapping(source = "requestDto.location", target = "location",
             qualifiedByName = "mapAddressDtoToAddress")
-    @Mapping(source = "requestDto.photoUrls", target = "photos",
-            qualifiedByName = "mapPhotoUrlsToPhotos")
     @Mapping(source = "gymOwner", target = "gymOwner")
     @Mapping(source = "requestDto.phoneNumbers", target = "phoneNumbers")
     @Mapping(target = "id", ignore = true)

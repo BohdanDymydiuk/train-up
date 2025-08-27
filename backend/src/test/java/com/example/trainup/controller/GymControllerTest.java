@@ -203,8 +203,7 @@ class GymControllerTest {
                                 LocalTime.of(20, 0)
                         )
                 ),
-                Collections.singleton(1L),
-                Collections.singleton("http://newgym.com/photo.jpg")
+                Collections.singleton(1L)
         );
 
         GymResponseDto expectedResponse = createGymResponseDto(gym);
@@ -242,7 +241,6 @@ class GymControllerTest {
                 "http://newgym.com",
                 Collections.singleton("+38(050)-987-6543"),
                 Collections.emptySet(),
-                Collections.emptySet(),
                 Collections.emptySet()
         );
 
@@ -265,7 +263,6 @@ class GymControllerTest {
                 "Desc",
                 "http://newgym.com",
                 Collections.singleton("+38(050)-987-6543"),
-                Collections.emptySet(),
                 Collections.emptySet(),
                 Collections.emptySet()
         );
@@ -466,8 +463,7 @@ class GymControllerTest {
                                 LocalTime.of(22, 0)
                         ))
                 ),
-                new HashSet<>(Collections.singletonList(2L)),
-                new HashSet<>(Collections.singletonList("http://updatedgym.com/photo2.jpg"))
+                new HashSet<>(Collections.singletonList(2L))
         );
 
         GymResponseDto expectedResponse = new GymResponseDto(
@@ -483,7 +479,7 @@ class GymControllerTest {
                 gym.getOverallRating(),
                 gym.getNumberOfReviews(),
                 gym.getGymOwner().getId(),
-                requestDto.photoUrls()
+                null
         );
 
         // When
@@ -502,8 +498,7 @@ class GymControllerTest {
                 .andExpect(jsonPath("$.description").value("Updated Description"))
                 .andExpect(jsonPath("$.location.city").value("Kyiv"))
                 .andExpect(jsonPath("$.phoneNumbers[0]").value("+38(099)-888-7766"))
-                .andExpect(jsonPath("$.sportIds[0]").value(2L))
-                .andExpect(jsonPath("$.photoUrls[0]").value("http://updatedgym.com/photo2.jpg"));
+                .andExpect(jsonPath("$.sportIds[0]").value(2L));
 
         verify(gymService).canUserModifyGym(any(Authentication.class), eq(gym.getId()));
         verify(gymService).updateGym(eq(gym.getId()), any(GymUpdateRequestDto.class));
@@ -520,7 +515,6 @@ class GymControllerTest {
                 "Desc",
                 "http://newgym.com",
                 Collections.singleton("+38(050)-987-6543"),
-                Collections.emptySet(),
                 Collections.emptySet(),
                 Collections.emptySet()
         );
@@ -551,7 +545,6 @@ class GymControllerTest {
                 "Desc",
                 "http://newgym.com",
                 Collections.singleton("+38(050)-987-6543"),
-                Collections.emptySet(),
                 Collections.emptySet(),
                 Collections.emptySet()
         );

@@ -8,6 +8,8 @@ public record EventFilterRequestDto(
         Long sportId,
         LocalDate date,
         Long gymId,
-        Long trainerId
+        Long trainerId,
+        Boolean onlineTraining,
+        Integer intensity
 ) {
 }

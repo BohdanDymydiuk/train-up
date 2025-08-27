@@ -2,17 +2,24 @@ package com.example.trainup.controller;
 
 import com.example.trainup.dto.sport.SportDto;
 import com.example.trainup.dto.sport.SportRequestDto;
+import com.example.trainup.service.PhotoService;
 import com.example.trainup.service.SportService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
+import java.util.Arrays;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
@@ -26,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/sport")
@@ -38,6 +46,7 @@ import org.springframework.web.bind.annotation.RestController;
 )
 public class SportController {
     private final SportService sportService;
+    private final PhotoService photoService;
 
     @GetMapping
     @Operation(
@@ -49,7 +58,7 @@ public class SportController {
             @RequestParam(required = false) String name,
             @PageableDefault(size = 10) Pageable pageable
     ) {
-        SportDto sportFilterDto = new SportDto(id, name);
+        SportDto sportFilterDto = new SportDto(id, name, null);
         log.info("Attempting to fetch all sports with filter: {} and pageable: {}",
                 sportFilterDto, pageable);
 
@@ -102,5 +111,52 @@ public class SportController {
 
         log.info("Sport with ID: {} successfully deleted.", id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping(value = "/icon/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PreAuthorize("hasRole('ADMIN')")
+    @Operation(
+            summary = "Upload sport icon by ID",
+            description = "Allows an ADMIN user to upload sport icon."
+    )
+    public ResponseEntity<String> uploadIcon(
+            @PathVariable @Positive Long id,
+            @RequestParam("file")
+            @Parameter(
+                    description = "Image file to upload (JPEG, PNG, SVG)",
+                    required = true,
+                    content = @Content(mediaType = MediaType.MULTIPART_FORM_DATA_VALUE,
+                            schema = @Schema(type = "string", format = "binary"))
+            ) MultipartFile file
+    ) {
+        log.info("Attempting to upload icon for sport ID: {}", id);
+        if (file.isEmpty()) {
+            log.warn("Upload attempt with empty file for sport ID: {}", id);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("File is empty");
+        }
+
+        if (!Arrays.asList("image/jpeg", "image/png", "image/svg+xml")
+                .contains(file.getContentType())) {
+            log.warn("Invalid file format uploaded by sport ID: {}. Content type: {}",
+                    id, file.getContentType());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Invalid file format. Only JPEG and PNG are supported.");
+        }
+
+        try {
+            String imageUrl = photoService.uploadSportIcon(id, file);
+            log.info("Icon uploaded successfully for sport ID: {}. URL: {}", id, imageUrl);
+            return ResponseEntity.ok(imageUrl);
+        } catch (EntityNotFoundException e) {
+            log.error("Entity not found during icon upload for sport ID: {}", id, e);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (SecurityException e) {
+            log.error("Security exception during icon upload for sport ID: {}", id, e);
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+        } catch (Exception e) {
+            log.error("Unexpected error during photo upload for sport ID: {}", id, e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("An error occurred: " + e.getMessage());
+        }
     }
 }
