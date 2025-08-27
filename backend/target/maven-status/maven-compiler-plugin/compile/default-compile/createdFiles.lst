@@ -42,6 +42,7 @@ com\example\trainup\service\GymServiceImpl.class
 com\example\trainup\repository\AthleteRepository.class
 com\example\trainup\exception\GeminiApiException.class
 com\example\trainup\service\GymService.class
+com\example\trainup\config\SportIconInitializer.class
 com\example\trainup\exception\PhotoUploadException.class
 com\example\trainup\dto\users\athlete\AthleteUpdateRequestDto.class
 com\example\trainup\dto\review\ReviewResponseDto.class
@@ -93,6 +94,7 @@ com\example\trainup\config\SecurityConfig.class
 com\example\trainup\dto\users\trainer\TrainerUpdateRequestDto.class
 com\example\trainup\validation\FieldMatch$List.class
 com\example\trainup\dto\users\trainer\TrainerFilterRequestDto.class
+com\example\trainup\model\InitializationLog.class
 com\example\trainup\service\users\AthleteServiceImpl.class
 com\example\trainup\dto\chat\ChatMessageDto.class
 com\example\trainup\dto\users\gymowner\GymOwnerResponseDto.class
@@ -112,6 +114,7 @@ com\example\trainup\model\Role.class
 com\example\trainup\service\CurrentUserService.class
 com\example\trainup\model\Address.class
 com\example\trainup\model\Review.class
+com\example\trainup\repository\InitializationLogRepository.class
 com\example\trainup\model\WorkingHoursEntry$DayOfTheWeek.class
 com\example\trainup\dto\gemini\GeminiRequest.class
 com\example\trainup\config\GeminiClientConfig.class

@@ -20,6 +20,9 @@ databaseChangeLog:
                     unique: true
                     nullable: false
               - column:
+                  name: sport_icon_url
+                  type: VARCHAR(255)
+              - column:
                   name: is_deleted
                   type: BOOLEAN
                   defaultValueBoolean: false

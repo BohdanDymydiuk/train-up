@@ -135,7 +135,8 @@ public class SportController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("File is empty");
         }
 
-        if (!Arrays.asList("image/jpeg", "image/png").contains(file.getContentType())) {
+        if (!Arrays.asList("image/jpeg", "image/png", "image/svg+xml")
+                .contains(file.getContentType())) {
             log.warn("Invalid file format uploaded by sport ID: {}. Content type: {}",
                     id, file.getContentType());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)

@@ -23,7 +23,7 @@ public interface EventRepository extends JpaRepository<Event, Long> {
             + "OR (e.dateTime >= :startOfDay AND e.dateTime < :endOfDay)) "
             + "AND (:gymId IS NULL OR g.id = :gymId) "
             + "AND (:trainerId IS NULL OR t.id = :trainerId) "
-            + "AND (:onlineTraining IS NULL OR e.onlineTraining = :onlineTraininig) "
+            + "AND (:onlineTraining IS NULL OR e.onlineTraining = :onlineTraining) "
             + "AND (:intensity IS NULL OR e.intensity = :intensity)"
 
     )

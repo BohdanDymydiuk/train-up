@@ -35,6 +35,8 @@ public class Sport {
     @Column(unique = true, nullable = false)
     private String sportName;
 
+    private String sportIconUrl;
+
     @ManyToMany(mappedBy = "sports")
     private Set<Gym> gyms = new HashSet<>();
 
@@ -52,6 +54,4 @@ public class Sport {
     @Column(nullable = false)
     @Setter(AccessLevel.PROTECTED)
     private boolean isDeleted = false;
-
-    private String sportIconUrl;
 }
