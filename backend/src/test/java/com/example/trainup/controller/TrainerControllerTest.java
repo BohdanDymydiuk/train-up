@@ -74,6 +74,7 @@ class TrainerControllerTest {
                 Set.of(1L),
                 Set.of(1L),
                 null,
+                false,
                 "Experienced trainer",
                 "http://social.com",
                 4.5f,

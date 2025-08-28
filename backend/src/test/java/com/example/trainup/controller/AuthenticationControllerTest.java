@@ -256,6 +256,7 @@ public class AuthenticationControllerTest {
                 Set.of(1L),
                 Set.of(1L),
                 new TrainerAddressDto("Ukraine", "Kyiv", null, null, null),
+                false,
                 "Experienced trainer",
                 "http://linkedin.com/jane",
                 0F,

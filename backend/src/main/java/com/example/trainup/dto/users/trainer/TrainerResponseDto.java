@@ -17,6 +17,7 @@ public record TrainerResponseDto(
         Set<Long> sportIds,
         Set<Long> gymIds,
         TrainerAddressDto location,
+        Boolean onlineTraining,
         String description,
         String socialMediaLinks,
         Float overallRating,
