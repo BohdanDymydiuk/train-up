@@ -127,6 +127,7 @@ class TrainerServiceImplTest {
                 Set.of(1L),
                 Set.of(1L),
                 new TrainerAddressDto("USA", "New York", "Downtown", "Main St", "123"),
+                false,
                 "Experienced trainer",
                 "http://social.com",
                 4.5f,

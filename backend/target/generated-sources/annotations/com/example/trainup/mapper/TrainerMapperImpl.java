@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-08-27T12:31:37+0200",
+    date = "2025-08-28T12:20:45+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
@@ -43,6 +43,7 @@ public class TrainerMapperImpl implements TrainerMapper {
         LocalDate dateOfBirth = null;
         String profileImageUrl = null;
         Set<String> phoneNumbers = null;
+        Boolean onlineTraining = null;
         String description = null;
         String socialMediaLinks = null;
         Float overallRating = null;
@@ -66,12 +67,13 @@ public class TrainerMapperImpl implements TrainerMapper {
         if ( set2 != null ) {
             phoneNumbers = new LinkedHashSet<String>( set2 );
         }
+        onlineTraining = trainer.getOnlineTraining();
         description = trainer.getDescription();
         socialMediaLinks = trainer.getSocialMediaLinks();
         overallRating = trainer.getOverallRating();
         numberOfReviews = trainer.getNumberOfReviews();
 
-        TrainerResponseDto trainerResponseDto = new TrainerResponseDto( id, firstName, lastName, gender, dateOfBirth, profileImageUrl, email, userType, phoneNumbers, sportIds, gymIds, location, description, socialMediaLinks, overallRating, numberOfReviews );
+        TrainerResponseDto trainerResponseDto = new TrainerResponseDto( id, firstName, lastName, gender, dateOfBirth, profileImageUrl, email, userType, phoneNumbers, sportIds, gymIds, location, onlineTraining, description, socialMediaLinks, overallRating, numberOfReviews );
 
         return trainerResponseDto;
     }
