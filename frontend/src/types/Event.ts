@@ -1,9 +1,11 @@
 export interface Event {
   id: number;
   name: string;
-  sportId: number;
+  sportId: number | null;
   description: string;
-  dateTime: Date;
-  gymId: number;
+  dateTime: string;
+  gymId: number | null;
   trainerId: number;
+  onlineTraining: boolean;
+  intensity: 0 | 1 | 2;
 }

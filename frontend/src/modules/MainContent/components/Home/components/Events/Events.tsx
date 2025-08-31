@@ -4,7 +4,7 @@ import { MainContext } from '../../../../../../context/MainContext';
 import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
 
 import { Arrows } from './components/Arrows';
-import { EventsItems } from './components/Events';
+import { EventsItems } from './components/EventsItems';
 
 import styles from './Events.module.scss';
 
