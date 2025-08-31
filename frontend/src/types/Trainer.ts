@@ -7,4 +7,5 @@ export interface Trainer {
   isNew: boolean;
   trainingTypes: string[];
   sportIds: number[];
+  onlineTraining: boolean;
 }
