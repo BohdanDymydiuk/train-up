@@ -175,7 +175,8 @@ public class EventController {
                     required = true,
                     content = @Content(mediaType = MediaType.MULTIPART_FORM_DATA_VALUE,
                             schema = @Schema(type = "string", format = "binary"))
-            ) MultipartFile file
+            ) MultipartFile file,
+            Authentication authentication
     ) {
 
         if (file.isEmpty()) {
