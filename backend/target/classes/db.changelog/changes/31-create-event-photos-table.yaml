@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 31-create-event-photos-table
+      author: bohdan-s
+      changes:
+        - createTable:
+            tableName: event_photos
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: image_url
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: event_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKey:
+                      name: fk_event_photos_event_id
+                      referencedTableName: events
+                      referencedColumnNames: id
+                      onDelete: CASCADE
+              - column:
+                  name: is_deleted
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+      rollback:
+        - dropTable:
+            tableName: event_photos

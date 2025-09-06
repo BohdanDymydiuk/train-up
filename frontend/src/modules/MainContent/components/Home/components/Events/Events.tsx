@@ -24,8 +24,9 @@ export const Events: React.FC = () => {
       <header className={styles.header}>
         <ErmilovTitle {...ermilovTitleProps} />
         <Arrows />
-        <EventsItems />
       </header>
+
+      <EventsItems />
     </section>
   );
 };
