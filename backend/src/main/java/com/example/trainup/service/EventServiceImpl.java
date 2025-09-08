@@ -1,15 +1,18 @@
 package com.example.trainup.service;
 
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.dto.event.EventFilterRequestDto;
 import com.example.trainup.dto.event.EventRegistrationRequestDto;
 import com.example.trainup.dto.event.EventResponseDto;
 import com.example.trainup.dto.event.EventUpdateRequestDto;
 import com.example.trainup.mapper.EventMapper;
+import com.example.trainup.model.Address;
 import com.example.trainup.model.Event;
 import com.example.trainup.model.Gym;
 import com.example.trainup.model.Sport;
 import com.example.trainup.model.user.Trainer;
 import com.example.trainup.model.user.UserCredentials;
+import com.example.trainup.repository.AddressRepository;
 import com.example.trainup.repository.EventRepository;
 import com.example.trainup.repository.GymRepository;
 import com.example.trainup.repository.SportRepository;
@@ -40,6 +43,7 @@ public class EventServiceImpl implements EventService {
     private final TrainerRepository trainerRepository;
     private final SportRepository sportRepository;
     private final GymRepository gymRepository;
+    private final AddressRepository addressRepository;
 
     @Override
     public EventResponseDto createEventByTrainer(Authentication authentication,
@@ -52,6 +56,15 @@ public class EventServiceImpl implements EventService {
                 new EntityNotFoundException(SPORT_NOT_FOUND_MSG + requestDto.sportId()));
         Event event = eventMapper.toModel(requestDto, sport);
         event.setTrainer(trainer);
+        if (event.getLocation() != null) {
+            Address existingAddress = addressRepository.findByCountryAndCityAndStreetAndHouse(
+                    event.getLocation().getCountry(),
+                    event.getLocation().getCity(),
+                    event.getLocation().getStreet(),
+                    event.getLocation().getHouse()
+            ).orElseGet(() -> addressRepository.save(event.getLocation()));
+            event.setLocation(existingAddress);
+        }
         Event savedEvent = eventRepository.save(event);
 
         log.info("Event created by trainer with id: {}", savedEvent.getId());
@@ -77,6 +90,15 @@ public class EventServiceImpl implements EventService {
                 new EntityNotFoundException(SPORT_NOT_FOUND_MSG + requestDto.sportId()));
         Event event = eventMapper.toModel(requestDto, sport);
         event.setGym(gym);
+        if (event.getLocation() != null) {
+            Address existingAddress = addressRepository.findByCountryAndCityAndStreetAndHouse(
+                    event.getLocation().getCountry(),
+                    event.getLocation().getCity(),
+                    event.getLocation().getStreet(),
+                    event.getLocation().getHouse()
+            ).orElseGet(() -> addressRepository.save(event.getLocation()));
+            event.setLocation(existingAddress);
+        }
         Event savedEvent = eventRepository.save(event);
 
         log.info("Event created by gym owner for gymId: {}, eventId: {}",
@@ -101,6 +123,11 @@ public class EventServiceImpl implements EventService {
                 filter.trainerId(),
                 filter.onlineTraining(),
                 filter.intensity(),
+                filter.locationCountry(),
+                filter.locationCity(),
+                filter.locationCityDistrict(),
+                filter.locationStreet(),
+                filter.locationHouse(),
                 pageable
         );
 
@@ -124,6 +151,8 @@ public class EventServiceImpl implements EventService {
         });
         Optional.ofNullable(requestDto.description()).ifPresent(existingEvent::setDescription);
         Optional.ofNullable(requestDto.dateTime()).ifPresent(existingEvent::setDateTime);
+
+        updateLocation(existingEvent, requestDto.location());
 
         Event savedEvent = eventRepository.save(existingEvent);
 
@@ -170,5 +199,21 @@ public class EventServiceImpl implements EventService {
         }
         eventRepository.deleteById(id);
         log.info("Deleted event with id: {}", id);
+    }
+
+    private void updateLocation(Event event, AddressDto locationDto) {
+        if (locationDto != null) {
+            Address address = event.getLocation();
+            if (address == null) {
+                throw new IllegalStateException("Event with ID " + event.getId()
+                        + " does not have a location, which is required.");
+            }
+            Optional.ofNullable(locationDto.country()).ifPresent(address::setCountry);
+            Optional.ofNullable(locationDto.city()).ifPresent(address::setCity);
+            Optional.ofNullable(locationDto.cityDistrict()).ifPresent(address::setCityDistrict);
+            Optional.ofNullable(locationDto.street()).ifPresent(address::setStreet);
+            Optional.ofNullable(locationDto.house()).ifPresent(address::setHouse);
+            addressRepository.save(address);
+        }
     }
 }

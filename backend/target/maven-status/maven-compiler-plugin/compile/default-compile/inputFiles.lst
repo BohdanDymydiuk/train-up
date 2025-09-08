@@ -36,7 +36,6 @@ C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\train
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\mapper\SportMapper.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\model\user\UserCredentials.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\repository\EventRepository.java
-C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\gym\GymAddressDto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\chat\ChatMessageDto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\model\WorkingHoursEntry.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\controller\EventController.java
@@ -45,6 +44,7 @@ C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\train
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\service\EventService.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\validation\FieldMatch.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\security\AuthenticationService.java
+C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\AddressDto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\event\EventUpdateRequestDto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\chat\ChatRequestDto.java
 C:\Users\Bohdan_Sh\IdeaProjects\train-up\backend\src\main\java\com\example\trainup\dto\sport\SportRequestDto.java

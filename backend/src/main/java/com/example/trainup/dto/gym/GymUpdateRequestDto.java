@@ -1,11 +1,12 @@
 package com.example.trainup.dto.gym;
 
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.model.WorkingHoursEntry;
 import java.util.Set;
 
 public record GymUpdateRequestDto(
         String name,
-        GymAddressDto location,
+        AddressDto location,
         Set<Long> sportIds,
         String description,
         String website,

@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.example.trainup.dto.gym.GymAddressDto;
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.dto.gym.GymFilterRequestDto;
 import com.example.trainup.dto.gym.GymRegistrationRequestDto;
 import com.example.trainup.dto.gym.GymResponseDto;
@@ -146,7 +146,7 @@ class GymControllerTest {
         return new GymResponseDto(
                 gym.getId(),
                 gym.getName(),
-                new GymAddressDto(
+                new AddressDto(
                         gym.getLocation().getCountry(),
                         gym.getLocation().getCity(),
                         gym.getLocation().getCityDistrict(),
@@ -191,7 +191,7 @@ class GymControllerTest {
 
         GymRegistrationRequestDto requestDto = new GymRegistrationRequestDto(
                 "New Gym",
-                new GymAddressDto("Ukraine", "Lviv", null, "Freedom Ave", "10"),
+                new AddressDto("Ukraine", "Lviv", null, "Freedom Ave", "10"),
                 Collections.singleton(1L),
                 "Description of new gym.",
                 "http://newgym.com",
@@ -235,7 +235,7 @@ class GymControllerTest {
         // Given
         GymRegistrationRequestDto requestDto = new GymRegistrationRequestDto(
                 "New Gym",
-                new GymAddressDto("UA", "City", null, "Street", "1"),
+                new AddressDto("UA", "City", null, "Street", "1"),
                 Collections.singleton(1L),
                 "Desc",
                 "http://newgym.com",
@@ -258,7 +258,7 @@ class GymControllerTest {
         // Given
         GymRegistrationRequestDto invalidRequestDto = new GymRegistrationRequestDto(
                 "",
-                new GymAddressDto("UA", "City", null, "Street", "1"),
+                new AddressDto("UA", "City", null, "Street", "1"),
                 Collections.singleton(1L),
                 "Desc",
                 "http://newgym.com",
@@ -451,7 +451,7 @@ class GymControllerTest {
         // Given
         GymUpdateRequestDto requestDto = new GymUpdateRequestDto(
                 "Updated Gym Name",
-                new GymAddressDto("Ukraine", "Kyiv", null, "New Street", "5"),
+                new AddressDto("Ukraine", "Kyiv", null, "New Street", "5"),
                 new HashSet<>(Collections.singletonList(2L)),
                 "Updated Description",
                 "http://updatedgym.com",
@@ -510,7 +510,7 @@ class GymControllerTest {
         // Given
         GymUpdateRequestDto requestDto = new GymUpdateRequestDto(
                 "Updated Gym Name",
-                new GymAddressDto("UA", "City", null, "Street", "1"),
+                new AddressDto("UA", "City", null, "Street", "1"),
                 Collections.singleton(1L),
                 "Desc",
                 "http://newgym.com",
@@ -540,7 +540,7 @@ class GymControllerTest {
         // Given
         GymUpdateRequestDto requestDto = new GymUpdateRequestDto(
                 "Updated Gym Name",
-                new GymAddressDto("UA", "City", null, "Street", "1"),
+                new AddressDto("UA", "City", null, "Street", "1"),
                 Collections.singleton(1L),
                 "Desc",
                 "http://newgym.com",

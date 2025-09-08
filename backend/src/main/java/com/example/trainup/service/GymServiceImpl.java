@@ -1,7 +1,7 @@
 package com.example.trainup.service;
 
 import com.cloudinary.Cloudinary;
-import com.example.trainup.dto.gym.GymAddressDto;
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.dto.gym.GymFilterRequestDto;
 import com.example.trainup.dto.gym.GymRegistrationRequestDto;
 import com.example.trainup.dto.gym.GymResponseDto;
@@ -199,7 +199,7 @@ public class GymServiceImpl implements GymService {
         return gymMapper.toDto(updatedGym);
     }
 
-    private void updateLocation(Gym gym, GymAddressDto locationDto) {
+    private void updateLocation(Gym gym, AddressDto locationDto) {
         if (locationDto != null) {
             Address address = gym.getLocation();
             if (address == null) {

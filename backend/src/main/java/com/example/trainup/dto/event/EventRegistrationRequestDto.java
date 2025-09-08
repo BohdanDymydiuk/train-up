@@ -1,5 +1,6 @@
 package com.example.trainup.dto.event;
 
+import com.example.trainup.dto.AddressDto;
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -23,6 +24,9 @@ public record EventRegistrationRequestDto(
 
         @Range(min = 1, max = 3, message = "Intensity must be in the range of 1 to 3")
         @NotNull(message = "Intensity must not be null")
-        Integer intensity
+        Integer intensity,
+
+        @NotNull(message = "Event's location can not be null")
+        AddressDto location
 ) {
 }

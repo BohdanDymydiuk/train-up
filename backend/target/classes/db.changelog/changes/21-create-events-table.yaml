@@ -45,3 +45,10 @@ databaseChangeLog:
                   constraints:
                     foreignKeyName: fk_event_trainer
                     references: trainers(id)
+              - column:
+                  name: address_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_event_address
+                    references: addresses(id)

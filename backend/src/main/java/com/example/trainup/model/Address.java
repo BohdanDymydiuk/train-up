@@ -52,6 +52,9 @@ public class Address {
     @OneToMany(mappedBy = "location")
     private Set<Trainer> trainers = new HashSet<>();
 
+    @OneToMany(mappedBy = "location")
+    private Set<Event> events = new HashSet<>();
+
     @Column(nullable = false)
     @Setter(AccessLevel.PROTECTED)
     private boolean isDeleted = false;

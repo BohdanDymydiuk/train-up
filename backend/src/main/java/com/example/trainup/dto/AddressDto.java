@@ -1,8 +1,8 @@
-package com.example.trainup.dto.gym;
+package com.example.trainup.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record GymAddressDto(
+public record AddressDto(
         @NotBlank(message = "Country cannot be blank")
         String country,
 

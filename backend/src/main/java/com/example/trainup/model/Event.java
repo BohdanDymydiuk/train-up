@@ -64,4 +64,8 @@ public class Event {
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
     @Size(max = 3, message = "The maximum numbers of event photos is 3.")
     private Set<EventPhoto> photos = new HashSet<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id", nullable = false)
+    private Address location;
 }

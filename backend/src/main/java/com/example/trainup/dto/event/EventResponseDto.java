@@ -1,6 +1,8 @@
 package com.example.trainup.dto.event;
 
+import com.example.trainup.dto.AddressDto;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 public record EventResponseDto(
         Long id,
@@ -11,6 +13,8 @@ public record EventResponseDto(
         Long gymId,
         Long trainerId,
         Boolean onlineTraining,
-        Integer intensity
+        Integer intensity,
+        Set<String> photoUrls,
+        AddressDto location
 ) {
 }

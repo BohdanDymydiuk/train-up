@@ -1,6 +1,6 @@
 package com.example.trainup.mapper;
 
-import com.example.trainup.dto.gym.GymAddressDto;
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.dto.gym.GymRegistrationRequestDto;
 import com.example.trainup.dto.gym.GymResponseDto;
 import com.example.trainup.model.Gym;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-03T11:58:42+0200",
+    date = "2025-09-08T15:27:44+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
@@ -61,7 +61,7 @@ public class GymMapperImpl implements GymMapper {
 
         Set<Long> sportIds = null;
         Set<Long> trainerIds = null;
-        GymAddressDto location = null;
+        AddressDto location = null;
         Long gymOwnerId = null;
         Set<String> photoUrls = null;
         Long id = null;
