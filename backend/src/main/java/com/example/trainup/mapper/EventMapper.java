@@ -6,9 +6,13 @@ import com.example.trainup.dto.event.EventRegistrationRequestDto;
 import com.example.trainup.dto.event.EventResponseDto;
 import com.example.trainup.model.Address;
 import com.example.trainup.model.Event;
+import com.example.trainup.model.EventPhoto;
 import com.example.trainup.model.Sport;
+import java.util.Set;
+import java.util.stream.Collectors;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.Named;
 
 @Mapper(config = MapperConfig.class)
 public interface EventMapper {
@@ -37,6 +41,7 @@ public interface EventMapper {
     @Mapping(source = "gym.id", target = "gymId")
     @Mapping(source = "trainer.id", target = "trainerId")
     @Mapping(source = "location", target = "location")
+    @Mapping(source = "photos", target = "photoUrls", qualifiedByName = "mapPhotosToPhotoUrls")
     EventResponseDto toDto(Event event);
 
     default AddressDto mapAddressToAddressDto(Address address) {
@@ -50,5 +55,15 @@ public interface EventMapper {
                 address.getStreet(),
                 address.getHouse()
         );
+    }
+
+    @Named("mapPhotosToPhotoUrls")
+    default Set<String> mapPhotosToPhotoUrls(Set<EventPhoto> photos) {
+        if (photos == null || photos.isEmpty()) {
+            return Set.of();
+        }
+        return photos.stream()
+                .map(EventPhoto::getImageUrl)
+                .collect(Collectors.toSet());
     }
 }

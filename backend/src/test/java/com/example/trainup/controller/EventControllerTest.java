@@ -23,6 +23,7 @@ import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -88,6 +89,7 @@ public class EventControllerTest {
                 1L,
                 false,
                 1,
+                Set.of(),
                 location
         );
 

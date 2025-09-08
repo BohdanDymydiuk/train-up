@@ -1,4 +1,4 @@
-#Mon Sep 08 14:10:28 CEST 2025
+#Mon Sep 08 15:27:49 CEST 2025
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\TrainUpApplication.java=1754668222915
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\config\\CloudinaryConfig.java=1754668222915
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\config\\GeminiClientConfig.java=1754668222918
@@ -21,7 +21,7 @@ C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\ex
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\dto\\chat\\ChatRequestDto.java=1754668222929
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\dto\\event\\EventFilterRequestDto.java=1756973870533
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\dto\\event\\EventRegistrationRequestDto.java=1756973870469
-C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\dto\\event\\EventResponseDto.java=1757266394203
+C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\dto\\event\\EventResponseDto.java=1757334340481
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\dto\\event\\EventUpdateRequestDto.java=1756973870670
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\dto\\gemini\\GeminiCandidate.java=1754668222936
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\dto\\gemini\\GeminiContent.java=1754668222936
@@ -54,7 +54,7 @@ C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\ex
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\exception\\GeminiResponseException.java=1754668222961
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\exception\\PhotoUploadException.java=1754668222961
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\mapper\\AthleteMapper.java=1754668222965
-C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\mapper\\EventMapper.java=1757266026691
+C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\mapper\\EventMapper.java=1757337792097
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\mapper\\GymMapper.java=1756973870553
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\mapper\\GymOwnerMapper.java=1754668222967
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\main\\java\\com\\example\\trainup\\mapper\\ReviewMapper.java=1754668222967
@@ -133,7 +133,7 @@ C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\TrainUp
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\controller\\AthleteControllerTest.java=1756197169823
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\controller\\AuthenticationControllerTest.java=1756897991048
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\controller\\ChatControllerTest.java=1754668223040
-C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\controller\\EventControllerTest.java=1757267138547
+C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\controller\\EventControllerTest.java=1757338054249
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\controller\\GymControllerTest.java=1756973870523
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\controller\\ReviewControllerTest.java=1754668223056
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\controller\\SportControllerTest.java=1756197169828
@@ -143,7 +143,7 @@ C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\ex
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\mapper\\TrainerMapperTest.java=1756197169830
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\service\\AthleteServiceImplTest.java=1756197169832
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\service\\CurrentUserServiceTest.java=1754668223063
-C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\service\\EventServiceImplTest.java=1757266991989
+C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\service\\EventServiceImplTest.java=1757338054240
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\service\\GeminiChatServiceTest.java=1754668223070
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\service\\GymOwnerServiceImplTest.java=1756197169833
 C\:\\Users\\Bohdan_Sh\\IdeaProjects\\train-up\\backend\\src\\test\\java\\com\\example\\trainup\\service\\GymServiceImplTest.java=1756973870429
