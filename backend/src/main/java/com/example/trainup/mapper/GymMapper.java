@@ -1,7 +1,7 @@
 package com.example.trainup.mapper;
 
 import com.example.trainup.config.MapperConfig;
-import com.example.trainup.dto.gym.GymAddressDto;
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.dto.gym.GymRegistrationRequestDto;
 import com.example.trainup.dto.gym.GymResponseDto;
 import com.example.trainup.model.Address;
@@ -107,7 +107,7 @@ public interface GymMapper {
     }
 
     @Named("mapAddressDtoToAddress")
-    default Address mapAddressDtoToAddress(GymAddressDto addressDto,
+    default Address mapAddressDtoToAddress(AddressDto addressDto,
                                            @Context AddressRepository addressRepository) {
         if (addressDto == null) {
             return null;
@@ -126,11 +126,11 @@ public interface GymMapper {
     }
 
     @Named("mapAddressToAddressDto")
-    default GymAddressDto mapAddressToAddressDto(Address address) {
+    default AddressDto mapAddressToAddressDto(Address address) {
         if (address == null) {
             return null;
         }
-        return new GymAddressDto(
+        return new AddressDto(
                 address.getCountry(),
                 address.getCity(),
                 address.getCityDistrict(),

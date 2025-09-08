@@ -113,10 +113,28 @@ public class EventController {
             @RequestParam(required = false) @Positive Long trainerId,
             @RequestParam(required = false) Boolean onlineTraining,
             @RequestParam(required = false) @Range(min = 1, max = 3) Integer intensity,
+            @RequestParam(required = false) String locationCountry,
+            @RequestParam(required = false) String locationCity,
+            @RequestParam(required = false) String locationCityDistrict,
+            @RequestParam(required = false) String locationStreet,
+            @RequestParam(required = false) String locationHouse,
             @PageableDefault(size = 10) Pageable pageable
     ) {
         EventFilterRequestDto filterRequestDto = new EventFilterRequestDto(
-                id, name, sportId, date, gymId, trainerId, onlineTraining, intensity);
+                id,
+                name,
+                sportId,
+                date,
+                gymId,
+                trainerId,
+                onlineTraining,
+                intensity,
+                locationCountry,
+                locationCity,
+                locationCityDistrict,
+                locationStreet,
+                locationHouse
+        );
         log.info("Attempting to fetch events with filter: {} and pageable: {}",
                 filterRequestDto, pageable);
 

@@ -12,6 +12,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.dto.event.EventFilterRequestDto;
 import com.example.trainup.dto.event.EventRegistrationRequestDto;
 import com.example.trainup.dto.event.EventResponseDto;
@@ -59,13 +60,22 @@ public class EventControllerTest {
 
     @BeforeEach
     void setup() {
+        AddressDto location = new AddressDto(
+                "Ukraine",
+                "Kyiv",
+                null,
+                "Demiyvska",
+                "55"
+        );
+
         validRegistrationDto = new EventRegistrationRequestDto(
                 "Yoga Workshop",
                 1L,
                 "Beginner-friendly yoga session",
                 LocalDateTime.now().plusDays(1),
                 false,
-                1
+                1,
+                location
         );
 
         eventResponseDto = new EventResponseDto(
@@ -77,7 +87,8 @@ public class EventControllerTest {
                 null,
                 1L,
                 false,
-                1
+                1,
+                location
         );
 
         validUpdateDto = new EventUpdateRequestDto(
@@ -86,7 +97,8 @@ public class EventControllerTest {
                 "Intermediate yoga session",
                 LocalDateTime.now().plusDays(2),
                 false,
-                1
+                1,
+                location
         );
 
         filterDto = new EventFilterRequestDto(
@@ -94,6 +106,11 @@ public class EventControllerTest {
                 "Yoga",
                 1L,
                 LocalDate.now(),
+                null,
+                null,
+                null,
+                null,
+                null,
                 null,
                 null,
                 null,
@@ -135,6 +152,7 @@ public class EventControllerTest {
                 "Description",
                 null,
                 null,
+                null,
                 null
         );
 
@@ -148,7 +166,8 @@ public class EventControllerTest {
                         "name: Name must not be blank",
                         "sportId: SportId must not be null",
                         "dateTime: Event dateTime cannot be null",
-                        "intensity: Intensity must not be null"
+                        "intensity: Intensity must not be null",
+                        "location: Event's location can not be null"
                 )))
                 .andReturn();
     }
@@ -327,7 +346,8 @@ public class EventControllerTest {
                 "Intermediate session",
                 LocalDateTime.now().minusDays(1),
                 false,
-                1
+                1,
+                null
         );
         when(eventService.canUserModifyEvent(eq("trainer@example.com"), eq(1L))).thenReturn(true);
 

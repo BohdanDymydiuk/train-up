@@ -13,6 +13,7 @@ import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.dto.event.EventFilterRequestDto;
 import com.example.trainup.dto.event.EventRegistrationRequestDto;
 import com.example.trainup.dto.event.EventResponseDto;
@@ -84,13 +85,22 @@ class EventServiceImplTest {
 
     @BeforeEach
     void setUp() {
+        AddressDto location = new AddressDto(
+                "Ukraine",
+                "Kyiv",
+                null,
+                "Demiyvska",
+                "55"
+        );
+
         registrationRequestDto = new EventRegistrationRequestDto(
                 "Test Event",
                 1L,
                 "Event description",
                 LocalDateTime.of(2025, 7, 1, 10, 0),
                 false,
-                1
+                1,
+                location
         );
 
         eventResponseDto = new EventResponseDto(
@@ -102,7 +112,8 @@ class EventServiceImplTest {
                 1L,
                 1L,
                 false,
-                1
+                1,
+                location
         );
 
         updateRequestDto = new EventUpdateRequestDto(
@@ -111,7 +122,8 @@ class EventServiceImplTest {
                 "Updated description",
                 LocalDateTime.of(2025, 7, 2, 12, 0),
                 false,
-                1
+                1,
+                null
         );
 
         filterRequestDto = new EventFilterRequestDto(
@@ -122,7 +134,12 @@ class EventServiceImplTest {
                 1L,
                 1L,
                 false,
-                1
+                1,
+                null,
+                null,
+                null,
+                null,
+                null
         );
 
         event = new Event();
@@ -363,6 +380,11 @@ class EventServiceImplTest {
                 eq(1L),
                 eq(false),
                 eq(1),
+                eq(null),
+                eq(null),
+                eq(null),
+                eq(null),
+                eq(null),
                 eq(pageable))
         ).thenReturn(eventPage);
         when(eventMapper.toDto(event)).thenReturn(eventResponseDto);
@@ -384,6 +406,11 @@ class EventServiceImplTest {
                 eq(1L),
                 eq(false),
                 eq(1),
+                eq(null),
+                eq(null),
+                eq(null),
+                eq(null),
+                eq(null),
                 eq(pageable)
         );
         verify(eventMapper).toDto(event);

@@ -1,5 +1,6 @@
 package com.example.trainup.dto.gym;
 
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.model.WorkingHoursEntry;
 import com.example.trainup.validation.ValidPhoneNumbers;
 import jakarta.validation.constraints.NotBlank;
@@ -12,7 +13,7 @@ public record GymRegistrationRequestDto(
         String name,
 
         @NotNull(message = "Gym's location can not be null")
-        GymAddressDto location,
+        AddressDto location,
 
         @NotEmpty(message = "Sport Ids can not be empty")
         Set<Long> sportIds,

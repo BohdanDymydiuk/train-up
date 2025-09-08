@@ -10,6 +10,11 @@ public record EventFilterRequestDto(
         Long gymId,
         Long trainerId,
         Boolean onlineTraining,
-        Integer intensity
+        Integer intensity,
+        String locationCountry,
+        String locationCity,
+        String locationCityDistrict,
+        String locationStreet,
+        String locationHouse
 ) {
 }

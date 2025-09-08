@@ -64,8 +64,8 @@ com\example\trainup\validation\RegexConstants.class
 com\example\trainup\dto\gemini\GeminiCandidate.class
 com\example\trainup\validation\EmailUnique.class
 com\example\trainup\model\Gym.class
-com\example\trainup\dto\gym\GymAddressDto.class
 com\example\trainup\model\Sport.class
+com\example\trainup\dto\AddressDto.class
 com\example\trainup\validation\EmailUniqueValidator.class
 com\example\trainup\repository\AddressRepository.class
 com\example\trainup\dto\users\athlete\AthleteFilterRequestDto.class
