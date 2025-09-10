@@ -1,5 +1,6 @@
 package com.example.trainup.mapper;
 
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.dto.event.EventRegistrationRequestDto;
 import com.example.trainup.dto.event.EventResponseDto;
 import com.example.trainup.model.Event;
@@ -7,13 +8,14 @@ import com.example.trainup.model.Gym;
 import com.example.trainup.model.Sport;
 import com.example.trainup.model.user.Trainer;
 import java.time.LocalDateTime;
+import java.util.Set;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-06T15:25:30+0000",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.16 (Ubuntu)"
+    date = "2025-09-08T15:27:44+0200",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
 public class EventMapperImpl implements EventMapper {
@@ -30,6 +32,7 @@ public class EventMapperImpl implements EventMapper {
             event.setName( requestDto.name() );
             event.setDescription( requestDto.description() );
             event.setDateTime( requestDto.dateTime() );
+            event.setLocation( mapAddressDtoToAddress( requestDto.location() ) );
             event.setOnlineTraining( requestDto.onlineTraining() );
             event.setIntensity( requestDto.intensity() );
         }
@@ -47,6 +50,8 @@ public class EventMapperImpl implements EventMapper {
         Long sportId = null;
         Long gymId = null;
         Long trainerId = null;
+        AddressDto location = null;
+        Set<String> photoUrls = null;
         Long id = null;
         String name = null;
         String description = null;
@@ -57,6 +62,8 @@ public class EventMapperImpl implements EventMapper {
         sportId = eventSportId( event );
         gymId = eventGymId( event );
         trainerId = eventTrainerId( event );
+        location = mapAddressToAddressDto( event.getLocation() );
+        photoUrls = mapPhotosToPhotoUrls( event.getPhotos() );
         id = event.getId();
         name = event.getName();
         description = event.getDescription();
@@ -64,7 +71,7 @@ public class EventMapperImpl implements EventMapper {
         onlineTraining = event.getOnlineTraining();
         intensity = event.getIntensity();
 
-        EventResponseDto eventResponseDto = new EventResponseDto( id, name, sportId, description, dateTime, gymId, trainerId, onlineTraining, intensity );
+        EventResponseDto eventResponseDto = new EventResponseDto( id, name, sportId, description, dateTime, gymId, trainerId, onlineTraining, intensity, photoUrls, location );
 
         return eventResponseDto;
     }

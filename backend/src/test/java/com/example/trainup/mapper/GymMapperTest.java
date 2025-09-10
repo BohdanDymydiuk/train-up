@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-import com.example.trainup.dto.gym.GymAddressDto;
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.dto.gym.GymRegistrationRequestDto;
 import com.example.trainup.dto.gym.GymResponseDto;
 import com.example.trainup.model.Address;
@@ -84,7 +84,7 @@ class GymMapperTest {
 
         GymRegistrationRequestDto requestDto = new GymRegistrationRequestDto(
                 "Fitness Center",
-                new GymAddressDto("Ukraine", "Kyiv", "Shevchenkivskyi", "Shevchenka", "10"),
+                new AddressDto("Ukraine", "Kyiv", "Shevchenkivskyi", "Shevchenka", "10"),
                 Set.of(1L, 2L),
                 "A great gym",
                 "https://fitness.com",
@@ -152,7 +152,7 @@ class GymMapperTest {
 
         GymRegistrationRequestDto requestDto = new GymRegistrationRequestDto(
                 "New Gym",
-                new GymAddressDto("Ukraine", "Lviv", null,"Sichovykh Striltsiv", "5"),
+                new AddressDto("Ukraine", "Lviv", null,"Sichovykh Striltsiv", "5"),
                 Set.of(1L),
                 null,
                 null,
@@ -224,7 +224,7 @@ class GymMapperTest {
         assertNotNull(result);
         assertEquals(1L, result.id());
         assertEquals("Fitness Center", result.name());
-        assertEquals(new GymAddressDto("Ukraine", "Kyiv", null, "Shevchenka", "10"),
+        assertEquals(new AddressDto("Ukraine", "Kyiv", null, "Shevchenka", "10"),
                 result.location());
         assertEquals(Set.of(1L), result.sportIds());
         assertEquals(Set.of("+380501234567"), result.phoneNumbers());

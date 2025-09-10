@@ -1,5 +1,6 @@
 package com.example.trainup.dto.event;
 
+import com.example.trainup.dto.AddressDto;
 import jakarta.validation.constraints.FutureOrPresent;
 import java.time.LocalDateTime;
 
@@ -12,6 +13,7 @@ public record EventUpdateRequestDto(
         LocalDateTime dateTime,
 
         Boolean onlineTraining,
-        Integer intensity
+        Integer intensity,
+        AddressDto location
 ) {
 }

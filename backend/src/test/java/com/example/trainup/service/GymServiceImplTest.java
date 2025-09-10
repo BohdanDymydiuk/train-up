@@ -8,7 +8,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import com.example.trainup.dto.gym.GymAddressDto;
+import com.example.trainup.dto.AddressDto;
 import com.example.trainup.dto.gym.GymFilterRequestDto;
 import com.example.trainup.dto.gym.GymRegistrationRequestDto;
 import com.example.trainup.dto.gym.GymResponseDto;
@@ -71,7 +71,7 @@ class GymServiceImplTest {
     private GymOwner gymOwner;
     private UserCredentials userCredentials;
     private Gym gym;
-    private GymAddressDto addressDto;
+    private AddressDto addressDto;
     private GymRegistrationRequestDto registrationRequestDto;
     private GymResponseDto responseDto;
     private GymUpdateRequestDto updateRequestDto;
@@ -84,7 +84,7 @@ class GymServiceImplTest {
         userCredentials.setEmail("owner@example.com");
         gymOwner.setUserCredentials(userCredentials);
 
-        addressDto = new GymAddressDto(
+        addressDto = new AddressDto(
                 "Ukraine",
                 "Kyiv",
                 "Shevchenkivskyi",
@@ -130,7 +130,7 @@ class GymServiceImplTest {
 
         updateRequestDto = new GymUpdateRequestDto(
                 "Updated Gym",
-                new GymAddressDto("Ukraine", "Lviv", null, "Rynok", "2"),
+                new AddressDto("Ukraine", "Lviv", null, "Rynok", "2"),
                 new HashSet<>(List.of(2L)),
                 "Updated description",
                 "http://updatedgym.com",
