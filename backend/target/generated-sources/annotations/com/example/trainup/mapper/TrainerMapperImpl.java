@@ -19,8 +19,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-08T15:27:44+0200",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
+    date = "2025-09-10T18:47:55+0000",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.16 (Ubuntu)"
 )
 @Component
 public class TrainerMapperImpl implements TrainerMapper {
