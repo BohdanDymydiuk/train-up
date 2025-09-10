@@ -21,12 +21,21 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
     console.log(currentDay);
   }, []);
 
+  const eventWidth = useMemo(() => {
+    if (onTablet) {
+      return '422px';
+    }
+
+    return '100%';
+  }, [onTablet]);
+
   const providerValue = useMemo(
     () => ({
       onTablet,
       onSmallDesktop,
       onDesktop,
       currentSection,
+      eventWidth,
       setCurrentSection,
     }),
     [onTablet, onSmallDesktop, onDesktop, currentSection],
