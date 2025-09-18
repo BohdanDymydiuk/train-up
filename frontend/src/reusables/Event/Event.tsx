@@ -52,12 +52,21 @@ export const Event: React.FC<Props> = ({
         <div className={styles.intensity}>
           {[...Array(3).keys()].map(num => {
             return (
-              <img
-                key={num}
-                src={`../../../public/icons/${num < intensity ? 'filled-thunder' : 'thunder'}.svg`}
-                style={{ width: '19px', height: '24px' }}
-                alt='thunder'
-              />
+              <React.Fragment key={num}>
+                {num < intensity ? (
+                  <img
+                    src='/icons/filled-thunder.svg'
+                    className={styles.thunder}
+                    alt='filled-thunder'
+                  />
+                ) : (
+                  <img
+                    src='/icons/thunder.svg'
+                    className={styles.thunder}
+                    alt='thunder'
+                  />
+                )}
+              </React.Fragment>
             );
           })}
         </div>
