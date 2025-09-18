@@ -2,30 +2,76 @@ import React, { useContext } from 'react';
 
 import { MainContext } from '../../context/MainContext';
 import { Event as EventType } from '../../types/Event';
+import { Format } from '../Format';
+import { SmallArrow } from '../svgs/arrows/SmallArrow';
 
 import styles from './Event.module.scss';
 
 type Props = Pick<
   EventType,
-  'name' | 'description' | 'intensity' | 'onlineTraining'
+  'name' | 'description' | 'intensity' | 'onlineTraining' | 'photoUrls'
 >;
 
-export const Event: React.FC<Props> = () => {
+const secondPartCssProps: React.CSSProperties = {
+  display: 'flex',
+  justifyContent: 'space-between',
+  marginTop: '24px',
+};
+
+const thirdPartCssProps: React.CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  height: '133px',
+  marginTop: '24px',
+};
+
+export const Event: React.FC<Props> = ({
+  name,
+  description,
+  onlineTraining,
+  intensity,
+  photoUrls,
+}) => {
   const { eventWidth } = useContext(MainContext);
 
   return (
     <div className={styles.event} style={{ minWidth: eventWidth }}>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, vel? Iure
-      placeat omnis odio, blanditiis facilis a harum! Nesciunt voluptatibus
-      culpa placeat impedit illum numquam, facere commodi repellendus molestiae
-      cum quo et sed. Itaque laboriosam aut saepe rerum consequuntur voluptates
-      fugit quas mollitia, maiores reprehenderit reiciendis magni voluptatibus?
-      Blanditiis inventore, quibusdam at libero recusandae mollitia quo dolorem
-      praesentium amet aperiam fugiat pariatur facere in debitis non rem
-      provident, explicabo vitae earum expedita itaque? Id voluptas laborum illo
-      ratione, officia voluptatum rem quidem suscipit culpa harum error
-      doloremque laboriosam reiciendis praesentium optio modi vero nisi non!
-      Blanditiis illum incidunt veritatis sequi!
+      <div className={styles['img-wrapper']}>
+        <img src={photoUrls[0]} alt='Image' />
+      </div>
+
+      <div style={secondPartCssProps}>
+        <div className={styles.formats}>
+          <Format isOnline={false} />
+          {onlineTraining && (
+            <Format isOnline={onlineTraining} backgroundColor={styles.gray} />
+          )}
+        </div>
+
+        <div className={styles.intensity}>
+          {[...Array(3).keys()].map(num => {
+            return (
+              <img
+                key={num}
+                src={`../../../public/icons/${num < intensity ? 'filled-thunder' : 'thunder'}.svg`}
+                style={{ width: '19px', height: '24px' }}
+                alt='thunder'
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      <div style={thirdPartCssProps}>
+        <div>
+          <h3 className={styles.title}>{name}</h3>
+          <div className={styles.description}>{description}</div>
+        </div>
+        <div className={styles['learn-more']}>
+          Дізнатись більше <SmallArrow />
+        </div>
+      </div>
     </div>
   );
 };

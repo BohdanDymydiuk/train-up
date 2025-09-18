@@ -1,5 +1,6 @@
 .main {
   padding-inline: 16px;
+  overflow-x: hidden;
 
   @include on-tablet {
     padding-inline: 32px;

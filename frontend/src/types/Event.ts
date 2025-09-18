@@ -7,5 +7,6 @@ export interface Event {
   gymId: number | null;
   trainerId: number;
   onlineTraining: boolean;
-  intensity: 0 | 1 | 2;
+  intensity: 1 | 2 | 3;
+  photoUrls: string[];
 }

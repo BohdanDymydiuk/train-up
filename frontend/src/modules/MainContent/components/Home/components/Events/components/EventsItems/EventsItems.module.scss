@@ -1,13 +1,11 @@
 .events {
   position: relative;
   margin-top: 24px;
-  overflow: hidden;
   
   .wrapper {
     display: flex;
     align-items: center;
     height: 450px;
-    gap: 40px;
     cursor: grab;
 
     &:active {

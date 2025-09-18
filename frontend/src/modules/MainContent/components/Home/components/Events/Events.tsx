@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { MainContext } from '../../../../../../context/MainContext';
 import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
@@ -8,8 +8,15 @@ import { EventsItems } from './components/EventsItems';
 
 import styles from './Events.module.scss';
 
+export interface ImgIndexProps {
+  imgIndex: number;
+  setImgIndex: React.Dispatch<React.SetStateAction<number>>;
+}
+
 export const Events: React.FC = () => {
   const { onDesktop } = useContext(MainContext);
+
+  const [imgIndex, setImgIndex] = useState(0);
 
   const ermilovTitleProps = {
     title: 'Найближчі події',
@@ -19,14 +26,16 @@ export const Events: React.FC = () => {
     } as React.CSSProperties,
   };
 
+  const eventsProps = { imgIndex, setImgIndex };
+
   return (
     <section className={styles.section}>
       <header className={styles.header}>
         <ErmilovTitle {...ermilovTitleProps} />
-        <Arrows />
+        <Arrows {...eventsProps} />
       </header>
 
-      <EventsItems />
+      <EventsItems {...eventsProps} />
     </section>
   );
 };

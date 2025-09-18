@@ -1,29 +1,65 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { motion } from 'motion/react';
+import { motion, Transition, useMotionValue } from 'motion/react';
 
+import { EVENTS_GAP } from '../../../../../../../../constants/common';
+import { MainContext } from '../../../../../../../../context/MainContext';
 import { Event } from '../../../../../../../../reusables/Event';
 import { useAppSelector } from '../../../../../../../../store/store';
+import { ImgIndexProps } from '../../Events';
 
 import styles from './EventsItems.module.scss';
 
-export const EventsItems: React.FC = () => {
-  // const { eventWidth } = useContext(MainContext);
+const DRAG_BUFFER = 50;
 
+export const EventsItems: React.FC<ImgIndexProps> = ({
+  imgIndex,
+  setImgIndex,
+}) => {
   const events = useAppSelector(state => state.events);
+  const { eventWidth } = useContext(MainContext);
+
+  const dragX = useMotionValue(0);
+
+  const onDragEndHandler = () => {
+    const x = dragX.get();
+
+    if (x <= -DRAG_BUFFER && imgIndex < events.length - 1) {
+      setImgIndex(prev => prev + 1);
+    }
+
+    if (x >= DRAG_BUFFER && imgIndex > 0) {
+      setImgIndex(prev => prev - 1);
+    }
+  };
+
+  const transition: Transition = {
+    duration: 0.5,
+    ease: 'linear',
+  };
 
   return (
     <div className={styles.events}>
       <motion.div
         drag='x'
-        dragConstraints={{
-          right: 0,
-          left: 0,
-        }}
         className={styles.wrapper}
+        dragConstraints={{ right: 0, left: 0 }}
+        style={{ gap: EVENTS_GAP, x: dragX }}
+        onDragEnd={onDragEndHandler}
+        transition={transition}
+        animate={{
+          translateX: `calc(((${eventWidth} + ${EVENTS_GAP}) * ${imgIndex}) * -1)`,
+        }}
       >
         {events.map(event => {
-          const { id, name, description, onlineTraining, intensity } = event;
+          const {
+            id,
+            name,
+            description,
+            onlineTraining,
+            intensity,
+            photoUrls,
+          } = event;
 
           return (
             <Event
@@ -33,6 +69,7 @@ export const EventsItems: React.FC = () => {
                 description,
                 onlineTraining,
                 intensity,
+                photoUrls,
               }}
             />
           );

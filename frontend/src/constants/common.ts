@@ -17,3 +17,5 @@ export const HEADER_NAV_LINKS = Object.values(Links).filter(value => {
     return value;
   }
 });
+
+export const EVENTS_GAP = '40px';

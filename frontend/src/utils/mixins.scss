@@ -200,6 +200,18 @@
 }
 // #endregion
 
+// #region wf-visual
+@mixin wf-visual {
+  font-family: 'WF Visual Sans';
+}
+
+@mixin wf-visual-500 {
+  @include wf-visual;
+
+  font-weight: 500;
+}
+// #endregion
+
 // #region elements
 @mixin input-styles {
   border-radius: 8px;
