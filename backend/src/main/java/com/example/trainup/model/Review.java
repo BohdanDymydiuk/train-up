@@ -35,7 +35,11 @@ public class Review {
     @Max(value = 5, message = "The rating must be no more than 5")
     private int rating;
 
-    @Size(min = 10, message = "The description must be at least 10 characters")
+    @Size(
+            min = 10,
+            max = 500,
+            message = "The description must be at least 10 characters and maximum 500 characters"
+    )
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
