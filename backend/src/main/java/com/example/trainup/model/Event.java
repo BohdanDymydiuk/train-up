@@ -68,4 +68,6 @@ public class Event {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id", nullable = false)
     private Address location;
+
+//    private Integer durationInMin;
 }
