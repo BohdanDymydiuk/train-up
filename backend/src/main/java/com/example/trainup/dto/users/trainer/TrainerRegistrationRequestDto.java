@@ -59,6 +59,8 @@ public record TrainerRegistrationRequestDto(
 
         String description,
 
-        String socialMediaLinks
+        String socialMediaLinks,
+
+        Integer pricePerHour
 ) {
 }

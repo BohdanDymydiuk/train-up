@@ -16,12 +16,14 @@ import com.example.trainup.repository.TrainerRepository;
 import com.example.trainup.service.CurrentUserService;
 import com.example.trainup.service.UserCredentialService;
 import jakarta.persistence.EntityNotFoundException;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.data.domain.Page;
@@ -61,11 +63,11 @@ public class TrainerServiceImpl implements TrainerService {
         log.debug("Fetching trainers with filter: {}", filter);
         log.debug("FirstName: {}, LastName: {}, Gender: {}, SportIds: {}, GymIds: {}, "
                         + "LocationCountry: {}, LocationCity: {}, LocationCityDistrict: {}, "
-                        + "LocationStreet: {}, LocationHouse: {}, OnlineTraining: {}",
+                        + "LocationStreet: {}, LocationHouse: {}, OnlineTraining: {}, PriceMin: {}, PriceMax: {}",
                 filter.firstName(), filter.lastName(), filter.gender(), filter.sportIds(),
                 filter.gymIds(), filter.locationCountry(), filter.locationCity(),
                 filter.locationCityDistrict(), filter.locationStreet(), filter.locationHouse(),
-                filter.onlineTraining());
+                filter.onlineTraining(), filter.priceMin(), filter.priceMax());
 
         Set<Long> sportIds = (filter.sportIds() == null || filter.sportIds().isEmpty())
                 ? null : filter.sportIds();
@@ -84,6 +86,8 @@ public class TrainerServiceImpl implements TrainerService {
                 filter.locationStreet(),
                 filter.locationHouse(),
                 filter.onlineTraining(),
+                filter.priceMin(),
+                filter.priceMax(),
                 pageable
         );
 
@@ -166,6 +170,8 @@ public class TrainerServiceImpl implements TrainerService {
         Optional.ofNullable(requestDto.description()).ifPresent(existingTrainer::setDescription);
         Optional.ofNullable(requestDto.socialMediaLinks())
                 .ifPresent(existingTrainer::setSocialMediaLinks);
+        Optional.ofNullable(requestDto.pricePerHour())
+                .ifPresent(existingTrainer::setPricePerHour);
 
         updateEntities(existingTrainer::setSports, requestDto.sportIds(),
                 sportRepository::findById, "Sport with id ");

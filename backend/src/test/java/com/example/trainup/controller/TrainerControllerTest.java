@@ -80,7 +80,8 @@ class TrainerControllerTest {
                 "Experienced trainer",
                 "http://social.com",
                 4.5f,
-                10
+                10,
+                500
         );
 
         trainerUpdateRequestDto = new TrainerUpdateRequestDto(
@@ -96,7 +97,8 @@ class TrainerControllerTest {
                 true,
                 List.of("Certificate"),
                 "Updated description",
-                "http://social.com"
+                "http://social.com",
+                500
         );
 
         pageable = PageRequest.of(0, 10);

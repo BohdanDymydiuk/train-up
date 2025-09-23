@@ -96,7 +96,8 @@ public class AuthenticationControllerTest {
                 true,
                 List.of("Certificate1.pdf"),
                 "Experienced trainer",
-                "http://linkedin.com/jane"
+                "http://linkedin.com/jane",
+                500
         );
 
         gymOwnerRegistrationRequestDto = new GymOwnerRegistrationRequestDto(
@@ -262,7 +263,8 @@ public class AuthenticationControllerTest {
                 "Experienced trainer",
                 "http://linkedin.com/jane",
                 0F,
-                0
+                0,
+                500
         );
 
         // When
@@ -300,7 +302,8 @@ public class AuthenticationControllerTest {
                 true,
                 List.of("Certificate1.pdf"),
                 "Experienced trainer",
-                "http://linkedin.com/jane"
+                "http://linkedin.com/jane",
+                500
         );
 
         // Then
@@ -329,7 +332,8 @@ public class AuthenticationControllerTest {
                 true,
                 List.of("Certificate1.pdf"),
                 "Experienced trainer",
-                "http://linkedin.com/jane"
+                "http://linkedin.com/jane",
+                500
         );
 
         // Then

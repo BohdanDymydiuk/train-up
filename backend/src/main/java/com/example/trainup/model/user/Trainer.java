@@ -71,4 +71,6 @@ public class Trainer extends BaseUser implements Rateable {
 
     @OneToMany(mappedBy = "trainer")
     private List<Review> reviews;
+
+    private Integer pricePerHour;
 }

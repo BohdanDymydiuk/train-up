@@ -18,6 +18,7 @@ public record TrainerUpdateRequestDto(
         Boolean onlineTraining,
         List<String> certificates,
         String description,
-        String socialMediaLinks
+        String socialMediaLinks,
+        Integer pricePerHour
 ) {
 }

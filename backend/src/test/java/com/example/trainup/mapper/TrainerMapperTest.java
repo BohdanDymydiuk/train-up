@@ -149,7 +149,8 @@ class TrainerMapperTest {
                 true,
                 List.of("Cert1", "Cert2"),
                 "Experienced trainer",
-                "https://social.com"
+                "https://social.com",
+                500
         );
 
         when(passwordEncoder.encode(any(String.class))).thenReturn("encodedPassword");
@@ -227,7 +228,8 @@ class TrainerMapperTest {
                 false,
                 null,
                 null,
-                null
+                null,
+                500
         );
 
         // When
@@ -280,7 +282,8 @@ class TrainerMapperTest {
                 true,
                 null,
                 null,
-                null
+                null,
+                500
         );
         when(sportRepository.findById(999L)).thenReturn(Optional.empty());
 

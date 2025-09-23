@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-23T13:39:40+0200",
+    date = "2025-09-23T15:14:31+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.14 (JetBrains s.r.o.)"
 )
 @Component
@@ -50,6 +50,7 @@ public class TrainerMapperImpl implements TrainerMapper {
         String socialMediaLinks = null;
         Float overallRating = null;
         Integer numberOfReviews = null;
+        Integer pricePerHour = null;
 
         email = trainerUserCredentialsEmail( trainer );
         UserCredentials.UserType userType1 = trainerUserCredentialsUserType( trainer );
@@ -78,8 +79,9 @@ public class TrainerMapperImpl implements TrainerMapper {
         socialMediaLinks = trainer.getSocialMediaLinks();
         overallRating = trainer.getOverallRating();
         numberOfReviews = trainer.getNumberOfReviews();
+        pricePerHour = trainer.getPricePerHour();
 
-        TrainerResponseDto trainerResponseDto = new TrainerResponseDto( id, firstName, lastName, gender, dateOfBirth, profileImageUrl, email, userType, phoneNumbers, sportIds, gymIds, location, onlineTraining, certificates, description, socialMediaLinks, overallRating, numberOfReviews );
+        TrainerResponseDto trainerResponseDto = new TrainerResponseDto( id, firstName, lastName, gender, dateOfBirth, profileImageUrl, email, userType, phoneNumbers, sportIds, gymIds, location, onlineTraining, certificates, description, socialMediaLinks, overallRating, numberOfReviews, pricePerHour );
 
         return trainerResponseDto;
     }
@@ -111,6 +113,7 @@ public class TrainerMapperImpl implements TrainerMapper {
         trainer.setGender( requestDto.gender() );
         trainer.setDateOfBirth( requestDto.dateOfBirth() );
         trainer.setOnlineTraining( requestDto.onlineTraining() );
+        trainer.setPricePerHour( requestDto.pricePerHour() );
 
         return trainer;
     }

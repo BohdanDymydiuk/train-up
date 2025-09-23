@@ -112,7 +112,8 @@ class TrainerServiceImplTest {
                 true,
                 List.of("Certificate1"),
                 "Experienced trainer",
-                "http://social.com"
+                "http://social.com",
+                500
         );
 
         trainerResponseDto = new TrainerResponseDto(
@@ -133,7 +134,8 @@ class TrainerServiceImplTest {
                 "Experienced trainer",
                 "http://social.com",
                 4.5f,
-                10
+                10,
+                500
         );
 
         updateRequestDto = new TrainerUpdateRequestDto(
@@ -149,7 +151,8 @@ class TrainerServiceImplTest {
                 false,
                 List.of("Certificate2"),
                 "Updated description",
-                "http://new-social.com"
+                "http://new-social.com",
+                500
         );
 
         filterRequestDto = new TrainerFilterRequestDto(
@@ -163,7 +166,9 @@ class TrainerServiceImplTest {
                 "Downtown",
                 "Main St",
                 "123",
-                true
+                true,
+                null,
+                null
         );
 
         trainer = new Trainer();
@@ -232,7 +237,7 @@ class TrainerServiceImplTest {
         when(trainerRepository.findTrainersByCriteria(
                 eq("John"), eq("Doe"), eq(Gender.MALE), eq(Set.of(1L)), eq(Set.of(1L)),
                 eq("USA"), eq("New York"), eq("Downtown"), eq("Main St"), eq("123"),
-                eq(true), eq(pageable)))
+                eq(true), eq(null), eq(null), eq(pageable)))
                 .thenReturn(trainerPage);
         when(trainerMapper.toDto(trainer)).thenReturn(trainerResponseDto);
 
@@ -247,7 +252,7 @@ class TrainerServiceImplTest {
         verify(trainerRepository).findTrainersByCriteria(
                 eq("John"), eq("Doe"), eq(Gender.MALE), eq(Set.of(1L)), eq(Set.of(1L)),
                 eq("USA"), eq("New York"), eq("Downtown"), eq("Main St"), eq("123"),
-                eq(true), eq(pageable));
+                eq(true), eq(null), eq(null), eq(pageable));
         verify(trainerMapper).toDto(trainer);
     }
 

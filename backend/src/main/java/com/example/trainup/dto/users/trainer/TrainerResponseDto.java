@@ -23,6 +23,7 @@ public record TrainerResponseDto(
         String description,
         String socialMediaLinks,
         Float overallRating,
-        Integer numberOfReviews
+        Integer numberOfReviews,
+        Integer pricePerHour
 ) {
 }
