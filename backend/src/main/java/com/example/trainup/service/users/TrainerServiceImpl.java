@@ -16,6 +16,7 @@ import com.example.trainup.repository.TrainerRepository;
 import com.example.trainup.service.CurrentUserService;
 import com.example.trainup.service.UserCredentialService;
 import jakarta.persistence.EntityNotFoundException;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -171,6 +172,8 @@ public class TrainerServiceImpl implements TrainerService {
                 .ifPresent(existingTrainer::setSocialMediaLinks);
         Optional.ofNullable(requestDto.pricePerHour())
                 .ifPresent(existingTrainer::setPricePerHour);
+        Optional.ofNullable(requestDto.workingHours()).ifPresent(workingHours ->
+                existingTrainer.setWorkingHours(new HashSet<>(workingHours)));
 
         updateEntities(existingTrainer::setSports, requestDto.sportIds(),
                 sportRepository::findById, "Sport with id ");

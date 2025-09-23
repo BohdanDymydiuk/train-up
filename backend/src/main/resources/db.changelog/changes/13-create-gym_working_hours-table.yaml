@@ -15,7 +15,7 @@ databaseChangeLog:
                     references: gyms(id)
               - column:
                   name: day_of_week
-                  type: VARCHAR(255)
+                  type: VARCHAR(10)
               - column:
                   name: start_time
                   type: TIME

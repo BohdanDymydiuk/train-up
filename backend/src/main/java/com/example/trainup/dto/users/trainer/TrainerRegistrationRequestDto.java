@@ -1,5 +1,6 @@
 package com.example.trainup.dto.users.trainer;
 
+import com.example.trainup.model.WorkingHoursEntry;
 import com.example.trainup.model.enums.Gender;
 import com.example.trainup.validation.EmailUnique;
 import com.example.trainup.validation.FieldMatch;
@@ -61,6 +62,8 @@ public record TrainerRegistrationRequestDto(
 
         String socialMediaLinks,
 
-        Integer pricePerHour
+        Integer pricePerHour,
+
+        Set<WorkingHoursEntry> workingHours
 ) {
 }

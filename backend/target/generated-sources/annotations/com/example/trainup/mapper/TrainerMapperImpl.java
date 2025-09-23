@@ -3,6 +3,7 @@ package com.example.trainup.mapper;
 import com.example.trainup.dto.users.trainer.TrainerAddressDto;
 import com.example.trainup.dto.users.trainer.TrainerRegistrationRequestDto;
 import com.example.trainup.dto.users.trainer.TrainerResponseDto;
+import com.example.trainup.model.WorkingHoursEntry;
 import com.example.trainup.model.enums.Gender;
 import com.example.trainup.model.user.Trainer;
 import com.example.trainup.model.user.UserCredentials;
@@ -20,7 +21,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-23T18:51:22+0200",
+    date = "2025-09-23T19:18:48+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
@@ -51,6 +52,7 @@ public class TrainerMapperImpl implements TrainerMapper {
         Float overallRating = null;
         Integer numberOfReviews = null;
         Integer pricePerHour = null;
+        Set<WorkingHoursEntry> workingHours = null;
 
         email = trainerUserCredentialsEmail( trainer );
         UserCredentials.UserType userType1 = trainerUserCredentialsUserType( trainer );
@@ -80,8 +82,12 @@ public class TrainerMapperImpl implements TrainerMapper {
         overallRating = trainer.getOverallRating();
         numberOfReviews = trainer.getNumberOfReviews();
         pricePerHour = trainer.getPricePerHour();
+        Set<WorkingHoursEntry> set4 = trainer.getWorkingHours();
+        if ( set4 != null ) {
+            workingHours = new LinkedHashSet<WorkingHoursEntry>( set4 );
+        }
 
-        TrainerResponseDto trainerResponseDto = new TrainerResponseDto( id, firstName, lastName, gender, dateOfBirth, profileImageUrl, email, userType, phoneNumbers, sportIds, gymIds, location, onlineTraining, certificates, description, socialMediaLinks, overallRating, numberOfReviews, pricePerHour );
+        TrainerResponseDto trainerResponseDto = new TrainerResponseDto( id, firstName, lastName, gender, dateOfBirth, profileImageUrl, email, userType, phoneNumbers, sportIds, gymIds, location, onlineTraining, certificates, description, socialMediaLinks, overallRating, numberOfReviews, pricePerHour, workingHours );
 
         return trainerResponseDto;
     }
@@ -114,6 +120,10 @@ public class TrainerMapperImpl implements TrainerMapper {
         trainer.setDateOfBirth( requestDto.dateOfBirth() );
         trainer.setOnlineTraining( requestDto.onlineTraining() );
         trainer.setPricePerHour( requestDto.pricePerHour() );
+        Set<WorkingHoursEntry> set3 = requestDto.workingHours();
+        if ( set3 != null ) {
+            trainer.setWorkingHours( new LinkedHashSet<WorkingHoursEntry>( set3 ) );
+        }
 
         return trainer;
     }

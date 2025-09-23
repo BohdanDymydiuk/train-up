@@ -25,6 +25,8 @@ import com.example.trainup.mapper.TrainerMapper;
 import com.example.trainup.model.Address;
 import com.example.trainup.model.Gym;
 import com.example.trainup.model.Sport;
+import com.example.trainup.model.WorkingHoursEntry;
+import com.example.trainup.model.WorkingHoursEntry.DayOfTheWeek;
 import com.example.trainup.model.enums.Gender;
 import com.example.trainup.model.user.Trainer;
 import com.example.trainup.model.user.UserCredentials;
@@ -36,7 +38,9 @@ import com.example.trainup.repository.UserCredentialsRepository;
 import com.example.trainup.service.users.TrainerServiceImpl;
 import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -113,7 +117,14 @@ class TrainerServiceImplTest {
                 List.of("Certificate1"),
                 "Experienced trainer",
                 "http://social.com",
-                500
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         trainerResponseDto = new TrainerResponseDto(
@@ -135,7 +146,14 @@ class TrainerServiceImplTest {
                 "http://social.com",
                 4.5f,
                 10,
-                500
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         updateRequestDto = new TrainerUpdateRequestDto(
@@ -152,7 +170,14 @@ class TrainerServiceImplTest {
                 List.of("Certificate2"),
                 "Updated description",
                 "http://new-social.com",
-                500
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         filterRequestDto = new TrainerFilterRequestDto(

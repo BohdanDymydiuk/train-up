@@ -15,6 +15,8 @@ import com.example.trainup.dto.users.trainer.TrainerResponseDto;
 import com.example.trainup.model.Address;
 import com.example.trainup.model.Gym;
 import com.example.trainup.model.Sport;
+import com.example.trainup.model.WorkingHoursEntry;
+import com.example.trainup.model.WorkingHoursEntry.DayOfTheWeek;
 import com.example.trainup.model.enums.Gender;
 import com.example.trainup.model.user.Trainer;
 import com.example.trainup.model.user.UserCredentials;
@@ -22,6 +24,8 @@ import com.example.trainup.repository.AddressRepository;
 import com.example.trainup.repository.GymRepository;
 import com.example.trainup.repository.SportRepository;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -150,7 +154,14 @@ class TrainerMapperTest {
                 List.of("Cert1", "Cert2"),
                 "Experienced trainer",
                 "https://social.com",
-                500
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         when(passwordEncoder.encode(any(String.class))).thenReturn("encodedPassword");
@@ -229,7 +240,14 @@ class TrainerMapperTest {
                 null,
                 null,
                 null,
-                500
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         // When
@@ -283,7 +301,14 @@ class TrainerMapperTest {
                 null,
                 null,
                 null,
-                500
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
         when(sportRepository.findById(999L)).thenReturn(Optional.empty());
 

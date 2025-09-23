@@ -1,5 +1,6 @@
 package com.example.trainup.dto.users.trainer;
 
+import com.example.trainup.model.WorkingHoursEntry;
 import com.example.trainup.model.enums.Gender;
 import java.time.LocalDate;
 import java.util.List;
@@ -24,6 +25,7 @@ public record TrainerResponseDto(
         String socialMediaLinks,
         Float overallRating,
         Integer numberOfReviews,
-        Integer pricePerHour
+        Integer pricePerHour,
+        Set<WorkingHoursEntry> workingHours
 ) {
 }

@@ -17,12 +17,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.example.trainup.dto.users.trainer.TrainerFilterRequestDto;
 import com.example.trainup.dto.users.trainer.TrainerResponseDto;
 import com.example.trainup.dto.users.trainer.TrainerUpdateRequestDto;
+import com.example.trainup.model.WorkingHoursEntry;
+import com.example.trainup.model.WorkingHoursEntry.DayOfTheWeek;
 import com.example.trainup.model.enums.Gender;
 import com.example.trainup.service.users.TrainerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import lombok.RequiredArgsConstructor;
@@ -81,7 +85,14 @@ class TrainerControllerTest {
                 "http://social.com",
                 4.5f,
                 10,
-                500
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         trainerUpdateRequestDto = new TrainerUpdateRequestDto(
@@ -98,7 +109,14 @@ class TrainerControllerTest {
                 List.of("Certificate"),
                 "Updated description",
                 "http://social.com",
-                500
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         pageable = PageRequest.of(0, 10);
