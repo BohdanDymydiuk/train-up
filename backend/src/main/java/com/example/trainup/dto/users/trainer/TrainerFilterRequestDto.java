@@ -14,6 +14,8 @@ public record TrainerFilterRequestDto(
         String locationCityDistrict,
         String locationStreet,
         String locationHouse,
-        Boolean onlineTraining
+        Boolean onlineTraining,
+        Integer priceMin,
+        Integer priceMax
 ) {
 }

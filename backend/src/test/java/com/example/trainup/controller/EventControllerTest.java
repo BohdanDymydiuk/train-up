@@ -76,7 +76,8 @@ public class EventControllerTest {
                 LocalDateTime.now().plusDays(1),
                 false,
                 1,
-                location
+                location,
+                90
         );
 
         eventResponseDto = new EventResponseDto(
@@ -90,7 +91,8 @@ public class EventControllerTest {
                 false,
                 1,
                 Set.of(),
-                location
+                location,
+                90
         );
 
         validUpdateDto = new EventUpdateRequestDto(
@@ -100,7 +102,8 @@ public class EventControllerTest {
                 LocalDateTime.now().plusDays(2),
                 false,
                 1,
-                location
+                location,
+                90
         );
 
         filterDto = new EventFilterRequestDto(
@@ -155,7 +158,8 @@ public class EventControllerTest {
                 null,
                 null,
                 null,
-                null
+                null,
+                90
         );
 
         // Then
@@ -349,7 +353,8 @@ public class EventControllerTest {
                 LocalDateTime.now().minusDays(1),
                 false,
                 1,
-                null
+                null,
+                90
         );
         when(eventService.canUserModifyEvent(eq("trainer@example.com"), eq(1L))).thenReturn(true);
 

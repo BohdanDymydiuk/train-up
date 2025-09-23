@@ -3,6 +3,7 @@ package com.example.trainup.mapper;
 import com.example.trainup.dto.users.trainer.TrainerAddressDto;
 import com.example.trainup.dto.users.trainer.TrainerRegistrationRequestDto;
 import com.example.trainup.dto.users.trainer.TrainerResponseDto;
+import com.example.trainup.model.WorkingHoursEntry;
 import com.example.trainup.model.enums.Gender;
 import com.example.trainup.model.user.Trainer;
 import com.example.trainup.model.user.UserCredentials;
@@ -10,6 +11,7 @@ import com.example.trainup.repository.AddressRepository;
 import com.example.trainup.repository.GymRepository;
 import com.example.trainup.repository.SportRepository;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,8 +21,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-23T17:13:16+0000",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.16 (Ubuntu)"
+    date = "2025-09-23T19:18:48+0200",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
 public class TrainerMapperImpl implements TrainerMapper {
@@ -44,10 +46,13 @@ public class TrainerMapperImpl implements TrainerMapper {
         String profileImageUrl = null;
         Set<String> phoneNumbers = null;
         Boolean onlineTraining = null;
+        List<String> certificates = null;
         String description = null;
         String socialMediaLinks = null;
         Float overallRating = null;
         Integer numberOfReviews = null;
+        Integer pricePerHour = null;
+        Set<WorkingHoursEntry> workingHours = null;
 
         email = trainerUserCredentialsEmail( trainer );
         UserCredentials.UserType userType1 = trainerUserCredentialsUserType( trainer );
@@ -68,12 +73,21 @@ public class TrainerMapperImpl implements TrainerMapper {
             phoneNumbers = new LinkedHashSet<String>( set2 );
         }
         onlineTraining = trainer.getOnlineTraining();
+        Set<String> set3 = trainer.getCertificates();
+        if ( set3 != null ) {
+            certificates = new ArrayList<String>( set3 );
+        }
         description = trainer.getDescription();
         socialMediaLinks = trainer.getSocialMediaLinks();
         overallRating = trainer.getOverallRating();
         numberOfReviews = trainer.getNumberOfReviews();
+        pricePerHour = trainer.getPricePerHour();
+        Set<WorkingHoursEntry> set4 = trainer.getWorkingHours();
+        if ( set4 != null ) {
+            workingHours = new LinkedHashSet<WorkingHoursEntry>( set4 );
+        }
 
-        TrainerResponseDto trainerResponseDto = new TrainerResponseDto( id, firstName, lastName, gender, dateOfBirth, profileImageUrl, email, userType, phoneNumbers, sportIds, gymIds, location, onlineTraining, description, socialMediaLinks, overallRating, numberOfReviews );
+        TrainerResponseDto trainerResponseDto = new TrainerResponseDto( id, firstName, lastName, gender, dateOfBirth, profileImageUrl, email, userType, phoneNumbers, sportIds, gymIds, location, onlineTraining, certificates, description, socialMediaLinks, overallRating, numberOfReviews, pricePerHour, workingHours );
 
         return trainerResponseDto;
     }
@@ -105,6 +119,11 @@ public class TrainerMapperImpl implements TrainerMapper {
         trainer.setGender( requestDto.gender() );
         trainer.setDateOfBirth( requestDto.dateOfBirth() );
         trainer.setOnlineTraining( requestDto.onlineTraining() );
+        trainer.setPricePerHour( requestDto.pricePerHour() );
+        Set<WorkingHoursEntry> set3 = requestDto.workingHours();
+        if ( set3 != null ) {
+            trainer.setWorkingHours( new LinkedHashSet<WorkingHoursEntry>( set3 ) );
+        }
 
         return trainer;
     }

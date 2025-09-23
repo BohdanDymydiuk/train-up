@@ -5,6 +5,7 @@ import com.example.trainup.model.Gym;
 import com.example.trainup.model.Rateable;
 import com.example.trainup.model.Review;
 import com.example.trainup.model.Sport;
+import com.example.trainup.model.WorkingHoursEntry;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -71,4 +72,10 @@ public class Trainer extends BaseUser implements Rateable {
 
     @OneToMany(mappedBy = "trainer")
     private List<Review> reviews;
+
+    private Integer pricePerHour;
+
+    @ElementCollection
+    @CollectionTable(name = "trainer_working_hours", joinColumns = @JoinColumn(name = "trainer_id"))
+    private Set<WorkingHoursEntry> workingHours = new HashSet<>();
 }

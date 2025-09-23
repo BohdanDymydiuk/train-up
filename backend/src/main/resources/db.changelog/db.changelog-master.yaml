@@ -61,3 +61,5 @@ databaseChangeLog:
         file: db.changelog/changes/30-create-initialization-log-table.yaml
   - include:
         file: db.changelog/changes/31-create-event-photos-table.yaml
+  - include:
+        file: db.changelog/changes/32-create-trainer_working_hours-table.yaml

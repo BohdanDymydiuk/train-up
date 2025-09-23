@@ -101,7 +101,8 @@ class EventServiceImplTest {
                 LocalDateTime.of(2025, 7, 1, 10, 0),
                 false,
                 1,
-                location
+                location,
+                90
         );
 
         eventResponseDto = new EventResponseDto(
@@ -115,7 +116,8 @@ class EventServiceImplTest {
                 false,
                 1,
                 Set.of(),
-                location
+                location,
+                90
         );
 
         updateRequestDto = new EventUpdateRequestDto(
@@ -125,7 +127,8 @@ class EventServiceImplTest {
                 LocalDateTime.of(2025, 7, 2, 12, 0),
                 false,
                 1,
-                null
+                null,
+                90
         );
 
         filterRequestDto = new EventFilterRequestDto(

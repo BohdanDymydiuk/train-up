@@ -15,6 +15,7 @@ public record EventResponseDto(
         Boolean onlineTraining,
         Integer intensity,
         Set<String> photoUrls,
-        AddressDto location
+        AddressDto location,
+        Integer durationInMin
 ) {
 }
