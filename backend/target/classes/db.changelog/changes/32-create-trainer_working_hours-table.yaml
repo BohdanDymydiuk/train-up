@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 32-create-trainer_working_hours-table
+      author: bohdan-s
+      changes:
+        - createTable:
+            tableName: trainer_working_hours
+            columns:
+              - column:
+                  name: trainer_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_trainer_working_hours_trainer
+                    references: trainers(id)
+              - column:
+                  name: day_of_week
+                  type: VARCHAR(10)
+              - column:
+                  name: start_time
+                  type: TIME
+              - column:
+                  name: end_time
+                  type: TIME
