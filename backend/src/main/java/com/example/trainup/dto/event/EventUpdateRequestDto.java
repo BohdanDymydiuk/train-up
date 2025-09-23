@@ -14,6 +14,7 @@ public record EventUpdateRequestDto(
 
         Boolean onlineTraining,
         Integer intensity,
-        AddressDto location
+        AddressDto location,
+        Integer durationInMin
 ) {
 }

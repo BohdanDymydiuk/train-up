@@ -57,11 +57,25 @@ public class TrainerController {
             @RequestParam(required = false) String locationStreet,
             @RequestParam(required = false) String locationHouse,
             @RequestParam(required = false) Boolean onlineTraining,
+            @RequestParam(required = false) Integer priceMin,
+            @RequestParam(required = false) Integer priceMax,
             @PageableDefault(size = 10) Pageable pageable
     ) {
-        TrainerFilterRequestDto filter = new TrainerFilterRequestDto(firstName, lastName,
-                gender, sportIds, gymIds, locationCountry, locationCity,
-                locationCityDistrict, locationStreet, locationHouse, onlineTraining);
+        TrainerFilterRequestDto filter = new TrainerFilterRequestDto(
+                firstName,
+                lastName,
+                gender,
+                sportIds,
+                gymIds,
+                locationCountry,
+                locationCity,
+                locationCityDistrict,
+                locationStreet,
+                locationHouse,
+                onlineTraining,
+                priceMin,
+                priceMax
+        );
         log.info("Attempting to fetch trainers with filter: {} and pageable: {}",
                 filter, pageable);
 

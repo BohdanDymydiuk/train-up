@@ -197,7 +197,8 @@ class ReviewControllerTest {
                 .andExpect(jsonPath("$.errors").isArray())
                 .andExpect(jsonPath("$.errors").value(hasItems(
                         "rating: The rating must be at least 1",
-                        "description: The description must be at least 10 characters"
+                        "description: The description must be at least 10 characters and maximum "
+                                + "500 characters"
                 )))
                 .andDo(print())
                 .andReturn();
@@ -294,7 +295,8 @@ class ReviewControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.errors").value(hasItems(
                         "rating: The rating must be at least 1",
-                        "description: The description must be at least 10 characters"
+                        "description: The description must be at least 10 characters and maximum "
+                                + "500 characters"
                 )))
                 .andDo(print())
                 .andReturn();

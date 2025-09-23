@@ -15,7 +15,8 @@ import org.springframework.data.repository.query.Param;
 public interface TrainerRepository extends JpaRepository<Trainer, Long> {
     Optional<Trainer> findByUserCredentials(UserCredentials userCredentials);
 
-    @Query("SELECT DISTINCT t FROM Trainer t "
+    @Query(
+            "SELECT DISTINCT t FROM Trainer t "
             + "LEFT JOIN t.location a "
             + "LEFT JOIN t.sports s "
             + "LEFT JOIN t.gyms g "
@@ -37,7 +38,10 @@ public interface TrainerRepository extends JpaRepository<Trainer, Long> {
             + "LIKE CONCAT('%', CAST(:locationStreet AS string), '%'))) "
             + "AND (:locationHouse IS NULL OR (a.house "
             + "LIKE CONCAT('%', CAST(:locationHouse AS string), '%'))) "
-            + "AND (:onlineTraining IS NULL OR t.onlineTraining = :onlineTraining) ")
+            + "AND (:onlineTraining IS NULL OR t.onlineTraining = :onlineTraining) "
+            + "AND (:priceMin IS NULL OR t.pricePerHour >= :priceMin) "
+            + "AND (:priceMax IS NULL OR t.pricePerHour <= :priceMax)"
+    )
     Page<Trainer> findTrainersByCriteria(
             @Param("firstName") String firstName,
             @Param("lastName") String lastName,
@@ -50,6 +54,8 @@ public interface TrainerRepository extends JpaRepository<Trainer, Long> {
             @Param("locationStreet") String locationStreet,
             @Param("locationHouse") String locationHouse,
             @Param("onlineTraining") Boolean onlineTraining,
+            @Param("priceMin") Integer priceMin,
+            @Param("priceMax") Integer priceMax,
             Pageable pageable
     );
 

@@ -52,3 +52,6 @@ databaseChangeLog:
                     nullable: false
                     foreignKeyName: fk_event_address
                     references: addresses(id)
+              - column:
+                  name: durationInMin
+                  type: INTEGER

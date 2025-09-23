@@ -71,3 +71,6 @@ databaseChangeLog:
                   defaultValueBoolean: false
                   constraints:
                     nullable: false
+              - column:
+                  name: price_per_hour
+                  type: INTEGER

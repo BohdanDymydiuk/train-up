@@ -15,6 +15,8 @@ import com.example.trainup.dto.users.gymowner.GymOwnerResponseDto;
 import com.example.trainup.dto.users.trainer.TrainerAddressDto;
 import com.example.trainup.dto.users.trainer.TrainerRegistrationRequestDto;
 import com.example.trainup.dto.users.trainer.TrainerResponseDto;
+import com.example.trainup.model.WorkingHoursEntry;
+import com.example.trainup.model.WorkingHoursEntry.DayOfTheWeek;
 import com.example.trainup.model.enums.Gender;
 import com.example.trainup.model.user.UserCredentials.UserType;
 import com.example.trainup.security.AuthenticationService;
@@ -23,6 +25,9 @@ import com.example.trainup.service.users.GymOwnerService;
 import com.example.trainup.service.users.TrainerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
@@ -95,7 +100,15 @@ public class AuthenticationControllerTest {
                 true,
                 List.of("Certificate1.pdf"),
                 "Experienced trainer",
-                "http://linkedin.com/jane"
+                "http://linkedin.com/jane",
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         gymOwnerRegistrationRequestDto = new GymOwnerRegistrationRequestDto(
@@ -257,10 +270,19 @@ public class AuthenticationControllerTest {
                 Set.of(1L),
                 new TrainerAddressDto("Ukraine", "Kyiv", null, null, null),
                 false,
+                Collections.emptyList(),
                 "Experienced trainer",
                 "http://linkedin.com/jane",
                 0F,
-                0
+                0,
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         // When
@@ -298,7 +320,15 @@ public class AuthenticationControllerTest {
                 true,
                 List.of("Certificate1.pdf"),
                 "Experienced trainer",
-                "http://linkedin.com/jane"
+                "http://linkedin.com/jane",
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         // Then
@@ -327,7 +357,15 @@ public class AuthenticationControllerTest {
                 true,
                 List.of("Certificate1.pdf"),
                 "Experienced trainer",
-                "http://linkedin.com/jane"
+                "http://linkedin.com/jane",
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         // Then

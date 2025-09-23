@@ -1,5 +1,6 @@
 package com.example.trainup.dto.users.trainer;
 
+import com.example.trainup.model.WorkingHoursEntry;
 import com.example.trainup.model.enums.Gender;
 import java.time.LocalDate;
 import java.util.List;
@@ -18,6 +19,8 @@ public record TrainerUpdateRequestDto(
         Boolean onlineTraining,
         List<String> certificates,
         String description,
-        String socialMediaLinks
+        String socialMediaLinks,
+        Integer pricePerHour,
+        Set<WorkingHoursEntry> workingHours
 ) {
 }

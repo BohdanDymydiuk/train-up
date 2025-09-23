@@ -56,6 +56,7 @@ databaseChangeLog:
               - column: { name: social_media_links, value: 'https://fb.com/ivan.trainer' }
               - column: { name: overall_rating, value: 4.90 }
               - column: { name: number_of_reviews, value: 120 }
+              - column: { name: price_per_hour, value: 500 }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -111,6 +112,7 @@ databaseChangeLog:
               - column: { name: social_media_links, value: 'https://inst.com/olena.yoga' }
               - column: { name: overall_rating, value: 4.80 }
               - column: { name: number_of_reviews, value: 90 }
+              - column: { name: price_per_hour, value: 400 }
         - insert:
             tableName: trainer_phone_numbers
             columns:
@@ -166,6 +168,7 @@ databaseChangeLog:
               - column: { name: social_media_links, value: 'https://tw.com/mykhailo_box' }
               - column: { name: overall_rating, value: 4.75 }
               - column: { name: number_of_reviews, value: 80 }
+              - column: { name: price_per_hour, value: 600 }
         - insert:
             tableName: trainer_phone_numbers
             columns:

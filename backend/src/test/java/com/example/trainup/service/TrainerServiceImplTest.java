@@ -25,6 +25,8 @@ import com.example.trainup.mapper.TrainerMapper;
 import com.example.trainup.model.Address;
 import com.example.trainup.model.Gym;
 import com.example.trainup.model.Sport;
+import com.example.trainup.model.WorkingHoursEntry;
+import com.example.trainup.model.WorkingHoursEntry.DayOfTheWeek;
 import com.example.trainup.model.enums.Gender;
 import com.example.trainup.model.user.Trainer;
 import com.example.trainup.model.user.UserCredentials;
@@ -36,6 +38,9 @@ import com.example.trainup.repository.UserCredentialsRepository;
 import com.example.trainup.service.users.TrainerServiceImpl;
 import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -111,7 +116,15 @@ class TrainerServiceImplTest {
                 true,
                 List.of("Certificate1"),
                 "Experienced trainer",
-                "http://social.com"
+                "http://social.com",
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         trainerResponseDto = new TrainerResponseDto(
@@ -128,10 +141,19 @@ class TrainerServiceImplTest {
                 Set.of(1L),
                 new TrainerAddressDto("USA", "New York", "Downtown", "Main St", "123"),
                 false,
+                Collections.emptyList(),
                 "Experienced trainer",
                 "http://social.com",
                 4.5f,
-                10
+                10,
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         updateRequestDto = new TrainerUpdateRequestDto(
@@ -147,7 +169,15 @@ class TrainerServiceImplTest {
                 false,
                 List.of("Certificate2"),
                 "Updated description",
-                "http://new-social.com"
+                "http://new-social.com",
+                500,
+                new HashSet<>(Collections.singletonList(
+                        new WorkingHoursEntry(
+                                DayOfTheWeek.MONDAY,
+                                LocalTime.of(9, 0),
+                                LocalTime.of(21, 0)
+                        )
+                ))
         );
 
         filterRequestDto = new TrainerFilterRequestDto(
@@ -161,7 +191,9 @@ class TrainerServiceImplTest {
                 "Downtown",
                 "Main St",
                 "123",
-                true
+                true,
+                null,
+                null
         );
 
         trainer = new Trainer();
@@ -230,7 +262,7 @@ class TrainerServiceImplTest {
         when(trainerRepository.findTrainersByCriteria(
                 eq("John"), eq("Doe"), eq(Gender.MALE), eq(Set.of(1L)), eq(Set.of(1L)),
                 eq("USA"), eq("New York"), eq("Downtown"), eq("Main St"), eq("123"),
-                eq(true), eq(pageable)))
+                eq(true), eq(null), eq(null), eq(pageable)))
                 .thenReturn(trainerPage);
         when(trainerMapper.toDto(trainer)).thenReturn(trainerResponseDto);
 
@@ -245,7 +277,7 @@ class TrainerServiceImplTest {
         verify(trainerRepository).findTrainersByCriteria(
                 eq("John"), eq("Doe"), eq(Gender.MALE), eq(Set.of(1L)), eq(Set.of(1L)),
                 eq("USA"), eq("New York"), eq("Downtown"), eq("Main St"), eq("123"),
-                eq(true), eq(pageable));
+                eq(true), eq(null), eq(null), eq(pageable));
         verify(trainerMapper).toDto(trainer);
     }
 
