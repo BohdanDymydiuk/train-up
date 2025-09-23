@@ -27,6 +27,8 @@ public record EventRegistrationRequestDto(
         Integer intensity,
 
         @NotNull(message = "Event's location can not be null")
-        AddressDto location
+        AddressDto location,
+
+        Integer durationInMin
 ) {
 }

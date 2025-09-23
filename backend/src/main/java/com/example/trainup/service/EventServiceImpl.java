@@ -151,6 +151,7 @@ public class EventServiceImpl implements EventService {
         });
         Optional.ofNullable(requestDto.description()).ifPresent(existingEvent::setDescription);
         Optional.ofNullable(requestDto.dateTime()).ifPresent(existingEvent::setDateTime);
+        Optional.ofNullable(requestDto.durationInMin()).ifPresent(existingEvent::setDurationInMin);
 
         updateLocation(existingEvent, requestDto.location());
 

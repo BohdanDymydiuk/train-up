@@ -69,5 +69,5 @@ public class Event {
     @JoinColumn(name = "address_id", nullable = false)
     private Address location;
 
-//    private Integer durationInMin;
+    private Integer durationInMin;
 }
