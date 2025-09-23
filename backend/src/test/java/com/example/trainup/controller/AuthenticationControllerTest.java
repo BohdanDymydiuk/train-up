@@ -23,6 +23,7 @@ import com.example.trainup.service.users.GymOwnerService;
 import com.example.trainup.service.users.TrainerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
@@ -257,6 +258,7 @@ public class AuthenticationControllerTest {
                 Set.of(1L),
                 new TrainerAddressDto("Ukraine", "Kyiv", null, null, null),
                 false,
+                Collections.emptyList(),
                 "Experienced trainer",
                 "http://linkedin.com/jane",
                 0F,

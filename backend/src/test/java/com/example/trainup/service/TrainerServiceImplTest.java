@@ -36,6 +36,7 @@ import com.example.trainup.repository.UserCredentialsRepository;
 import com.example.trainup.service.users.TrainerServiceImpl;
 import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -128,6 +129,7 @@ class TrainerServiceImplTest {
                 Set.of(1L),
                 new TrainerAddressDto("USA", "New York", "Downtown", "Main St", "123"),
                 false,
+                Collections.emptyList(),
                 "Experienced trainer",
                 "http://social.com",
                 4.5f,

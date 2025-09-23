@@ -22,6 +22,7 @@ import com.example.trainup.service.users.TrainerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityNotFoundException;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import lombok.RequiredArgsConstructor;
@@ -75,6 +76,7 @@ class TrainerControllerTest {
                 Set.of(1L),
                 null,
                 false,
+                Collections.emptyList(),
                 "Experienced trainer",
                 "http://social.com",
                 4.5f,

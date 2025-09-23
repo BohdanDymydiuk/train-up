@@ -10,6 +10,7 @@ import com.example.trainup.repository.AddressRepository;
 import com.example.trainup.repository.GymRepository;
 import com.example.trainup.repository.SportRepository;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,8 +20,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-22T15:58:30+0200",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.4 (Oracle Corporation)"
+    date = "2025-09-23T13:39:40+0200",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.14 (JetBrains s.r.o.)"
 )
 @Component
 public class TrainerMapperImpl implements TrainerMapper {
@@ -44,6 +45,7 @@ public class TrainerMapperImpl implements TrainerMapper {
         String profileImageUrl = null;
         Set<String> phoneNumbers = null;
         Boolean onlineTraining = null;
+        List<String> certificates = null;
         String description = null;
         String socialMediaLinks = null;
         Float overallRating = null;
@@ -68,12 +70,16 @@ public class TrainerMapperImpl implements TrainerMapper {
             phoneNumbers = new LinkedHashSet<String>( set2 );
         }
         onlineTraining = trainer.getOnlineTraining();
+        Set<String> set3 = trainer.getCertificates();
+        if ( set3 != null ) {
+            certificates = new ArrayList<String>( set3 );
+        }
         description = trainer.getDescription();
         socialMediaLinks = trainer.getSocialMediaLinks();
         overallRating = trainer.getOverallRating();
         numberOfReviews = trainer.getNumberOfReviews();
 
-        TrainerResponseDto trainerResponseDto = new TrainerResponseDto( id, firstName, lastName, gender, dateOfBirth, profileImageUrl, email, userType, phoneNumbers, sportIds, gymIds, location, onlineTraining, description, socialMediaLinks, overallRating, numberOfReviews );
+        TrainerResponseDto trainerResponseDto = new TrainerResponseDto( id, firstName, lastName, gender, dateOfBirth, profileImageUrl, email, userType, phoneNumbers, sportIds, gymIds, location, onlineTraining, certificates, description, socialMediaLinks, overallRating, numberOfReviews );
 
         return trainerResponseDto;
     }

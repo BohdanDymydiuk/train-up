@@ -2,6 +2,7 @@ package com.example.trainup.dto.users.trainer;
 
 import com.example.trainup.model.enums.Gender;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 public record TrainerResponseDto(
@@ -18,6 +19,7 @@ public record TrainerResponseDto(
         Set<Long> gymIds,
         TrainerAddressDto location,
         Boolean onlineTraining,
+        List<String> certificates,
         String description,
         String socialMediaLinks,
         Float overallRating,
