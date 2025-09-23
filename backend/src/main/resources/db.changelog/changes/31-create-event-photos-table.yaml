@@ -27,12 +27,6 @@ databaseChangeLog:
                       referencedTableName: events
                       referencedColumnNames: id
                       onDelete: CASCADE
-              - column:
-                  name: is_deleted
-                  type: BOOLEAN
-                  defaultValueBoolean: false
-                  constraints:
-                    nullable: false
       rollback:
         - dropTable:
             tableName: event_photos
