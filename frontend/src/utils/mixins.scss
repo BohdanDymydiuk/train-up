@@ -223,6 +223,7 @@
 
 @mixin mainDpProps {
   position: absolute;
+  z-index: 1000;
   opacity: 0;
   transform: scaleY(0);
   transform-origin: top;

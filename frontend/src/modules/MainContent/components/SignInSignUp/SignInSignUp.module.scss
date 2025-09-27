@@ -1,5 +1,6 @@
 .signin-signup {
   margin-top: 118px;
+  margin-bottom: 6px;
   max-width: 704px;
   margin-inline: auto;
   padding: 50px 16px;
@@ -11,5 +12,10 @@
     justify-content: center;
     padding-block: 76px;
     max-width: 882px;
+    margin-bottom: 73px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 104px;
   }
 }

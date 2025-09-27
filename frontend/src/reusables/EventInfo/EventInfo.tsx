@@ -11,8 +11,14 @@ import styles from './EventInfo.module.scss';
 type Props = Omit<EventInfoType, 'id'>;
 
 export const EventInfo: React.FC<Props> = React.memo(props => {
-  const { name, description, intensity, participants, trainingTypes, trainer } =
-    props;
+  const {
+    name,
+    description,
+    intensity,
+    participants,
+    trainingTypes = [],
+    trainer,
+  } = props;
 
   const secondPartProps = { trainingTypes, intensity, participants };
   const thirdPartProps = { name, description };

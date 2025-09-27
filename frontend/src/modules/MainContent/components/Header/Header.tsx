@@ -21,7 +21,7 @@ import styles from './Header.module.scss';
 export const Header: React.FC = () => {
   const jwtToken = useAppSelector(state => state.jwtToken);
 
-  const { onTablet } = useContext(MainContext);
+  const { onTablet, onDesktop } = useContext(MainContext);
   const { pathname } = useLocation();
 
   const SignIn = DropdownHoc(SignInButton, SignInDropdown);
@@ -46,9 +46,15 @@ export const Header: React.FC = () => {
 
   const loggedSp = (
     <>
-      <SearchSVG />
-      <BellSVG />
-      <ProfileIMG />
+      {!onTablet ? (
+        <Burger />
+      ) : (
+        <>
+          <SearchSVG />
+          <BellSVG />
+          <ProfileIMG />
+        </>
+      )}
     </>
   );
   // #endregion
@@ -57,7 +63,7 @@ export const Header: React.FC = () => {
     <header className={styles.header}>
       <div className={styles['first-part']} style={firstPartCssProps}>
         <LogoSVG />
-        {onTablet && <Nav />}
+        {jwtToken ? onTablet && !onDesktop && <Nav /> : onTablet && <Nav />}
       </div>
       <div className={styles['second-part']} style={secondPartCssProps}>
         {jwtToken ? loggedSp : defaultSp}

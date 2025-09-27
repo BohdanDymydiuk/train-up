@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Outlet } from 'react-router';
 
+import { MainContext } from '../../context/MainContext';
 import { useAppSelector } from '../../store/store';
 
 import { Footer } from './components/Footer';
@@ -12,6 +13,8 @@ import styles from './MainContent.module.scss';
 
 export const MainContent: React.FC = () => {
   const jwtToken = useAppSelector(state => state.jwtToken);
+
+  const { onDesktop } = React.useContext(MainContext);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -30,7 +33,7 @@ export const MainContent: React.FC = () => {
     <>
       <Header />
       <div style={wrapperCssProps}>
-        {jwtToken && <Sidebar />}
+        {jwtToken && onDesktop && <Sidebar />}
         <main className={styles.main}>
           <Outlet />
           {jwtToken && (

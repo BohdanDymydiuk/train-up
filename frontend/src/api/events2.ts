@@ -4,17 +4,17 @@ import { EventInfoType } from '../types/EventInfoType';
 import { client } from './utils/fetchClient';
 
 export const getEvents = () => {
-  return client.get<EventInfoType[]>(`/events`);
+  return client.get<EventInfoType[]>(`/event`);
 };
 
 export const postEvent = (data: any) => {
-  return client.post<EventInfoType>(`/events`, data);
+  return client.post<EventInfoType>(`/event`, data);
 };
 
 export const deleteEvent = (id: number) => {
-  return client.delete(`/events/${id}`);
+  return client.delete(`/event/${id}`);
 };
 
 export const patchEvent = (id: number, data: any) => {
-  return client.patch<EventInfoType>(`/events/${id}`, data);
+  return client.patch<EventInfoType>(`/event/${id}`, data);
 };
