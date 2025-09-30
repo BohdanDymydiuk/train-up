@@ -29,9 +29,7 @@ export const Header: React.FC = () => {
   // #regions css props
   const firstPartCssProps: React.CSSProperties = { gap: '48px' };
 
-  const secondPartCssProps: React.CSSProperties = jwtToken
-    ? { gap: '32px' }
-    : { gap: '16px' };
+  const secondPartCssProps: React.CSSProperties = { gap: '16px' };
   // #endregion
 
   // #regions jsx

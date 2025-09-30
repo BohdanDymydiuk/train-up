@@ -1,22 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router';
 
 import clsx from 'clsx';
 
-import {
-  HEADER_NAV_ITEMS,
-  HEADER_NAV_LINKS,
-} from '../../../../../../../../constants/common';
+import { Links } from '../../../../../../../../enums/Links';
+import { NavItems } from '../../../../../../../../enums/NavItems';
 import { DropdownProps } from '../../../../../../../../reusables/DropdownHoc';
+import { useAppSelector } from '../../../../../../../../store/store';
 
 import dpStyles from '../NavDropdown/NavDropdown.module.scss';
 import styles from './NavElems.module.scss';
+
+const headerNav = {
+  items: Object.values(NavItems),
+  links: Object.values(Links),
+};
 
 export const NavElems: React.FC<Partial<DropdownProps>> = ({
   isDpShown,
   closeDpHandler,
 }) => {
   const { pathname } = useLocation();
+  const jwtToken = useAppSelector(state => state.jwtToken);
+
+  const [navItems, setNavItems] = React.useState<typeof headerNav.items>([]);
+  const [navLinks, setNavLinks] = React.useState<typeof headerNav.links>([]);
+
+  useEffect(() => {
+    if (jwtToken) {
+      setNavItems(headerNav.items);
+      setNavLinks(headerNav.links);
+    } else {
+      setNavItems(headerNav.items.filter(item => item !== NavItems.calendar));
+      setNavLinks(headerNav.links.filter(link => link !== Links.calendar));
+      // we need NavItems.calendar for sidebar, but not for nav
+    }
+  }, [jwtToken]);
 
   const isUndefined = (value: unknown) => value === undefined;
 
@@ -39,8 +58,8 @@ export const NavElems: React.FC<Partial<DropdownProps>> = ({
 
   return (
     <ul className={ulClass}>
-      {HEADER_NAV_ITEMS.map((item, index) => {
-        if (isDpShown && pathname === HEADER_NAV_LINKS[index]) {
+      {navItems.map((item, index) => {
+        if (isDpShown && pathname === navLinks[index]) {
           return;
         }
 

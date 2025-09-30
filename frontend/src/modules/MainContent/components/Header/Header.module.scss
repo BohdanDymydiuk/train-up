@@ -10,6 +10,10 @@
   padding-inline: 16px;
   background-color: $white_1;
 
+  .second-part svg {
+    width: 32px;
+  }
+
   @include on-tablet {
     padding-inline: 24px;
   }

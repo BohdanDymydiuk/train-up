@@ -3,5 +3,7 @@ import React from 'react';
 import styles from './ProfileIMG.module.scss';
 
 export const ProfileIMG: React.FC = () => {
-  return <div className={styles.profile} />;
+  // I want to add a firstname's first letter here if there is no profile image
+
+  return <div className={styles.profile}></div>;
 };

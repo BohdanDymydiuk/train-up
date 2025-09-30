@@ -1,6 +1,9 @@
 .profile {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background-color: $gray_4;
+
+  @include flex-center-center;
+
+  background-color: rgba($gray_4, 0.3);
 }
