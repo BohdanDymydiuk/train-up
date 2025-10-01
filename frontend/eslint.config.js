@@ -31,7 +31,10 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [
         'warn',
-        { allowConstantExport: true },
+        {
+          allowConstantExport: true,
+          allowExportNames: ['metadata', 'generateStaticParams'],
+        },
       ],
       'react/jsx-key': ['error', { checkFragmentShorthand: true }],
       'react-hooks/exhaustive-deps': 'off',
