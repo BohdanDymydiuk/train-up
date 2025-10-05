@@ -24,9 +24,9 @@ import { EventInfoType } from './types/EventInfoType';
 import { Sport } from './types/Sport';
 import { Trainer } from './types/Trainer';
 
-import './App.scss';
+// import './App.scss';
 
-export const App: React.FC = () => {
+export default function App() {
   const dispatch = useAppDispatch();
   const jwtToken = useAppSelector(state => state.jwtToken);
 
