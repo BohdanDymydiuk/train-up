@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Image from 'next/image';
+
 import styles from './SignUpModal.module.scss';
 
 interface Props {
@@ -12,7 +14,7 @@ export const SignUpModal: React.FC<Props> = ({ setIsModalShown }) => {
   return (
     <div className={styles['modal-wrapper']}>
       <div className={styles.modal}>
-        <img
+        <Image
           src='/icons/cross.svg'
           alt='cross'
           className={styles.cross}

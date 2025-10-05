@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 
+import Image from 'next/image';
+
 import { MainContext } from '../../../../../../context/MainContext';
 import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
 
@@ -29,7 +31,7 @@ export const TrainerSignUp: React.FC = () => {
         </div>
         {onTablet && (
           <div className={styles['second-part']}>
-            <img
+            <Image
               className={styles.avatar}
               src='/images/avatars/avatar_4.png'
               alt='avatar'

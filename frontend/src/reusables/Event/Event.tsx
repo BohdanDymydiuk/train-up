@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 
+import Image from 'next/image';
+
 import { MainContext } from '../../context/MainContext';
 import { Event as EventType } from '../../types/Event';
 import { Format } from '../Format';
@@ -38,7 +40,7 @@ export const Event: React.FC<Props> = ({
   return (
     <div className={styles.event} style={{ minWidth: eventWidth }}>
       <div className={styles['img-wrapper']}>
-        <img src={photoUrls[0]} alt='Image' />
+        <Image src={photoUrls[0]} alt='Image' />
       </div>
 
       <div style={secondPartCssProps}>
@@ -54,13 +56,13 @@ export const Event: React.FC<Props> = ({
             return (
               <React.Fragment key={num}>
                 {num < intensity ? (
-                  <img
+                  <Image
                     src='/icons/filled-thunder.svg'
                     className={styles.thunder}
                     alt='filled-thunder'
                   />
                 ) : (
-                  <img
+                  <Image
                     src='/icons/thunder.svg'
                     className={styles.thunder}
                     alt='thunder'

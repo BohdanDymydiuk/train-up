@@ -1,5 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 
+import Image from 'next/image';
+
 import { MainContext } from '../../../../../../../../context/MainContext';
 import { Format } from '../../../../../../../../reusables/Format';
 import { useAppSelector } from '../../../../../../../../store/store';
@@ -45,7 +47,7 @@ export const Directions: React.FC<Props> = ({ areAllShown }) => {
                 {onlineCondition && <Format isOnline={true} />}
               </div>
               <div className={styles['img-wrapper']}>
-                {sportIconUrl && <img src={sportIconUrl} />}
+                {sportIconUrl && <Image alt='' src={sportIconUrl} />}
               </div>
             </div>
 
