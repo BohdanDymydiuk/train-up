@@ -25,3 +25,7 @@ dist-ssr
 
 http-requests/
 *.http
+
+# Next.js
+.next
+next-env.d.ts
