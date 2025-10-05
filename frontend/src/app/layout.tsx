@@ -20,7 +20,7 @@ export default function RootLayout({
           crossOrigin=''
         />
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
         <div id='root'>{children}</div>
       </body>
     </html>

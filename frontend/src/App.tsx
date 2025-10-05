@@ -24,7 +24,7 @@ import { EventInfoType } from './types/EventInfoType';
 import { Sport } from './types/Sport';
 import { Trainer } from './types/Trainer';
 
-// import './App.scss';
+import './App.scss';
 
 export default function App() {
   const dispatch = useAppDispatch();
