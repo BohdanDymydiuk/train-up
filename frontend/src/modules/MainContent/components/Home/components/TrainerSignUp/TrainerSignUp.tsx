@@ -32,6 +32,10 @@ export const TrainerSignUp: React.FC = () => {
         {onTablet && (
           <div className={styles['second-part']}>
             <Image
+              width={0}
+              height={0}
+              sizes='100vw'
+              style={{ width: 'auto', height: '100%' }}
               className={styles.avatar}
               src='/images/avatars/avatar_4.png'
               alt='avatar'

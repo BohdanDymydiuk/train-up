@@ -14,7 +14,14 @@ export const Blocks: React.FC = () => {
 
         return (
           <div className={styles.block} key={title}>
-            <Image className={styles.img} src={imageSrc} alt='avatar' />
+            <Image
+              width={0}
+              height={0}
+              sizes='100vw'
+              style={{ width: 'auto', height: '94px', alignSelf: 'end' }}
+              src={imageSrc}
+              alt='avatar'
+            />
             <h3 className={styles.title}>{title}</h3>
             <div className={styles.description}>{description}</div>
           </div>
