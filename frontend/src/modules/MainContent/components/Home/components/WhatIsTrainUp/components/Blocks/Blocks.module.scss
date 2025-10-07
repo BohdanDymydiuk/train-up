@@ -29,6 +29,13 @@
       width: 100%;
     }
 
+
+    .avatar {
+      width: auto;
+      height: 94px;
+      align-self: end;
+    }
+
     .title {
       @include ermilov-24;
 

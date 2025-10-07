@@ -18,7 +18,7 @@ export const Blocks: React.FC = () => {
               width={0}
               height={0}
               sizes='100vw'
-              style={{ width: 'auto', height: '94px', alignSelf: 'end' }}
+              className={styles.avatar}
               src={imageSrc}
               alt='avatar'
             />
