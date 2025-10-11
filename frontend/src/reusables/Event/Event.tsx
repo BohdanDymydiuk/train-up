@@ -47,7 +47,7 @@ export const Event: React.FC<Props> = ({
         <div className={styles.formats}>
           <Format isOnline={false} />
           {onlineTraining && (
-            <Format isOnline={onlineTraining} backgroundColor={styles.gray} />
+            <Format isOnline={onlineTraining} backgroundColor={styles.white} />
           )}
         </div>
 
