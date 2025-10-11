@@ -4,7 +4,7 @@
   background-color: $white_1;
   z-index: 1;
   border-radius: 8px;
-  border: 1px solid $gray_10;
+  border: 1px solid $light-gray_5;
   top: $finder-row-height + 8px;
   padding: 24px;
   overflow: hidden;
@@ -53,12 +53,12 @@
       cursor: pointer;
 
       &:hover {
-        background-color: $gray_11;
+        background-color: $white_4;
       }
     }
   }
 }
 
 :export {
-  finderPadding: $finder-padding;
+  finderpadding: $finder-padding;
 }

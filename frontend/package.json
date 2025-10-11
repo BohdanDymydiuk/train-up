@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "dev turbo": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint",
     "preview": "vite preview",
     "format": "npx prettier . --write"
   },

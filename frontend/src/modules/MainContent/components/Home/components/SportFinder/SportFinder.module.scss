@@ -102,11 +102,13 @@
 
       background-color: transparent;
       border: none;
-      border-bottom: 1px solid $gray_10;
+      border-bottom: 1px solid $light-gray_5;
       cursor: pointer;
       text-align: start;
       width: 100%;
-      transition: border-color $trans-dur, color $trans-dur;
+      transition:
+        border-color $trans-dur,
+        color $trans-dur;
 
       @include on-tablet {
         height: 100%;
