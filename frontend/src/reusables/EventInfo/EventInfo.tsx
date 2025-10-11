@@ -33,3 +33,5 @@ export const EventInfo: React.FC<Props> = React.memo(props => {
     </div>
   );
 });
+
+EventInfo.displayName = 'EventInfo';

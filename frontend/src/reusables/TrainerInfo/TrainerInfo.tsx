@@ -41,3 +41,5 @@ export const TrainerInfo: React.FC<Props> = React.memo(props => {
     </div>
   );
 });
+
+TrainerInfo.displayName = 'TrainerInfo';
