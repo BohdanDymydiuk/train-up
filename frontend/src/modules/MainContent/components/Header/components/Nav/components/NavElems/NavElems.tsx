@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router';
 
-import clsx from 'clsx';
+import { Links } from '@/enums/Links';
+import { NavItems } from '@/enums/NavItems';
+import { DropdownProps } from '@/reusables/DropdownHoc';
+import { useAppSelector } from '@/store/store';
 
-import { Links } from '../../../../../../../../enums/Links';
-import { NavItems } from '../../../../../../../../enums/NavItems';
-import { DropdownProps } from '../../../../../../../../reusables/DropdownHoc';
-import { useAppSelector } from '../../../../../../../../store/store';
+import clsx from 'clsx';
 
 import dpStyles from '../NavDropdown/NavDropdown.module.scss';
 import styles from './NavElems.module.scss';

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { NavItems } from '../../../../../../enums/NavItems';
-import { EventInfo } from '../../../../../../reusables/EventInfo';
-import { LookMore } from '../../../../../../reusables/LookMore';
-import { ProfileTitle } from '../../../../../../reusables/ProfileTitle';
-import { useAppSelector } from '../../../../../../store/store';
+import { NavItems } from '@/enums/NavItems';
+import { EventInfo } from '@/reusables/EventInfo';
+import { LookMore } from '@/reusables/LookMore';
+import { ProfileTitle } from '@/reusables/ProfileTitle';
+import { useAppSelector } from '@/store/store';
 
 import styles from './Events.module.scss';
 

@@ -1,10 +1,10 @@
 import React, { useContext, useMemo } from 'react';
 
-import Image from 'next/image';
+import { MainContext } from '@/context/MainContext';
+import { Format } from '@/reusables/Format';
+import { useAppSelector } from '@/store/store';
 
-import { MainContext } from '../../../../../../../../context/MainContext';
-import { Format } from '../../../../../../../../reusables/Format';
-import { useAppSelector } from '../../../../../../../../store/store';
+import Image from 'next/image';
 
 import styles from './Directions.module.scss';
 

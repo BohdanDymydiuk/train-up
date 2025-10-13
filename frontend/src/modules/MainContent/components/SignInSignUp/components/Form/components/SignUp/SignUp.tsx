@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-import { Links } from '../../../../../../../../enums/Links';
+import { Links } from '@/enums/Links';
 
 import styles from './SignUp.module.scss';
 

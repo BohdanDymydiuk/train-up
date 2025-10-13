@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
-import Image from 'next/image';
+import { MainContext } from '@/context/MainContext';
+import { Format } from '@/reusables/Format';
+import { SmallArrow } from '@/reusables/svgs/arrows/SmallArrow';
+import { Event as EventType } from '@/types/Event';
 
-import { MainContext } from '../../context/MainContext';
-import { Event as EventType } from '../../types/Event';
-import { Format } from '../Format';
-import { SmallArrow } from '../svgs/arrows/SmallArrow';
+import Image from 'next/image';
 
 import styles from './Event.module.scss';
 

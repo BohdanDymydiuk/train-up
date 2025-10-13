@@ -1,6 +1,5 @@
+import { Sport } from '@/types/Sport';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-import { Sport } from '../../types/Sport';
 
 export const sportsSlice = createSlice({
   name: 'sports',

@@ -1,6 +1,5 @@
+import { Trainer } from '@/types/Trainer';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-import { Trainer } from '../../types/Trainer';
 
 export const trainersSlice = createSlice({
   name: 'trainers',

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Token } from '../types/Token';
+import { Token } from '@/types/Token';
 
 import { client } from './utils/fetchClient';
 

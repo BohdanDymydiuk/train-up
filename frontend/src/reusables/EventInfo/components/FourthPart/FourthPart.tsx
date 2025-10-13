@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { EventInfoType } from '../../../../types/EventInfoType';
+import { EventInfoType } from '@/types/EventInfoType';
 
 import styles from './FourthPart.module.scss';
 

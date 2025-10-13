@@ -1,11 +1,11 @@
 import React, { useContext, useMemo, useState } from 'react';
 import Highlighter from 'react-highlight-words';
 
-import { APPEARING_DP_CSS_PROPS } from '../../../../../../../../constants/common';
-import { MainContext } from '../../../../../../../../context/MainContext';
-import { FinderTexts } from '../../../../../../../../enums/FinderTexts';
-import { DropdownProps } from '../../../../../../../../reusables/DropdownHoc';
-import { SearchSVG } from '../../../../../../../../reusables/svgs/SearchSVG';
+import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
+import { MainContext } from '@/context/MainContext';
+import { FinderTexts } from '@/enums/FinderTexts';
+import { DropdownProps } from '@/reusables/DropdownHoc';
+import { SearchSVG } from '@/reusables/svgs/SearchSVG';
 
 import styles from './Dropdown.module.scss';
 

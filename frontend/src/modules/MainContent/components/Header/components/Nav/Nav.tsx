@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
-import { MainContext } from '../../../../../../context/MainContext';
-import { DropdownHoc } from '../../../../../../reusables/DropdownHoc';
+import { MainContext } from '@/context/MainContext';
+import { DropdownHoc } from '@/reusables/DropdownHoc';
 
 import { NavButton } from './components/NavButton';
 import { NavDropdown } from './components/NavDropdown';

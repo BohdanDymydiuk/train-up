@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
-import { MainContext } from '../../../../../../context/MainContext';
-import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
+import { MainContext } from '@/context/MainContext';
+import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import { Directions } from './components/Directions';
 import { ShowHideMore } from './components/ShowHideMore';

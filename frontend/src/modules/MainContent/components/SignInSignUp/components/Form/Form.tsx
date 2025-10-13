@@ -1,11 +1,11 @@
 import React, { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router';
 
-import { login } from '../../../../../../api/auth';
-import { actions as jwtTokenActions } from '../../../../../../store/features/jwtToken';
-import { useAppDispatch } from '../../../../../../store/store';
-import { InputChangeEvent } from '../../../../../../types/Events';
-import { Token } from '../../../../../../types/Token';
+import { login } from '@/api/auth';
+import { actions as jwtTokenActions } from '@/store/features/jwtToken';
+import { useAppDispatch } from '@/store/store';
+import { InputChangeEvent } from '@/types/Events';
+import { Token } from '@/types/Token';
 
 import { Button } from './components/Button';
 import { Inputs } from './components/Inputs';

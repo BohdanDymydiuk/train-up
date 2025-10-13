@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
-import { MainContext } from '../../../../context/MainContext';
-import { NavItems } from '../../../../enums/NavItems';
-import { ErmilovTitle } from '../../../../reusables/ErmilovTitle';
-import { FacebookSVG } from '../../../../reusables/svgs/socials/FacebookSVG';
-import { InstagramSVG } from '../../../../reusables/svgs/socials/InstagramSVG';
-import { ThreadsSVG } from '../../../../reusables/svgs/socials/ThreadsSVG';
+import { MainContext } from '@/context/MainContext';
+import { NavItems } from '@/enums/NavItems';
+import { ErmilovTitle } from '@/reusables/ErmilovTitle';
+import { FacebookSVG } from '@/reusables/svgs/socials/FacebookSVG';
+import { InstagramSVG } from '@/reusables/svgs/socials/InstagramSVG';
+import { ThreadsSVG } from '@/reusables/svgs/socials/ThreadsSVG';
 
 import styles from './Footer.module.scss';
 

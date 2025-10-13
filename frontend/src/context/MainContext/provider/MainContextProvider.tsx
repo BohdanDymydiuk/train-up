@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import { NavItems } from '../../../enums/NavItems';
+import { NavItems } from '@/enums/NavItems';
+
 import { MainContext } from '../MainContext';
 
 interface Props {

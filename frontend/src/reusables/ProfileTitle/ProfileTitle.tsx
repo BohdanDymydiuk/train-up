@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NavItems } from '../../enums/NavItems';
+import { NavItems } from '@/enums/NavItems';
 
 import styles from './ProfileTitle.module.scss';
 

@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { APPEARING_DP_CSS_PROPS } from '../../../../../../../../constants/common';
-import { DropdownProps } from '../../../../../../../../reusables/DropdownHoc';
+import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
+import { DropdownProps } from '@/reusables/DropdownHoc';
+
 import { NavElems } from '../NavElems';
 
 import styles from './NavDropdown.module.scss';
