@@ -1,8 +1,8 @@
 import React from 'react';
 
-import clsx from 'clsx';
+import { Formats } from '@/enums/Formats';
 
-import { Formats } from '../../enums/Formats';
+import clsx from 'clsx';
 
 import styles from './Format.module.scss';
 

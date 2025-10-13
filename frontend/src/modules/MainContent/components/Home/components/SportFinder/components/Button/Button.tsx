@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ButtonProps } from '../../../../../../../../reusables/DropdownHoc';
-import { ChevronDownSVG } from '../../../../../../../../reusables/svgs/ChevronDownSVG';
+import { ButtonProps } from '@/reusables/DropdownHoc';
+import { ChevronDownSVG } from '@/reusables/svgs/ChevronDownSVG';
 
 import styles from '../../SportFinder.module.scss';
 

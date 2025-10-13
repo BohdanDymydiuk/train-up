@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonProps } from '../../../../../../reusables/DropdownHoc';
+import { ButtonProps } from '@/reusables/DropdownHoc';
 
 import styles from './SignInButton.module.scss';
 

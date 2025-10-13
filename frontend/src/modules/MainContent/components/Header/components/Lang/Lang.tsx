@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChevronDownSVG } from '../../../../../../reusables/svgs/ChevronDownSVG';
+import { ChevronDownSVG } from '@/reusables/svgs/ChevronDownSVG';
 
 import styles from './Lang.module.scss';
 

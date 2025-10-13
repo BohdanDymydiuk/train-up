@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
-import { MainContext } from '../../../../../../context/MainContext';
-import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
+import { MainContext } from '@/context/MainContext';
+import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import { Blocks } from './components/Blocks';
 

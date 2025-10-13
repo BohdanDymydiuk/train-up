@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-import { APPEARING_DP_CSS_PROPS } from '../../../../../../constants/common';
-import { Links } from '../../../../../../enums/Links';
-import { DropdownProps } from '../../../../../../reusables/DropdownHoc';
+import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
+import { Links } from '@/enums/Links';
+import { DropdownProps } from '@/reusables/DropdownHoc';
 
 import styles from './SignInDropdown.module.scss';
 

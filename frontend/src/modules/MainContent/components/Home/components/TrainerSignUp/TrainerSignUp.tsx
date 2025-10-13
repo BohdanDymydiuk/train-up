@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import Image from 'next/image';
+import { MainContext } from '@/context/MainContext';
+import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
-import { MainContext } from '../../../../../../context/MainContext';
-import { ErmilovTitle } from '../../../../../../reusables/ErmilovTitle';
+import Image from 'next/image';
 
 import styles from './TrainerSignUp.module.scss';
 

@@ -2,11 +2,11 @@
 
 import { Provider } from 'react-redux';
 
+import { store } from '@/store/store';
+
 import dynamic from 'next/dynamic';
 
-import { store } from '../../store/store';
-
-const App = dynamic(() => import('../../App' as string), { ssr: false });
+const App = dynamic(() => import('@/App' as string), { ssr: false });
 
 export function ClientOnly() {
   return (

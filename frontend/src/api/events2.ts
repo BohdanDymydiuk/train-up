@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { EventInfoType } from '../types/EventInfoType';
+import { EventInfoType } from '@/types/EventInfoType';
 
 import { client } from './utils/fetchClient';
 

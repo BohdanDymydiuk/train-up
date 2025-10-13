@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Trainer } from '../../../../types/Trainer';
+import { Trainer } from '@/types/Trainer';
 
 import { Category } from './components/Category';
 

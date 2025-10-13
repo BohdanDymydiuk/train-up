@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { EventInfoType } from '../../../../types/EventInfoType';
-import { ParticipantsSVG } from '../../../svgs/sectionSvgs/events/ParticipantsSVG';
-import { ThunderSVG } from '../../../svgs/sectionSvgs/events/ThunderSVG';
-import { TrainingType } from '../../../TrainingType';
+import { ParticipantsSVG } from '@/reusables/svgs/sectionSvgs/events/ParticipantsSVG';
+import { ThunderSVG } from '@/reusables/svgs/sectionSvgs/events/ThunderSVG';
+import { TrainingType } from '@/reusables/TrainingType';
+import { EventInfoType } from '@/types/EventInfoType';
 
 import styles from './SecondPart.module.scss';
 
