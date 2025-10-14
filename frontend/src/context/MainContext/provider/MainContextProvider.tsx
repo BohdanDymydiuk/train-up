@@ -3,8 +3,6 @@ import { useMediaQuery } from 'react-responsive';
 
 import { NavItems } from '@/enums/NavItems';
 
-// don't forget to check cursor changes
-
 import { MainContext } from '../MainContext';
 
 interface Props {
