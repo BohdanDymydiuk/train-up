@@ -7,7 +7,7 @@ import { DropdownHoc } from '@/reusables/DropdownHoc';
 import { BellSVG } from '@/reusables/svgs/headerSvgs/BellSVG';
 import { SearchSVG } from '@/reusables/svgs/headerSvgs/SearchSVG';
 import { LogoSVG } from '@/reusables/svgs/LogoSVG';
-import { useAppSelector } from '@/store/store';
+import { useAppSelector } from '@/store';
 
 import { Burger } from './components/Burger';
 import { Lang } from './components/Lang';

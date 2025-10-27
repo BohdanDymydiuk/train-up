@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Outlet } from 'react-router';
 
 import { MainContext } from '@/context/MainContext';
-import { useAppSelector } from '@/store/store';
+import { useAppSelector } from '@/store';
 
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';

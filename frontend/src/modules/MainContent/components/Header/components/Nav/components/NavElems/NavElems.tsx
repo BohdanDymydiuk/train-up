@@ -4,7 +4,7 @@ import { useLocation } from 'react-router';
 import { Links } from '@/enums/Links';
 import { NavItems } from '@/enums/NavItems';
 import { DropdownProps } from '@/reusables/DropdownHoc';
-import { useAppSelector } from '@/store/store';
+import { useAppSelector } from '@/store';
 
 import clsx from 'clsx';
 

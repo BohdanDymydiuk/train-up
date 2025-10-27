@@ -2,7 +2,7 @@ import React, { useContext, useMemo } from 'react';
 
 import { MainContext } from '@/context/MainContext';
 import { Format } from '@/reusables/Format';
-import { useAppSelector } from '@/store/store';
+import { useAppSelector } from '@/store';
 
 import Image from 'next/image';
 

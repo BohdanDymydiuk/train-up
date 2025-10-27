@@ -2,8 +2,8 @@ import React, { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router';
 
 import { login } from '@/api/auth';
+import { useAppDispatch } from '@/store';
 import { actions as jwtTokenActions } from '@/store/features/jwtToken';
-import { useAppDispatch } from '@/store/store';
 import { InputChangeEvent } from '@/types/Events';
 import { Token } from '@/types/Token';
 

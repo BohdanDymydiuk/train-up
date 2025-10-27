@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ArrowLeft } from '@/reusables/svgs/arrows/ArrowLeft';
 import { ArrowRight } from '@/reusables/svgs/arrows/ArrowRight';
-import { useAppSelector } from '@/store/store';
+import { useAppSelector } from '@/store';
 
 import { ImgIndexProps } from '../../Events';
 

@@ -5,7 +5,7 @@ import { MainContext } from '@/context/MainContext';
 import { FinderTexts } from '@/enums/FinderTexts';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
-import { useAppSelector } from '@/store/store';
+import { useAppSelector } from '@/store';
 
 import { Button } from './components/Button';
 import { Dropdown } from './components/Dropdown';

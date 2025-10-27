@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { EVENTS_GAP } from '@/constants/common';
 import { MainContext } from '@/context/MainContext';
 import { Event } from '@/reusables/Event';
-import { useAppSelector } from '@/store/store';
+import { useAppSelector } from '@/store';
 
 import { motion, Transition, useMotionValue } from 'motion/react';
 

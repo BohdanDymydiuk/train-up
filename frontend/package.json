@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "dev turbo": "next dev --turbopack",
+    "dev:turbopack": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "preview": "vite preview",
     "format": "npx prettier . --write"
   },
