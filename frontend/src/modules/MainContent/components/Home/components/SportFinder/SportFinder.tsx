@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
 import { SPORT_FINDER_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/providers/MainContext';
 import { FinderTexts } from '@/enums/FinderTexts';
+import { Context } from '@/providers/context';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 import { useAppSelector } from '@/store';
@@ -17,7 +17,7 @@ const ChooseSport = DropdownHoc(Button, Dropdown);
 const ChooseCity = DropdownHoc(Button, Dropdown);
 
 export const SportFinder: React.FC = () => {
-  const { onTablet, onSmallDesktop } = useContext(MainContext);
+  const { onTablet, onSmallDesktop } = useContext(Context);
 
   const sports = useAppSelector(state => state.sports);
 

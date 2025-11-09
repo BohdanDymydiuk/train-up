@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { ALT_STRINGS, TRAINER_SIGNUP_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/providers/MainContext';
+import { Context } from '@/providers/context';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import Image from 'next/image';
@@ -9,7 +9,7 @@ import Image from 'next/image';
 import styles from './TrainerSignUp.module.scss';
 
 export const TrainerSignUp: React.FC = () => {
-  const { onTablet, onDesktop } = useContext(MainContext);
+  const { onTablet, onDesktop } = useContext(Context);
 
   const ermilovTitleProps = {
     title: (

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import { EVENTS_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/providers/MainContext';
+import { Context } from '@/providers/context';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import { Arrows } from './components/Arrows';
@@ -15,7 +15,7 @@ export interface ImgIndexProps {
 }
 
 export const Events: React.FC = () => {
-  const { onDesktop } = useContext(MainContext);
+  const { onDesktop } = useContext(Context);
 
   const [imgIndex, setImgIndex] = useState(0);
 

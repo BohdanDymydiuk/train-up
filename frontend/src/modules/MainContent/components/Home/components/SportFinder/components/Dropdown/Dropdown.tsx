@@ -3,8 +3,8 @@ import Highlighter from 'react-highlight-words';
 
 import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
 import { SPORT_FINDER_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/providers/MainContext';
 import { FinderTexts } from '@/enums/FinderTexts';
+import { Context } from '@/providers/context';
 import { DropdownProps } from '@/reusables/DropdownHoc';
 import { SearchSVG } from '@/reusables/svgs/SearchSVG';
 
@@ -17,7 +17,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   select,
   text,
 }) => {
-  const { onTablet, onDesktop } = useContext(MainContext);
+  const { onTablet, onDesktop } = useContext(Context);
 
   const [query, setSquery] = useState('');
   const [placeholder, setPlaceholder] = useState<string>(

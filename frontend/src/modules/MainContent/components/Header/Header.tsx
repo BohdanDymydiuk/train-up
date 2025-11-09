@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { useLocation } from 'react-router';
 
-import { MainContext } from '@/providers/MainContext';
 import { Links } from '@/enums/Links';
+import { Context } from '@/providers/context';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
 import { BellSVG } from '@/reusables/svgs/headerSvgs/BellSVG';
 import { SearchSVG } from '@/reusables/svgs/headerSvgs/SearchSVG';
@@ -21,7 +21,7 @@ import styles from './Header.module.scss';
 export const Header: React.FC = () => {
   const jwtToken = useAppSelector(state => state.jwtToken);
 
-  const { onTablet, onDesktop } = useContext(MainContext);
+  const { onTablet, onDesktop } = useContext(Context);
   const { pathname } = useLocation();
 
   const SignIn = DropdownHoc(SignInButton, SignInDropdown);

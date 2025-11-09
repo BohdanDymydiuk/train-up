@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react';
 
-import { MainContext } from '@/providers/MainContext';
+import { Context } from '@/providers/context';
 import { Format } from '@/reusables/Format';
 import { useAppSelector } from '@/store';
 
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const Directions: React.FC<Props> = ({ areAllShown }) => {
-  const { onDesktop } = useContext(MainContext);
+  const { onDesktop } = useContext(Context);
 
   const trainers = useAppSelector(state => state.trainers);
   const sports = useAppSelector(state => state.sports);

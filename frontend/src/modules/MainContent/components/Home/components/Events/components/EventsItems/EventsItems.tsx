@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { EVENTS_GAP } from '@/constants/common';
-import { MainContext } from '@/providers/MainContext';
+import { Context } from '@/providers/context';
 import { Event } from '@/reusables/Event';
 import { useAppSelector } from '@/store';
 
@@ -18,7 +18,7 @@ export const EventsItems: React.FC<ImgIndexProps> = ({
   setImgIndex,
 }) => {
   const events = useAppSelector(state => state.events);
-  const { eventWidth } = useContext(MainContext);
+  const { eventWidth } = useContext(Context);
 
   const dragX = useMotionValue(0);
 

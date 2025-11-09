@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import { DIRECTION_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/providers/MainContext';
+import { Context } from '@/providers/context';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import { Directions } from './components/Directions';
@@ -10,7 +10,7 @@ import { ShowHideMore } from './components/ShowHideMore';
 import styles from './ChooseYourDirection.module.scss';
 
 export const ChooseYourDirection: React.FC = () => {
-  const { onDesktop } = useContext(MainContext);
+  const { onDesktop } = useContext(Context);
 
   const [areAllShown, setAreAllShown] = useState(false);
 

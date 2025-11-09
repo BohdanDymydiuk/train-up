@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { ALT_STRINGS, COMMON_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/providers/MainContext';
+import { Context } from '@/providers/context';
 import { Format } from '@/reusables/Format';
 import { SmallArrow } from '@/reusables/svgs/arrows/SmallArrow';
 import { Event as EventType } from '@/shared/types/events';
@@ -36,7 +36,7 @@ export const Event: React.FC<Props> = ({
   intensity,
   photoUrls,
 }) => {
-  const { eventWidth } = useContext(MainContext);
+  const { eventWidth } = useContext(Context);
 
   return (
     <div className={styles.event} style={{ minWidth: eventWidth }}>

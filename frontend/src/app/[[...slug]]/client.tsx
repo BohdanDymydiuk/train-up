@@ -12,12 +12,12 @@ import '@/App.scss';
 import { GET_DATA_ERROR } from '@/constants/errors';
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
 import { COMMON_STRINGS, ERROR_STRINGS } from '@/constants/strings';
-import { MainContextProvider } from '@/providers/MainContext';
 import { Links } from '@/enums/Links';
 import { MainContent } from '@/modules/MainContent';
 import { Home } from '@/modules/MainContent/components/Home';
 import { ProfileMain } from '@/modules/MainContent/components/ProfileMain';
 import { SignInSignUp } from '@/modules/MainContent/components/SignInSignUp';
+import { ContextProvider } from '@/providers/context';
 import { Event, EventInfoType } from '@/shared/types/events';
 import { Sport } from '@/shared/types/sport';
 import { Trainer } from '@/shared/types/trainer';
@@ -119,14 +119,14 @@ function App() {
     <>
       <h1 style={titleCssProps}>{COMMON_STRINGS.appName}</h1>
       <Router>
-        <MainContextProvider>
+        <ContextProvider>
           <Routes>
             <Route path='/' element={<MainContent />}>
               <Route index element={jwtToken ? <ProfileMain /> : <Home />} />
               <Route path={Links.signIn} element={<SignInSignUp />} />
             </Route>
           </Routes>
-        </MainContextProvider>
+        </ContextProvider>
       </Router>
     </>
   );

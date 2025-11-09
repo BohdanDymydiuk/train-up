@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Outlet } from 'react-router';
 
-import { MainContext } from '@/providers/MainContext';
+import { Context } from '@/providers/context';
 import { useAppSelector } from '@/store';
 
 import { Footer } from './components/Footer';
@@ -14,7 +14,7 @@ import styles from './MainContent.module.scss';
 export const MainContent: React.FC = () => {
   const jwtToken = useAppSelector(state => state.jwtToken);
 
-  const { onDesktop } = React.useContext(MainContext);
+  const { onDesktop } = React.useContext(Context);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });

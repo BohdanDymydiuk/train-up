@@ -15,7 +15,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const MainContextProvider: React.FC<Props> = ({ children }) => {
+const ContextProvider: React.FC<Props> = ({ children }) => {
   const [currentSection, setCurrentSection] = useState(NavItems.main);
 
   const onTablet = useMediaQuery({ query: '(min-width: 768px)' });
@@ -50,3 +50,5 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
 
   return <Context.Provider value={providerValue}>{children}</Context.Provider>;
 };
+
+export { ContextProvider, Context };

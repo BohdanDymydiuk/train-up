@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
 import { FOOTER_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/providers/MainContext';
 import { NavItems } from '@/enums/NavItems';
+import { Context } from '@/providers/context';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 import { FacebookSVG } from '@/reusables/svgs/socials/FacebookSVG';
 import { InstagramSVG } from '@/reusables/svgs/socials/InstagramSVG';
@@ -11,7 +11,7 @@ import { ThreadsSVG } from '@/reusables/svgs/socials/ThreadsSVG';
 import styles from './Footer.module.scss';
 
 export const Footer: React.FC = () => {
-  const { onDesktop } = useContext(MainContext);
+  const { onDesktop } = useContext(Context);
 
   const pages = Object.values(NavItems).filter(
     page => page !== NavItems.aboutUs,
