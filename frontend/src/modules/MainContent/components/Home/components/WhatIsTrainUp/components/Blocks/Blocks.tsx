@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ALT_STRINGS } from '@/constants/strings';
+
 import Image from 'next/image';
 
 import { blocks } from './constants/blocks';
@@ -20,7 +22,7 @@ export const Blocks: React.FC = () => {
               sizes='100vw'
               className={styles.avatar}
               src={imageSrc}
-              alt='avatar'
+              alt={ALT_STRINGS.avatar}
             />
             <h3 className={styles.title}>{title}</h3>
             <div className={styles.description}>{description}</div>

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 
+import { DIRECTION_STRINGS } from '@/constants/strings';
 import { MainContext } from '@/context/MainContext';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
@@ -14,7 +15,7 @@ export const ChooseYourDirection: React.FC = () => {
   const [areAllShown, setAreAllShown] = useState(false);
 
   const ermilovTitleProps = {
-    title: 'Оберіть свій напрям',
+    title: DIRECTION_STRINGS.title,
     cssProps: {
       textAlign: 'center',
       fontSize: onDesktop && '40px',

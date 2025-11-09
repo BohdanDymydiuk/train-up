@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { AUTH_STRINGS } from '@/constants/strings';
 import { InputChangeEvent } from '@/types/Events';
 
 import styles from './Inputs.module.scss';
@@ -23,7 +24,7 @@ export const Inputs: React.FC<Props> = props => {
         value={email}
         className={styles.input}
         onChange={inputTextHandler}
-        placeholder='Введіть e-mail'
+        placeholder={AUTH_STRINGS.emailPlaceholder}
         required
       />
       <input
@@ -33,7 +34,7 @@ export const Inputs: React.FC<Props> = props => {
         value={password}
         className={styles.input}
         onChange={inputPasswordHandler}
-        placeholder='Пароль'
+        placeholder={AUTH_STRINGS.passwordPlaceholder}
         required
       />
     </>

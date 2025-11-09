@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 
+import { FOOTER_STRINGS } from '@/constants/strings';
 import { MainContext } from '@/context/MainContext';
 import { NavItems } from '@/enums/NavItems';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
@@ -26,7 +27,7 @@ export const Footer: React.FC = () => {
   const values = Object.values(socials);
 
   const ermilovTitleProps = {
-    title: 'Твоя форма. Твій темп. Твій простір.',
+    title: FOOTER_STRINGS.title,
     cssProps: { fontSize: onDesktop && '40px' } as React.CSSProperties,
   };
 
@@ -39,7 +40,7 @@ export const Footer: React.FC = () => {
 
         <div className={styles['pages-socials-wrapper']}>
           <div className={styles['pages-wrapper']}>
-            <div className={styles['pages-text']}>Сторінки</div>
+            <div className={styles['pages-text']}>{FOOTER_STRINGS.pages}</div>
 
             <nav className={styles.pages}>
               <ul>
@@ -55,7 +56,9 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className={styles['socials-wrapper']}>
-            <div className={styles['socials-text']}>Ми в соцмережах</div>
+            <div className={styles['socials-text']}>
+              {FOOTER_STRINGS.socials}
+            </div>
 
             <div className={styles.socials}>
               {values.map((value, index) => {

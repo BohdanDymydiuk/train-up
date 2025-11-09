@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 
+import { AUTH_STRINGS } from '@/constants/strings';
 import { Links } from '@/enums/Links';
 
 import styles from './SignUp.module.scss';
@@ -12,9 +13,9 @@ export const SignUp: React.FC = () => {
 
   return (
     <div className={styles.signup}>
-      Досі немає акаунта?{' '}
+      {AUTH_STRINGS.noAccount}{' '}
       <span className={styles.strong} onClick={signupHandler}>
-        Зареєструватись
+        {AUTH_STRINGS.signUp}
       </span>
     </div>
   );

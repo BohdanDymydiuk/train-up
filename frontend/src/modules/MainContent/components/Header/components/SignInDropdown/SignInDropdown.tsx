@@ -2,16 +2,17 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 
 import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
+import { AUTH_STRINGS } from '@/constants/strings';
 import { Links } from '@/enums/Links';
 import { DropdownProps } from '@/reusables/DropdownHoc';
 
 import styles from './SignInDropdown.module.scss';
 
-enum SignIn {
-  client = 'Увійти як клієнт',
-  trainer = 'Увійти як тренер',
-  admin = 'Увійти як адміністратор залу',
-}
+const SignInOptions = [
+  AUTH_STRINGS.signInAsClient,
+  AUTH_STRINGS.signInAsTrainer,
+  AUTH_STRINGS.signInAsGymAdmin,
+] as const;
 
 export const SignInDropdown: React.FC<DropdownProps> = ({
   isDpShown,
@@ -32,7 +33,7 @@ export const SignInDropdown: React.FC<DropdownProps> = ({
   return (
     <div className={styles.dropdown} style={dpStyle}>
       <ul className={styles['dp-list']}>
-        {Object.values(SignIn).map(item => {
+        {SignInOptions.map(item => {
           return (
             <li
               className={styles['dp-item']}

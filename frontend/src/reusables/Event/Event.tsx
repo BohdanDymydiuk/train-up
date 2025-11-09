@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 
+import { ALT_STRINGS, COMMON_STRINGS } from '@/constants/strings';
 import { MainContext } from '@/context/MainContext';
 import { Format } from '@/reusables/Format';
 import { SmallArrow } from '@/reusables/svgs/arrows/SmallArrow';
@@ -40,7 +41,7 @@ export const Event: React.FC<Props> = ({
   return (
     <div className={styles.event} style={{ minWidth: eventWidth }}>
       <div className={styles['img-wrapper']}>
-        <Image src={photoUrls[0]} alt='Image' />
+        <Image src={photoUrls[0]} alt={ALT_STRINGS.image} />
       </div>
 
       <div style={secondPartCssProps}>
@@ -59,13 +60,13 @@ export const Event: React.FC<Props> = ({
                   <Image
                     src='/icons/filled-thunder.svg'
                     className={styles.thunder}
-                    alt='filled-thunder'
+                    alt={ALT_STRINGS.filledThunder}
                   />
                 ) : (
                   <Image
                     src='/icons/thunder.svg'
                     className={styles.thunder}
-                    alt='thunder'
+                    alt={ALT_STRINGS.thunder}
                   />
                 )}
               </React.Fragment>
@@ -80,7 +81,7 @@ export const Event: React.FC<Props> = ({
           <div className={styles.description}>{description}</div>
         </div>
         <div className={styles['learn-more']}>
-          Дізнатись більше <SmallArrow />
+          {COMMON_STRINGS.learnMore} <SmallArrow />
         </div>
       </div>
     </div>

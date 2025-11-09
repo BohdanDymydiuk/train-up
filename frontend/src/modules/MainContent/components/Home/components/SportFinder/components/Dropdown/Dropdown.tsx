@@ -2,6 +2,7 @@ import React, { useContext, useMemo, useState } from 'react';
 import Highlighter from 'react-highlight-words';
 
 import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
+import { SPORT_FINDER_STRINGS } from '@/constants/strings';
 import { MainContext } from '@/context/MainContext';
 import { FinderTexts } from '@/enums/FinderTexts';
 import { DropdownProps } from '@/reusables/DropdownHoc';
@@ -19,7 +20,9 @@ export const Dropdown: React.FC<DropdownProps> = ({
   const { onTablet, onDesktop } = useContext(MainContext);
 
   const [query, setSquery] = useState('');
-  const [placeholder, setPlaceholder] = useState('Пошук');
+  const [placeholder, setPlaceholder] = useState<string>(
+    SPORT_FINDER_STRINGS.searchPlaceholder,
+  );
 
   const onClickInputHandler = () => setPlaceholder('');
 

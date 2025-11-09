@@ -1,11 +1,8 @@
 import React from 'react';
 
-import styles from './ShowHideMore.module.scss';
+import { DIRECTION_STRINGS } from '@/constants/strings';
 
-enum Values {
-  show = 'Переглянути всі',
-  hide = 'Приховати',
-}
+import styles from './ShowHideMore.module.scss';
 
 interface Props {
   areAllShown: boolean;
@@ -21,7 +18,7 @@ export const ShowHideMore: React.FC<Props> = ({
       className={styles.button}
       onClick={() => setAreAllShown(value => !value)}
     >
-      {areAllShown ? Values.hide : Values.show}
+      {areAllShown ? DIRECTION_STRINGS.hide : DIRECTION_STRINGS.showAll}
     </button>
   );
 };

@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router';
 
 import { login } from '@/api/auth';
+import { AUTH_STRINGS } from '@/constants/strings';
 import { useAppDispatch } from '@/store';
 import { actions as jwtTokenActions } from '@/store/features/jwtToken';
 import { InputChangeEvent } from '@/types/Events';
@@ -56,7 +57,7 @@ export const Form: React.FC = () => {
         className={styles.form}
         onSubmit={onSubmitHandler}
       >
-        <h3 className={styles['form-title']}>Вітаємо у TrainUp</h3>
+        <h3 className={styles['form-title']}>{AUTH_STRINGS.welcome}</h3>
         <Inputs {...inputsProps} />
         <Button />
       </form>

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
+import { SPORT_FINDER_STRINGS } from '@/constants/strings';
 import { MainContext } from '@/context/MainContext';
 import { FinderTexts } from '@/enums/FinderTexts';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
@@ -30,8 +31,8 @@ export const SportFinder: React.FC = () => {
   const ermilovTitleProps = {
     title: (
       <>
-        Твій спорт — твій вибір. {onTablet && <br />} Ми поруч на кожному етапі
-        шляху
+        {SPORT_FINDER_STRINGS.title.firstPart} {onTablet && <br />}{' '}
+        {SPORT_FINDER_STRINGS.title.secondPart}
       </>
     ),
     cssProps: { textAlign: 'center' } as React.CSSProperties,
@@ -72,11 +73,11 @@ export const SportFinder: React.FC = () => {
               onChange={event => setIsOnline(event.target.checked)}
             />
             <label className={styles.label} htmlFor='online'>
-              Онлайн
+              {SPORT_FINDER_STRINGS.online}
             </label>
           </div>
         </div>
-        <button className={styles.find}>Шукати</button>
+        <button className={styles.find}>{SPORT_FINDER_STRINGS.search}</button>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import { getSports } from './api/sports';
 import { getTrainers } from './api/trainers';
 import { GET_DATA_ERROR } from './constants/errors';
 import { REGIONAL_CENTERS } from './constants/regionalCenters';
+import { COMMON_STRINGS, ERROR_STRINGS } from './constants/strings';
 import { MainContextProvider } from './context/MainContext/provider/MainContextProvider';
 import { Links } from './enums/Links';
 import { MainContent } from './modules/MainContent';
@@ -100,7 +101,7 @@ export default function App() {
           setLocation(city);
         })
         .catch(() => {
-          throw new Error("Sorry, we can't find you. Check your permissions");
+          throw new Error(ERROR_STRINGS.locationNotFound);
         });
     }
 
@@ -115,7 +116,7 @@ export default function App() {
 
   return (
     <>
-      <h1 style={titleCssProps}>TrainUp</h1>
+      <h1 style={titleCssProps}>{COMMON_STRINGS.appName}</h1>
       <Router>
         <MainContextProvider>
           <Routes>

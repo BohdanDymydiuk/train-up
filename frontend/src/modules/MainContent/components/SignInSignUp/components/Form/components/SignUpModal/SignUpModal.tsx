@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ALT_STRINGS, AUTH_STRINGS } from '@/constants/strings';
+
 import Image from 'next/image';
 
 import styles from './SignUpModal.module.scss';
@@ -16,11 +18,11 @@ export const SignUpModal: React.FC<Props> = ({ setIsModalShown }) => {
       <div className={styles.modal}>
         <Image
           src='/icons/cross.svg'
-          alt='cross'
+          alt={ALT_STRINGS.cross}
           className={styles.cross}
           onClick={onClickHandler}
         />
-        <h3 className={styles.title}>Зареєструйтеся</h3>
+        <h3 className={styles.title}>{AUTH_STRINGS.signUpTitle}</h3>
       </div>
     </div>
   );

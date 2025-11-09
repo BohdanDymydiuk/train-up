@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 
+import { ALT_STRINGS, TRAINER_SIGNUP_STRINGS } from '@/constants/strings';
 import { MainContext } from '@/context/MainContext';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
@@ -13,8 +14,11 @@ export const TrainerSignUp: React.FC = () => {
   const ermilovTitleProps = {
     title: (
       <>
-        Зареєструйся тренером та <br />
-        заробляй разом з <span style={{ color: styles.orange }}>TrainUp</span>
+        {TRAINER_SIGNUP_STRINGS.title.firstPart} <br />
+        {TRAINER_SIGNUP_STRINGS.title.secondPart}{' '}
+        <span style={{ color: styles.orange }}>
+          {TRAINER_SIGNUP_STRINGS.appName}
+        </span>
       </>
     ),
     cssProps: {
@@ -27,7 +31,9 @@ export const TrainerSignUp: React.FC = () => {
       <div className={styles.wrapper}>
         <div className={styles['first-part']}>
           <ErmilovTitle {...ermilovTitleProps} />
-          <button className={styles.button}>Стати тренером</button>
+          <button className={styles.button}>
+            {TRAINER_SIGNUP_STRINGS.button}
+          </button>
         </div>
         {onTablet && (
           <div className={styles['second-part']}>
@@ -37,7 +43,7 @@ export const TrainerSignUp: React.FC = () => {
               sizes='100vw'
               className={styles.avatar}
               src='/images/avatars/avatar_4.png'
-              alt='avatar'
+              alt={ALT_STRINGS.avatar}
             />
           </div>
         )}

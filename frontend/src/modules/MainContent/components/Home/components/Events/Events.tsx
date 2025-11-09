@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 
+import { EVENTS_STRINGS } from '@/constants/strings';
 import { MainContext } from '@/context/MainContext';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
@@ -19,7 +20,7 @@ export const Events: React.FC = () => {
   const [imgIndex, setImgIndex] = useState(0);
 
   const ermilovTitleProps = {
-    title: 'Найближчі події',
+    title: EVENTS_STRINGS.upcoming,
     cssProps: {
       fontSize: onDesktop && '40px',
       whiteSpace: 'nowrap',

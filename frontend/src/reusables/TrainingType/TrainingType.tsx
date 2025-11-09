@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Formats } from '@/enums/Formats';
+
 import styles from './TrainingType.module.scss';
 
 interface Props {
@@ -17,7 +19,7 @@ export const TrainingType: React.FC<Props> = ({ type }) => {
     color: '#F4DCDC',
   };
 
-  const typeStyle = type === 'Онлайн' ? onlineCssProps : offlineCssProps;
+  const typeStyle = type === Formats.online ? onlineCssProps : offlineCssProps;
 
   return (
     <div className={styles.type} style={typeStyle}>
