@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { AUTH_STRINGS } from '@/constants/strings';
-import { InputChangeEvent } from '@/types/Events';
+import { InputChangeEvent } from '@/shared/types/events';
 
 import styles from './Inputs.module.scss';
 

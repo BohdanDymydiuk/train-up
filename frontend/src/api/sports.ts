@@ -1,4 +1,4 @@
-import { Sport } from '@/types/Sport';
+import { Sport } from '@/shared/types/sport';
 
 import { client } from './utils/fetchClient';
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Trainer } from '@/types/Trainer';
+import { Trainer } from '@/shared/types/trainer';
 
 import { client } from './utils/fetchClient';
 

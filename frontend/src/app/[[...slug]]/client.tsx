@@ -18,16 +18,15 @@ import { MainContent } from '@/modules/MainContent';
 import { Home } from '@/modules/MainContent/components/Home';
 import { ProfileMain } from '@/modules/MainContent/components/ProfileMain';
 import { SignInSignUp } from '@/modules/MainContent/components/SignInSignUp';
+import { Event, EventInfoType } from '@/shared/types/events';
+import { Sport } from '@/shared/types/sport';
+import { Trainer } from '@/shared/types/trainer';
 import { store, useAppDispatch, useAppSelector } from '@/store';
 import { actions as eventsActions } from '@/store/features/events';
 import { actions as eventsActions2 } from '@/store/features/events2';
 import { actions as locationActions } from '@/store/features/location';
 import { actions as sportsActions } from '@/store/features/sports';
 import { actions as trainersActions } from '@/store/features/trainers';
-import { Event } from '@/types/Event';
-import { EventInfoType } from '@/types/EventInfoType';
-import { Sport } from '@/types/Sport';
-import { Trainer } from '@/types/Trainer';
 
 function App() {
   const dispatch = useAppDispatch();

@@ -1,4 +1,4 @@
-import { EventInfoType } from '@/types/EventInfoType';
+import { EventInfoType } from '@/shared/types/events';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export const eventsSlice2 = createSlice({

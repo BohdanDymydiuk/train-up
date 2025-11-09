@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router';
 
 import { login } from '@/api/auth';
 import { AUTH_STRINGS } from '@/constants/strings';
+import { Token } from '@/shared/types/auth';
+import { InputChangeEvent } from '@/shared/types/events';
 import { useAppDispatch } from '@/store';
 import { actions as jwtTokenActions } from '@/store/features/jwtToken';
-import { InputChangeEvent } from '@/types/Events';
-import { Token } from '@/types/Token';
 
 import { Button } from './components/Button';
 import { Inputs } from './components/Inputs';

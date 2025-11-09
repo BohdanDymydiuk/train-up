@@ -1,4 +1,4 @@
-import { Sport } from '@/types/Sport';
+import { Sport } from '@/shared/types/sport';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export const sportsSlice = createSlice({

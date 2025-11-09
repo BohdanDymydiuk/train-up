@@ -1,4 +1,4 @@
-import { Trainer } from '@/types/Trainer';
+import { Trainer } from '@/shared/types/trainer';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export const trainersSlice = createSlice({

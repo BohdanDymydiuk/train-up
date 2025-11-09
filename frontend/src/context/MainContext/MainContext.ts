@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { MainContextType } from './types/MainContextType';
+import { MainContextType } from '@/shared/types/context';
 
 export const MainContext = createContext<MainContextType>({
   onTablet: false,

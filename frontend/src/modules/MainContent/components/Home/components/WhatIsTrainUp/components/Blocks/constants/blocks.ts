@@ -1,6 +1,5 @@
 import { ABOUT_STRINGS } from '@/constants/strings';
-
-import { Block } from '../types/Block';
+import { Block } from '@/shared/types/ui';
 
 export const blocks: Block[] = [
   {

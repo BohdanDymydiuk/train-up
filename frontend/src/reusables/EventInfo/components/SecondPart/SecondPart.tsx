@@ -3,7 +3,7 @@ import React from 'react';
 import { ParticipantsSVG } from '@/reusables/svgs/sectionSvgs/events/ParticipantsSVG';
 import { ThunderSVG } from '@/reusables/svgs/sectionSvgs/events/ThunderSVG';
 import { TrainingType } from '@/reusables/TrainingType';
-import { EventInfoType } from '@/types/EventInfoType';
+import { EventInfoType } from '@/shared/types/events';
 
 import styles from './SecondPart.module.scss';
 

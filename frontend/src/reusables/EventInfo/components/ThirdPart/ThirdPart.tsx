@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import { EventInfoType } from '@/types/EventInfoType';
+import { EventInfoType } from '@/shared/types/events';
 
 import styles from './ThirdPart.module.scss';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { EventInfoType } from '@/types/EventInfoType';
+import { EventInfoType } from '@/shared/types/events';
 
 import { FourthPart } from './components/FourthPart';
 import { SecondPart } from './components/SecondPart';

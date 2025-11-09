@@ -1,4 +1,4 @@
-import { Event } from '@/types/Event';
+import { Event } from '@/shared/types/events';
 
 import { client } from './utils/fetchClient';
 

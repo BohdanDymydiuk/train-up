@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { TrainingType } from '@/reusables/TrainingType';
-import { Trainer } from '@/types/Trainer';
+import { Trainer } from '@/shared/types/trainer';
 
 import styles from './SecondPart.module.scss';
 
