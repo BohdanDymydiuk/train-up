@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { EVENTS_GAP } from '@/constants/common';
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { Event } from '@/reusables/Event';
 import { useAppSelector } from '@/store';
 

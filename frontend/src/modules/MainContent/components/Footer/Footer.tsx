@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { FOOTER_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { NavItems } from '@/enums/NavItems';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 import { FacebookSVG } from '@/reusables/svgs/socials/FacebookSVG';

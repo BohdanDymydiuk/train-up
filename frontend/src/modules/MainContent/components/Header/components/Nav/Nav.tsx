@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
 
 import { NavButton } from './components/NavButton';

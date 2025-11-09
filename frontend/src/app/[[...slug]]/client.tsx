@@ -12,7 +12,7 @@ import '@/App.scss';
 import { GET_DATA_ERROR } from '@/constants/errors';
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
 import { COMMON_STRINGS, ERROR_STRINGS } from '@/constants/strings';
-import { MainContextProvider } from '@/context/MainContext/provider/MainContextProvider';
+import { MainContextProvider } from '@/providers/MainContext';
 import { Links } from '@/enums/Links';
 import { MainContent } from '@/modules/MainContent';
 import { Home } from '@/modules/MainContent/components/Home';

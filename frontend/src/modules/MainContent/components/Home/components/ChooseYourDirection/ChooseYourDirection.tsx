@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import { DIRECTION_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import { Directions } from './components/Directions';

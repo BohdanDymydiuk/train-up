@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Outlet } from 'react-router';
 
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { useAppSelector } from '@/store';
 
 import { Footer } from './components/Footer';

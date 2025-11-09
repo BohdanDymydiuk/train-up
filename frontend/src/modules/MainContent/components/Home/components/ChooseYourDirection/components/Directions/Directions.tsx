@@ -1,6 +1,6 @@
 import React, { useContext, useMemo } from 'react';
 
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { Format } from '@/reusables/Format';
 import { useAppSelector } from '@/store';
 

@@ -3,7 +3,7 @@ import Highlighter from 'react-highlight-words';
 
 import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
 import { SPORT_FINDER_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { FinderTexts } from '@/enums/FinderTexts';
 import { DropdownProps } from '@/reusables/DropdownHoc';
 import { SearchSVG } from '@/reusables/svgs/SearchSVG';

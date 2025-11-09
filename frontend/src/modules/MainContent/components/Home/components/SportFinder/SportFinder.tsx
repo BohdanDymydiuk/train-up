@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
 import { SPORT_FINDER_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { FinderTexts } from '@/enums/FinderTexts';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';

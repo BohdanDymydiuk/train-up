@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { ALT_STRINGS, TRAINER_SIGNUP_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import Image from 'next/image';

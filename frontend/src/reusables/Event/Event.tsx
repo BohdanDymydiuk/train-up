@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { ALT_STRINGS, COMMON_STRINGS } from '@/constants/strings';
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { Format } from '@/reusables/Format';
 import { SmallArrow } from '@/reusables/svgs/arrows/SmallArrow';
 import { Event as EventType } from '@/shared/types/events';

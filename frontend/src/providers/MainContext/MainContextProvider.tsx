@@ -1,9 +1,15 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { createContext, useEffect, useMemo, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { NavItems } from '@/enums/NavItems';
+import { MainContextType } from '@/shared/types/context';
 
-import { MainContext } from '../MainContext';
+const Context = createContext<MainContextType>({
+  onTablet: false,
+  onSmallDesktop: false,
+  onDesktop: false,
+  eventWidth: '',
+});
 
 interface Props {
   children: React.ReactNode;
@@ -42,9 +48,5 @@ export const MainContextProvider: React.FC<Props> = ({ children }) => {
     [onTablet, onSmallDesktop, onDesktop, currentSection],
   );
 
-  return (
-    <MainContext.Provider value={providerValue}>
-      {children}
-    </MainContext.Provider>
-  );
+  return <Context.Provider value={providerValue}>{children}</Context.Provider>;
 };

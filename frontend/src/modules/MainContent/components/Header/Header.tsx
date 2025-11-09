@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useLocation } from 'react-router';
 
-import { MainContext } from '@/context/MainContext';
+import { MainContext } from '@/providers/MainContext';
 import { Links } from '@/enums/Links';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
 import { BellSVG } from '@/reusables/svgs/headerSvgs/BellSVG';
