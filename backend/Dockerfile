@@ -1,4 +1,4 @@
-FROM openjdk:19-jdk-slim
+FROM eclipse-temurin:21-jdk-jammy
 LABEL authors="Bohdan_Sh"
 
 WORKDIR /app
