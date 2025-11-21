@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Formats } from '@/enums/Formats';
+import { Formats } from '@/shared/enums';
 
 import clsx from 'clsx';
 

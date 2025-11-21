@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { NavItems } from '@/enums/NavItems';
 import { EventInfo } from '@/reusables/EventInfo';
 import { LookMore } from '@/reusables/LookMore';
 import { ProfileTitle } from '@/reusables/ProfileTitle';
+import { NavItems } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
 import styles from './Events.module.scss';

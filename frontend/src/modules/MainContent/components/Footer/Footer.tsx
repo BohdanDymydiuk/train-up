@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 
 import { FOOTER_STRINGS } from '@/constants/strings';
-import { NavItems } from '@/enums/NavItems';
 import { Context } from '@/providers/context';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 import { FacebookSVG } from '@/reusables/svgs/socials/FacebookSVG';
 import { InstagramSVG } from '@/reusables/svgs/socials/InstagramSVG';
 import { ThreadsSVG } from '@/reusables/svgs/socials/ThreadsSVG';
+import { NavItems } from '@/shared/enums';
 
 import styles from './Footer.module.scss';
 

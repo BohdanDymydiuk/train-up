@@ -1,8 +1,3 @@
-/**
- * Constants for all text strings in the application
- * Used for centralized text management
- */
-
 // Common strings
 export const COMMON_STRINGS = {
   appName: 'TrainUp',

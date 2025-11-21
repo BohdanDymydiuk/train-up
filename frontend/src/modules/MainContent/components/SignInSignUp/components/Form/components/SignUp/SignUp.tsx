@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 
 import { AUTH_STRINGS } from '@/constants/strings';
-import { Links } from '@/enums/Links';
+import { Links } from '@/shared/enums';
 
 import styles from './SignUp.module.scss';
 

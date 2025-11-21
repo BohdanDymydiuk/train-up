@@ -2,10 +2,10 @@ import React, { useContext, useState } from 'react';
 
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
 import { SPORT_FINDER_STRINGS } from '@/constants/strings';
-import { FinderTexts } from '@/enums/FinderTexts';
 import { Context } from '@/providers/context';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
+import { FinderTexts } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
 import { Button } from './components/Button';

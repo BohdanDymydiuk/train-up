@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router';
 
 import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
 import { AUTH_STRINGS } from '@/constants/strings';
-import { Links } from '@/enums/Links';
 import { DropdownProps } from '@/reusables/DropdownHoc';
+import { Links } from '@/shared/enums';
 
 import styles from './SignInDropdown.module.scss';
 

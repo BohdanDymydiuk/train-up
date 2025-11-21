@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { NavItems } from '@/enums/NavItems';
 import { LookMore } from '@/reusables/LookMore';
 import { ProfileTitle } from '@/reusables/ProfileTitle';
 import { TrainerInfo } from '@/reusables/TrainerInfo';
+import { NavItems } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
 import styles from './Trainers.module.scss';

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { useLocation } from 'react-router';
 
-import { Links } from '@/enums/Links';
 import { Context } from '@/providers/context';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
 import { BellSVG } from '@/reusables/svgs/headerSvgs/BellSVG';
 import { SearchSVG } from '@/reusables/svgs/headerSvgs/SearchSVG';
 import { LogoSVG } from '@/reusables/svgs/LogoSVG';
+import { Links } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
 import { Burger } from './components/Burger';

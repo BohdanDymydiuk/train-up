@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useMemo, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import { NavItems } from '@/enums/NavItems';
+import { NavItems } from '@/shared/enums';
 import { MainContextType } from '@/shared/types/context';
 
 const Context = createContext<MainContextType>({

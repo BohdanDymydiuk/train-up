@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router';
 
-import { Links } from '@/enums/Links';
-import { NavItems } from '@/enums/NavItems';
 import { DropdownProps } from '@/reusables/DropdownHoc';
+import { Links, NavItems } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
 import clsx from 'clsx';
