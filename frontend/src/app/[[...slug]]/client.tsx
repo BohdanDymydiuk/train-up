@@ -8,7 +8,6 @@ import { getEvents } from '@/api/events';
 import { getEvents as getEvents2 } from '@/api/events2';
 import { getSports } from '@/api/sports';
 import { getTrainers } from '@/api/trainers';
-import '@/App.scss';
 import { GET_DATA_ERROR } from '@/constants/errors';
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
 import { COMMON_STRINGS, ERROR_STRINGS } from '@/constants/strings';
