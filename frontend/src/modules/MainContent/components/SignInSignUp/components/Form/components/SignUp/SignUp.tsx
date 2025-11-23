@@ -1,15 +1,18 @@
+'use client';
+
 import React from 'react';
-import { useNavigate } from 'react-router';
 
 import { AUTH_STRINGS } from '@/constants/strings';
 import { Links } from '@/shared/enums';
 
+import { useRouter } from 'next/navigation';
+
 import styles from './SignUp.module.scss';
 
 export const SignUp: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
-  const signupHandler = () => navigate(Links.signUp);
+  const signupHandler = () => router.push(Links.signUp);
 
   return (
     <div className={styles.signup}>

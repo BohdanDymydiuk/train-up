@@ -1,8 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { Provider } from 'react-redux';
-import { Route, BrowserRouter as Router, Routes } from 'react-router';
+import { useEffect } from 'react';
 
 import { getEvents } from '@/api/events';
 import { getEvents as getEvents2 } from '@/api/events2';
@@ -10,24 +8,18 @@ import { getSports } from '@/api/sports';
 import { getTrainers } from '@/api/trainers';
 import { GET_DATA_ERROR } from '@/constants/errors';
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
-import { COMMON_STRINGS, ERROR_STRINGS } from '@/constants/strings';
-import { MainContent } from '@/modules/MainContent';
-import { Home } from '@/modules/MainContent/components/Home';
-import { ProfileMain } from '@/modules/MainContent/components/ProfileMain';
-import { SignInSignUp } from '@/modules/MainContent/components/SignInSignUp';
-import { ContextProvider } from '@/providers/context';
-import { Links } from '@/shared/enums';
+import { ERROR_STRINGS } from '@/constants/strings';
 import { Event, EventInfoType } from '@/shared/types/events';
 import { Sport } from '@/shared/types/sport';
 import { Trainer } from '@/shared/types/trainer';
-import { store, useAppDispatch, useAppSelector } from '@/store';
+import { useAppDispatch, useAppSelector } from '@/store';
 import { actions as eventsActions } from '@/store/features/events';
 import { actions as eventsActions2 } from '@/store/features/events2';
 import { actions as locationActions } from '@/store/features/location';
 import { actions as sportsActions } from '@/store/features/sports';
 import { actions as trainersActions } from '@/store/features/trainers';
 
-function App() {
+export function AppClient() {
   const dispatch = useAppDispatch();
   const jwtToken = useAppSelector(state => state.jwtToken);
 
@@ -109,32 +101,5 @@ function App() {
   }, []);
   // #endregion
 
-  const titleCssProps: React.CSSProperties = {
-    position: 'absolute',
-    visibility: 'hidden',
-  };
-
-  return (
-    <>
-      <h1 style={titleCssProps}>{COMMON_STRINGS.appName}</h1>
-      <Router>
-        <ContextProvider>
-          <Routes>
-            <Route path='/' element={<MainContent />}>
-              <Route index element={jwtToken ? <ProfileMain /> : <Home />} />
-              <Route path={Links.signIn} element={<SignInSignUp />} />
-            </Route>
-          </Routes>
-        </ContextProvider>
-      </Router>
-    </>
-  );
-}
-
-export function ClientOnly() {
-  return (
-    <Provider store={store}>
-      <App />
-    </Provider>
-  );
+  return null;
 }

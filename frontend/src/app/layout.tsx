@@ -2,6 +2,8 @@ import '@/globals.scss';
 
 import type { Metadata } from 'next';
 
+import { Providers } from './providers';
+
 export const metadata: Metadata = {
   title: 'TrainUp',
   description: 'Your personal training companion',
@@ -22,8 +24,10 @@ export default function RootLayout({
           crossOrigin=''
         />
       </head>
-      <body suppressHydrationWarning={true}>
-        <div id='root'>{children}</div>
+      <body>
+        <div id='root'>
+          <Providers>{children}</Providers>
+        </div>
       </body>
     </html>
   );

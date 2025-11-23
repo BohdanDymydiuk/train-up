@@ -22,8 +22,7 @@
     "react-dom": "^19.0.0",
     "react-highlight-words": "^0.21.0",
     "react-redux": "^9.2.0",
-    "react-responsive": "^10.0.1",
-    "react-router": "^7.5.3"
+    "react-responsive": "^10.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",

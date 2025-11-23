@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Outlet } from 'react-router';
 
 import { Context } from '@/providers/context';
 import { useAppSelector } from '@/store';
@@ -11,7 +10,11 @@ import { Sidebar } from './components/Sidebar';
 
 import styles from './MainContent.module.scss';
 
-export const MainContent: React.FC = () => {
+interface Props {
+  children: React.ReactNode;
+}
+
+export const MainContent: React.FC<Props> = ({ children }) => {
   const jwtToken = useAppSelector(state => state.jwtToken);
 
   const { onDesktop } = React.useContext(Context);
@@ -35,12 +38,8 @@ export const MainContent: React.FC = () => {
       <div style={wrapperCssProps}>
         {jwtToken && onDesktop && <Sidebar />}
         <main className={styles.main}>
-          <Outlet />
-          {jwtToken && (
-            <>
-              <MiniCalendar />
-            </>
-          )}
+          {children}
+          {jwtToken && <MiniCalendar />}
         </main>
       </div>
       <Footer />

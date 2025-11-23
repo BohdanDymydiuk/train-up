@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { useLocation } from 'react-router';
 
 import { Context } from '@/providers/context';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
@@ -8,6 +7,8 @@ import { SearchSVG } from '@/reusables/svgs/headerSvgs/SearchSVG';
 import { LogoSVG } from '@/reusables/svgs/LogoSVG';
 import { Links } from '@/shared/enums';
 import { useAppSelector } from '@/store';
+
+import { usePathname } from 'next/navigation';
 
 import { Burger } from './components/Burger';
 import { Lang } from './components/Lang';
@@ -22,7 +23,7 @@ export const Header: React.FC = () => {
   const jwtToken = useAppSelector(state => state.jwtToken);
 
   const { onTablet, onDesktop } = useContext(Context);
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   const SignIn = DropdownHoc(SignInButton, SignInDropdown);
 

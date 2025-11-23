@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router';
 
 import { DropdownProps } from '@/reusables/DropdownHoc';
 import { Links, NavItems } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
 import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
 
 import dpStyles from '../NavDropdown/NavDropdown.module.scss';
 import styles from './NavElems.module.scss';
@@ -19,7 +19,8 @@ export const NavElems: React.FC<Partial<DropdownProps>> = ({
   isDpShown,
   closeDpHandler,
 }) => {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
+
   const jwtToken = useAppSelector(state => state.jwtToken);
 
   const [navItems, setNavItems] = React.useState<typeof headerNav.items>([]);

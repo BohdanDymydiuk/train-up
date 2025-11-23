@@ -1,10 +1,13 @@
+'use client';
+
 import React from 'react';
-import { useNavigate } from 'react-router';
 
 import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
 import { AUTH_STRINGS } from '@/constants/strings';
 import { DropdownProps } from '@/reusables/DropdownHoc';
 import { Links } from '@/shared/enums';
+
+import { useRouter } from 'next/navigation';
 
 import styles from './SignInDropdown.module.scss';
 
@@ -18,12 +21,11 @@ export const SignInDropdown: React.FC<DropdownProps> = ({
   isDpShown,
   closeDpHandler,
 }) => {
-  const navigate = useNavigate();
-
+  const router = useRouter();
   const dpStyle = isDpShown ? APPEARING_DP_CSS_PROPS : {};
 
   const signInHandler = () => {
-    navigate(Links.signIn);
+    router.push(Links.signIn);
 
     if (closeDpHandler) {
       closeDpHandler();

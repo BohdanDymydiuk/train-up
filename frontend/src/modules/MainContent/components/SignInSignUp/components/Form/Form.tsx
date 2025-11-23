@@ -1,5 +1,6 @@
+'use client';
+
 import React, { FormEvent, useState } from 'react';
-import { useNavigate } from 'react-router';
 
 import { login } from '@/api/auth';
 import { AUTH_STRINGS } from '@/constants/strings';
@@ -7,6 +8,8 @@ import { Token } from '@/shared/types/auth';
 import { InputChangeEvent } from '@/shared/types/events';
 import { useAppDispatch } from '@/store';
 import { actions as jwtTokenActions } from '@/store/features/jwtToken';
+
+import { useRouter } from 'next/navigation';
 
 import { Button } from './components/Button';
 import { Inputs } from './components/Inputs';
@@ -16,7 +19,7 @@ import styles from './Form.module.scss';
 
 export const Form: React.FC = () => {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,7 +35,7 @@ export const Form: React.FC = () => {
 
   const onSubmitHandler = async (event: FormEvent) => {
     event.preventDefault();
-    navigate('/');
+    router.push('/');
 
     const { token }: Token = await login({ email, password });
 
