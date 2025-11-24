@@ -52,7 +52,7 @@ export const EventsItems: React.FC<ImgIndexProps> = ({
           translateX: `calc(((${eventWidth} + ${EVENTS_GAP}) * ${imgIndex}) * -1)`,
         }}
       >
-        {events.map(event => {
+        {[].map(event => {
           const {
             id,
             name,

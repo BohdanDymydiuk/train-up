@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.trainup.controller.ReviewControllerTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.529 s -- in com.example.trainup.controller.ReviewControllerTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.717 s -- in com.example.trainup.controller.ReviewControllerTest

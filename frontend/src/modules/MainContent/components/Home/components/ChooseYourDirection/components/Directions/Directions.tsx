@@ -47,7 +47,15 @@ export const Directions: React.FC<Props> = ({ areAllShown }) => {
                 {onlineCondition && <Format isOnline={true} />}
               </div>
               <div className={styles['img-wrapper']}>
-                {sportIconUrl && <Image alt='' src={sportIconUrl} />}
+                {sportIconUrl && (
+                  <Image
+                    width={0}
+                    height={0}
+                    sizes='100vw'
+                    alt=''
+                    src={sportIconUrl}
+                  />
+                )}
               </div>
             </div>
 
