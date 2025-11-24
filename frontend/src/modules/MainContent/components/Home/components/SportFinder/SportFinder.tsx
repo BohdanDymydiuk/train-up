@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
 import { SPORT_FINDER_STRINGS } from '@/constants/strings';
@@ -23,9 +23,19 @@ export const SportFinder: React.FC = () => {
 
   const sportsNames = sports.map(sport => sport.sportName);
 
+  const [isMounted, setIsMounted] = useState(false);
+
   const [isOnline, setIsOnline] = useState(false);
   const [selectedSport, setSelectedSport] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   // #region props
   const ermilovTitleProps = {

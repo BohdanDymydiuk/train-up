@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { ALT_STRINGS, TRAINER_SIGNUP_STRINGS } from '@/constants/strings';
 import { Context } from '@/providers/context';
@@ -10,6 +10,16 @@ import styles from './TrainerSignUp.module.scss';
 
 export const TrainerSignUp: React.FC = () => {
   const { onTablet, onDesktop } = useContext(Context);
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   const ermilovTitleProps = {
     title: (

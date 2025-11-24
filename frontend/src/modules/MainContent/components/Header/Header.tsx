@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { Context } from '@/providers/context';
 import { DropdownHoc } from '@/reusables/DropdownHoc';
@@ -24,6 +24,16 @@ export const Header: React.FC = () => {
 
   const { onTablet, onDesktop } = useContext(Context);
   const pathname = usePathname();
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   const SignIn = DropdownHoc(SignInButton, SignInDropdown);
 
