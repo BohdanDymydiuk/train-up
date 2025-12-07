@@ -48,13 +48,7 @@ export const Directions: React.FC<Props> = ({ areAllShown }) => {
               </div>
               <div className={styles['img-wrapper']}>
                 {sportIconUrl && (
-                  <Image
-                    width={0}
-                    height={0}
-                    sizes='100vw'
-                    alt=''
-                    src={sportIconUrl}
-                  />
+                  <Image width={56} height={56} alt='' src={sportIconUrl} />
                 )}
               </div>
             </div>

@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Token } from '@/shared/types/auth';
 
-import { client } from './utils/fetchClient';
+import { client } from './utils/fetchOnClient';
 
-export const login = (data: any) => {
-  return client.post<Token>('/auth/login', data);
-};
+export const login = (data: unknown) => client.post<Token>('/auth/login', data);

@@ -5,7 +5,6 @@ import { Context } from '@/providers/context';
 import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import { Arrows } from './components/Arrows';
-import { EventsItems } from './components/EventsItems';
 
 import styles from './Events.module.scss';
 
@@ -36,7 +35,7 @@ export const Events: React.FC = () => {
         <Arrows {...eventsProps} />
       </header>
 
-      <EventsItems {...eventsProps} />
+      {/* <EventsItems {...eventsProps} /> */}
     </section>
   );
 };

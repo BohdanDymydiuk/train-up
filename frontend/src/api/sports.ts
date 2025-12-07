@@ -1,7 +1,5 @@
 import { Sport } from '@/shared/types/sport';
 
-import { client } from './utils/fetchClient';
+import { server } from './utils/fetchOnServer';
 
-export const getSports = () => {
-  return client.get<Sport[]>(`/sport`);
-};
+export const getSports = () => server.get<Sport[]>(`/sport`);

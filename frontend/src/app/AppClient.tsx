@@ -2,13 +2,13 @@
 
 import { useEffect } from 'react';
 
-import { getEvents } from '@/api/events';
 import { getEvents as getEvents2 } from '@/api/events2';
-import { getSports } from '@/api/sports';
-import { getTrainers } from '@/api/trainers';
 import { GET_DATA_ERROR } from '@/constants/errors';
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
 import { ERROR_STRINGS } from '@/constants/strings';
+import { MainContent } from '@/modules/MainContent';
+import { Home } from '@/modules/MainContent/components/Home';
+import { ProfileMain } from '@/modules/MainContent/components/ProfileMain';
 import { Event, EventInfoType } from '@/shared/types/events';
 import { Sport } from '@/shared/types/sport';
 import { Trainer } from '@/shared/types/trainer';
@@ -19,7 +19,13 @@ import { actions as locationActions } from '@/store/features/location';
 import { actions as sportsActions } from '@/store/features/sports';
 import { actions as trainersActions } from '@/store/features/trainers';
 
-export function AppClient() {
+interface Props {
+  sports: Sport[];
+  events: Event[];
+  trainers: Trainer[];
+}
+
+export const AppClient: React.FC<Props> = ({ sports, events, trainers }) => {
   const dispatch = useAppDispatch();
   const jwtToken = useAppSelector(state => state.jwtToken);
 
@@ -62,11 +68,10 @@ export function AppClient() {
   };
 
   useEffect(() => {
-    const getDataFns = [getSports, getEvents, getTrainers];
-    const setDataFns = [setSports, setEvents, setTrainers];
-
-    setDataHandler(getDataFns, setDataFns);
-  }, []);
+    setSports(sports);
+    setEvents(events);
+    setTrainers(trainers);
+  }, [sports, events, trainers]);
 
   useEffect(() => {
     if (jwtToken) {
@@ -101,5 +106,5 @@ export function AppClient() {
   }, []);
   // #endregion
 
-  return null;
-}
+  return <MainContent>{jwtToken ? <ProfileMain /> : <Home />}</MainContent>;
+};

@@ -1,20 +1,19 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { EventInfoType } from '@/shared/types/events';
+import { EventInfoType as Event } from '@/shared/types/events';
 
-import { client } from './utils/fetchClient';
+import { client } from './utils/fetchOnClient';
 
 export const getEvents = () => {
-  return client.get<EventInfoType[]>(`/event`);
+  return client.get<Event[]>(`/event`);
 };
 
-export const postEvent = (data: any) => {
-  return client.post<EventInfoType>(`/event`, data);
+export const postEvent = (data: unknown) => {
+  return client.post<Event>(`/event`, data);
+};
+
+export const patchEvent = (id: number, data: unknown) => {
+  return client.patch<Event>(`/event/${id}`, data);
 };
 
 export const deleteEvent = (id: number) => {
   return client.delete(`/event/${id}`);
-};
-
-export const patchEvent = (id: number, data: any) => {
-  return client.patch<EventInfoType>(`/event/${id}`, data);
 };

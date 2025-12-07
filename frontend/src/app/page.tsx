@@ -1,12 +1,20 @@
-'use client';
+import { getEvents } from '@/api/events';
+import { getSports } from '@/api/sports';
+import { getTrainers } from '@/api/trainers';
+import { GET_DATA_ERROR } from '@/constants/errors';
 
-import { MainContent } from '@/modules/MainContent';
-import { Home } from '@/modules/MainContent/components/Home';
-import { ProfileMain } from '@/modules/MainContent/components/ProfileMain';
-import { useAppSelector } from '@/store';
+import { AppClient } from './AppClient';
 
-export default function HomePage() {
-  const jwtToken = useAppSelector(state => state.jwtToken);
-
-  return <MainContent>{jwtToken ? <ProfileMain /> : <Home />}</MainContent>;
+export default async function HomePage() {
+  try {
+    return (
+      <AppClient
+        sports={await getSports()}
+        events={await getEvents()}
+        trainers={await getTrainers()}
+      />
+    );
+  } catch {
+    throw new Error(GET_DATA_ERROR);
+  }
 }

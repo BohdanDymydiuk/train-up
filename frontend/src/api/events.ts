@@ -1,7 +1,5 @@
 import { Event } from '@/shared/types/events';
 
-import { client } from './utils/fetchClient';
+import { server } from './utils/fetchOnServer';
 
-export const getEvents = () => {
-  return client.get<Event[]>(`/event`);
-};
+export const getEvents = () => server.get<Event[]>(`/event`);
