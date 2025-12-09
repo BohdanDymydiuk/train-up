@@ -20,22 +20,26 @@ import { actions as sportsActions } from '@/store/features/sports';
 import { actions as trainersActions } from '@/store/features/trainers';
 
 interface Props {
-  sports: Sport[];
   events: Event[];
+  sports: Sport[];
   trainers: Trainer[];
 }
 
-export const AppClient: React.FC<Props> = ({ sports, events, trainers }) => {
+export const AppClient: React.FC<Props> = ({ events, sports, trainers }) => {
   const dispatch = useAppDispatch();
   const jwtToken = useAppSelector(state => state.jwtToken);
 
   // #region setValue
-  const setTrainers = (trainers: Trainer[]) => {
-    dispatch(trainersActions.setTrainers(trainers));
+  const setSports = (sports: Sport[]) => {
+    dispatch(sportsActions.setSports(sports));
   };
 
   const setEvents = (events: Event[]) => {
     dispatch(eventsActions.setEvents(events));
+  };
+
+  const setTrainers = (trainers: Trainer[]) => {
+    dispatch(trainersActions.setTrainers(trainers));
   };
 
   const setEvents2 = (events: EventInfoType[]) => {
@@ -44,10 +48,6 @@ export const AppClient: React.FC<Props> = ({ sports, events, trainers }) => {
 
   const setLocation = (location: string) => {
     dispatch(locationActions.setLocation(location));
-  };
-
-  const setSports = (sports: Sport[]) => {
-    dispatch(sportsActions.setSports(sports));
   };
   // #endregion
 
