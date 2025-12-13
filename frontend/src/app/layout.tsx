@@ -1,4 +1,4 @@
-import '@/globals.scss';
+import '@/globals.css';
 
 import type { Metadata } from 'next';
 

@@ -1,13 +1,16 @@
+@import 'tailwindcss';
+
 :root {
+  --white-2: #f5f6fa;
   --dropdown-width: 232px;
 
-  @include on-tablet {
+  @media (width >= 768px) {
     --dropdown-width: 265px;
   }
 }
 
 body {
-  background-color: $white_2;
+  background-color: var(--white-2);
 }
 
 body,
