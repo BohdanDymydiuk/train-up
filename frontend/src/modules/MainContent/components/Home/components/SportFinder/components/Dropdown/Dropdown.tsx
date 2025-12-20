@@ -1,16 +1,16 @@
-import React, { useContext, useMemo, useState } from 'react';
+import { CSSProperties, FC, useContext, useMemo, useState } from 'react';
 import Highlighter from 'react-highlight-words';
 
+import { SearchSVG } from '@/components/svgs/SearchSVG';
 import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
 import { SPORT_FINDER_STRINGS } from '@/constants/strings';
+import { DropdownProps } from '@/hocs/DropdownHoc';
 import { Context } from '@/providers/context';
-import { DropdownProps } from '@/reusables/DropdownHoc';
-import { SearchSVG } from '@/reusables/svgs/SearchSVG';
 import { FinderTexts } from '@/shared/enums';
 
 import styles from './Dropdown.module.scss';
 
-export const Dropdown: React.FC<DropdownProps> = ({
+export const Dropdown: FC<DropdownProps> = ({
   isDpShown,
   closeDpHandler,
   items,
@@ -32,11 +32,11 @@ export const Dropdown: React.FC<DropdownProps> = ({
     );
   }, [query]);
 
-  const dpCssProps: React.CSSProperties = useMemo(() => {
+  const dpCssProps: CSSProperties = useMemo(() => {
     const cityCondition = text === FinderTexts.city;
     const x2Condition = !onTablet || (onTablet && cityCondition);
 
-    const result: React.CSSProperties = {
+    const result: CSSProperties = {
       width: `calc(100% + ${styles.finderPadding}${x2Condition ? ' * 2' : ''})`,
       left: `calc(${styles.finderPadding} * -1)`,
     };

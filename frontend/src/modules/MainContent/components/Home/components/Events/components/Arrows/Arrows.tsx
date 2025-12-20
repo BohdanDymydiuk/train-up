@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 
-import { ArrowLeft } from '@/reusables/svgs/arrows/ArrowLeft';
-import { ArrowRight } from '@/reusables/svgs/arrows/ArrowRight';
+import { ArrowLeft } from '@/components/svgs/arrows/ArrowLeft';
+import { ArrowRight } from '@/components/svgs/arrows/ArrowRight';
 import { useAppSelector } from '@/store';
 
 import { ImgIndexProps } from '../../Events';
@@ -16,7 +16,7 @@ const arrows = {
 const keys = Object.keys(arrows);
 const values = Object.values(arrows);
 
-export const Arrows: React.FC<ImgIndexProps> = ({ imgIndex, setImgIndex }) => {
+export const Arrows: FC<ImgIndexProps> = ({ imgIndex, setImgIndex }) => {
   const events = useAppSelector(state => state.events);
 
   const buttonOnClickHandlers = [

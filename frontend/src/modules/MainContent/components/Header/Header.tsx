@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { CSSProperties, FC, useContext, useEffect, useState } from 'react';
 
+import { BellSVG } from '@/components/svgs/headerSvgs/BellSVG';
+import { LogoSVG } from '@/components/svgs/LogoSVG';
+import { SearchSVG } from '@/components/svgs/SearchSVG';
+import { DropdownHoc } from '@/hocs/DropdownHoc';
 import { Context } from '@/providers/context';
-import { DropdownHoc } from '@/reusables/DropdownHoc';
-import { BellSVG } from '@/reusables/svgs/headerSvgs/BellSVG';
-import { SearchSVG } from '@/reusables/svgs/headerSvgs/SearchSVG';
-import { LogoSVG } from '@/reusables/svgs/LogoSVG';
 import { Links } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
@@ -19,7 +19,7 @@ import { SignInDropdown } from './components/SignInDropdown';
 
 import styles from './Header.module.scss';
 
-export const Header: React.FC = () => {
+export const Header: FC = () => {
   const jwtToken = useAppSelector(state => state.jwtToken);
 
   const { onTablet, onDesktop } = useContext(Context);
@@ -38,9 +38,9 @@ export const Header: React.FC = () => {
   const SignIn = DropdownHoc(SignInButton, SignInDropdown);
 
   // #regions css props
-  const firstPartCssProps: React.CSSProperties = { gap: '48px' };
+  const firstPartCssProps: CSSProperties = { gap: '48px' };
 
-  const secondPartCssProps: React.CSSProperties = { gap: '16px' };
+  const secondPartCssProps: CSSProperties = { gap: '16px' };
   // #endregion
 
   // #regions jsx

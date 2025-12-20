@@ -77,7 +77,6 @@ export const AppClient: React.FC<Props> = ({ events, sports, trainers }) => {
     if (jwtToken) {
       const getDataFns = [getEvents2];
       const setDataFns = [setEvents2];
-
       setDataHandler(getDataFns, setDataFns);
     }
   }, [jwtToken]);
@@ -86,7 +85,6 @@ export const AppClient: React.FC<Props> = ({ events, sports, trainers }) => {
     function showLocation(position: GeolocationPosition) {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
-
       const url = `https://us1.locationiq.com/v1/reverse?key=pk.7457ca726ad3e6d451be7db68b10d1c2&lat=${latitude}&lon=${longitude}&format=json&accept-language=ua`;
 
       fetch(url)
@@ -94,7 +92,6 @@ export const AppClient: React.FC<Props> = ({ events, sports, trainers }) => {
         .then(data => {
           const state: string = data.address.state;
           const city: string = REGIONAL_CENTERS[state];
-
           setLocation(city);
         })
         .catch(() => {

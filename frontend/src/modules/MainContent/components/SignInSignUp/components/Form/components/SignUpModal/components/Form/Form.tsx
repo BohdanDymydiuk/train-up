@@ -1,8 +1,8 @@
-import React from 'react';
+import { FC } from 'react';
 
 import styles from './Form.module.scss';
 
-export const Form: React.FC = () => {
+export const Form: FC = () => {
   return (
     <form className={styles.form}>
       <input type='text' name='' id='' />

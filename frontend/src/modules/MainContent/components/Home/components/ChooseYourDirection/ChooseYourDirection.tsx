@@ -1,15 +1,15 @@
-import React, { useContext, useState } from 'react';
+import { CSSProperties, FC, useContext, useState } from 'react';
 
+import { ErmilovTitle } from '@/components/ErmilovTitle';
 import { DIRECTION_STRINGS } from '@/constants/strings';
 import { Context } from '@/providers/context';
-import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import { Directions } from './components/Directions';
 import { ShowHideMore } from './components/ShowHideMore';
 
 import styles from './ChooseYourDirection.module.scss';
 
-export const ChooseYourDirection: React.FC = () => {
+export const ChooseYourDirection: FC = () => {
   const { onDesktop } = useContext(Context);
 
   const [areAllShown, setAreAllShown] = useState(false);
@@ -19,7 +19,7 @@ export const ChooseYourDirection: React.FC = () => {
     cssProps: {
       textAlign: 'center',
       fontSize: onDesktop && '40px',
-    } as React.CSSProperties,
+    } as CSSProperties,
   };
 
   const showHideProps = { areAllShown, setAreAllShown };

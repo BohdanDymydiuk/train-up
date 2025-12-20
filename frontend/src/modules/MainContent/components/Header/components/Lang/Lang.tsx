@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
-import { ChevronDownSVG } from '@/reusables/svgs/ChevronDownSVG';
+import { ChevronDownSVG } from '@/components/svgs/ChevronDownSVG';
 
 import styles from './Lang.module.scss';
 
-export const Lang: React.FC = () => {
+export const Lang: FC = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {

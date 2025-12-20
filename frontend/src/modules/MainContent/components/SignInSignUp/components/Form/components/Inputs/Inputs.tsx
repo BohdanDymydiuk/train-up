@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { AUTH_STRINGS } from '@/constants/strings';
 import { InputChangeEvent } from '@/shared/types/events';
@@ -12,7 +12,7 @@ interface Props {
   inputPasswordHandler: (event: InputChangeEvent) => void;
 }
 
-export const Inputs: React.FC<Props> = props => {
+export const Inputs: FC<Props> = props => {
   const { email, password, inputTextHandler, inputPasswordHandler } = props;
 
   return (

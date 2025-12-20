@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 
-import { DropdownProps } from '@/reusables/DropdownHoc';
+import { DropdownProps } from '@/hocs/DropdownHoc';
 import { Links, NavItems } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
@@ -15,7 +15,7 @@ const headerNav = {
   links: Object.values(Links),
 };
 
-export const NavElems: React.FC<Partial<DropdownProps>> = ({
+export const NavElems: FC<Partial<DropdownProps>> = ({
   isDpShown,
   closeDpHandler,
 }) => {
@@ -23,8 +23,8 @@ export const NavElems: React.FC<Partial<DropdownProps>> = ({
 
   const jwtToken = useAppSelector(state => state.jwtToken);
 
-  const [navItems, setNavItems] = React.useState<typeof headerNav.items>([]);
-  const [navLinks, setNavLinks] = React.useState<typeof headerNav.links>([]);
+  const [navItems, setNavItems] = useState<typeof headerNav.items>([]);
+  const [navLinks, setNavLinks] = useState<typeof headerNav.links>([]);
 
   useEffect(() => {
     if (jwtToken) {

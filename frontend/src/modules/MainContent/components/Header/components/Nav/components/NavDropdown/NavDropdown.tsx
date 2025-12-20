@@ -1,13 +1,13 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
-import { DropdownProps } from '@/reusables/DropdownHoc';
+import { DropdownProps } from '@/hocs/DropdownHoc';
 
 import { NavElems } from '../NavElems';
 
 import styles from './NavDropdown.module.scss';
 
-export const NavDropdown: React.FC<DropdownProps> = ({
+export const NavDropdown: FC<DropdownProps> = ({
   isDpShown,
   closeDpHandler,
 }) => {

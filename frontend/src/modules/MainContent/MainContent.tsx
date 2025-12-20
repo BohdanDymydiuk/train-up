@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import { CSSProperties, FC, ReactNode, useContext, useEffect } from 'react';
 
 import { Context } from '@/providers/context';
 import { useAppSelector } from '@/store';
@@ -13,19 +13,19 @@ import { Sidebar } from './components/Sidebar';
 import styles from './MainContent.module.scss';
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-export const MainContent: React.FC<Props> = ({ children }) => {
+export const MainContent: FC<Props> = ({ children }) => {
   const jwtToken = useAppSelector(state => state.jwtToken);
 
-  const { onDesktop } = React.useContext(Context);
+  const { onDesktop } = useContext(Context);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
-  const wrapperCssProps: React.CSSProperties = jwtToken
+  const wrapperCssProps: CSSProperties = jwtToken
     ? {
         display: 'flex',
         gap: '14px',

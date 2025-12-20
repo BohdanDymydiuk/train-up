@@ -1,10 +1,10 @@
-import React from 'react';
+import { FC } from 'react';
 
-import { BurgerSVG } from '@/reusables/svgs/headerSvgs/BurgerSVG';
+import { BurgerSVG } from '@/components/svgs/headerSvgs/BurgerSVG';
 
 import styles from './Burger.module.scss';
 
-export const Burger: React.FC = () => {
+export const Burger: FC = () => {
   return (
     <button className={styles.wrapper}>
       <BurgerSVG />

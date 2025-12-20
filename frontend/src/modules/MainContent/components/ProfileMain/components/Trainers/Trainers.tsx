@@ -1,14 +1,14 @@
-import React from 'react';
+import { FC } from 'react';
 
-import { LookMore } from '@/reusables/LookMore';
-import { ProfileTitle } from '@/reusables/ProfileTitle';
-import { TrainerInfo } from '@/reusables/TrainerInfo';
+import { LookMore } from '@/components/LookMore';
+import { ProfileTitle } from '@/components/ProfileTitle';
+import { TrainerInfo } from '@/components/TrainerInfo';
 import { NavItems } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
 import styles from './Trainers.module.scss';
 
-export const Trainers: React.FC = () => {
+export const Trainers: FC = () => {
   const trainers = useAppSelector(state => state.trainers);
 
   return (

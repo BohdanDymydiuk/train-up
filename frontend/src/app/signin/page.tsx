@@ -1,14 +1,14 @@
 'use client';
 
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 import { MainContent } from '@/modules/MainContent';
 import { SignInSignUp } from '@/modules/MainContent/components/SignInSignUp';
 
 export default function SignInPage() {
-  const [isMounted, setIsMounted] = React.useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setIsMounted(true);
   }, []);
 

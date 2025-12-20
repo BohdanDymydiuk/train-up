@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
+import { FC } from 'react';
 
 import { APPEARING_DP_CSS_PROPS } from '@/constants/common';
 import { AUTH_STRINGS } from '@/constants/strings';
-import { DropdownProps } from '@/reusables/DropdownHoc';
+import { DropdownProps } from '@/hocs/DropdownHoc';
 import { Links } from '@/shared/enums';
 
 import { useRouter } from 'next/navigation';
@@ -17,7 +17,7 @@ const SignInOptions = [
   AUTH_STRINGS.signInAsGymAdmin,
 ] as const;
 
-export const SignInDropdown: React.FC<DropdownProps> = ({
+export const SignInDropdown: FC<DropdownProps> = ({
   isDpShown,
   closeDpHandler,
 }) => {

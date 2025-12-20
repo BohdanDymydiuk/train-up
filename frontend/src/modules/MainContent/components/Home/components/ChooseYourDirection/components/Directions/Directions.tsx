@@ -1,7 +1,7 @@
-import React, { useContext, useMemo } from 'react';
+import { FC, useContext, useMemo } from 'react';
 
+import { Format } from '@/components/Format';
 import { Context } from '@/providers/context';
-import { Format } from '@/reusables/Format';
 import { useAppSelector } from '@/store';
 
 import Image from 'next/image';
@@ -12,7 +12,7 @@ interface Props {
   areAllShown: boolean;
 }
 
-export const Directions: React.FC<Props> = ({ areAllShown }) => {
+export const Directions: FC<Props> = ({ areAllShown }) => {
   const { onDesktop } = useContext(Context);
 
   const trainers = useAppSelector(state => state.trainers);

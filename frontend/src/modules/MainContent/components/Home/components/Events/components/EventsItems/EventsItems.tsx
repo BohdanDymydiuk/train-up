@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import { FC, useContext } from 'react';
 
 import { EVENTS_GAP } from '@/constants/common';
 import { Context } from '@/providers/context';
-import { Event } from '@/reusables/Event';
+import { Event } from '@/components/Event';
 import { useAppSelector } from '@/store';
 
 import { motion, Transition, useMotionValue } from 'motion/react';
@@ -13,10 +13,7 @@ import styles from './EventsItems.module.scss';
 
 const DRAG_BUFFER = 50;
 
-export const EventsItems: React.FC<ImgIndexProps> = ({
-  imgIndex,
-  setImgIndex,
-}) => {
+export const EventsItems: FC<ImgIndexProps> = ({ imgIndex, setImgIndex }) => {
   const events = useAppSelector(state => state.events);
   const { eventWidth } = useContext(Context);
 

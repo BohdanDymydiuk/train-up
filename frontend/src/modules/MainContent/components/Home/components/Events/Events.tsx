@@ -1,8 +1,15 @@
-import React, { useContext, useState } from 'react';
+import {
+  CSSProperties,
+  Dispatch,
+  FC,
+  SetStateAction,
+  useContext,
+  useState,
+} from 'react';
 
+import { ErmilovTitle } from '@/components/ErmilovTitle';
 import { EVENTS_STRINGS } from '@/constants/strings';
 import { Context } from '@/providers/context';
-import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import { Arrows } from './components/Arrows';
 
@@ -10,10 +17,10 @@ import styles from './Events.module.scss';
 
 export interface ImgIndexProps {
   imgIndex: number;
-  setImgIndex: React.Dispatch<React.SetStateAction<number>>;
+  setImgIndex: Dispatch<SetStateAction<number>>;
 }
 
-export const Events: React.FC = () => {
+export const Events: FC = () => {
   const { onDesktop } = useContext(Context);
 
   const [imgIndex, setImgIndex] = useState(0);
@@ -23,7 +30,7 @@ export const Events: React.FC = () => {
     cssProps: {
       fontSize: onDesktop && '40px',
       whiteSpace: 'nowrap',
-    } as React.CSSProperties,
+    } as CSSProperties,
   };
 
   const eventsProps = { imgIndex, setImgIndex };

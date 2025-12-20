@@ -1,14 +1,14 @@
-import React from 'react';
+import { FC } from 'react';
 
-import { EventInfo } from '@/reusables/EventInfo';
-import { LookMore } from '@/reusables/LookMore';
-import { ProfileTitle } from '@/reusables/ProfileTitle';
+import { EventInfo } from '@/components/EventInfo';
+import { LookMore } from '@/components/LookMore';
+import { ProfileTitle } from '@/components/ProfileTitle';
 import { NavItems } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
 import styles from './Events.module.scss';
 
-export const Events: React.FC = () => {
+export const Events: FC = () => {
   const events = useAppSelector(state => state.events2);
 
   return (

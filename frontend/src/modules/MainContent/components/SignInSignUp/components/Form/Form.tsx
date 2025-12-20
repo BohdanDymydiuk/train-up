@@ -1,6 +1,6 @@
 'use client';
 
-import React, { FormEvent, useState } from 'react';
+import { FC, FormEvent, useState } from 'react';
 
 import { login } from '@/api/auth';
 import { AUTH_STRINGS } from '@/constants/strings';
@@ -17,7 +17,7 @@ import { SignUp } from './components/SignUp';
 
 import styles from './Form.module.scss';
 
-export const Form: React.FC = () => {
+export const Form: FC = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
 

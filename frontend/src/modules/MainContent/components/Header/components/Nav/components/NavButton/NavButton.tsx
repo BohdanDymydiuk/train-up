@@ -1,14 +1,11 @@
-import React from 'react';
+import { FC } from 'react';
 
-import { ButtonProps } from '@/reusables/DropdownHoc';
-import { ChevronDownSVG } from '@/reusables/svgs/ChevronDownSVG';
+import { ChevronDownSVG } from '@/components/svgs/ChevronDownSVG';
+import { ButtonProps } from '@/hocs/DropdownHoc';
 
 import styles from './NavButton.module.scss';
 
-export const NavButton: React.FC<ButtonProps> = ({
-  onClickHandler,
-  isDpShown,
-}) => {
+export const NavButton: FC<ButtonProps> = ({ onClickHandler, isDpShown }) => {
   const chevronDownSvgProps = isDpShown ? { fill: styles.orange } : {};
 
   return (

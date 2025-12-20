@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { ALT_STRINGS } from '@/constants/strings';
 
@@ -8,7 +8,7 @@ import { blocks } from './constants/blocks';
 
 import styles from './Blocks.module.scss';
 
-export const Blocks: React.FC = () => {
+export const Blocks: FC = () => {
   return (
     <div className={styles.blocks}>
       {blocks.map(block => {

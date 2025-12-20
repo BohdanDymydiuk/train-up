@@ -1,11 +1,11 @@
-import React from 'react';
+import { FC } from 'react';
 
-import { LocationSVG } from '@/reusables/svgs/LocationSVG';
+import { LocationSVG } from '@/components/svgs/LocationSVG';
 import { useAppSelector } from '@/store';
 
 import styles from './Location.module.scss';
 
-export const Location: React.FC = () => {
+export const Location: FC = () => {
   const location = useAppSelector(state => state.location);
 
   return (

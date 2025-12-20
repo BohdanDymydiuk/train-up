@@ -1,4 +1,11 @@
-import React, { createContext, useEffect, useMemo, useState } from 'react';
+import {
+  createContext,
+  FC,
+  ReactNode,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { NavItems } from '@/shared/enums';
@@ -12,10 +19,10 @@ const Context = createContext<MainContextType>({
 });
 
 interface Props {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const ContextProvider: React.FC<Props> = ({ children }) => {
+const ContextProvider: FC<Props> = ({ children }) => {
   const [currentSection, setCurrentSection] = useState(NavItems.main);
 
   const onTablet = useMediaQuery({ query: '(min-width: 768px)' });

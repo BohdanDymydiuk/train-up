@@ -1,0 +1,92 @@
+
+> train-up@0.0.0 lint
+> eslint .
+
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\app\signin\page.tsx
+  3:13  error  Replace `State,·useEffect` with `Effect,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\components\EventInfo\components\ThirdPart\ThirdPart.tsx
+  1:10  error  Replace `useMemo,·FC` with `FC,·useMemo`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\components\Event\Event.tsx
+  1:10  error  Replace `useContext,·FC,·CSSProperties,·Fragmen` with `CSSProperties,·FC,·Fragment,·useContex`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\components\TrainerInfo\TrainerInfo.tsx
+   1:10  error  Replace `FC,·memo,·CSSProperties` with `CSSProperties,·FC,·memo`          prettier/prettier
+  26:47  error  Replace `⏎····?·{·marginTop:·'7px'·}⏎···` with `·?·{·marginTop:·'7px'·}`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\components\TrainingType\TrainingType.tsx
+  1:10  error  Replace `FC,·CSSProperties` with `CSSProperties,·FC`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\components\svgs\ChevronDownSVG\ChevronDownSVG.tsx
+  1:10  error  Replace `FC,·CSSProperties` with `CSSProperties,·FC`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\components\svgs\arrows\SmallArrow\SmallArrow.tsx
+  1:10  error  Replace `FC,·CSSProperties` with `CSSProperties,·FC`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\hocs\DropdownHoc\DropdownHoc.tsx
+  1:10  error  Replace `useEffect,·useRef,·useState,·FC` with `FC,·useEffect,·useRef,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\MainContent.tsx
+  3:10  error  Replace `useEffect,·FC,·ReactNode,·useContext,·CSSProperties` with `CSSProperties,·FC,·ReactNode,·useContext,·useEffect`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Footer\Footer.tsx
+  1:10  error  Replace `useContext,·FC,·CSSProperties` with `CSSProperties,·FC,·useContext`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Header\Header.tsx
+  1:10  error  Replace `useContext,·useEffect,·useState,·FC,·CSSProperties` with `CSSProperties,·FC,·useContext,·useEffect,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Header\components\Lang\Lang.tsx
+  1:10  error  Replace `useEffect,·useState,·FC` with `FC,·useEffect,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Header\components\Nav\Nav.tsx
+  1:10  error  Replace `useContext,·useEffect,·useState,·FC` with `FC,·useContext,·useEffect,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Header\components\Nav\components\NavButton\NavButton.tsx
+  8:45  error  Replace `⏎··onClickHandler,⏎··isDpShown,⏎` with `·onClickHandler,·isDpShown·`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Header\components\Nav\components\NavElems\NavElems.tsx
+  1:10  error  Replace `useEffect,·useState,·FC` with `FC,·useEffect,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Home\components\ChooseYourDirection\ChooseYourDirection.tsx
+  1:10  error  Replace `useContext,·useState,·FC,·CSSProperties` with `CSSProperties,·FC,·useContext,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Home\components\ChooseYourDirection\components\Directions\Directions.tsx
+  1:10  error  Replace `useContext,·useMemo,·FC` with `FC,·useContext,·useMemo`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Home\components\ChooseYourDirection\components\ShowHideMore\ShowHideMore.tsx
+   1:10  error  Replace `FC,·Dispatch` with `Dispatch,·FC`                                         prettier/prettier
+  12:42  error  Replace `⏎··areAllShown,⏎··setAreAllShown,⏎` with `·areAllShown,·setAreAllShown·`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Home\components\Events\Events.tsx
+  1:9  error  Replace `·useContext,·useState,·FC,·CSSProperties,·Dispatch,·SetStateAction·` with `⏎··CSSProperties,⏎··Dispatch,⏎··FC,⏎··SetStateAction,⏎··useContext,⏎··useState,⏎`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Home\components\Events\components\EventsItems\EventsItems.tsx
+   1:10  error  Replace `useContext,·FC` with `FC,·useContext`                         prettier/prettier
+  16:49  error  Replace `⏎··imgIndex,⏎··setImgIndex,⏎` with `·imgIndex,·setImgIndex·`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Home\components\SportFinder\SportFinder.tsx
+  1:10  error  Replace `useContext,·useEffect,·useState,·FC,·CSSProperties` with `CSSProperties,·FC,·useContext,·useEffect,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Home\components\SportFinder\components\Button\Button.tsx
+  1:10  error  Replace `FC,·CSSProperties` with `CSSProperties,·FC`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Home\components\SportFinder\components\Dropdown\Dropdown.tsx
+  1:10  error  Replace `useContext,·useMemo,·useState,·FC,·CSSProperties` with `CSSProperties,·FC,·useContext,·useMemo,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Home\components\TrainerSignUp\TrainerSignUp.tsx
+  1:10  error  Replace `useContext,·useEffect,·useState,·FC,·CSSProperties` with `CSSProperties,·FC,·useContext,·useEffect,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\Home\components\WhatIsTrainUp\WhatIsTrainUp.tsx
+  1:10  error  Replace `useContext,·FC,·CSSProperties` with `CSSProperties,·FC,·useContext`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\modules\MainContent\components\SignInSignUp\components\Form\Form.tsx
+  3:11  error  Replace `ormEvent,·useState,·FC` with `C,·FormEvent,·useState`  prettier/prettier
+
+C:\Users\Bohdan-Dymydiuk\projects\com-projects\train-up\frontend\src\providers\context\ContextProvider.tsx
+  1:9  error  Replace `·createContext,·useEffect,·useMemo,·useState,·FC,·ReactNode·` with `⏎··createContext,⏎··FC,⏎··ReactNode,⏎··useEffect,⏎··useMemo,⏎··useState,⏎`  prettier/prettier
+
+✖ 30 problems (30 errors, 0 warnings)
+  30 errors and 0 warnings potentially fixable with the `--fix` option.
+

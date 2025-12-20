@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { ALT_STRINGS, AUTH_STRINGS } from '@/constants/strings';
 
@@ -10,7 +10,7 @@ interface Props {
   setIsModalShown: (value: boolean) => void;
 }
 
-export const SignUpModal: React.FC<Props> = ({ setIsModalShown }) => {
+export const SignUpModal: FC<Props> = ({ setIsModalShown }) => {
   const onClickHandler = () => setIsModalShown(false);
 
   return (

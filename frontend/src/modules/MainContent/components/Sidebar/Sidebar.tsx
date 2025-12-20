@@ -1,15 +1,15 @@
-import React from 'react';
+import { FC } from 'react';
 
-import { CalendarSVG } from '@/reusables/svgs/sectionSvgs/calendar/CalendarSVG';
-import { EventsSVG } from '@/reusables/svgs/sectionSvgs/events/EventsSVG';
-import { GymsSVG } from '@/reusables/svgs/sectionSvgs/GymsSVG';
-import { MainSVG } from '@/reusables/svgs/sectionSvgs/MainSVG';
-import { TrainersSVG } from '@/reusables/svgs/sectionSvgs/trainers/TrainersSVG';
+import { CalendarSVG } from '@/components/svgs/sectionSvgs/calendar/CalendarSVG';
+import { EventsSVG } from '@/components/svgs/sectionSvgs/events/EventsSVG';
+import { GymsSVG } from '@/components/svgs/sectionSvgs/GymsSVG';
+import { MainSVG } from '@/components/svgs/sectionSvgs/MainSVG';
+import { TrainersSVG } from '@/components/svgs/sectionSvgs/trainers/TrainersSVG';
 import { NavItems } from '@/shared/enums';
 
 import styles from './Sidebar.module.scss';
 
-export const Sidebar: React.FC = () => {
+export const Sidebar: FC = () => {
   /* eslint-disable react/jsx-key */
   const icons = [
     <MainSVG />,

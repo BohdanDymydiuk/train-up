@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import { CSSProperties, FC, useContext } from 'react';
 
+import { ErmilovTitle } from '@/components/ErmilovTitle';
+import { FacebookSVG } from '@/components/svgs/socials/FacebookSVG';
+import { InstagramSVG } from '@/components/svgs/socials/InstagramSVG';
+import { ThreadsSVG } from '@/components/svgs/socials/ThreadsSVG';
 import { FOOTER_STRINGS } from '@/constants/strings';
 import { Context } from '@/providers/context';
-import { ErmilovTitle } from '@/reusables/ErmilovTitle';
-import { FacebookSVG } from '@/reusables/svgs/socials/FacebookSVG';
-import { InstagramSVG } from '@/reusables/svgs/socials/InstagramSVG';
-import { ThreadsSVG } from '@/reusables/svgs/socials/ThreadsSVG';
 import { NavItems } from '@/shared/enums';
 
 import styles from './Footer.module.scss';
 
-export const Footer: React.FC = () => {
+export const Footer: FC = () => {
   const { onDesktop } = useContext(Context);
 
   const pages = Object.values(NavItems).filter(
@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
 
   const ermilovTitleProps = {
     title: FOOTER_STRINGS.title,
-    cssProps: { fontSize: onDesktop && '40px' } as React.CSSProperties,
+    cssProps: { fontSize: onDesktop && '40px' } as CSSProperties,
   };
 
   return (

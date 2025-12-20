@@ -1,4 +1,27 @@
-@import 'tailwindcss';
+@import url('tailwindcss');
+
+@theme {
+  --breakpoint-sm: 576px; /* on-small-tablet */
+  --breakpoint-md: 768px; /* on-tablet */
+  --breakpoint-2md: 864px; /* on-large-tablet */
+  --breakpoint-3md: 992px; /* on-extra-large-tablet */
+  --breakpoint-lg: 1024px; /* on-small-desktop */
+  --breakpoint-xl: 1200px; /* on-desktop */
+  --breakpoint-2xl: 1367px; /* on-large-desktop */
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-15: 15px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+  --text-32: 32px;
+  --text-4xl: 40px;
+  --text-5xl: 48px;
+  --text-6xl: 56px;
+}
 
 :root {
   --white-2: #f5f6fa;

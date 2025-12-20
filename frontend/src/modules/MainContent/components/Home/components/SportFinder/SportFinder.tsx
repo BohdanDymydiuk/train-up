@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { CSSProperties, FC, useContext, useEffect, useState } from 'react';
 
+import { ErmilovTitle } from '@/components/ErmilovTitle';
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
 import { SPORT_FINDER_STRINGS } from '@/constants/strings';
+import { DropdownHoc } from '@/hocs/DropdownHoc';
 import { Context } from '@/providers/context';
-import { DropdownHoc } from '@/reusables/DropdownHoc';
-import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 import { FinderTexts } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
@@ -16,7 +16,7 @@ import styles from './SportFinder.module.scss';
 const ChooseSport = DropdownHoc(Button, Dropdown);
 const ChooseCity = DropdownHoc(Button, Dropdown);
 
-export const SportFinder: React.FC = () => {
+export const SportFinder: FC = () => {
   const { onTablet, onSmallDesktop } = useContext(Context);
 
   const sports = useAppSelector(state => state.sports);
@@ -45,7 +45,7 @@ export const SportFinder: React.FC = () => {
         {SPORT_FINDER_STRINGS.title.secondPart}
       </>
     ),
-    cssProps: { textAlign: 'center' } as React.CSSProperties,
+    cssProps: { textAlign: 'center' } as CSSProperties,
   };
 
   const chooseSportProps = {

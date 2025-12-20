@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react';
+import { CSSProperties, FC, useContext, useEffect, useState } from 'react';
 
+import { ErmilovTitle } from '@/components/ErmilovTitle';
 import { ALT_STRINGS, TRAINER_SIGNUP_STRINGS } from '@/constants/strings';
 import { Context } from '@/providers/context';
-import { ErmilovTitle } from '@/reusables/ErmilovTitle';
 
 import Image from 'next/image';
 
 import styles from './TrainerSignUp.module.scss';
 
-export const TrainerSignUp: React.FC = () => {
+export const TrainerSignUp: FC = () => {
   const { onTablet, onDesktop } = useContext(Context);
 
   const [isMounted, setIsMounted] = useState(false);
@@ -33,7 +33,7 @@ export const TrainerSignUp: React.FC = () => {
     ),
     cssProps: {
       fontSize: (onDesktop && '40px') || (onTablet && '32px'),
-    } as React.CSSProperties,
+    } as CSSProperties,
   };
 
   return (
