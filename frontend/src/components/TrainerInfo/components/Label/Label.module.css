@@ -1,0 +1,11 @@
+.label {
+  @apply border-brown-muted absolute -top-6.25 left-6 flex gap-2 rounded-lg border bg-white px-2 py-2.5;
+
+  .celebration {
+    @apply h-4.25;
+  }
+
+  .text {
+    @apply font-[Inter] text-sm font-medium;
+  }
+}

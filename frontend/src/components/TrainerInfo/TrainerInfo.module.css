@@ -1,0 +1,7 @@
+.trainer {
+  @apply border-ui-gray-300 relative flex h-38 w-full items-center justify-between rounded-lg border p-4;
+
+  .avatar {
+    @apply bg-ui-gray-300 h-82 w-82 rounded-full;
+  }
+}

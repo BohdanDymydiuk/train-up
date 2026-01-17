@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { StarSVG } from '@/components/svgs/sectionSvgs/trainers/StarSVG';
 import { Trainer } from '@/shared/types/trainer';
 
-import styles from './FourthPart.module.scss';
+import styles from './FourthPart.module.css';
 
 type Props = Pick<Trainer, 'reviews'>;
 

@@ -1,7 +1,9 @@
 import { FC } from 'react';
 
-import styles from './LookMore.module.scss';
-
 export const LookMore: FC = () => {
-  return <div className={styles.text}>Дивитись більше</div>;
+  return (
+    <div className='mt-3.75 text-center font-[Inter] text-xs font-semibold'>
+      Дивитись більше
+    </div>
+  );
 };

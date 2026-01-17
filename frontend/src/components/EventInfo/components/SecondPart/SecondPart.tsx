@@ -5,7 +5,7 @@ import { ThunderSVG } from '@/components/svgs/sectionSvgs/events/ThunderSVG';
 import { TrainingType } from '@/components/TrainingType';
 import { EventInfoType } from '@/shared/types/events';
 
-import styles from './SecondPart.module.scss';
+import styles from './SecondPart.module.css';
 
 type Props = Pick<
   EventInfoType,

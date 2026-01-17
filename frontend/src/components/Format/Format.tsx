@@ -4,12 +4,12 @@ import { Formats } from '@/shared/enums';
 
 import clsx from 'clsx';
 
-import styles from './Format.module.scss';
+import styles from './Format.module.css';
 
 interface Props {
   isOnline: boolean;
   width?: `${number}px`;
-  backgroundColor?: string;
+  backgroundColor?: 'bg-main';
 }
 
 export const Format: FC<Props> = ({
@@ -19,8 +19,9 @@ export const Format: FC<Props> = ({
 }) => {
   return (
     <div
-      style={{ width, backgroundColor }}
+      style={{ width }}
       className={clsx(styles.format, {
+        'bg-main': backgroundColor === 'bg-main',
         [styles.online]: isOnline,
         [styles.offline]: !isOnline,
       })}

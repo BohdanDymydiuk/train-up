@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { EventInfoType } from '@/shared/types/events';
 
-import styles from './FourthPart.module.scss';
+import styles from './FourthPart.module.css';
 
 type Props = Pick<EventInfoType, 'trainer'>;
 

@@ -1,0 +1,19 @@
+.second-part {
+  @apply width-[318px] flex flex-col gap-4;
+
+  .name {
+    @apply font-[Inter] text-xl font-medium;
+  }
+
+  .types {
+    @apply flex gap-2;
+  }
+
+  .bio {
+    @apply font-[Inter] text-sm font-normal;
+  }
+
+  .read {
+    @apply font-[Inter] text-xs font-semibold;
+  }
+}

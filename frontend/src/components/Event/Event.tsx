@@ -1,4 +1,4 @@
-import { CSSProperties, FC, Fragment, useContext } from 'react';
+import { FC, Fragment, useContext } from 'react';
 
 import { ALT_STRINGS, COMMON_STRINGS } from '@/constants/strings';
 import { Context } from '@/providers/context';
@@ -9,26 +9,12 @@ import Image from 'next/image';
 import { Format } from '../Format';
 import { SmallArrow } from '../svgs/arrows/SmallArrow';
 
-import styles from './Event.module.scss';
+import styles from './Event.module.css';
 
 type Props = Pick<
   EventType,
   'name' | 'description' | 'intensity' | 'onlineTraining' | 'photoUrls'
 >;
-
-const secondPartCssProps: CSSProperties = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  marginTop: '24px',
-};
-
-const thirdPartCssProps: CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-  height: '133px',
-  marginTop: '24px',
-};
 
 export const Event: FC<Props> = ({
   name,
@@ -40,16 +26,20 @@ export const Event: FC<Props> = ({
   const { eventWidth } = useContext(Context);
 
   return (
-    <div className={styles.event} style={{ minWidth: eventWidth }}>
-      <div className={styles['img-wrapper']}>
-        <Image src={photoUrls[0]} alt={ALT_STRINGS.image} />
+    <div className={styles.container} style={{ minWidth: eventWidth }}>
+      <div className={styles['image-container']}>
+        <Image
+          src={photoUrls[0]}
+          alt={ALT_STRINGS.image}
+          className={styles.image}
+        />
       </div>
 
-      <div style={secondPartCssProps}>
+      <div className={styles['second-part']}>
         <div className={styles.formats}>
           <Format isOnline={false} />
           {onlineTraining && (
-            <Format isOnline={onlineTraining} backgroundColor={styles.white} />
+            <Format isOnline={onlineTraining} backgroundColor={'bg-main'} />
           )}
         </div>
 
@@ -76,7 +66,7 @@ export const Event: FC<Props> = ({
         </div>
       </div>
 
-      <div style={thirdPartCssProps}>
+      <div className={styles['third-part']}>
         <div>
           <h3 className={styles.title}>{name}</h3>
           <div className={styles.description}>{description}</div>

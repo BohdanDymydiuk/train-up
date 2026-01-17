@@ -4,7 +4,7 @@ import { Trainer } from '@/shared/types/trainer';
 
 import { Category } from './components/Category';
 
-import styles from './ThirdPart.module.scss';
+import styles from './ThirdPart.module.css';
 
 type Props = Pick<Trainer, 'categories'>;
 

@@ -1,0 +1,11 @@
+.trainer {
+  @apply mt-4 flex items-center gap-2;
+}
+
+.avatar {
+  @apply bg-ui-gray-500 h-6 w-6 rounded-full;
+}
+
+.text {
+  @apply text-15 font-[Inter] font-medium;
+}

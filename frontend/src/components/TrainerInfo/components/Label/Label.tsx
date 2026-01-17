@@ -4,7 +4,7 @@ import { ALT_STRINGS, TRAINER_STRINGS } from '@/constants/strings';
 
 import Image from 'next/image';
 
-import styles from './Label.module.scss';
+import styles from './Label.module.css';
 
 export const Label: FC = () => {
   return (

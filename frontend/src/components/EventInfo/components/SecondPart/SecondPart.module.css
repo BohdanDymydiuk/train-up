@@ -1,0 +1,21 @@
+.second-part {
+  @apply mt-4 flex justify-between;
+
+  .second-wrapper,
+  .participants,
+  .thunders {
+    @apply flex items-center;
+  }
+
+  .second-wrapper {
+    @apply gap-4;
+
+    .participants {
+      @apply h-full gap-2 px-0.75;
+
+      .number {
+        @apply font-[Inter] text-sm font-normal text-gray-500;
+      }
+    }
+  }
+}

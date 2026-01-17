@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { TrainingType } from '@/components/TrainingType';
 import { Trainer } from '@/shared/types/trainer';
 
-import styles from './SecondPart.module.scss';
+import styles from './SecondPart.module.css';
 
 type Props = Pick<Trainer, 'name' | 'trainingTypes' | 'bio'>;
 

@@ -6,7 +6,7 @@ import { FourthPart } from './components/FourthPart';
 import { SecondPart } from './components/SecondPart';
 import { ThirdPart } from './components/ThirdPart';
 
-import styles from './EventInfo.module.scss';
+import styles from './EventInfo.module.css';
 
 type Props = Omit<EventInfoType, 'id'>;
 

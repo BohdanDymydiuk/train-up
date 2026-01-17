@@ -2,7 +2,7 @@ import { FC, useMemo } from 'react';
 
 import { EventInfoType } from '@/shared/types/events';
 
-import styles from './ThirdPart.module.scss';
+import styles from './ThirdPart.module.css';
 
 type Props = Pick<EventInfoType, 'name' | 'description'>;
 

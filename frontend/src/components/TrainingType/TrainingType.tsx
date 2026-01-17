@@ -1,28 +1,31 @@
-import { CSSProperties, FC } from 'react';
+import { FC } from 'react';
 
 import { Formats } from '@/shared/enums';
 
-import styles from './TrainingType.module.scss';
+import clsx from 'clsx';
 
 interface Props {
   type: string;
 }
 
 export const TrainingType: FC<Props> = ({ type }) => {
-  const offlineCssProps: CSSProperties = {
-    border: `1px solid ${styles.brownColor}`,
-  };
-
-  const onlineCssProps: CSSProperties = {
-    border: `1px solid ${styles.darkColor}`,
-    backgroundColor: styles.darkColor,
-    color: '#F4DCDC',
-  };
-
-  const typeStyle = type === Formats.online ? onlineCssProps : offlineCssProps;
-
   return (
-    <div className={styles.type} style={typeStyle}>
+    <div
+      className={clsx(
+        'font-[Inter]',
+        'font-medium',
+        'text-xs',
+        'py-1.25',
+        'px-2.5',
+        'rounded-lg',
+        'cursor-pointer',
+        { 'border-brown-muted border': type === Formats.offline },
+        {
+          'border border-gray-900 bg-gray-900 text-[#F4DCDC]':
+            type === Formats.online,
+        },
+      )}
+    >
       {type}
     </div>
   );

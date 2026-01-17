@@ -1,16 +1,16 @@
 'use client';
 
-import { CSSProperties, FC, ReactNode, useContext, useEffect } from 'react';
+import { FC, ReactNode, useContext, useEffect } from 'react';
 
 import { Context } from '@/providers/context';
 import { useAppSelector } from '@/store';
+
+import clsx from 'clsx';
 
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { MiniCalendar } from './components/MiniCalendar';
 import { Sidebar } from './components/Sidebar';
-
-import styles from './MainContent.module.scss';
 
 interface Props {
   children: ReactNode;
@@ -25,21 +25,17 @@ export const MainContent: FC<Props> = ({ children }) => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
-  const wrapperCssProps: CSSProperties = jwtToken
-    ? {
-        display: 'flex',
-        gap: '14px',
-        position: 'relative',
-        width: 'fit-content',
-      }
-    : { display: 'contents' };
-
   return (
     <>
       <Header />
-      <div style={wrapperCssProps}>
+      <div
+        className={clsx({
+          'relative flex w-fit gap-3.5': jwtToken,
+          contents: !jwtToken,
+        })}
+      >
         {jwtToken && onDesktop && <Sidebar />}
-        <main className={styles.main}>
+        <main className='overflow-x-hidden px-4 md:px-8 lg:px-12'>
           {children}
           {jwtToken && <MiniCalendar />}
         </main>
