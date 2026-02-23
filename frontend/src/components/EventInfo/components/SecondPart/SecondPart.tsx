@@ -5,12 +5,18 @@ import { ThunderSVG } from '@/components/svgs/sectionSvgs/events/ThunderSVG';
 import { TrainingType } from '@/components/TrainingType';
 import { EventInfoType } from '@/shared/types/events';
 
-import styles from './SecondPart.module.css';
-
 type Props = Pick<
   EventInfoType,
   'intensity' | 'participants' | 'trainingTypes'
 >;
+
+const classes = {
+  root: 'mt-4 flex justify-between',
+  secondWrapper: 'flex items-center gap-4',
+  thunders: 'flex items-center',
+  participants: 'flex h-full items-center gap-2 px-0.75',
+  number: 'font-[Inter] text-sm font-normal text-gray-500',
+};
 
 export const SecondPart: FC<Props> = ({
   intensity,
@@ -18,16 +24,16 @@ export const SecondPart: FC<Props> = ({
   trainingTypes,
 }) => {
   return (
-    <div className={styles['second-part']}>
-      <div className={styles['types-wrapper']}>
+    <div className={classes.root}>
+      <div>
         {trainingTypes.map(type => {
           const typeProps = { type };
 
           return <TrainingType key={type} {...typeProps} />;
         })}
       </div>
-      <div className={styles['second-wrapper']}>
-        <div className={styles.thunders}>
+      <div className={classes.secondWrapper}>
+        <div className={classes.thunders}>
           {[...Array(3).keys()].map(number => {
             return (
               <ThunderSVG
@@ -37,9 +43,9 @@ export const SecondPart: FC<Props> = ({
             );
           })}
         </div>
-        <div className={styles.participants}>
+        <div className={classes.participants}>
           <ParticipantsSVG />
-          <span className={styles.number}>{participants}</span>
+          <span className={classes.number}>{participants}</span>
         </div>
       </div>
     </div>

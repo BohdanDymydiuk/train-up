@@ -9,12 +9,23 @@ import Image from 'next/image';
 import { Format } from '../Format';
 import { SmallArrow } from '../svgs/arrows/SmallArrow';
 
-import styles from './Event.module.css';
-
 type Props = Pick<
   EventType,
   'name' | 'description' | 'intensity' | 'onlineTraining' | 'photoUrls'
 >;
+
+const classes = {
+  container: 'border-ui-gray-400 h-full rounded-2xl border bg-white p-6',
+  imageContainer: 'h-47 overflow-hidden rounded-2xl',
+  image: 'pointer-events-none h-full w-full object-cover leading-[200%]',
+  secondPart: 'mt-6 flex justify-between',
+  formats: 'flex gap-3.75',
+  intensity: 'flex h-8 items-center gap-1.75',
+  thunder: 'h-6 w-4.75',
+  thirdPart: 'mt-6 flex h-33.25 flex-col justify-between',
+  title: 'font-[WF_Visual_Sans] font-medium',
+  description: 'mt-1.5 font-[Inter] text-sm font-normal',
+};
 
 export const Event: FC<Props> = ({
   name,
@@ -26,37 +37,37 @@ export const Event: FC<Props> = ({
   const { eventWidth } = useContext(Context);
 
   return (
-    <div className={styles.container} style={{ minWidth: eventWidth }}>
-      <div className={styles['image-container']}>
+    <div className={classes.container} style={{ minWidth: eventWidth }}>
+      <div className={classes.imageContainer}>
         <Image
           src={photoUrls[0]}
           alt={ALT_STRINGS.image}
-          className={styles.image}
+          className={classes.image}
         />
       </div>
 
-      <div className={styles['second-part']}>
-        <div className={styles.formats}>
+      <div className={classes.secondPart}>
+        <div className={classes.formats}>
           <Format isOnline={false} />
           {onlineTraining && (
             <Format isOnline={onlineTraining} backgroundColor={'bg-main'} />
           )}
         </div>
 
-        <div className={styles.intensity}>
+        <div className={classes.intensity}>
           {[...Array(3).keys()].map(num => {
             return (
               <Fragment key={num}>
                 {num < intensity ? (
                   <Image
                     src='/icons/filled-thunder.svg'
-                    className={styles.thunder}
+                    className={classes.thunder}
                     alt={ALT_STRINGS.filledThunder}
                   />
                 ) : (
                   <Image
                     src='/icons/thunder.svg'
-                    className={styles.thunder}
+                    className={classes.thunder}
                     alt={ALT_STRINGS.thunder}
                   />
                 )}
@@ -66,12 +77,12 @@ export const Event: FC<Props> = ({
         </div>
       </div>
 
-      <div className={styles['third-part']}>
+      <div className={classes.thirdPart}>
         <div>
-          <h3 className={styles.title}>{name}</h3>
-          <div className={styles.description}>{description}</div>
+          <h3 className={classes.title}>{name}</h3>
+          <div className={classes.description}>{description}</div>
         </div>
-        <div className={styles['learn-more']}>
+        <div>
           {COMMON_STRINGS.learnMore} <SmallArrow />
         </div>
       </div>

@@ -4,13 +4,15 @@ import { Trainer } from '@/shared/types/trainer';
 
 import { Category } from './components/Category';
 
-import styles from './ThirdPart.module.css';
-
 type Props = Pick<Trainer, 'categories'>;
+
+const classes = {
+  root: 'flex w-51 flex-wrap gap-4',
+};
 
 export const ThirdPart: FC<Props> = ({ categories }) => {
   return (
-    <div className={styles['third-part']}>
+    <div className={classes.root}>
       {categories.map(category => {
         const categoryProps = { category };
 

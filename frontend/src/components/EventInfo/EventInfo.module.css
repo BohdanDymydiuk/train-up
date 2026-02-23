@@ -1,7 +1,0 @@
-.block {
-  @apply border-ui-gray-500 rounded-lg border p-4;
-}
-
-.img {
-  @apply bg-ui-gray-500 h-47 w-100 rounded-2xl;
-}

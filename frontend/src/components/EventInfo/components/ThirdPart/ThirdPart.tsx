@@ -2,9 +2,13 @@ import { FC, useMemo } from 'react';
 
 import { EventInfoType } from '@/shared/types/events';
 
-import styles from './ThirdPart.module.css';
-
 type Props = Pick<EventInfoType, 'name' | 'description'>;
+
+const classes = {
+  root: 'mt-9.5',
+  title: 'font-[Inter] text-xl font-semibold',
+  descr: 'font-[Inter] text-sm font-normal',
+};
 
 export const ThirdPart: FC<Props> = ({ name, description }) => {
   const descr = useMemo(() => {
@@ -22,9 +26,9 @@ export const ThirdPart: FC<Props> = ({ name, description }) => {
   }, []);
 
   return (
-    <div className={styles['third-part']}>
-      <h3 className={styles.title}>{name}</h3>
-      <div className={styles.descr}>{descr}</div>
+    <div className={classes.root}>
+      <h3 className={classes.title}>{name}</h3>
+      <div className={classes.descr}>{descr}</div>
     </div>
   );
 };

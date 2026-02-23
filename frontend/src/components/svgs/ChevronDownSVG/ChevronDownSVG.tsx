@@ -1,7 +1,5 @@
 import { CSSProperties, FC } from 'react';
 
-import styles from './ChevronDownSVG.module.scss';
-
 interface Props {
   svgStyle?: CSSProperties;
   fill?: string;
@@ -10,7 +8,6 @@ interface Props {
 export const ChevronDownSVG: FC<Props> = ({ svgStyle, fill }) => {
   return (
     <svg
-      className={styles.svg}
       style={svgStyle}
       width='16'
       height='8'

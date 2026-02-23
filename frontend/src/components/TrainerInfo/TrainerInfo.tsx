@@ -9,9 +9,13 @@ import { Label } from './components/Label';
 import { SecondPart } from './components/SecondPart';
 import { ThirdPart } from './components/ThirdPart';
 
-import styles from './TrainerInfo.module.css';
-
 type Props = Omit<Trainer, 'id'>;
+
+const classes = {
+  trainer:
+    'border-ui-gray-300 relative flex h-38 w-full items-center justify-between rounded-lg border p-4',
+  avatar: 'bg-ui-gray-300 h-82 w-82 rounded-full',
+};
 
 export const TrainerInfo: FC<Props> = memo(props => {
   const {
@@ -28,9 +32,9 @@ export const TrainerInfo: FC<Props> = memo(props => {
   const fourthPartProps = { reviews };
 
   return (
-    <div className={clsx(styles.trainer, { 'mt-1.75': isNew })}>
+    <div className={clsx(classes.trainer, { 'mt-1.75': isNew })}>
       {isNew && <Label />}
-      <div className={styles.avatar} />
+      <div className={classes.avatar} />
       <SecondPart {...secondPartProps} />
       <ThirdPart {...thirdPartProps} />
       <FourthPart {...fourthPartProps} />

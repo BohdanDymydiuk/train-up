@@ -6,9 +6,12 @@ import { FourthPart } from './components/FourthPart';
 import { SecondPart } from './components/SecondPart';
 import { ThirdPart } from './components/ThirdPart';
 
-import styles from './EventInfo.module.css';
-
 type Props = Omit<EventInfoType, 'id'>;
+
+const classes = {
+  root: 'border-ui-gray-500 rounded-lg border p-4',
+  image: 'bg-ui-gray-500 h-47 w-100 rounded-2xl',
+};
 
 export const EventInfo: FC<Props> = memo(props => {
   const {
@@ -25,8 +28,8 @@ export const EventInfo: FC<Props> = memo(props => {
   const fourthPart = { trainer };
 
   return (
-    <div className={styles.block}>
-      <div className={styles.img} />
+    <div className={classes.root}>
+      <div className={classes.image} />
       <SecondPart {...secondPartProps} />
       <ThirdPart {...thirdPartProps} />
       <FourthPart {...fourthPart} />

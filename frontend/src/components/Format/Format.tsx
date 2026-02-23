@@ -4,13 +4,18 @@ import { Formats } from '@/shared/enums';
 
 import clsx from 'clsx';
 
-import styles from './Format.module.css';
-
 interface Props {
   isOnline: boolean;
   width?: `${number}px`;
   backgroundColor?: 'bg-main';
 }
+
+const classes = {
+  format:
+    'flex h-8 items-center justify-center rounded-[100px] font-[Inter] text-sm font-medium',
+  offline: 'bg-dark text-white',
+  online: 'bg-white text-black',
+};
 
 export const Format: FC<Props> = ({
   isOnline,
@@ -20,10 +25,10 @@ export const Format: FC<Props> = ({
   return (
     <div
       style={{ width }}
-      className={clsx(styles.format, {
+      className={clsx(classes.format, {
         'bg-main': backgroundColor === 'bg-main',
-        [styles.online]: isOnline,
-        [styles.offline]: !isOnline,
+        [classes.online]: isOnline,
+        [classes.offline]: !isOnline,
       })}
     >
       {isOnline ? Formats.online : Formats.offline}
