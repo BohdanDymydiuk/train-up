@@ -4,6 +4,7 @@ import { ALT_STRINGS, COMMON_STRINGS } from '@/constants/strings';
 import { Context } from '@/providers/context';
 import { Event as EventType } from '@/shared/types/events';
 
+import clsx from 'clsx';
 import Image from 'next/image';
 
 import { Format } from '../Format';
@@ -15,16 +16,16 @@ type Props = Pick<
 >;
 
 const classes = {
-  container: 'border-ui-gray-400 h-full rounded-2xl border bg-white p-6',
-  imageContainer: 'h-47 overflow-hidden rounded-2xl',
-  image: 'pointer-events-none h-full w-full object-cover leading-[200%]',
-  secondPart: 'mt-6 flex justify-between',
-  formats: 'flex gap-3.75',
-  intensity: 'flex h-8 items-center gap-1.75',
-  thunder: 'h-6 w-4.75',
-  thirdPart: 'mt-6 flex h-33.25 flex-col justify-between',
-  title: 'font-[WF_Visual_Sans] font-medium',
-  description: 'mt-1.5 font-[Inter] text-sm font-normal',
+  container: clsx('border-ui-gray-400 h-full rounded-2xl border bg-white p-6'),
+  imageContainer: clsx('h-47 overflow-hidden rounded-2xl'),
+  image: clsx('pointer-events-none h-full w-full object-cover leading-[200%]'),
+  secondPart: clsx('mt-6 flex justify-between'),
+  formats: clsx('flex gap-3.75'),
+  intensity: clsx('flex h-8 items-center gap-1.75'),
+  thunder: clsx('h-6 w-4.75'),
+  thirdPart: clsx('mt-6 flex h-33.25 flex-col justify-between'),
+  title: clsx('font-[WF_Visual_Sans] font-medium'),
+  description: clsx('mt-1.5 font-[Inter] text-sm font-normal'),
 };
 
 export const Event: FC<Props> = ({

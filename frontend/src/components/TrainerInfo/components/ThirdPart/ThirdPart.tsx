@@ -2,12 +2,14 @@ import { FC } from 'react';
 
 import { Trainer } from '@/shared/types/trainer';
 
+import clsx from 'clsx';
+
 import { Category } from './components/Category';
 
 type Props = Pick<Trainer, 'categories'>;
 
 const classes = {
-  root: 'flex w-51 flex-wrap gap-4',
+  root: clsx('flex w-51 flex-wrap gap-4'),
 };
 
 export const ThirdPart: FC<Props> = ({ categories }) => {

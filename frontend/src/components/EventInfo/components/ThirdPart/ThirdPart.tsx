@@ -2,12 +2,14 @@ import { FC, useMemo } from 'react';
 
 import { EventInfoType } from '@/shared/types/events';
 
+import clsx from 'clsx';
+
 type Props = Pick<EventInfoType, 'name' | 'description'>;
 
 const classes = {
-  root: 'mt-9.5',
-  title: 'font-[Inter] text-xl font-semibold',
-  descr: 'font-[Inter] text-sm font-normal',
+  root: clsx('mt-9.5'),
+  title: clsx('font-[Inter] text-xl font-semibold'),
+  descr: clsx('font-[Inter] text-sm font-normal'),
 };
 
 export const ThirdPart: FC<Props> = ({ name, description }) => {

@@ -3,14 +3,16 @@ import { FC } from 'react';
 import { TrainingType } from '@/components/TrainingType';
 import { Trainer } from '@/shared/types/trainer';
 
+import clsx from 'clsx';
+
 type Props = Pick<Trainer, 'name' | 'trainingTypes' | 'bio'>;
 
 const classes = {
-  root: 'w-[318px] flex flex-col gap-4',
-  name: 'font-[Inter] text-xl font-medium',
-  types: 'flex gap-2',
-  bio: 'font-[Inter] text-sm font-normal',
-  read: 'font-[Inter] text-xs font-semibold',
+  root: clsx('flex w-79.5 flex-col gap-4'),
+  name: clsx('font-[Inter] text-xl font-medium'),
+  types: clsx('flex gap-2'),
+  bio: clsx('font-[Inter] text-sm font-normal'),
+  read: clsx('font-[Inter] text-xs font-semibold'),
 };
 
 export const SecondPart: FC<Props> = props => {

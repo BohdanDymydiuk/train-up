@@ -11,10 +11,11 @@ interface Props {
 }
 
 const classes = {
-  format:
+  format: clsx(
     'flex h-8 items-center justify-center rounded-[100px] font-[Inter] text-sm font-medium',
-  offline: 'bg-dark text-white',
-  online: 'bg-white text-black',
+  ),
+  offline: clsx('bg-dark text-white'),
+  online: clsx('bg-white text-black'),
 };
 
 export const Format: FC<Props> = ({

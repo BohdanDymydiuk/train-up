@@ -2,6 +2,8 @@ import { FC, memo } from 'react';
 
 import { EventInfoType } from '@/shared/types/events';
 
+import clsx from 'clsx';
+
 import { FourthPart } from './components/FourthPart';
 import { SecondPart } from './components/SecondPart';
 import { ThirdPart } from './components/ThirdPart';
@@ -9,8 +11,8 @@ import { ThirdPart } from './components/ThirdPart';
 type Props = Omit<EventInfoType, 'id'>;
 
 const classes = {
-  root: 'border-ui-gray-500 rounded-lg border p-4',
-  image: 'bg-ui-gray-500 h-47 w-100 rounded-2xl',
+  root: clsx('border-ui-gray-500 rounded-lg border p-4'),
+  image: clsx('bg-ui-gray-500 h-47 w-100 rounded-2xl'),
 };
 
 export const EventInfo: FC<Props> = memo(props => {

@@ -12,9 +12,10 @@ import { ThirdPart } from './components/ThirdPart';
 type Props = Omit<Trainer, 'id'>;
 
 const classes = {
-  trainer:
+  trainer: clsx(
     'border-ui-gray-300 relative flex h-38 w-full items-center justify-between rounded-lg border p-4',
-  avatar: 'bg-ui-gray-300 h-82 w-82 rounded-full',
+  ),
+  avatar: clsx('bg-ui-gray-300 h-82 w-82 rounded-full'),
 };
 
 export const TrainerInfo: FC<Props> = memo(props => {

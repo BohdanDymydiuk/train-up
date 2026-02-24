@@ -5,17 +5,19 @@ import { ThunderSVG } from '@/components/svgs/sectionSvgs/events/ThunderSVG';
 import { TrainingType } from '@/components/TrainingType';
 import { EventInfoType } from '@/shared/types/events';
 
+import clsx from 'clsx';
+
 type Props = Pick<
   EventInfoType,
   'intensity' | 'participants' | 'trainingTypes'
 >;
 
 const classes = {
-  root: 'mt-4 flex justify-between',
-  secondWrapper: 'flex items-center gap-4',
-  thunders: 'flex items-center',
-  participants: 'flex h-full items-center gap-2 px-0.75',
-  number: 'font-[Inter] text-sm font-normal text-gray-500',
+  root: clsx('mt-4 flex justify-between'),
+  secondWrapper: clsx('flex items-center gap-4'),
+  thunders: clsx('flex items-center'),
+  participants: clsx('flex h-full items-center gap-2 px-0.75'),
+  number: clsx('font-[Inter] text-sm font-normal text-gray-500'),
 };
 
 export const SecondPart: FC<Props> = ({
