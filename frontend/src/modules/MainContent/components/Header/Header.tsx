@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useContext, useEffect, useState } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 
 import { BellSVG } from '@/components/svgs/headerSvgs/BellSVG';
 import { LogoSVG } from '@/components/svgs/LogoSVG';
@@ -8,6 +8,7 @@ import { Context } from '@/providers/context';
 import { Links } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
+import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
 import { Burger } from './components/Burger';
@@ -17,7 +18,11 @@ import { ProfileIMG } from './components/ProfileIMG';
 import { SignInButton } from './components/SignInButton';
 import { SignInDropdown } from './components/SignInDropdown';
 
-import styles from './Header.module.scss';
+const classes = {
+  firstPart: clsx('flex items-center gap-12'),
+  secondPart: clsx('flex items-center gap-4 [&_svg]:w-8'),
+  header: clsx('flex h-40 items-center justify-between bg-white px-4 md:px-6'),
+};
 
 export const Header: FC = () => {
   const jwtToken = useAppSelector(state => state.jwtToken);
@@ -37,11 +42,9 @@ export const Header: FC = () => {
 
   const SignIn = DropdownHoc(SignInButton, SignInDropdown);
 
-  // #regions css props
-  const firstPartCssProps: CSSProperties = { gap: '48px' };
-
-  const secondPartCssProps: CSSProperties = { gap: '16px' };
-  // #endregion
+  /* I don't remember why I did it, but I think I had a reason to do it like this, so I won't delete it, but I will comment it out for now */
+  /* const firstPartCssProps: CSSProperties = { gap: '48px' };
+  const secondPartCssProps: CSSProperties = { gap: '16px' }; */
 
   // #regions jsx
   // sp is "secondPart"
@@ -69,12 +72,12 @@ export const Header: FC = () => {
   // #endregion
 
   return (
-    <header className={styles.header}>
-      <div className={styles['first-part']} style={firstPartCssProps}>
+    <header className={classes.header}>
+      <div className={classes.firstPart}>
         <LogoSVG />
         {jwtToken ? onTablet && !onDesktop && <Nav /> : onTablet && <Nav />}
       </div>
-      <div className={styles['second-part']} style={secondPartCssProps}>
+      <div className={classes.secondPart}>
         {jwtToken ? loggedSp : defaultSp}
       </div>
     </header>

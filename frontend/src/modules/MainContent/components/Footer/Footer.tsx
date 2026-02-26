@@ -8,7 +8,23 @@ import { FOOTER_STRINGS } from '@/constants/strings';
 import { Context } from '@/providers/context';
 import { NavItems } from '@/shared/enums';
 
-import styles from './Footer.module.scss';
+import clsx from 'clsx';
+
+const classes = {
+  footer: clsx('border-ui-gray-400 mt-8 border-t bg-white p-[48px_48px_54px]'),
+  contentWrapper: clsx('xl:flex xl:justify-between'),
+  titleWrapper: clsx('w-48.25 sm:w-90.75 md:w-150.25'),
+  pagesSocialsWrapper: clsx('mt-8 md:mt-20 md:flex md:gap-9.5 xl:mt-0'),
+  pages: clsx('mt-6 w-48'),
+  pagesList: clsx('flex list-none flex-col gap-4'),
+  page: clsx('cursor-pointer font-[Inter] text-base font-normal'),
+  socialsWrapper: clsx('mt-8 md:mt-0 md:w-80.5'),
+  socials: clsx('mt-6.5 flex gap-8.25'),
+  social: clsx(
+    'cursor-pointer border-0 bg-transparent [&_svg]:h-7.5 [&_svg]:w-7.5',
+  ),
+  text: clsx('font-[Inter] text-xl font-semibold'),
+};
 
 export const Footer: FC = () => {
   const { onDesktop } = useContext(Context);
@@ -32,21 +48,21 @@ export const Footer: FC = () => {
   };
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles['content-wrapper']}>
-        <div className={styles['title-wrapper']}>
+    <footer className={classes.footer}>
+      <div className={classes.contentWrapper}>
+        <div className={classes.titleWrapper}>
           <ErmilovTitle {...ermilovTitleProps} />
         </div>
 
-        <div className={styles['pages-socials-wrapper']}>
-          <div className={styles['pages-wrapper']}>
-            <div className={styles['pages-text']}>{FOOTER_STRINGS.pages}</div>
+        <div className={classes.pagesSocialsWrapper}>
+          <div>
+            <div className={classes.text}>{FOOTER_STRINGS.pages}</div>
 
-            <nav className={styles.pages}>
-              <ul>
+            <nav className={classes.pages}>
+              <ul className={classes.pagesList}>
                 {pages.map(page => {
                   return (
-                    <li className={styles.page} key={page}>
+                    <li className={classes.page} key={page}>
                       {page}
                     </li>
                   );
@@ -55,17 +71,15 @@ export const Footer: FC = () => {
             </nav>
           </div>
 
-          <div className={styles['socials-wrapper']}>
-            <div className={styles['socials-text']}>
-              {FOOTER_STRINGS.socials}
-            </div>
+          <div className={classes.socialsWrapper}>
+            <div className={classes.text}>{FOOTER_STRINGS.socials}</div>
 
-            <div className={styles.socials}>
+            <div className={classes.socials}>
               {values.map((value, index) => {
                 const key = keys[index];
 
                 return (
-                  <button className={styles.social} key={key}>
+                  <button className={classes.social} key={key}>
                     {value}
                   </button>
                 );
