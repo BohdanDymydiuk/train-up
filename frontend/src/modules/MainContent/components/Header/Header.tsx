@@ -46,7 +46,6 @@ export const Header: FC = () => {
   /* const firstPartCssProps: CSSProperties = { gap: '48px' };
   const secondPartCssProps: CSSProperties = { gap: '16px' }; */
 
-  // #regions jsx
   // sp is "secondPart"
   const defaultSp = (
     <>
@@ -69,7 +68,6 @@ export const Header: FC = () => {
       )}
     </>
   );
-  // #endregion
 
   return (
     <header className={classes.header}>
