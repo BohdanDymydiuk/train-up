@@ -11,14 +11,19 @@ import { ErmilovTitle } from '@/components/ErmilovTitle';
 import { EVENTS_STRINGS } from '@/constants/strings';
 import { Context } from '@/providers/context';
 
-import { Arrows } from './components/Arrows';
+import clsx from 'clsx';
 
-import styles from './Events.module.scss';
+import { Arrows } from './components/Arrows';
 
 export interface ImgIndexProps {
   imgIndex: number;
   setImgIndex: Dispatch<SetStateAction<number>>;
 }
+
+const classes = {
+  section: clsx('mt-8 md:mt-16 xl:mt-18'),
+  header: clsx('flex justify-between gap-5'),
+};
 
 export const Events: FC = () => {
   const { onDesktop } = useContext(Context);
@@ -36,8 +41,8 @@ export const Events: FC = () => {
   const eventsProps = { imgIndex, setImgIndex };
 
   return (
-    <section className={styles.section}>
-      <header className={styles.header}>
+    <section className={classes.section}>
+      <header className={classes.header}>
         <ErmilovTitle {...ermilovTitleProps} />
         <Arrows {...eventsProps} />
       </header>

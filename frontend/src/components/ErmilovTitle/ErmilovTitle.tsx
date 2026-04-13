@@ -1,5 +1,9 @@
 import { CSSProperties, FC, JSX, useEffect, useState } from 'react';
 
+import { TW_FONT_ERMILOV } from '@/constants/tailwind';
+
+import clsx from 'clsx';
+
 interface Props {
   title: JSX.Element | string;
   cssProps?: CSSProperties;
@@ -18,7 +22,7 @@ export const ErmilovTitle: FC<Props> = ({ title, cssProps }) => {
 
   return (
     <h2
-      className='font-[Ermilov] text-2xl md:text-4xl xl:text-6xl'
+      className={clsx(TW_FONT_ERMILOV, 'text-2xl md:text-4xl xl:text-6xl')}
       style={cssProps}
     >
       {title}

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { TW_TYPO_INTER_500_14 } from '@/constants/tailwind';
 import { Formats } from '@/shared/enums';
 
 import clsx from 'clsx';
@@ -12,7 +13,8 @@ interface Props {
 
 const classes = {
   format: clsx(
-    'flex h-8 items-center justify-center rounded-[100px] font-[Inter] text-sm font-medium',
+    'flex h-8 items-center justify-center rounded-[100px]',
+    TW_TYPO_INTER_500_14,
   ),
   offline: clsx('bg-dark text-white'),
   online: clsx('bg-white text-black'),

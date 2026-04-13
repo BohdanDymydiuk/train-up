@@ -4,42 +4,35 @@ import { ArrowLeft } from '@/components/svgs/arrows/ArrowLeft';
 import { ArrowRight } from '@/components/svgs/arrows/ArrowRight';
 import { useAppSelector } from '@/store';
 
+import clsx from 'clsx';
+
 import { ImgIndexProps } from '../../Events';
 
-import styles from './Arrows.module.scss';
-
-const arrows = {
-  left: <ArrowLeft />,
-  rigth: <ArrowRight />,
+const classes = {
+  arrows: clsx('flex w-full max-w-18.5 justify-between'),
+  button: clsx('cursor-pointer border-none bg-transparent'),
 };
-
-const keys = Object.keys(arrows);
-const values = Object.values(arrows);
 
 export const Arrows: FC<ImgIndexProps> = ({ imgIndex, setImgIndex }) => {
   const events = useAppSelector(state => state.events);
 
-  const buttonOnClickHandlers = [
-    () => {
-      if (imgIndex > 0) setImgIndex(prev => prev - 1);
-    },
-    () => {
-      if (imgIndex < events.length - 1) setImgIndex(prev => prev + 1);
-    },
-  ];
-
   return (
-    <div className={styles.arrows}>
-      {keys.map((key, index) => {
-        const svg = values[index];
-        const onClickHandler = buttonOnClickHandlers[index];
+    <div className={classes.arrows}>
+      <button
+        className={classes.button}
+        onClick={() => imgIndex > 0 && setImgIndex(prev => prev - 1)}
+      >
+        <ArrowLeft />
+      </button>
 
-        return (
-          <button className={styles.button} key={key} onClick={onClickHandler}>
-            {svg}
-          </button>
-        );
-      })}
+      <button
+        className={classes.button}
+        onClick={() =>
+          imgIndex < events.length - 1 && setImgIndex(prev => prev + 1)
+        }
+      >
+        <ArrowRight />
+      </button>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { FC, Fragment, useContext } from 'react';
 
 import { ALT_STRINGS, COMMON_STRINGS } from '@/constants/strings';
+import { TW_TYPO_INTER_400_14, TW_TYPO_WF_VISUAL_500 } from '@/constants/tailwind';
 import { Context } from '@/providers/context';
 import { Event as EventType } from '@/shared/types/events';
 
@@ -24,8 +25,8 @@ const classes = {
   intensity: clsx('flex h-8 items-center gap-1.75'),
   thunder: clsx('h-6 w-4.75'),
   thirdPart: clsx('mt-6 flex h-33.25 flex-col justify-between'),
-  title: clsx('font-[WF_Visual_Sans] font-medium'),
-  description: clsx('mt-1.5 font-[Inter] text-sm font-normal'),
+  title: TW_TYPO_WF_VISUAL_500,
+  description: clsx('mt-1.5', TW_TYPO_INTER_400_14),
 };
 
 export const Event: FC<Props> = ({

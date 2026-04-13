@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { ParticipantsSVG } from '@/components/svgs/sectionSvgs/events/ParticipantsSVG';
 import { ThunderSVG } from '@/components/svgs/sectionSvgs/events/ThunderSVG';
 import { TrainingType } from '@/components/TrainingType';
+import { TW_TYPO_INTER_400_14 } from '@/constants/tailwind';
 import { EventInfoType } from '@/shared/types/events';
 
 import clsx from 'clsx';
@@ -17,7 +18,7 @@ const classes = {
   secondWrapper: clsx('flex items-center gap-4'),
   thunders: clsx('flex items-center'),
   participants: clsx('flex h-full items-center gap-2 px-0.75'),
-  number: clsx('font-[Inter] text-sm font-normal text-gray-500'),
+  number: clsx(TW_TYPO_INTER_400_14, 'text-gray-500'),
 };
 
 export const SecondPart: FC<Props> = ({

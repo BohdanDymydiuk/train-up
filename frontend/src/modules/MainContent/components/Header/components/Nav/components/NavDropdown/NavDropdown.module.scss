@@ -1,6 +1,0 @@
-.dropdown {
-  @include dropdown;
-
-  top: $nav-button-height + 6px;
-  width: var(--dropdown-width);
-}

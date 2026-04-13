@@ -6,8 +6,6 @@ import { Context } from '@/providers/context';
 
 import { Blocks } from './components/Blocks';
 
-import styles from './WhatIsTrainUp.module.scss';
-
 export const WhatIsTrainUp: FC = () => {
   const { onDesktop } = useContext(Context);
 
@@ -17,7 +15,7 @@ export const WhatIsTrainUp: FC = () => {
   };
 
   return (
-    <section className={styles['train-up']}>
+    <section className='pt-8.5 md:pt-16'>
       <ErmilovTitle {...ermilovTitleProps} />
       <Blocks />
     </section>

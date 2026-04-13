@@ -6,15 +6,20 @@ import { TrainerInfo } from '@/components/TrainerInfo';
 import { NavItems } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
-import styles from './Trainers.module.scss';
+import clsx from 'clsx';
+
+const classes = {
+  trainers: clsx('pt-7'),
+  wrapper: clsx('mt-6 flex flex-col gap-8.25'),
+};
 
 export const Trainers: FC = () => {
   const trainers = useAppSelector(state => state.trainers);
 
   return (
-    <section className={styles.trainers}>
+    <section className={classes.trainers}>
       <ProfileTitle title={NavItems.trainers} />
-      <div className={styles.wrapper}>
+      <div className={classes.wrapper}>
         {trainers.slice(0, 3).map(trainer => {
           const { id, ...trainerInfoProps } = trainer;
 

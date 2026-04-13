@@ -3,7 +3,7 @@ import { CSSProperties, FC } from 'react';
 import { ChevronDownSVG } from '@/components/svgs/ChevronDownSVG';
 import { ButtonProps } from '@/hocs/DropdownHoc';
 
-import styles from '../../SportFinder.module.scss';
+import styles from '../../SportFinder.module.css';
 
 export const Button: FC<ButtonProps> = ({
   onClickHandler,
@@ -15,15 +15,17 @@ export const Button: FC<ButtonProps> = ({
   const chevronDownSvgProps = {
     svgStyle: { minWidth: '16px' },
     fill:
-      (isOnline && styles.gray2) || (isDpShown && styles.orange) || styles.gray,
+      (isOnline && styles['color-gray-200']) ||
+      (isDpShown && styles['color-accent']) ||
+      styles['color-gray-900'],
   };
 
   const buttonOfflineCssProps: CSSProperties = isDpShown
-    ? { borderColor: styles.orange, color: styles.orange }
+    ? { borderColor: styles['color-accent'], color: styles['color-accent'] }
     : {};
 
   const buttonOnlineCssProps: CSSProperties = isOnline
-    ? { color: styles.gray2, cursor: 'not-allowed' }
+    ? { color: styles['color-gray-200'], cursor: 'not-allowed' }
     : {};
 
   const buttonCssProps = { ...buttonOfflineCssProps, ...buttonOnlineCssProps };

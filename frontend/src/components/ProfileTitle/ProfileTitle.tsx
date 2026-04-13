@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { TW_TYPO_INTER_600_24 } from '@/constants/tailwind';
 import { NavItems } from '@/shared/enums';
 
 interface Props {
@@ -7,5 +8,5 @@ interface Props {
 }
 
 export const ProfileTitle: FC<Props> = ({ title }) => {
-  return <h2 className='font-[Inter] text-2xl font-semibold'>{title}</h2>;
+  return <h2 className={TW_TYPO_INTER_600_24}>{title}</h2>;
 };

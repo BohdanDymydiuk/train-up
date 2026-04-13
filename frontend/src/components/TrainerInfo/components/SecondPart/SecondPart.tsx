@@ -1,6 +1,11 @@
 import { FC } from 'react';
 
 import { TrainingType } from '@/components/TrainingType';
+import {
+  TW_TYPO_INTER_400_14,
+  TW_TYPO_INTER_500_20,
+  TW_TYPO_INTER_600_12,
+} from '@/constants/tailwind';
 import { Trainer } from '@/shared/types/trainer';
 
 import clsx from 'clsx';
@@ -9,10 +14,10 @@ type Props = Pick<Trainer, 'name' | 'trainingTypes' | 'bio'>;
 
 const classes = {
   root: clsx('flex w-79.5 flex-col gap-4'),
-  name: clsx('font-[Inter] text-xl font-medium'),
+  name: TW_TYPO_INTER_500_20,
   types: clsx('flex gap-2'),
-  bio: clsx('font-[Inter] text-sm font-normal'),
-  read: clsx('font-[Inter] text-xs font-semibold'),
+  bio: TW_TYPO_INTER_400_14,
+  read: TW_TYPO_INTER_600_12,
 };
 
 export const SecondPart: FC<Props> = props => {

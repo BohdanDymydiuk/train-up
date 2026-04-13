@@ -5,6 +5,7 @@ import { FacebookSVG } from '@/components/svgs/socials/FacebookSVG';
 import { InstagramSVG } from '@/components/svgs/socials/InstagramSVG';
 import { ThreadsSVG } from '@/components/svgs/socials/ThreadsSVG';
 import { FOOTER_STRINGS } from '@/constants/strings';
+import { TW_TYPO_INTER_400_16, TW_TYPO_INTER_600_20 } from '@/constants/tailwind';
 import { Context } from '@/providers/context';
 import { NavItems } from '@/shared/enums';
 
@@ -17,13 +18,13 @@ const classes = {
   pagesSocialsWrapper: clsx('mt-8 md:mt-20 md:flex md:gap-9.5 xl:mt-0'),
   pages: clsx('mt-6 w-48'),
   pagesList: clsx('flex list-none flex-col gap-4'),
-  page: clsx('cursor-pointer font-[Inter] text-base font-normal'),
+  page: clsx('cursor-pointer', TW_TYPO_INTER_400_16),
   socialsWrapper: clsx('mt-8 md:mt-0 md:w-80.5'),
   socials: clsx('mt-6.5 flex gap-8.25'),
   social: clsx(
     'cursor-pointer border-0 bg-transparent [&_svg]:h-7.5 [&_svg]:w-7.5',
   ),
-  text: clsx('font-[Inter] text-xl font-semibold'),
+  text: TW_TYPO_INTER_600_20,
 };
 
 export const Footer: FC = () => {

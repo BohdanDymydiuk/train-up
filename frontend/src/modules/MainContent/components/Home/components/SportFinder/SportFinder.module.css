@@ -1,0 +1,149 @@
+@reference '../../../../../../globals.css';
+
+.finder {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 24px;
+  padding: 24px;
+  line-height: 135%;
+
+  --first-column: 350px;
+  --times: 2;
+
+  @variant md {
+    display: grid;
+    grid-template-rows: repeat(var(--times), var(--finder-row-height));
+    grid-template-columns: var(--first-column) 1fr;
+    gap: 20px 40px;
+  }
+
+  @variant 2md {
+    --first-column: 400px;
+  }
+
+  @variant 3md {
+    --first-column: 450px;
+  }
+
+  @variant lg {
+    --times: 1;
+    --first-column: 650px;
+
+    .inputs-wrapper {
+      justify-content: space-between;
+
+      > :nth-child(1) {
+        width: 329px;
+      }
+
+      > :nth-child(2) {
+        width: 160px;
+      }
+    }
+  }
+
+  @variant xl {
+    --first-column: 808px;
+    margin-top: 72px;
+
+    .inputs-wrapper {
+      > :nth-child(1) {
+        width: 420px;
+      }
+
+      > :nth-child(2) {
+        width: 190px;
+      }
+    }
+  }
+
+  @variant 2xl {
+    width: 1115px;
+  }
+
+  .select,
+  .online,
+  .find {
+    height: var(--finder-row-height);
+    font-weight: 500;
+    font-size: 14px;
+
+    @variant md {
+      height: auto;
+      font-size: 18px;
+    }
+  }
+
+  .select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-ui-gray-400);
+    cursor: pointer;
+    text-align: start;
+    width: 100%;
+    transition:
+      border-color 200ms,
+      color 200ms;
+
+    @variant md {
+      height: 100%;
+    }
+
+    @variant lg {
+      column-gap: 20px;
+    }
+
+    @variant xl {
+      column-gap: normal;
+    }
+  }
+
+  .label,
+  .checkbox {
+    cursor: pointer;
+  }
+
+  .online {
+    gap: 12px;
+    display: flex;
+    align-items: center;
+
+    @variant xl {
+      width: 120px;
+      justify-content: center;
+    }
+
+    .checkbox {
+      appearance: none;
+
+      &::before {
+        content: '';
+        width: 28px;
+        height: 28px;
+        border: 1px solid var(--color-gray-200);
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &:checked::before {
+        background-color: var(--color-primary);
+        border: none;
+        content: url(/public/icons/check.svg);
+      }
+    }
+  }
+}
+
+:export {
+  color-gray-900: var(--color-gray-900);
+  color-gray-200: var(--color-gray-200);
+  color-accent: var(--color-accent);
+}

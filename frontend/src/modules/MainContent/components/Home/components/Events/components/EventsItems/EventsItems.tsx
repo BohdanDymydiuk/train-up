@@ -1,15 +1,19 @@
 import { FC, useContext } from 'react';
 
+import { Event } from '@/components/Event';
 import { EVENTS_GAP } from '@/constants/common';
 import { Context } from '@/providers/context';
-import { Event } from '@/components/Event';
 import { useAppSelector } from '@/store';
 
+import clsx from 'clsx';
 import { motion, Transition, useMotionValue } from 'motion/react';
 
 import { ImgIndexProps } from '../../Events';
 
-import styles from './EventsItems.module.scss';
+const classes = {
+  events: clsx('relative mt-6'),
+  wrapper: clsx('flex h-112.5 cursor-grab items-center active:cursor-grabbing'),
+};
 
 const DRAG_BUFFER = 50;
 
@@ -37,10 +41,10 @@ export const EventsItems: FC<ImgIndexProps> = ({ imgIndex, setImgIndex }) => {
   };
 
   return (
-    <div className={styles.events}>
+    <div className={classes.events}>
       <motion.div
         drag='x'
-        className={styles.wrapper}
+        className={classes.wrapper}
         dragConstraints={{ right: 0, left: 0 }}
         style={{ gap: EVENTS_GAP, x: dragX }}
         onDragEnd={onDragEndHandler}
@@ -49,26 +53,16 @@ export const EventsItems: FC<ImgIndexProps> = ({ imgIndex, setImgIndex }) => {
           translateX: `calc(((${eventWidth} + ${EVENTS_GAP}) * ${imgIndex}) * -1)`,
         }}
       >
+        {/* [] is temporary */}
         {[].map(event => {
-          const {
-            id,
-            name,
-            description,
-            onlineTraining,
-            intensity,
-            photoUrls,
-          } = event;
-
           return (
             <Event
-              key={id}
-              {...{
-                name,
-                description,
-                onlineTraining,
-                intensity,
-                photoUrls,
-              }}
+              key={event.id}
+              name={event.name}
+              description={event.description}
+              onlineTraining={event.onlineTraining}
+              intensity={event.intensity}
+              photoUrls={event.photoUrls}
             />
           );
         })}

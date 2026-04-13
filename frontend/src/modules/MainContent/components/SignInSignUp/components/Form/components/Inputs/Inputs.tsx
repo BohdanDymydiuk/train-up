@@ -1,9 +1,18 @@
 import { FC } from 'react';
 
 import { AUTH_STRINGS } from '@/constants/strings';
+import { TW_INPUT_BASE, TW_TYPO_INTER_500_15 } from '@/constants/tailwind';
 import { InputChangeEvent } from '@/shared/types/events';
 
-import styles from './Inputs.module.scss';
+import clsx from 'clsx';
+
+const classes = {
+  input: clsx(
+    TW_INPUT_BASE,
+    TW_TYPO_INTER_500_15,
+    'w-full border border-gray-100 placeholder:text-gray-200 first-of-type:mt-20 nth-of-type-2:mt-4',
+  ),
+};
 
 interface Props {
   email: string;
@@ -22,7 +31,7 @@ export const Inputs: FC<Props> = props => {
         name='email-name'
         id='email-name'
         value={email}
-        className={styles.input}
+        className={classes.input}
         onChange={inputTextHandler}
         placeholder={AUTH_STRINGS.emailPlaceholder}
         required
@@ -32,7 +41,7 @@ export const Inputs: FC<Props> = props => {
         name='password'
         id='password'
         value={password}
-        className={styles.input}
+        className={classes.input}
         onChange={inputPasswordHandler}
         placeholder={AUTH_STRINGS.passwordPlaceholder}
         required

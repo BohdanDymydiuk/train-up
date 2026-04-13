@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
-import styles from './Title.module.scss';
+import { TW_TYPO_INTER_500_48 } from '@/constants/tailwind';
 
-export const Title: FC = () => <h2 className={styles.title}>Refinity</h2>;
+export const Title: FC = () => (
+  <h2 className={TW_TYPO_INTER_500_48}>Refinity</h2>
+);

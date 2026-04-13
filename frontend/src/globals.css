@@ -18,14 +18,14 @@
   --color-gray-700: #4f4f4f;
   --color-gray-600: #717171;
   --color-gray-500: #828282;
-  --color-gray-400: gray;
+  --color-gray-400: gray; /* think about it */
   --color-gray-300: #949090;
   --color-gray-200: #a9a9b0;
   --color-gray-100: #c8c9cd;
 
   /* --color-white: #fff; */
-  --color-bg-main: #f5f6fa;
-  --color-bg-soft: #f3f3f3;
+  --color-surface-main: #f5f6fa;
+  --color-surface-soft: #f3f3f3;
 
   --color-ui-gray-500: #d9d9d9;
   --color-ui-gray-400: #dcdddf;
@@ -58,36 +58,39 @@
 
 :root {
   --dropdown-width: 232px;
+  --signin-width: 128px;
+  --signin-height: 48px;
+  --finder-row-height: 48px;
 
-  @media (width >= 768px) {
-    --dropdown-width: 265px;
+  @apply md:[--dropdown-width:265px];
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface-main);
   }
-}
 
-body {
-  background-color: var(--color-bg-main);
-}
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  form {
+    margin: 0;
+  }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-form {
-  margin: 0;
-}
+  button,
+  ul,
+  input {
+    padding: 0;
+    margin: 0;
+  }
 
-button,
-ul,
-input {
-  padding: 0;
-  margin: 0;
-}
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
 }

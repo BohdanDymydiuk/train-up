@@ -6,15 +6,20 @@ import { ProfileTitle } from '@/components/ProfileTitle';
 import { NavItems } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
-import styles from './Events.module.scss';
+import clsx from 'clsx';
+
+const classes = {
+  events: clsx('mt-7'),
+  wrapper: clsx('mt-6 flex flex-wrap gap-x-6 gap-y-8'),
+};
 
 export const Events: FC = () => {
   const events = useAppSelector(state => state.events2);
 
   return (
-    <section className={styles.events}>
+    <section className={classes.events}>
       <ProfileTitle title={NavItems.events} />
-      <div className={styles.wrapper}>
+      <div className={classes.wrapper}>
         {events.slice(0, 4).map(event => {
           const { id, ...eventInfoProps } = event;
 

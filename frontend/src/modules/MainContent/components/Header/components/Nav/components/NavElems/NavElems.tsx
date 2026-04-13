@@ -1,5 +1,11 @@
 import { FC, useEffect, useState } from 'react';
 
+import {
+  TW_DROPDOWN_ITEM,
+  TW_DROPDOWN_ITEM_LINK,
+  TW_DROPDOWN_LIST,
+  TW_TYPO_INTER_400_16,
+} from '@/constants/tailwind';
 import { DropdownProps } from '@/hocs/DropdownHoc';
 import { Links, NavItems } from '@/shared/enums';
 import { useAppSelector } from '@/store';
@@ -7,12 +13,18 @@ import { useAppSelector } from '@/store';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
-import dpStyles from '../NavDropdown/NavDropdown.module.scss';
-import styles from './NavElems.module.scss';
-
 const headerNav = {
   items: Object.values(NavItems),
   links: Object.values(Links),
+};
+
+const classes = {
+  list: clsx('flex list-none gap-10.5'),
+  item: clsx('cursor-pointer'),
+  link: clsx('text-dark', TW_TYPO_INTER_400_16),
+  dpList: TW_DROPDOWN_LIST,
+  dpItem: TW_DROPDOWN_ITEM,
+  dpItemLink: TW_DROPDOWN_ITEM_LINK,
 };
 
 export const NavElems: FC<Partial<DropdownProps>> = ({
@@ -41,18 +53,18 @@ export const NavElems: FC<Partial<DropdownProps>> = ({
 
   // #region clsx
   const ulClass = clsx({
-    [styles.list]: isUndefined(isDpShown),
-    [dpStyles['dp-list']]: !isUndefined(isDpShown),
+    [classes.list]: isUndefined(isDpShown),
+    [classes.dpList]: !isUndefined(isDpShown),
   });
 
   const aClass = clsx({
-    [styles.link]: isUndefined(isDpShown),
-    [dpStyles['dp-item-link']]: !isUndefined(isDpShown),
+    [classes.link]: isUndefined(isDpShown),
+    [classes.dpItemLink]: !isUndefined(isDpShown),
   });
 
   const liClass = clsx(
-    { [dpStyles['dp-item']]: !isUndefined(isDpShown) },
-    styles.item,
+    { [classes.dpItem]: !isUndefined(isDpShown) },
+    classes.item,
   );
   // #endregion
 

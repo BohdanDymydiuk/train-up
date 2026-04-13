@@ -3,15 +3,30 @@ import { CSSProperties, FC, useContext, useEffect, useState } from 'react';
 import { ErmilovTitle } from '@/components/ErmilovTitle';
 import { REGIONAL_CENTERS } from '@/constants/regionalCenters';
 import { SPORT_FINDER_STRINGS } from '@/constants/strings';
+import { TW_BUTTON_BASE } from '@/constants/tailwind';
 import { DropdownHoc } from '@/hocs/DropdownHoc';
 import { Context } from '@/providers/context';
 import { FinderTexts } from '@/shared/enums';
 import { useAppSelector } from '@/store';
 
+import clsx from 'clsx';
+
 import { Button } from './components/Button';
 import { Dropdown } from './components/Dropdown';
 
-import styles from './SportFinder.module.scss';
+import styles from './SportFinder.module.css';
+
+const classes = {
+  wrapper: clsx(
+    'bg-blue-light mt-5.5 rounded-4xl px-4 py-14.5',
+    'md:mt-22.5 md:px-12 md:py-19.5',
+    'xl:mt-18 xl:py-22.5',
+    '2xl:flex 2xl:flex-col 2xl:items-center',
+  ),
+  find: clsx(TW_BUTTON_BASE, styles.find),
+};
+
+// Some styles stay in CSS where it results in clearer and more maintainable code.
 
 const ChooseSport = DropdownHoc(Button, Dropdown);
 const ChooseCity = DropdownHoc(Button, Dropdown);
@@ -63,7 +78,7 @@ export const SportFinder: FC = () => {
   // #endregion
 
   return (
-    <div className={styles.wrapper}>
+    <div className={classes.wrapper}>
       <ErmilovTitle {...ermilovTitleProps} />
       <div className={styles.finder}>
         <div
@@ -87,7 +102,7 @@ export const SportFinder: FC = () => {
             </label>
           </div>
         </div>
-        <button className={styles.find}>{SPORT_FINDER_STRINGS.search}</button>
+        <button className={classes.find}>{SPORT_FINDER_STRINGS.search}</button>
       </div>
     </div>
   );

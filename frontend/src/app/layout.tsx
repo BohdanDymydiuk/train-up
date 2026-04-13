@@ -1,8 +1,11 @@
 import '@/globals.css';
 
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
 import { Providers } from './providers';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'TrainUp',
@@ -15,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' className={inter.className}>
       <head>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link

@@ -1,5 +1,6 @@
 import { FC, useMemo } from 'react';
 
+import { TW_TYPO_INTER_400_14, TW_TYPO_INTER_600_20 } from '@/constants/tailwind';
 import { EventInfoType } from '@/shared/types/events';
 
 import clsx from 'clsx';
@@ -8,8 +9,8 @@ type Props = Pick<EventInfoType, 'name' | 'description'>;
 
 const classes = {
   root: clsx('mt-9.5'),
-  title: clsx('font-[Inter] text-xl font-semibold'),
-  descr: clsx('font-[Inter] text-sm font-normal'),
+  title: TW_TYPO_INTER_600_20,
+  descr: TW_TYPO_INTER_400_14,
 };
 
 export const ThirdPart: FC<Props> = ({ name, description }) => {

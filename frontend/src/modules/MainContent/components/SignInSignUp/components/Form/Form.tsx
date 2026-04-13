@@ -4,18 +4,23 @@ import { FC, FormEvent, useState } from 'react';
 
 import { login } from '@/api/auth';
 import { AUTH_STRINGS } from '@/constants/strings';
+import { TW_TYPO_ERMILOV_40 } from '@/constants/tailwind';
 import { Token } from '@/shared/types/auth';
 import { InputChangeEvent } from '@/shared/types/events';
 import { useAppDispatch } from '@/store';
 import { actions as jwtTokenActions } from '@/store/features/jwtToken';
 
+import clsx from 'clsx';
 import { useRouter } from 'next/navigation';
 
 import { Button } from './components/Button';
 import { Inputs } from './components/Inputs';
 import { SignUp } from './components/SignUp';
 
-import styles from './Form.module.scss';
+const classes = {
+  formWrapper: clsx('md:w-163.25'),
+  formTitle: clsx(TW_TYPO_ERMILOV_40, 'text-center'),
+};
 
 export const Form: FC = () => {
   const dispatch = useAppDispatch();
@@ -53,14 +58,9 @@ export const Form: FC = () => {
   // #endregion
 
   return (
-    <div className={styles['form-wrapper']}>
-      <form
-        action='#'
-        method='post'
-        className={styles.form}
-        onSubmit={onSubmitHandler}
-      >
-        <h3 className={styles['form-title']}>{AUTH_STRINGS.welcome}</h3>
+    <div className={classes.formWrapper}>
+      <form action='#' method='post' onSubmit={onSubmitHandler}>
+        <h3 className={classes.formTitle}>{AUTH_STRINGS.welcome}</h3>
         <Inputs {...inputsProps} />
         <Button />
       </form>
