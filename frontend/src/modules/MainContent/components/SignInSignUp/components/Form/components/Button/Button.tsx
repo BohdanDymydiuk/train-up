@@ -9,7 +9,7 @@ const classes = {
   signin: clsx(
     TW_INPUT_BASE,
     TW_TYPO_INTER_500_15,
-    'bg-accent hover:bg-danger focus:bg-danger mt-8 w-full cursor-pointer text-white transition-[background-color] duration-200',
+    'bg-accent hover:bg-danger focus:bg-danger mt-8 w-full cursor-pointer border-none text-white transition-[background-color] duration-200',
   ),
 };
 

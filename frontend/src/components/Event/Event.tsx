@@ -1,7 +1,10 @@
 import { FC, Fragment, useContext } from 'react';
 
 import { ALT_STRINGS, COMMON_STRINGS } from '@/constants/strings';
-import { TW_TYPO_INTER_400_14, TW_TYPO_WF_VISUAL_500 } from '@/constants/tailwind';
+import {
+  TW_TYPO_INTER_400_14,
+  TW_TYPO_WF_VISUAL_500,
+} from '@/constants/tailwind';
 import { Context } from '@/providers/context';
 import { Event as EventType } from '@/shared/types/events';
 
@@ -52,7 +55,10 @@ export const Event: FC<Props> = ({
         <div className={classes.formats}>
           <Format isOnline={false} />
           {onlineTraining && (
-            <Format isOnline={onlineTraining} backgroundColor={'bg-main'} />
+            <Format
+              isOnline={onlineTraining}
+              backgroundColor={'var(--color-surface-main)'}
+            />
           )}
         </div>
 

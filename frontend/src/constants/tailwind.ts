@@ -36,7 +36,7 @@ export const TW_BUTTON_BASE = clsx(
   'bg-accent focus:bg-danger cursor-pointer rounded-lg border-none text-white transition-[background-color] duration-200',
 );
 
-export const TW_INPUT_BASE = clsx('h-12 rounded-lg border-none px-4 py-0');
+export const TW_INPUT_BASE = clsx('h-12 rounded-lg px-4 py-0');
 
 export const TW_DROPDOWN_BASE = clsx(
   'border-ui-gray-200 absolute z-1000 origin-top scale-y-0 overflow-hidden rounded-2xl border opacity-0 transition-[opacity,transform] duration-200',

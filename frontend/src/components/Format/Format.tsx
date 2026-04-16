@@ -8,7 +8,7 @@ import clsx from 'clsx';
 interface Props {
   isOnline: boolean;
   width?: `${number}px`;
-  backgroundColor?: 'bg-main';
+  backgroundColor?: 'var(--color-surface-main)';
 }
 
 const classes = {
@@ -27,9 +27,8 @@ export const Format: FC<Props> = ({
 }) => {
   return (
     <div
-      style={{ width }}
+      style={{ width, backgroundColor }}
       className={clsx(classes.format, {
-        'bg-main': backgroundColor === 'bg-main',
         [classes.online]: isOnline,
         [classes.offline]: !isOnline,
       })}
