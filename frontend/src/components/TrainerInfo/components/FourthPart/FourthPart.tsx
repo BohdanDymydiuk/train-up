@@ -1,7 +1,10 @@
 import { FC } from 'react';
 
 import { StarSVG } from '@/components/svgs/sectionSvgs/trainers/StarSVG';
-import { TW_TYPO_INTER_400_14, TW_TYPO_INTER_500_16 } from '@/constants/tailwind';
+import {
+  TW_TYPO_INTER_400_14,
+  TW_TYPO_INTER_500_16,
+} from '@/constants/tailwind';
 import { Trainer } from '@/shared/types/trainer';
 
 import clsx from 'clsx';

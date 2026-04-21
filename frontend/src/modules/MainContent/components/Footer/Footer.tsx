@@ -5,7 +5,10 @@ import { FacebookSVG } from '@/components/svgs/socials/FacebookSVG';
 import { InstagramSVG } from '@/components/svgs/socials/InstagramSVG';
 import { ThreadsSVG } from '@/components/svgs/socials/ThreadsSVG';
 import { FOOTER_STRINGS } from '@/constants/strings';
-import { TW_TYPO_INTER_400_16, TW_TYPO_INTER_600_20 } from '@/constants/tailwind';
+import {
+  TW_TYPO_INTER_400_16,
+  TW_TYPO_INTER_600_20,
+} from '@/constants/tailwind';
 import { Context } from '@/providers/context';
 import { NavItems } from '@/shared/enums';
 

@@ -17,10 +17,7 @@ export const NavButton: FC<ButtonProps> = ({ onClickHandler, isDpShown }) => {
   const chevronDownSvgProps = isDpShown ? { fill: 'var(--color-accent)' } : {};
 
   return (
-    <button
-      className={classes.button}
-      onClick={onClickHandler}
-    >
+    <button className={classes.button} onClick={onClickHandler}>
       <div>Головна</div>
       <ChevronDownSVG {...chevronDownSvgProps} />
     </button>

@@ -1,6 +1,9 @@
 import { FC, useMemo } from 'react';
 
-import { TW_TYPO_INTER_400_14, TW_TYPO_INTER_600_20 } from '@/constants/tailwind';
+import {
+  TW_TYPO_INTER_400_14,
+  TW_TYPO_INTER_600_20,
+} from '@/constants/tailwind';
 import { EventInfoType } from '@/shared/types/events';
 
 import clsx from 'clsx';
