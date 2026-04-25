@@ -22,13 +22,13 @@ export const TW_TYPO_INTER_600_24 = clsx(TW_TYPO_INTER_600, 'text-2xl');
 export const TW_TYPO_INTER_600_30 = clsx(TW_TYPO_INTER_600, 'text-3xl');
 export const TW_TYPO_INTER_600_40 = clsx(TW_TYPO_INTER_600, 'text-4xl');
 
-export const TW_FONT_ERMILOV = clsx('font-[Ermilov]');
+export const TW_FONT_ERMILOV = clsx('font-ermilov');
 export const TW_TYPO_ERMILOV_24 = clsx(TW_FONT_ERMILOV, 'text-2xl');
 export const TW_TYPO_ERMILOV_32 = clsx(TW_FONT_ERMILOV, 'text-32');
 export const TW_TYPO_ERMILOV_40 = clsx(TW_FONT_ERMILOV, 'text-4xl');
 export const TW_TYPO_ERMILOV_56 = clsx(TW_FONT_ERMILOV, 'text-6xl');
 
-export const TW_FONT_WF_VISUAL = clsx('font-[WF_Visual_Sans]');
+export const TW_FONT_WF_VISUAL = clsx('font-wf-visual-sans');
 export const TW_TYPO_WF_VISUAL_500 = clsx(TW_FONT_WF_VISUAL, 'font-medium');
 
 export const TW_BUTTON_BASE = clsx(

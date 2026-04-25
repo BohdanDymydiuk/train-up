@@ -142,6 +142,7 @@
   }
 }
 
+/* CSS Modules uses :export here to share color tokens with Button.tsx. */
 :export {
   color-gray-900: var(--color-gray-900);
   color-gray-200: var(--color-gray-200);

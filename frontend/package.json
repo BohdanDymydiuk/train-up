@@ -10,7 +10,6 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "preview": "vite preview",
     "format": "npx prettier . --write"
   },
   "dependencies": {
@@ -45,10 +44,8 @@
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "sass-embedded": "^1.87.0",
     "stylelint": "^16.26.1",
     "stylelint-config-standard": "^39.0.1",
-    "stylelint-config-standard-scss": "^14.0.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.26.1"
   }

@@ -41,6 +41,10 @@
   --color-accent: #ff5c17;
   --color-brown-muted: #935f5f;
 
+  /* Fonts */
+  --font-wf-visual-sans: var(--next-font-wf-visual-sans);
+  --font-ermilov: var(--next-font-ermilov);
+
   /* Font Sizes */
   --text-xs: 12px;
   --text-sm: 14px;
