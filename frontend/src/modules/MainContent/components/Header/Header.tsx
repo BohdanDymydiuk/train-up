@@ -46,7 +46,7 @@ export const Header: FC = () => {
   /* const firstPartCssProps: CSSProperties = { gap: '48px' };
   const secondPartCssProps: CSSProperties = { gap: '16px' }; */
 
-  // sp is "secondPart"
+  // "sp" means "second part"
   const defaultSp = (
     <>
       {onTablet && <Lang />}
